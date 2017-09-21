@@ -1,3 +1,20 @@
+<!-- Heroku Website address 
+    https://stark-citadel-72039.herokuapp.com/
+
+    **** Commands for updating git and pushing to Heroku ****
+    Add all files to git
+        git add .
+    
+    Commit files to GitHub
+        git commit -am " COMMENT ON CHANGES THAT WERE MADE "
+
+    Push all files to GitHub
+        git push
+
+    Push all files to Heroku to update site 
+        git push heroku master
+-->
+
 <?php
 $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
 $port=3306;
