@@ -1,5 +1,5 @@
 <?php
-echo("Connect is running");
+echo("<p>Connect is running</p>");
 $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
 $port=3306;
 $socket="";
