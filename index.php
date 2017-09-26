@@ -34,7 +34,7 @@ $connection = new mysqli($host, $user, $password, $dbname, $port, $socket)
 	$result = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result) {
-		die("Databse query failed.");
+		die("Database query failed.");
 	}
 ?>
 
@@ -62,6 +62,11 @@ $connection = new mysqli($host, $user, $password, $dbname, $port, $socket)
 
 	<body>
 		<h1> Paw Companion Test </h1>
+		
+		
+		<p>Phill</p>
+		
+		
 		<h2>User Table<h2>
 		<table >
 			<tr>
