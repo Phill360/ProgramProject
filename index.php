@@ -35,7 +35,7 @@
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 	<head>
-		<title>AWS Test!!</title>
+		<title>AWS Test___</title>
 	</head>
 
 
