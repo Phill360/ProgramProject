@@ -35,7 +35,7 @@
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 	<head>
-		<title>AWS Test</title>
+		<title>AWS Test!!</title>
 	</head>
 
 
@@ -58,6 +58,8 @@
 		
 		<p>Phill</p>
 		<p>Git Test</p>
+		
+		
 		
 		<h2>User Table<h2>
 		<table >
