@@ -7,5 +7,5 @@
     $password="pawprogramming";
     $dbname="pawCompanion";
     $connection = new mysqli($host, $user, $password, $dbname, $port, $socket)
-    	or die ('Could NOT CONNECT to the database server' . mysqli_connect_error());
+    	or die ('Could not connect to the database server' . mysqli_connect_error());
 ?>
