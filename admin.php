@@ -1,6 +1,3 @@
-<!-- Connect AWS MYSQL Server -->
-<?php include_once('_php/connect.php');?>
-
 <!DOCTYPE html PUBLIC>
 <html lang="en">
   <title>Paw Companions Admin</title>
@@ -12,7 +9,7 @@
 
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Slackey">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <link rel="stylesheet" type="text/css" href="pcstyle.css">
 </head>
 
 <body>
