@@ -2,10 +2,12 @@ body {
     background-color: #999966;
 }
 
-h1.slackey {
+
+
+h1 {
   font-family: "Slackey", cursive;
   color: #ec971f;
-  font-size: 300%;
+  font-size: 600%;
 }
 
 h2.opensans {
