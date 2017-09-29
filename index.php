@@ -60,6 +60,7 @@
 		<p>Git Test</p>
 		<p>Mark - Yay, this worked! </p>
 		<p>Bash Script Worked! - Updated again</p>
+		<a href="admin.php">Admin page</a>
 		
 		
 		
