@@ -1,0 +1,32 @@
+body {
+    background-color: #999966;
+}
+
+h1.slackey {
+  font-family: 'Slackey', cursive;
+  color: #ec971f;
+  font-size: 600%;
+}
+
+h2.opensans {
+  font-family: 'Open Sans', sans-serif;
+  color: #000000;
+  font-size: 200%;
+}
+
+h3.opensans {
+  font-family: 'Open Sans', sans-serif;
+  color: #000000;
+  font-size: 150%;
+}
+
+p.slackey {
+  font-family: 'Slackey', cursive;
+  color: #000000;
+}
+
+p.opensans {
+  font-family: 'Open Sans', sans-serif;
+  color: #000000;
+}
+
