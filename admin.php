@@ -1,4 +1,17 @@
+<!-- Connect AWS MYSQL Server -->
+<?php include_once('_php/connect.php');?>
 
+
+<?php
+	// 2. Perform Query
+	$query = "SELECT * ";
+	$query .= "FROM user ";
+	$result = mysqli_query($connection, $query);
+	// Test for query error
+	if(!$result) {
+		die("Database query failed.");
+	}
+?>
 
 <!DOCTYPE html PUBLIC>
 <html lang="en">
@@ -22,20 +35,7 @@
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       
-      var dataString = 'last_name=' + email + '&first_name=' + email + '&email=' + email + '&postcode=' + password;
-      alert(dataString);
-      
-      $.ajax({
-      type: "POST",
-      url: "ajaxsubmit.php",
-      data: dataString,
-      cache: false,
-      success: function(html) {
-      alert(html);
-      }
-      });
-      
-      
+      <p>Working</p>
       
     });
   });
