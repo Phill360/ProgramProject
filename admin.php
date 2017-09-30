@@ -98,7 +98,7 @@
             <div class="form-group">
             <input type="file" name="file" id="file" required>
             </div>
-            <button class="btn btn-small btn-primary" id="upload-button" type="submit" disabled>Upload image</button>
+            <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
             </form>
             <br>
             <div class="alert alert-info" id="loading" style="display: none;" role="alert">
