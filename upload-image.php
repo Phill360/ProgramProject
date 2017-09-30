@@ -2,7 +2,7 @@
 session_start();
 if ( isset($_FILES["file"]["type"]) )
 {
-  $max_size = 500 * 1024; // 500 KB
+  $max_size = 500 * 500; // ? KB
   $destination_directory = "upload/";
   $validextensions = array("jpeg", "jpg", "png");
   $temporary = explode(".", $_FILES["file"]["name"]);
