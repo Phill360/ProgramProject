@@ -41,10 +41,20 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button id="rectButton" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
+      
+      <script>
+      $('#rectButton').on('click', function (e) {
+
+<?php
+echo "My first PHP script!";
+?>
+
+      })
+      </script>
       
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Remove an admin user</div></div>
@@ -101,19 +111,18 @@
             </div>
             <br>
             
-            <!-- Upload image -->
+            <!-- Image selection -->
             <label>Image:</label>
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
               <div id="image-preview-div" style="display: none">
-                <label for="exampleInputFile">Selected image:</label>
                 <br>
                 <img id="preview-img" src="noimage">
               </div>
               <div class="form-group">
                 <input type="file" name="file" id="file" required>
               </div>
-              <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
+              <button class="btn btn-small" id="upload-button" type="submit">Upload image</button> // Upload button
             </form>
             <br>
             <div class="alert alert-info" id="loading" style="display: none;" role="alert">
@@ -196,7 +205,7 @@
       </div>
       
       <div class="panel panel-default">
-        <div class="panel-heading"><div class="h3_opensans">Remove an a pet</div></div>
+        <div class="panel-heading"><div class="h3_opensans">Remove a pet</div></div>
         <div class="panel-body">
           <form>
             <div class="input-group">

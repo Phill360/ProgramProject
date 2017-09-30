@@ -7,7 +7,8 @@ if ( isset($_FILES["file"]["type"]) )
   $validextensions = array("jpeg", "jpg", "png");
   $temporary = explode(".", $_FILES["file"]["name"]);
   $file_extension = end($temporary);
-  // We need to check for image format and size again, because client-side code can be altered
+  
+  // Check for image format and size again, because client-side code can be altered
   if ( (($_FILES["file"]["type"] == "image/png") ||
         ($_FILES["file"]["type"] == "image/jpg") ||
         ($_FILES["file"]["type"] == "image/jpeg")
@@ -47,7 +48,7 @@ if ( isset($_FILES["file"]["type"]) )
   }
   else
   {
-    echo "<div class=\"alert alert-danger\" role=\"alert\">Unvalid image format. Allowed formats: JPG, JPEG, PNG.</div>";
+    echo "<div class=\"alert alert-danger\" role=\"alert\">Invalid image format. Allowed formats: JPG, JPEG, PNG.</div>";
   }
 }
 ?>
