@@ -1,3 +1,5 @@
+/*global $*/
+
 <!DOCTYPE html PUBLIC>
 <html lang="en">
   <title>Paw Companions Admin</title>
@@ -14,9 +16,9 @@
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
   <script>
-  $("#submitButton").on("click", function(){
+  $("p").click(function(){
     alert("jQuery works!");
-});
+  });
   </script>
   
 </head>
