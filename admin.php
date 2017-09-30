@@ -23,7 +23,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><h3 class="opensans">Create new admin user</h3></div>
+        <div class="panel-heading"><div class="h3_opensans">Create new admin user</div></div>
         <div class="panel-body">
           <form>
             <div class="input-group">
@@ -45,7 +45,7 @@
       </div>
 
       <div class="panel panel-default">
-        <div class="panel-heading"><h3 class="opensans">Reset your password</h3></div>
+        <div class="panel-heading"><div class="h3_opensans">Reset your password</div></div>
         <div class="panel-body">
           <form>
             <div class="input-group">
@@ -61,7 +61,7 @@
 
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><h3 class="opensans">Add a pet</h3></div>
+        <div class="panel-heading"><div class="h3_opensans">Add a pet</div></div>
         <div class="panel-body">
           <form action="/action_page.php">
             
