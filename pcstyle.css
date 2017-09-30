@@ -3,17 +3,14 @@
 /* git push */
 /* git push heroku master */
 
-/* Background colour #999966 */
 body {
     background-color: #999966;
 }
 
-
 /* Colour for h1 headings: #ec971f */
 h1 {
-  font-family: 'Slackey', cursive;
-  color: blue;
-  font-size: 600%;
+    color: red;
+    text-align: center;
 }
 
 h2.opensans {
