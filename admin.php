@@ -91,13 +91,13 @@
 
             <div class="input-group">
               <span class="input-group-addon">Text</span>
-                <input id="petID" type="text" class="form-control" name="petID" placeholder="Enter pet ID">
+              <input id="petID" type="text" class="form-control" name="petID" placeholder="Enter pet ID">
             </div>
             <br>
 
             <div class="input-group">
               <span class="input-group-addon">Text</span>
-                <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name">
+              <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name">
             </div>
             <br>
             
@@ -191,6 +191,20 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><div class="h3_opensans">Remove an a pet</div></div>
+        <div class="panel-body">
+          <form>
+            <div class="input-group">
+              <span class="input-group-addon">Text</span>
+              <input id="petID" type="text" class="form-control" name="petID" placeholder="Enter pet ID">
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary">Remove</button>
           </form>
         </div>
       </div>
