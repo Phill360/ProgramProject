@@ -19,8 +19,8 @@
   <script>
   $(document).ready(function(){
     $("#createNewAdminUserBtn").on("click", function(){
-      var email = document.getElementById('email');
-      alert(email.toString());
+      var email = document.getElementById('email').valueOf();
+      alert(email);
     });
   });
   </script>
