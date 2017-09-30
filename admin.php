@@ -148,12 +148,14 @@
               </select>
             </div> 
 
+            <label>Adoption fee:</label>
             <div class="input-group">
               <span class="input-group-addon">Text</span>
                 <input id="petFee" type="text" class="form-control" name="petFee" placeholder="Enter fee to adopt">
             </div>
             <br>
-
+            
+            <label>Checks:</label>
             <div class="checkbox">
               <label><input type="checkbox" value="">Desexed</label>
             </div>           
