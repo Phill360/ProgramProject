@@ -13,6 +13,8 @@
 	}
 ?>
 
+<?php echo $row["postcode"] ; ?>
+
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
@@ -34,9 +36,6 @@
     $("#createNewAdminUserBtn").on("click", function(){
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
-      
-      <p>Working</p>
-      
     });
   });
   
@@ -51,6 +50,8 @@
     <div class="h1_slackey">Paw Companions</div>
     <div class="h2_opensans">Administration</div>
   </div>
+  
+  <p></p>
 
   <div class="row">
     <div class="col-md-6">
