@@ -87,7 +87,8 @@
             </div>
             <br>
             
-            <div>
+            <!-- Upload image -->
+          
               <label>Image:</label>
               <br>
               <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
@@ -110,8 +111,9 @@
                 </div>
               </div>
               <div id="message"></div>
-            </div>
             
+            
+            <!-- Gender selection -->
             <div class="form-group">
               <label for="age">Gender:</label>
               <select class="form-control" id="age">
@@ -120,11 +122,13 @@
               </select>
             </div>
             
+            <!-- Pet description -->
             <div class="form-group">
               <label for="comment">Description:</label>
                 <textarea class="form-control" rows="5" id="petDescription"></textarea>
             </div>           
 
+            <!-- Age selection -->
             <div class="form-group">
               <label for="age">Age:</label>
               <select class="form-control" id="age">
@@ -148,6 +152,7 @@
               </select>
             </div> 
 
+            <!-- Enter adoption fee -->
             <label>Adoption fee:</label>
             <div class="input-group">
               <span class="input-group-addon">Text</span>
@@ -155,7 +160,8 @@
             </div>
             <br>
             
-            <label>Checks:</label>
+            <!-- Checkboxes for health check -->
+            <label>Health checks:</label>
             <div class="checkbox">
               <label><input type="checkbox" value="">Desexed</label>
             </div>           
