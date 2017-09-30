@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="upload-image.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -85,33 +87,31 @@
             </div>
             <br>
             
-            
             <div>
-            <label>Image:</label>
-            <br>
-            <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
-            <div id="image-preview-div" style="display: none">
-            <label for="exampleInputFile">Selected image:</label>
-            <br>
-            <img id="preview-img" src="noimage">
-            </div>
-            <div class="form-group">
-            <input type="file" name="file" id="file" required>
-            </div>
-            <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
-            </form>
-            <br>
-            <div class="alert alert-info" id="loading" style="display: none;" role="alert">
-            Uploading image...
-            <div class="progress">
-            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-            </div>
-            </div>
-            </div>
-            <div id="message"></div>
+              <label>Image:</label>
+              <br>
+              <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
+                <div id="image-preview-div" style="display: none">
+                  <label for="exampleInputFile">Selected image:</label>
+                  <br>
+                  <img id="preview-img" src="noimage">
+                </div>
+                <div class="form-group">
+                  <input type="file" name="file" id="file" required>
+                </div>
+                <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
+              </form>
+              <br>
+              <div class="alert alert-info" id="loading" style="display: none;" role="alert">
+                Uploading image...
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                  </div>
+                </div>
+              </div>
+              <div id="message"></div>
             </div>
             
-
             <div class="form-group">
               <label for="age">Gender:</label>
               <select class="form-control" id="age">
