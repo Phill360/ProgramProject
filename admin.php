@@ -13,7 +13,6 @@
 	}
 ?>
 
-<?php echo $row["postcode"] ; ?>
 
 <!DOCTYPE html PUBLIC>
 <html lang="en">
@@ -51,7 +50,27 @@
     <div class="h2_opensans">Administration</div>
   </div>
   
-  <p></p>
+<table >
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Postcode</th>
+			</tr>
+			<?php
+				// 3. returned data
+				while($row = mysqli_fetch_assoc($result)) {
+			?>
+			<tr>
+				<td><?php echo $row["first_name"] . " ";
+				echo $row["last_name"]; ?>	</td>
+				<td><?php echo $row["email"] ; ?>	</td>
+				<td><?php echo $row["postcode"] ; ?>	</td>
+			</tr>
+			<?php
+				}
+			?>
+			
+		</table>
 
   <div class="row">
     <div class="col-md-6">
