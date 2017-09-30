@@ -8,14 +8,14 @@ body {
 }
 
 /* Colour for h1 headings: #ec971f */
-slackey {
+.slackey {
     color: red;
     text-align: left;
 }
 
 h2.opensans {
   font-family: 'Open Sans', sans-serif;
-  color: #000000;
+  color: red;
   font-size: 200%;
 }
 
