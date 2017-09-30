@@ -9,7 +9,9 @@ body {
 
 /* Colour for h1 headings: #ec971f */
 .slackey {
-    color: orange;
+    font-family: 'Slackey', cursive;
+    color: #ec971f;
+    font-size: 600%;
     text-align: left;
 }
 
