@@ -19,7 +19,8 @@
   <script>
   $(document).ready(function(){
     $("#createNewAdminUserBtn").on("click", function(){
-
+      var email = document.getElementById('email');
+      alert(email);
     });
   });
   </script>
@@ -33,10 +34,6 @@
     <div class="h1_slackey">Paw Companions</div>
     <div class="h2_opensans">Administration</div>
   </div>
-  
-  <?php
-  echo "My first PHP script!";
-  ?>
 
   <div class="row">
     <div class="col-md-6">
