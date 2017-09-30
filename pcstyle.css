@@ -3,10 +3,10 @@ body {
 }
 
 
-
+/* Colour for h1 headings: #ec971f */
 h1 {
-  font-family: "Slackey", cursive;
-  color: #ec971f;
+  font-family: 'Slackey', cursive;
+  color: blue;
   font-size: 600%;
 }
 
@@ -20,11 +20,6 @@ h3.opensans {
   font-family: 'Open Sans', sans-serif;
   color: #000000;
   font-size: 150%;
-}
-
-p.slackey {
-  font-family: 'Slackey', cursive;
-  color: #000000;
 }
 
 p.opensans {
