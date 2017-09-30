@@ -20,7 +20,24 @@
   $(document).ready(function(){
     $("#createNewAdminUserBtn").on("click", function(){
       var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
       alert(email);
+      
+      var dataString = 'Name=' + email + '&Email=' + email + '&Postcode=' + password;
+      alert(dataString);
+      
+      $.ajax({
+      type: "POST",
+      url: "ajaxsubmit.php",
+      data: dataString,
+      cache: false,
+      success: function(html) {
+      alert(html);
+      }
+      });
+      
+      
+      
     });
   });
   </script>
