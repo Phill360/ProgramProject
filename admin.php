@@ -17,8 +17,10 @@
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
   <script>
-  $("p").click(function(){
-    $(this).hide();
+  $(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
 });
   </script>
   
