@@ -20,7 +20,7 @@
   $(document).ready(function(){
     $("#createNewAdminUserBtn").on("click", function(){
       var email = document.getElementById('email');
-      alert(email);
+      alert(email.html());
     });
   });
   </script>
