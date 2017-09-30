@@ -30,7 +30,7 @@
           <form>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
             <div class="input-group">
@@ -45,6 +45,21 @@
           </form>
         </div>
       </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><div class="h3_opensans">Remove an admin user</div></div>
+        <div class="panel-body">
+          <form>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary">Remove</button>
+          </form>
+        </div>
+      </div>  
+    </div>
 
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Reset your password</div></div>
