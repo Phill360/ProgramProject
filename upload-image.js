@@ -19,7 +19,7 @@ $(document).ready(function (e) {
 
   var maxsize = 500 * 500; // ? KB
 
-  $('#max-size').html((maxsize/500).toFixed(2));
+  $('#max-size').html((maxsize/1024).toFixed(2));
 
   $('#upload-image-form').on('submit', function(e) {
 

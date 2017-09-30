@@ -88,7 +88,6 @@
             <br>
             
             <!-- Upload image -->
-          
             <label>Image:</label>
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
