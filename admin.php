@@ -87,7 +87,7 @@
             
             
             <div>
-            <label>Upload an image:</label>
+            <label>Image:</label>
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
             <div id="image-preview-div" style="display: none">
