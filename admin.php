@@ -59,7 +59,6 @@
           </form>
         </div>
       </div>  
-    </div>
 
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Reset your password</div></div>
