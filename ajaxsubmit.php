@@ -21,7 +21,7 @@ echo $a_last_name;
 
 $db = mysql_select_db($dbname, $connection); // Selecting Database
 if (isset($_POST['Name'])) {
-$query = mysql_query("insert into form_element(name, Email, Postcode) values ('$a_last_name', '$a_first_name', '$a_email', '$a_postcode')"); //Insert Query
+$query = mysql_query("insert into form_element(last_name, first_name, email, postcode) values ('$a_last_name', '$a_first_name', '$a_email', '$a_postcode')"); //Insert Query
 echo "Form Submitted succesfully";
 }
 mysql_close($connection); // Connection Closed
