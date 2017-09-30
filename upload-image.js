@@ -12,12 +12,12 @@ function selectImage(e) {
   $('#file').css("color", "green");
   $('#image-preview-div').css("display", "block");
   $('#preview-img').attr('src', e.target.result);
-  $('#preview-img').css('max-width', '550px');
+  $('#preview-img').css('max-width', '450px');
 }
 
 $(document).ready(function (e) {
 
-  var maxsize = 500 * 500; // ? KB
+  var maxsize = 500 * 500; // 244.14 KB
 
   $('#max-size').html((maxsize/1024).toFixed(2));
 
