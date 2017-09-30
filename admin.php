@@ -21,7 +21,6 @@
     $("#createNewAdminUserBtn").on("click", function(){
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
-      alert(email);
       
       var dataString = 'Name=' + email + '&Email=' + email + '&Postcode=' + password;
       alert(dataString);
