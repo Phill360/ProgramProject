@@ -12,6 +12,15 @@
   <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
+  
+  <script>
+  $(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+  });
+  </script>
+  
 </head>
 
 <body>
@@ -22,6 +31,7 @@
     <div class="h2_opensans">Administration</div>
   </div>
 
+  <p>Test</p>
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default">
@@ -41,20 +51,11 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button id="rectButton" type="submit" class="btn btn-primary">Submit</button>
+            <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
       
-      <script>
-      $('#rectButton').on('click', function (e) {
-
-<?php
-echo "My first PHP script!";
-?>
-
-      })
-      </script>
       
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Remove an admin user</div></div>
@@ -122,7 +123,7 @@ echo "My first PHP script!";
               <div class="form-group">
                 <input type="file" name="file" id="file" required>
               </div>
-              <button class="btn btn-small" id="upload-button" type="submit">Upload image</button> // Upload button
+              <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
             </form>
             <br>
             <div class="alert alert-info" id="loading" style="display: none;" role="alert">
