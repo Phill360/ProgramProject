@@ -15,10 +15,10 @@
   
   <script>
   $(document).ready(function(){
-    $("p").click(function(){
+    $("p").on("click", function(){
         $(this).hide();
     });
-  });
+});
   </script>
   
 </head>
