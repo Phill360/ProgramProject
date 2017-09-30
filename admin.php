@@ -1,19 +1,3 @@
-<!-- Connect AWS MYSQL Server -->
-<?php include_once('_php/connect.php');?>
-
-
-<?php
-	// 2. Perform Query
-	$query = "SELECT * ";
-	$query .= "FROM user ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
-?>
-
-
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
@@ -37,7 +21,6 @@
       var password = document.getElementById('password').value;
     });
   });
-  
   </script>
   
 </head>
@@ -49,30 +32,10 @@
     <div class="h1_slackey">Paw Companions</div>
     <div class="h2_opensans">Administration</div>
   </div>
-  
-<table >
-			<tr>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Postcode</th>
-			</tr>
-			<?php
-				// 3. returned data
-				while($row = mysqli_fetch_assoc($result)) {
-			?>
-			<tr>
-				<td><?php echo $row["first_name"] . " ";
-				echo $row["last_name"]; ?>	</td>
-				<td><?php echo $row["email"] ; ?>	</td>
-				<td><?php echo $row["postcode"] ; ?>	</td>
-			</tr>
-			<?php
-				}
-			?>
-			
-		</table>
 
   <div class="row">
+  
+  <!-- Create new admin user box -->
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Create new admin user</div></div>
@@ -96,7 +59,7 @@
         </div>
       </div>
       
-      
+      <!-- Remove an admin user box -->
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Remove an admin user</div></div>
         <div class="panel-body">
@@ -111,6 +74,7 @@
         </div>
       </div>  
 
+      <!-- Reset your password box box -->
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Reset your password</div></div>
         <div class="panel-body">
@@ -126,12 +90,14 @@
       </div>  
     </div>
 
+    <!-- Add a pet box -->
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Add a pet</div></div>
         <div class="panel-body">
           <form action="/action_page.php">
             
+            <!-- Select cat or dog -->
             <div class="form-group">
               <label for="age">Species:</label>
               <select class="form-control" id="species">
@@ -140,12 +106,14 @@
               </select>
             </div>
 
+            <!-- Enter pet ID -->
             <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="petID" type="text" class="form-control" name="petID" placeholder="Enter pet ID">
             </div>
             <br>
 
+            <!-- Enter pet name -->
             <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name">
@@ -245,6 +213,7 @@
         </div>
       </div>
       
+      <!-- Remove a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Remove a pet</div></div>
         <div class="panel-body">
