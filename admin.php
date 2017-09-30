@@ -18,10 +18,9 @@
   
   <script>
   $(document).ready(function(){
-    $("#submitAddNewUserButton").on("click", function(){
-    $(this).hide();
-    alert("You have clicked the button");
-});
+    $("#createNewAdminUserBtn").on("click", function(){
+
+    });
   });
   </script>
   
@@ -34,8 +33,11 @@
     <div class="h1_slackey">Paw Companions</div>
     <div class="h2_opensans">Administration</div>
   </div>
+  
+  <?php
+  echo "My first PHP script!";
+  ?>
 
-  <p>Test</p>
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default">
@@ -55,7 +57,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button id="submitAddNewUserButton" type="submit" class="btn btn-primary">Submit</button>
+            <button id="createNewAdminUserBtn" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
