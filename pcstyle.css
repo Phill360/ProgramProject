@@ -10,7 +10,7 @@ body {
 /* Colour for h1 headings: #ec971f */
 h1 {
     color: red;
-    text-align: center;
+    text-align: left;
 }
 
 h2.opensans {
