@@ -1,5 +1,11 @@
+/* git add .  */
+/* git commit -am " COMMENT ON CHANGES THAT WERE MADE "  */
+/* git push */
+/* git push heroku master */
+
+/* Background colour #999966 */
 body {
-    background-color: #999966;
+    background-color: blue;
 }
 
 
