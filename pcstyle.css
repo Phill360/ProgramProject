@@ -8,7 +8,7 @@ body {
 }
 
 /* Colour for h1 headings: #ec971f */
-h1 {
+h1.slackey {
     color: red;
     text-align: left;
 }
