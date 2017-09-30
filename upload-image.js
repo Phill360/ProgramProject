@@ -55,7 +55,7 @@ $(document).ready(function (e) {
     {
       noPreview();
 
-      $('#message').html('<div class="alert alert-warning" role="alert">Unvalid image format. Allowed formats: JPG, JPEG, PNG.</div>');
+      $('#message').html('<div class="alert alert-warning" role="alert">Invalid image format. Allowed formats: JPG, JPEG, PNG.</div>');
 
       return false;
     }

@@ -89,29 +89,28 @@
             
             <!-- Upload image -->
           
-              <label>Image:</label>
-              <br>
-              <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
-                <div id="image-preview-div" style="display: none">
-                  <label for="exampleInputFile">Selected image:</label>
-                  <br>
-                  <img id="preview-img" src="noimage">
-                </div>
-                <div class="form-group">
-                  <input type="file" name="file" id="file" required>
-                </div>
-                <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
-              </form>
-              <br>
-              <div class="alert alert-info" id="loading" style="display: none;" role="alert">
-                Uploading image...
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                  </div>
+            <label>Image:</label>
+            <br>
+            <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
+              <div id="image-preview-div" style="display: none">
+                <label for="exampleInputFile">Selected image:</label>
+                <br>
+                <img id="preview-img" src="noimage">
+              </div>
+              <div class="form-group">
+                <input type="file" name="file" id="file" required>
+              </div>
+              <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
+            </form>
+            <br>
+            <div class="alert alert-info" id="loading" style="display: none;" role="alert">
+              Uploading image...
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                 </div>
               </div>
-              <div id="message"></div>
-            
+            </div>
+            <div id="message"></div>
             
             <!-- Gender selection -->
             <div class="form-group">
