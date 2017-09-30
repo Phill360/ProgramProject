@@ -15,7 +15,7 @@
   
   <script>
   $("#submitButton").on("click", function(){
-    $(this).hide();
+    alert("jQuery works!");
 });
   </script>
   
