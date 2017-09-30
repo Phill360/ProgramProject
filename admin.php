@@ -19,7 +19,7 @@
   <script>
   $(document).ready(function(){
     $("#createNewAdminUserBtn").on("click", function(){
-      var email = document.getElementById('email').valueOf();
+      var email = document.getElementById('email').val();
       alert(email);
     });
   });
