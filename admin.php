@@ -18,8 +18,8 @@
   
   <script>
   $(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
+    $("#submitButton").mouseenter(function(){
+        alert("You entered p1!");
     });
 });
   </script>
