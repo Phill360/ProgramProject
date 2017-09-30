@@ -131,17 +131,7 @@
               <div class="form-group">
                 <input type="file" name="file" id="file" required>
               </div>
-              <button class="btn btn-small" id="upload-button" type="submit">Upload image</button>
             </form>
-            <br>
-            <div class="alert alert-info" id="loading" style="display: none;" role="alert">
-              Uploading image...
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                </div>
-              </div>
-            </div>
-            <div id="message"></div>
             
             <!-- Gender selection -->
             <div class="form-group">
