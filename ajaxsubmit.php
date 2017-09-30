@@ -17,7 +17,7 @@ $a_first_name = $_POST['first_name'];
 $a_email = $_POST['email'];
 $a_postcode = $_POST['postcode'];
 
-print($a_last_name);
+echo $a_last_name;
 
 $db = mysql_select_db($dbname, $connection); // Selecting Database
 if (isset($_POST['Name'])) {
