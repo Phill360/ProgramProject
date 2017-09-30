@@ -1,7 +1,8 @@
-/*global $*/
+
 
 <!DOCTYPE html PUBLIC>
 <html lang="en">
+<head>
   <title>Paw Companions Admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +18,8 @@
   
   <script>
   $("p").click(function(){
-    alert("jQuery works!");
-  });
+    $(this).hide();
+});
   </script>
   
 </head>
