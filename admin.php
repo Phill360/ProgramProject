@@ -22,7 +22,7 @@
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       
-      var dataString = 'Name=' + email + '&Email=' + email + '&Postcode=' + password;
+      var dataString = 'name=' + email + '&email=' + email + '&postcode=' + password;
       alert(dataString);
       
       $.ajax({
