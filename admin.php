@@ -16,8 +16,8 @@
 <div class="container">
 
   <div class="jumbotron">
-    <div class="slackey">Paw Companions</div>
-    <div class="opensans">Administration</div>
+    <div class="h1_slackey">Paw Companions</div>
+    <div class="h2_opensans">Administration</div>
   </div>
 
   <div class="row">
