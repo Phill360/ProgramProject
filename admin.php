@@ -88,7 +88,7 @@
             
             <div>
             <div class="p_opensans">Select a PNG or JPEG image, having maximum size <span id="max-size"></span> KB.</div>
-
+            <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
             <div id="image-preview-div" style="display: none">
             <label for="exampleInputFile">Selected image:</label>
