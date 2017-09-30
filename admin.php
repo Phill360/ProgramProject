@@ -84,6 +84,8 @@
                 <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name">
             </div>
             <br>
+            
+            <input id="input-b1" name="input-b1" type="file" class="file">
 
             <div class="form-group">
               <label for="age">Gender:</label>
