@@ -18,10 +18,11 @@
   
   <script>
   $(document).ready(function(){
-    $("#submitButton").mouseenter(function(){
-        alert("You entered p1!");
-    });
+    $("#submitAddNewUserButton").on("click", function(){
+    $(this).hide();
+    alert("You have clicked the button");
 });
+  });
   </script>
   
 </head>
@@ -54,7 +55,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+            <button id="submitAddNewUserButton" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
