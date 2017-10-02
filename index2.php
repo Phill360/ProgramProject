@@ -29,7 +29,7 @@
 <?php 
   if ($status == 'logged_in')
   {?>
-    <div><?php include 'start.php' ?></div>
+    <div><?php include 'admin_user.php' ?></div>
 <?php }
   else
   {?>
