@@ -2,7 +2,7 @@
 	require_once('common.php');
 	$status = checkUser();
 	
-	if (isset($_POST['submitBtn']))
+	if (isset($_POST['signInBtn']))
   {
 		// Get user input
 		$username  = isset($_POST['username']) ? $_POST['username'] : '';
@@ -73,7 +73,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button name="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+            <button name="signInBtn" type="submit" class="btn btn-primary">Sign in</button>
           </form>
           
         </div>
