@@ -14,6 +14,14 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
+  <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+  </script>
   
   <script>
   $(document).ready(function(){
@@ -49,6 +57,8 @@
       <button id="signOutBtn" type="button" class="btn btn-primary pull-right">Sign out</button>
     </div>
   </div>
+  
+  <a href="#" onclick="signOut();">Sign out</a>
 
   <div class="row">
   
