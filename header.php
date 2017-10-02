@@ -8,7 +8,9 @@
 	if (isset($_POST['signOutBtn']))
   {
 		// Get user input
-		logoutUser();
+		$result = logoutUser();
+		echo($result);
+		
   }
 ?>
 </head>
