@@ -33,7 +33,8 @@
 <?php }
   else
   {?>
-    <div><?php include 'admin_user.php' ?></div>
+    <div><?php include 'start.php' ?></div>
 <?php } ?>    
+
 </body>
 </html>
