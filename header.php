@@ -5,14 +5,11 @@
 	require_once('common.php');
 	$status = checkUser();
 	
-	if (isset($_POST['signOutBtn']))
-  {
-		// Get user input
-		logoutUser();
-		header('Location: index2.php');
-		
+	if (isset($_GET['signOutBtn'])) {
+    logoutUser();
   }
 ?>
+
 </head>
 
 <body>
@@ -32,7 +29,7 @@
       }
       else
       {?>
-        <button name="signOutBtn" type="button" class="btn btn-primary pull-right">Sign out</button>
+        <button id="signOutBtn" type="button" class="btn btn-primary pull-right">Sign out</button>
       <?php
       }?>
         
