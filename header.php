@@ -1,6 +1,4 @@
 <?php
-	require_once('common.php');
-	$status = checkUser();
 	echo($status);
 	
 	if (isset($_POST['signOutBtn']))
@@ -13,19 +11,6 @@
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
-  <?php
-	require_once('common.php');
-	$status = checkUser();
-  ?>
-
-  <script>
-$(document).ready(function() {
-   $('#signOutBtn').on('click', function() {
-      //
-   });
-});
-  </script>
-
 </head>
 
 <body>
