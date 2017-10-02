@@ -75,17 +75,12 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button name="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+            <button name="submitBttn" type="submit" class="btn btn-primary">Submit</button>
           </form>
           
           
           
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
-            
-            E-mail: <input type="text" name="username"><br>
-            Password: <input type="text" name="password"><br>
-            <input type="submit" name="submitBtn" value="Sign in"></input>
-          </form>
+          
           
         </div>
         <div class="modal-footer">
