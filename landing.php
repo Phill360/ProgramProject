@@ -32,9 +32,12 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12" style="background-color:lavender;">Test</div>
+    <div class="col-sm-12" style="background-color:lavender;">
       <div class="panel panel-default">
+        <div class="panel-body">
+        </div>
       </div>
+    </div>
   </div>
 </div>
 </body>
