@@ -1,3 +1,14 @@
+<?php
+	require_once('common.php');
+	$status = checkUser();
+	
+	if (isset($_POST['signOutBtn']))
+  {
+		// Get user input
+		logoutUser();
+  }
+?>
+
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
