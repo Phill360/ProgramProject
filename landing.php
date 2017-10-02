@@ -24,7 +24,7 @@
 <div class="container">
 
   <div class="jumbotron">
-    <h1 class="display-1">Paw Companions</h1>
+    <div class="h1_slackey"><div class="textHuge">Paw Companions</div></div>
     <div class="btn-toolbar">
       <button type="button" class="btn btn-primary pull-right">Sign in</button>
       <button type="button" class="btn btn-primary pull-right">Register</button>
