@@ -50,7 +50,7 @@
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           
-          <?php $status = 'success' ?>
+          <?php $status = 'logged_in' ?>
           
         </div>
         <div class="modal-footer">
