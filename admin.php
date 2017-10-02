@@ -31,6 +31,9 @@
   <div class="jumbotron">
     <div class="h1_slackey"><div class="textHuge">Paw Companions</div></div>
     <div class="h2_opensans"><div class="textLarge">Administration</div></div>
+    <div class="btn-toolbar">
+      <button type="button" class="btn btn-primary pull-right">Sign out</button>
+    </div>
   </div>
 
   <div class="row">
