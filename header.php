@@ -1,6 +1,7 @@
 <?php
 	require_once('common.php');
 	$status = checkUser();
+	echo($status);
 	
 	if (isset($_POST['signOutBtn']))
   {
@@ -20,7 +21,7 @@
   <script>
 $(document).ready(function() {
    $('#signOutBtn').on('click', function() {
-      alert("You clicked me!");
+      //
    });
 });
   </script>
