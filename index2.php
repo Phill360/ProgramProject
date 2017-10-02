@@ -58,6 +58,7 @@
         </div>
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <br>
           
           
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
@@ -74,7 +75,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button id="submitBttn" type="submit" class="btn btn-primary">Submit</button>
+            <button name="submitBttn" type="submit" class="btn btn-primary">Submit</button>
           </form>
           
           
