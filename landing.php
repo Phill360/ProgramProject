@@ -25,8 +25,8 @@
 
   <div class="jumbotron">
     <div class="h1_slackey">Paw Companions</div>
-    <button type="button" class="btn btn-primary">Register</button>
-    <button type="button" class="btn btn-primary">Sign in</button>
+    <button type="button" class="btn btn-primary float-right">Register</button>
+    <button type="button" class="btn btn-primary float-right">Sign in</button>
   </div>
 
   <div class="row">
