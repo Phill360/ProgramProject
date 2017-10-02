@@ -32,7 +32,7 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12" style="background-color:lavender;">
+    <div class="col-sm-12">
       <div class="panel panel-default">
         <div class="panel-body">
           <img class="img-responsive" src="media/companions.jpg" alt="Image of dog snoozing on owner's lap">

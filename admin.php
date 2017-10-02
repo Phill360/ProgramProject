@@ -29,8 +29,8 @@
 <div class="container">
 
   <div class="jumbotron">
-    <div class="h1_slackey">Paw Companions</div>
-    <div class="h2_opensans">Administration</div>
+    <div class="h1_slackey"><div class="textHuge">Paw Companions</div></div>
+    <div class="h2_opensans"><div class="textLarge">Administration</div></div>
   </div>
 
   <div class="row">
@@ -38,7 +38,9 @@
   <!-- Create new admin user box -->
     <div class="col-sm-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><div class="h3_opensans">Create new admin user</div></div>
+        <div class="panel-heading">
+          <div class="h3_opensans">Create new admin user</div>
+        </div>
         <div class="panel-body">
           <form>
             <div class="input-group">
@@ -61,7 +63,9 @@
       
       <!-- Remove an admin user box -->
       <div class="panel panel-default">
-        <div class="panel-heading"><div class="h3_opensans">Remove an admin user</div></div>
+        <div class="panel-heading">
+          <div class="h3_opensans">Remove an admin user</div>
+        </div>
         <div class="panel-body">
           <form>
             <div class="input-group">
