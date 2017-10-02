@@ -1,7 +1,16 @@
 <?php
 	require_once('common.php');
 	$status = checkUser();
-	echo($status)
+	
+	if (isset($_POST['submitBtn']))
+  {
+		// Get user input
+		$username  = isset($_POST['username']) ? $_POST['username'] : '';
+		$password = isset($_POST['password']) ? $_POST['password'] : '';
+        
+		// Try to register the user
+		$result = loginUser($username,$password);
+  }
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -53,10 +62,10 @@ Your password is: <?php echo $_POST["password"]; ?>
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+          <form action=<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
             E-mail: <input type="text" name="username"><br>
             Password: <input type="text" name="password"><br>
-            <input type="submit">
+            <input type="submit" name="submitBtn" value="Sign in"></input>
           </form>
           
         </div>
