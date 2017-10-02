@@ -39,7 +39,7 @@
 <?php 
   if ($status == 'logged_in')
   {?>
-    <div><?php include 'admin_user.php' ?></div>
+    <div><?php include 'search.php' ?></div>
 <?php }
   else
   {?>
@@ -59,8 +59,6 @@
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           <br>
-          
-          
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -77,10 +75,6 @@
             </div>
             <button name="submitBtn" type="submit" class="btn btn-primary">Submit</button>
           </form>
-          
-          
-          
-          
           
         </div>
         <div class="modal-footer">
