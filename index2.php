@@ -9,7 +9,15 @@
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
 
 		// Try to register the user
+		alert("You are trying to sign in");
 		$result = loginUser($username,$password);
+  }
+  
+  if (isset($_POST['signOutBtn']))
+  {
+		// Get user input
+		alert("You are trying to sign out");
+		logoutUser();
   }
 ?>
 
