@@ -1,11 +1,7 @@
 <?php
 	echo($status);
 	
-	if (isset($_POST['signOutBtn']))
-  {
-		// Get user input
-		logoutUser();
-  }
+	
 ?>
 
 <!DOCTYPE html PUBLIC>
