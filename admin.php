@@ -50,8 +50,6 @@
       <button id="signOutBtn" type="button" class="btn btn-primary pull-right">Sign out</button>
     </div>
   </div>
-
-
   
   <div class="row">
   <!-- Create new admin user box -->
