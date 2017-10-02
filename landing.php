@@ -25,7 +25,7 @@
 
   <div class="jumbotron">
     <div class="h1_slackey"><div class="textHuge">Paw Companions</div></div>
-    <div class="h2_opensans"><div class="textxxLarge">Find your true companion..</div></div>
+    <div class="h2_opensans"><div class="textxxLarge tocenter">Find your true companion..</div></div>
     <div class="btn-toolbar">
       <button type="button" class="btn btn-primary pull-right">Sign in</button>
       <button type="button" class="btn btn-primary pull-right">Register</button>
