@@ -9,16 +9,22 @@ body {
 
 .slackey {
     font-family: 'Slackey', sans-serif;
-    color: #ec971f;
 }
 
 .opensans {
   font-family: 'Open Sans', sans-serif;
-  color: #000000;
 }
 
 .tocenter {
     margin: 0 auto;
+}
+
+.orange {
+  color: #ec971f;
+}
+
+.black {
+  color: #000000;
 }
 
 /* Large desktops and laptops */
