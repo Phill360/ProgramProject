@@ -99,7 +99,7 @@
       if ($username == super)
       {
         $_SESSION['validUser'] = true;
-        header('Location: admin.php');
+        header('Location: search.php');
       }
       else
       {
