@@ -27,9 +27,8 @@
       else
       {?>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signOutform">
-          <div class="input-group">
-            <button id="signOutBtn" type="button" class="btn btn-primary pull-right" onclick="signOut()">Sign out</button>
-          </div>
+            <button name="signOutBtn" type="submit" class="btn btn-primary pull-right">Sign out</button>
+            <button name="signInBtn" type="submit" class="btn btn-primary">Sign in</button>
         </form>
       <?php
       }?>
