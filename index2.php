@@ -27,8 +27,8 @@
 <body>
 <div><?php include 'header.php' ?></div>
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
+Welcome <?php echo $_POST["username"]; ?><br>
+Your password is: <?php echo $_POST["password"]; ?>
 
 <?php 
   if ($status == 'logged_in')
