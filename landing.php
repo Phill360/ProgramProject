@@ -14,6 +14,9 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
+  
   <script>
 
   </script>
@@ -54,6 +57,7 @@
         </div>
         <div class="modal-body">
           <p>Some text in the modal.</p>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -62,7 +66,7 @@
     </div>
   </div>
   
-  <!-- Sign In Modal -->
+  <!-- Register Modal -->
   <div id="registerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -81,9 +85,6 @@
       </div>
     </div>
   </div>
-</div>
-  
-  
 </div>
 
 </body>
