@@ -14,6 +14,20 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
+  
+  <script>
+  $(document).ready(function(){
+    $("#signOutBtn").on("click", function(){
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    });
+  });
+  </script>
+  
+  <a href="#" onclick="signOut();">Sign out</a>
+  
   <script>
   $(document).ready(function(){
     $("#createNewAdminUserBtn").on("click", function(){
@@ -32,7 +46,7 @@
     <div class="slackey"><div class="orange"><div class="textHuge">Paw Companions</div></div></div>
     <div class="slackey"><div class="textLarge">Administration</div></div>
     <div class="btn-toolbar">
-      <button type="button" class="btn btn-primary pull-right">Sign out</button>
+      <button id="signOutBtn" type="button" class="btn btn-primary pull-right">Sign out</button>
     </div>
   </div>
 
