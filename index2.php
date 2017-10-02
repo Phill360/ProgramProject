@@ -1,6 +1,7 @@
 <?php
 	require_once('common.php');
 	$status = checkUser();
+	echo($status);
 	
 	if (isset($_POST['submitBtn']))
   {
