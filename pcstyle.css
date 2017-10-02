@@ -27,6 +27,10 @@ body {
   color: #000000;
 }
 
+.tocenter {
+    margin: 0 auto;
+}
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
 
