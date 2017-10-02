@@ -28,7 +28,7 @@
     <div class="slackey"><div class="black"><div class="textxLarge">Find your true companion</div></div></div>
     <div class="btn-toolbar">
       <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#signInModal">Sign in</button>
-      <button type="button" class="btn btn-primary pull-right">Register</button>
+      <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#registerModal">Register</button>
     </div>
   </div>
 
