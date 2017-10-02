@@ -7,9 +7,11 @@
   ?>
 
   <script>
-  $('#signOutBtn').on('click', function (e) {
-    alert("You clicked me!");
-  })
+$(document).ready(function() {
+   $('#signoutBtn').on('click', function() {
+      alert("You clicked me!");
+   });
+});
   </script>
 
 </head>
