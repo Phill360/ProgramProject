@@ -36,7 +36,7 @@
   <div class="row">
   
   <!-- Create new admin user box -->
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Create new admin user</div></div>
         <div class="panel-body">
@@ -91,7 +91,7 @@
     </div>
 
     <!-- Add a pet box -->
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading"><div class="h3_opensans">Add a pet</div></div>
         <div class="panel-body">
