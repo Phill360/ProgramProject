@@ -75,7 +75,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <button name="submitBttn" type="submit" class="btn btn-primary">Submit</button>
+            <button name="submitBtn" type="submit" class="btn btn-primary">Submit</button>
           </form>
           
           
