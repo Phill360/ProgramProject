@@ -15,14 +15,7 @@
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
 
   
-  <script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      alert(console.log('User signed out.'));
-    });
-  }
-  </script>
+  
   
   <script>
   $(document).ready(function(){
@@ -58,7 +51,7 @@
     </div>
   </div>
 
-  <a href="#" onclick="signOut();">Sign out</a>
+
   
   <div class="row">
   <!-- Create new admin user box -->
