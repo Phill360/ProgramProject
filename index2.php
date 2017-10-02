@@ -1,9 +1,8 @@
 <?php
 	require_once('common.php');
 	$status = checkUser();
-	echo($status);
 	
-	if (isset($_POST['submitBtn']))
+	if (isset($_POST['submitBttn']))
   {
 		// Get user input
 		$username  = isset($_POST['username']) ? $_POST['username'] : '';
@@ -11,7 +10,6 @@
 
 		// Try to register the user
 		$result = loginUser($username,$password);
-		echo($result);
   }
 ?>
 
@@ -61,7 +59,28 @@
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           
+          
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <br>
+            <div class="checkbox">
+              <label><input type="checkbox" name="remember">Remember me</label>
+            </div>
+            <button id="submitBttn" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          
+          
+          
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
+            
             E-mail: <input type="text" name="username"><br>
             Password: <input type="text" name="password"><br>
             <input type="submit" name="submitBtn" value="Sign in"></input>
