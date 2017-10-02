@@ -21,12 +21,19 @@
   
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
-  
-  
 </head>
 
 <body>
 <div><?php include 'header.php' ?></div>
-<div><?php include 'start.php' ?></div>
+
+<?php 
+  if ($status == 'logged_in')
+  {?>
+    <div><?php include 'start.php' ?></div>
+<?php }
+  else
+  {?>
+    <div><?php include 'start.php' ?></div>
+<?php } ?>    
 </body>
 </html>

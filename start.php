@@ -6,6 +6,7 @@
 <body>
 <div class="container">
 
+  <!-- Start page image -->
   <div class="row">
     <div class="col-sm-12">
       <div class="panel panel-default">
