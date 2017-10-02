@@ -35,6 +35,7 @@
     <div class="col-sm-12" style="background-color:lavender;">
       <div class="panel panel-default">
         <div class="panel-body">
+          <img src="media/companions.jpg" class="img-rounded" alt="Image of dog snoozing on owner's lap" width="889" height="500">
         </div>
       </div>
     </div>
