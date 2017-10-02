@@ -14,8 +14,7 @@
   
   if (isset($_POST['signOutBtn']))
   {
-		// Get user input
-		alert("You are trying to sign out");
+		// Sign out
 		logoutUser();
   }
 ?>
