@@ -7,22 +7,12 @@ body {
     background-color: #999966;
 }
 
-.h1_slackey {
+.slackey {
     font-family: 'Slackey', sans-serif;
     color: #ec971f;
 }
 
-.h2_opensans {
-  font-family: 'Open Sans', sans-serif;
-  color: #000000;
-}
-
-.h3_opensans {
-  font-family: 'Open Sans', sans-serif;
-  color: #000000;
-}
-
-.p_opensans {
+.opensans {
   font-family: 'Open Sans', sans-serif;
   color: #000000;
 }

@@ -29,8 +29,8 @@
 <div class="container">
 
   <div class="jumbotron">
-    <div class="h1_slackey"><div class="textHuge">Paw Companions</div></div>
-    <div class="h2_opensans"><div class="textLarge">Administration</div></div>
+    <div class="slackey"><div class="textHuge">Paw Companions</div></div>
+    <div class="opensans"><div class="textLarge">Administration</div></div>
     <div class="btn-toolbar">
       <button type="button" class="btn btn-primary pull-right">Sign out</button>
     </div>
@@ -42,7 +42,7 @@
     <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="h3_opensans">Create new admin user</div>
+          <div class="opensans">Create new admin user</div>
         </div>
         <div class="panel-body">
           <form>
@@ -67,7 +67,7 @@
       <!-- Remove an admin user box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="h3_opensans">Remove an admin user</div>
+          <div class="opensans">Remove an admin user</div>
         </div>
         <div class="panel-body">
           <form>
@@ -83,7 +83,9 @@
 
       <!-- Reset your password box box -->
       <div class="panel panel-default">
-        <div class="panel-heading"><div class="h3_opensans">Reset your password</div></div>
+        <div class="panel-heading">
+          <div class="opensans">Reset your password</div>
+        </div>
         <div class="panel-body">
           <form>
             <div class="input-group">
@@ -100,7 +102,9 @@
     <!-- Add a pet box -->
     <div class="col-sm-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><div class="h3_opensans">Add a pet</div></div>
+        <div class="panel-heading">
+          <div class="opensans">Add a pet</div>
+        </div>
         <div class="panel-body">
           <form action="/action_page.php">
             
@@ -212,7 +216,9 @@
       
       <!-- Remove a pet box -->
       <div class="panel panel-default">
-        <div class="panel-heading"><div class="h3_opensans">Remove a pet</div></div>
+        <div class="panel-heading">
+          <div class="opensans">Remove a pet</div>
+        </div>
         <div class="panel-body">
           <form>
             <div class="input-group">
