@@ -63,7 +63,7 @@ Your password is: <?php echo $_POST["password"]; ?>
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           
-          <form action=<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
             E-mail: <input type="text" name="username"><br>
             Password: <input type="text" name="password"><br>
             <input type="submit" name="submitBtn" value="Sign in"></input>
