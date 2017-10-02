@@ -16,6 +16,15 @@
 
   
   <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+  </script>
+  
+  <script>
   $(document).ready(function(){
     $("#signOutBtn").on("click", function(){
       alert("Clicked the sign out button")
@@ -26,8 +35,6 @@
     });
   });
   </script>
-  
-  <a href="#" onclick="signOut();">Sign out</a>
   
   <script>
   $(document).ready(function(){
@@ -51,8 +58,9 @@
     </div>
   </div>
 
-  <div class="row">
+  <a href="#" onclick="signOut();">Sign out</a>
   
+  <div class="row">
   <!-- Create new admin user box -->
     <div class="col-sm-6">
       <div class="panel panel-default">
