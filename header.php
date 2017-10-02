@@ -28,7 +28,6 @@
       {?>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signOutform">
             <button name="signOutBtn" type="submit" class="btn btn-primary pull-right">Sign out</button>
-            <button name="signInBtn" type="submit" class="btn btn-primary">Sign in</button>
         </form>
       <?php
       }?>
