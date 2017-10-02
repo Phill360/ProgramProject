@@ -8,8 +8,8 @@
 	if (isset($_POST['signOutBtn']))
   {
 		// Get user input
-		$result = logoutUser();
-		echo($result);
+		logoutUser();
+		header('Location: index2.php');
 		
   }
 ?>
