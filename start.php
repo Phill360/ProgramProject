@@ -30,8 +30,7 @@
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           
-          <?php $result = 'success' ?>
-          <?php echo $result  ?>
+          <?php $status = 'success' ?>
           
         </div>
         <div class="modal-footer">
