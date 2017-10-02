@@ -8,7 +8,7 @@
 
   <script>
 $(document).ready(function() {
-   $('#signoutBtn').on('click', function() {
+   $('#signOutBtn').on('click', function() {
       alert("You clicked me!");
    });
 });
