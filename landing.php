@@ -18,7 +18,12 @@
   <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
   
   <script>
-
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
   </script>
   
 </head>
@@ -34,6 +39,8 @@
       <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#registerModal">Register</button>
     </div>
   </div>
+  
+  <a href="#" onclick="signOut();">Sign out</a>
 
   <div class="row">
     <div class="col-sm-12">
