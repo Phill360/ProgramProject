@@ -29,6 +29,9 @@
         </div>
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          
+          <?php $result == 'success' ?>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
