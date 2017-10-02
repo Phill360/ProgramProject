@@ -8,11 +8,10 @@
 		// Get user input
 		$username  = isset($_POST['username']) ? $_POST['username'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
-		
-		echo($username);
-        
+
 		// Try to register the user
 		$result = loginUser($username,$password);
+		echo($result);
   }
 ?>
 
