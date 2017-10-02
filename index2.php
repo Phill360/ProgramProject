@@ -50,8 +50,11 @@
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           
-          <?php $status = 'logged_in' ?>
-          <?php echo($status) ?>
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            Name: <input type="text" name="username"><br>
+            E-mail: <input type="text" name="password"><br>
+            <input type="submit">
+          </form>
           
         </div>
         <div class="modal-footer">
