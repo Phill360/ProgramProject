@@ -7,10 +7,9 @@
   ?>
 
   <script>
-  function signOut() {
-    document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-    alert("You clicked me!")
-  }
+  $('#signOutBtn').on('click', function (e) {
+    alert("You clicked me!");
+  })
   </script>
 
 </head>
