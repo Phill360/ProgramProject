@@ -44,7 +44,9 @@ $(document).ready(function() {
       }
       else
       {?>
-        <button id="signOutBtn" type="button" class="btn btn-primary pull-right" onclick="signOut()">Sign out</button>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signOutform">
+          <button id="signOutBtn" type="button" class="btn btn-primary pull-right" onclick="signOut()">Sign out</button>
+        </form>
       <?php
       }?>
         
