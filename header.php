@@ -7,6 +7,7 @@
 	
 	if (isset($_GET['signOutBtn'])) {
     logoutUser();
+    header('Location: index2.php');
   }
 ?>
 
