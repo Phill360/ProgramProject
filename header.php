@@ -4,12 +4,14 @@
   <?php
 	require_once('common.php');
 	$status = checkUser();
-	
-	if (isset($_GET['signOutBtn'])) {
-    logoutUser();
-    header('Location: index2.php');
+  ?>
+
+  <script>
+  function signOut() {
+    document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+    alert("You clicked me!")
   }
-?>
+  </script>
 
 </head>
 
@@ -30,7 +32,7 @@
       }
       else
       {?>
-        <button id="signOutBtn" type="button" class="btn btn-primary pull-right">Sign out</button>
+        <button id="signOutBtn" type="button" class="btn btn-primary pull-right" onclick="signOut()">Sign out</button>
       <?php
       }?>
         
