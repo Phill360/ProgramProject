@@ -32,9 +32,6 @@
               <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
-            <div class="checkbox">
-              <label><input type="checkbox" name="remember">Remember me</label>
-            </div>
             <button id="createNewAdminUserBtn" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
