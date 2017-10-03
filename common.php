@@ -26,14 +26,17 @@
    	else
    	{
    	  $result = 'success';
+   	  echo("$result");
    	}
     }
 
-    // If everything is OK -> store user data
+    // If everything is okay -> store user data
     if ($result == 'success')
     {
       // Secure password string
    	$userpass = md5($password);
+   	
+   	echo("$username");
 
    	fwrite($fp, "$username\t$userpass\t$lastname\t$firstname\n");	  	  
     }
