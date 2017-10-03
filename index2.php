@@ -49,16 +49,6 @@
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
 		}
-		
-		if (isset($_POST['createNewAdminUserBtn']))
-    {
-		  echo "reaching1";
-		  // Get user input
-		  $email  = isset($_POST['email']) ? $_POST['email'] : '';
-		  console.log($email);
-
-		  normalToAdminUser($email);
-    }
   }
 ?>
 
