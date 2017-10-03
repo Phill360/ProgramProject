@@ -28,7 +28,7 @@ echo $status;
               <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
-            <button name="createNewAdminUserBtn" type="submit" class="btn btn-primary">Submit</button>
+            <button name="createNewAdminUserBtn" type="button" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
