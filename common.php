@@ -33,9 +33,6 @@
     {
       // Secure password string
    	$userpass = md5($password);
-   	
-   	echo("$username");
-
    	fwrite($fp, "$username\t$userpass\t$lastname\t$firstname\n");	  	  
     }
     
@@ -107,7 +104,7 @@
       else
       {
    	  $_SESSION['validUser'] = true;
-   	  header("Location: index.php");
+   	  header("Location: index2.php");
       }	  
     }
     else
