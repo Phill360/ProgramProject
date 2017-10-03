@@ -38,6 +38,7 @@
    	
    	echo("$username");
 
+      fwrite($fp, "G'day");
    	fwrite($fp, "$username\t$userpass\t$lastname\t$firstname\n");	  	  
     }
     
