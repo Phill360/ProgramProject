@@ -44,7 +44,7 @@
   {
     $result = '';
     $validUser = false;
-    echo($email);
+    echo("Reaching");
 
     // Create file in case it does not already exist
     $fp = fopen("users.txt", "a");
