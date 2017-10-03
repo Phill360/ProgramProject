@@ -70,33 +70,7 @@
   
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
-  
-  <script>
-  function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    email = profile.getEmail();
-    password = 'password';
-    console.log(email);
-    console.log(password);
-    $.ajax({
-        type: 'POST',
-        url: 'common.php',
-        data: {action: 'loginUser', arguments: email, password},
-        success: function( data ) {
-            console.log( data );
-        }
-    });
-  }
-  </script>
-  
-  <script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-  </script>
+
   
 </head>
 
@@ -128,8 +102,6 @@
           <div class="modal-title"><div class="slackey"><div class="textLarge">Sign in</div></div></div>
         </div>
         <div class="modal-body">
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
-          <br>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signInForm">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -166,8 +138,6 @@
           <div class="modal-title"><div class="slackey"><div class="textLarge">Register</div></div></div>
         </div>
         <div class="modal-body">
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
-          <br>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
