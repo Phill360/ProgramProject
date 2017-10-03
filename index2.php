@@ -43,7 +43,7 @@
 		else
 		{
 			// Try to register the user
-			$result = registerUser($firstname,$lastword,$username,$password);
+			$result = registerUser($firstname, $lastword, $username, $password);
 		}
    }
 ?>
@@ -135,12 +135,12 @@
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
-              <input id="firstName" type="text" class="form-control" name="firstName" placeholder="First name">
+              <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
             </div>
             <br>
             <div class="input-group">
               <span class="input-group-addon">Text</span>
-              <input id="lastName" type="text" class="form-control" name="lastName" placeholder="Last name">
+              <input id="lastname" type="text" class="form-control" name="lastname" placeholder="Last name">
             </div>
             <br>
             <div class="input-group">
