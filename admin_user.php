@@ -1,15 +1,18 @@
+<?php 
+  if (isset($_POST['createNewAdminUserBtn']))
+  {
+		// Get user input
+		$email  = isset($_POST['email']) ? $_POST['email'] : '';
+
+		// Try to register the user
+		$result = normalToAdminUser($email);
+  }
+
+?>
+
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
-  
-  <script>
-  $(document).ready(function(){
-    $("#createNewAdminUserBtn").on("click", function(){
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-    });
-  });
-  </script>
   
 </head>
 

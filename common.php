@@ -151,4 +151,26 @@
 	  
     return $usertype;
   }
+  
+  /* This function switches a user from normal to admin */
+  function normalToAdminUser($email)
+  {
+    $fp = fopen("users.txt","r");
+    rewind($fp);
+   	  
+    $line = file("users.txt");
+    $numberOfMembers = count($line);
+    
+    for ($i=0; $i<$numberOfMembers; $i++) 
+    {
+      $member = explode("\t", $line[$i]);
+   	
+   	if ($member[0] == $email)  
+   	{
+   	  // User exists, check password
+   	  $member[5] = 'admin';
+   	}
+    }
+    fclose($fp);
+  }
 ?>
