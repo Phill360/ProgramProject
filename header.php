@@ -26,7 +26,7 @@
       }
       else
       {?>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signOutform">
+        <form action="<?php logoutUser(); ?>" method="post" name="signOutform">
             <button name="signOutBtn" type="submit" class="btn btn-primary pull-right">Sign out</button>
         </form>
       <?php
