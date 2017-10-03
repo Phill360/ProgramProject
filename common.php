@@ -2,7 +2,7 @@
   session_start();
 
   /* This function registers a user */
-  function registerUser($firstname, $lastword, $username, $password)
+  function registerUser($firstname, $lastword, $email, $password)
   {
     $result = 'success';
 
@@ -16,7 +16,7 @@
     for ($i=0; $i<$numberOfMembers; $i++)
     {
       $member = explode("\t", $line[$i]);
-   	if ($member[0] == $username)
+   	if ($member[0] == $email)
    	{
         $result = "The selected user name is taken!";
         break;
@@ -32,7 +32,7 @@
     {
       // Secure password string
    	$userpass = md5($password);
-   	fwrite($fp, "$username\t$userpass\t$lastname\t$firstname\n");	  	  
+   	fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\n");	  	  
     }
     
     fclose($fp);
@@ -40,7 +40,7 @@
   }
 
   /* This function logs the user in */
-  function loginUser($username, $password)
+  function loginUser($email, $password)
   {
     $result = '';
     $validUser = false;
@@ -56,13 +56,13 @@
     $line = file("users.txt");
     $numberOfMembers = count($line);
 
-    /* Hardwire code for admin login with username and password both being super */
-    if ($username == "super")
+    /* Hardwire code for admin login with email and password both being super */
+    if ($email == "super")
     {
       if ($password == "super")
       {
         $validUser = true;
-   	  $_SESSION['userName'] = "super";
+   	  $_SESSION['email'] = "super";
       }
     }
    	  
@@ -70,13 +70,13 @@
     {
       $member = explode("\t", $line[$i]);
    	
-   	if ($member[0] == $username)  
+   	if ($member[0] == $email)  
    	{
    	  // User exists, check password
    	  if (trim($member[1]) == trim(md5($password)))
    	  {
    	    $validUser = true;
-   	  	 $_SESSION['userName'] = $username;
+   	  	 $_SESSION['email'] = $email;
    	  }
       
    	  break;
@@ -86,7 +86,7 @@
 
     if ($validUser != true) 
     {
-      $result = 'Invalid username or password!';
+      $result = 'Invalid email or password!';
     }
     else
     {
@@ -95,7 +95,7 @@
     
     if ($validUser == true) 
     {
-      if ($username == super)
+      if ($email == super)
       {
         $_SESSION['validUser'] = true;
         header('Location: index2.php');
@@ -118,7 +118,7 @@
   function logoutUser()
   {
     unset($_SESSION['validUser']);
-    unset($_SESSION['userName']);
+    unset($_SESSION['email']);
   }
 
   /* This function checks whether the user is logged in or not */

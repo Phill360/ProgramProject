@@ -5,11 +5,11 @@
 	if (isset($_POST['signInBtn']))
   {
 		// Get user input
-		$username  = isset($_POST['username']) ? $_POST['username'] : '';
+		$email  = isset($_POST['email']) ? $_POST['email'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
 
 		// Try to register the user
-		$result = loginUser($username,$password);
+		$result = loginUser($email,$password);
   }
   
   if (isset($_POST['registerBtn']))
@@ -17,14 +17,14 @@
 		// Get user input
 		$firstname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
 		$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
-		$username = isset($_POST['username']) ? $_POST['username'] : '';
+		$email = isset($_POST['email']) ? $_POST['email'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
 		
         /* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
  
 		
-		if(!preg_match($regexp, $username))
+		if(!preg_match($regexp, $email))
 		{       
 		   echo("Not a valid email address");
 		}
@@ -43,7 +43,7 @@
 		else
 		{
 			// Try to register the user
-			$result = registerUser($firstname, $lastword, $username, $password);
+			$result = registerUser($firstname, $lastword, $email, $password);
 		}
    }
 ?>
@@ -97,7 +97,7 @@
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signInForm">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="text" class="form-control" name="username" placeholder="Email">
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
             <div class="input-group">
@@ -145,7 +145,7 @@
             <br>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="text" class="form-control" name="username" placeholder="Email">
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
             <div class="input-group">
