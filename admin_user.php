@@ -43,7 +43,7 @@
       <!-- Remove an admin user box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Remove an admin user</div>
+          <div class="opensans">Demote admin user to normal user</div>
         </div>
         <div class="panel-body">
           <form>
