@@ -24,6 +24,7 @@
    	else
    	{
    	  $result = 'success';
+   	  echo $result;
    	}
     }
 
