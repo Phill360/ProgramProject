@@ -5,7 +5,6 @@
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
     $result = 'success';
-    echo $result;
 
     // Check user existance
     $fp = fopen("users.txt","a");
@@ -45,7 +44,7 @@
   {
     $result = '';
     $validUser = false;
-    echo "Hello";
+    echo $email;
 
     // Create file in case it does not already exist
     $fp = fopen("users.txt", "a");
