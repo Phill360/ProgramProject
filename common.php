@@ -159,7 +159,7 @@
   /* This function switches a user from normal to admin */
   function normalToAdminUser($email)
   {
-    echo "reaching2";
+
     $fp = fopen("users.txt","r");
     rewind($fp);
    	  
