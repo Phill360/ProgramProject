@@ -164,18 +164,29 @@
    	  
     $line = file("users.txt");
     $numberOfMembers = count($line);
-    echo $numberOfMembers;
     
     for ($i=0; $i<$numberOfMembers; $i++) 
     {
       $member = explode("\t", $line[$i]);
-      echo $member[0];
    	
    	if ($member[0] == $email)  
    	{
-   	  // User exists, check password
-   	  echo $member[5];
-   	  $member[5] = 'admin';
+   	  // User exists. First delete the line and replace it.
+   	  $email = $member[0];
+   	  $userpass = member[1];
+   	  $lastname = member[2];
+   	  $firstname = member[3];
+   	  $visits = member[4];
+   	  $usertype = member[5];
+   	  
+   	  $oldLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
+   	  
+   	  $usertype = "admin";
+   	  $newLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
+   	  
+   	  $contents = str_replace($newLine, '', $oldLine);
+   	  file_put_contents($fp, $contents);
+   	  
    	}
     }
     fclose($fp);
