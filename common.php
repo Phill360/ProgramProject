@@ -5,6 +5,7 @@
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
     $result = 'success';
+    echo $result;
 
     // Check user existance
     $fp = fopen("users.txt","a");
@@ -24,7 +25,6 @@
    	else
    	{
    	  $result = 'success';
-   	  echo $result;
    	}
     }
 
