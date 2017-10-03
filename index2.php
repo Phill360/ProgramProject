@@ -76,7 +76,7 @@
     var profile = googleUser.getBasicProfile();
     email = profile.getEmail();
     password = 'password';
-    jQuery.ajax({
+    $.ajax({
         type: 'post',
         url: 'common.php',
         data: {functionname: 'loginUser()', arguments: [email, password]},
