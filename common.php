@@ -174,11 +174,11 @@
    	{
    	  // User exists. First delete the line and replace it.
    	  $email = $member[0];
-   	  $userpass = member[1];
-   	  $lastname = member[2];
-   	  $firstname = member[3];
-   	  $visits = member[4];
-   	  $usertype = member[5];
+   	  $userpass = $member[1];
+   	  $lastname = $member[2];
+   	  $firstname = $member[3];
+   	  $visits = $member[4];
+   	  $usertype = $member[5];
    	  
    	  $oldLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
    	  echo $oldLine;
