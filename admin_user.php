@@ -1,4 +1,6 @@
-<?php 
+<?php
+echo $status;
+
   if (isset($_POST['createNewAdminUserBtn']))
     {
 		  // Get user input
@@ -23,6 +25,7 @@
           <div class="opensans">Promote normal user to admin user</div>
         </div>
         <div class="panel-body">
+          
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="newAdminUserForm">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
