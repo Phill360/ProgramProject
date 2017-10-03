@@ -76,7 +76,7 @@
 
      alert("Sign out!");
 
-})
+});
 </script>
 <script>
   
