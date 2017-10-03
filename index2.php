@@ -15,7 +15,7 @@
   if (isset($_POST['registerBtn']))
   {
 		// Get user input
-		$firatname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
+		$firstname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
 		$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
 		$username = isset($_POST['username']) ? $_POST['username'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
