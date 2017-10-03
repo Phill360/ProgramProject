@@ -57,7 +57,7 @@
 		  // Get user input
 
 		  $result = logoutUser();
-  }
+    }
   }
 ?>
 
