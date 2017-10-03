@@ -13,6 +13,7 @@
    	  
     $line = file("users.txt");
     $numberOfMembers = count($line);
+    echo($numberOfMembers);
 
     for ($i=0; $i<$numberOfMembers; $i++)
     {
