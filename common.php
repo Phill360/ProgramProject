@@ -2,7 +2,7 @@
   session_start();
 
   /* This function registers a user */
-  function registerUser($username,$password,$lastname,$firstname)
+  function registerUser($firstname, $lastword, $username, $password)
   {
     $result = 'success';
 

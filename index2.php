@@ -11,6 +11,41 @@
 		// Try to register the user
 		$result = loginUser($username,$password);
   }
+  
+  if (isset($_POST['registerBtn']))
+  {
+		// Get user input
+		$firatname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
+		$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
+		$username = isset($_POST['username']) ? $_POST['username'] : '';
+		$password = isset($_POST['password']) ? $_POST['password'] : '';
+		
+        /* Validate email address */
+		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
+ 
+		
+		if(!preg_match($regexp, $username))
+		{       
+		   echo("Not a valid email address");
+		}
+		else if($password == '')   
+		{
+			echo("No password entered");
+		}
+		else if($firstname == '')
+		{
+			echo("No first name entered");
+		}
+		else if($lastname == '')
+		{
+			echo("No last name entered");
+		}
+		else
+		{
+			// Try to register the user
+			$result = registerUser($firstname,$lastword,$username,$password);
+		}
+   }
 ?>
 
 <!DOCTYPE html PUBLIC>
