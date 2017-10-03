@@ -164,11 +164,12 @@
     for ($i=0; $i<$numberOfMembers; $i++) 
     {
       $member = explode("\t", $line[$i]);
+      console.log($member[0]);
    	
    	if ($member[0] == $email)  
    	{
    	  // User exists, check password
-   	  echo $member[5];
+   	  console.log($member[5]);
    	  $member[5] = 'admin';
    	}
     }
