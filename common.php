@@ -121,8 +121,9 @@
     unset($_SESSION['usertype']);
     unset($_SESSION['email']);
     
-    $_SESSION['validUser'] = false;
-    header('Location: index2.php');
+    $result = "logged_out";
+    
+    return $result;
   }
 
   /* This function checks whether the user is logged in or not */
