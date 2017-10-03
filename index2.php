@@ -50,6 +50,14 @@
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
 		}
    }
+   
+  if (isset($_POST['createNewAdminUserBtn']))
+  {
+		// Get user input
+		$email  = isset($_POST['email']) ? $_POST['email'] : '';
+
+		normalToAdminUser($email);
+  }
 ?>
 
 <!DOCTYPE html PUBLIC>

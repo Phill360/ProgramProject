@@ -1,12 +1,5 @@
 <?php 
-  if (isset($_POST['createNewAdminUserBtn']))
-  {
-		// Get user input
-		$email  = isset($_POST['email']) ? $_POST['email'] : '';
-
-		// Try to register the user
-		normalToAdminUser($email);
-  }
+  
 
 ?>
 
