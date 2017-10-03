@@ -2,7 +2,7 @@
   session_start();
 
   /* This function registers a user */
-  function registerUser($firstname, $lastword, $email, $password)
+  function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
     $result = 'success';
 
@@ -32,7 +32,7 @@
     {
       // Secure password string
    	$userpass = md5($password);
-   	fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\n");	  	  
+   	fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");	  	  
     }
     
     fclose($fp);
@@ -62,6 +62,7 @@
       if ($password == "super")
       {
         $validUser = true;
+        $usertype = "admin";
    	  $_SESSION['email'] = "super";
       }
     }
@@ -76,6 +77,7 @@
    	  if (trim($member[1]) == trim(md5($password)))
    	  {
    	    $validUser = true;
+   	    $usertype = $member[5];
    	  	 $_SESSION['email'] = $email;
    	  }
       
@@ -95,16 +97,9 @@
     
     if ($validUser == true) 
     {
-      if ($email == super)
-      {
-        $_SESSION['validUser'] = true;
-        header('Location: index2.php');
-      }
-      else
-      {
-   	  $_SESSION['validUser'] = true;
-   	  header("Location: index2.php");
-      }	  
+      $_SESSION['validUser'] = true;
+      $_SESSION['usertype'] = $usertype;
+      header('Location: index2.php');	  
     }
     else
     {
@@ -118,11 +113,12 @@
   function logoutUser()
   {
     unset($_SESSION['validUser']);
+    unset($_SESSION['usertype']);
     unset($_SESSION['email']);
   }
 
   /* This function checks whether the user is logged in or not */
-  function checkUser()
+  function checkStatus()
   {
     $status = '';
    	
@@ -136,5 +132,22 @@
     }
 	  
     return $status;
+  }
+  
+  /* This function checks whether the user is an admin user or a normal user */
+  function checkUserType()
+  {
+    $usertype = '';
+   	
+    if ($_SESSION['usertype'] == 'admin')
+    {
+      $usertype = 'admin';
+    }
+    else
+    {
+	   $usertype = 'normal';
+    }
+	  
+    return $usertype;
   }
 ?>

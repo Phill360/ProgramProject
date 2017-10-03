@@ -1,6 +1,7 @@
 <?php
 	require_once('common.php');
-	$status = checkUser();
+	$status = checkStatus();
+	$usertype = checkUserType();
 	
 	if (isset($_POST['signInBtn']))
   {
@@ -14,6 +15,9 @@
   
   if (isset($_POST['registerBtn']))
   {
+		$visits = 0;
+		$usertype = "normal";
+		
 		// Get user input
 		$firstname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
 		$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
@@ -43,7 +47,7 @@
 		else
 		{
 			// Try to register the user
-			$result = registerUser($firstname, $lastword, $email, $password);
+			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
 		}
    }
 ?>
@@ -72,10 +76,14 @@
 <div><?php include 'header.php' ?></div>
 
 <?php 
-  if ($status == 'logged_in')
+  if ($status == 'logged_in' && $usertype == 'admin')
   {?>
     <div><?php include 'admin_user.php' ?></div>
 <?php }
+  else if ($status == 'logged_in' && $usertype == 'normal')
+  {?>
+    <div><?php include 'search.php' ?></div>
+<?php } 
   else
   {?>
     <div><?php include 'start.php' ?></div>
