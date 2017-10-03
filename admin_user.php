@@ -57,7 +57,8 @@
             <button type="button" class="btn btn-primary">Remove</button>
           </form>
         </div>
-      </div>  
+      </div>
+    </div>
 
     <!-- Add a pet box -->
     <div class="col-sm-6">

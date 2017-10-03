@@ -1,7 +1,3 @@
-<?php
-	echo($status);
-?>
-
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
