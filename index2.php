@@ -55,7 +55,7 @@
 		if (isset($_POST['signOutBtn']))
     {
 		  // Get user input
-      echo("Reaching");
+		  console.log("reaching");
 		  $result = logoutUser();
     }
   }
