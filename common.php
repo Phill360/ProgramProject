@@ -168,6 +168,7 @@
    	if ($member[0] == $email)  
    	{
    	  // User exists, check password
+   	  echo $member[5];
    	  $member[5] = 'admin';
    	}
     }
