@@ -5,6 +5,7 @@
 		echo "reaching1";
 		// Get user input
 		$email  = isset($_POST['email']) ? $_POST['email'] : '';
+		console.log($email);
 
 		normalToAdminUser($email);
   }  
