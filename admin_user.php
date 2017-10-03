@@ -22,13 +22,12 @@
         <div class="panel-body">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-            </div>
-            <br>
-            <form action="<?php normalToAdminUser(); ?>" method="post" name="newAdminUserForm">
-              <button name="createNewAdminUserBtn" type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>  
+            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+          </div>
+          <br>
+          <form action="<?php normalToAdminUser(); ?>" method="post" name="newAdminUserForm">
+            <button name="createNewAdminUserBtn" type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
       
