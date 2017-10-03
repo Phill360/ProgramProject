@@ -77,9 +77,9 @@
     email = profile.getEmail();
     password = 'password';
     $.ajax({
-        type: 'post',
+        type: 'POST',
         url: 'common.php',
-        data: {functionname: 'loginUser', arguments: [email, password]},
+        data: {action: 'loginUser', arguments: email, password},
         success: function( data ) {
             console.log( data );
         }
