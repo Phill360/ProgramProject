@@ -51,6 +51,13 @@
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
 		}
+		
+		if (isset($_POST['signOutBtn']))
+    {
+		  // Get user input
+
+		  $result = logoutUser();
+  }
   }
 ?>
 
