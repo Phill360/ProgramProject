@@ -120,6 +120,8 @@
     unset($_SESSION['validUser']);
     unset($_SESSION['usertype']);
     unset($_SESSION['email']);
+    
+    $_SESSION['validUser'] = false;
   }
 
   /* This function checks whether the user is logged in or not */
