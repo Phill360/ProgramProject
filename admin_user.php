@@ -23,7 +23,7 @@
     <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Create new admin user</div>
+          <div class="opensans">Promote normal user to admin user</div>
         </div>
         <div class="panel-body">
           <form>
