@@ -84,6 +84,7 @@
    	  break;
    	}
     }
+    
     fclose($fp);
 
     if ($validUser != true) 
