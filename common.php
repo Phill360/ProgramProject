@@ -82,7 +82,7 @@
    	  {
    	    $validUser = true;
    	    $usertype = $member[5];
-   	  	 $_SESSION['email'] = $email;
+   	  	$_SESSION['email'] = $email;
    	  }
       
    	  break;
@@ -122,6 +122,7 @@
     unset($_SESSION['email']);
     
     $_SESSION['validUser'] = false;
+    header('Location: index2.php');
   }
 
   /* This function checks whether the user is logged in or not */
