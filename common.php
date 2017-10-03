@@ -193,5 +193,6 @@
    	}
     }
     fclose($fp);
+    $result = 'success';
   }
 ?>

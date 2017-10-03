@@ -6,6 +6,7 @@
 
 		// Try to register the user
 		$result = normalToAdminUser($email);
+		echo $result;
   }
 
 ?>
