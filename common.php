@@ -164,16 +164,17 @@
    	  
     $line = file("users.txt");
     $numberOfMembers = count($line);
+    echo $numberOfMembers;
     
     for ($i=0; $i<$numberOfMembers; $i++) 
     {
       $member = explode("\t", $line[$i]);
-      console.log($member[0]);
+      echo $member[0];
    	
    	if ($member[0] == $email)  
    	{
    	  // User exists, check password
-   	  console.log($member[5]);
+   	  echo $member[5];
    	  $member[5] = 'admin';
    	}
     }
