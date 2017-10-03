@@ -5,8 +5,7 @@
 		$email  = isset($_POST['email']) ? $_POST['email'] : '';
 
 		// Try to register the user
-		$result = normalToAdminUser($email);
-		echo $result;
+		normalToAdminUser($email);
   }
 
 ?>

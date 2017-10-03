@@ -193,6 +193,5 @@
    	}
     }
     fclose($fp);
-    $result = 'success';
   }
 ?>
