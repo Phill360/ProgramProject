@@ -21,7 +21,7 @@
       else
       {?>
         <form action="<?php logoutUser(); ?>" method="post" name="signOutform">
-            <button id="soBtn" name="signOutBtn" type="submit" class="btn btn-primary pull-right" onclick="signOutGoogle()>Sign out</button>
+            <button id="soBtn" name="signOutBtn" type="submit" class="btn btn-primary pull-right" onclick="signOutGoogle()">Sign out</button>
         </form>
       <?php
       }?>
