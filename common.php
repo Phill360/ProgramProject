@@ -180,6 +180,8 @@
    	  $usertype = member[5];
    	  
    	  $oldLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
+   	  echo $oldLine;
+   	  console.log($oldLine);
    	  
    	  $usertype = "admin";
    	  $newLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
