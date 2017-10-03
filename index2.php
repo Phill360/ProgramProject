@@ -76,6 +76,8 @@
     var profile = googleUser.getBasicProfile();
     email = profile.getEmail();
     password = 'password';
+    console.log(email);
+    console.log(password);
     $.ajax({
         type: 'POST',
         url: 'common.php',
