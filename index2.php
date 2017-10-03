@@ -79,7 +79,7 @@
     $.ajax({
         type: 'post',
         url: 'common.php',
-        data: {functionname: 'loginUser()', arguments: [email, password]},
+        data: {functionname: 'loginUser', arguments: [email, password]},
         success: function( data ) {
             console.log( data );
         }
