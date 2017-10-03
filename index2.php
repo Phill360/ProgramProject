@@ -11,12 +11,6 @@
 		// Try to register the user
 		$result = loginUser($username,$password);
   }
-  
-  if (isset($_POST['signOutBtn']))
-  {
-		// Sign out
-		logoutUser();
-  }
 ?>
 
 <!DOCTYPE html PUBLIC>
