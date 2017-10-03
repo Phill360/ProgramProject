@@ -59,7 +59,7 @@
         <div class="modal-body">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           <br>
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signInForm">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
               <input id="email" type="text" class="form-control" name="username" placeholder="Email">
@@ -95,7 +95,36 @@
           <div class="modal-title"><div class="slackey"><div class="textLarge">Register</div></div></div>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <br>
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
+            <div class="input-group">
+              <span class="input-group-addon">Text</span>
+              <input id="firstName" type="text" class="form-control" name="firstName" placeholder="First name">
+            </div>
+            <br>
+            <div class="input-group">
+              <span class="input-group-addon">Text</span>
+              <input id="lastName" type="text" class="form-control" name="lastName" placeholder="Last name">
+            </div>
+            <br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="username" placeholder="Email">
+            </div>
+            <br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <br>
+            <div class="checkbox">
+              <label><input type="checkbox" name="remember">Remember me</label>
+            </div>
+            <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
+          </form>
+          
+        </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

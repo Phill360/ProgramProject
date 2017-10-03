@@ -59,24 +59,6 @@
         </div>
       </div>  
 
-      <!-- Reset your password box box -->
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="opensans">Reset your password</div>
-        </div>
-        <div class="panel-body">
-          <form>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input id="password" type="password" class="form-control" name="password" placeholder="New password">
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-      </div>  
-    </div>
-
     <!-- Add a pet box -->
     <div class="col-sm-6">
       <div class="panel panel-default">
