@@ -72,13 +72,12 @@
   <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
   
   <script>
-  $('#soBtn').on('click', function (e) {
-
-     alert("Sign out!");
-
-});
-</script>
-<script>
+  function signOutGoogle() {
+    alert("Google sign out");
+}
+  </script>
+  
+  <script>
   
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
