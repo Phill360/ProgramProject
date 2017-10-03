@@ -2,6 +2,7 @@
 
   if (isset($_POST['createNewAdminUserBtn']))
   {
+		echo "reaching1";
 		// Get user input
 		$email  = isset($_POST['email']) ? $_POST['email'] : '';
 
