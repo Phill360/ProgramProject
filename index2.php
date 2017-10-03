@@ -118,7 +118,6 @@
             </div>
             <button name="signInBtn" type="submit" class="btn btn-primary">Sign in</button>
           </form>
-          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

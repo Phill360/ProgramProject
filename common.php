@@ -32,7 +32,10 @@
     {
       // Secure password string
    	$userpass = md5($password);
-   	fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");	  	  
+   	fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
+   	$_SESSION['validUser'] = true;
+      $_SESSION['usertype'] = $usertype;
+      header('Location: index2.php');
     }
     
     fclose($fp);
