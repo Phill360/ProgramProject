@@ -6,7 +6,7 @@
 		  $email  = isset($_POST['email']) ? $_POST['email'] : '';
 		  console.log($email);
 
-		  normalToAdminUser($email);
+		  $result = normalToAdminUser($email);
     }  
 
 ?>
