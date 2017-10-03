@@ -2,11 +2,7 @@
   if (isset($_POST['createNewAdminUserBtn']))
     {
 		  // Get user input
-		$email  = isset($_POST['email']) ? $_POST['email'] : '';
-		$password = isset($_POST['password']) ? $_POST['password'] : '';
-
-		// Try to register the user
-		$result = loginUser($email,$password);
+		echo "do something wonderful";
     }  
 
 ?>
