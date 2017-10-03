@@ -1,12 +1,12 @@
 <?php 
   if (isset($_POST['createNewAdminUserBtn']))
     {
-		  echo "reaching1";
 		  // Get user input
-		  $email  = isset($_POST['email']) ? $_POST['email'] : '';
-		  console.log($email);
+		$email  = isset($_POST['email']) ? $_POST['email'] : '';
+		$password = isset($_POST['password']) ? $_POST['password'] : '';
 
-		  $result = normalToAdminUser($email);
+		// Try to register the user
+		$result = loginUser($email,$password);
     }  
 
 ?>
