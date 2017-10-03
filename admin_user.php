@@ -1,11 +1,7 @@
 <?php
 echo $status;
 
-  if (isset($_POST['createNewAdminUserBtn']))
-    {
-		  // Get user input
-		echo "do something wonderful";
-    }  
+   
 
 ?>
 
