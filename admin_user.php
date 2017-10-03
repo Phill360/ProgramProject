@@ -29,11 +29,6 @@
               <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-            </div>
-            <br>
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
