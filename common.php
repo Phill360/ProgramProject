@@ -204,7 +204,7 @@
    	  }
     }
     fclose($fp);
-    header('Location: index2.php');
     return $oldLine;
+    header('Location: index2.php');
   }
 ?>
