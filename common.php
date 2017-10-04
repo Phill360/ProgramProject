@@ -183,8 +183,10 @@
       $read=fgets($file). "<br />";
     }
     
+    $read2 = fread($file,filesize("test.txt"));
+    
     
     fclose($file);
-    return $read;
+    return $read2;
   }
 ?>
