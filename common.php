@@ -214,7 +214,7 @@
     
     $size = sizeof($users);
    
-    $name = $users[3][0];
+    $name = $users[0][3];
 
     
     fclose($fp);
