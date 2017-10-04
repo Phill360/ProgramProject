@@ -197,11 +197,10 @@
     
     for ($row = 0; $row < $size; $row++) 
     {
-      $string = $user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5].'\n'
-      fwrite($string);
+      //
     }
     
     fclose($file);
-    return $string;
+    return '';
   }
 ?>
