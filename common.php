@@ -186,21 +186,13 @@
     
     $lastname = 'temp';
     
-    for ($i=0; $i<$linecount; $i++) 
+    // Add each line to an array
+    if ($fp) 
     {
-      $member = explode("\t", $ln[$i]);
-   	
-   	  if ($member[0] == $email)  
-   	  {
-   	    // User exists.
-   	    $delete = $member;
-   	    $userpass = $member[1];
-   	    $lastname = $member[2];
-   	    $firstname = $member[3];
-   	    $visits = $member[4];
-   	    $usertype = 'admin';
-   	  }
+      $array = explode("\n", file_get_contents('file.txt'));
     }
+    
+    $size = sizeof($array);
     
     $data = file("users.txt");
     $out = array();
@@ -225,7 +217,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $member[0];
+    return $size;
     
   }
 ?>
