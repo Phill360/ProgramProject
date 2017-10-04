@@ -186,7 +186,7 @@
       array_push($users, $data);
     }  
     
-    $read = count("$users");
+    $read = sizeof("$users",1);
     //$read = $users[1];
     
     
