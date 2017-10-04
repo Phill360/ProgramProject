@@ -174,13 +174,19 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    $fp = fopen("users.txt","w+");
+    $file="users.txt";
+    $linecount = 0;
+    $fp = fopen($file,"w+");
     rewind($fp);
-   	  
-    $ln = file("users.txt");
-    $numberOfMembers = count($ln);
+   	
+    while(!feof($fp))
+    {
+      $ln = fgets($fp);
+      $linecount++;
+    }
     
-    for ($i=0; $i<$numberOfMembers; $i++) 
+    
+    for ($i=0; $i<$linecount; $i++) 
     {
       $member = explode("\t", $ln[$i]);
    	
@@ -220,7 +226,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $numberOfMembers;
+    return $linecount;
     
   }
 ?>
