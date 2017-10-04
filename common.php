@@ -195,5 +195,16 @@
    	    $usertype = 'admin';
    	  }
     }
+    
+    $data = file("users.txt");
+    $out = array();
+
+    foreach($data as $line) 
+    {
+      if(trim($line) != $delete) 
+      {
+        $out[] = $line;
+      }
+    }
   }
 ?>
