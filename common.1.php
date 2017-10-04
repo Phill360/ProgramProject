@@ -173,5 +173,52 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
+
+    $fp = fopen("users.txt","w+");
+    rewind($fp);
+   	  
+    $ln = file("users.txt");
+    $numberOfMembers = count($ln);
+    
+    for ($i=0; $i<$numberOfMembers; $i++) 
+    {
+      $member = explode("\t", $ln[$i]);
+   	
+   	  if ($member[0] == $email)  
+   	  {
+   	    // User exists.
+   	    $delete = $member;
+   	    $email = $member[0];
+   	    $userpass = $member[1];
+   	    $lastname = $member[2];
+   	    $firstname = $member[3];
+   	    $visits = $member[4];
+   	    $usertype = 'admin';
+   	  }
+    }
+
+    $data = file("users.txt");
+    $out = array();
+
+    foreach($data as $line) 
+    {
+      if(trim($line) != $delete) 
+      {
+        $out[] = $line;
+      }
+    }
+
+
+    
+    foreach($out as $line) 
+    {
+      fwrite($fp, $line);
+    }
+    
+
+    fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
+    
+    fclose($fp);
+    return = 'success';
   }
 ?>
