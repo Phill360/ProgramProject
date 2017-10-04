@@ -61,7 +61,7 @@
   
   if(isset($_POST['createNewAdminUserBtn']))
   {
-    echo createNewAdminUser();
+    echo createNewAdminUser($email);
   }
 ?>
 
