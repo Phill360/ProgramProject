@@ -177,7 +177,7 @@
     $file="test.txt";
     $linecount = 0;
     $fp = fopen($file,"r");
-    rewind($fp);
+    //rewind($fp);
    	
      
     
@@ -188,12 +188,6 @@
     
     $read = fgets($file);
     
-    
-    $lastname = 'temp';
-    
-    
-    
-   
     fclose($fp);
     return $read;
     
