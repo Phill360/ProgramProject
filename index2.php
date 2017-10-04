@@ -4,8 +4,8 @@
 	$usertype = checkUserType();
 	$number = checkNumberUsersInFile();
 	
-	echo('The system is '.$status.' -');
-	echo(' '.$usertype.' user. -');
+	echo('The system is '.$status.' - ');
+	echo(' '.$usertype.' user. - ');
 	echo('There are '.$number.' users in file.');
 	
 	
