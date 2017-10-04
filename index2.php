@@ -4,6 +4,7 @@
 	$usertype = checkUserType();
 	
 	echo($status);
+	echo($result);
 	
 	if (isset($_POST['signInBtn']))
   {
@@ -50,7 +51,6 @@
 		{
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
-			echo $result;
 		}
   }
   
