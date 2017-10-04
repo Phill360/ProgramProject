@@ -198,16 +198,16 @@
     
     fclose($file);
     
-    $string = $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n';
+    //$string = $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n';
     
-    $fp = fopen($file, 'w');
+    //$fp = fopen($file, 'w');
     
-    for ($row = 0; $row < $size; $row++) 
-    {
-      fwrite($string);
-    }
+    //for ($row = 0; $row < $size; $row++) 
+    //{
+    //  fwrite($string);
+    //}
     
-    fclose($file);
-    return $string;
+    //fclose($file);
+    return 'success';
   }
 ?>
