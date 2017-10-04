@@ -175,23 +175,19 @@
   function createNewAdminUser($email)
   {
     $file = fopen("test.txt","r");
-    
     $delimiter = ',';
-
     $fp = fopen('test.txt', 'r');
-
     $users = array();
     
     while ( !feof($fp) )
     {
       $line = fgets($fp, 2048);
-
       $data = str_getcsv($line, $delimiter);
-
       array_push($users, $data);
     }  
     
-    $read = $users[0][0];
+    $read = sizeof("$users");
+    //$read = $users[0][0];
     
     
     fclose($file);
