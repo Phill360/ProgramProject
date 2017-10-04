@@ -174,22 +174,10 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    $file="test.txt";
-    $linecount = 0;
-    $fp = fopen($file,"r");
-    //rewind($fp);
-   	
-     
-    
-    while (!feof($fp)) 
-    {
-        $linecount += substr_count(fread($fp, 8192), "\n");
-    }
-    
+    $file = fopen("test.txt","r");
+    echo fgets($file);
     $read = fgets($file);
-    
-    fclose($fp);
+    fclose($file);
     return $read;
-    
   }
 ?>

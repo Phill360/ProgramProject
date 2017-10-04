@@ -1,2 +1,1 @@
-Does this work?\n
-Why does this work?\n
+Hello, this is a test file.

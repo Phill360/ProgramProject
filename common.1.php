@@ -220,5 +220,10 @@
     
     fclose($fp);
     return = 'success';
+    
+    while (!feof($fp)) 
+    {
+        $linecount += substr_count(fread($fp, 8192), "\n");
+    }
   }
 ?>
