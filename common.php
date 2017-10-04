@@ -176,14 +176,12 @@
   {
     $file = fopen("test.txt","r");
     
+    $linecount = 0;
+    
     while(! feof($file))
     {
+      $linecount = linecount +1;
       $read=fgets($file). "<br />";
-    }
-    
-    while (!feof($fp)) 
-    {
-        $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
     
