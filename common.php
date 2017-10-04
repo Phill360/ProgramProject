@@ -174,9 +174,8 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    $file = fopen("test.txt","r");
     $delimiter = ',';
-    $fp = fopen('test.txt', 'r');
+    $fp = fopen('test.txt', 'w+');
     $users = array();
     
     while ( !feof($fp) )
@@ -192,13 +191,16 @@
     {
       if ($users[$row][0] == $email)
       {
-        $read = $users[$row][5];
         $users[$row][5] = 'admin';
-        $readid = $users[$row][5];
       }
     }
     
+    for ($row = 0; $row < $size; $row++) 
+    {
+      fwrite($user[$row][0]+','+$user[$row][1]+','+$user[$row][2]+','+$user[$row][3]+','+$user[$row][4]+','+$user[$row][5]+'\n');
+    }
+    
     fclose($file);
-    return $readid;
+    return 'success';
   }
 ?>
