@@ -179,10 +179,9 @@
     $fp = fopen($file,"r");
     //rewind($fp);
    	
-    while(!feof($fp))
+    while (!feof($fp)) 
     {
-      $ln = fgets($fp, 4096);
-      $linecount = $linecount + substr_count($line, PHP_EOL);
+        $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
     
