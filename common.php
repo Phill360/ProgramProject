@@ -205,7 +205,7 @@
       fwrite($file, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n');
       if ($users[$row][0] == $email)
       {
-        $string = $users[$row][2];
+        $string = $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n';
       }
     }
     
