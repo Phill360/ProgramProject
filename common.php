@@ -22,18 +22,18 @@
     {
       if ($users[$row][0] == $email)
       {
-        $result = 'unsuccessful';
+        $check = 'previous user exists';
       }
       else
       {
-        $result = 'success';
+        $check = 'no previous user';
       }
     }
     fclose($fp);
     
     $fp = fopen($file, 'a');
     
-    if ($result == 'success')
+    if ($check == 'no previous user')
     {
       // Secure password string
    	  $userpass = md5($password);
@@ -44,14 +44,14 @@
     }
 
     fclose($fp);
-    return $size;
+    
+    $result = checkNumberUsersInFile();
+    return $result;
   }
 
   /* This function logs the user in */
   function signInUser($email, $password)
   {
-    $validUser = false;
-   	  
     // Check user existance	
     $file = 'users.txt';
     $fp = fopen($file, "r");
@@ -65,7 +65,6 @@
     }  
 
     $size = sizeof($users);
-    
     for ($row = 0; $row < $size; $row++) 
     {
       if ($users[$row][0] == $email)
@@ -75,7 +74,6 @@
    	    {
    	      $validUser = true;
    	      $usertype = $users[$row][5];
-   	  	  $_SESSION['email'] = $email;
    	    }
       }
     }
@@ -85,16 +83,6 @@
     {
       $validUser = true;
       $usertype = "admin";
-   	  $_SESSION['email'] = "super";  
-    }
-
-    if ($validUser != true) 
-    {
-      $result = 'unsuccessful';
-    }
-    else
-    {
-      $result = 'success';
     }
     
     if ($validUser == true) 
@@ -108,6 +96,7 @@
       $_SESSION['validUser'] = false;
     }
    	  
+    $result = checkNumberUsersInFile();
     return $result;
   }
 
@@ -125,11 +114,11 @@
     
     if (checkStatus() == 'signed out')
     {
-      $result = 'success';
+      $result = 'signed out';
     }
     else
     {
-      $result = 'unsuccessful';
+      $result = 'signed in';
     }
     header('Location: index2.php');	
     return $result;
@@ -213,17 +202,27 @@
     
     fclose($fp);
     
+    $result = checkNumberUsersInFile()  
+    return $result;
+  }
+  
+  /* This function checks the number of users in the text file. */
+  function checkNumberUsersInFile()
+  {
+    $delimiter = ',';
+    $file = 'users.txt';
+    $fp = fopen($file, 'r');
+    $users = array();
     
-    $fp = fopen($file, 'a');
-    
-    for ($row = 0; $row < $size; $row++) 
+    while ( !feof($fp) )
     {
-      fwrite($file, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n');
-    }
-    
+      $line = fgets($fp, 2048);
+      $data = str_getcsv($line, $delimiter);
+      array_push($users, $data);
+    }  
+
+    $size = sizeof($users);
     fclose($fp);
-    
-    
-    return $size2;
+    return $size;
   }
 ?>

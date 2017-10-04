@@ -2,19 +2,13 @@
 	require_once('common.php');
 	$status = checkStatus();
 	$usertype = checkUserType();
+	$number = checkNumberUsersInFile();
 	
-	echo($status);
-	echo(' '.$usertype.' user.');
+	echo('The system is '.$status.' -');
+	echo(' '.$usertype.' user. -');
+	echo('There are '.$number.' users in file.')
 	
-	if (isset($_POST['signInBtn']))
-  {
-		// Get user input
-		$email  = isset($_POST['email']) ? $_POST['email'] : '';
-		$password = isset($_POST['password']) ? $_POST['password'] : '';
-
-		// Try to register the user
-		$result = signInUser($email,$password);
-  }
+	
   
   if (isset($_POST['registerBtn']))
   {
@@ -54,10 +48,26 @@
 		}
   }
   
+  
+  
+  if (isset($_POST['signInBtn']))
+  {
+		// Get user input
+		$email  = isset($_POST['email']) ? $_POST['email'] : '';
+		$password = isset($_POST['password']) ? $_POST['password'] : '';
+
+		// Try to register the user
+		$result = signInUser($email,$password);
+  }
+  
+  
+  
   if(isset($_POST['signOutBtn']))
   {
     $status = signOutUser();
   }
+  
+  
   
   if(isset($_POST['createNewAdminUserBtn']))
   {
