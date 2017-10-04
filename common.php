@@ -177,43 +177,30 @@
     $file="users.txt";
     $linecount = 0;
     $fp = fopen($file,"r");
-    //rewind($fp);
+    rewind($fp);
    	
     while (!feof($fp)) 
     {
         $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
+    $count = 0;
     
+    if ($fp) 
+    {
+      while (($line = fgets($fp)) != false) 
+      {
+        $count = $count + 1;
+      }
+    }
     
     $lastname = 'temp';
     
     
     
-    $data = file("users.txt");
-    $out = array();
-
-    foreach($data as $line) 
-    {
-      if(trim($line) != $delete) 
-      {
-        $out[] = $line;
-      }
-    }
-    
-    flock($fp, LOCK_EX);
-    
-    foreach($out as $line) 
-    {
-      fwrite($fp, $line);
-    }
-    
-    fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
-    
-    
-    flock($fp, LOCK_UN);
+   
     fclose($fp);
-    return $basic;
+    return $count;
     
   }
 ?>
