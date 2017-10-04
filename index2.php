@@ -61,7 +61,8 @@
   
   if(isset($_POST['createNewAdminUserBtn']))
   {
-    $result=createNewAdminUser('m.malady28@bigpond.com');
+    echo $email;
+    $result=createNewAdminUser($email);
     echo $result;
   }
 ?>
