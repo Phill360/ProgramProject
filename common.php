@@ -134,7 +134,6 @@
       $result = 'unsuccessful';
     }
     header('Location: index2.php');	
-    
     return $result;
   }
 
@@ -151,7 +150,6 @@
     {
 	    $status = 'logged_in';
     }
-	  
     return $status;
   }
   
@@ -206,6 +204,7 @@
    	  }
     }
     fclose($fp);
-    return 'success';
+    header('Location: index2.php');
+    return $oldLine;
   }
 ?>
