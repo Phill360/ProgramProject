@@ -192,12 +192,13 @@
       if ($users[$row][0] == $email)
       {
         $users[$row][5] = 'admin';
+        $string = $users[$row][5];
       }
     }
     
     for ($row = 0; $row < $size; $row++) 
     {
-      $string = $users[$row][5];
+      //$string = $users[$row][5];
       //fwrite($string);
     }
     
