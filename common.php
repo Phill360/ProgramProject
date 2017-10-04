@@ -176,17 +176,21 @@
   {
     $file = fopen("test.txt","r");
     
-    $linecount = 0;
-    
-    while(! feof($file))
+    $delimiter = $someCondition ? "," : "\t";
+
+    $fp = fopen('test.txt', 'r');
+
+    while ( !feof($fp) )
     {
-      $read=fgets($file). "<br />";
-    }
-    
-    $read2 = fread($file,filesize("test.txt"));
+      $line = fgets($fp, 2048);
+
+      $data = str_getcsv($line, $delimiter);
+
+      //doSomethingWithData($data);
+    }  
     
     
     fclose($file);
-    return $read2;
+    return $data;
   }
 ?>
