@@ -184,14 +184,16 @@
         $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
-    $lastname = 'temp';
+    $basic = 0;
     
-    if ($fp) 
+    for ($i=0; i<$linecount; $i++)
     {
-      $array = explode("\n", fread($fp, filesize($filename)));
+      $basic ++;
     }
     
-    $size = sizeof($array);
+    $lastname = 'temp';
+    
+    
     
     $data = file("users.txt");
     $out = array();
@@ -216,7 +218,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $size;
+    return $basic;
     
   }
 ?>
