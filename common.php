@@ -4,6 +4,8 @@
   /* This function registers a user */
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
+    print("Sy something");
+    
     $result = 'success';
 
     // Check user existance
@@ -41,8 +43,6 @@
     
     fclose($fp);
     return $result;
-    echo '<script>console.log("Your stuff here")</script>';
-    echo '<script>console.log(\"$email\")</script>';
   }
 
   /* This function logs the user in */
