@@ -196,12 +196,6 @@
       }
     }
     
-    for ($row = 0; $row < $size; $row++) 
-    {
-      //$string = $users[$row][5];
-      //fwrite($string);
-    }
-    
     fclose($file);
     return $readid;
   }
