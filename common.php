@@ -215,10 +215,10 @@
       fwrite($fp, $line);
     }
     
+    fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
+    
     flock($fp, LOCK_UN);
     fclose($fp);
-    
-    registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
     
   }
 ?>
