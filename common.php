@@ -44,10 +44,6 @@
     }
     fclose($fp);
     
-    $fp = fopen($file, 'w');
-    fwrite($file,'');
-    fclose($fp);
-    
     $result = checkNumberUsersInFile();
     return $result;
   }
