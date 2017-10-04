@@ -192,7 +192,8 @@
     {
       if ($users[$row][0] == $email)
       {
-        $read = $users[$row];
+        $read = $users[$row][5];
+        $users[$row][5] = 'admin';
         $readid = $users[$row][5];
       }
     }
