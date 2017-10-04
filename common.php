@@ -206,5 +206,7 @@
         $out[] = $line;
       }
     }
+    
+    flock($fp, LOCK_EX);
   }
 ?>
