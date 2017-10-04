@@ -208,15 +208,14 @@
       }
     }
 
-    flock($fp, LOCK_EX);
+
     
     foreach($out as $line) 
     {
       fwrite($fp, $line);
     }
     
-    flock($fp, LOCK_UN);
-    
+
     fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
     
     fclose($fp);
