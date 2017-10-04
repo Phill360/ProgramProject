@@ -184,8 +184,6 @@
         $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
-    $count = 0;
-    
     if ($fp) 
     {
       while (($line = fgets($fp)) != false) 
