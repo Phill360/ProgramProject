@@ -176,7 +176,7 @@
   {
     $file = fopen("test.txt","r");
     
-    $delimiter = $someCondition ? "," : "\t";
+    $delimiter = "\t";
 
     $fp = fopen('test.txt', 'r');
 
@@ -184,12 +184,12 @@
     {
       $line = fgets($fp, 2048);
 
-      $data += str_getcsv($line, $delimiter);
+      $data = str_getcsv($line, $delimiter);
 
       //doSomethingWithData($data);
     }  
     
-    $read = $data[1];
+    $read = $data[0][0];
     
     
     fclose($file);
