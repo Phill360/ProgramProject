@@ -37,7 +37,7 @@
     {
       // Secure password string
    	  $userpass = md5($password);
-   	  fwrite($fp, $email.','.$userpass.','.$lastname.','.$firstname.','.$visits.$usertype.'\n');
+   	  fwrite($fp, $email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype.'\n');
    	  $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
@@ -50,49 +50,43 @@
   /* This function logs the user in */
   function signInUser($email, $password)
   {
-    $result = '';
     $validUser = false;
-
-    // Create file in case it does not already exist
-    $fp = fopen("users.txt", "a");
-    fclose($fp);
    	  
     // Check user existance	
-    $fp = fopen("users.txt","r");
-    rewind($fp);
-   	  
-    $line = file("users.txt");
-    $numberOfMembers = count($line);
+    $file = 'users.txt';
+    $fp = fopen($file, "r");
+    $users = array();
+    
+    while ( !feof($fp) )
+    {
+      $line = fgets($fp, 2048);
+      $data = str_getcsv($line, $delimiter);
+      array_push($users, $data);
+    }  
 
-    /* Super user: email/username = super, password = super */
-    if ($email == "super")
+    $size = sizeof($users);
+    
+    for ($row = 0; $row < $size; $row++) 
     {
-      if ($password == "super")
+      if ($users[$row][0] == $email)
       {
-        $validUser = true;
-        $usertype = "admin";
-   	    $_SESSION['email'] = "super";
-      }
-    }
-   	  
-    for ($i=0; $i<$numberOfMembers; $i++) 
-    {
-      $member = explode("\t", $line[$i]);
-   	
-   	  if ($member[0] == $email)  
-   	  {
-   	    // User exists, check password
-   	    if (trim($member[1]) == trim(md5($password)))
+        // User exists, now check the password.
+        if ($users[$row][1] == md5($password))
    	    {
    	      $validUser = true;
-   	      $usertype = $member[5];
+   	      $usertype = $users[$row][5];
    	  	  $_SESSION['email'] = $email;
    	    }
-   	  break;
-   	  }
+      }
     }
-    
     fclose($fp);
+    
+    if ($email == 'super' && $password == 'super')
+    {
+      $validUser = true;
+      $usertype = "admin";
+   	  $_SESSION['email'] = "super";  
+    }
 
     if ($validUser != true) 
     {
@@ -198,9 +192,7 @@
         $users[$row][5] = 'admin';
       }
     }
-    
     fclose($fp);
-    
     $fp = fopen($file, 'w');
     
     for ($row = 0; $row < $size; $row++) 
