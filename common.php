@@ -197,7 +197,7 @@
     
     for ($row = 0; $row < $size; $row++) 
     {
-      $string = $users[$row][5].'\n';
+      $string = $users[$row][5];
       //fwrite($string);
     }
     
