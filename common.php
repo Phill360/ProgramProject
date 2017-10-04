@@ -212,7 +212,7 @@
     $name;
     for ($row = 0; $row < $size; $row++) 
     {
-      $name = $user[$row][3];
+      $name = $users[$row][3];
     }
 
     $size = sizeof($users);
