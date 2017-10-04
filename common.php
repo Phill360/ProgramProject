@@ -5,7 +5,7 @@
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
     $delimiter = ',';
-    $file = 'users.txt';
+    $file = 'test.txt';
     $fp = fopen($file, 'r');
     $users = array();
     
@@ -53,7 +53,7 @@
   function signInUser($email, $password)
   {
     // Check user existance	
-    $file = 'users.txt';
+    $file = 'test.txt';
     $fp = fopen($file, "r");
     $users = array();
     
@@ -161,7 +161,7 @@
   function createNewAdminUser($email)
   {
     $delimiter = ',';
-    $file = 'users.txt';
+    $file = 'test.txt';
     $fp = fopen($file, 'r');
     $users = array();
     
