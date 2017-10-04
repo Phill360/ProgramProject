@@ -184,12 +184,7 @@
         $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
-    $basic = 0;
     
-    for ($i=0; i<$linecount; $i++)
-    {
-      $basic = $basic + 1;
-    }
     
     $lastname = 'temp';
     
