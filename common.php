@@ -5,6 +5,7 @@
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
     echo("reaching");
+    console.log("reaching");
     $result = 'success';
 
     // Check user existance
