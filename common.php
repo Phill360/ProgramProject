@@ -217,7 +217,7 @@
     flock($fp, LOCK_UN);
     
     
-    return = 'success';
+    
     
   }
 ?>
