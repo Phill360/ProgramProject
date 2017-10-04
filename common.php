@@ -219,7 +219,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return 'foo';
+    return $firstname;
     
   }
 ?>
