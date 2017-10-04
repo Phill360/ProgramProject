@@ -20,8 +20,8 @@
       }
       else
       {?>
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-          <button type="button" class="btn btn-primary pull-right" name="signOutBtn">Sign out</button>
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="signOutForm">
+          <button type="submit" class="btn btn-primary pull-right" name="signOutBtn">Sign out</button>
         </form>
       <?php
       }?>

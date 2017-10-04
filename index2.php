@@ -55,7 +55,6 @@
   
   if(isset($_POST['signOutBtn']))
   {
-    $name = $_POST['name'];
     echo "User has attempted sign out : <b> $name </b>";
     $status = signOutUser();
   }
