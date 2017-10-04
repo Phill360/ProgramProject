@@ -18,7 +18,7 @@
       $member = explode("\t", $line[$i]);
    	  if ($member[0] == $email)
    	  {
-        $result = "The selected user name is taken!";
+        $result = "unsuccessful";
         break;
    	  }
    	  else
@@ -60,7 +60,7 @@
     $line = file("users.txt");
     $numberOfMembers = count($line);
 
-    /* Hardwire code for admin login with email and password both being super */
+    /* Super user: email/username = super, password = super */
     if ($email == "super")
     {
       if ($password == "super")
@@ -75,18 +75,17 @@
     {
       $member = explode("\t", $line[$i]);
    	
-   	if ($member[0] == $email)  
-   	{
-   	  // User exists, check password
-   	  if (trim($member[1]) == trim(md5($password)))
+   	  if ($member[0] == $email)  
    	  {
-   	    $validUser = true;
-   	    $usertype = $member[5];
-   	  	$_SESSION['email'] = $email;
-   	  }
-      
+   	    // User exists, check password
+   	    if (trim($member[1]) == trim(md5($password)))
+   	    {
+   	      $validUser = true;
+   	      $usertype = $member[5];
+   	  	  $_SESSION['email'] = $email;
+   	    }
    	  break;
-   	}
+   	  }
     }
     
     fclose($fp);
@@ -125,8 +124,6 @@
     unset($_SESSION['email']);
     
     $validUser = false;
-    
-    echo(checkStatus());
     
     if (checkStatus() == 'not_logged_in')
     {
@@ -175,7 +172,7 @@
   }
   
   /* This function switches a user from normal to admin */
-  function normalToAdminUser($email)
+  function createNewAdminUser($email)
   {
 
     $fp = fopen("users.txt","r");
@@ -188,27 +185,24 @@
     {
       $member = explode("\t", $line[$i]);
    	
-   	if ($member[0] == $email)  
-   	{
-   	  // User exists. First delete the line and replace it.
-   	  $email = $member[0];
-   	  $userpass = $member[1];
-   	  $lastname = $member[2];
-   	  $firstname = $member[3];
-   	  $visits = $member[4];
-   	  $usertype = $member[5];
+   	  if ($member[0] == $email)  
+   	  {
+   	    // User exists. First delete the line and replace it.
+   	    $email = $member[0];
+   	    $userpass = $member[1];
+   	    $lastname = $member[2];
+   	    $firstname = $member[3];
+   	    $visits = $member[4];
+   	    $usertype = $member[5];
    	  
-   	  $oldLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
-   	  echo $oldLine;
-   	  console.log($oldLine);
+   	    $oldLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
+   	    echo($oldLine);
    	  
-   	  $usertype = "admin";
-   	  $newLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
+   	    $usertype = "admin";
+   	    $newLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
+   	    echo("$newLine");
    	  
-   	  $contents = str_replace($newLine, '', $oldLine);
-   	  file_put_contents($fp, $contents);
-   	  
-   	}
+   	  }
     }
     fclose($fp);
     return 'success';

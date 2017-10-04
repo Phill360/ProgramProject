@@ -57,6 +57,11 @@
   {
     $status = signOutUser();
   }
+  
+  if(isset($_POST['createNewAdminUserBtn']))
+  {
+    $result = createNewAdminUser();
+  }
 ?>
 
 <!DOCTYPE html PUBLIC>

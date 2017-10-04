@@ -17,14 +17,13 @@
           <div class="opensans">Promote normal user to admin user</div>
         </div>
         <div class="panel-body">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="newAdminUserForm">
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="newAdminUserForm">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input id="email" type="text" class="form-control" name="email" placeholder="Email">
           </div>
           <br>
-          
-            <button name="createNewAdminUserBtn" type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" name="createNewAdminUserBtn">Submit</button>
           </form>
         </div>
       </div>
