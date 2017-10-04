@@ -16,25 +16,25 @@
     for ($i=0; $i<$numberOfMembers; $i++)
     {
       $member = explode("\t", $line[$i]);
-   	if ($member[0] == $email)
-   	{
+   	  if ($member[0] == $email)
+   	  {
         $result = "The selected user name is taken!";
         break;
-   	}
-   	else
-   	{
-   	  $result = 'success';
-   	  echo $result;
-   	}
+   	  }
+   	  else
+   	  {
+   	    $result = 'success';
+   	    echo $result;
+   	  }
     }
 
     // If everything is okay -> store user data
     if ($result == 'success')
     {
       // Secure password string
-   	$userpass = md5($password);
-   	fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
-   	$_SESSION['validUser'] = true;
+   	  $userpass = md5($password);
+   	  fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
+   	  $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
@@ -44,7 +44,7 @@
   }
 
   /* This function logs the user in */
-  function loginUser($email, $password)
+  function signInUser($email, $password)
   {
     $result = '';
     $validUser = false;
@@ -67,7 +67,7 @@
       {
         $validUser = true;
         $usertype = "admin";
-   	  $_SESSION['email'] = "super";
+   	    $_SESSION['email'] = "super";
       }
     }
    	  
@@ -93,7 +93,7 @@
 
     if ($validUser != true) 
     {
-      $result = 'Invalid email or password!';
+      $result = 'unsuccessful';
     }
     else
     {
@@ -117,13 +117,26 @@
   /* This function unsets all session variables and logs the user out */
   function signOutUser()
   {
-    $_SESSION['validUser'] = false;
+    $result = '';
+    $validUser = true;
     
     unset($_SESSION['validUser']);
     unset($_SESSION['usertype']);
     unset($_SESSION['email']);
     
-    $result = "logged_out";
+    $validUser = false;
+    
+    echo(checkStatus());
+    
+    if (checkStatus() == 'not_logged_in')
+    {
+      $result = 'success';
+    }
+    else
+    {
+      $result = 'unsuccessful';
+    }
+    
     return $result;
   }
 
@@ -138,7 +151,7 @@
     }
     else
     {
-	   $status = 'logged_in';
+	    $status = 'logged_in';
     }
 	  
     return $status;
