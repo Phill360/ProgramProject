@@ -221,6 +221,6 @@
 
     
     fclose($fp);
-    return $name;
+    return $size;
   }
 ?>
