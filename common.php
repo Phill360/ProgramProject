@@ -208,6 +208,6 @@
     }
     
     fclose($file);
-    return 'success';
+    return $string;
   }
 ?>
