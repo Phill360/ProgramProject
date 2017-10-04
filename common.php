@@ -193,9 +193,11 @@
       if ($users[$row][0] == $email)
       {
         $users[$row][5] = 'admin';
-        $string = $users[$row][5];
+        
       }
     }
+    
+    $string = $users[$row][5];
     
     fclose($file);
     
