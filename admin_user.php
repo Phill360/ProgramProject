@@ -17,7 +17,7 @@
           <div class="opensans">Promote normal user to admin user</div>
         </div>
         <div class="panel-body">
-          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="newAdminUserForm">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="newAdminUserForm">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input id="email" type="text" class="form-control" name="email" placeholder="Email">
