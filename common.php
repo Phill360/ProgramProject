@@ -217,6 +217,6 @@
 
     $size = sizeof($users);
     fclose($fp);
-    return $name;
+    return $size;
   }
 ?>
