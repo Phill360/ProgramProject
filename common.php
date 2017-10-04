@@ -184,6 +184,8 @@
         $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
+    $lastname = 'temp';
+    
     for ($i=0; $i<$linecount; $i++) 
     {
       $member = explode("\t", $ln[$i]);
@@ -223,7 +225,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $usertype;
+    return $lastname;
     
   }
 ?>
