@@ -3,10 +3,12 @@
 	$status = checkStatus();
 	$usertype = checkUserType();
 	$number = checkNumberUsersInFile();
+	$message = getMessage();
 	
 	echo('The system is '.$status.' - ');
 	echo(' '.$usertype.' user. - ');
-	echo('There are '.$number.' users in file.');
+	echo('There are '.$number.' users in file. - ');
+	echo('Message: '.$message);
 	
 	
   
@@ -45,7 +47,7 @@
 		{
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
-			console.log(' The result is - '.$result);
+			setMessage(' The result is - '.$result);
 		}
   }
   

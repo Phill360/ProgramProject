@@ -220,4 +220,15 @@
     fclose($fp);
     return $size;
   }
+  
+  function setMessage($message)
+  {
+    $_SESSION['message'] = $message; 
+  }
+  
+  function getMessage()
+  {
+    $message = $_SESSION['message'];
+    return $message;
+  }
 ?>
