@@ -216,11 +216,11 @@
    
     for ($row = 0; $row < $size; $row++) 
     {
-      $name = $users[$row][0];
+      $name = $users[$row][3];
     }
 
     
     fclose($fp);
-    return $size;
+    return $name;
   }
 ?>
