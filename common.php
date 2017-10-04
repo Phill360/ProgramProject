@@ -176,20 +176,22 @@
   {
     $file = fopen("test.txt","r");
     
-    $delimiter = "\t";
+    $delimiter = ',';
 
     $fp = fopen('test.txt', 'r');
 
+    $users = array();
+    
     while ( !feof($fp) )
     {
       $line = fgets($fp, 2048);
 
-      $data = str_getcsv($line, ',');
+      $data = str_getcsv($line, $delimiter);
 
-      //doSomethingWithData($data);
+      array_push($users, $data);
     }  
     
-    $read = $data[0];
+    $read = $users[0][0];
     
     
     fclose($file);
