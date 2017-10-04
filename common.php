@@ -4,37 +4,40 @@
   /* This function registers a user */
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
+    $delimiter = ',';
+    $file = 'users.txt';
+    $fp = fopen($file, 'r');
+    $users = array();
     
-    $result = 'success';
-
-    // Check user existance
-    $fp = fopen("users.txt","a");
-    rewind($fp);
-   	  
-    $line = file("users.txt");
-    $numberOfMembers = count($line);
-
-    for ($i=0; $i<$numberOfMembers; $i++)
+    while ( !feof($fp) )
     {
-      $member = explode("\t", $line[$i]);
-   	  if ($member[0] == $email)
-   	  {
-        $result = "unsuccessful";
-        break;
-   	  }
-   	  else
-   	  {
-   	    $result = 'success';
-   	    echo $result;
-   	  }
-    }
+      $line = fgets($fp, 2048);
+      $data = str_getcsv($line, $delimiter);
+      array_push($users, $data);
+    }  
 
-    // If everything is okay -> store user data
+    $size = sizeof($users);
+    
+    for ($row = 0; $row < $size; $row++) 
+    {
+      if ($users[$row][0] == $email)
+      {
+        $result = 'unsuccessful';
+      }
+      else
+      {
+        $result = 'success';
+      }
+    }
+    fclose($file);
+    
+    $fp = fopen($file, 'a');
+    
     if ($result == 'success')
     {
       // Secure password string
    	  $userpass = md5($password);
-   	  fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
+   	  fwrite($fp, $email.','.$userpass.','.$lastname.','.$firstname.','.$visits.$usertype.'\n');
    	  $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
@@ -196,20 +199,16 @@
       }
     }
     
-    fclose($file);
+    fclose($fp);
     
     $fp = fopen($file, 'w');
     
     for ($row = 0; $row < $size; $row++) 
     {
       fwrite($file, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n');
-      if ($users[$row][0] == $email)
-      {
-        $string = $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n';
-      }
     }
     
-    fclose($file);
-    return $string;
+    fclose($fp);
+    return 'success';
   }
 ?>
