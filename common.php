@@ -193,7 +193,7 @@
       if ($users[$row][0] == $email)
       {
         $read = $users[$row];
-        $readid = $users[$row][0];
+        $readid = $users[$row][5];
       }
     }
     
