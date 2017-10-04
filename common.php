@@ -186,11 +186,7 @@
     
     $lastname = 'temp';
     
-    // Add each line to an array
-    if ($fp) 
-    {
-      $array = explode("\n", file_get_contents('file.txt'));
-    }
+    $array = explode("\n", file_get_contents('file.txt'));
     
     $size = sizeof($array);
     
@@ -217,7 +213,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $array;
+    return $size+$array;
     
   }
 ?>
