@@ -174,37 +174,52 @@
   function createNewAdminUser($email)
   {
 
-    $fp = fopen("users.txt","r");
+    $fp = fopen("users.txt","w+");
     rewind($fp);
    	  
-    $line = file("users.txt");
-    $numberOfMembers = count($line);
+    $ln = file("users.txt");
+    $numberOfMembers = count($ln);
     
     for ($i=0; $i<$numberOfMembers; $i++) 
     {
-      $member = explode("\t", $line[$i]);
+      $member = explode("\t", $ln[$i]);
    	
    	  if ($member[0] == $email)  
    	  {
-   	    // User exists. First delete the line and replace it.
+   	    // User exists.
+   	    $delete = $member;
    	    $email = $member[0];
    	    $userpass = $member[1];
    	    $lastname = $member[2];
    	    $firstname = $member[3];
    	    $visits = $member[4];
-   	    $usertype = $member[5];
-   	  
-   	    $oldLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
-   	    echo($oldLine);
-   	  
-   	    $usertype = "admin";
-   	    $newLine = "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n";
-   	    echo("$newLine");
-   	  
+   	    $usertype = 'admin';
    	  }
     }
+
+    $data = file("users.txt");
+    $out = array();
+
+    foreach($data as $line) 
+    {
+      if(trim($line) != $delete) 
+      {
+        $out[] = $line;
+      }
+    }
+
+    flock($fp, LOCK_EX);
+    
+    foreach($out as $line) 
+    {
+      fwrite($fp, $line);
+    }
+    
+    flock($fp, LOCK_UN);
+    
+    fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
+    
     fclose($fp);
-    return $oldLine;
-    header('Location: index2.php');
+    return = 'success';
   }
 ?>
