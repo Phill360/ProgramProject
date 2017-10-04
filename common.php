@@ -192,7 +192,6 @@
    	  {
    	    // User exists.
    	    $delete = $member;
-   	    $email = $member[0];
    	    $userpass = $member[1];
    	    $lastname = $member[2];
    	    $firstname = $member[3];
@@ -224,7 +223,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $linecount;
+    return $usertype;
     
   }
 ?>
