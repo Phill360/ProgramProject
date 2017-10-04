@@ -188,18 +188,6 @@
     fclose($fp);
     
     
-    $fp = fopen($file, 'r');
-    $users2 = array();
-    
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp, 2048);
-      $data = str_getcsv($line, $delimiter);
-      array_push($users2, $data);
-    }  
-
-    $size2 = sizeof($users2);
-    
     fclose($fp);
     
     $result = checkNumberUsersInFile();  
@@ -220,9 +208,15 @@
       $data = str_getcsv($line, $delimiter);
       array_push($users, $data);
     }  
+    
+    $name;
+    for ($row = 0; $row < $size; $row++) 
+    {
+      $name = $user[$row][2];
+    }
 
     $size = sizeof($users);
     fclose($fp);
-    return $size;
+    return $name;
   }
 ?>
