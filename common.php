@@ -31,13 +31,13 @@
     }
     fclose($fp);
     
-    $fp = fopen($file, 'a');
+    $fp = fopen($file, 'a+');
     
     if ($check == 'no previous user')
     {
       // Secure password string
    	  $userpass = md5($password);
-   	  fwrite($fp, $email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype.'\n');
+   	  fwrite($fp, $email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype.PHP_EOL);
    	  $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
@@ -186,10 +186,10 @@
     fwrite($file,'');
     fclose($fp);
     
-    $fp = fopen($file, 'a');
+    $fp = fopen($file, 'a+');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($file,$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n');
+      fwrite($file,$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].PHP_EOL);
     }
     fclose($fp);
     
