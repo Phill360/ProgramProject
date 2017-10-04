@@ -209,7 +209,7 @@
       array_push($users2, $data);
     }  
 
-    $size = sizeof($users2);
+    $size2 = sizeof($users2);
     
     fclose($fp);
     
@@ -224,6 +224,6 @@
     fclose($fp);
     
     
-    return $size;
+    return $size2;
   }
 ?>
