@@ -4,6 +4,7 @@
   /* This function registers a user */
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
+    echo("reaching");
     $result = 'success';
 
     // Check user existance
