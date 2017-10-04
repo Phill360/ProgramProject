@@ -115,7 +115,7 @@
   }
 
   /* This function unsets all session variables and logs the user out */
-  function logoutUser()
+  function signOutUser()
   {
     unset($_SESSION['validUser']);
     unset($_SESSION['usertype']);

@@ -51,13 +51,13 @@
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
 		}
-		
-		if (isset($_POST['signOutBtn']))
-    {
-		  // Get user input
-		  console.log("reaching");
-		  $result = logoutUser();
-    }
+  }
+  
+  if(isset($_POST['signOutBtn']))
+  {
+    $name = $_POST['name'];
+    echo "User has attempted sign out : <b> $name </b>";
+    $status = signOutUser();
   }
 ?>
 
@@ -180,6 +180,8 @@
     </div>
   </div>
 </div>
+
+
 
 </body>
 </html>
