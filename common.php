@@ -179,13 +179,14 @@
     $fp = fopen($file,"r");
     rewind($fp);
    	
-    $line = 'x'; 
+     
     
     while (!feof($fp)) 
     {
         $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
+    $read = fgets($file);
     
     
     $lastname = 'temp';
@@ -194,7 +195,7 @@
     
    
     fclose($fp);
-    return $linecount;
+    return $read;
     
   }
 ?>
