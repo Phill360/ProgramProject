@@ -175,7 +175,7 @@
   function createNewAdminUser($email)
   {
     $file = fopen("test.txt","r");
-    echo fgets($file);
+    //echo fgets($file);
     $read = fgets($file);
     fclose($file);
     return $read;
