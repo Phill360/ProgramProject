@@ -185,14 +185,19 @@
       $data = str_getcsv($line, $delimiter);
       array_push($users, $data);
     }  
+
+    $size = sizeof($users);
     
-    $cars=array("Volvo","BMW","Toyota");
-    //$read = sizeof($cars);
-    
-    $read = sizeof($users);
-    
+    for ($row = 0; $row < $size; $row++) 
+    {
+      if ($users[$row][0] == $email)
+      {
+        $read = $users[$row];
+        $readid = $users[$row][0];
+      }
+    }
     
     fclose($file);
-    return $read;
+    return $readid;
   }
 ?>
