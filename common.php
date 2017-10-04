@@ -181,8 +181,13 @@
       $read=fgets($file). "<br />";
     }
     
+    while (!feof($fp)) 
+    {
+        $linecount += substr_count(fread($fp, 8192), "\n");
+    }
+    
     
     fclose($file);
-    return $read;
+    return $linecount;
   }
 ?>
