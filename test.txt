@@ -1,2 +1,3 @@
-m.malady28@bigpond.com  password    Malady  Mark    0   admin   \n
-tina@musicsoundsoftware.com.au  password    Malady  Tina    0   normal  \n
+m.malady28@bigpond.com  password    Malady  Mark    0   admin\n
+tina@musicsoundsoftware.com.au  password    Malady  Tina    0   normal\n
+steffi@bigpond.com  lady30  Malady  Steffi  1   normal\n
