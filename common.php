@@ -174,7 +174,7 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    $file = fopen("users.txt","r");
+    $file = fopen("text.txt","r");
     
     while(! feof($file))
     {
