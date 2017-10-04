@@ -184,7 +184,7 @@
     {
       $line = fgets($fp, 2048);
 
-      $data = str_getcsv($line, $delimiter);
+      $data = str_getcsv($line, '\t');
 
       //doSomethingWithData($data);
     }  
