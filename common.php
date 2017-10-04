@@ -198,7 +198,7 @@
     
     fclose($file);
     
-    $string = $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n';
+    $string = $users[$row][0];
     
     $fp = fopen($file, 'w');
     
