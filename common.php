@@ -42,21 +42,7 @@
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
-    
-    
-    
-    
-    $users2 = array();
-    
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp, 2048);
-      $data = str_getcsv($line, $delimiter);
-      array_push($users, $data);
-    }  
 
-    $size = sizeof($users2);
-    
     fclose($fp);
     return $size;
   }
