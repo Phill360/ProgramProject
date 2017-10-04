@@ -188,7 +188,7 @@
     
     for ($i=0; i<$linecount; $i++)
     {
-      $basic++;
+      $basic = $basic + 1;
     }
     
     $lastname = 'temp';
