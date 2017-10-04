@@ -218,6 +218,6 @@
 
     
     fclose($fp);
-    return $size;
+    return $name;
   }
 ?>
