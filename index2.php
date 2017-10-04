@@ -4,7 +4,7 @@
 	$usertype = checkUserType();
 	
 	echo($status);
-	echo($result);
+	echo($usertype);
 	
 	if (isset($_POST['signInBtn']))
   {
