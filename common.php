@@ -29,7 +29,7 @@
         $result = 'success';
       }
     }
-    fclose($file);
+    fclose($fp);
     
     $fp = fopen($file, 'a');
     
