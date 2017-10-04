@@ -195,7 +195,7 @@
     
    
     fclose($fp);
-    return $line;
+    return $linecount;
     
   }
 ?>
