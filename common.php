@@ -184,12 +184,7 @@
         $linecount += substr_count(fread($fp, 8192), "\n");
     }
     
-    $count = 0;
     
-    while (($line = fgets($fp)) != false) 
-      {
-        $count = $count + 1;
-      }
     
     $lastname = 'temp';
     
@@ -197,7 +192,7 @@
     
    
     fclose($fp);
-    return $count;
+    return $linecount;
     
   }
 ?>
