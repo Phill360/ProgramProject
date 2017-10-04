@@ -186,7 +186,10 @@
       array_push($users, $data);
     }  
     
-    $read = sizeof("$users",1);
+    $cars=array("Volvo","BMW","Toyota");
+    $read = sizeof($cars);
+    
+    //$read = sizeof("$users");
     //$read = $users[1];
     
     
