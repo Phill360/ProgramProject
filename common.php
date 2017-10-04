@@ -224,7 +224,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $member[0];
+    return $lastname;
     
   }
 ?>
