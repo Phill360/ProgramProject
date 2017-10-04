@@ -218,7 +218,7 @@
 
     
     fclose($fp);
-    return $size;
+    return $line;
   }
   
   function setMessage($message)
