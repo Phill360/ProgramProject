@@ -175,7 +175,8 @@
   function createNewAdminUser($email)
   {
     $delimiter = ',';
-    $fp = fopen('test.txt', 'r');
+    $file = 'test.txt'
+    $fp = fopen($file, 'r');
     $users = array();
     
     while ( !feof($fp) )
@@ -192,11 +193,21 @@
       if ($users[$row][0] == $email)
       {
         $users[$row][5] = 'admin';
-        $readid = $users[$row][0];
       }
     }
     
     fclose($file);
-    return $readid;
+    
+    $string = $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n';
+    
+    $fp = fopen($file, 'w');
+    
+    for ($row = 0; $row < $size; $row++) 
+    {
+      fwrite($string);
+    }
+    
+    fclose($file);
+    return $string;
   }
 ?>
