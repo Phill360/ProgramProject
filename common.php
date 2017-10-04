@@ -42,7 +42,10 @@
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
-
+    fclose($fp);
+    
+    $fp = fopen($file, 'w');
+    fwrite($file,'');
     fclose($fp);
     
     $result = checkNumberUsersInFile();
@@ -187,7 +190,11 @@
     fwrite($file,'');
     fclose($fp);
     
-    
+    $fp = fopen($file, 'a');
+    for ($row = 0; $row < $size; $row++) 
+    {
+      fwrite($file,$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n');
+    }
     fclose($fp);
     
     $result = checkNumberUsersInFile();  
