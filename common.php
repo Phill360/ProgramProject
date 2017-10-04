@@ -214,10 +214,7 @@
     
     $size = sizeof($users);
    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      $name = $users[$row][0];
-    }
+    $name = $users[0][3];
 
     
     fclose($fp);
