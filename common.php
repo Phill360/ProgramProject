@@ -176,8 +176,8 @@
   {
     $file="users.txt";
     $linecount = 0;
-    $fp = fopen($file,"w+");
-    rewind($fp);
+    $fp = fopen($file,"r");
+    //rewind($fp);
    	
     while(!feof($fp))
     {
