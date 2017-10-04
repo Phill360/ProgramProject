@@ -180,12 +180,11 @@
     
     while(! feof($file))
     {
-      $linecount = linecount +1;
       $read=fgets($file). "<br />";
     }
     
     
     fclose($file);
-    return $linecount;
+    return $read;
   }
 ?>
