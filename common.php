@@ -192,7 +192,7 @@
       if ($users[$row][0] == $email)
       {
         $users[$row][5] = 'admin';
-        $string = $users[$row][5];
+        $readid = $users[$row][5];
       }
     }
     
@@ -203,6 +203,6 @@
     }
     
     fclose($file);
-    return $string;
+    return $readid;
   }
 ?>
