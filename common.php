@@ -187,10 +187,9 @@
     }  
     
     $cars=array("Volvo","BMW","Toyota");
-    $read = sizeof($cars);
+    //$read = sizeof($cars);
     
-    //$read = sizeof("$users");
-    //$read = $users[1];
+    $read = sizeof($users);
     
     
     fclose($file);
