@@ -51,6 +51,7 @@
 		{
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
+			echo($result);
 		}
   }
   
