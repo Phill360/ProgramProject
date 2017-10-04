@@ -207,7 +207,20 @@
     
     fclose($fp);
     
-    $size = sizeof($users);
+    $fp = fopen($file, 'r');
+    $users2 = array();
+    
+    while ( !feof($fp) )
+    {
+      $line = fgets($fp, 2048);
+      $data = str_getcsv($line, $delimiter);
+      array_push($users2, $data);
+    }  
+
+    $size = sizeof($users2);
+    
+    fclose($fp);
+    
     
     
     
