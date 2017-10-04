@@ -209,14 +209,15 @@
       array_push($users, $data);
     }  
     
-    $name;
+    $size = sizeof($users);
+   
     for ($row = 0; $row < $size; $row++) 
     {
       $name = $users[$row][0];
     }
 
-    $size = sizeof($users);
+    
     fclose($fp);
-    return $size;
+    return $name;
   }
 ?>
