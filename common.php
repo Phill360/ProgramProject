@@ -175,7 +175,7 @@
   function createNewAdminUser($email)
   {
     $delimiter = ',';
-    $fp = fopen('test.txt', 'w+');
+    $fp = fopen('test.txt', 'r');
     $users = array();
     
     while ( !feof($fp) )
