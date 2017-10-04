@@ -213,7 +213,7 @@
     
     flock($fp, LOCK_UN);
     fclose($fp);
-    return $size+$array;
+    return $size;
     
   }
 ?>
