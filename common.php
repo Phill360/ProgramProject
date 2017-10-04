@@ -202,7 +202,7 @@
     
     fclose($fp);
     
-    $result = checkNumberUsersInFile()  
+    $result = checkNumberUsersInFile();  
     return $result;
   }
   
