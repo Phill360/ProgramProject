@@ -6,7 +6,7 @@
 	
 	echo('The system is '.$status.' -');
 	echo(' '.$usertype.' user. -');
-	echo('There are '.$number.' users in file.')
+	echo('There are '.$number.' users in file.');
 	
 	
   
