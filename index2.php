@@ -13,7 +13,6 @@
 
 		// Try to register the user
 		$result = signInUser($email,$password);
-		echo $result;
   }
   
   if (isset($_POST['registerBtn']))
@@ -51,6 +50,7 @@
 		{
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
+			echo $result;
 		}
   }
   
