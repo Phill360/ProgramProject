@@ -193,7 +193,12 @@
       }
     }
     fclose($fp);
+    
     $fp = fopen($file, 'w');
+    fwrite($file,'');
+    fclose($fp);
+    
+    $fp = fopen($file, 'a');
     
     for ($row = 0; $row < $size; $row++) 
     {
