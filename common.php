@@ -193,21 +193,20 @@
       if ($users[$row][0] == $email)
       {
         $users[$row][5] = 'admin';
-        
       }
     }
     
-    $string = $users[$row][5];
-    
     fclose($file);
-    
-    //$string = $users[$row][0];
     
     $fp = fopen($file, 'w');
     
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($string);
+      fwrite($file, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].'\n');
+      if ($users[$row][0] == $email)
+      {
+        $string = $users[$row][2];
+      }
     }
     
     fclose($file);
