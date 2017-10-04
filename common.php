@@ -123,7 +123,7 @@
     
     $validUser = false;
     
-    if (checkStatus() == 'not_logged_in')
+    if (checkStatus() == 'signed out')
     {
       $result = 'success';
     }
@@ -142,11 +142,11 @@
    	
     if ((!isset($_SESSION['validUser'])) || ($_SESSION['validUser'] != true))
     {
-      $status = 'not_logged_in';
+      $status = 'signed out';
     }
     else
     {
-	    $status = 'logged_in';
+	    $status = 'signed in';
     }
     return $status;
   }
