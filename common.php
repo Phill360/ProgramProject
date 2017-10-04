@@ -201,6 +201,11 @@
     }
     
     fclose($fp);
-    return 'success';
+    
+    $size = sizeof($users);
+    
+    
+    
+    return $size;
   }
 ?>
