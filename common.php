@@ -189,7 +189,7 @@
       //doSomethingWithData($data);
     }  
     
-    $read = $data[0][1];
+    $read = $data[0];
     
     
     fclose($file);
