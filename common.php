@@ -187,7 +187,7 @@
     }  
     
     //$read = sizeof("$users");
-    $read = $users[1][0];
+    $read = $users[1];
     
     
     fclose($file);
