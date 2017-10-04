@@ -186,8 +186,8 @@
       array_push($users, $data);
     }  
     
-    $read = sizeof("$users");
-    //$read = $users[0][0];
+    //$read = sizeof("$users");
+    $read = $users[1][0];
     
     
     fclose($file);
