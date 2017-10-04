@@ -45,7 +45,7 @@
 		{
 			// Try to register the user
 			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
-			echo(' The result is - '.$result);
+			console.log(' The result is - '.$result);
 		}
   }
   
