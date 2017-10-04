@@ -181,8 +181,8 @@
    	
     while(!feof($fp))
     {
-      $ln = fgets($fp);
-      $linecount++;
+      $ln = fgets($fp, 4096);
+      $linecount = $linecount + substr_count($line, PHP_EOL);
     }
     
     
