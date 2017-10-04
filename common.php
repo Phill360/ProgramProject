@@ -133,6 +133,7 @@
     {
       $result = 'unsuccessful';
     }
+    header('Location: index2.php');	
     
     return $result;
   }

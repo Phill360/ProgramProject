@@ -3,7 +3,7 @@
 	$status = checkStatus();
 	$usertype = checkUserType();
 	
-	echo $status;
+	echo($status);
 	
 	if (isset($_POST['signInBtn']))
   {
