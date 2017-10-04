@@ -186,7 +186,10 @@
     
     $lastname = 'temp';
     
-    $array = explode("\n", file_get_contents('file.txt'));
+    if ($fp) 
+    {
+      $array = explode("\n", fread($fp, filesize($filename)));
+    }
     
     $size = sizeof($array);
     
