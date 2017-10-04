@@ -21,7 +21,7 @@
       else
       {?>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-          <input type="button" class="btn btn-primary pull-right" name="signOutBtn">Sign out</button>
+          <button type="button" class="btn btn-primary pull-right" name="signOutBtn">Sign out</button>
         </form>
       <?php
       }?>
