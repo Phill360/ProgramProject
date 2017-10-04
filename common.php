@@ -184,12 +184,12 @@
     {
       $line = fgets($fp, 2048);
 
-      $data = str_getcsv($line, $delimiter);
+      $data += str_getcsv($line, $delimiter);
 
       //doSomethingWithData($data);
     }  
     
-    $read = $data[0];
+    $read = $data[1];
     
     
     fclose($file);
