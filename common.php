@@ -217,7 +217,6 @@
     
     fwrite($fp, "$email\t$userpass\t$lastname\t$firstname\t$visits\t$usertype\n");
     
-    $email = "Maybe there's no value";
     
     flock($fp, LOCK_UN);
     fclose($fp);
