@@ -45,7 +45,7 @@
     fclose($fp);
     
     $result = checkNumberUsersInFile();
-    return $result;
+    return $firstname;
   }
 
   /* This function logs the user in */
@@ -189,7 +189,7 @@
     $fp = fopen($file, 'a+');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($file,$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].PHP_EOL);
+      fwrite($file, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].PHP_EOL);
     }
     fclose($fp);
     
