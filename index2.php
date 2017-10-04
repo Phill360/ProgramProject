@@ -13,6 +13,7 @@
 
 		// Try to register the user
 		$result = signInUser($email,$password);
+		echo $result;
   }
   
   if (isset($_POST['registerBtn']))

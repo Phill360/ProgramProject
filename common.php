@@ -4,7 +4,6 @@
   /* This function registers a user */
   function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
   {
-    print("Sy something");
     
     $result = 'success';
 
