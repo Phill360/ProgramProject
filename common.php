@@ -216,5 +216,8 @@
     
     flock($fp, LOCK_UN);
     
+    fclose($fp);
+    return = 'success';
+    
   }
 ?>
