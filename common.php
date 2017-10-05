@@ -205,9 +205,9 @@
     $fp = fopen($file, 'r');
     $users = array();
     
-    while (! feof($fp) )
+    while (! feof($fp))
     {
-      $line = fgets($fp, 2048);
+      $line = fgets($fp);
       $data = str_getcsv($line, $delimiter);
       array_push($users, $data);
     }  
