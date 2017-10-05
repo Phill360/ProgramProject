@@ -203,7 +203,7 @@
   function checkNumberUsersInFile()
   {
     $delimiter = ',';
-    $file = 'test.txt';
+    $file = 'users.txt';
     $fp = fopen($file, 'r');
     $users = array();
     
