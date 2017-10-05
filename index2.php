@@ -70,11 +70,18 @@
   }
   
   
-  // WHen the admin user promotes another user from normal to admin user
+  // When the admin user promotes another user from normal to admin user
   if(isset($_POST['createNewAdminUserBtn']))
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     createNewAdminUser($email);
+  }
+  
+  // When the admin user demotes another user from admin to normal user
+  if(isset($_POST['demoteAdminUserBtn']))
+  {
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    demoteAdminUser($email);
   }
 ?>
 

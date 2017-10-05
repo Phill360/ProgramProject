@@ -35,13 +35,13 @@
           <div class="opensans">Demote admin user to normal user</div>
         </div>
         <div class="panel-body">
-          <form>
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="demoteAdminUserForm">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
               <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
-            <button type="button" class="btn btn-primary">Remove</button>
+            <button type="submit" class="btn btn-primary" name="demoteAdminUserBtn">Remove</button>
           </form>
         </div>
       </div>

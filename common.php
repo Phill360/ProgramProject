@@ -182,6 +182,40 @@
     fclose($fp);
   }
   
+  /* This function demotes admin user to normal user */
+  function demoteAdminUser($email)
+  {
+    $delimiter = ',';
+    $file = 'users.txt';
+    $fp = fopen($file, 'r');
+    $user = array();
+    
+    while ( !feof($fp) )
+    {
+      $line = fgets($fp);
+      $data = str_getcsv($line, $delimiter);
+      array_push($user, $data);
+    }  
+    $size = sizeof($user);
+    
+    for ($row = 0; $row < $size; $row++) 
+    {
+      if ($user[$row][0] == $email)
+      {
+        $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',admin';
+        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
+      }
+    }
+    
+    $str = file_get_contents($file, true);
+    $str=str_replace($old,$new,$str);
+    fclose($fp);
+    
+    $fp = fopen($file, 'w');
+    fwrite($fp,$str,strlen($str));
+    fclose($fp);
+  }
+  
   /* This function checks the number of users in the text file. */
   function checkNumberUsersInFile()
   {
