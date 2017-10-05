@@ -67,7 +67,7 @@
   
   if(isset($_POST['signOutBtn']))
   {
-    $status = signOutUser();
+    signOutUser();
   }
   
   
