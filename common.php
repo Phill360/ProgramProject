@@ -5,7 +5,7 @@
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
     $delimiter = ',';
-    $file = 'test.txt';
+    $file = 'users.txt';
     $fp = fopen($file, 'r');
     $users = array();
     
@@ -53,7 +53,7 @@
   function signInUser($email, $password)
   {
     // Check user existance	
-    $file = 'test.txt';
+    $file = 'users.txt';
     $fp = fopen($file, "r");
     $users = array();
     
@@ -70,7 +70,7 @@
       if ($users[$row][0] == $email)
       {
         // User exists, now check the password.
-        if ($users[$row][1] == ($password))
+        if ($users[$row][1] == md5($password))
    	    {
    	      $validUser = true;
    	      $usertype = $users[$row][5];
@@ -161,7 +161,7 @@
   function createNewAdminUser($email)
   {
     $delimiter = ',';
-    $file = 'test.txt';
+    $file = 'users.txt';
     $fp = fopen($file, 'r');
     $users = array();
     
@@ -218,9 +218,8 @@
    
     $name = $users[0][3];
 
-    
     fclose($fp);
-    return $line;
+    return $size;
   }
   
   function setMessage($message)
