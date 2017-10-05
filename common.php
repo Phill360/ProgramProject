@@ -190,8 +190,8 @@
     $fp = fopen($file, 'a+');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($fp, PHP_EOL.$users[$row][0]);
-      //fwrite($fp, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].PHP_EOL);
+      //fwrite($fp, PHP_EOL.$users[$row][0]);
+      fwrite($fp, PHP_EOL.$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5]);
     }
     fclose($fp);
     
