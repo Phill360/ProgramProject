@@ -105,10 +105,6 @@
   <!-- Pet Companions CSS -->
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
-  <!-- FormValidation plugin and the class supports validating Bootstrap form -->
-  <script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
-  <script src="/vendor/formvalidation/dist/js/framework/bootstrap.min.js"></script>
-  
 
 </head>
 
@@ -175,7 +171,7 @@
           <div class="modal-title"><div class="slackey"><div class="textLarge">Register</div></div></div>
         </div>
         <div class="modal-body">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="registerForm">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
@@ -199,8 +195,6 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            
-            <button type="submit" class="btn btn-primary">Add product</button>
             <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
           </form>
         </div>
@@ -211,48 +205,5 @@
     </div>
   </div>
 </div>
-
-<script>
-    $(document).ready(function() {
-    $('#registerForm').formValidation({
-        // I am validating Bootstrap form
-        framework: 'bootstrap',
-
-        // Feedback icons
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-
-        // List of fields and their validation rules
-        fields: {
-            email: {
-                validators: {
-                    notEmpty: {
-                        message: 'The email is required and cannot be empty'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/,
-                        message: 'The email name@domain.com'
-                    }
-                }
-            },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'The password is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
-                    }
-                }
-            }
-        }
-    });
-    });
-  </script>
 </body>
 </html>
