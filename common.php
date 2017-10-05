@@ -190,7 +190,7 @@
     $fp = fopen($file, 'a+');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($fp, 'test2');
+      fwrite($fp, $users[$row][0]);
       //fwrite($fp, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].PHP_EOL);
     }
     fclose($fp);
