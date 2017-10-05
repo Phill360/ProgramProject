@@ -173,9 +173,8 @@
       }
     }
     
-    fclose($fp);
+    $row1 = $row;
     
-    $fp = fopen($file, 'w');
     fclose($fp);
     
     $fp = fopen($file, 'w');
@@ -184,6 +183,8 @@
       fwrite($fp, PHP_EOL.$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5]);
     }
     fclose($fp);
+    
+    setMessage($row1);
   }
   
   /* This function checks the number of users in the text file. */
