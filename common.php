@@ -164,6 +164,7 @@
     }  
 
     $size = sizeof($users);
+    $row1 = $size;
     
     for ($row = 0; $row < $size; $row++) 
     {
@@ -173,7 +174,7 @@
       }
     }
     
-    $row1 = $row;
+    $row2 = $row;
     
     fclose($fp);
     
@@ -184,7 +185,7 @@
     }
     fclose($fp);
     
-    setMessage($row1);
+    setMessage($row1.'&'.$row2);
   }
   
   /* This function checks the number of users in the text file. */
