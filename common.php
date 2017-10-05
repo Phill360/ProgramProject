@@ -95,7 +95,6 @@
     {
       $_SESSION['validUser'] = false;
     }
-
   }
 
   /* This function unsets all session variables and logs the user out */
