@@ -154,22 +154,22 @@
     $delimiter = ',';
     $file = 'users.txt';
     $fp = fopen($file, 'r');
-    $users = array();
+    $user = array();
     
     while ( !feof($fp) )
     {
       $line = fgets($fp);
       $data = str_getcsv($line, $delimiter);
-      array_push($users2, $data);
+      array_push($user, $data);
     }  
 
-    $size = sizeof($users2);
+    $size = sizeof($user);
     
     for ($row = 0; $row < $size; $row++) 
     {
-      if ($users2[$row][0] == $email)
+      if ($user[$row][0] == $email)
       {
-        $users2[$row][5] = 'admin';
+        $user[$row][5] = 'admin';
       }
     }
     
@@ -178,7 +178,7 @@
     $fp = fopen($file, 'w');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($fp, PHP_EOL.$users2[$row][0].','.$users2[$row][1].','.$users2[$row][2].','.$users2[$row][3].','.$users2[$row][4].','.$users2[$row][5]);
+      fwrite($fp, PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5]);
     }
     fclose($fp);
   }
