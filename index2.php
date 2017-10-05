@@ -84,19 +84,73 @@
   <title>Paw Companions</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <script src="upload-image.js"></script>
-
-  <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
+  <!-- Google services -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
   
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="upload-image.js"></script>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  
+  <!-- Pet Companions CSS -->
+  <link rel="stylesheet" type="text/css" href="pcstyle.css">
+  
+  <!-- FormValidation plugin and the class supports validating Bootstrap form -->
+  <script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
+  <script src="/vendor/formvalidation/dist/js/framework/bootstrap.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+    $('#registerForm').formValidation({
+        // I am validating Bootstrap form
+        framework: 'bootstrap',
+
+        // Feedback icons
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+        // List of fields and their validation rules
+        fields: {
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email is required and cannot be empty'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/,
+                        message: 'The email name@domain.com'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The username must be more than 6 and less than 30 characters long'
+                    }
+                }
+            }
+        }
+    });
+    });
+  </script>
 </head>
 
 <body>
@@ -186,6 +240,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
+            
             <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
           </form>
         </div>
