@@ -240,7 +240,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            
+            <button type="submit" class="btn btn-primary">Register</button>
             <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
           </form>
         </div>
