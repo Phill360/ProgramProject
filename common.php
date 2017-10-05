@@ -173,7 +173,7 @@
       }
     }
     
-    $size2 = sizeof($users);
+    $size2 = $row;
     
     fclose($fp);
     
@@ -188,7 +188,12 @@
     }
     fclose($fp);
     
-    $size3 = sizeof($users);
+    for ($row = 0; $row < $size; $row++) 
+    {
+      //
+    }
+    
+    $size3 = $row;
     setMessage($size.' -> '.$size2.' -> '.$size3);
   }
   
