@@ -49,7 +49,7 @@
     return $firstname;
   }
 
-  /* This function logs the user in */
+  /* This function signs the user in */
   function signInUser($email, $password)
   {
     // Check user existance	
@@ -95,9 +95,7 @@
     {
       $_SESSION['validUser'] = false;
     }
-   	  
-    $result = checkNumberUsersInFile();
-    return $result;
+
   }
 
   /* This function unsets all session variables and logs the user out */
@@ -121,7 +119,6 @@
       $result = 'signed in';
     }
     header('Location: index2.php');	
-    return $result;
   }
 
   /* This function checks whether the user is logged in or not */
