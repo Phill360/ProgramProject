@@ -70,7 +70,7 @@
       if ($users[$row][0] == $email)
       {
         // User exists, now check the password.
-        if ($users[$row][1] == md5($password))
+        if ($users[$row][1] == ($password))
    	    {
    	      $validUser = true;
    	      $usertype = $users[$row][5];
