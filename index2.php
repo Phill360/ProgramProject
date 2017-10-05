@@ -186,7 +186,7 @@
             <br>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email" data-error="Bruh, that email address is invalid" required>
             </div>
             <br>
             <div class="input-group">
