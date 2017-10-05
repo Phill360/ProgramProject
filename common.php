@@ -37,8 +37,8 @@
     {
       // Secure password string
    	  $userpass = md5($password);
-   	  //fwrite($fp, $email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype.PHP_EOL);
-   	  fwrite($fp, PHP_EOL.'test');
+   	  fwrite($fp, PHP_EOL.$email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype);
+   	  //fwrite($fp, PHP_EOL.'test');
    	  $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
