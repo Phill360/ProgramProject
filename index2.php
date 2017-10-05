@@ -162,7 +162,7 @@
           <div class="modal-title"><div class="slackey"><div class="textLarge">Register</div></div></div>
         </div>
         <div class="modal-body">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm" data-toggle="validator" role="form">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
