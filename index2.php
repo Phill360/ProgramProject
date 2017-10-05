@@ -162,8 +162,7 @@
           <div class="modal-title"><div class="slackey"><div class="textLarge">Register</div></div></div>
         </div>
         <div class="modal-body">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm" data-toggle="validator" role="form">
-            <div class="form-group has-feedback">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
@@ -176,8 +175,7 @@
             <br>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="text" class="form-control" name="email" placeholder="Email" data-error="Bruh, that email address is invalid" required>
-              <div class="help-block with-errors"></div>
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
             <div class="input-group">
@@ -189,7 +187,6 @@
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
             <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
-          </div>
           </form>
         </div>
         <div class="modal-footer">
@@ -200,7 +197,5 @@
   </div>
 </div>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
 </body>
 </html>
