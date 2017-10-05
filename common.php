@@ -169,9 +169,8 @@
     {
       if ($user[$row][0] == $email)
       {
-        $user[$row][5] = 'admin';
         $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
-        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5];
+        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',admin';
       }
     }
     
@@ -186,7 +185,7 @@
     $str=str_replace($old,$new,$str);
     fwrite($fp,$str,strlen($str));
     
-    $message = $old;
+    $message = $new;
     setMessage($message);
     
     fclose($fp);
