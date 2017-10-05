@@ -164,7 +164,6 @@
     }  
 
     $size = sizeof($users);
-    setMessage($line);
     
     for ($row = 0; $row < $size; $row++) 
     {
@@ -173,6 +172,9 @@
         $users[$row][5] = 'admin';
       }
     }
+    
+    $size2 = sizeof($users);
+    
     fclose($fp);
     
     $fp = fopen($file, 'w');
@@ -187,8 +189,8 @@
     }
     fclose($fp);
     
-    $result = checkNumberUsersInFile();  
-    return $result;
+    $size3 = sizeof($users);
+    setMessage($size.' -> '.$size2.' -> '.$size3);
   }
   
   /* This function checks the number of users in the text file. */
