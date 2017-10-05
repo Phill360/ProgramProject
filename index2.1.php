@@ -172,7 +172,7 @@
         </div>
         <div class="modal-body">
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
-            <div class="input-group has-success">
+            <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
             </div>
@@ -190,7 +190,6 @@
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
               <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-              <span class="help-block">Strong Password</span>
             </div>
             <br>
             <div class="checkbox">
