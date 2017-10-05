@@ -162,7 +162,6 @@
       $data = str_getcsv($line, $delimiter);
       array_push($user, $data);
     }  
-
     $size = sizeof($user);
     
     for ($row = 0; $row < $size; $row++) 
@@ -175,22 +174,11 @@
     }
     
     $str = file_get_contents($file, true);
-    
     $str=str_replace($old,$new,$str);
     fclose($fp);
     
     $fp = fopen($file, 'w');
-    
-    //$str=implode("",file('users.txt'));
-    
-    
-    
-    
     fwrite($fp,$str,strlen($str));
-    
-    $message = $str;
-    setMessage($message);
-    
     fclose($fp);
   }
   
@@ -215,11 +203,13 @@
     return $size;
   }
   
+  /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
   function setMessage($message)
   {
     $_SESSION['message'] = $message; 
   }
   
+  /* This is a diagnostic function, e.g. retrieve values of variables stored in $_SESSION  */
   function getMessage()
   {
     $message = $_SESSION['message'];

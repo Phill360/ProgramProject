@@ -5,13 +5,13 @@
 	$number = checkNumberUsersInFile();
 	$message = getMessage();
 	
-	echo('The system is '.$status.' - ');
-	echo(' '.$usertype.' user. - ');
-	echo('There are '.$number.' users in file. - ');
-	echo('Message: '.$message);
+	// echo('The system is '.$status.' - ');
+	// echo(' '.$usertype.' user. - ');
+	// echo('There are '.$number.' users in file. - ');
+	// echo('Message: '.$message);
 	
 	
-  
+  // When the user registers
   if (isset($_POST['registerBtn']))
   {
 		$visits = 0;
@@ -51,7 +51,7 @@
   }
   
   
-  
+  // When the user signs in
   if (isset($_POST['signInBtn']))
   {
 		// Get user input
@@ -63,14 +63,14 @@
   }
   
   
-  
+  // When the user signs out
   if(isset($_POST['signOutBtn']))
   {
     signOutUser();
   }
   
   
-  
+  // WHen the admin user promotes another user from normal to admin user
   if(isset($_POST['createNewAdminUserBtn']))
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
@@ -97,6 +97,16 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
 
+  <script>
+    function validateForm() {
+    var x = document.forms["registerForm"]["firstname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+  </script>
+
+}
   
 </head>
 
