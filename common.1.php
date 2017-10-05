@@ -176,15 +176,10 @@
     fclose($fp);
     
     $fp = fopen($file, 'w');
-    
-    $str=implode("",file('users.txt'));
-    
-    $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
-    $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5];
-    
-    $str=str_replace($old,$new,$str);
-    fwrite($fp,$str,strlen($str));
-    
+    for ($row = 0; $row < $size; $row++) 
+    {
+      fwrite($fp, PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5]);
+    }
     fclose($fp);
   }
   
