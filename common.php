@@ -176,7 +176,6 @@
     fclose($fp);
     
     $fp = fopen($file, 'w');
-    file_put_contents($file, ' ');
     fclose($fp);
     
     $fp = fopen($file, 'a+');
