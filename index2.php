@@ -26,7 +26,6 @@
         /* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
  
-		
 		if(!preg_match($regexp, $email))
 		{       
 		   echo("Not a valid email address");
