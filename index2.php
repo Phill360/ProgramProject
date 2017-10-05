@@ -163,6 +163,7 @@
         </div>
         <div class="modal-body">
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm" data-toggle="validator" role="form">
+            <div class="form-group has-feedback">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
@@ -187,6 +188,7 @@
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
             <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
+          </div>
           </form>
         </div>
         <div class="modal-footer">
