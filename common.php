@@ -158,34 +158,29 @@
     
     while ( !feof($fp) )
     {
-      $line = fgets($fp, 2048);
+      $line = fgets($fp);
       $data = str_getcsv($line, $delimiter);
-      array_push($users, $data);
+      array_push($users2, $data);
     }  
 
-    $size = sizeof($users);
-    $row1 = $size;
+    $size = sizeof($users2);
     
     for ($row = 0; $row < $size; $row++) 
     {
-      if ($users[$row][0] == $email)
+      if ($users2[$row][0] == $email)
       {
-        $users[$row][5] = 'admin';
+        $users2[$row][5] = 'admin';
       }
     }
-    
-    $row2 = $row;
     
     fclose($fp);
     
     $fp = fopen($file, 'w');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($fp, PHP_EOL.$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5]);
+      fwrite($fp, PHP_EOL.$users2[$row][0].','.$users2[$row][1].','.$users2[$row][2].','.$users2[$row][3].','.$users2[$row][4].','.$users2[$row][5]);
     }
     fclose($fp);
-    
-    setMessage($row1.'&'.$row2);
   }
   
   /* This function checks the number of users in the text file. */
