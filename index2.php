@@ -172,7 +172,8 @@
         </div>
         <div class="modal-body">
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
-            <div class="input-group has-success">
+            
+            <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
             </div>
@@ -187,11 +188,25 @@
               <input id="email" type="text" class="form-control" name="email" placeholder="Email">
             </div>
             <br>
+            
+            <div class="form-group has-success has-feedback">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
               <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span>
               <span class="help-block">Strong Password</span>
             </div>
+            </div>
+            <div class="form-group has-warning has-feedback">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+              <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+              <span class="help-block">Strong Password</span>
+            </div>
+            </div>
+            
+            
             <br>
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
