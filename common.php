@@ -2,7 +2,7 @@
   session_start();
 
   /* This function registers a user */
-  function registerUser($firstname, $lastword, $email, $password, $visits, $usertype)
+  function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
     $delimiter = ',';
     $file = 'test.txt';
@@ -190,7 +190,7 @@
     $fp = fopen($file, 'a+');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($file, $users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5].PHP_EOL);
+      fwrite($file, PHP_EOL.$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5]);
     }
     fclose($fp);
     
