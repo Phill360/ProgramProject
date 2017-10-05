@@ -194,7 +194,6 @@
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
               <input id="password" type="password" class="form-control" name="password" placeholder="Password">
               <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-              <span class="help-block">Strong Password</span>
             </div>
             </div>
             <div class="form-group has-warning has-feedback">
@@ -202,7 +201,6 @@
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
               <input id="password" type="password" class="form-control" name="password" placeholder="Password">
               <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
-              <span class="help-block">Strong Password</span>
             </div>
             </div>
             
