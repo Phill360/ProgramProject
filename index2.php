@@ -97,14 +97,7 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="979917733927-ucaoh1mmkqkmpp8oqfnonj45fjdcd7n4.apps.googleusercontent.com">
 
-  <script>
-    function validateForm() {
-    var x = document.forms["registerForm"]["firstname"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
 
 }
   
