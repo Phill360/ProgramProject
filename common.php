@@ -173,8 +173,6 @@
       }
     }
     
-    $size2 = $row;
-    
     fclose($fp);
     
     $fp = fopen($file, 'w');
@@ -187,14 +185,6 @@
       fwrite($fp, PHP_EOL.$users[$row][0].','.$users[$row][1].','.$users[$row][2].','.$users[$row][3].','.$users[$row][4].','.$users[$row][5]);
     }
     fclose($fp);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      //
-    }
-    
-    $size3 = $row;
-    setMessage($size.' -> '.$size2.' -> '.$size3);
   }
   
   /* This function checks the number of users in the text file. */
@@ -212,10 +202,7 @@
       array_push($users, $data);
     }
     
-    $message = $users[0][0];
-    setMessage($message);
-    
-    $size = sizeof($users);
+    $size = sizeof($users) -1;
 
     fclose($fp);
     return $size;
