@@ -174,12 +174,14 @@
       }
     }
     
+    $str = file_get_contents($file, true);
+    
     $str=str_replace($old,$new,$str);
     fclose($fp);
     
     $fp = fopen($file, 'w');
     
-    $str=implode("",file('users.txt'));
+    //$str=implode("",file('users.txt'));
     
     
     
