@@ -205,15 +205,15 @@
     $fp = fopen($file, 'r');
     $users = array();
     
-    if (! feof($fp))
-    {
     while (! feof($fp))
     {
       $line = fgets($fp);
       $data = str_getcsv($line, $delimiter);
       array_push($users, $data);
     }
-    }
+    
+    $message = $users[0][0];
+    setMessage($message);
     
     $size = sizeof($users);
 
