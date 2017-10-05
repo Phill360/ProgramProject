@@ -170,6 +170,8 @@
       if ($user[$row][0] == $email)
       {
         $user[$row][5] = 'admin';
+        $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
+        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5];
       }
     }
     
@@ -179,8 +181,7 @@
     
     $str=implode("",file('users.txt'));
     
-    $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
-    $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5];
+    
     
     $str=str_replace($old,$new,$str);
     fwrite($fp,$str,strlen($str));
