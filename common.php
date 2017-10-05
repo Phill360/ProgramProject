@@ -178,7 +178,7 @@
     $fp = fopen($file, 'w');
     for ($row = 0; $row < $size; $row++) 
     {
-      fwrite($fp, PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5]);
+      //fwrite($fp, PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].','.$user[$row][5]);
     }
     fclose($fp);
   }
