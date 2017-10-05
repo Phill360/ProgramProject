@@ -185,6 +185,9 @@
     $str=str_replace($old,$new,$str);
     fwrite($fp,$str,strlen($str));
     
+    $message = $old;
+    setMessage($message);
+    
     fclose($fp);
   }
   
