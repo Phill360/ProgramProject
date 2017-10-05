@@ -38,15 +38,11 @@
       // Secure password string
    	  $userpass = md5($password);
    	  fwrite($fp, PHP_EOL.$email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype);
-   	  //fwrite($fp, PHP_EOL.'test');
    	  $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
     fclose($fp);
-    
-    $result = checkNumberUsersInFile();
-    return $firstname;
   }
 
   /* This function signs the user in */
@@ -149,7 +145,6 @@
     {
 	   $usertype = 'normal';
     }
-	  
     return $usertype;
   }
   
@@ -169,6 +164,7 @@
     }  
 
     $size = sizeof($users);
+    setMessage($line);
     
     for ($row = 0; $row < $size; $row++) 
     {
