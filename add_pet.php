@@ -9,7 +9,7 @@ if (count($_POST) > 0) {
 	{
 		// If something has been posted to Login
 		if (isset($_POST['petName'])) {
-			$comp = login($_POST['petName']);
+		//	$comp = login($_POST['petName']);
 		}
 	}
 }
@@ -81,10 +81,9 @@ function login($filename, $email, $password) {
 				while($row = mysqli_fetch_assoc($result)) {
 			?>
 			<tr>
-				<td><?php echo $row["first_name"] . " ";
-				echo $row["last_name"]; ?>	</td>
-				<td><?php echo $row["email"] ; ?>	</td>
-				<td><?php echo $row["postcode"] ; ?>	</td>
+			
+				<td><?php echo $_POST['petName'] ; ?>	</td>
+		
 			</tr>
 			<?php
 				}
@@ -98,8 +97,4 @@ function login($filename, $email, $password) {
 <?php
 	// 5. Close database connection
 	mysqli_close($connection);
-?>
-
-<?php
-include_once ("/home/eh1/e54061/public_html/wp/debug.php");
 ?>
