@@ -58,15 +58,10 @@ function login($filename, $email, $password) {
 
 
 	<body>
-		<h1> Paw Companion Test </h1>
+		<h1> Post Test </h1>
 		
 		
-		<p>Phill</p>
-		<p>Git Test</p>
-		<p>Mark - Yay, this worked! </p>
-		<p>Bash Script Worked! - Updated again</p>
-		<a href="index2.php">Site page</a>
-		
+
 		
 		
 		<h2>User Table<h2>
@@ -76,17 +71,17 @@ function login($filename, $email, $password) {
 				<th>Email</th>
 				<th>Postcode</th>
 			</tr>
-			<?php
-				// 3. returned data
-				while($row = mysqli_fetch_assoc($result)) {
-			?>
+// 			<?php
+// 				// 3. returned data
+// 				while($row = mysqli_fetch_assoc($result)) {
+// 			?>
 			<tr>
 			
 				<td><?php echo $_POST['petName'] ; ?>	</td>
 		
 			</tr>
 			<?php
-				}
+//				}
 			?>
 			
 		</table>
