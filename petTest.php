@@ -32,9 +32,6 @@
             </div>
             <br>
             
-
-            
-            
             <!-- Gender selection -->
             <div class="form-group">
               <label for="age">Gender:</label>
@@ -44,19 +41,14 @@
               </select>
             </div>
             
-       
-
-
-
-
-            
+     
             <!-- Checkboxes for health check -->
             <label>Health checks:</label>
             <div class="checkbox">
-              <label><input type="checkbox" value="">Desexed</label>
+              <label><input type="checkbox" value="" id="desexed">Desexed</label>
             </div>           
             <div class="checkbox">
-              <label><input type="checkbox" value="">Vaccinated</label>
+              <label><input type="checkbox" value="" id="vaccinated">Vaccinated</label>
             </div>
 
 

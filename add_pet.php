@@ -4,23 +4,14 @@
 
 
 <?php
-//login or Logout
-if (count($_POST) > 0) {
-	{
-		// If something has been posted to Login
-		if (isset($_POST['petName'])) {
-		//	$comp = login($_POST['petName']);
-		}
-	}
-}
-
-
-
-
-function login($filename, $email, $password) {
-	$lines = file($filename);
-	$headings = array();
-	$user = array();
+if(is_post_request()) {
+    
+    $petName = $_POST['petName'] ?? '';
+    $age = $_POST['age'] ?? '';
+    $desexed = $_POST['desexed'] ?? '';
+    $vaccinated = $_POST['vaccinated'] ?? '';
+    
+    echo "Petname is: " . $petName;
 }
 ?>
 
@@ -34,59 +25,6 @@ function login($filename, $email, $password) {
 		die("Database query failed.");
 	}
 ?>
-
-
-
-<!DOCTYPE html PUBLIC>
-<html lang="en">
-	<head>
-		<title>Pet</title>
-	</head>
-
-
-	<style>
-
-	table {
-		width: 100%;
-	}
-
-	table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-	}
-	</style>
-
-
-	<body>
-		<h1> Post Test </h1>
-		
-		
-
-		
-		
-		<h2>User Table<h2>
-		<table >
-			<tr>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Postcode</th>
-			</tr>
-// 			<?php
-// 				// 3. returned data
-// 				while($row = mysqli_fetch_assoc($result)) {
-// 			?>
-			<tr>
-			
-				<td><?php echo $_POST['petName'] ; ?>	</td>
-		
-			</tr>
-			<?php
-//				}
-			?>
-			
-		</table>
-	</body>
-</html>
 
 
 <?php
