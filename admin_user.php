@@ -90,7 +90,7 @@
               <div class="form-group">
                 <input type="file" name="file" id="file" required>
               </div>
-            </form>
+            
             
             <!-- Gender selection -->
             <div class="form-group">
