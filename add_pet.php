@@ -11,19 +11,23 @@ if(is_post_request()) {
     $desexed = $_POST['desexed'] ?? '';
     $vaccinated = $_POST['vaccinated'] ?? '';
     
-    echo "Petname is: " . $petName;
-}
-?>
-
-<?php
 	// 2. Perform Query
-	$query = "SELECT * ";
-	$query .= "FROM user ";
+	$query = "INSERT INTO test ";
+	$query .= "(petName, agem desexed, vaccinated) ";
+	$query .= "VALUES (";
+	$query .= "'" . $petName . "',";
+	$query .= "'" . $age . "',";
+	$query .= "'" . $desexed . "',";
+	$query .= "'" . $vaccinated . "',";
+	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
+	if($result) {
+	    $new_id = mysqli_insert_id($connection)
+	} else {
+		echo mysqli_error($connection);
+			mysqli_close($connection);
+			exit;
 ?>
 
 
