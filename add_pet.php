@@ -15,7 +15,6 @@ require_once('_php/connect.php');
     // $species = $_POST['species'];
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petname'];
-   
     $gender = $_POST['gender'];
     $desexed = $_POST['desexed'];
     $vaccinated = $_POST['vaccinated'];
@@ -33,7 +32,7 @@ require_once('_php/connect.php');
 
     
 	// 2. Perform Query
-	$query = "INSERT INTO test ";
+	$query = "INSERT INTO animals ";
 	$query .= "(rspcaID, petName, gender, desexed, vaccinated, wormed, heartworm, imagePath) ";
 	$query .= "VALUES (";
 	$query .= "'" . $rspcaID . "',";

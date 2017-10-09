@@ -47,13 +47,15 @@
             <!-- Checkboxes for health check -->
             <label>Health checks:</label>
             <div class="checkbox">
-              <label><input type="checkbox" name="desexed" value="" id="desexed">Desexed</label>
+              <input type="hidden" name="desexed" value="0">
+              <label><input type="checkbox" name="desexed" value="1">Desexed</label>
             </div>           
             <div class="checkbox">
-              <label><input type="checkbox" name="vaccinated" value="" id="vaccinated">Vaccinated</label>
+               <input type="hidden" name="vaccinated" value="0">
+              <label><input type="checkbox" name="vaccinated" value="1">Vaccinated</label>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" value="Add Pet" class="btn btn-primary">Submit</button>
           </form>
        
        
