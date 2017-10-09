@@ -6,9 +6,11 @@
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
+    include_once('_php/connect.php');
+    
     $users = array();
     
-    $sql = "SELECT email FROM user";
+    $sql = "SELECT * FROM user";
 	  $result = mysqli_query($connection, $sql);
 	  
 	  // Test for query error
