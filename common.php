@@ -58,35 +58,38 @@
   /* This function signs the user in */
   function signInUser($email, $password)
   {
-    // Super admin user sign in
+    // Check user existance	
+    $file = 'users.txt';
+    $fp = fopen($file, "r");
+    $users = array();
+    
+    while ( !feof($fp) )
+    {
+      $line = fgets($fp, 2048);
+      $data = str_getcsv($line, $delimiter);
+      array_push($users, $data);
+    }  
+
+    $size = sizeof($users);
+    for ($row = 0; $row < $size; $row++) 
+    {
+      if ($users[$row][0] == $email)
+      {
+        // User exists, now check the password.
+        if ($users[$row][1] == md5($password))
+   	    {
+   	      $validUser = true;
+   	      $usertype = $users[$row][5];
+   	    }
+      }
+    }
+    fclose($fp);
+    
     if ($email == 'super' && $password == 'super')
     {
       $validUser = true;
-      $usertype = 'admin';
+      $usertype = "admin";
     }
-    
-    // Check user existance	
-    $query = "SELECT * FROM user ";
-	  $result = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("PC database query failed.");
-	  }
-	  
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    if ($row["email"] == $email)
-      {
-        // User exists, now check the password.
-        if ($row["password"] == md5($password))
-   	    {
-   	      $validUser = true;
-   	      $usertype = $row["admin"];
-   	    }
-      }
-	  }
     
     if ($validUser == true) 
     {
