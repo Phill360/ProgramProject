@@ -46,20 +46,20 @@
    	  
    	  $id = '0';
    	  
-      $query = mysqli_query($connection, "INSERT INTO user (userID, first_name, last_name, email, password, admin) VALUES ($id, $firstname, $lastname, $email, $password, $usertype)");
+      $query = mysqli_query($connection, "INSERT INTO user (userID,firstname,lastname,email,password,admin) VALUES ($id, $firstname, $lastname, $email, $password, $usertype)");
 
       if ($connection->query($query) === TRUE) 
       {
         $message = "New record created successfully";
+        $_SESSION['validUser'] = true;
+        $_SESSION['usertype'] = $usertype;
+        header('Location: index2.php');
       } 
       else 
       {
         $message = "Error";
       }
    	  
-   	  $_SESSION['validUser'] = true;
-      $_SESSION['usertype'] = $usertype;
-      header('Location: index2.php');
     }
     
     mysqli_close($connection);
