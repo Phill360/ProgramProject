@@ -158,7 +158,7 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    include_once('_php/connect.php');
+    //
     
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
@@ -173,7 +173,7 @@
 	  {
 	    if ($row["email"] == $email)
       {
-        mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
+        $query = mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
       }
     }
   }
