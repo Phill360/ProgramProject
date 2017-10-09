@@ -32,12 +32,10 @@
       if ($users[$row][0] == $email)
       {
         $check = 'previous user exists';
-        $message = $check;
       }
       else
       {
         $check = 'no previous user';
-        $message = $check;
       }
     }
     
@@ -45,17 +43,16 @@
     {
       // Secure password string
    	  $userpass = md5($password);
-   	  $message = $firstname;
    	  
       $query = "INSERT INTO user (first_name, last_name, email, password, admin) VALUES ($firstname, $lastname, $email, $password, $usertype)";
 
       if ($connection->query($query) === TRUE) 
       {
-        //$message = "New record created successfully";
+        $message = "New record created successfully";
       } 
       else 
       {
-        //$message = "Error";
+        $message = "Error";
       }
    	  
    	  $_SESSION['validUser'] = true;
