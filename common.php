@@ -23,7 +23,7 @@
 	  {
 	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
       array_push($users, $data);
-      $message = $row;
+      $message = $row[1];
 	  }
 	  
 	  $size = sizeof($users);
