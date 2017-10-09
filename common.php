@@ -21,9 +21,10 @@
 	  
 	  while ($row=mysqli_fetch_row($result))
 	  {
+	    //$db_email = $row[1];
 	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
       array_push($users, $data);
-      $message = $row[1];
+      $message = $row["email"];
 	  }
 	  
 	  $size = sizeof($users);
