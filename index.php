@@ -76,7 +76,7 @@
 				while($row = mysqli_fetch_assoc($result)) {
 			?>
 			<tr>
-				<td><?php echo $row["first_name"] . " ";
+				<td><?php echo $row["firstname"] . " ";
 				echo $row["last_name"]; ?>	</td>
 				<td><?php echo $row["email"] ; ?>	</td>
 				<td><?php echo $row["postcode"] ; ?>	</td>
