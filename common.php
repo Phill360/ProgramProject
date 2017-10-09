@@ -158,35 +158,14 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    $delimiter = ',';
-    $file = 'users.txt';
-    $fp = fopen($file, 'r');
-    $user = array();
-    
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp);
-      $data = str_getcsv($line, $delimiter);
-      array_push($user, $data);
-    }  
-    $size = sizeof($user);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($user[$row][0] == $email)
-      {
-        $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
-        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',admin';
-      }
-    }
-    
-    $str = file_get_contents($file, true);
-    $str=str_replace($old,$new,$str);
-    fclose($fp);
-    
-    $fp = fopen($file, 'w');
-    fwrite($fp,$str,strlen($str));
-    fclose($fp);
+    $query = "SELECT * FROM user ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
   }
   
   /* This function demotes admin user to normal user */
