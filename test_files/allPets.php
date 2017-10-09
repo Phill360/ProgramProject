@@ -53,18 +53,13 @@
 
 
 	<body>
-		<h1> Paw Companion Test </h1>
+		<h1>All Pets stored in Database</h1>
 		
-		
-		<p>Phill</p>
-		<p>Git Test</p>
-		<p>Mark - Yay, this worked! </p>
-		<p>Bash Script Worked! - Updated again</p>
-		<a href="index2.php">Site page</a>
-		
-		
-		
-		<h2>User Table<h2>
+		<p><a href="index2.php">Site page</a></p>
+		<p><a href="./test_files/allPets.php">All Pets</a></p>
+		<p><a href="./admin_user.php">Add Pets</a></p>
+	
+		<h2>Pets Table<h2>
 		<table >
 			<tr>
 				<th>rspacaID</th>

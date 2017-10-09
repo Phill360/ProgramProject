@@ -61,7 +61,7 @@
 		<p>Mark - Yay, this worked! </p>
 		<p>Bash Script Worked! - Updated again</p>
 		<p><a href="index2.php">Site page</a></p>
-		<p><a href="./test_files/allPets.php">All Pets</a></p>
+		<p><a href="./test_files/allPets.php">All Pets View</a></p>
 		<p><a href="./admin_user.php">Add Pets</a></p>
 		
 		
