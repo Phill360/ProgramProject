@@ -8,9 +8,9 @@
   {
     $users = array();
     
-    $sql = "SELECT * ";
-	  $sql .= "FROM user ";
+    $sql = "SELECT email FROM user";
 	  $result = mysqli_query($connection, $sql);
+	  
 	  // Test for query error
 	  if(!$result) 
 	  {
