@@ -51,14 +51,15 @@
       if ($connection->query($query) === TRUE) 
       {
         $message = "New record created successfully";
-        $_SESSION['validUser'] = true;
-        $_SESSION['usertype'] = $usertype;
-        header('Location: index2.php');
+        
       } 
       else 
       {
         $message = "Error";
       }
+      $_SESSION['validUser'] = true;
+        $_SESSION['usertype'] = $usertype;
+        header('Location: index2.php');
    	  
     }
     
