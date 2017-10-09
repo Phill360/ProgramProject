@@ -44,13 +44,12 @@
     if ($check == 'no previous user')
     {
       // Secure password string
-      $message = 'passing';
-      //
    	  $userpass = md5($password);
+   	  $message = $firstname;
    	  
-      $sql = "INSERT INTO user (first_name, last_name, email, password, admin) VALUES ($firstname, $lastname, $email, $password, $usertype)";
+      $query = "INSERT INTO user (first_name, last_name, email, password, admin) VALUES ($firstname, $lastname, $email, $password, $usertype)";
 
-      if ($connection->query($sql) === TRUE) 
+      if ($connection->query($query) === TRUE) 
       {
         //$message = "New record created successfully";
       } 
