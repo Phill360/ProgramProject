@@ -48,9 +48,7 @@
       // Secure password string
    	  $userpass = md5($password);
    	  
-   	  // Write record to table in database PHP_EOL.$email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype);
-      $sql = "INSERT INTO user (first_name, last_name, email, password, admin);
-      VALUES ($firstname, $lastname, $email, $password, $usertype)";
+      $sql = "INSERT INTO user (first_name, last_name, email, password, admin) VALUES ($firstname, $lastname, $email, $password, $usertype)";
 
       if ($connection->query($sql) === TRUE) 
       {
