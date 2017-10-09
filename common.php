@@ -23,6 +23,7 @@
 	  {
 	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
       array_push($users, $data);
+      $message = $data;
 	  }
 	  
 	  $size = sizeof($users);
@@ -48,11 +49,11 @@
 
       if ($connection->query($sql) === TRUE) 
       {
-        $message = "New record created successfully";
+        //$message = "New record created successfully";
       } 
       else 
       {
-        $message = "Error";
+        //$message = "Error";
       }
    	  
    	  $_SESSION['validUser'] = true;
@@ -61,7 +62,7 @@
     }
     mysqli_close($connection);
     
-    setMessage = $message;
+    setMessage() = $message;
   }
 
   /* This function signs the user in */
