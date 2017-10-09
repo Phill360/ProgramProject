@@ -49,13 +49,15 @@
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
-    //mysqli_close($connection);
+    mysqli_close($connection);
     setMessage($message);
   }
 
   /* This function signs the user in */
   function signInUser($email, $password)
   {
+    include_once('_php/connect.php');
+    
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
@@ -98,6 +100,7 @@
     {
       $_SESSION['validUser'] = false;
     }
+    mysqli_close($connection);
   }
 
   /* This function unsets all session variables and logs the user out */
