@@ -4,11 +4,6 @@
   <!-- Connect AWS MYSQL Server -->
   include_once('_php/connect.php');
   
-  
-  
-  
-  
-  
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
@@ -53,63 +48,6 @@
     fclose($fp);
   }
 
-  /* This function signs the user in */
-  function signInUser($email, $password)
-  {
-    // Check user existance	
-    $file = 'users.txt';
-    $fp = fopen($file, "r");
-    $users = array();
-    
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp, 2048);
-      $data = str_getcsv($line, $delimiter);
-      array_push($users, $data);
-    }  
-
-    $size = sizeof($users);
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($users[$row][0] == $email)
-      {
-        // User exists, now check the password.
-        if ($users[$row][1] == md5($password))
-   	    {
-   	      $validUser = true;
-   	      $usertype = $users[$row][5];
-   	    }
-      }
-    }
-    fclose($fp);
-    
-    if ($email == 'super' && $password == 'super')
-    {
-      $validUser = true;
-      $usertype = "admin";
-    }
-    
-    if ($validUser == true) 
-    {
-      $_SESSION['validUser'] = true;
-      $_SESSION['usertype'] = $usertype;
-      header('Location: index2.php');	  
-    }
-    else
-    {
-      $_SESSION['validUser'] = false;
-    }
-  }
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
   /* This function signs the user in */
   function signInUser($email, $password)
   {
