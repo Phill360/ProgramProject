@@ -53,7 +53,7 @@
    	  
     }
     
-    mysqli_close($connection);
+
     
     setMessage($message);
   }
@@ -61,7 +61,7 @@
   /* This function signs the user in */
   function signInUser($email, $password)
   {
-    include_once('_php/connect.php');
+
     
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
