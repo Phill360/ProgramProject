@@ -56,8 +56,6 @@
   /* This function signs the user in */
   function signInUser($email, $password)
   {
-    
-    
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
@@ -163,7 +161,7 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    //
+    include_once('_php/connect.php');
     
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
@@ -181,11 +179,14 @@
         //mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
       }
     }
+    mysqli_close($connection);
   }
   
   /* This function demotes admin user to normal user */
   function demoteAdminUser($email)
   {
+    include_once('_php/connect.php');
+    
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
 	  
@@ -202,6 +203,7 @@
         //mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('admin')');
       }
     }
+    mysqli_close($connection);
   }
   
   /* This function checks the number of users in the text file. */
