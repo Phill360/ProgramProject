@@ -63,6 +63,7 @@
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
+      $message = 'reaching';
       $validUser = true;
       $usertype = 'admin';
     }
@@ -100,6 +101,7 @@
     {
       $_SESSION['validUser'] = false;
     }
+    setMessage("$message");
   }
 
   /* This function unsets all session variables and logs the user out */
