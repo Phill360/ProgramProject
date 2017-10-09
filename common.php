@@ -62,29 +62,33 @@
       $validUser = true;
       $usertype = 'admin';
     }
+    else
+    {
+      // Check user existance	
+      $query = "SELECT * FROM user ";
+	    $result = mysqli_query($connection, $query);
+	  
+	    // Test for query error
+	    if(!$result) 
+	    {
+		    die("PC database query failed.");
+	    }
+	  
+	    while ($row = mysqli_fetch_assoc($result))
+	    {
+	      if ($row["email"] == $email)
+        {
+          // User exists, now check the password.
+          if ($row["password"] == md5($password))
+   	      {
+   	        $validUser = true;
+   	        $usertype = $row["admin"];
+   	      }
+        }
+	    }
+    }
     
-    // Check user existance	
-    $query = "SELECT * FROM user ";
-	  $result = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("PC database query failed.");
-	  }
-	  
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    if ($row["email"] == $email)
-      {
-        // User exists, now check the password.
-        if ($row["password"] == md5($password))
-   	    {
-   	      $validUser = true;
-   	      $usertype = $row["admin"];
-   	    }
-      }
-	  }
+    
     
     if ($validUser == true) 
     {
