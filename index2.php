@@ -1,5 +1,9 @@
 <?php
+	
+	include_once('_php/connect.php');
 	include_once('common.php');
+	
+	
 	$status = checkStatus();
 	$usertype = checkUserType();
 	$number = checkNumberUsersInFile();
