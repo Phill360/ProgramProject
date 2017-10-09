@@ -71,6 +71,12 @@
   /* This function signs the user in */
   function signInUser($email, $password)
   {
+    if ($email == 'super' && $password == 'super')
+    {
+      $validUser = true;
+      $usertype = "admin";
+    }
+    
     // Check user existance	
     include_once('_php/connect.php');
     
@@ -104,14 +110,6 @@
    	      $usertype = $users[$row][5];
    	    }
       }
-    }
-    
-    $message = 'reaching';
-    
-    if ($email == 'super' && $password == 'super')
-    {
-      $validUser = true;
-      $usertype = "admin";
     }
     
     if ($validUser == true) 
