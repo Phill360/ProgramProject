@@ -62,10 +62,6 @@
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
-    else
-    {
-      $message = "Sorry, previous user already exists";
-    }
     
     mysqli_close($connection);
     
