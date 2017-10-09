@@ -19,12 +19,12 @@
 		  die("PC database query failed.");
 	  }
 	  
-	  while ($row=mysqli_fetch_assoc($result))
+	  while ($row = mysqli_fetch_assoc($result))
 	  {
 	    //$db_email = $row[1];
 	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
       array_push($users, $data);
-      $message = $row["email"];
+      $message = $data[0];
 	  }
 	  
 	  $size = sizeof($users);
