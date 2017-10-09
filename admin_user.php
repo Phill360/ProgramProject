@@ -158,8 +158,8 @@
               <label><input type="checkbox" name="heartworm" value="1">Heartworm treated</label>
             </div>
             <!--<div class="checkbox">-->
-            <!--        <input type="hidden" name="desexed" value="0">-->
-            <!--  <label><input type="checkbox" name=""value="">Microchipped</label>-->
+            <!--        <input type="hidden" name="microchipped" value="0">-->
+            <!--  <label><input type="checkbox" name="microchipped"value="">Microchipped</label>-->
             <!--</div>-->
 
             <button type="submit" class="btn btn-primary">Submit</button>

@@ -61,6 +61,7 @@
 		<p>Mark - Yay, this worked! </p>
 		<p>Bash Script Worked! - Updated again</p>
 		<a href="index2.php">Site page</a>
+		<a href="./test_files/allPets.php">All Pets</a>
 		
 		
 		
