@@ -82,7 +82,7 @@
 				while($row = mysqli_fetch_assoc($result)) {
 			?>
 			<tr>
-				<td><?php echo $row["rspacaID"] ; ?> </td>
+				<td><?php echo $row["rspcaID"] ; ?> </td>
 				<td><?php echo $row["petName"] ; ?>	</td>
 				<td><?php echo $row["breedID"] ; ?>	</td>
 					<td><?php echo $row["gender"] ; ?> </td>
@@ -90,7 +90,7 @@
 				<td><?php echo $row["vaccinated"] ; ?>	</td>
 					<td><?php echo $row["wormed"] ; ?> </td>
 				<td><?php echo $row["heartworm"] ; ?>	</td>
-				<td><?php echo $row["imagepath"] ; ?>	</td>
+				<td><?php echo $row["imagePath"] ; ?>	</td>
 			</tr>
 			<?php
 				}
