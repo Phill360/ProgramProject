@@ -143,19 +143,19 @@
             <label>Health checks:</label>
             <div class="checkbox">
                     <input type="hidden" name="desexed" value="0">
-              <label><input type="checkbox" name="desexed" value="">Desexed</label>
+              <label><input type="checkbox" name="desexed" value="1">Desexed</label>
             </div>           
             <div class="checkbox">
                     <input type="hidden" name="vaccinated" value="0">
-              <label><input type="checkbox"name="vaccinated"  value="">Vaccinated</label>
+              <label><input type="checkbox"name="vaccinated"  value="1">Vaccinated</label>
             </div>
             <div class="checkbox">
                     <input type="hidden" name="wormed" value="0">
-              <label><input type="checkbox" name="wormed" value="">Wormed</label>
+              <label><input type="checkbox" name="wormed" value="1">Wormed</label>
             </div>
             <div class="checkbox">
                     <input type="hidden" name="heartworm" value="0">
-              <label><input type="checkbox" name="heartworm" value="">Heartworm treated</label>
+              <label><input type="checkbox" name="heartworm" value="1">Heartworm treated</label>
             </div>
             <!--<div class="checkbox">-->
             <!--        <input type="hidden" name="desexed" value="0">-->
