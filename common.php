@@ -38,6 +38,7 @@
       {
         $check = 'no previous user';
         $message = $check;
+        //
       }
     }
     
