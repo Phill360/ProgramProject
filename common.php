@@ -21,14 +21,12 @@
 	  
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
-	    //$db_email = $row[1];
 	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
       array_push($users, $data);
-      $message = $data[0];
 	  }
 	  
 	  $size = sizeof($users);
-	  //$message = $size;
+	  $message = $size;
     
     for ($row = 0; $row < $size; $row++) 
     {
