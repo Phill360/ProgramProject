@@ -62,7 +62,7 @@
       $validUser = true;
       $usertype = 'admin';
     }
-    else
+    else // user from database
     {
       // Check user existance	
       $query = "SELECT * FROM user ";
@@ -87,8 +87,6 @@
         }
 	    }
     }
-    
-    
     
     if ($validUser == true) 
     {
@@ -160,69 +158,48 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    $delimiter = ',';
-    $file = 'users.txt';
-    $fp = fopen($file, 'r');
-    $user = array();
+    // Check user existance	
     
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp);
-      $data = str_getcsv($line, $delimiter);
-      array_push($user, $data);
-    }  
-    $size = sizeof($user);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($user[$row][0] == $email)
+    $query = "SELECT * FROM user ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    if ($row["email"] == $email)
       {
-        $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
-        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',admin';
+        mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('admin')');
       }
     }
-    
-    $str = file_get_contents($file, true);
-    $str=str_replace($old,$new,$str);
-    fclose($fp);
-    
-    $fp = fopen($file, 'w');
-    fwrite($fp,$str,strlen($str));
-    fclose($fp);
+    //mysqli_close($connection);
   }
   
   /* This function demotes admin user to normal user */
   function demoteAdminUser($email)
   {
-    $delimiter = ',';
-    $file = 'users.txt';
-    $fp = fopen($file, 'r');
-    $user = array();
-    
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp);
-      $data = str_getcsv($line, $delimiter);
-      array_push($user, $data);
-    }  
-    $size = sizeof($user);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($user[$row][0] == $email)
+    // Check user existance	
+    $query = "SELECT * FROM user ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    if ($row["email"] == $email)
       {
-        $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',admin';
-        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
+        mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
       }
     }
-    
-    $str = file_get_contents($file, true);
-    $str=str_replace($old,$new,$str);
-    fclose($fp);
-    
-    $fp = fopen($file, 'w');
-    fwrite($fp,$str,strlen($str));
-    fclose($fp);
+    //mysqli_close($connection);
   }
   
   /* This function checks the number of users in the text file. */
