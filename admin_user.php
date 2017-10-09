@@ -54,7 +54,7 @@
           <div class="opensans">Add a pet</div>
         </div>
         <div class="panel-body">
-          <form action="/add_pet.php">
+          <form action="add_pet.php">
             
             <!-- Select cat or dog -->
             <div class="form-group">
