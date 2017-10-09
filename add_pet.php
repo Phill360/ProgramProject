@@ -24,10 +24,16 @@ require_once('_php/connect.php');
     // $species = $_POST[''];
 
   
+		echo  $rspcaID . "<br />";
+    	echo  $petname . "<br />";
+		echo  $gender . "<br />";
+		echo  $desexed . "<br />";
+		echo  $vaccinated . "<br />";
+		echo  $wormed . "<br />";
+		echo  $heartworm . "<br />";
+		echo  $imagePath . "<br />";
+		
 
-    	echo "The pet name is: " . $petname . "<br />";
-		echo "The pet name is: " . $sex . "<br />";
-		//echo "The pet name is: " . $desexed . "<br />";
 
 
     
