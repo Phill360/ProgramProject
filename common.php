@@ -19,7 +19,7 @@
 		  die("PC database query failed.");
 	  }
 	  
-	  while ($row=mysqli_fetch_row($result))
+	  while ($row=mysqli_fetch_assoc($result))
 	  {
 	    //$db_email = $row[1];
 	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
