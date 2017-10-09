@@ -6,8 +6,6 @@
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-    $message = "-";
-    
     include_once('_php/connect.php');
     
     $users = array();
@@ -64,6 +62,11 @@
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
+    else
+    {
+      $message = "Sorry, previous user already exists";
+    }
+    
     mysqli_close($connection);
     
     setMessage($message);
