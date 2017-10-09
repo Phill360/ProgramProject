@@ -13,7 +13,7 @@
 
     Push all files to Heroku to update site 
         git push heroku master
--->
+-->git 
 
 <!-- Connect AWS MYSQL Server -->
 <?php include_once('../_php/connect.php');?>
