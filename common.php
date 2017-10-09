@@ -26,17 +26,18 @@
 	  }
 	  
 	  $size = sizeof($users);
-	  $message = $size;
     
     for ($row = 0; $row < $size; $row++) 
     {
       if ($users[$row][0] == $email)
       {
         $check = 'previous user exists';
+        $message = $check;
       }
       else
       {
         $check = 'no previous user';
+        $message = $check;
       }
     }
     
