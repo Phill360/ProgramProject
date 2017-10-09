@@ -8,8 +8,6 @@
   {
     include_once('_php/connect.php');
     
-    $users = array();
-    
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
 	  
@@ -21,23 +19,15 @@
 	  
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
-	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
-      array_push($users, $data);
-	  }
-	  
-	  $size = sizeof($users);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($users[$row][0] == $email)
-      {
-        $check = 'previous user exists';
-      }
-      else
+	    if ($row["email"] == $email)
+	    {
+	      $check = 'previous user exists';
+	    }
+	    else
       {
         $check = 'no previous user';
       }
-    }
+	  }
     
     if ($check == 'no previous user')
     {
@@ -46,20 +36,20 @@
    	  
    	  $id = '0';
    	  
-      $query = mysqli_query($connection, "INSERT INTO user (userID,firstname,lastname,email,password,admin) VALUES ($id, $firstname, $lastname, $email, $password, $usertype)");
+      $query = mysqli_query($connection, 'INSERT INTO user (userID, firstname, lastname, email, password, admin) VALUES ($id, $firstname, $lastname, $email, $userpass, $usertype)');
 
       if ($connection->query($query) === TRUE) 
       {
         $message = "New record created successfully";
-        
       } 
       else 
       {
         $message = "Error";
       }
+      
       $_SESSION['validUser'] = true;
-        $_SESSION['usertype'] = $usertype;
-        header('Location: index2.php');
+      $_SESSION['usertype'] = $usertype;
+      header('Location: index2.php');
    	  
     }
     
