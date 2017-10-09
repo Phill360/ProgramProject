@@ -173,7 +173,7 @@
 	  {
 	    if ($row["email"] == $email)
       {
-        $query = mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
+        //mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
       }
     }
   }
