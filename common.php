@@ -166,6 +166,14 @@
 	  {
 		  die("PC database query failed.");
 	  }
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    if ($row["email"] == $email)
+      {
+        //
+      }
+    }
   }
   
   /* This function demotes admin user to normal user */
