@@ -14,7 +14,7 @@
 	  // Test for query error
 	  if(!$result) 
 	  {
-		  die("Database query failed.");
+		  die("PC Database query failed.");
 	  }
 	  
 	  while ($row=mysqli_fetch_row($result))
