@@ -72,31 +72,42 @@
   function signInUser($email, $password)
   {
     // Check user existance	
-    $file = 'users.txt';
-    $fp = fopen($file, "r");
+    include_once('_php/connect.php');
+    
     $users = array();
     
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp, 2048);
-      $data = str_getcsv($line, $delimiter);
+    $query = "SELECT * FROM user ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
       array_push($users, $data);
-    }  
-
-    $size = sizeof($users);
+	  }
+	  
+	  $size = sizeof($users);
+    
     for ($row = 0; $row < $size; $row++) 
     {
       if ($users[$row][0] == $email)
       {
         // User exists, now check the password.
-        if ($users[$row][1] == md5($password))
-   	    {
-   	      $validUser = true;
-   	      $usertype = $users[$row][5];
-   	    }
+        //if ($users[$row][1] == md5($password))
+   	    //{
+   	    //  $validUser = true;
+   	    //  $usertype = $users[$row][5];
+   	    //}
+   	    $validUser = true;
+   	    $usertype = $users[$row][4];
       }
     }
-    fclose($fp);
+    
     
     if ($email == 'super' && $password == 'super')
     {
