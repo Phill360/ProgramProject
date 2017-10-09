@@ -12,58 +12,7 @@
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-    $users = array();
-    
-    $sql = "SELECT * FROM user";
-	  $result = mysqli_query($connection, $sql);
-	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("Database query failed.");
-	  }
-	  
-	  while ($row=mysqli_fetch_row($result))
-	  {
-	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
-      array_push($users, $data);
-	  }
-	  
-	  $size = sizeof($users);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($users[$row][0] == $email)
-      {
-        $check = 'previous user exists';
-      }
-      else
-      {
-        $check = 'no previous user';
-      }
-    }
-    
-    if ($check == 'no previous user')
-    {
-      // Secure password string
-   	  $userpass = md5($password);
-   	  
-      $sql = "INSERT INTO user (first_name, last_name, email, password, admin) VALUES ($firstname, $lastname, $email, $password, $usertype)";
-
-      if ($connection->query($sql) === TRUE) 
-      {
-        $message = "New record created successfully";
-      } 
-      else 
-      {
-        $message = "Error";
-      }
-   	  
-   	  $_SESSION['validUser'] = true;
-      $_SESSION['usertype'] = $usertype;
-      header('Location: index2.php');
-    }
-    mysqli_close($connection);
+    //
   }
 
   

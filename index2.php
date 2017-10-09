@@ -45,8 +45,8 @@
 		else
 		{
 			// Try to register the user
-			//$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
-			//setMessage(' The result is - '.$result);
+			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
+			setMessage(' The result is - '.$result);
 		}
   }
   
