@@ -6,17 +6,18 @@
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-
+    include_once('_php/connect.php');
     
     $users = array();
     
-    $query = "SELECT * ";
-	$query .= "FROM user ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("PPC Database query failed.");
-	}
+    $query = "SELECT * FROM user ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
 	  
 	  while ($row=mysqli_fetch_row($result))
 	  {
