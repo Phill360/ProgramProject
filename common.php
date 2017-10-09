@@ -8,13 +8,13 @@
   {
     $users = array();
     
-    $sql = "SELECT * FROM user";
+    $sql = "SELECT * ";
+	  $sql .= "FROM user ";
 	  $result = mysqli_query($connection, $sql);
-	  
 	  // Test for query error
 	  if(!$result) 
 	  {
-		  die("PC Database query failed.");
+		  die("Database query failed.");
 	  }
 	  
 	  while ($row=mysqli_fetch_row($result))
