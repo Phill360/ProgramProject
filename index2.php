@@ -12,7 +12,7 @@
 	// echo('The system is '.$status.' - ');
 	// echo(' '.$usertype.' user. - ');
 	// echo('There are '.$number.' users in file. - ');
-	echo('Message: '.$message);
+	// echo('Message: '.$message);
 	
 	
   // When the user registers
