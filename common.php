@@ -65,11 +65,11 @@
     if ($email == 'super' && $password == 'super')
     {
       $validUser = true;
-      $usertype = "admin";
+      $usertype = 'admin';
     }
     
     // Check user existance	
-    include_once('_php/connect.php');
+
     
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
@@ -164,7 +164,6 @@
   function createNewAdminUser($email)
   {
     // Check user existance	
-    include_once('_php/connect.php');
     
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
@@ -189,7 +188,6 @@
   function demoteAdminUser($email)
   {
     // Check user existance	
-    include_once('_php/connect.php');
     
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
