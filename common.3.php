@@ -53,8 +53,6 @@
    	  
     }
     
-    mysqli_close($connection);
-    
     setMessage($message);
   }
 
