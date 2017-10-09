@@ -36,7 +36,7 @@
    	  
    	  $id = '0';
    	  
-      $query = mysqli_query($connection, 'INSERT INTO user ('userID', 'firstname', 'lastname', 'email', 'password', 'admin') VALUES ($id, $firstname, $lastname, $email, $userpass, $usertype)');
+      $query = mysqli_query($connection, 'INSERT INTO user (userID, firstname, lastname, email, password, admin) VALUES ($id, $firstname, $lastname, $email, $userpass, $usertype)');
 
       if ($connection->query($query) === TRUE) 
       {
@@ -176,7 +176,7 @@
 	  {
 	    if ($row["email"] == $email)
       {
-        mysqli_query($connection, 'INSERT INTO user ('admin') VALUES ('admin')');
+        mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('admin')');
       }
     }
     mysqli_close($connection);
@@ -199,7 +199,7 @@
 	  {
 	    if ($row["email"] == $email)
       {
-        mysqli_query($connection, 'INSERT INTO user ('admin') VALUES ('normal')');
+        mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
       }
     }
     mysqli_close($connection);
