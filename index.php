@@ -77,7 +77,7 @@
 			?>
 			<tr>
 				<td><?php echo $row["firstname"] . " ";
-				echo $row["last_name"]; ?>	</td>
+				echo $row["lastname"]; ?>	</td>
 				<td><?php echo $row["email"] ; ?>	</td>
 				<td><?php echo $row["postcode"] ; ?>	</td>
 			</tr>
