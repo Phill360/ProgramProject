@@ -199,7 +199,7 @@
         mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('normal')');
       }
     }
-    //mysqli_close($connection);
+    mysqli_close($connection);
   }
   
   /* This function checks the number of users in the text file. */
