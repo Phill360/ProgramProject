@@ -1,22 +1,35 @@
 <?php
   session_start();
 
+  <!-- Connect AWS MYSQL Server -->
+  include_once('_php/connect.php');
+  
+  
+  
+  
+  
+  
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-    $delimiter = ',';
-    $file = 'users.txt';
-    $fp = fopen($file, 'r');
     $users = array();
     
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp, 2048);
-      $data = str_getcsv($line, $delimiter);
+    $sql = "SELECT * FROM user";
+	  $result = mysqli_query($connection, $sql);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("Database query failed.");
+	  }
+	  
+	  while ($row=mysqli_fetch_row($result))
+	  {
+	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
       array_push($users, $data);
-    }  
-
-    $size = sizeof($users);
+	  }
+	  
+	  $size = sizeof($users);
     
     for ($row = 0; $row < $size; $row++) 
     {
@@ -29,22 +42,41 @@
         $check = 'no previous user';
       }
     }
-    fclose($fp);
-    
-    $fp = fopen($file, 'a+');
     
     if ($check == 'no previous user')
     {
       // Secure password string
    	  $userpass = md5($password);
-   	  fwrite($fp, PHP_EOL.$email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype);
+   	  
+   	  // Write record to table in database PHP_EOL.$email.','.$userpass.','.$lastname.','.$firstname.','.$visits.','.$usertype);
+      $sql = "INSERT INTO user (first_name, last_name, email, password, admin)
+      VALUES ($firstname, $lastname, $email, $password, $usertype)";
+
+      if ($connection->query($sql) === TRUE) 
+      {
+        $message = "New record created successfully";
+      } 
+      else 
+      {
+        $message = "Error";
+      }
+   	  
    	  $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
-    fclose($fp);
+    mysqli_close($connection);
   }
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
   /* This function signs the user in */
   function signInUser($email, $password)
   {
