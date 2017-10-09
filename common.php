@@ -6,7 +6,7 @@
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-    //include_once('_php/connect.php');
+    include_once('_php/connect.php');
     
     $users = array();
     
