@@ -106,10 +106,10 @@
       }
     }
     
+    $message = 'reaching';
     
     if ($email == 'super' && $password == 'super')
     {
-      $message = 'reaching';
       $validUser = true;
       $usertype = "admin";
     }
