@@ -51,7 +51,7 @@
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
     }
-    mysqli_close($connection);
+    //mysqli_close($connection);
     setMessage($message);
   }
 
