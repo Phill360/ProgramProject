@@ -45,6 +45,7 @@
     {
       // Secure password string
       $message = 'passing';
+      //
    	  $userpass = md5($password);
    	  
       $sql = "INSERT INTO user (first_name, last_name, email, password, admin) VALUES ($firstname, $lastname, $email, $password, $usertype)";
