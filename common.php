@@ -44,7 +44,7 @@
       // Secure password string
    	  $userpass = md5($password);
    	  
-      $query = "INSERT INTO user (first_name, last_name, email, password, admin) VALUES ($firstname, $lastname, $email, $password, $usertype)";
+      $query = "INSERT INTO user (userID, first_name, last_name, email, password, admin) VALUES ('0', $firstname, $lastname, $email, $password, $usertype)";
 
       if ($connection->query($query) === TRUE) 
       {
