@@ -61,6 +61,8 @@
   /* This function signs the user in */
   function signInUser($email, $password)
   {
+    include_once('_php/connect.php');
+    
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
@@ -163,6 +165,8 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
+    include_once('_php/connect.php');
+    
     // Check user existance	
     
     $query = "SELECT * FROM user ";
@@ -187,8 +191,9 @@
   /* This function demotes admin user to normal user */
   function demoteAdminUser($email)
   {
-    // Check user existance	
+    include_once('_php/connect.php');
     
+    // Check user existance	
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
 	  
