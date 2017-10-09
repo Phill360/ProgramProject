@@ -14,7 +14,7 @@ require_once('_php/connect.php');
     
     // $species = $_POST['species'];
     $rspcaID = $_POST['rspcaID'];
-    $petName = $_POST['petname'];
+    $petName = $_POST['petName'];
     $gender = $_POST['gender'];
     $desexed = $_POST['desexed'];
     $vaccinated = $_POST['vaccinated'];

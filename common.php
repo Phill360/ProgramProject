@@ -50,11 +50,8 @@
       $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
-   	  
     }
-    
-
-    
+    mysqli_close($connection);
     setMessage($message);
   }
 
