@@ -1,8 +1,7 @@
 <?php
   session_start();
 
-  <!-- Connect AWS MYSQL Server -->
-  include_once('_php/connect.php');
+  
   
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)

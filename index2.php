@@ -1,5 +1,5 @@
 <?php
-	$require_once('common.php');
+	include_once('common.php');
 	$status = checkStatus();
 	$usertype = checkUserType();
 	$number = checkNumberUsersInFile();
