@@ -62,7 +62,7 @@
     }
     mysqli_close($connection);
     
-    setMessage() = $message;
+    setMessage($message);
   }
 
   /* This function signs the user in */
