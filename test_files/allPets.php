@@ -16,7 +16,7 @@
 -->
 
 <!-- Connect AWS MYSQL Server -->
-<?php include_once('_php/connect.php');?>
+<?php include_once('../_php/connect.php');?>
 
 
 <?php
