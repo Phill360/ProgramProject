@@ -65,14 +65,10 @@
     if ($email == 'super' && $password == 'super')
     {
       $validUser = true;
-      $usertype = "admin";
+      $usertype = 'admin';
     }
     
     // Check user existance	
-    include_once('_php/connect.php');
-    
-    $users = array();
-    
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
 	  
@@ -84,24 +80,16 @@
 	  
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
-	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
-      array_push($users, $data);
-	  }
-	  
-	  $size = sizeof($users);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($users[$row][0] == $email)
+	    if ($row["email"] == $email)
       {
         // User exists, now check the password.
-        if ($users[$row][1] == md5($password))
+        if ($row["password"] == md5($password))
    	    {
    	      $validUser = true;
-   	      $usertype = $users[$row][5];
+   	      $usertype = $row["admin"];
    	    }
       }
-    }
+	  }
     
     if ($validUser == true) 
     {
@@ -113,9 +101,6 @@
     {
       $_SESSION['validUser'] = false;
     }
-    
-    setMessage($message);
-  }
 
   /* This function unsets all session variables and logs the user out */
   function signOutUser()

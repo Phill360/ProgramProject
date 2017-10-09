@@ -12,10 +12,19 @@ require_once('_php/connect.php');
 
  if(is_post_request()) {
     
-    $petname = $_POST['petname'];
-    $sex = $_POST['sex'];
+    // $species = $_POST['species'];
+    $rspcaID = $_POST['rspcaID'];
+    $petName = $_POST['petname'];
+   
+    $gender = $_POST['gender'];
     $desexed = $_POST['desexed'];
     $vaccinated = $_POST['vaccinated'];
+    $wormed = $_POST['wormed'];
+    $heartworm = $_POST['heartworm'];
+    $imagePath = $_POST['file'];
+    // $species = $_POST[''];
+
+  
 
     	echo "The pet name is: " . $petname . "<br />";
 		echo "The pet name is: " . $sex . "<br />";
@@ -25,12 +34,16 @@ require_once('_php/connect.php');
     
 	// 2. Perform Query
 	$query = "INSERT INTO test ";
-	$query .= "(petName, sex, desexed, vaccinated) ";
+	$query .= "(rspcaID, petName, gender, desexed, vaccinated, wormed, heartworm, imagePath) ";
 	$query .= "VALUES (";
-	$query .= "'" . $petname . "',";
-	$query .= "'" . $sex . "',";
+	$query .= "'" . $rspcaID . "',";
+	$query .= "'" . $petName . "',";
+	$query .= "'" . $gender . "',";
 	$query .= "'" . $desexed . "',";
-	$query .= "'" . $vaccinated . "'";
+	$query .= "'" . $vaccinated . "',";
+	$query .= "'" . $wormed . "',";
+	$query .= "'" . $heartworm . "',";
+	$query .= "'" . $imagePath . "'";
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	// Test for query error
