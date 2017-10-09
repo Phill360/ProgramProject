@@ -8,8 +8,6 @@
   {
     include_once('_php/connect.php');
     
-    $users = array();
-    
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
 	  
@@ -21,23 +19,15 @@
 	  
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
-	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
-      array_push($users, $data);
-	  }
-	  
-	  $size = sizeof($users);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($users[$row][0] == $email)
-      {
-        $check = 'previous user exists';
-      }
-      else
+	    if ($row["email"] == $email)
+	    {
+	      $check = 'previous user exists';
+	    }
+	    else
       {
         $check = 'no previous user';
       }
-    }
+	  }
     
     if ($check == 'no previous user')
     {
@@ -46,20 +36,20 @@
    	  
    	  $id = '0';
    	  
-      $query = mysqli_query($connection, "INSERT INTO user (userID,firstname,lastname,email,password,admin) VALUES ($id, $firstname, $lastname, $email, $password, $usertype)");
+      mysqli_query($connection, "INSERT INTO user ('userID', 'firstname', 'lastname', 'email', 'password', 'admin') VALUES ($id, $firstname, $lastname, $email, $userpass, $usertype)");
 
       if ($connection->query($query) === TRUE) 
       {
         $message = "New record created successfully";
-        
       } 
       else 
       {
         $message = "Error";
       }
+      
       $_SESSION['validUser'] = true;
-        $_SESSION['usertype'] = $usertype;
-        header('Location: index2.php');
+      $_SESSION['usertype'] = $usertype;
+      header('Location: index2.php');
    	  
     }
     
@@ -71,6 +61,7 @@
   /* This function signs the user in */
   function signInUser($email, $password)
   {
+    // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
       $validUser = true;
@@ -79,8 +70,6 @@
     
     // Check user existance	
     include_once('_php/connect.php');
-    
-    $users = array();
     
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
@@ -93,24 +82,16 @@
 	  
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
-	    $data = array($row['email'], $row['password'], $row['last_name'], $row['first_name'], $row['admin']);
-      array_push($users, $data);
-	  }
-	  
-	  $size = sizeof($users);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($users[$row][0] == $email)
+	    if ($row["email"] == $email)
       {
         // User exists, now check the password.
-        if ($users[$row][1] == md5($password))
+        if ($row["password"] == md5($password))
    	    {
    	      $validUser = true;
-   	      $usertype = $users[$row][5];
+   	      $usertype = $row["admin"];
    	    }
       }
-    }
+	  }
     
     if ($validUser == true) 
     {
@@ -122,8 +103,6 @@
     {
       $_SESSION['validUser'] = false;
     }
-    
-    setMessage($message);
   }
 
   /* This function unsets all session variables and logs the user out */
@@ -184,69 +163,51 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    $delimiter = ',';
-    $file = 'users.txt';
-    $fp = fopen($file, 'r');
-    $user = array();
+    // Check user existance	
+    include_once('_php/connect.php');
     
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp);
-      $data = str_getcsv($line, $delimiter);
-      array_push($user, $data);
-    }  
-    $size = sizeof($user);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($user[$row][0] == $email)
+    $query = "SELECT * FROM user ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    if ($row["email"] == $email)
       {
-        $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
-        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',admin';
+        mysqli_query($connection, 'INSERT INTO user ('admin') VALUES ('admin')');
       }
     }
-    
-    $str = file_get_contents($file, true);
-    $str=str_replace($old,$new,$str);
-    fclose($fp);
-    
-    $fp = fopen($file, 'w');
-    fwrite($fp,$str,strlen($str));
-    fclose($fp);
+    mysqli_close($connection);
   }
   
   /* This function demotes admin user to normal user */
   function demoteAdminUser($email)
   {
-    $delimiter = ',';
-    $file = 'users.txt';
-    $fp = fopen($file, 'r');
-    $user = array();
+    // Check user existance	
+    include_once('_php/connect.php');
     
-    while ( !feof($fp) )
-    {
-      $line = fgets($fp);
-      $data = str_getcsv($line, $delimiter);
-      array_push($user, $data);
-    }  
-    $size = sizeof($user);
-    
-    for ($row = 0; $row < $size; $row++) 
-    {
-      if ($user[$row][0] == $email)
+    $query = "SELECT * FROM user ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    if ($row["email"] == $email)
       {
-        $old = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',admin';
-        $new = PHP_EOL.$user[$row][0].','.$user[$row][1].','.$user[$row][2].','.$user[$row][3].','.$user[$row][4].',normal';
+        mysqli_query($connection, 'INSERT INTO user ('admin') VALUES ('normal')');
       }
     }
-    
-    $str = file_get_contents($file, true);
-    $str=str_replace($old,$new,$str);
-    fclose($fp);
-    
-    $fp = fopen($file, 'w');
-    fwrite($fp,$str,strlen($str));
-    fclose($fp);
+    mysqli_close($connection);
   }
   
   /* This function checks the number of users in the text file. */
