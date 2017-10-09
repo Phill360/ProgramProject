@@ -54,12 +54,12 @@
           <div class="opensans">Add a pet</div>
         </div>
         <div class="panel-body">
-          <form action = "add_pet.php">
+          <form action="./add_pet.php" method="post">
             
             <!-- Select cat or dog -->
             <div class="form-group">
               <label for="age">Species:</label>
-              <select class="form-control" id="species">
+              <select class="form-control" id="species" name="species">
                 <option>Cat</option>
                 <option>Dog</option>
               </select>
