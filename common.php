@@ -98,13 +98,11 @@
       if ($users[$row][0] == $email)
       {
         // User exists, now check the password.
-        //if ($users[$row][1] == md5($password))
-   	    //{
-   	    //  $validUser = true;
-   	    //  $usertype = $users[$row][5];
-   	    //}
-   	    $validUser = true;
-   	    $usertype = 'admin';
+        if ($users[$row][1] == md5($password))
+   	    {
+   	      $validUser = true;
+   	      $usertype = $users[$row][5];
+   	    }
       }
     }
     
