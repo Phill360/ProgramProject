@@ -104,7 +104,7 @@
    	    //  $usertype = $users[$row][5];
    	    //}
    	    $validUser = true;
-   	    $usertype = $users[$row][4];
+   	    $usertype = 'normal';
       }
     }
     
