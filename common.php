@@ -66,6 +66,7 @@
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
+      echo "USer is super";
       $validUser = true;
       $usertype = 'admin';
     }
