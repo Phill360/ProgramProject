@@ -225,6 +225,7 @@
 	    $size += 1
 	  }
 
+    mysqli_close($connection);
     return $size;
   }
   
