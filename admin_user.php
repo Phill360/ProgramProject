@@ -28,7 +28,6 @@ require_once('./_php/connect.php');
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-
       <!-- Create new admin user box -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -66,7 +65,6 @@ require_once('./_php/connect.php');
 
    
     <div class="col-sm-6">
-
       <!-- Add a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -84,7 +82,7 @@ require_once('./_php/connect.php');
               </select>
             </div>
           
-              <!-- Select pet breed -->
+            <!-- Select pet breed -->
             <div class="form-group">
               <label for="age">Breed:</label>
               <select class="form-control" id="species" name="breedID">
@@ -136,73 +134,29 @@ require_once('./_php/connect.php');
               </select>
             </div>
             
-            <!-- Pet description -->
-            <!--<div class="form-group">-->
-            <!--  <label for="comment">Description:</label>-->
-            <!--    <textarea class="form-control" rows="5" id="petDescription"></textarea>-->
-            <!--</div>           -->
-
-            <!-- Age selection -->
-            <!--<div class="form-group">-->
-            <!--  <label for="age">Age:</label>-->
-            <!--  <select class="form-control" id="age">-->
-            <!--    <option>Less than 1 year</option>-->
-            <!--    <option>1</option>-->
-            <!--    <option>2</option>-->
-            <!--    <option>3</option>-->
-            <!--    <option>4</option>-->
-            <!--    <option>5</option>-->
-            <!--    <option>6</option>-->
-            <!--    <option>7</option>-->
-            <!--    <option>8</option>-->
-            <!--    <option>9</option>-->
-            <!--    <option>10</option>-->
-            <!--    <option>11</option>-->
-            <!--    <option>12</option>-->
-            <!--    <option>13</option>-->
-            <!--    <option>14</option>-->
-            <!--    <option>15 years or older</option>-->
-            <!--    <option>Age unknown</option>-->
-            <!--  </select>-->
-            <!--</div> -->
-
-            <!-- Enter adoption fee -->
-            <!--<label>Adoption fee:</label>-->
-            <!--<div class="input-group">-->
-            <!--  <span class="input-group-addon">Text</span>-->
-            <!--    <input id="petFee" type="text" class="form-control" name="petFee" placeholder="Enter fee to adopt">-->
-            <!--</div>-->
-            <!--<br>-->
-            
             <!-- Checkboxes for health check -->I
             <label>Health checks:</label>
             <div class="checkbox">
-                    <input type="hidden" name="desexed" value="0">
+              <input type="hidden" name="desexed" value="0">
               <label><input type="checkbox" name="desexed" value="1">Desexed</label>
             </div>           
             <div class="checkbox">
-                    <input type="hidden" name="vaccinated" value="0">
-              <label><input type="checkbox"name="vaccinated"  value="1">Vaccinated</label>
+              <input type="hidden" name="vaccinated" value="0">
+              <label><input type="checkbox" name="vaccinated"  value="1">Vaccinated</label>
             </div>
             <div class="checkbox">
-                    <input type="hidden" name="wormed" value="0">
+              <input type="hidden" name="wormed" value="0">
               <label><input type="checkbox" name="wormed" value="1">Wormed</label>
             </div>
             <div class="checkbox">
-                    <input type="hidden" name="heartworm" value="0">
+              <input type="hidden" name="heartworm" value="0">
               <label><input type="checkbox" name="heartworm" value="1">Heartworm treated</label>
             </div>
-            <!--<div class="checkbox">-->
-            <!--        <input type="hidden" name="microchipped" value="0">-->
-            <!--  <label><input type="checkbox" name="microchipped"value="">Microchipped</label>-->
-            <!--</div>-->
-
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
       
-
       <!-- Add breed -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -260,13 +214,11 @@ require_once('./_php/connect.php');
             </div>
             <br>
               
-            </div>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
-      
-      
       
       <!-- Remove a pet box -->
       <div class="panel panel-default">
