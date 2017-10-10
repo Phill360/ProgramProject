@@ -25,7 +25,7 @@ require_once('./_php/connect.php');
 </head>
 
 <body>
-<div class="container">
+<div class="container"> //
   <div class="row">
     <div class="col-sm-6">
       <!-- Create new admin user box -->
