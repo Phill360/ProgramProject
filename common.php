@@ -1,10 +1,12 @@
 <?php
   session_start();
+  
+    require_once('./_php/connect.php');
 
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-    require_once('./_php/connect.php');
+    // require_once('./_php/connect.php');
     
     // Connect to the table user in database
     $query = "SELECT * "; 

@@ -93,7 +93,7 @@ require_once('./_php/connect.php');
                   if ($row["type"] == "Dog") {
                     echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
                   }
-                } ?>  
+                } ?>
                 
               </select>
             </div>
