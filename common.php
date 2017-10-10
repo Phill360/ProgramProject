@@ -209,7 +209,7 @@
     require_once('./_php/connect.php');
     
     $query = "SELECT * ";
-    $query = "FROM User ";
+    $query = "FROM user ";
 	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
