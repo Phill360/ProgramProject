@@ -1,4 +1,21 @@
 <?php
+require_once('../functions.php');
+
+
+// Connect AWS MYSQL Server
+require_once('../_php/connect.php');
+
+	// 2. Perform Query
+	$query = "SELECT breedID, type, name ";
+	$query .= "FROM breed ";
+	$result = mysqli_query($connection, $query);
+	// Test for query error
+	if(!$result) {
+		die("Database query failed.");
+	}
+
+
+
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -190,8 +207,23 @@
             
                     <!-- Enter breed name -->
             <div class="input-group">
-              <span class="input-group-addon">Text</span>
-              <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name">
+              <span class="input-group-addon">Breed</span>
+             
+            
+             <select class="form-control" id="species" name="breedName">
+           
+    
+            	<?php
+				// 3. returned data
+				while($row = mysqli_fetch_assoc($result)) {
+				  // if ($row["type"] = "dog"
+			?>
+		
+				<?php echo "<option>" . $row["name"] . "</option>" ; ?>
+	
+
+            
+              </select>
             </div>
             <br>
 
