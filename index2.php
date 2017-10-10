@@ -1,6 +1,6 @@
 <?php
 	
-  require_once('./_php/connect.php');
+
 	include_once('./common.php');
 	
 	

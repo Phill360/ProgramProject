@@ -1,12 +1,12 @@
 <?php
   session_start();
   
-  require_once('./_php/connect.php');
+  
 
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-    // require_once('./_php/connect.php');
+    require_once('./_php/connect.php');
     
     // Connect to the table user in database
     $query = "SELECT * "; 
@@ -34,30 +34,30 @@
       }
 	  }
     
-    // if ($check == 'no previous user')
-    // {
-    //   // Secure password string
-   	//   $userpass = md5($password);
+    if ($check == 'no previous user')
+    {
+      // Secure password string
+   	  $userpass = md5($password);
    	  
-   	//   $id = '0';
+   	  $id = '0';
    	  
-    //   $query = "INSERT INTO user (userID, firstname, ";
-    //   $query .= "lastname, email, password, admin) ";
-    //   $query .= "VALUES ($id.','.$firstname.','.$lastname.','.$email.','.$userpass.','.$usertype)";
-    //   $result = mysqli_query($connection, $query); // Not working here either
+      $query = "INSERT INTO user (userID, firstname, ";
+      $query .= "lastname, email, password, admin) ";
+      $query .= "VALUES ($id.','.$firstname.','.$lastname.','.$email.','.$userpass.','.$usertype)";
+      $result = mysqli_query($connection, $query); // Not working here either
       
-    //   // Test for query error
-	   // if(!$result) 
-	   // {
-		  //   die("2. Database query failed.");
-	   // }
+      // Test for query error
+	    if(!$result) 
+	    {
+		    die("2. Database query failed.");
+	    }
       
-    //   $_SESSION['validUser'] = true;
-    //   $_SESSION['usertype'] = $usertype;
-    //   header('Location: index2.php');
-    // }
-    // mysqli_close($connection);
-    // setMessage($message);
+      $_SESSION['validUser'] = true;
+      $_SESSION['usertype'] = $usertype;
+      header('Location: index2.php');
+    }
+    mysqli_close($connection);
+    setMessage($message);
   }
 
   /* This function signs the user in */
