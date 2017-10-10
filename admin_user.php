@@ -81,29 +81,20 @@ require_once('./_php/connect.php');
                 <option>Dog</option>
               </select>
             </div>
-            
-            
-            
-            
-            
+          
               <!-- Select pet breed -->
             <div class="form-group">
               <label for="age">Breed:</label>
               <select class="form-control" id="species" name="breedID">
                 
                 <?php
-                
-                
-                
-                
                 // Generate Breed List
                 while($row = mysqli_fetch_assoc($result)) {
                   if ($row["type"] == "Dog") {
                     echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
                   }
-                }
-               
-               ?>  
+                } ?>  
+                
               </select>
             </div>
 
@@ -209,11 +200,8 @@ require_once('./_php/connect.php');
         </div>
       </div>
       
-      
-      
-      
-      
-      
+
+      <!-- Add breed -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="opensans">Add a breed</div>
@@ -269,10 +257,6 @@ require_once('./_php/connect.php');
               </select>
             </div>
             <br>
-            
-     
-     
-              
               
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

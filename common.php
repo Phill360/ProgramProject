@@ -34,7 +34,9 @@
    	  
    	  $id = '0';
    	  
-      
+      $query = "INSERT INTO user (userID, firstname, ";
+      $query .= "lastname, email, password, admin) VALUES ($id.','.$firstname.','.";
+      $query .= "$lastname.','.$email.','.$userpass.','.$usertype)";
 
       
       
