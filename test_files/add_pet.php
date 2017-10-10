@@ -12,9 +12,10 @@ require_once('../_php/connect.php');
 
  if(is_post_request()) {
     
-    // $species = $_POST['species'];
+    
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
+    $breedID = $_POST['breedID'];
     $gender = $_POST['gender'];
     $desexed = $_POST['desexed'];
     $vaccinated = $_POST['vaccinated'];
@@ -25,6 +26,7 @@ require_once('../_php/connect.php');
 
   
 		echo  $rspcaID . "<br />";
+    	echo  $breedID . "<br />";
     	echo  $petname . "<br />";
 		echo  $gender . "<br />";
 		echo  $desexed . "<br />";
@@ -39,10 +41,11 @@ require_once('../_php/connect.php');
     
 	// 2. Perform Query
 	$query = "INSERT INTO animals ";
-	$query .= "(rspcaID, petName, gender, desexed, vaccinated, wormed, heartworm, imagePath) ";
+	$query .= "(rspcaID, petName, breedID, gender, desexed, vaccinated, wormed, heartworm, imagePath) ";
 	$query .= "VALUES (";
 	$query .= "'" . $rspcaID . "',";
 	$query .= "'" . $petName . "',";
+	$query .= "'" . $breedID . "',";
 	$query .= "'" . $gender . "',";
 	$query .= "'" . $desexed . "',";
 	$query .= "'" . $vaccinated . "',";
