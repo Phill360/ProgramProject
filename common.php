@@ -34,9 +34,9 @@
    	  
    	  $id = '0';
    	  
-      $query = mysqli_query($connection, 'INSERT INTO user (userID, firstname, ;
-      $query .= lastname, email, password, admin) VALUES ($id.','.$firstname.','.;
-      $query .= $lastname.','.$email.','.$userpass.','.$usertype)');
+      $query = 'INSERT INTO user (userID, firstname, ';
+      $query .= 'lastname, email, password, admin) VALUES ($id.','.$firstname.','.';
+      $query .= '$lastname.','.$email.','.$userpass.','.$usertype)');
 
       if ($connection->query($query) === TRUE) 
       {
