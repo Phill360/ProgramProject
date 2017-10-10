@@ -65,7 +65,7 @@
     }
     else // user from database
     {
-      include_once('_php/connect.php');
+      require_once('./_php/connect.php');
       
       // Check user existance	
       $query = "SELECT * FROM User ";
@@ -206,21 +206,25 @@
   /* This function checks the number of users in the text file. */
   function checkNumberUsersInFile()
   {
-    $delimiter = ',';
-    $file = 'users.txt';
-    $fp = fopen($file, 'r');
-    $users = array();
+    require_once('./_php/connect.php');
     
-    while (! feof($fp))
-    {
-      $line = fgets($fp);
-      $data = str_getcsv($line, $delimiter);
-      array_push($users, $data);
-    }
-    
-    $size = sizeof($users) -1;
+    $query = "SELECT * ";
+    $query = "FROM User ";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("PC database query failed.");
+	  }
+	  
+	  $size = 0;
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    $size += 1
+	  }
 
-    fclose($fp);
     return $size;
   }
   
