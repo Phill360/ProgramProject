@@ -37,7 +37,7 @@
       $query = "INSERT INTO user (userID, firstname, ";
       $query .= "lastname, email, password, admin) VALUES ($id.','.$firstname.','.";
       $query .= "$lastname.','.$email.','.$userpass.','.$usertype)";
-
+      $result = mysqli_query($connection, $query);
       
       
       $_SESSION['validUser'] = true;
