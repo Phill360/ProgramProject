@@ -6,7 +6,7 @@
 	
 	$status = checkStatus();
 	$usertype = checkUserType();
-	$number = checkNumberUsersInFile();
+// 	$number = checkNumberUsersInFile();
 	$message = getMessage();
 	
 	// echo('The system is '.$status.' - ');
