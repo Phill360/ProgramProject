@@ -182,34 +182,48 @@
                 <option>Dog</option>
               </select>
             </div>
+            
+                    <!-- Enter breed name -->
+            <div class="input-group">
+              <span class="input-group-addon">Text</span>
+              <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name">
+            </div>
+            <br>
 
             <!-- Enter breed size -->
             <div class="input-group">
               <span class="input-group-addon">Text</span>
-              <input id="size" type="text" class="form-control" name="size" placeholder="Enter pet size">
+             <select class="form-control" id="breedSize" name="breedSize">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
             </div>
             <br>
 
             <!-- Enter breed temperament -->
             <div class="input-group">
               <span class="input-group-addon">temperament</span>
-              <input id="petName" type="text" class="form-control" name="temperament" placeholder="Enter breed temperament">
+               <select class="form-control" id="temperament" name="temperament">
+                <option>Placed</option>
+                <option>Friendly</option>
+                <option>Not sure</option>
+              </select>
             </div>
             <br>
             
             <!-- Enter breed active -->
             <div class="input-group">
               <span class="input-group-addon">Active</span>
-              <input id="petName" type="text" class="form-control" name="active" placeholder="Enter breed active">
+              <select class="form-control" id="active" name="active">
+                <option>Quite</option>
+                <option>Active</option>
+                <option>Very Active</option>
+              </select>
             </div>
             <br>
             
-             <!-- Enter breed name -->
-            <div class="input-group">
-              <span class="input-group-addon">Text</span>
-              <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name">
-            </div>
-            <br>
+     
      
               
               
