@@ -1,10 +1,10 @@
 <?php
 
-require_once('./functions.php');
+require_once('../functions.php');
 
 
 // Connect AWS MYSQL Server
-require_once('_php/connect.php');
+require_once('../_php/connect.php');
 
 echo "hello there";
 
