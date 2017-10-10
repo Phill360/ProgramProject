@@ -3,7 +3,7 @@ require_once('../functions.php');
 
 
 // Connect AWS MYSQL Server
-require_once('../_php/connect.php');
+require_once('./_php/connect.php');
 
 	// 2. Perform Query
 	$query = "SELECT breedID, type, name ";
@@ -209,7 +209,6 @@ require_once('../_php/connect.php');
             <div class="input-group">
               <span class="input-group-addon">Breed</span>
               <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name">
-            
             </div>
             <br>
 
