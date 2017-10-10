@@ -226,6 +226,7 @@
 	  }
 
     mysqli_close($connection);
+    setMessage($size);
     return $size;
   }
   
