@@ -4,7 +4,7 @@
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
-    include_once('_php/connect.php');
+    require_once('./_php/connect.php');
     
     $query = "SELECT * FROM user ";
 	  $result = mysqli_query($connection, $query);
