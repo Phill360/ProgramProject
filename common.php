@@ -1,7 +1,7 @@
 <?php
   session_start();
   
-    require_once('./_php/connect.php');
+  require_once('./_php/connect.php');
 
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
@@ -19,17 +19,20 @@
 		  die("1. Database query failed.");
 	  }
 	  
-	 // while ($row = mysqli_fetch_assoc($result))
-	 // {
-	 //   if ($row["email"] == $email)
-	 //   {
-	 //     $check = 'previous user exists';
-	 //   }
-	 //   else
-  //     {
-  //       $check = 'no previous user';
-  //     }
-	//  }
+	  
+	  
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    echo $row("email");
+	    if ($row["email"] == $email)
+	    {
+	      $check = 'previous user exists';
+	    }
+	    else
+      {
+        $check = 'no previous user';
+      }
+	  }
     
     // if ($check == 'no previous user')
     // {
