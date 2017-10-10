@@ -219,7 +219,7 @@ require_once('../_php/connect.php');
 				  // if ($row["type"] = "dog"
 			?>
 		
-				<?php echo "<option>" . $row["name"] . "</option>" ; ?>
+				<?php echo "<option>" . $row["name"] . "</option>" ; } ?>
 	
 
             
