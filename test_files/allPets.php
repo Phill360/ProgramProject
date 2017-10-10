@@ -57,7 +57,7 @@
 		
 		<p><a href="index2.php">Site page</a></p>
 		<p><a href="./test_files/allPets.php">All Pets</a></p>
-		<p><a href="./admin_user.php">Add Pets</a></p>
+		<p><a href="../admin_user.php">Add Pets</a></p>
 	
 		<h2>Pets Table<h2>
 		<table >
