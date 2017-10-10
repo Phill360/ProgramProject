@@ -6,7 +6,10 @@
 	
 	$status = checkStatus();
 	$usertype = checkUserType();
-// 	$number = checkNumberUsersInFile();
+	
+	
+// The error appeared to be here
+//	$number = checkNumberUsersInFile();
 	$message = getMessage();
 	
 	// echo('The system is '.$status.' - ');
@@ -19,7 +22,7 @@
   if (isset($_POST['registerBtn']))
   {
 		$visits = 0;
-		$usertype = "normal";
+		$usertype = 0;
 		
 		// Get user input
 		$firstname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
@@ -30,27 +33,27 @@
         /* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
  
-		if(!preg_match($regexp, $email))
-		{       
-		   echo("Not a valid email address");
-		}
-		else if($password == '')   
-		{
-			echo("No password entered");
-		}
-		else if($firstname == '')
-		{
-			echo("No first name entered");
-		}
-		else if($lastname == '')
-		{
-			echo("No last name entered");
-		}
-		else
-		{
+		// if(!preg_match($regexp, $email))
+		// {       
+		//   echo("Not a valid email address");
+		// }
+		// else if($password == '')   
+		// {
+		// 	echo("No password entered");
+		// }
+		// else if($firstname == '')
+		// {
+		// 	echo("No first name entered");
+		// }
+		// else if($lastname == '')
+		// {
+		// 	echo("No last name entered");
+		// }
+		// else
+		// {
 			// Try to register the user
-			$result = registerUser($firstname, $lastword, $email, $password, $visits, $usertype);
-		}
+			$result = registerUser($firstname, $lastname, $email, $password, $visits, $usertype);
+		// }
   }
   
   

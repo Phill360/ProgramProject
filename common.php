@@ -23,7 +23,7 @@
 	  
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
-	    echo $row("email");
+	   
 	    if ($row["email"] == $email)
 	    {
 	      $check = 'previous user exists';
@@ -39,12 +39,33 @@
       // Secure password string
    	  $userpass = md5($password);
    	  
-   	  $id = '0';
+   	 // $id = '0';
    	  
-      $query = "INSERT INTO user (userID, firstname, ";
-      $query .= "lastname, email, password, admin) ";
-      $query .= "VALUES ($id.','.$firstname.','.$lastname.','.$email.','.$userpass.','.$usertype)";
+      $query = "INSERT INTO user ";
+      $query .= "(firstName, lastName, email, password, admin) ";
+      $query .= "VALUES (";
+      $query .= "'" . $firstname . "',";
+      $query .= "'" . $lastname . "',";
+      $query .= "'" . $email . "',";
+      $query .= "'" . $userpass . "',";
+      $query .= "'" . $usertype) . "'";
+      $query .= ")";
       $result = mysqli_query($connection, $query); // Not working here either
+      
+      
+      $query = "INSERT INTO breed ";
+	$query .= "(type, name, size, temperament, active) ";
+	$query .= "VALUES (";
+	$query .= "'" . $species . "',";
+	$query .= "'" . $breedName . "',";
+	$query .= "'" . $breedSize . "',";
+	$query .= "'" . $temperament . "',";
+	$query .= "'" . $active . "'";
+	$query .= ")";
+	$result = mysqli_query($connection, $query);
+      
+      
+      
       
       // Test for query error
 	    if(!$result) 
@@ -224,13 +245,14 @@
 	  // Test for query error
 	  if(!$result) 
 	  {
-		die("6. Database query failed.");
+		  die("6. Database query failed.");
 	  }
 	  
 	  $size = 0;
 	  
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
+	   
 	    $size += 1;
 	    //
 	  }
