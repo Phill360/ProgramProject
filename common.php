@@ -190,7 +190,7 @@
 	  // Test for query error
 	  if(!$result) 
 	  {
-		  die("PC database query failed.");
+		  die("5. PC database query failed.");
 	  }
 	  
 	  while ($row = mysqli_fetch_assoc($result))
@@ -215,7 +215,7 @@
 	  // Test for query error
 	  if(!$result) 
 	  {
-		die("5. Database query failed.");
+		die("6. Database query failed.");
 	  }
 	  
 	  $size = 0;
