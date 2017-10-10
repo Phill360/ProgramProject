@@ -6,14 +6,14 @@
   {
     require_once('./_php/connect.php');
     
-    $query = "SELECT firstname, lastname, email, password, admin ";
-    $query = "FROM User ";
-	  $result = mysqli_query($connection, $query);
+    $query = "SELECT * ";
+	  $query .= "FROM user ";
+  	$result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
 	  if(!$result) 
 	  {
-		  die("PC database query failed.");
+		die("Database query failed.");
 	  }
 	  
 	  while ($row = mysqli_fetch_assoc($result))
@@ -66,15 +66,15 @@
     else // user from database
     {
       require_once('./_php/connect.php');
-      
-      // Check user existance	
-      $query = "SELECT * FROM User ";
-	    $result = mysqli_query($connection, $query);
+    
+      $query = "SELECT * ";
+	    $query .= "FROM user ";
+  	  $result = mysqli_query($connection, $query);
 	  
 	    // Test for query error
 	    if(!$result) 
 	    {
-		    die("PC database query failed.");
+		    die("Database query failed.");
 	    }
 	  
 	    while ($row = mysqli_fetch_assoc($result))
