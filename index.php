@@ -63,7 +63,7 @@
 		<p><a href="index2.php">Site page</a></p>
 		<p><a href="./test_files/allPets.php">All Pets View</a></p>
 		<p><a href="./admin_user.php">Add Pets</a></p>
-		<p><a href="./test.php">SQL test page</a></p>
+		<p><a href="sqltest.php">SQL test page</a></p>
 		
 		
 		
