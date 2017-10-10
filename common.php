@@ -68,7 +68,7 @@
       include_once('_php/connect.php');
       
       // Check user existance	
-      $query = "SELECT * FROM user ";
+      $query = "SELECT * FROM User ";
 	    $result = mysqli_query($connection, $query);
 	  
 	    // Test for query error
@@ -130,8 +130,6 @@
   /* This function checks whether the user is logged in or not */
   function checkStatus()
   {
-    $status = '';
-   	
     if ((!isset($_SESSION['validUser'])) || ($_SESSION['validUser'] != true))
     {
       $status = 'signed out';
@@ -146,8 +144,6 @@
   /* This function checks whether the user is an admin user or a normal user */
   function checkUserType()
   {
-    $usertype = '';
-   	
     if ($_SESSION['usertype'] == 'admin')
     {
       $usertype = 'admin';
