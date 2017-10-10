@@ -27,14 +27,14 @@ require_once('./_php/connect.php');
 <body>
 <div class="container">
   <div class="row">
-  <!-- Create new admin user box -->
     <div class="col-sm-6">
+
+      <!-- Create new admin user box -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="opensans">Promote normal user to admin user</div>
         </div>
         <div class="panel-body">
-  
           <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="newAdminUserForm">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -64,8 +64,10 @@ require_once('./_php/connect.php');
       </div>
     </div>
 
-    <!-- Add a pet box -->
+   
     <div class="col-sm-6">
+
+      <!-- Add a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="opensans">Add a pet</div>
@@ -282,6 +284,7 @@ require_once('./_php/connect.php');
           </form>
         </div>
       </div>
+
     </div>
   </div>
 </div>
