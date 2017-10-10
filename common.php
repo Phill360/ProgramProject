@@ -6,7 +6,8 @@
   {
     require_once('./_php/connect.php');
     
-    $query = "SELECT * FROM user ";
+    $query = "SELECT firstname, lastname, email, password, admin ";
+    $query = "FROM User ";
 	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
