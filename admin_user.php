@@ -82,10 +82,15 @@ require_once('./_php/connect.php');
               </select>
             </div>
             
+            
+            
+            
+            
               <!-- Select pet breed -->
             <div class="form-group">
               <label for="age">Species:</label>
               <select class="form-control" id="species" name="breedID">
+                
                 <?php
                 // Generate Breed List
                 while($row = mysqli_fetch_assoc($result)) {
@@ -94,7 +99,7 @@ require_once('./_php/connect.php');
                   // }
                 }
                
-            } ?>  
+               ?>  
               </select>
             </div>
 
