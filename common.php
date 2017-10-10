@@ -197,7 +197,8 @@
 	  {
 	    if ($row["email"] == $email)
       {
-        //mysqli_query($connection, 'INSERT INTO user (admin) VALUES ('admin')');
+        $query = "INSERT INTO user (admin) VALUES ('admin')";
+        $result = mysqli_query($connection, $query);
       }
     }
     mysqli_close($connection);
