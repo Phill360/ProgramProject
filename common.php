@@ -8,7 +8,7 @@
     
     $query = "SELECT * ";
 	  $query .= "FROM user ";
-  	$result = mysqli_query($connection, $query);
+	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
 	  if(!$result) 
@@ -36,8 +36,8 @@
    	  $id = '0';
    	  
       $query = "INSERT INTO user (userID, firstname, ";
-      $query .= "lastname, email, password, admin) VALUES ($id.','.$firstname.','.";
-      $query .= "$lastname.','.$email.','.$userpass.','.$usertype)";
+      $query .= "lastname, email, password, admin) ";
+      $query .= "VALUES ($id.','.$firstname.','.$lastname.','.$email.','.$userpass.','.$usertype)";
       $result = mysqli_query($connection, $query);
       
       // Test for query error
