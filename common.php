@@ -74,7 +74,7 @@
 	    // Test for query error
 	    if(!$result) 
 	    {
-		    die("Database query failed.");
+		    die("3. Database query failed.");
 	    }
 	  
 	    while ($row = mysqli_fetch_assoc($result))
