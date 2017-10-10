@@ -211,15 +211,15 @@ require_once('../_php/connect.php');
              
             
              <select class="form-control" id="species" name="breedName">
-           
+           <option> test </option>
     
-            	<?php
-				// 3. returned data
-				while($row = mysqli_fetch_assoc($result)) {
-				  // if ($row["type"] = "dog"
-			?>
-		
-				<?php echo "<option>" . $row["name"] . "</option>" ; } ?>
+          <!--  	<?php-->
+				      // 3. returned data
+				      <!--while($row = mysqli_fetch_assoc($result)) {-->
+				      // if ($row["type"] = "dog"
+			       <!--  echo "<option>" . $row["name"] . "</option>" ; -->
+			         
+			       <!--  } ?>-->
 	
 
             
