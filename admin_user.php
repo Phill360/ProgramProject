@@ -92,10 +92,14 @@ require_once('./_php/connect.php');
               <select class="form-control" id="species" name="breedID">
                 
                 <?php
+                
+                
+                
+                
                 // Generate Breed List
                 while($row = mysqli_fetch_assoc($result)) {
                   if ($row["type"] == "Dog") {
-                    echo "<option>" . $row["name"] . "</option>" ;
+                    echo "<option value=" . $row[$breedID] . ">" . $row["name"] . "</option>" ;
                   }
                 }
                
@@ -105,14 +109,14 @@ require_once('./_php/connect.php');
 
             <!-- Enter pet ID -->
             <div class="input-group">
-              <span class="input-group-addon">Text</span>
+              <span class="input-group-addon">RSPCA ID</span>
               <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID">
             </div>
             <br>
 
             <!-- Enter pet name -->
             <div class="input-group">
-              <span class="input-group-addon">Text</span>
+              <span class="input-group-addon">Name</span>
               <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name">
             </div>
             <br>
