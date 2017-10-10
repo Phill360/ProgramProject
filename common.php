@@ -223,6 +223,7 @@
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
 	    $size += 1;
+	    //
 	  }
 
     mysqli_close($connection);
