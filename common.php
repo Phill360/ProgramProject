@@ -38,14 +38,7 @@
       $query .= 'lastname, email, password, admin) VALUES ($id.','.$firstname.','.';
       $query .= '$lastname.','.$email.','.$userpass.','.$usertype)');
 
-      if ($connection->query($query) === TRUE) 
-      {
-        $message = "New record created successfully";
-      } 
-      else 
-      {
-        $message = "Error";
-      }
+      
       
       $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
