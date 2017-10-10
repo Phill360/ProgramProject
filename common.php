@@ -51,22 +51,7 @@
       $query .= "'" . $usertype . "'";
       $query .= ")";
       $write = mysqli_query($connection, $query); // Not working here either
-      
-      
-//       $query = "INSERT INTO breed ";
-// 	$query .= "(type, name, size, temperament, active) ";
-// 	$query .= "VALUES (";
-// 	$query .= "'" . $species . "',";
-// 	$query .= "'" . $breedName . "',";
-// 	$query .= "'" . $breedSize . "',";
-// 	$query .= "'" . $temperament . "',";
-// 	$query .= "'" . $active . "'";
-// 	$query .= ")";
-// 	$result = mysqli_query($connection, $query);
-      
-      
-      
-      
+
       // Test for query error
 	    if(!$write) 
 	    {
@@ -186,25 +171,18 @@
   /* This function switches a user from normal to admin */
   function createNewAdminUser($email)
   {
-    include_once('_php/connect.php');
+     include_once('_php/connect.php');
     
-    $query = "SELECT * FROM user ";
-	  $result = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("4. PC database query failed.");
-	  }
-	  
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    if ($row["email"] == $email)
-      {
-        $query = "INSERT INTO user (admin) VALUES ('normal')";
-        $result = mysqli_query($connection, $query);
-      }
-    }
+    $query = "UPDATE user SET admin='1' WHERE email='" . $email . "'";
+
+    if (mysqli_query($connection, $query)) {
+      echo "User updated successfully";
+    } else {
+      echo "User not found: " . mysqli_error($conn);
+    };
+    
+    
+
     mysqli_close($connection);
   }
   
@@ -213,23 +191,15 @@
   {
     include_once('_php/connect.php');
     
-    $query = "SELECT * FROM user ";
-	  $result = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("5. PC database query failed.");
-	  }
-	  
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    if ($row["email"] == $email)
-      {
-        $query = "INSERT INTO user (admin) VALUES ('admin')";
-        $result = mysqli_query($connection, $query);
-      }
-    }
+    $query = "UPDATE user SET admin='0' WHERE email='" . $email . "'";
+
+    if (mysqli_query($connection, $query)) {
+      echo "User updated successfully";
+    } else {
+      echo "User not found: " . mysqli_error($conn);
+    };
+    
+
     mysqli_close($connection);
   }
   

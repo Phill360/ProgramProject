@@ -2,18 +2,6 @@
 require_once('./functions.php');
 
 
-// Connect AWS MYSQL Server
-require_once('./_php/connect.php');
-
-	// 2. Perform Query
-	$query = "SELECT breedID, type, name ";
-	$query .= "FROM breed ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
-
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -86,6 +74,22 @@ require_once('./_php/connect.php');
               <select class="form-control" id="species" name="breedID">
                 
                 <?php
+                
+                 // Connect AWS MYSQL Server
+    require_once('./_php/connect.php');
+  
+  	// 2. Perform Query
+  	$query = "SELECT breedID, type, name ";
+  	$query .= "FROM breed ";
+  	$result = mysqli_query($connection, $query);
+  	// Test for query error
+  	if(!$result) {
+  		die("Database query failed.");
+  	}
+                
+                
+                
+                
                 // Generate Breed List
                 while($row = mysqli_fetch_assoc($result)) {
                   // Need to make this only show breeds depending on the 
