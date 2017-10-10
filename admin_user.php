@@ -74,13 +74,29 @@ require_once('./_php/connect.php');
           <form action="./test_files/add_pet.php" method="post">
             
             <!-- Select cat or dog -->
-            <!--<div class="form-group">-->
-            <!--  <label for="age">Species:</label>-->
-            <!--  <select class="form-control" id="species" name="species">-->
-            <!--    <option>Cat</option>-->
-            <!--    <option>Dog</option>-->
-            <!--  </select>-->
-            <!--</div>-->
+            <div class="form-group">
+              <label for="age">Species:</label>
+              <select class="form-control" id="species" name="species">
+                <option>Cat</option>
+                <option>Dog</option>
+              </select>
+            </div>
+            
+              <!-- Select pet breed -->
+            <div class="form-group">
+              <label for="age">Species:</label>
+              <select class="form-control" id="species" name="breedID">
+                <?php
+                // Generate Breed List
+                while($row = mysqli_fetch_assoc($result)) {
+                  // if ($row["type"] = "dog") {
+                    echo "<option>" . $row["name"] . "</option>" ;
+                  // }
+                }
+               
+            } ?>  
+              </select>
+            </div>
 
             <!-- Enter pet ID -->
             <div class="input-group">
