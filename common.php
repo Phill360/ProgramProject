@@ -48,7 +48,7 @@
       $query .= "'" . $lastname . "',";
       $query .= "'" . $email . "',";
       $query .= "'" . $userpass . "',";
-      $query .= "'" . $usertype) . "'";
+      $query .= "'" . $usertype . "'";
       $query .= ")";
       $write = mysqli_query($connection, $query); // Not working here either
       
