@@ -50,25 +50,25 @@
       $query .= "'" . $userpass . "',";
       $query .= "'" . $usertype) . "'";
       $query .= ")";
-      $result = mysqli_query($connection, $query); // Not working here either
+      $write = mysqli_query($connection, $query); // Not working here either
       
       
-      $query = "INSERT INTO breed ";
-	$query .= "(type, name, size, temperament, active) ";
-	$query .= "VALUES (";
-	$query .= "'" . $species . "',";
-	$query .= "'" . $breedName . "',";
-	$query .= "'" . $breedSize . "',";
-	$query .= "'" . $temperament . "',";
-	$query .= "'" . $active . "'";
-	$query .= ")";
-	$result = mysqli_query($connection, $query);
+//       $query = "INSERT INTO breed ";
+// 	$query .= "(type, name, size, temperament, active) ";
+// 	$query .= "VALUES (";
+// 	$query .= "'" . $species . "',";
+// 	$query .= "'" . $breedName . "',";
+// 	$query .= "'" . $breedSize . "',";
+// 	$query .= "'" . $temperament . "',";
+// 	$query .= "'" . $active . "'";
+// 	$query .= ")";
+// 	$result = mysqli_query($connection, $query);
       
       
       
       
       // Test for query error
-	    if(!$result) 
+	    if(!$write) 
 	    {
 		    die("2. Database query failed.");
 	    }
