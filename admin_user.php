@@ -99,7 +99,7 @@ require_once('./_php/connect.php');
                 // Generate Breed List
                 while($row = mysqli_fetch_assoc($result)) {
                   if ($row["type"] == "Dog") {
-                    echo "<option value=" . $row[$breedID] . ">" . $row["name"] . "</option>" ;
+                    echo "<option value="\" . $row[$breedID] . ""\>" . $row["name"] . "</option>" ;
                   }
                 }
                
