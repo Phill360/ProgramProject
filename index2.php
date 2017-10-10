@@ -4,13 +4,13 @@
 	include_once('./common.php');
 	
 	
-	$status = checkStatus();
-	$usertype = checkUserType();
+// 	$status = checkStatus();
+// 	$usertype = checkUserType();
 	
 	
 // The error appeared to be here
 //	$number = checkNumberUsersInFile();
-	$message = getMessage();
+//	$message = getMessage();
 	
 	// echo('The system is '.$status.' - ');
 	// echo(' '.$usertype.' user. - ');
