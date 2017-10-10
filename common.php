@@ -39,6 +39,11 @@
       $query .= "$lastname.','.$email.','.$userpass.','.$usertype)";
       $result = mysqli_query($connection, $query);
       
+      // Test for query error
+	    if(!$result) 
+	    {
+		    die("Database query failed.");
+	    }
       
       $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
