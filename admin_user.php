@@ -14,14 +14,12 @@ require_once('./_php/connect.php');
 		die("Database query failed.");
 	}
 
-
-
 ?>
 
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
-  
+
 </head>
 
 <body>
@@ -90,6 +88,8 @@ require_once('./_php/connect.php');
                 <?php
                 // Generate Breed List
                 while($row = mysqli_fetch_assoc($result)) {
+                  // Need to make this only show breeds depending on the 
+                  // whether Dog or cat is selected
                   if ($row["type"] == "Dog") {
                     echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
                   }

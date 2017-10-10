@@ -6,52 +6,53 @@
   {
     require_once('./_php/connect.php');
     
-    $query = "SELECT * ";
+    // Connect to the table user in database
+    $query = "SELECT * "; 
 	  $query .= "FROM user ";
-	  $result = mysqli_query($connection, $query);
+	  $result = mysqli_query($connection, $query); // This is not working here
 	  
 	  // Test for query error
-	  if(!$result) 
+	  if(!$result)
 	  {
 		  die("1. Database query failed.");
 	  }
 	  
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    if ($row["email"] == $email)
-	    {
-	      $check = 'previous user exists';
-	    }
-	    else
-      {
-        $check = 'no previous user';
-      }
-	  }
+	 // while ($row = mysqli_fetch_assoc($result))
+	 // {
+	 //   if ($row["email"] == $email)
+	 //   {
+	 //     $check = 'previous user exists';
+	 //   }
+	 //   else
+  //     {
+  //       $check = 'no previous user';
+  //     }
+	//  }
     
-    if ($check == 'no previous user')
-    {
-      // Secure password string
-   	  $userpass = md5($password);
+    // if ($check == 'no previous user')
+    // {
+    //   // Secure password string
+   	//   $userpass = md5($password);
    	  
-   	  $id = '0';
+   	//   $id = '0';
    	  
-      $query = "INSERT INTO user (userID, firstname, ";
-      $query .= "lastname, email, password, admin) ";
-      $query .= "VALUES ($id.','.$firstname.','.$lastname.','.$email.','.$userpass.','.$usertype)";
-      $result = mysqli_query($connection, $query);
+    //   $query = "INSERT INTO user (userID, firstname, ";
+    //   $query .= "lastname, email, password, admin) ";
+    //   $query .= "VALUES ($id.','.$firstname.','.$lastname.','.$email.','.$userpass.','.$usertype)";
+    //   $result = mysqli_query($connection, $query); // Not working here either
       
-      // Test for query error
-	    if(!$result) 
-	    {
-		    die("2. Database query failed.");
-	    }
+    //   // Test for query error
+	   // if(!$result) 
+	   // {
+		  //   die("2. Database query failed.");
+	   // }
       
-      $_SESSION['validUser'] = true;
-      $_SESSION['usertype'] = $usertype;
-      header('Location: index2.php');
-    }
-    mysqli_close($connection);
-    setMessage($message);
+    //   $_SESSION['validUser'] = true;
+    //   $_SESSION['usertype'] = $usertype;
+    //   header('Location: index2.php');
+    // }
+    // mysqli_close($connection);
+    // setMessage($message);
   }
 
   /* This function signs the user in */
