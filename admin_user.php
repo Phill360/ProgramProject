@@ -54,7 +54,7 @@
           <div class="opensans">Add a pet</div>
         </div>
         <div class="panel-body">
-          <form action="./add_pet.php" method="post">
+          <form action="./test_files/add_pet.php" method="post">
             
             <!-- Select cat or dog -->
             <!--<div class="form-group">-->
@@ -167,12 +167,17 @@
         </div>
       </div>
       
+      
+      
+      
+      
+      
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="opensans">Add a breed</div>
         </div>
         <div class="panel-body">
-          <form action="./add_breed.php" method="post">
+          <form action="./test_files/add_breed.php" method="post">
             
             <!-- Select cat or dog -->
             <div class="form-group">
@@ -205,7 +210,7 @@
             <div class="input-group">
               <span class="input-group-addon">temperament</span>
                <select class="form-control" id="temperament" name="temperament">
-                <option>Placed</option>
+                <option>Placid</option>
                 <option>Friendly</option>
                 <option>Not sure</option>
               </select>
