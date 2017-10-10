@@ -13,7 +13,7 @@
 	  // Test for query error
 	  if(!$result) 
 	  {
-		die("Database query failed.");
+		  die("1. Database query failed.");
 	  }
 	  
 	  while ($row = mysqli_fetch_assoc($result))
@@ -43,7 +43,7 @@
       // Test for query error
 	    if(!$result) 
 	    {
-		    die("Database query failed.");
+		    die("2. Database query failed.");
 	    }
       
       $_SESSION['validUser'] = true;
