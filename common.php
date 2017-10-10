@@ -209,13 +209,13 @@
     require_once('./_php/connect.php');
     
     $query = "SELECT * ";
-    $query = "FROM user ";
-	  $result = mysqli_query($connection, $query);
+	  $query .= "FROM user ";
+  	$result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
 	  if(!$result) 
 	  {
-		  die("PC database query failed.");
+		die("Database query failed.");
 	  }
 	  
 	  $size = 0;
