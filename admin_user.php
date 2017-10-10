@@ -195,7 +195,7 @@ require_once('./_php/connect.php');
             <!-- Enter breed temperament -->
             <div class="input-group">
               <span class="input-group-addon">temperament</span>
-               <select class="form-control" id="temperament" name="temperament">
+               <select class="form-control" id="temperament" name="Temperament">
                 <option>Placid</option>
                 <option>Friendly</option>
                 <option>Not sure</option>
@@ -213,8 +213,6 @@ require_once('./_php/connect.php');
               </select>
             </div>
             <br>
-              
-            
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
