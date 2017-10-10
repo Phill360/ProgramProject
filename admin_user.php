@@ -167,6 +167,60 @@
         </div>
       </div>
       
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="opensans">Add a breed</div>
+        </div>
+        <div class="panel-body">
+          <form action="./add_breed.php" method="post">
+            
+            <!-- Select cat or dog -->
+            <div class="form-group">
+              <label for="type">Species:</label>
+              <select class="form-control" id="species" name="species">
+                <option>Cat</option>
+                <option>Dog</option>
+              </select>
+            </div>
+
+            <!-- Enter breed size -->
+            <div class="input-group">
+              <span class="input-group-addon">Text</span>
+              <input id="size" type="text" class="form-control" name="size" placeholder="Enter pet size">
+            </div>
+            <br>
+
+            <!-- Enter breed temperament -->
+            <div class="input-group">
+              <span class="input-group-addon">temperament</span>
+              <input id="petName" type="text" class="form-control" name="temperament" placeholder="Enter breed temperament">
+            </div>
+            <br>
+            
+            <!-- Enter breed active -->
+            <div class="input-group">
+              <span class="input-group-addon">Active</span>
+              <input id="petName" type="text" class="form-control" name="active" placeholder="Enter breed active">
+            </div>
+            <br>
+            
+             <!-- Enter breed name -->
+            <div class="input-group">
+              <span class="input-group-addon">Text</span>
+              <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name">
+            </div>
+            <br>
+     
+              
+              
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      
+      
+      
       <!-- Remove a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
