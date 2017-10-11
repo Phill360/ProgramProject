@@ -27,9 +27,8 @@ body {
   color: #000000;
 }
 
-.slides {
-  color: #999966;
-  background-color: #999966;
+.container { 
+    background: #999966; 
 }
 
 /* Large desktops and laptops */
