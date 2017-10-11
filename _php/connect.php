@@ -4,8 +4,8 @@
     $port=3306;
     $socket="";
     $user="proProg";
-    $password="pawprogramming";
+    $DBpassword="pawprogramming";
     $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $password, $dbname, $port, $socket)
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
 ?>
