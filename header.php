@@ -29,6 +29,5 @@
     </div>
   </div>
 </div>
-<a href="testcarousel.php">link text</a>
 </body>
 </html>
