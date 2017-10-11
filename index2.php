@@ -9,7 +9,7 @@
 	
 	
 // The error appeared to be here
-//	$number = checkNumberUsersInFile();
+// 	$number = checkNumberUsersInFile();
 	$message = getMessage();
 	
 	// echo('The system is '.$status.' - ');

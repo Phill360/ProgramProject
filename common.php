@@ -72,7 +72,7 @@
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
-      echo "USer is super";
+
       $validUser = true;
       $usertype = 'admin';
     }
@@ -82,6 +82,7 @@
     
       $query = "SELECT * ";
 	    $query .= "FROM user ";
+	    $query .= "WHERE email='" . $email . "'";
   	  $result = mysqli_query($connection, $query);
 	  
 	    // Test for query error
@@ -90,17 +91,22 @@
 		    die("3. Database query failed.");
 	    }
 	  
+	  //$row = mysqli_fetch_assoc($result);
+	  
+	//  $message = $row;
+	  
 	    while ($row = mysqli_fetch_assoc($result))
 	    {
-	      if ($row["email"] == $email)
-        {
+	      debug_to_console($row)
+	   //   if ($row["email"] == $email)
+    //     {
           // User exists, now check the password.
           if ($row["password"] == md5($password))
    	      {
    	        $validUser = true;
    	        $usertype = $row["admin"];
    	      }
-        }
+        // }
 	    }
     }
     
@@ -244,4 +250,13 @@
     $message = $_SESSION['message'];
     return $message;
   }
+  
+  function debug_to_console($data) {
+    if (is_array($data))
+        $output = "<script>console.log( 'Debug Objects: " . implode(',', $data) . "' );</script>";
+    else
+        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+ 
+    echo $output;
+}
 ?>
