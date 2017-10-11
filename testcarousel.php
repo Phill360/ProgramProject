@@ -23,15 +23,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="https://images.unsplash.com/photo-1496284427489-f59461d8a8e6?dpr=1&auto=compress,format&fit=crop&w=1050&h=&q=80&cs=tinysrgb&crop=" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+        <img src="https://images.unsplash.com/photo-1496284427489-f59461d8a8e6?dpr=1&auto=compress,format&fit=crop&w=1050&h=&q=80&cs=tinysrgb&crop=" alt="Chicago" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="ny.jpg" alt="New york" style="width:100%;">
+        <img src="https://images.unsplash.com/photo-1496284427489-f59461d8a8e6?dpr=1&auto=compress,format&fit=crop&w=1050&h=&q=80&cs=tinysrgb&crop=" alt="New york" style="width:100%;">
       </div>
     </div>
 
