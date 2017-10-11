@@ -27,10 +27,6 @@ body {
   color: #000000;
 }
 
-.carousel .item {
-  height: 350px;
-}
-
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
