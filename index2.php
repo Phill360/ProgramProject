@@ -138,7 +138,7 @@
 <?php } 
   else
   {?>
-    <div><?php include 'testcarousel.php' ?></div>
+    <div><?php include 'carousel.php' ?></div>
 <?php } ?>
 
 <!-- Sign In Modal -->
