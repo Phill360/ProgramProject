@@ -28,7 +28,12 @@ body {
 }
 
 .container { 
-    overflow:auto; 
+    overflow:auto;
+    margin:0 auto;
+    position:relative; 
+    z-index:1; 
+    width: 950px; 
+    min-height:100%;
 }
 
 /* Large desktops and laptops */

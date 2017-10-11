@@ -32,8 +32,6 @@
   
 <div><?php include 'header.php' ?></div>
 
-  <script src="upload-image.js"></script>
-
 <!-- Page Content -->
     <div class="container">
 
