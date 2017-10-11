@@ -27,6 +27,11 @@ body {
   color: #000000;
 }
 
+.slides {
+  color: #999966;
+  background-color: #999966;
+}
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
 

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="slides">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
