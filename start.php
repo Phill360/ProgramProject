@@ -11,7 +11,7 @@
     <link href="css/half-slider.css" rel="stylesheet">
 </head>
 
-    
+<body>    
 
 <header>
   <div class="container">
@@ -61,6 +61,8 @@
     </a>
   </div>
 </header>
+  
+</body>
   
   <!-- Bootstrap core JavaScript -->  
   <script src="vendor/jquery/jquery.min.js"></script>
