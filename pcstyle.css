@@ -27,7 +27,9 @@ body {
   color: #000000;
 }
 
-.carousel{ background-color: red }
+.container {
+    background-color: red;
+}
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
