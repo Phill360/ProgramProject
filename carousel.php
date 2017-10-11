@@ -31,7 +31,7 @@
     
       <div class="item">
         <img src="https://images.unsplash.com/photo-1488569098285-adeecb95641f?dpr=1&auto=compress,format&fit=crop&w=1052&h=&q=80&cs=tinysrgb&crop=" alt="New york" style="width:100%;">
-      </div> //
+      </div>
     </div>
 
     <!-- Left and right controls -->
