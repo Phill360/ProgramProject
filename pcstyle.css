@@ -29,8 +29,6 @@ body {
 
 .container { 
     overflow:auto;
-
-    min-height:100%;
 }
 
 /* Large desktops and laptops */
