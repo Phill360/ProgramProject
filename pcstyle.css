@@ -27,9 +27,6 @@ body {
   color: #000000;
 }
 
-.container {
-    background-color: red;
-}
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
