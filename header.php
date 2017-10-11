@@ -29,6 +29,6 @@
     </div>
   </div>
 </div>
-<a href="url">link text</a>
+<a href="testcarousel.php">link text</a>
 </body>
 </html>
