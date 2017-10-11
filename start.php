@@ -5,6 +5,7 @@
 
     <!-- Bootstrap core CSS -->
     <!--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
     <link href="css/half-slider.css" rel="stylesheet">
@@ -17,7 +18,7 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <!-- Slide One - Set the background image for this slide in the line below -->
+        <!-- Slide One - Set the background image for this slide in the line below -->
         <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1501423186691-a865e4b25d01?dpr=1&auto=compress,format&fit=crop&w=1052&h=&q=80&cs=tinysrgb&crop=')">
           <div class="carousel-caption d-none d-md-block">
             <h3>First Slide</h3>
@@ -39,6 +40,8 @@
           </div>
         </div>
       </div>
+      
+      <!-- Controls -->
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -54,6 +57,6 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <!--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
-
+    
     
 </html>
