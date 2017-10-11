@@ -105,6 +105,8 @@
           if ($row['password'] == md5($password))
    	      {
    	         debug_to_console("password is match");
+   	         debug_to_console("DB : " . $row['password']);
+   	         debug_to_console("Entered: " . md5($password));
    	        $validUser = true;
    	        $usertype = $row["admin"];
    	      } else {
