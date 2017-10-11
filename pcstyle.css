@@ -27,16 +27,6 @@ body {
   color: #000000;
 }
 
-.carousel-item {
-    height: 35vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {

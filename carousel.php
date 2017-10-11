@@ -11,8 +11,7 @@
 <body>
 
 <div class="container">
-  <div class="carousel-item">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -45,7 +44,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
 </div>
 
 </body>
