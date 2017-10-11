@@ -178,7 +178,7 @@
     if (mysqli_query($connection, $query)) {
       echo "User updated successfully";
     } else {
-      echo "User not found: " . mysqli_error($conn);
+      echo "User not found: " . mysqli_error($connection);
     };
     
     
@@ -196,7 +196,7 @@
     if (mysqli_query($connection, $query)) {
       echo "User updated successfully";
     } else {
-      echo "User not found: " . mysqli_error($conn);
+      echo "User not found: " . mysqli_error($connection);
     };
     
 
