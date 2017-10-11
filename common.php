@@ -40,7 +40,7 @@
     
     if ($check == 'no previous user')
     {
-      // Secure password string
+      // Secure password string temp
    	  $userpass = $password;
    	  debug_to_console("pass: " . $password);
    	  debug_to_console("Md5" . $userpass);
