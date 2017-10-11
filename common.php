@@ -69,7 +69,7 @@
       header('Location: index2.php');
     }
     mysqli_close($connection);
-    setMessage($message);
+    setMessage($password);
   }
 
   /* This function signs the user in */
@@ -99,7 +99,7 @@
 	  
 	  //$row = mysqli_fetch_assoc($result);
 	  
-	//  $message = $row;
+
 	  
 	    while ($row = mysqli_fetch_assoc($result))
 	    {
