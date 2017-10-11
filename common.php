@@ -38,8 +38,8 @@
     {
       // Secure password string
    	  $userpass = md5($password);
-   	  debug_to_console($password);
-   	  debug_to_console($userpass);
+   	  debug_to_console("pass: " . $password);
+   	  debug_to_console("Md5" . $userpass);
    	  
    	 // $id = '0';
    	  
