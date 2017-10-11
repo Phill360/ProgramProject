@@ -31,15 +31,6 @@ body {
   height: 350px;
 }
 
-.item img {
-    position: relative;
-    top: 0;
-    left: 0;
-    max-width: 80%;
-    height: auto;
-    
-}
-
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
