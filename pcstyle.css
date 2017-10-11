@@ -29,10 +29,7 @@ body {
 
 .container { 
     overflow:auto;
-    margin:0 auto;
-    position:relative; 
-    z-index:1; 
-    width: 950px; 
+
     min-height:100%;
 }
 
