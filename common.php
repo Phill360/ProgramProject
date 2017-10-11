@@ -103,6 +103,7 @@
           // User exists, now check the password.
           if ($row["password"] == md5($password))
    	      {
+   	         debug_to_console("user is match");
    	        $validUser = true;
    	        $usertype = $row["admin"];
    	      }
@@ -163,7 +164,7 @@
   /* This function checks whether the user is an admin user or a normal user */
   function checkUserType()
   {
-    debug_to_console("user: " . $_SESSION['usertype']);
+    
     if ($_SESSION['usertype'] == '1')
     {
       $usertype = 'admin';
