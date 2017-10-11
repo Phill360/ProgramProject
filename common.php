@@ -41,7 +41,7 @@
     if ($check == 'no previous user')
     {
       // Secure password string
-   	  $userpass = md5($password);
+   	  $userpass = $password;
    	  debug_to_console("pass: " . $password);
    	  debug_to_console("Md5" . $userpass);
    	  
@@ -85,6 +85,9 @@
     else // user from database
     {
       require_once('./_php/connect.php');
+      
+     
+
     
       $query = "SELECT * ";
 	    $query .= "FROM user ";
