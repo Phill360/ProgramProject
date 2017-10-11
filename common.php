@@ -163,7 +163,7 @@
   /* This function checks whether the user is an admin user or a normal user */
   function checkUserType()
   {
-    debug_to_console("user: " . $_SESSION['usertype'])
+    debug_to_console("user: " . $_SESSION['usertype']);
     if ($_SESSION['usertype'] == '1')
     {
       $usertype = 'admin';
