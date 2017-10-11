@@ -6,6 +6,10 @@
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
   {
+    
+     debug_to_console("registering User");
+      debug_to_console("pass: " . $password);
+     
     require_once('./_php/connect.php');
     
     // Connect to the table user in database
