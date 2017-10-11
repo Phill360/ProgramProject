@@ -6,6 +6,7 @@
 	
 	$status = checkStatus();
 	$usertype = checkUserType();
+	debug_to_console("user: " . $_SESSION['usertype']);
 	
 	
 // The error appeared to be here
