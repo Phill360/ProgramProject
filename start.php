@@ -13,7 +13,7 @@
 
     
 
-<body>
+<header>
   <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -60,12 +60,11 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</body>
-    
-    <!-- Bootstrap core JavaScript -->
-    <!--<script src="vendor/jquery/jquery.min.js"></script>-->
-    <!--<script src="vendor/popper/popper.min.js"></script>-->
-    <!--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
-    
+</header>
+  
+  <!-- Bootstrap core JavaScript -->  
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/popper/popper.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>  
     
 </html>
