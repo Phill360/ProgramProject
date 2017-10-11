@@ -100,14 +100,17 @@
 	      debug_to_console($row);
 	      if ($row['email'] == $email)
         {
-           debug_to_console("password is match");
+           debug_to_console("email is match");
           // User exists, now check the password.
           if ($row['password'] == md5($password))
    	      {
    	         debug_to_console("password is match");
    	        $validUser = true;
    	        $usertype = $row["admin"];
+   	      } else {
+   	         debug_to_console("password NO match");
    	      }
+   	      
         }
 	    }
     }
