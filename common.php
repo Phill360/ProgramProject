@@ -97,16 +97,16 @@
 	  
 	    while ($row = mysqli_fetch_assoc($result))
 	    {
-	      debug_to_console($row)
-	   //   if ($row["email"] == $email)
-    //     {
+	      debug_to_console($row);
+	      if ($row["email"] == $email)
+        {
           // User exists, now check the password.
           if ($row["password"] == md5($password))
    	      {
    	        $validUser = true;
    	        $usertype = $row["admin"];
    	      }
-        // }
+        }
 	    }
     }
     
