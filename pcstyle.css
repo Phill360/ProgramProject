@@ -28,7 +28,7 @@ body {
 }
 
 .container { 
-    background: #999966; 
+    overflow:auto; 
 }
 
 /* Large desktops and laptops */
