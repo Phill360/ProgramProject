@@ -31,6 +31,8 @@
 		$email = isset($_POST['email']) ? $_POST['email'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
 		
+		echo "Password : " . $password;
+		
         /* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
  
