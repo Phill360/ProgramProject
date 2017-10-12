@@ -44,7 +44,19 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <a href="admin_user.php">Admin</a>
+  <div class="container">
+    <div class="col-sm-12">
+      <!-- Create new admin user box -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="opensans">Promote normal user to admin user</div>
+        </div>
+        <div class="panel-body">
+          <a href="admin_user.php">Admin</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
