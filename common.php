@@ -15,7 +15,7 @@
     // Connect to the table user in database
     $query = "SELECT * "; 
 	  $query .= "FROM user ";
-	  $result = mysqli_query($connection, $query); // This is not working here
+	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
 	  if(!$result)
@@ -41,7 +41,7 @@
     if ($check == 'no previous user')
     {
       // Secure password string temp
-   	  $userpass = m5d($password);
+   	  $userpass = md5($password);
    	  debug_to_console("pass: " . $password);
    	  debug_to_console("Md5" . $userpass);
    	  
