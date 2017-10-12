@@ -11,7 +11,7 @@
 	
   // The error appeared to be here
   // 	$number = checkNumberUsersInFile();
-	// $message = getMessage();
+	$message = getMessage();
 	
 	// echo('The system is '.$status.' - ');
 	// echo(' '.$usertype.' user. - ');
