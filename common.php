@@ -164,7 +164,7 @@ function is_get_request() {
   function checkUserType()
   {
     setMessage($_SESSION['usertype']);
-    if ($_SESSION['usertype'] == 'admin')
+    if ($_SESSION['usertype'] == 'admin') // This value was set to '1'
     {
       $usertype = 'admin';
     }
