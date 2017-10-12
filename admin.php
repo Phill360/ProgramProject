@@ -38,16 +38,16 @@ if(isset($_POST['demoteBtn']))
 
 <body>
 <div class="container">
-<div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
-<div>
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
-    <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
-    <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
-    <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
-    <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
-    <button type="submit" class="btn" name="removePetBtn">Remove a pet</button>
-  </form>
-</div>
+  <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
+    <div>
+      <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
+        <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
+        <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
+        <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
+        <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
+        <button type="submit" class="btn" name="removePetBtn">Remove a pet</button>
+      </form>
+    </div>
 
 <?php 
   if ($adminTool == 'promote')
@@ -75,6 +75,6 @@ if(isset($_POST['demoteBtn']))
     <div><?php include 'pet_add.php' ?></div>
 <?php } ?>
 
-</div>
+  </div>
 </body>
 </html>
