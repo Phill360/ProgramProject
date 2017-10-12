@@ -4,8 +4,8 @@
 	include_once('./common.php');
 	
 	
-	echo $status = checkStatus();
-	echo $usertype = checkUserType();
+	$status = checkStatus();
+	$usertype = checkUserType();
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 	
@@ -16,7 +16,7 @@
 	// echo('The system is '.$status.' - ');
 	// echo(' '.$usertype.' user. - ');
 	// echo('There are '.$number.' users in file. - ');
-	echo('Message: '.$message);
+	// echo('Message: '.$message);
 	
 	
   // When the user registers

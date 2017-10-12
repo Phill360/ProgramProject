@@ -14,7 +14,7 @@
       <?php 
       if ($status != 'signed in')
       {?>
-        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#signInModal">Find My Companion</button>
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#signInModal">Sign in</button>
         <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#registerModal">Register</button>
       <?php
       }

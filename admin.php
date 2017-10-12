@@ -10,6 +10,21 @@ if(isset($_POST['demoteBtn']))
   {
     $adminTool = 'demote';
   }
+  
+  if(isset($_POST['addBreedBtn']))
+  {
+    $adminTool = 'addBreed';
+  }
+  
+  if(isset($_POST['addPetBtn']))
+  {
+    $adminTool = 'addPet';
+  }
+  
+  if(isset($_POST['removePetBtn']))
+  {
+    $adminTool = 'removePet';
+  }
 
 
 ?>
@@ -28,6 +43,9 @@ if(isset($_POST['demoteBtn']))
   <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
     <button type="submit" class="btn btn-primary" name="promoteBtn">Promote a user</button>
     <button type="submit" class="btn btn-primary" name="demoteBtn">Demote a user</button>
+    <button type="submit" class="btn btn-primary" name="addBreedBtn">Add a breed</button>
+    <button type="submit" class="btn btn-primary" name="addPetBtn">Add a pet</button>
+    <button type="submit" class="btn btn-primary" name="removePetBtn">Remove a pet</button>
   </form>
 </div>
 
@@ -39,6 +57,18 @@ if(isset($_POST['demoteBtn']))
   else if ($adminTool == 'demote')
   {?>
     <div><?php include 'demote_user.php' ?></div>
+<?php } 
+  else if ($adminTool == 'addBreed')
+  {?>
+    <div><?php include 'breed_add.php' ?></div>
+<?php } 
+  else if ($adminTool == 'addPet')
+  {?>
+    <div><?php include 'pet_add.php' ?></div>
+<?php } 
+  else if ($adminTool == 'removePet')
+  {?>
+    <div><?php include 'pet_remove.php' ?></div>
 <?php } 
   else
   {?>
