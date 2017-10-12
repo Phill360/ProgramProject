@@ -108,7 +108,7 @@
 
 	$query = "SELECT * FROM user ";
   $query .= "WHERE email=";
-  $query .= "'" . $firstname . "',";
+  $query .= "'" . $firstname . "'";
   $query .= " and password=";
   $query .= "'" . $userpass . "'";
 
