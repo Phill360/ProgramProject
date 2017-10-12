@@ -44,9 +44,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <a href="admin_user.php">Admin</a>
 </div>
-
-<a href="admin_user.php">Admin</a>
 
 </body>
 </html>
