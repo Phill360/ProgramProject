@@ -36,7 +36,7 @@ setMessage("the Value selected is ".$val);
 
   <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
 
-  <form action="selecttest.php" method="post">
+  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 <div class="dropdown" >
 
 <select class="form-control" name="thenumbers">
