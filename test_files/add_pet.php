@@ -23,13 +23,13 @@ require_once('../_php/connect.php');
   
 
   
-		echo  "rspca " . $rspcaID . "<br />";
-    	echo  "breed ID " . $breedID . "<br />";
-    	echo  "pet name " . $petname . "<br />";
-		echo  "Gender " . $gender . "<br />";
-		echo  "Image path" . $imagePath . "<br />";
-		echo  "Description" . $description . "<br />";
-		echo  "Age " . $age . "<br />";
+		echo  "rspca - " . $rspcaID . "<br />";
+    	echo  "breed ID - " . $breedID . "<br />";
+    	echo  "pet name - " . $petName . "<br />";
+		echo  "Gender - " . $gender . "<br />";
+		echo  "Image path - " . $imagePath . "<br />";
+		echo  "Description - " . $description . "<br />";
+		echo  "Age - " . $age . "<br />";
 		
 
 
