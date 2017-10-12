@@ -104,9 +104,12 @@ function is_get_request() {
        	debug_to_console("DB : " . $row['password']);
       } else {
        	debug_to_console("password is match");
-       	$validUser = true; // returns value: 1
-       	$usertype = $row["admin"]; // not returning any value
-       	setMessage($validUser);
+       	while ($row = mysqli_fetch_assoc($result))
+       	{
+       	  $validUser = true; // returns value: 1
+       	  $usertype = $row["admin"]; // not returning any value
+       	  setMessage($validUser);
+       	}
       }
     }
   

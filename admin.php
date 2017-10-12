@@ -23,6 +23,32 @@ require_once('./functions.php');
       <li><a href="#">Remove a pet</a></li>
     </ul>
   </div>
+  
+  <?php 
+  if ($tool == 'promote')
+  {?>
+    <div><?php include 'promote_user.php' ?></div>
+<?php }
+  else if ($tool == 'demote')
+  {?>
+    <div><?php include 'demote_user.php' ?></div>
+<?php }
+  else if ($tool == 'addBreed')
+  {?>
+    <div><?php include 'breed_add.php' ?></div>
+<?php }
+  else if ($tool == 'addPet')
+  {?>
+    <div><?php include 'pet_add.php' ?></div>
+<?php }
+  else if ($tool == 'removePet')
+  {?>
+    <div><?php include 'pet_remove.php' ?></div>
+<?php }
+  else
+  {?>
+    <div><?php include 'carousel.php' ?></div>
+<?php } ?>
 </div>
 </body>
 </html>
