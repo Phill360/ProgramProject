@@ -13,12 +13,6 @@ if(isset($_POST['demoteBtn']))
   $adminTool = 'demote';
 }
 
-if(isset($_POST['selectionForm']))
-{
-$val = $_POST["tools"];
-setMessage("the Value selected is ".$val);
-}
-
 ?>
 
 
