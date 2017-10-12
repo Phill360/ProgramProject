@@ -110,7 +110,7 @@ function is_get_request() {
       }
     }
   
-  setMessage($usertype);
+  setMessage($validuser);
   
   if ($validUser == true) 
   {
