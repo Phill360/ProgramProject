@@ -60,17 +60,13 @@ require_once('./functions.php');
   {?>
     <div><?php include 'breed_add.php' ?></div>
 <?php }
-  else if ($tool == 'addPet')
-  {?>
-    <div><?php include 'pet_add.php' ?></div>
-<?php }
   else if ($tool == 'removePet')
   {?>
     <div><?php include 'pet_remove.php' ?></div>
 <?php }
   else
   {?>
-    <div><?php include 'carousel.php' ?></div>
+    <div><?php include 'pet_add.php' ?></div>
 <?php } ?>
 </div>
 </body>
