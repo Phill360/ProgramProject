@@ -112,8 +112,8 @@ require_once('./functions.php');
              <!-- Pet description -->
             <div class="form-group">
               <label for="age">Pet Description:</label>
-              <input type="textarea" class="form-control" name="description" id="description" rows="5" cols="50">
-            
+              <textarea class="form-control" name="description" id="description" rows="5" cols="50">
+              </textarea>
               </select>
             </div>
           
