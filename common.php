@@ -110,12 +110,13 @@ function is_get_request() {
       }
     }
   
-  setMessage($validUser); // check
+  
     
   if ($validUser == true) 
   {
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
+    setMessage($_SESSION['usertype']); // check
     header('Location: index2.php');	  
   }else{
     $_SESSION['validUser'] = false;
