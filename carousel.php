@@ -44,6 +44,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <br>
   <div class="container">
     <div class="col-sm-12">
       <!-- Footer box -->
