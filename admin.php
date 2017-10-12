@@ -13,9 +13,10 @@ if(isset($_POST['demoteBtn']))
   $adminTool = 'demote';
 }
 
-if(isset($_POST['selectionForm']))
+if(isset($_POST['send']))
 {
-  $adminTool = $_POST['selectionForm'];
+$val = $_POST["thenumbers"];
+echo "the Value selected is ".$val;
 }
 
 ?>
@@ -35,21 +36,21 @@ if(isset($_POST['selectionForm']))
 
   <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
 
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="selectionForm">
-  <input type="hidden" name="tool" id="tool">
-  <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin tools
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Promote a normal user to admin user</a></li>
-      <li><a href="#">Demote an admin user to normal user</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Add a breed</a></li>
-      <li><a href="#">Add a pet</a></li>
-      <li><a href="#">Remove a pet</a></li>
-    </ul>
-  </div>
-  </form>
+  <form action="selecttest.php" method="post">
+<div class="dropdown" >
+
+<select class="form-control" name="thenumbers">
+  <option value="one">One</option>
+  <option value="two">Two</option>
+  <option value="three">Three</option>
+  <option value="four">Four</option>
+</select>
+
+</div>
+
+ <input type="submit" name ="send"/>
+
+</form>
   
   <script>
 $(function() 
