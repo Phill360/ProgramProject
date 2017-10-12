@@ -23,7 +23,7 @@
   if (isset($_POST['registerBtn']))
   {
 		$visits = 0;
-		$usertype = 0;
+
 		
 		// Get user input
 		$firstname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
@@ -54,23 +54,33 @@
 		}
 		else
 		{
-			// Try to register the user
-			$result = registerUser($firstname, $lastname, $email, $password, $visits, $usertype);
+			// Register the user
+			$result = registerUser($firstname, $lastname, $email, $password, $visits);
 		}
   }
   
   
-  // When the user signs in
+  // User sign in
   if (isset($_POST['signInBtn']))
   {
 		// Get user input
 		$email  = isset($_POST['email']) ? $_POST['email'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
 
-		// Try to register the user
+		// Sign in the user
 		signInUser($email,$password);
   }
   
+  // Admin user sign in
+  if (isset($_POST['adminSignInBtn']))
+  {
+		// Get user input
+		$email  = isset($_POST['email']) ? $_POST['email'] : '';
+		$password = isset($_POST['password']) ? $_POST['password'] : '';
+
+		// Sign in the admin user
+		signInUser($email,$password);
+  }
   
   // When the user signs out
   if(isset($_POST['signOutBtn']))
@@ -128,28 +138,26 @@
 <div><?php include 'header.php' ?></div>
 
 <?php 
-  if ($status == 'signed in' && $usertype == 'admin')
-  {?>
-    <div><?php include 'admin_user.php' ?></div>
-<?php }
-  else if ($status == 'signed in' && $usertype == 'normal')
+  if ($status == 'signed in')
   {?>
     <div><?php include 'search.php' ?></div>
+<?php }
+  else if ($status == 'admin')
+  {?>
+    <div><?php include 'admin_user.php' ?></div>
 <?php } 
   else
   {?>
     <div><?php include 'carousel.php' ?></div>
 <?php } ?>
 
-<!-- Sign In Modal -->
+  <!-- Sign in -->
   <div id="signInModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="modal-title"><div class="slackey"><div class="textLarge">Sign in</div></div></div>
+          <div class="modal-title"><div class="slackey"><div class="textLarge">Sign In</div></div></div>
         </div>
         <div class="modal-body">
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signInForm">
@@ -167,6 +175,36 @@
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
             <button name="signInBtn" type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Admin sign in -->
+  <div id="signInModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="modal-title"><div class="slackey"><div class="textLarge">Admin Sign In</div></div></div>
+        </div>
+        <div class="modal-body">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="adminSignInForm">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <br>
+            <button name="adminSignInBtn" type="submit" class="btn btn-primary">Sign in</button>
           </form>
         </div>
         <div class="modal-footer">

@@ -1,10 +1,18 @@
 <?php
   session_start();
   
-  
+  // Function to determine request type is POST 
+  function is_post_request() {
+ return $_SERVER['REQUEST_METHOD'] == 'POST';
+}
+
+// Function to determine request type is GET 
+function is_get_request() {
+ return $_SERVER['REQUEST_METHOD'] == 'GET';
+}
 
   /* This function registers a user */
-  function registerUser($firstname, $lastname, $email, $password, $visits, $usertype)
+  function registerUser($firstname, $lastname, $email, $password, $visits)
   {
     
      debug_to_console("registering User");
@@ -12,7 +20,7 @@
      
     require_once('./_php/connect.php');
     
-    // Connect to the table user in database
+    // Get all users from the database
     $query = "SELECT * "; 
 	  $query .= "FROM user ";
 	  $result = mysqli_query($connection, $query);
@@ -23,11 +31,10 @@
 		  die("1. Database query failed.");
 	  }
 	  
-	  
-	  
+	  // Iterate through users
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
-	   
+	    // Match email to a row
 	    if ($row["email"] == $email)
 	    {
 	      $check = 'previous user exists';
@@ -38,15 +45,13 @@
       }
 	  }
     
+    // If email doesn't exsit in the database create account
     if ($check == 'no previous user')
     {
       // Secure password string temp
    	  $userpass = md5($password);
-   	  debug_to_console("pass: " . $password);
-   	  debug_to_console("Md5" . $userpass);
    	  
-   	 // $id = '0';
-   	  
+   	  // Create query to insert user details
       $query = "INSERT INTO user ";
       $query .= "(firstName, lastName, email, password, admin) ";
       $query .= "VALUES (";
@@ -56,7 +61,8 @@
       $query .= "'" . $userpass . "',";
       $query .= "'" . $usertype . "'";
       $query .= ")";
-      $write = mysqli_query($connection, $query); // Not working here either
+      // Add user to db
+      $write = mysqli_query($connection, $query); 
 
       // Test for query error
 	    if(!$write) 
@@ -69,7 +75,7 @@
       header('Location: index2.php');
     }
     mysqli_close($connection);
-    setMessage($password);
+    setMessage($message);
   }
 
   /* This function signs the user in */
@@ -86,103 +92,33 @@
     {
       require_once('./_php/connect.php');
       $userpass = md5($password);
-     
-
-    
-    //   $query = "SELECT * ";
-	   // $query .= "FROM user ";
-	   // $query .= "WHERE email='" . $email . "'";
-  	 // $result = mysqli_query($connection, $query);
-	  
-	   // // Test for query error
-	   // if(!$result) 
-	   // {
-		  //   die("3. Database query failed.");
-	   // }
-	  
-	  //$row = mysqli_fetch_assoc($result);
-	  
-	  
-
-
-
-	$query = "SELECT * FROM user ";
-  $query .= "WHERE email=";
-  $query .= "'" . $email . "'";
-  $query .= " and password=";
-  $query .= "'" . $userpass . "'";
-  
-
-
-	$result = mysqli_query($connection, $query);
-	$count  = mysqli_num_rows($result);
-	if($count==0) {
-   	        debug_to_console("password NO match");
-
-   	        debug_to_console("Entered: " . md5($password));
-   	        debug_to_console("DB : " . $row['password']);
-   	      } else {
-   	        debug_to_console("password is match");
-   	         
-   	        $validUser = true;
-   	        $usertype = $row["admin"];
-   	      }
-
-
-	  
-	  
-	  
-	  
-	    debug_to_console($query);
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-
-	  
-	   // while ($row = mysqli_fetch_assoc($result))
-	   // {
-	   //   debug_to_console($row);
-	   //   if ($row['email'] == $email)
-    //     {
-    //       debug_to_console("email is match");
-            
-   	         
-    //       // User exists, now check the password.
-    //                 // if ($row['password'] == $password)
-    //       if ($row['password'] == md5($password))
-   	//       {
-   	//           debug_to_console("password is match");
-   	         
-   	//         $validUser = true;
-   	//         $usertype = $row["admin"];
-   	//       } else {
-   	//         debug_to_console("password NO match");
-
-   	//         debug_to_console("Entered: " . md5($password));
-   	//         debug_to_console("DB : " . $row['password']);
-   	//       }
-   	      
-    //     }
-	   // }
+      // Query to find a match for login details
+    	$query = "SELECT * FROM user ";
+      $query .= "WHERE email=";
+      $query .= "'" . $email . "'";
+      $query .= " and password=";
+      $query .= "'" . $userpass . "'";
+    	$result = mysqli_query($connection, $query);
+    	$count  = mysqli_num_rows($result);
+    	if($count==0) {
+        debug_to_console("password NO match");
+        debug_to_console("Entered: " . md5($password));
+       	debug_to_console("DB : " . $row['password']);
+      } else {
+       	debug_to_console("password is match");
+       	$validUser = true;
+       	$usertype = $row["admin"];
+      }
     }
     
-    if ($validUser == true) 
-    {
-      $_SESSION['validUser'] = true;
-      $_SESSION['usertype'] = $usertype;
-      header('Location: index2.php');	  
-    }
-    else
-    {
-      $_SESSION['validUser'] = false;
-    }
+  if ($validUser == true) 
+  {
+    $_SESSION['validUser'] = true;
+    $_SESSION['usertype'] = $usertype;
+    header('Location: index2.php');	  
+  }else{
+    $_SESSION['validUser'] = false;
+  }
     mysqli_close($connection);
   }
 

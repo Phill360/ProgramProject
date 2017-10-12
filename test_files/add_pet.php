@@ -1,6 +1,6 @@
 <?php
 
-require_once('../functions.php');
+require_once('../common.php');
 
 
 // Connect AWS MYSQL Server
