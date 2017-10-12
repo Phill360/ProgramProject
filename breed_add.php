@@ -10,7 +10,7 @@ require_once('./functions.php');
 
 <body>
 <div class="container">
-
+  <div class="row">
     <div class="col-sm-12">
       <!-- Add breed -->
       <div class="panel panel-default">
@@ -81,7 +81,7 @@ require_once('./functions.php');
         </div>
       </div>
     </div>
-
+  </div>
 </div>
 </body>
 </html>

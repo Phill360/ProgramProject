@@ -10,7 +10,7 @@ require_once('./functions.php');
 
 <body>
 <div class="container">
-
+  <div class="row">
     <div class="col-sm-12">
       <!-- Demote admin user box -->
       <div class="panel panel-default">
@@ -29,7 +29,7 @@ require_once('./functions.php');
         </div>
       </div>
     </div>
-
+  </div>
 </div>
 </body>
 </html>
