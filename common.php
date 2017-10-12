@@ -112,7 +112,7 @@
   $query .= " and password=";
   $query .= "'" . $userpass . "'";
   
-  debug_to_console($query);
+
 
 	$result = mysqli_query($connection, $query);
 	$count  = mysqli_num_rows($result);
@@ -133,7 +133,7 @@
 	  
 	  
 	  
-	  
+	    debug_to_console($query);
 	  
 	  
 	  
