@@ -9,8 +9,8 @@
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 	
-// The error appeared to be here
-// 	$number = checkNumberUsersInFile();
+  // The error appeared to be here
+  // 	$number = checkNumberUsersInFile();
 	$message = getMessage();
 	
 	// echo('The system is '.$status.' - ');
@@ -71,17 +71,7 @@
 		signInUser($email,$password);
   }
   
-  // Admin user sign in
-  if (isset($_POST['adminSignInBtn']))
-  {
-		// Get user input
-		$email  = isset($_POST['email']) ? $_POST['email'] : '';
-		$password = isset($_POST['password']) ? $_POST['password'] : '';
 
-		// Sign in the admin user
-		signInUser($email,$password);
-  }
-  
   // When the user signs out
   if(isset($_POST['signOutBtn']))
   {
@@ -138,11 +128,11 @@
 <div><?php include 'header.php' ?></div>
 
 <?php 
-  if ($status == 'signed in')
+  if ($status == 'signed in' && $usertype == 'normal')
   {?>
     <div><?php include 'search.php' ?></div>
 <?php }
-  else if ($status == 'admin')
+  else if ($status == 'signed in' && $usertype == 'admin')
   {?>
     <div><?php include 'admin_user.php' ?></div>
 <?php } 
@@ -183,36 +173,7 @@
       </div>
     </div>
   </div>
-  
-  <!-- Admin sign in -->
-  <div id="signInModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="modal-title"><div class="slackey"><div class="textLarge">Admin Sign In</div></div></div>
-        </div>
-        <div class="modal-body">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="adminSignInForm">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-            </div>
-            <br>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-            </div>
-            <br>
-            <button name="adminSignInBtn" type="submit" class="btn btn-primary">Sign in</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
   
   <!-- Register Modal -->
   <div id="registerModal" class="modal fade" role="dialog">
