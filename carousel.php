@@ -50,7 +50,7 @@
       <!-- Footer box -->
       <div class="panel panel-default">
         <div class="panel-body">
-          <a href="admin_user.php">Admin</a>
+          //
         </div>
       </div>
     </div>
