@@ -4,8 +4,8 @@
 	include_once('./common.php');
 	
 	
-	$status = checkStatus();
-	$usertype = checkUserType();
+	echo $status = checkStatus();
+	echo $usertype = checkUserType();
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 	
