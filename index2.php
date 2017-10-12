@@ -11,12 +11,12 @@
 	
   // The error appeared to be here
   // 	$number = checkNumberUsersInFile();
-	$message = getMessage();
+	// $message = getMessage();
 	
 	// echo('The system is '.$status.' - ');
 	// echo(' '.$usertype.' user. - ');
 	// echo('There are '.$number.' users in file. - ');
-	echo('Message: '.$message);
+	// echo('Message: '.$message);
 	
 	
   // When the user registers
@@ -128,11 +128,11 @@
 <div><?php include 'header.php' ?></div>
 
 <?php 
-  if ($status == 'signed in' && $usertype == 'normal')
+  if ($status == 'signed in' && $_SESSION['usertype'] != '1')
   {?>
     <div><?php include 'search.php' ?></div>
 <?php }
-  else if ($status == 'signed in' && $usertype == 'admin')
+  else if ($status == 'signed in' && $_SESSION['usertype'] == '1')
   {?>
     <div><?php include 'admin_user.php' ?></div>
 <?php } 
