@@ -10,7 +10,7 @@ require_once('./functions.php');
 
 <body>
 <div class="container">
-  <div class="slackey"><div class="black"><div class="textLarge">Welcome admin user</div></div></div>
+  <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin tools
     <span class="caret"></span></button>
