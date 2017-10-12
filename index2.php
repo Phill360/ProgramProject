@@ -24,14 +24,11 @@
   {
 		$visits = 0;
 
-		
 		// Get user input
 		$firstname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
 		$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
 		$email = isset($_POST['email']) ? $_POST['email'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
-		
-	
 		
         /* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";

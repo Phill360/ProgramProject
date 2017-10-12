@@ -289,3 +289,7 @@ body {
 	.text-underline {		
 		text-decoration: underline;	
 	}
+	
+	.pagination {
+		text-align: center;
+	}

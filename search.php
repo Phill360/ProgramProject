@@ -30,3 +30,33 @@
 
 <body>
 <div><?php include 'header.php' ?></div>
+
+  <div class="row">
+    <div class="col-lg-6 portfolio-item">
+      <div class="card h-100">
+        <div class="car-body">
+          <h4 class="card-title">
+            <p class="card-text">blah blah blah</p>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Pagination -->
+ <div class="container">
+  <h2>Pagination</h2>
+  <p>The .pagination class provides pagination links:</p>                  
+  <ul class="pagination justify-content-center">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+  </ul>
+</div>
+  
+</body>
+
+  
+</html>

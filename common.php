@@ -53,7 +53,7 @@ function is_get_request() {
    	  
    	  // Create query to insert user details
       $query = "INSERT INTO user ";
-      $query .= "(firstName, lastName, email, password, admin) ";
+      $query .= "(firstName, lastName, email, password, userType) ";
       $query .= "VALUES (";
       $query .= "'" . $firstname . "',";
       $query .= "'" . $lastname . "',";
@@ -106,9 +106,10 @@ function is_get_request() {
        	debug_to_console("password is match");
        	while ($row = mysqli_fetch_assoc($result))
        	{
-       	  $validUser = true; // returns value: 1
-       	  $usertype = $row["admin"]; // not returning any value
-       	  setMessage($validUser);
+       	  $validUser = true;
+       	  $usertype = $row["userType"];
+       	  	debug_to_console("admin: " . $row['userType']);
+       	  setMessage("user is a: " . $usertype);
        	}
       }
     }
@@ -182,7 +183,7 @@ function is_get_request() {
   {
      include_once('_php/connect.php');
     
-    $query = "UPDATE user SET admin='1' WHERE email='" . $email . "'";
+    $query = "UPDATE user SET userType='admin' WHERE email='" . $email . "'";
 
     if (mysqli_query($connection, $query)) {
       echo "User updated successfully";
@@ -200,7 +201,7 @@ function is_get_request() {
   {
     include_once('_php/connect.php');
     
-    $query = "UPDATE user SET admin='0' WHERE email='" . $email . "'";
+    $query = "UPDATE user SET userType='normal' WHERE email='" . $email . "'";
 
     if (mysqli_query($connection, $query)) {
       echo "User updated successfully";
