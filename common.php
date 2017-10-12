@@ -53,13 +53,12 @@ function is_get_request() {
    	  
    	  // Create query to insert user details
       $query = "INSERT INTO user ";
-      $query .= "(firstName, lastName, email, password, userType) ";
+      $query .= "(firstName, lastName, email, password) ";
       $query .= "VALUES (";
       $query .= "'" . $firstname . "',";
       $query .= "'" . $lastname . "',";
       $query .= "'" . $email . "',";
-      $query .= "'" . $userpass . "',";
-      $query .= "'" . $usertype . "'";
+      $query .= "'" . $userpass . "'";
       $query .= ")";
       // Add user to db
       $write = mysqli_query($connection, $query); 
