@@ -75,7 +75,6 @@ function is_get_request() {
       header('Location: index2.php');
     }
     mysqli_close($connection);
-    setMessage($message);
   }
 
   /* This function signs the user in */
