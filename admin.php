@@ -13,7 +13,7 @@ if(isset($_POST['demoteBtn']))
   $adminTool = 'demote';
 }
 
-if(isset($_POST['send']))
+if(isset($_POST['selectionForm']))
 {
 $val = $_POST["tools"];
 setMessage("the Value selected is ".$val);
@@ -38,7 +38,8 @@ setMessage("the Value selected is ".$val);
 
   
 
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" id="selectionForm">
+  <input type="hidden" name="tool" id="tools">
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
   <span class="caret"></span></button>
@@ -49,9 +50,17 @@ setMessage("the Value selected is ".$val);
   </ul>
 </div>
 
- <input type="submit" name ="send"/>
-
 </form>
+
+<script>
+  $(document).ready(function(){ 
+              $('.dropdown-menu li').click(function()
+                   {
+                       $('#tools').val($(this).html());
+                       $('#selectionForm').submit();
+                   });
+ });
+</script>
   
   
   
