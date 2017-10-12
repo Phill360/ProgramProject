@@ -85,50 +85,90 @@
     else // user from database
     {
       require_once('./_php/connect.php');
-      
+      $userpass = md5($password);
      
 
     
-      $query = "SELECT * ";
-	    $query .= "FROM user ";
-	    $query .= "WHERE email='" . $email . "'";
-  	  $result = mysqli_query($connection, $query);
+    //   $query = "SELECT * ";
+	   // $query .= "FROM user ";
+	   // $query .= "WHERE email='" . $email . "'";
+  	 // $result = mysqli_query($connection, $query);
 	  
-	    // Test for query error
-	    if(!$result) 
-	    {
-		    die("3. Database query failed.");
-	    }
+	   // // Test for query error
+	   // if(!$result) 
+	   // {
+		  //   die("3. Database query failed.");
+	   // }
 	  
 	  //$row = mysqli_fetch_assoc($result);
 	  
-
 	  
-	    while ($row = mysqli_fetch_assoc($result))
-	    {
-	      debug_to_console($row);
-	      if ($row['email'] == $email)
-        {
-           debug_to_console("email is match");
-            
-   	         
-          // User exists, now check the password.
-                    // if ($row['password'] == $password)
-          if ($row['password'] == md5($password))
-   	      {
-   	          debug_to_console("password is match");
+
+
+//	$conn = mysqli_connect("localhost","root","","phppot_examples");
+	$query = "SELECT * FROM users ";
+  $query .= "WHERE email=";
+  $query .= "'" . $firstname . "',";
+  $query .= " and password=";
+  $query .= "'" . $userpass . "'";
+
+	$result = mysqli_query($connection,"$query");
+	$count  = mysqli_num_rows($result);
+	if($count==0) {
+   	        debug_to_console("password is match");
    	         
    	        $validUser = true;
    	        $usertype = $row["admin"];
    	      } else {
-   	         debug_to_console("password NO match");
+   	        debug_to_console("password NO match");
 
-   	         debug_to_console("Entered: " . md5($password));
-   	         debug_to_console("DB : " . $row['password']);
+   	        debug_to_console("Entered: " . md5($password));
+   	        debug_to_console("DB : " . $row['password']);
    	      }
+
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  
+	   // while ($row = mysqli_fetch_assoc($result))
+	   // {
+	   //   debug_to_console($row);
+	   //   if ($row['email'] == $email)
+    //     {
+    //       debug_to_console("email is match");
+            
+   	         
+    //       // User exists, now check the password.
+    //                 // if ($row['password'] == $password)
+    //       if ($row['password'] == md5($password))
+   	//       {
+   	//           debug_to_console("password is match");
+   	         
+   	//         $validUser = true;
+   	//         $usertype = $row["admin"];
+   	//       } else {
+   	//         debug_to_console("password NO match");
+
+   	//         debug_to_console("Entered: " . md5($password));
+   	//         debug_to_console("DB : " . $row['password']);
+   	//       }
    	      
-        }
-	    }
+    //     }
+	   // }
     }
     
     if ($validUser == true) 
