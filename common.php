@@ -41,7 +41,7 @@
     if ($check == 'no previous user')
     {
       // Secure password string temp
-   	  $userpass = $password;
+   	  $userpass = m5d($password);
    	  debug_to_console("pass: " . $password);
    	  debug_to_console("Md5" . $userpass);
    	  
@@ -113,8 +113,8 @@
             
    	         
           // User exists, now check the password.
-                    if ($row['password'] == $password)
-          // if ($row['password'] == md5($password))
+                    // if ($row['password'] == $password)
+          if ($row['password'] == md5($password))
    	      {
    	          debug_to_console("password is match");
    	         
