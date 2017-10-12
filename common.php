@@ -113,7 +113,8 @@
             
    	         
           // User exists, now check the password.
-          if ($row['password'] == md5($password))
+                    if ($row['password'] == $password)
+          // if ($row['password'] == md5($password))
    	      {
    	          debug_to_console("password is match");
    	         
