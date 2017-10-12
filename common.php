@@ -112,9 +112,9 @@ function is_get_request() {
   
   if ($validUser == true) 
   {
-    setMessage("reaching here");
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
+    setMessage($_SESSION['validUser']);
     header('Location: index2.php');	  
   }else{
     $_SESSION['validUser'] = false;
