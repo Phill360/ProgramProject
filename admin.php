@@ -13,6 +13,14 @@ if(isset($_POST['demoteBtn']))
   $adminTool = 'demote';
 }
 
+if(isset($_POST['selectionForm']))
+{
+  if(isset($_POST['tool'])=='promote')
+  {
+    $adminTool = 'promote';
+  }
+}
+
 ?>
 
 
@@ -29,6 +37,9 @@ if(isset($_POST['demoteBtn']))
 <div class="container">
 
   <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
+
+  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="selectionForm">
+  <input type="hidden" name="tool" id="tool">
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin tools
     <span class="caret"></span></button>
@@ -41,6 +52,23 @@ if(isset($_POST['demoteBtn']))
       <li><a href="#">Remove a pet</a></li>
     </ul>
   </div>
+  </form>
+  
+  <script>
+$(function() 
+{
+    $('.dropdown-menu li').click(function()
+    {
+        $('#tool').val($(this).html());
+        $('#selectionForm').submit();
+    });
+});
+</script>
+  
+  
+  
+  
+  
   
   <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="promoteForm">
     <button type="submit" class="btn btn-primary" name="promoteBtn">Promote</button>
