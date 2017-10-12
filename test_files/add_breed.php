@@ -18,18 +18,20 @@ require_once('../_php/connect.php');
     $breedSize = $_POST['breedSize'];
     $temperament = $_POST['temperament'];
     $active = $_POST['active'];
+    $fee = $_POST['fee'];
 
 
     
 	// 2. Perform Query
 	$query = "INSERT INTO breed ";
-	$query .= "(type, name, size, temperament, active) ";
+	$query .= "(type, name, size, temperament, active, fee) ";
 	$query .= "VALUES (";
 	$query .= "'" . $species . "',";
 	$query .= "'" . $breedName . "',";
 	$query .= "'" . $breedSize . "',";
 	$query .= "'" . $temperament . "',";
-	$query .= "'" . $active . "'";
+	$query .= "'" . $active . "',";
+	$query .= "'" . $fee . "'";
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	// Test for query error

@@ -17,11 +17,9 @@ require_once('../_php/connect.php');
     $petName = $_POST['petName'];
     $breedID = $_POST['breedID'];
     $gender = $_POST['gender'];
-    $desexed = $_POST['desexed'];
-    $vaccinated = $_POST['vaccinated'];
-    $wormed = $_POST['wormed'];
-    $heartworm = $_POST['heartworm'];
     $imagePath = $_POST['file'];
+    $description = $_POST['$escription'];
+  
     // $species = $_POST[''];
 
   
@@ -29,11 +27,8 @@ require_once('../_php/connect.php');
     	echo  $breedID . "<br />";
     	echo  $petname . "<br />";
 		echo  $gender . "<br />";
-		echo  $desexed . "<br />";
-		echo  $vaccinated . "<br />";
-		echo  $wormed . "<br />";
-		echo  $heartworm . "<br />";
 		echo  $imagePath . "<br />";
+		echo  $description . "<br />";
 		
 
 
@@ -41,17 +36,14 @@ require_once('../_php/connect.php');
     
 	// 2. Perform Query
 	$query = "INSERT INTO animals ";
-	$query .= "(rspcaID, petName, breedID, gender, desexed, vaccinated, wormed, heartworm, imagePath) ";
+	$query .= "(rspcaID, petName, breedID, gender, imagePath, description) ";
 	$query .= "VALUES (";
 	$query .= "'" . $rspcaID . "',";
 	$query .= "'" . $petName . "',";
 	$query .= "'" . $breedID . "',";
 	$query .= "'" . $gender . "',";
-	$query .= "'" . $desexed . "',";
-	$query .= "'" . $vaccinated . "',";
-	$query .= "'" . $wormed . "',";
-	$query .= "'" . $heartworm . "',";
-	$query .= "'" . $imagePath . "'";
+	$query .= "'" . $imagePath . "',";
+	$query .= "'" . $description . "'";
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	// Test for query error
