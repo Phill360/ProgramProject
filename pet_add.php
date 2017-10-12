@@ -99,12 +99,12 @@ require_once('./functions.php');
             <div class="form-group">
               <label for="age">Age:</label>
               <select class="form-control" name="age" id="age">
-                <option value="0.25"><\3 months</option>
+                <option value="0.25">-3 months</option>
                 <option value="0.5">3-6 months</option>
                 <option value="1">6-12 months</option>
                 <option value="2">2 Year</option>
-                <option value="3">2 Year</option>
-                <option value="4">2 Year</option>
+                <option value="3">3 Year</option>
+                <option value="4">4 Year</option>
                 <option value="5">5+ Year</option>
               </select>
             </div>
