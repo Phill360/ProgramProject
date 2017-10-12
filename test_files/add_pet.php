@@ -37,13 +37,14 @@ require_once('../_php/connect.php');
     
 	// 2. Perform Query
 	$query = "INSERT INTO animals ";
-	$query .= "(rspcaID, petName, breedID, gender, imagePath, description) ";
+	$query .= "(rspcaID, petName, breedID, gender, imagePath, age, description) ";
 	$query .= "VALUES (";
 	$query .= "'" . $rspcaID . "',";
 	$query .= "'" . $petName . "',";
 	$query .= "'" . $breedID . "',";
 	$query .= "'" . $gender . "',";
 	$query .= "'" . $imagePath . "',";
+	$query .= "'" . $age . "',";
 	$query .= "'" . $description . "'";
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
