@@ -15,7 +15,7 @@ if(isset($_POST['demoteBtn']))
 
 if(isset($_POST['send']))
 {
-$val = $_POST["thenumbers"];
+$val = $_POST["tools"];
 setMessage("the Value selected is ".$val);
 }
 
@@ -42,7 +42,7 @@ setMessage("the Value selected is ".$val);
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
   <span class="caret"></span></button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" name="tools">
     <li value="promote">Promote</li>
     <li value="demote">Demote</li>
     <li value="addPet">Add a pet</li>
