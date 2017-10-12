@@ -19,7 +19,7 @@ require_once('../_php/connect.php');
     $age = $_POST['age'];
     $gender = $_POST['gender'];
     $imagePath = $_POST['file'];
-    $description = $_POST['$escription'];
+    $description = $_POST['$description'];
   
 
   
