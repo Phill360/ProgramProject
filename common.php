@@ -112,7 +112,7 @@
   $query .= " and password=";
   $query .= "'" . $userpass . "'";
 
-	$result = mysqli_query($connection,"$query");
+	$result = mysqli_query($connection, $query);
 	$count  = mysqli_num_rows($result);
 	if($count==0) {
    	        debug_to_console("password NO match");
