@@ -46,5 +46,7 @@
   </div>
 </div>
 
+<a href="admin_user.php">Admin</a>
+
 </body>
 </html>
