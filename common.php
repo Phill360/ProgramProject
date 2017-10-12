@@ -84,7 +84,6 @@ function is_get_request() {
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
-      setMessage('super admin user');
       $validUser = true;
       $usertype = 'admin';
     }
@@ -113,6 +112,7 @@ function is_get_request() {
   
   if ($validUser == true) 
   {
+    setMessage("reaching here");
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
     header('Location: index2.php');	  
