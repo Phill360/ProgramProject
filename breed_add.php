@@ -1,5 +1,5 @@
 <?php
-require_once('./common.php');
+// require_once('./common.php');
 
 
 
@@ -7,13 +7,14 @@ require_once('./common.php');
   {
 		// Get breed input
 		$species = isset($_POST['species']) ? $_POST['species'] : '';
-    $breedName = isset($_POST['breedName'] ? $_POST['breedName'] : '';
-    $breedSize = isset($_POST['breedSize'] ? $_POST['breedSize'] : '';
-    $temperament = isset($_POST['temperament'] ? $_POST['temperament'] : '';
-    $active = isset($_POST['active'] ? $_POST['active'] : '';
-    $fee = isset($_POST['fee'] ? $_POST['fee'] : '';
+    $breedName = isset($_POST['breedName']) ? $_POST['breedName'] : '';
+    $breedSize = isset($_POST['breedSize']) ? $_POST['breedSize'] : '';
+    $temperament = isset($_POST['temperament']) ? $_POST['temperament'] : '';
+    $active = isset($_POST['active']) ? $_POST['active'] : '';
+    $fee = isset($_POST['fee']) ? $_POST['fee'] : '';
     
     addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
+  }
 ?>
 
 <!DOCTYPE html PUBLIC>
