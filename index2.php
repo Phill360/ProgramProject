@@ -128,11 +128,11 @@
 <div><?php include 'header.php' ?></div>
 
 <?php 
-  if ($status == 'signed in' && $_SESSION['usertype'] != 1)
+  if ($status == 'signed in' && $usertype == 'admin')
   {?>
     <div><?php include 'search.php' ?></div>
 <?php }
-  else if ($status == 'signed in' && $_SESSION['usertype'] == 1)
+  else if ($status == 'signed in' && $usertype == 'normal')
   {?>
     <div><?php include 'admin_user.php' ?></div>
 <?php } 
