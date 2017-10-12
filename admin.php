@@ -15,7 +15,7 @@ if(isset($_POST['demoteBtn']))
 
 if(isset($_POST['selectionForm']))
 {
-  $adminTool = $_POST['tool'];
+  $adminTool = $_POST['selectionForm'];
 }
 
 ?>
