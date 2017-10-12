@@ -16,19 +16,20 @@ require_once('../_php/connect.php');
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
     $breedID = $_POST['breedID'];
+    $age = $_POST['age'];
     $gender = $_POST['gender'];
     $imagePath = $_POST['file'];
     $description = $_POST['$escription'];
   
-    // $species = $_POST[''];
 
   
-		echo  $rspcaID . "<br />";
-    	echo  $breedID . "<br />";
-    	echo  $petname . "<br />";
-		echo  $gender . "<br />";
-		echo  $imagePath . "<br />";
-		echo  $description . "<br />";
+		echo  "rspca " . $rspcaID . "<br />";
+    	echo  "breed ID " . $breedID . "<br />";
+    	echo  "pet name " . $petname . "<br />";
+		echo  "Gender " . $gender . "<br />";
+		echo  "Image path" . $imagePath . "<br />";
+		echo  "Description" . $description . "<br />";
+		echo  "Age " . $age . "<br />";
 		
 
 
