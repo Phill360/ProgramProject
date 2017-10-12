@@ -107,9 +107,10 @@ function is_get_request() {
        	debug_to_console("password is match");
        	$validUser = true;
        	$usertype = $row["admin"];
-       	setMessage($validUser);
       }
     }
+  
+  setMessage($usertype);
   
   if ($validUser == true) 
   {
