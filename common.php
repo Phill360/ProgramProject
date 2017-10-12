@@ -163,7 +163,7 @@ function is_get_request() {
   /* This function checks whether the user is an admin user or a normal user */
   function checkUserType()
   {
-    if ($_SESSION['usertype'] == '1') // This value was set to '1'. Changed to 'admin'.
+    if ($_SESSION['usertype'] == 'admin') // This value was set to '1'. Changed to 'admin'.
     {
       $usertype = 'admin';
     }
