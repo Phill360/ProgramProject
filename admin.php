@@ -15,10 +15,7 @@ if(isset($_POST['demoteBtn']))
 
 if(isset($_POST['selectionForm']))
 {
-  if(isset($_POST['tool'])=='promote')
-  {
-    $adminTool = 'promote';
-  }
+  $adminTool = $_POST['tool'];
 }
 
 ?>
