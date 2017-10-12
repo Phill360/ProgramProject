@@ -11,7 +11,7 @@ require_once('./functions.php');
 <body>
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <!-- Add a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">

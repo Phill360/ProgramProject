@@ -1,11 +1,17 @@
 <?php
-require_once('./functions.php');
-?>
-
-<?php
+include_once('./common.php');
 
 
 
+if(isset($_POST['promoteBtn']))
+{
+  $adminTool = 'promote';
+}
+
+if(isset($_POST['demoteBtn']))
+{
+  $adminTool = 'demote';
+}
 
 ?>
 
@@ -21,46 +27,48 @@ require_once('./functions.php');
 
 <body>
 <div class="container">
-  <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
-  
-  
 
+  <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin tools
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Promote a normal user to admin user</a></li>
+      <li><a href="#">Demote an admin user to normal user</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Add a breed</a></li>
+      <li><a href="#">Add a pet</a></li>
+      <li><a href="#">Remove a pet</a></li>
+    </ul>
+  </div>
   
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin tools
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Promote a normal user to admin user</a></li>
-          <li><a href="#">Demote an admin user to normal user</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Add a breed</a></li>
-          <li><a href="#">Add a pet</a></li>
-          <li><a href="#">Remove a pet</a></li>
-        </ul>
-      </div>
-      
-  <script>
-    $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
-    var $tool = $( event.currentTarget );
-    });
-  </script>
+  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="promoteForm">
+    <button type="submit" class="btn btn-primary" name="promoteBtn">Promote</button>
+  </form>
+  
+  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="demoteForm">
+    <button type="submit" class="btn btn-primary" name="demoteBtn">Demote</button>
+  </form>
+    
+    
+    
  
 
   
   <?php 
-  if ($tool == 'promote')
+  if ($adminTool == 'promote')
   {?>
     <div><?php include 'promote_user.php' ?></div>
 <?php }
-  else if ($tool == 'demote')
+  else if ($adminTool == 'demote')
   {?>
     <div><?php include 'demote_user.php' ?></div>
 <?php }
-  else if ($tool == 'addBreed')
+  else if ($adminTool == 'addBreed')
   {?>
     <div><?php include 'breed_add.php' ?></div>
 <?php }
-  else if ($tool == 'removePet')
+  else if ($adminTool == 'removePet')
   {?>
     <div><?php include 'pet_remove.php' ?></div>
 <?php }
