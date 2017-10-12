@@ -242,23 +242,12 @@ function is_get_request() {
   }
   
   
-  function addBreed() {
-    // Connect AWS MYSQL Server
-require_once('../_php/connect.php');
-
-
-
-
-
- if(is_post_request()) {
+  function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
     
-    // $species = $_POST['species'];
-    $species = $_POST['species'];
-    $breedName = $_POST['breedName'];
-    $breedSize = $_POST['breedSize'];
-    $temperament = $_POST['temperament'];
-    $active = $_POST['active'];
-    $fee = $_POST['fee'];
+// Connect AWS MYSQL Server
+require_once('./_php/connect.php');
+
+
 
 
     
@@ -283,15 +272,9 @@ require_once('../_php/connect.php');
 			exit;
 	}
 
-
-} else {
-	// Redirect to another page if it is not a POST request
-}
-
-
-
-	// 5. Close database connection
+	// Close database connection
 	mysqli_close($connection);
+    
   }
   
   /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */

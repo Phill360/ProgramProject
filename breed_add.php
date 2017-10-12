@@ -1,5 +1,19 @@
 <?php
-require_once('./functions.php');
+require_once('./common.php');
+
+
+
+ if (isset($_POST['addBreedBtn']))
+  {
+		// Get breed input
+		$species = isset($_POST['species']) ? $_POST['species'] : '';
+    $breedName = isset($_POST['breedName'] ? $_POST['breedName'] : '';
+    $breedSize = isset($_POST['breedSize'] ? $_POST['breedSize'] : '';
+    $temperament = isset($_POST['temperament'] ? $_POST['temperament'] : '';
+    $active = isset($_POST['active'] ? $_POST['active'] : '';
+    $fee = isset($_POST['fee'] ? $_POST['fee'] : '';
+    
+    addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -18,7 +32,7 @@ require_once('./functions.php');
           <div class="opensans">Add a breed</div>
         </div>
         <div class="panel-body">
-          <form action="./test_files/add_breed.php" method="post">
+          <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
             
             <!-- Select cat or dog -->
             <div class="form-group">
@@ -71,12 +85,12 @@ require_once('./functions.php');
             
                      <!-- Enter breed fee -->
             <div class="input-group">
-              <span class="input-group-addon">Breed Fee</span>
-              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter breed fee">
+              <span class="input-group-addon">Adoption Fee</span>
+              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee">
             </div>
             <br>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" name="addBreedBtn" >Submit</button>
           </form>
         </div>
       </div>
