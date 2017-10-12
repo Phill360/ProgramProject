@@ -95,24 +95,28 @@ require_once('./functions.php');
               </select>
             </div>
             
-            <!-- Checkboxes for health check -->I
-            <label>Health checks:</label>
-            <div class="checkbox">
-              <input type="hidden" name="desexed" value="0">
-              <label><input type="checkbox" name="desexed" value="1">Desexed</label>
-            </div>           
-            <div class="checkbox">
-              <input type="hidden" name="vaccinated" value="0">
-              <label><input type="checkbox" name="vaccinated"  value="1">Vaccinated</label>
+              <!-- Age selection -->
+            <div class="form-group">
+              <label for="age">Age:</label>
+              <select class="form-control" name="age" id="age">
+                <option value="0.25"><\3 months</option>
+                <option value="0.5">3-6 months</option>
+                <option value="1">6-12 months</option>
+                <option value="2">2 Year</option>
+                <option value="3">2 Year</option>
+                <option value="4">2 Year</option>
+                <option value="5">5+ Year</option>
+              </select>
             </div>
-            <div class="checkbox">
-              <input type="hidden" name="wormed" value="0">
-              <label><input type="checkbox" name="wormed" value="1">Wormed</label>
+            
+             <!-- Pet description -->
+            <div class="form-group">
+              <label for="age">Pet Description:</label>
+              <input type="textarea" class="form-control" name="description" id="description" rows="5" cols="50">
+            
+              </select>
             </div>
-            <div class="checkbox">
-              <input type="hidden" name="heartworm" value="0">
-              <label><input type="checkbox" name="heartworm" value="1">Heartworm treated</label>
-            </div>
+          
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>

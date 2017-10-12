@@ -51,9 +51,9 @@ require_once('./functions.php');
             <div class="input-group">
               <span class="input-group-addon">Temperament</span>
                <select class="form-control" id="temperament" name="temperament">
-                <option>Placid</option>
-                <option>Friendly</option>
-                <option>Not sure</option>
+                <option>Easy Going</option>
+                <option>Playful</option>
+                <option>Excitable</option>
               </select>
             </div>
             <br>
@@ -62,12 +62,20 @@ require_once('./functions.php');
             <div class="input-group">
               <span class="input-group-addon">Active</span>
               <select class="form-control" id="active" name="active">
-                <option>Quite</option>
+                <option>Lap dog</option>
                 <option>Active</option>
-                <option>Very Active</option>
+                <option>Sports star</option>
               </select>
             </div>
             <br>
+            
+                     <!-- Enter breed fee -->
+            <div class="input-group">
+              <span class="input-group-addon">Breed Fee</span>
+              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter breed fee">
+            </div>
+            <br>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>

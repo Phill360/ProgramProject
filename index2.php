@@ -185,12 +185,12 @@
         <div class="modal-body">
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
             <div class="input-group">
-              <span class="input-group-addon">Text</span>
+              <span class="input-group-addon">First Name</span>
               <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First name">
             </div>
             <br>
             <div class="input-group">
-              <span class="input-group-addon">Text</span>
+              <span class="input-group-addon">Last Name</span>
               <input id="lastname" type="text" class="form-control" name="lastname" placeholder="Last name">
             </div>
             <br>
