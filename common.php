@@ -84,6 +84,7 @@ function is_get_request() {
     // Super admin user sign in
     if ($email == 'super' && $password == 'super')
     {
+      debug_to_console("super admin user");
       $validUser = true;
       $usertype = 'admin';
     }
