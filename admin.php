@@ -41,11 +41,11 @@ if(isset($_POST['demoteBtn']))
 <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
 <div>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
-    <button type="submit" class="btn btn-primary" name="promoteBtn">Promote a user</button>
-    <button type="submit" class="btn btn-primary" name="demoteBtn">Demote a user</button>
-    <button type="submit" class="btn btn-primary" name="addBreedBtn">Add a breed</button>
-    <button type="submit" class="btn btn-primary" name="addPetBtn">Add a pet</button>
-    <button type="submit" class="btn btn-primary" name="removePetBtn">Remove a pet</button>
+    <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
+    <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
+    <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
+    <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
+    <button type="submit" class="btn" name="removePetBtn">Remove a pet</button>
   </form>
 </div>
 
