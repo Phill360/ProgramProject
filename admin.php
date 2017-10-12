@@ -30,7 +30,6 @@ require_once('./functions.php');
         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin tools
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li onclick="$('#submitForm').submit()"><a href="#"> Sphere</a></li>
           <li><a href="#">Promote a normal user to admin user</a></li>
           <li><a href="#">Demote an admin user to normal user</a></li>
           <li class="divider"></li>
@@ -39,6 +38,12 @@ require_once('./functions.php');
           <li><a href="#">Remove a pet</a></li>
         </ul>
       </div>
+      
+  <script>
+    $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
+    var $tool = $( event.currentTarget );
+    });
+  </script>
  
 
   
