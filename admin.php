@@ -38,30 +38,15 @@ setMessage("the Value selected is ".$val);
 
   
 
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" id="selectionForm">
-  <input type="hidden" name="tool" id="tools">
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
   <span class="caret"></span></button>
-  <ul class="dropdown-menu" name="tools">
-    <li value="promote"><a href="#">Promote</a></li>
-    <li value="demote">Demote</li>
-    <li value="addPet">Add a pet</li>
+  <ul class="dropdown-menu">
+    <li><a href="promote.php">Promote a user</a></li>
+    <li><a href="demote.php">Demote a user</a></li>
+    <li><a href="pet_add.php">Add a pet</a></li>
   </ul>
 </div>
-
-</form>
-
-<script>
-  $(document).ready(function(){ 
-              $('.dropdown-menu li').click(function()
-                   {
-                       $('#tools').val($(this).html());
-                       $('#selectionForm').submit();
-                   });
- });
-</script>
-  
   
   
   
