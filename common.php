@@ -115,7 +115,6 @@ function is_get_request() {
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
     header('Location: index2.php');
-    setMessage($_SESSION['usertype']);
   }else{
     $_SESSION['validUser'] = false;
   }
@@ -164,7 +163,7 @@ function is_get_request() {
   /* This function checks whether the user is an admin user or a normal user */
   function checkUserType()
   {
-    
+    setMessage($_SESSION['usertype']);
     if ($_SESSION['usertype'] == '1')
     {
       $usertype = 'admin';
