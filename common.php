@@ -114,7 +114,8 @@ function is_get_request() {
   {
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
-    header('Location: index2.php');	  
+    header('Location: index2.php');
+    setMessage($_SESSION['usertype']);
   }else{
     $_SESSION['validUser'] = false;
   }
