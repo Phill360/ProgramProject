@@ -36,32 +36,22 @@ setMessage("the Value selected is ".$val);
 
   <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
 
-  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-<div class="dropdown" >
+  
 
-<select class="form-control" name="thenumbers">
-  <option value="one">One</option>
-  <option value="two">Two</option>
-  <option value="three">Three</option>
-  <option value="four">Four</option>
-</select>
-
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li value="promote">Promote</li>
+    <li value="demote">Demote</li>
+    <li value="addPet">Add a pet</li>
+  </ul>
 </div>
 
  <input type="submit" name ="send"/>
 
 </form>
-  
-  <script>
-$(function() 
-{
-    $('.dropdown-menu li').click(function()
-    {
-        $('#tool').val($(this).html());
-        $('#selectionForm').submit();
-    });
-});
-</script>
   
   
   
