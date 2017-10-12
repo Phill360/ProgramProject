@@ -10,10 +10,10 @@ require_once('./functions.php');
 
 <body>
 <div class="container">
-  <h2>Dropdowns</h2>
+  <h2>Welcome admin user</h2>
   <p>The .divider class is used to separate links inside the dropdown menu with a thin horizontal line:</p>
   <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin tools
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href="#">Promote a normal user to admin user</a></li>
