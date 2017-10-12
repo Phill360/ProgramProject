@@ -105,8 +105,8 @@
 	  
 
 
-//	$conn = mysqli_connect("localhost","root","","phppot_examples");
-	$query = "SELECT * FROM users ";
+
+	$query = "SELECT * FROM user ";
   $query .= "WHERE email=";
   $query .= "'" . $firstname . "',";
   $query .= " and password=";
@@ -115,15 +115,15 @@
 	$result = mysqli_query($connection,"$query");
 	$count  = mysqli_num_rows($result);
 	if($count==0) {
-   	        debug_to_console("password is match");
-   	         
-   	        $validUser = true;
-   	        $usertype = $row["admin"];
-   	      } else {
    	        debug_to_console("password NO match");
 
    	        debug_to_console("Entered: " . md5($password));
    	        debug_to_console("DB : " . $row['password']);
+   	      } else {
+   	        debug_to_console("password is match");
+   	         
+   	        $validUser = true;
+   	        $usertype = $row["admin"];
    	      }
 
 

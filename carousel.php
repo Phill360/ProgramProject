@@ -46,7 +46,7 @@
   </div>
   <div class="container">
     <div class="col-sm-12">
-      <!-- Create new admin user box -->
+      <!-- Footer box -->
       <div class="panel panel-default">
         <div class="panel-body">
           <a href="admin_user.php">Admin</a>
