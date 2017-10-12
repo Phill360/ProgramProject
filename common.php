@@ -106,7 +106,7 @@ function is_get_request() {
        	debug_to_console("password is match");
        	$validUser = true;
        	$usertype = $row["admin"];
-       	setMessage($validUser);
+       	setMessage($row["admin"]);
       }
     }
   
@@ -163,7 +163,7 @@ function is_get_request() {
   /* This function checks whether the user is an admin user or a normal user */
   function checkUserType()
   {
-    if ($_SESSION['usertype'] == 'admin' || $_SESSION['usertype'] == 1) // This value was set to '1'
+    if ($_SESSION['usertype'] == 'admin') // This value was set to '1'
     {
       $usertype = 'admin';
     }
