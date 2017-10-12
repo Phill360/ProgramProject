@@ -109,6 +109,8 @@ function is_get_request() {
        	$usertype = $row["admin"];
       }
     }
+  
+  setMessage($usertype);
     
   if ($validUser == true) 
   {
@@ -121,6 +123,8 @@ function is_get_request() {
     mysqli_close($connection);
   }
 
+  
+  
   /* This function unsets all session variables and logs the user out */
   function signOutUser()
   {
