@@ -16,7 +16,7 @@ if(isset($_POST['demoteBtn']))
 if(isset($_POST['send']))
 {
 $val = $_POST["thenumbers"];
-echo "the Value selected is ".$val;
+setMessage("the Value selected is ".$val);
 }
 
 ?>
