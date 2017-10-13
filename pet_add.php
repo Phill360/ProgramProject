@@ -1,5 +1,21 @@
 <?php
-require_once('./functions.php');
+// require_once('./functions.php');
+
+ if (isset($_POST['addPetBtn']))
+  {
+		// Get pet input
+    $rspcaID = $_POST['rspcaID'];
+    $petName = $_POST['petName'];
+    $breedID = $_POST['breedID'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $imagePath = $_POST['file'];
+    $description = $_POST['description'];
+  
+    
+    addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
+  }
+  
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -116,7 +132,7 @@ require_once('./functions.php');
               </textarea>
             </div>
           
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" name="addPetBtn">Submit</button>
           </form>
         </div>
       </div>

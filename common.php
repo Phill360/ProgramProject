@@ -242,6 +242,44 @@ function is_get_request() {
   }
   
   
+  function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
+    
+require_once('../common.php');
+
+
+// Connect AWS MYSQL Server
+require_once('../_php/connect.php');
+
+
+	// 2. Perform Query
+	$query = "INSERT INTO animals ";
+	$query .= "(rspcaID, petName, breedID, gender, imagePath, age, description) ";
+	$query .= "VALUES (";
+	$query .= "'" . $rspcaID . "',";
+	$query .= "'" . $petName . "',";
+	$query .= "'" . $breedID . "',";
+	$query .= "'" . $gender . "',";
+	$query .= "'" . $imagePath . "',";
+	$query .= "'" . $age . "',";
+	$query .= "'" . $description . "'";
+	$query .= ")";
+	$result = mysqli_query($connection, $query);
+	// Test for query error
+	if($result) {
+	    $new_id = mysqli_insert_id($connection);
+	} else {
+		echo mysqli_error($connection);
+			mysqli_close($connection);
+			exit;
+	}
+
+
+
+	// 5. Close database connection
+	mysqli_close($connection);
+    
+  }
+  
   function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
     
 // Connect AWS MYSQL Server
