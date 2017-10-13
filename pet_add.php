@@ -34,7 +34,7 @@
           <div class="opensans">Add a pet</div>
         </div>
         <div class="panel-body">
-          <form action="./test_files/add_pet.php" method="post">
+          <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
             
             <!-- Select cat or dog -->
             <div class="form-group">
