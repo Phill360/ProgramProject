@@ -245,7 +245,7 @@ function is_get_request() {
   function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
 
   // Connect AWS MYSQL Server
-  require_once('../_php/connect.php');
+  require_once('./_php/connect.php');
 
 
 	// 2. Perform Query
