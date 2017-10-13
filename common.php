@@ -243,12 +243,9 @@ function is_get_request() {
   
   
   function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
-    
-require_once('../common.php');
 
-
-// Connect AWS MYSQL Server
-require_once('../_php/connect.php');
+  // Connect AWS MYSQL Server
+  require_once('../_php/connect.php');
 
 
 	// 2. Perform Query
@@ -273,9 +270,7 @@ require_once('../_php/connect.php');
 			exit;
 	}
 
-
-
-	// 5. Close database connection
+	// Close database connection
 	mysqli_close($connection);
     
   }
