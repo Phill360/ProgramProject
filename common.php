@@ -233,7 +233,7 @@ function is_get_request() {
 	  {
 	   
 	    $size += 1;
-	    //
+	    
 	  }
 
     mysqli_close($connection);
@@ -302,8 +302,8 @@ function is_get_request() {
   
   function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
     
-// Connect AWS MYSQL Server
-require_once('./_php/connect.php');
+  // Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
     
 	// 2. Perform Query
 	$query = "INSERT INTO breed ";
@@ -331,6 +331,8 @@ require_once('./_php/connect.php');
     
   }
   
+  
+  
   function delPet($rspcaID) {
     
     // Connect AWS MYSQL Server
@@ -338,19 +340,21 @@ require_once('./_php/connect.php');
   
   	// 2. Perform Query
   	$query = "DELETE FROM animals ";
-  	$query .= "WHERE ";
+  //	$query .= "WHERE ";
   	$query .= "rspcaID=";
   	$query .= "'" . $rspcaID . "'";
   	$result = mysqli_query($connection, $query);
   	// Test for query error
   	if($result) {
   	    $new_id = mysqli_insert_id($connection);
-  	    debug_to_console($result);
+
   	} else {
   		echo mysqli_error($connection);
   			mysqli_close($connection);
   			exit;
   	}
+  	
+  	 setMessage($result);
   
   	// Close database connection
   	mysqli_close($connection);

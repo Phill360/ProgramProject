@@ -1,5 +1,5 @@
 <?php
-require_once('./functions.php');
+// require_once('./common.php');
 
  if (isset($_POST['delPetBtn']))
   {
@@ -27,13 +27,16 @@ require_once('./functions.php');
           <div class="opensans">Remove a pet</div>
         </div>
         <div class="panel-body">
+          
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
               <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID">
             </div>
             <br>
-            <button type="button" class="btn btn-primary" name="delPetBtn">Remove</button>
+            <p>Message<?php getMessage($message) ?></p>
+            <br>
+            <button type="submit" class="btn btn-primary" name="delPetBtn">Remove</button>
           </form>
         </div>
       </div>
