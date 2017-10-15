@@ -6,9 +6,9 @@
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 
-	echo('Message: '.$message);
+	// echo('Message: '.$message);
 	
-	unset($_POST);
+
 
   // When the user registers
   if (isset($_POST['registerBtn']))
