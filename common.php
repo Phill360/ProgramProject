@@ -340,10 +340,20 @@ function is_get_request() {
   
   	// 2. Perform Query
   	$query = "DELETE FROM animals ";
-  //	$query .= "WHERE ";
+  	$query .= "WHERE ";
   	$query .= "rspcaID=";
   	$query .= "'" . $rspcaID . "'";
   	$result = mysqli_query($connection, $query);
+  	
+  		 // Test for query error
+	  if(!$result)
+	  {
+		  die("1. Database query failed.");
+	  }
+	  
+  	
+  	
+  	
   	// Test for query error
   	if($result) {
   	    $new_id = mysqli_insert_id($connection);
@@ -354,12 +364,24 @@ function is_get_request() {
   			exit;
   	}
   	
+  
+	  
+  	
   	 setMessage($result);
   
   	// Close database connection
   	mysqli_close($connection);
     
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
   function setMessage($message)
