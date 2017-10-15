@@ -37,7 +37,7 @@
             </button>
             </div>
             <h3><?php echo $row["petName"]; ?></h3>
-            <p>Some text about this awesome kitty</p>
+            <p><?php echo $row["description"]; ?></p>
             <a class="btn btn-success" href="#">More</a>
           </div>
         </div>
