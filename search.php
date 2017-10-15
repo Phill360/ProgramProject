@@ -36,7 +36,7 @@
             <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
             </button>
             </div>
-            <H3>Suzie</H3>
+            <h3><?php echo $row["petName"]; ?></h3>
             <p>Some text about this awesome kitty</p>
             <a class="btn btn-success" href="#">More</a>
           </div>
