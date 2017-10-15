@@ -297,12 +297,20 @@ body {
 	
 	.center {
 		text-align: center;
-}
+	}
 
 	.thumbnail{
 		text-align: center;
 	}
- .right
- {
- 	text-align: right;
- }
+ 	
+ 	.heartbutton
+ 	{
+ 		text-align: right;
+ 	}
+ 	.heartbutton:active{
+ 		background:olive;
+ 	}
+ 	
+ 	.heartbutton:focus{
+ 		background:olive;
+ 	}

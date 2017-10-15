@@ -1,13 +1,10 @@
 <?php
-	
-
 	include_once('./common.php');
-	
 	
 	$status = checkStatus();
 	$usertype = checkUserType();
 	debug_to_console("user: " . $_SESSION['usertype']);
-	
+	$numberOfAnimals = checkNumberPetsInDatabase();
 	
   // The error appeared to be here
   // 	$number = checkNumberUsersInFile();
@@ -17,6 +14,7 @@
 	// echo(' '.$usertype.' user. - ');
 	// echo('There are '.$number.' users in file. - ');
 	// echo('Message: '.$message);
+	echo('Number of pets is '.$numberOfAnimals);
 	
 	
   // When the user registers
@@ -68,13 +66,11 @@
 		signInUser($email,$password);
   }
   
-
   // When the user signs out
   if(isset($_POST['signOutBtn']))
   {
     signOutUser();
   }
-  
   
   // When the admin user promotes another user from normal to admin user
   if(isset($_POST['createNewAdminUserBtn']))
