@@ -345,6 +345,7 @@ require_once('./_php/connect.php');
   	// Test for query error
   	if($result) {
   	    $new_id = mysqli_insert_id($connection);
+  	    debug_to_console($result);
   	} else {
   		echo mysqli_error($connection);
   			mysqli_close($connection);
