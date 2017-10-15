@@ -29,7 +29,7 @@
             <br>
             <p>Message<?php getMessage($message) ?></p>
             <br>
-            <button type="submit" class="btn btn-primary" name="delPetBtn">Remove</button>
+            <button type="submit" class="btn btn-primary" name="remPetBtn">Remove</button>
           </form>
         </div>
       </div>

@@ -332,7 +332,7 @@ function is_get_request() {
   
   
   
-  function delPet($rspcaID) {
+  function remPet($rspcaID) {
     
     // Connect AWS MYSQL Server
     require_once('./_php/connect.php');
@@ -344,18 +344,7 @@ function is_get_request() {
   	$query .= "rspcaID=";
   	$query .= "'" . $rspcaID . "'";
   	$result = mysqli_query($connection, $query);
-  	
-  	
-  	
-  		 // Test for query error
-	  if(!$result)
-	  {
-		  die("1. Database query failed.");
-	  }
-	  
-  	
-  	
-  	
+
   	// Test for query error
   	if($result) {
   	    $new_id = mysqli_insert_id($connection);
@@ -365,18 +354,39 @@ function is_get_request() {
   			mysqli_close($connection);
   			exit;
   	}
-  	
-  
-	  
-  	
-  	 setMessage($result);
-  
+
   	// Close database connection
   	mysqli_close($connection);
     
   }
   
+    function remPet($breedID) {
+    
+    // Connect AWS MYSQL Server
+    require_once('./_php/connect.php');
   
+  	// 2. Perform Query
+  	  	// $query = "DELETE FROM animals WHERE rspcaID=1";
+  	$query = "DELETE FROM breed ";
+  	$query .= "WHERE ";
+  	$query .= "breedID=";
+  	$query .= "'" . $breedID . "'";
+  	$result = mysqli_query($connection, $query);
+
+  	// Test for query error
+  	if($result) {
+  	    $new_id = mysqli_insert_id($connection);
+
+  	} else {
+  		echo mysqli_error($connection);
+  			mysqli_close($connection);
+  			exit;
+  	}
+
+  	// Close database connection
+  	mysqli_close($connection);
+    
+  }
   
   
   

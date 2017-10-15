@@ -108,19 +108,29 @@
     $active = isset($_POST['active']) ? $_POST['active'] : '';
     $fee = isset($_POST['fee']) ? $_POST['fee'] : '';
     
+    if($breedID == ''){
+      // 
+    } else {
     addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
+    }
   }
   
   
-   if (isset($_POST['delPetBtn']))
+  if (isset($_POST['remPetBtn']))
   {
 		// Get delete pet input
     $rspcaID = $_POST['rspcaID'];
-    delPet($rspcaID);
+    remPet($rspcaID);
 
   }
   
-  
+  if (isset($_POST['remBreedBtn']))
+  {
+		// Get delete breed input
+    $breedID = $_POST['breedID'];
+    remBreed($rspcaID);
+
+  }
   
 ?>
 

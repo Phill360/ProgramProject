@@ -9,11 +9,16 @@ if(isset($_POST['promoteBtn']))
 if(isset($_POST['demoteBtn']))
   {
     $adminTool = 'demote';
-  }
-  
+}
+
   if(isset($_POST['addBreedBtn']))
   {
     $adminTool = 'addBreed';
+  }
+  
+   if(isset($_POST['removeBreedBtn']))
+  {
+    $adminTool = 'removeBreed';
   }
   
   if(isset($_POST['addPetBtn']))
@@ -44,6 +49,7 @@ if(isset($_POST['demoteBtn']))
         <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
         <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
         <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
+        <button type="submit" class="btn" name="removeBreedBtn">Remove a breed</button>
         <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
         <button type="submit" class="btn" name="removePetBtn">Remove a pet</button>
       </form>
@@ -62,10 +68,15 @@ if(isset($_POST['demoteBtn']))
   {?>
     <div><?php include 'breed_add.php' ?></div>
 <?php } 
+else if ($adminTool == 'removeBreed')
+  {?>
+    <div><?php include 'breed_remove.php' ?></div>
+<?php } 
   else if ($adminTool == 'addPet')
   {?>
     <div><?php include 'pet_add.php' ?></div>
 <?php } 
+
   else if ($adminTool == 'removePet')
   {?>
     <div><?php include 'pet_remove.php' ?></div>
