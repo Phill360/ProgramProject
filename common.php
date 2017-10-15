@@ -286,6 +286,8 @@ function is_get_request() {
 	// Test for query error
 	if($result) {
 	    $new_id = mysqli_insert_id($connection);
+	    
+	    unset($_POST);
 	} else {
 		echo mysqli_error($connection);
 			mysqli_close($connection);
