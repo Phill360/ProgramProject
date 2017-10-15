@@ -104,7 +104,7 @@
 			<?php
 			// 2. Perform Query
 			$query = "SELECT * ";
-			$query .= "FROM animals ";
+			$query .= "FROM breed ";
 			$result = mysqli_query($connection, $query);
 			// Test for query error
 			if(!$result) {
