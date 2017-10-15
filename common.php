@@ -336,11 +336,11 @@ function is_get_request() {
     require_once('./_php/connect.php');
   
   	// 2. Perform Query
-  	  	$query = "DELETE FROM animals WHERE rspcaID=1";
-  // 	$query = "DELETE FROM animals ";
-  // 	$query .= "WHERE ";
-  // 	$query .= "rspcaID=";
-  // 	$query .= "'" . $rspcaID . "'";
+  	  	// $query = "DELETE FROM animals WHERE rspcaID=1";
+  	$query = "DELETE FROM animals ";
+  	$query .= "WHERE ";
+  	$query .= "rspcaID=";
+  	$query .= "'" . $rspcaID . "'";
   	$result = mysqli_query($connection, $query);
   	
   	
