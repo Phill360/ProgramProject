@@ -1,3 +1,16 @@
+<?php
+  require_once('./_php/connect.php');
+  
+  // 2. Perform Query
+	$query = "SELECT * ";
+	$query .= "FROM animals ";
+	$result = mysqli_query($connection, $query);
+	// Test for query error
+	if(!$result) {
+		die("Database query failed.");
+	}
+?>
+
 <!--<!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
@@ -10,6 +23,14 @@
     <div class="container">
 
 <body>
+  
+  <?php
+    while($row = mysqli_fetch_assoc($result)) {
+  ?>
+  <p>animal</p>
+  <?php
+    }
+  ?>
 
   <div class="pets container"
   <h3>Your Companions</h3>
