@@ -14,10 +14,6 @@ function is_get_request() {
   /* This function registers a user */
   function registerUser($firstname, $lastname, $email, $password, $visits)
   {
-    
-     debug_to_console("registering User");
-      debug_to_console("pass: " . $password);
-     
     require_once('./_php/connect.php');
     
     // Get all users from the database
@@ -200,7 +196,8 @@ function is_get_request() {
   {
     include_once('_php/connect.php');
     
-    $query = "UPDATE user SET userType='normal' WHERE email='" . $email . "'";
+     $query = "UPDATE user SET userType='normal' WHERE email='" . $email . "'";
+    
 
     if (mysqli_query($connection, $query)) {
       echo "User updated successfully";
@@ -215,7 +212,7 @@ function is_get_request() {
   /* This function checks the number of users in the database. */
   function checkNumberUsersInFile()
   {
-    require_once('./_php/connect.php');
+    require_once('_php/connect.php');
     
     $query = "SELECT * ";
 	  $query .= "FROM user ";
@@ -339,11 +336,14 @@ function is_get_request() {
     require_once('./_php/connect.php');
   
   	// 2. Perform Query
-  	$query = "DELETE FROM animals ";
-  	$query .= "WHERE ";
-  	$query .= "rspcaID=";
-  	$query .= "'" . $rspcaID . "'";
+  	  	$query = "DELETE FROM animals WHERE rspcaID=1";
+  // 	$query = "DELETE FROM animals ";
+  // 	$query .= "WHERE ";
+  // 	$query .= "rspcaID=";
+  // 	$query .= "'" . $rspcaID . "'";
   	$result = mysqli_query($connection, $query);
+  	
+  	
   	
   		 // Test for query error
 	  if(!$result)

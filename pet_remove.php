@@ -1,14 +1,7 @@
 <?php
-// require_once('./common.php');
 
- if (isset($_POST['delPetBtn']))
-  {
-		// Get delete pet input
-    $rspcaID = $_POST['rspcaID'];
-    delPet($rspcaID);
-  }
+
   
-
 ?>
 
 <!DOCTYPE html PUBLIC>

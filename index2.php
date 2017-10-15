@@ -6,7 +6,7 @@
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 
-	// echo('Message: '.$message);
+	echo('Message: '.$message);
 
   // When the user registers
   if (isset($_POST['registerBtn']))
@@ -76,6 +76,49 @@
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     demoteAdminUser($email);
   }
+  
+  
+ if (isset($_POST['addPetBtn']))
+  {
+		// Get pet input
+    $rspcaID = $_POST['rspcaID'];
+    $petName = $_POST['petName'];
+    $breedID = $_POST['breedID'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $imagePath = $_POST['file'];
+    $description = $_POST['description'];
+  
+    
+    addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
+  }
+  
+  
+
+ if (isset($_POST['addBreedBtn']))
+  {
+		// Get breed input
+		$species = isset($_POST['species']) ? $_POST['species'] : '';
+    $breedName = isset($_POST['breedName']) ? $_POST['breedName'] : '';
+    $breedSize = isset($_POST['breedSize']) ? $_POST['breedSize'] : '';
+    $temperament = isset($_POST['temperament']) ? $_POST['temperament'] : '';
+    $active = isset($_POST['active']) ? $_POST['active'] : '';
+    $fee = isset($_POST['fee']) ? $_POST['fee'] : '';
+    
+    addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
+  }
+  
+  
+   if (isset($_POST['delPetBtn']))
+  {
+		// Get delete pet input
+    $rspcaID = $_POST['rspcaID'];
+    delPet($rspcaID);
+
+  }
+  
+  
+  
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -105,7 +148,6 @@
   <!-- Pet Companions CSS -->
   <link rel="stylesheet" type="text/css" href="pcstyle.css">
   
-
 </head>
 
 <body>
