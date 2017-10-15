@@ -89,11 +89,11 @@
     $imagePath = $_POST['file'];
     $description = $_POST['description'];
   
-  if($rspcaID == ''){
-    
-  } else { 
-    addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
-    
+    if($rspcaID == ''){
+      
+    } else { 
+      addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
+    }
   }
   
   
