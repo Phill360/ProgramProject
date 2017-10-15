@@ -39,18 +39,11 @@
     while($row = mysqli_fetch_assoc($result)) {
   ?>
       <div class="col-xs-6 col-sm-4">
-        <div class="thumbnail">
-          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
-          <div class="caption">
-            <div class="right">
-            <a class="btn btn-default btn-lg" href="#">
-            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-            </button>
-            </div>
-            <h3><<a href="view.php?PetId={$row['rspcaID']}"><?php echo $row["petName"]; ?></a></h3>
-            <p><?php echo $row["description"]; ?></p>
-            <a class="btn btn-success" href="#">More</a>
-          </div>
+          <p><?php echo $row["rspcaID"]; ?></p>
+          <p><?php echo $row["petName"]; ?></p>
+          <p><?php echo $row["breedID"]; ?></p>
+          <p><?php echo $row["gender"]; ?></p>
+          
         </div>
       </div>
   <?php
