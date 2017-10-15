@@ -241,34 +241,6 @@ function is_get_request() {
     return $size;
   }
   
-  /* This function checks the number of pets in the database. */
-  function checkNumberPetsInDatabase()
-  {
-    require_once('./_php/connect.php');
-    
-    $query = "SELECT * ";
-	  $query .= "FROM animals ";
-  	$result = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("6. Database query failed.");
-	  }
-	  
-	  $size = 0;
-	  
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	   
-	    $size += 1;
-	    //
-	  }
-
-    mysqli_close($connection);
-    setMessage($size);
-    return $size;
-  }
   
   
   function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
