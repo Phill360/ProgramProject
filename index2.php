@@ -5,16 +5,9 @@
 	$usertype = checkUserType();
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
-  // The error appeared to be here
-  // 	$number = checkNumberUsersInFile();
-	//$message = getMessage();
-	
-	// echo('The system is '.$status.' - ');
-	// echo(' '.$usertype.' user. - ');
-	// echo('There are '.$number.' users in file. - ');
+
 	// echo('Message: '.$message);
-	
-	
+
   // When the user registers
   if (isset($_POST['registerBtn']))
   {
