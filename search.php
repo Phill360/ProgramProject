@@ -23,16 +23,31 @@
     <div class="container">
 
 <body>
-  
+  <div class="pets container">
   <?php
     while($row = mysqli_fetch_assoc($result)) {
   ?>
-  <p>animal</p>
+      <div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
+          <div class="caption">
+            <div class="right">
+            <a class="btn btn-default btn-lg" href="#">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            </button>
+            </div>
+            <H3>Suzie</H3>
+            <p>Some text about this awesome kitty</p>
+            <a class="btn btn-success" href="#">More</a>
+          </div>
+        </div>
+      </div>
   <?php
     }
   ?>
+  </div>
 
-  <div class="pets container"
+  <div class="pets container">
   <h3>Your Companions</h3>
     <div class="row">
       <div class="col-xs-6 col-sm-4">
