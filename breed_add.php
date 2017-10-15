@@ -38,7 +38,7 @@
             <!-- Select cat or dog -->
             <div class="form-group">
               <label for="type">Species:</label>
-              <select class="form-control" id="species" name="species">
+              <select class="form-control" id="species" name="species" required>
                 <option>Cat</option>
                 <option>Dog</option>
               </select>
@@ -47,14 +47,14 @@
                     <!-- Enter breed name -->
             <div class="input-group">
               <span class="input-group-addon">Breed</span>
-              <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name">
+              <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name" required>
             </div>
             <br>
 
             <!-- Enter breed size -->
             <div class="input-group">
               <span class="input-group-addon">Text</span>
-             <select class="form-control" id="breedSize" name="breedSize">
+             <select class="form-control" id="breedSize" name="breedSize" required>
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
@@ -65,7 +65,7 @@
             <!-- Enter breed temperament -->
             <div class="input-group">
               <span class="input-group-addon">Temperament</span>
-               <select class="form-control" id="temperament" name="temperament">
+               <select class="form-control" id="temperament" name="temperament" required>
                 <option>Easy Going</option>
                 <option>Playful</option>
                 <option>Excitable</option>
@@ -76,7 +76,7 @@
             <!-- Enter breed active -->
             <div class="input-group">
               <span class="input-group-addon">Active</span>
-              <select class="form-control" id="active" name="active">
+              <select class="form-control" id="active" name="active" required>
                 <option>Lap dog</option>
                 <option>Active</option>
                 <option>Sports star</option>
@@ -87,7 +87,7 @@
                      <!-- Enter breed fee -->
             <div class="input-group">
               <span class="input-group-addon">Adoption Fee</span>
-              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee">
+              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee" required>
             </div>
             <br>
             
