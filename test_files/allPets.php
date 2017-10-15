@@ -19,16 +19,7 @@
 <?php include_once('../_php/connect.php');?>
 
 
-<?php
-	// 2. Perform Query
-	$query = "SELECT * ";
-	$query .= "FROM animals ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
-?>
+
 
 
 
@@ -65,14 +56,21 @@
 				<th>rspacaID</th>
 				<th>petName</th>
 				<th>breedID</th>
+				<th>age</th>
 				<th>gender</th>
-				<th>desexed</th>
-				<th>vaccinated</th>
-				<th>wormed</th>
-				<th>heartworm</th>
 				<th>imagepath</th>
+				<th>description</th>
 			</tr>
 			<?php
+			// 2. Perform Query
+			$query = "SELECT * ";
+			$query .= "FROM animals ";
+			$result = mysqli_query($connection, $query);
+			// Test for query error
+			if(!$result) {
+				die("Database query failed.");
+			}
+
 				// 3. returned data
 				while($row = mysqli_fetch_assoc($result)) {
 			?>
@@ -80,12 +78,50 @@
 				<td><?php echo $row["rspcaID"] ; ?> </td>
 				<td><?php echo $row["petName"] ; ?>	</td>
 				<td><?php echo $row["breedID"] ; ?>	</td>
-					<td><?php echo $row["gender"] ; ?> </td>
-				<td><?php echo $row["desexed"] ; ?>	</td>
-				<td><?php echo $row["vaccinated"] ; ?>	</td>
-					<td><?php echo $row["wormed"] ; ?> </td>
-				<td><?php echo $row["heartworm"] ; ?>	</td>
+				<td><?php echo $row["age"] ; ?>	</td>
+				<td><?php echo $row["gender"] ; ?> </td>
 				<td><?php echo $row["imagePath"] ; ?>	</td>
+				<td><?php echo $row["description"] ; ?>	</td>
+			
+			</tr>
+			<?php
+				}
+			?>
+			
+		</table>
+		
+			<h2>Breed Table<h2>
+		<table >
+			<tr>
+				<th>name</th>
+				<th>breedID</th>
+				<th>type</th>
+				<th>size</th>
+				<th>temperament</th>
+				<th>active</th>
+				<th>fee</th>
+			</tr>
+			<?php
+			// 2. Perform Query
+			$query = "SELECT * ";
+			$query .= "FROM animals ";
+			$result = mysqli_query($connection, $query);
+			// Test for query error
+			if(!$result) {
+				die("Database query failed.");
+			}
+
+				// 3. returned data
+				while($row = mysqli_fetch_assoc($result)) {
+			?>
+			<tr>
+				<td><?php echo $row["name"] ; ?> </td>
+				<td><?php echo $row["breedID"] ; ?>	</td>
+				<td><?php echo $row["type"] ; ?>	</td>
+				<td><?php echo $row["size"] ; ?> </td>
+				<td><?php echo $row["temperament"] ; ?>	</td>
+				<td><?php echo $row["active"] ; ?>	</td>
+				<td><?php echo $row["fee"] ; ?> </td>
 			</tr>
 			<?php
 				}
