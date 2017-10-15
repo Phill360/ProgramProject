@@ -1,5 +1,14 @@
 <?php
 require_once('./functions.php');
+
+ if (isset($_POST['delPetBtn']))
+  {
+		// Get delete pet input
+    $rspcaID = $_POST['rspcaID'];
+    delPet($rspcaID);
+  }
+  
+
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -18,13 +27,13 @@ require_once('./functions.php');
           <div class="opensans">Remove a pet</div>
         </div>
         <div class="panel-body">
-          <form>
+          <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
             <div class="input-group">
               <span class="input-group-addon">Text</span>
-              <input id="petID" type="text" class="form-control" name="petID" placeholder="Enter pet ID">
+              <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID">
             </div>
             <br>
-            <button type="button" class="btn btn-primary">Remove</button>
+            <button type="button" class="btn btn-primary" name="delPetBtn">Remove</button>
           </form>
         </div>
       </div>

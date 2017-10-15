@@ -331,6 +331,31 @@ require_once('./_php/connect.php');
     
   }
   
+  function delPet($rspcaID) {
+    
+    // Connect AWS MYSQL Server
+    require_once('./_php/connect.php');
+  
+  	// 2. Perform Query
+  	$query = "DELETE FROM animals ";
+  	$query .= "WHERE ";
+  	$query .= "rspcaID=";
+  	$query .= "'" . $rspcaID . "'";
+  	$result = mysqli_query($connection, $query);
+  	// Test for query error
+  	if($result) {
+  	    $new_id = mysqli_insert_id($connection);
+  	} else {
+  		echo mysqli_error($connection);
+  			mysqli_close($connection);
+  			exit;
+  	}
+  
+  	// Close database connection
+  	mysqli_close($connection);
+    
+  }
+  
   /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
   function setMessage($message)
   {
