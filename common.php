@@ -327,7 +327,6 @@ function is_get_request() {
 
 	// Close database connection
 	mysqli_close($connection);
-    
   }
   
   
@@ -338,7 +337,6 @@ function is_get_request() {
     require_once('./_php/connect.php');
   
   	// 2. Perform Query
-  	  	// $query = "DELETE FROM animals WHERE rspcaID=1";
   	$query = "DELETE FROM animals ";
   	$query .= "WHERE ";
   	$query .= "rspcaID=";
@@ -366,7 +364,6 @@ function is_get_request() {
     require_once('./_php/connect.php');
   
   	// 2. Perform Query
-  	  	// $query = "DELETE FROM animals WHERE rspcaID=1";
   	$query = "DELETE FROM breed ";
   	$query .= "WHERE ";
   	$query .= "breedID=";

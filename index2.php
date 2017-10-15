@@ -7,6 +7,8 @@
 	
 
 	echo('Message: '.$message);
+	
+	unset($_POST);
 
   // When the user registers
   if (isset($_POST['registerBtn']))
