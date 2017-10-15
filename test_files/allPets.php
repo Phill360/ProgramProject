@@ -46,9 +46,9 @@
 	<body>
 		<h1>All Pets stored in Database</h1>
 		
-		<p><a href="index2.php">Site page</a></p>
+		<p><a href="../index2.php">Site page</a></p>
 		<p><a href="./test_files/allPets.php">All Pets</a></p>
-		<p><a href="../pet_add.php">Add Pets</a></p>
+
 	
 		<h2>Pets Table<h2>
 		<table >
