@@ -32,22 +32,120 @@
     <div class="container">
 
 <body>
-<div><?php include 'header.php' ?></div>
 
-  <div class="row">
-    <div class="col-lg-6 portfolio-item">
-      <div class="card h-100">
-        <div class="car-body">
-          <h4 class="card-title">
-            <p class="card-text">blah blah blah</p>
-          </h4>
+  <div class="pets container"
+  <h3>Your Companions</h3>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
+          <div class="caption">
+            <div class="right">
+            <a class="btn btn-default btn-lg" href="#">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            </button>
+            </div>
+            <H3>Suzie</H3>
+            <p>Some text about this awesome kitty</p>
+            <a class="btn btn-success" href="#">More</a>
+          </div>
+        </div>
+      </div>    
+    
+      <div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
+          <div class="caption">
+            <div class="right">
+            <a class="btn btn-default btn-lg" href="#">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            </button>
+            </div>
+            <H3>Suzie</H3>
+            <p>Some text about this awesome kitty</p>
+            <a class="btn btn-success" href="#">More</a>
+          </div>
+        </div>
+      </div>  
+      
+      <div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
+          <div class="caption">
+            <div class="right">
+            <a class="btn btn-default btn-lg" href="#">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            </button>
+            </div>
+            <H3>Suzie</H3>
+            <p>Some text about this awesome kitty</p>
+            <a class="btn btn-success" href="#">More</a>
+          </div>
         </div>
       </div>
-    </div>
+      
+      <div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
+          <div class="caption">
+            <div class="right">
+            <a class="btn btn-default btn-lg" href="#">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            </button>
+            </div>
+            <H3>Suzie</H3>
+            <p>Some text about this awesome kitty</p>
+            <a class="btn btn-success" href="#">More</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
+          <div class="caption">
+            <div class="right">
+            <a class="btn btn-default btn-lg" href="#">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            </button>
+            </div>
+            <H3>Suzie</H3>
+            <p>Some text about this awesome kitty</p>
+            <a class="btn btn-success" href="#">More</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-6 col-sm-4">
+        <div class="thumbnail">
+          <img src="media/ahmed-saffu-208365.jpg" alt "pet">
+          <div class="caption">
+            <div class="right">
+            <a class="btn btn-default btn-lg" href="#">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            </button>
+            </div>
+            <H3>Suzie</H3>
+            <p>Some text about this awesome kitty</p>
+            <a class="btn btn-success" href="#">More</a>
+          </div>
+        </div>
+      </div>
+
   </div>
-  
-    </div>
     <!-- /.container -->
+    
+    <div class="center">
+    <nav>
+      <ol class="pagination">
+        <li><a href="#" aria-label="Previous">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#" aria-label="Next">&raquo;</a></li>
+      </ol>
+    </nav>
+    </div>
   
 </body>
 

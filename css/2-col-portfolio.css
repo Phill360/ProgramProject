@@ -20,4 +20,9 @@ body {
 
 .pagination {
   margin-bottom: 30px;
+  text-align: center;
+}
+
+  .pets section {
+    text-align: center;
 }

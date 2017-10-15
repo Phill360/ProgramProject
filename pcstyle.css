@@ -209,6 +209,11 @@ body {
 		font-size: 9px;
 		line-height: normal;
 	}
+	.img-responsive {
+		max-width: 50%;
+		min-width: 300px;
+
+	}
 
 }
 
@@ -292,4 +297,12 @@ body {
 	
 	.center {
 		text-align: center;
+}
+
+	.thumbnail{
+		text-align: center;
 	}
+ .right
+ {
+ 	text-align: right;
+ }
