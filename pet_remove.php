@@ -31,6 +31,7 @@
             <br>
             <button type="submit" class="btn btn-primary" name="remPetBtn">Remove</button>
           </form>
+          
         </div>
       </div>
 

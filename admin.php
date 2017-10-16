@@ -74,7 +74,7 @@ if(isset($_POST['demoteBtn']))
   <?php } 
     else if ($adminTool == 'addPet')
     {?>
-      <div><?php include 'pet_remove.php' ?></div>
+      <div><?php include 'pet_add.php' ?></div>
   <?php } 
     else if ($adminTool == 'removePet')
     {?>
