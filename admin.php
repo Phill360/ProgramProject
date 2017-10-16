@@ -82,7 +82,7 @@ if(isset($_POST['demoteBtn']))
   <?php } 
     else
     {?>
-      <div><?php include 'pet_remove.php' ?></div>
+      <div><?php include 'pet_add.php' ?></div>
   <?php } ?>
   
 </div>
