@@ -176,7 +176,7 @@
 <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
-    <div><?php include 'admin.php' ?></div>
+    <div><?php include 'admin/admin.php' ?></div>
 <?php } 
   else
   {?>

@@ -23,7 +23,7 @@
           
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
             <div class="input-group">
-              <span class="input-group-addon">Text</span>
+              <span class="input-group-addon">Pet ID</span>
               <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID">
             </div>
             <br>
