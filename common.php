@@ -73,7 +73,7 @@ function is_get_request() {
       $_SESSION["response"] = "PET ADDED";
       $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
-      header('Location: index2.php');
+      header('Location: index.php');
     }
     mysqli_close($connection);
   }
@@ -119,7 +119,7 @@ function is_get_request() {
   {
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
-    header('Location: index2.php');
+    header('Location: index.php');
   }else{
     $_SESSION['validUser'] = false;
   }
@@ -148,7 +148,7 @@ function is_get_request() {
     {
       $result = 'signed in';
     }
-    header('Location: index2.php');	
+    header('Location: index.php');	
   }
 
   /* This function checks whether the user is logged in or not */
