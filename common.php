@@ -364,7 +364,8 @@ function is_get_request() {
     
   }
   
-    function remBreed($breedID) {
+  
+  function remBreed($breedID) {
     
     // Connect AWS MYSQL Server
     require_once('./_php/connect.php');

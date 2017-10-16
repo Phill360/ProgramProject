@@ -14,10 +14,10 @@
 
   <div class="row">
     <div class="col-sm-12">
-      <!-- Remove a pet box -->
+      <!-- Remove a breed box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Remove a pet</div>
+          <div class="opensans">Remove a breed</div>
         </div>
         <div class="panel-body">
           
@@ -52,7 +52,7 @@
                  mysqli_close($connection);
                 ?>
             
-            
+            </select>
             
             
             

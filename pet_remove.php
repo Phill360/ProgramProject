@@ -27,7 +27,7 @@
               <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID">
             </div>
             <br>
-            <p>Message<?php getMessage($message) ?></p>
+   
             <br>
             <button type="submit" class="btn btn-primary" name="remPetBtn">Remove</button>
           </form>
