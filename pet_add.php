@@ -14,6 +14,7 @@
 
   <div class="row">
     <div class="col-sm-12">
+       <p><? PHP echo $_SESSION["response"]; ?></p>
       <!-- Add a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -38,12 +39,12 @@
                 
                 <?php
                 // Connect AWS MYSQL Server
-                require_once('./_php/connect.php');
+                require('_php/connect.php');
 
 	              // 2. Perform Query
-	              $query = "SELECT breedID, type, name ";
-	              $query .= "FROM breed ";
-	              $result = mysqli_query($connection, $query);
+	              $q = "SELECT breedID, type, name ";
+	              $q .= "FROM breed ";
+	              $result = mysqli_query($connection, $q);
               	// Test for query error
               	if(!$result) {
               		die("Database query failed.");
@@ -57,9 +58,12 @@
                   // if ($row["type"] == "Dog") {
                     echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
                   // }
-                } ?>
+                } 
+                 mysqli_close($connection);
+                ?>
                 
               </select>
+             
             </div>
 
             <!-- Enter pet ID -->
@@ -117,7 +121,7 @@
               <textarea class="form-control" name="description" id="description" rows="5" cols="50" required>
               </textarea>
             </div>
-          
+         
             <button type="submit" class="btn btn-primary" name="addPetBtn">Submit</button>
           </form>
         </div>

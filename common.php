@@ -1,6 +1,12 @@
 <?php
   session_start();
   
+
+// Set session variables
+ $_SESSION["response"]="";
+// $_SESSION["favanimal"];
+
+  
   // Function to determine request type is POST 
   function is_post_request() {
  return $_SERVER['REQUEST_METHOD'] == 'POST';
@@ -64,7 +70,7 @@ function is_get_request() {
 	    {
 		    die("2. Database query failed.");
 	    }
-      
+      $_SESSION["response"] = "PET ADDED";
       $_SESSION['validUser'] = true;
       $_SESSION['usertype'] = $usertype;
       header('Location: index2.php');
