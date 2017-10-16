@@ -69,7 +69,7 @@
   <?php
     while($row = mysqli_fetch_assoc($result)) {
   ?>
-          <!--<img src="media/ahmed-saffu-208365.jpg" alt "pet">-->
+          <!--<img src="media/ahmed-saffu-208365png" alt "pet">-->
           <div>
             <hp> Name: <?php echo $row["petName"]; ?></hp>
             <p> Gender: <?php echo $row["gender"]; ?></p>

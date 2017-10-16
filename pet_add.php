@@ -42,9 +42,9 @@
                 require('_php/connect.php');
 
 	              // 2. Perform Query
-	              $q = "SELECT breedID, type, name ";
-	              $q .= "FROM breed ";
-	              $result = mysqli_query($connection, $q);
+	              $query = "SELECT breedID, type, name ";
+	              $query .= "FROM breed ";
+	              $result = mysqli_query($connection, $query);
               	// Test for query error
               	if(!$result) {
               		die("Database query failed.");
