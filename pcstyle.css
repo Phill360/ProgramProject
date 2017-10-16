@@ -307,10 +307,4 @@ body {
  	{
  		text-align: right;
  	}
- 	.heartbutton:active{
- 		background:olive;
- 	}
- 	
- 	.heartbutton:focus{
- 		background:olive;
- 	}
+ 

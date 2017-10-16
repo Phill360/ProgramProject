@@ -54,9 +54,9 @@
                 while($row = mysqli_fetch_assoc($result)) {
                   // Need to make this only show breeds depending on the 
                   // whether Dog or cat is selected
-                  if ($row["type"] == "Dog") {
+                  // if ($row["type"] == "Dog") {
                     echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
-                  }
+                  // }
                 } ?>
                 
               </select>
