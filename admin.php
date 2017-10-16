@@ -55,38 +55,37 @@ if(isset($_POST['demoteBtn']))
       </form>
     </div>
 
-<?php 
-  if ($adminTool == 'promote')
-  {?>
-    <div><?php include 'promote_user.php' ?></div>
-<?php }
-  else if ($adminTool == 'demote')
-  {?>
-    <div><?php include 'demote_user.php' ?></div>
-<?php } 
-  else if ($adminTool == 'addBreed')
-  {?>
-    <div><?php include 'breed_add.php' ?></div>
-<?php } 
-else if ($adminTool == 'removeBreed')
-  {?>
-    <div><?php include 'breed_remove.php' ?></div>
-<?php } 
-  else if ($adminTool == 'addPet')
-  {?>
-    <div><?php include 'pet_add.php' ?></div>
-<?php } 
-
-  else if ($adminTool == 'removePet')
-  {?>
-    <div><?php include 'pet_remove.php' ?></div>
-<?php } 
-  else
-  {?>
-    <div><?php include 'pet_add.php' ?></div>
-<?php } ?>
-
-  </div>
+  <?php 
+    if ($adminTool == 'promote')
+    {?>
+      <div><?php include 'promote_user.php' ?></div>
+    <?php }
+    else if ($adminTool == 'demote')
+    {?>
+      <div><?php include 'demote_user.php' ?></div>
+  <?php } 
+    else if ($adminTool == 'addBreed')
+    {?>
+      <div><?php include 'breed_add.php' ?></div>
+  <?php } 
+    else if ($adminTool == 'removeBreed')
+    {?>
+      <div><?php include 'breed_remove.php' ?></div>
+  <?php } 
+    else if ($adminTool == 'addPet')
+    {?>
+      <div><?php include 'pet_add.php' ?></div>
+  <?php } 
+    else if ($adminTool == 'removePet')
+    {?>
+      <div><?php include 'pet_remove.php' ?></div>
+  <?php } 
+    else
+    {?>
+      <div><?php include 'pet_add.php' ?></div>
+  <?php } ?>
+  
+</div>
   
   
 

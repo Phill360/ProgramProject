@@ -32,10 +32,40 @@
               </select>
             </div>
           
-           
-           
-           
-           
+            <!-- Select pet breed -->
+            <div class="form-group">
+              <label for="age">Breed:</label>
+              <select class="form-control" id="species" name="breedID" required>
+                
+                <?php
+                // Connect AWS MYSQL Server
+                require('_php/connect.php');
+
+	              // 2. Perform Query
+	              $query = "SELECT breedID, type, name ";
+	              $query .= "FROM breed ";
+	              $result = mysqli_query($connection, $query);
+              	// Test for query error
+              	if(!$result) {
+              		die("Database query failed.");
+              	}
+	
+	
+                // Generate Breed List
+                while($row = mysqli_fetch_assoc($result)) {
+                  // Need to make this only show breeds depending on the 
+                  // whether Dog or cat is selected
+                  // if ($row["type"] == "Dog") {
+                    echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
+                  // }
+                } 
+                 mysqli_close($connection);
+                ?>
+                
+              </select>
+             
+            </div>
+
             <!-- Enter pet ID -->
             <div class="input-group">
               <span class="input-group-addon">RSPCA ID</span>
