@@ -14,7 +14,7 @@
 
   <div class="row">
     <div class="col-sm-12">
-       <p><? PHP echo $_SESSION["response"]; ?></p>
+       <!--<p><? PHP echo $_SESSION["response"]; ?></p>-->
       <!-- Add a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
