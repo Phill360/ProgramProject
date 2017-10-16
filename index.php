@@ -130,8 +130,7 @@
   {
 		// Get delete breed input
     $breedID = $_POST['breedID'];
-    remBreed($rspcaID);
-
+    remBreed($breedID);
   }
   
 ?>
