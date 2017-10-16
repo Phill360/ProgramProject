@@ -110,7 +110,7 @@
     $active = isset($_POST['active']) ? $_POST['active'] : '';
     $fee = isset($_POST['fee']) ? $_POST['fee'] : '';
     
-    if($breedID == ''){
+    if($species == ''){
       // 
     } else {
     addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
