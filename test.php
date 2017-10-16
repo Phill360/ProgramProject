@@ -170,19 +170,9 @@
 
 <!-- control home page shown depending in user account type -->
 <!-- this should be done in one php block -- JenCam TO DO -->
-<?php 
-  if ($status == 'signed in' && $usertype == 'normal')
-  {?>
-    <div><?php include 'search.php' ?></div>
-<?php }
-  else if ($status == 'signed in' && $usertype == 'admin')
-  {?>
-    <div><?php include 'admin.php' ?></div>
-<?php } 
-  else
-  {?>
-    <div><?php include 'carousel.php' ?></div>
-<?php } ?>
+
+
+<div><?php include 'admin.php' ?></div>
 
   <!-- Sign in -->
   <div id="signInModal" class="modal fade" role="dialog">
