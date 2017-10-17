@@ -167,7 +167,7 @@
 <?php 
   if ($status == 'signed in' && $usertype == 'normal')
   {?>
-    <div><?php include 'search.php' ?></div>
+    <div><?php include 'questionnaire.php' ?></div>
 <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
