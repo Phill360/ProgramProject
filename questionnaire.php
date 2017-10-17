@@ -24,11 +24,16 @@
 </head>
 <body>
   <div class="container">
-    <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
-    <br>
-    <div class="opensans"><div class="black"><div class="textRegular">How many adults in the household?</div></div></div>
-    <br>
-    <div id="slider-step-numberAdults"></div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
+          <br>
+          <div class="opensans"><div class="black"><div class="textRegular">How many adults in the household?</div></div></div>
+          <br>
+          <div id="slider-step-numberAdults"></div>
+          <br>
+        </div>
+    </div>
   </div>
 </body>
 
