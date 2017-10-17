@@ -160,7 +160,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   
   <!-- Pet Companions CSS -->
-  <link rel="stylesheet" type="text/css" href="pcstyle.css">
+  <link rel="stylesheet" type="text/css" href="css/pcstyle.css">
   
 </head>
 
