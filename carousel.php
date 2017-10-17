@@ -44,17 +44,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <br>
-  <div class="container">
-    <div class="col-sm-12">
-      <!-- Footer box -->
-      <div class="panel panel-default">
-        <div class="panel-body">
-          //
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 </body>

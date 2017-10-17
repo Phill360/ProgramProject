@@ -178,6 +178,8 @@
     <div><?php include 'carousel.php' ?></div>
 <?php } ?>
 
+<div><?php include 'footer.php' ?></div>
+
   <!-- Sign in -->
   <div id="signInModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
