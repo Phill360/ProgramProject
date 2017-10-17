@@ -29,7 +29,7 @@
             
                   <?php
                   // Connect AWS MYSQL Server
-                  require('../_php/connect.php');
+                  require('./_php/connect.php');
   
   	              // 2. Perform Query
   	              $query = "SELECT breedID, name ";
