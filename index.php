@@ -5,10 +5,7 @@
 	$usertype = checkUserType();
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
-
 	// echo('Message: '.$message);
-	
-
 
   // When the user registers
   if (isset($_POST['registerBtn']))
@@ -98,8 +95,6 @@
     }
   }
   
-  
-
  if (isset($_POST['addBreedBtn']))
   {
 		// Get breed input
