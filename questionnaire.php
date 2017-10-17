@@ -54,6 +54,21 @@ noUiSlider.create(stepSlider, {
     stepSlider.noUiSlider.on('update', function( values, handle ) {
 	stepSliderValueElement.innerHTML = values[handle];
     });
+    
+    $('.noUi-value.noUi-value-horizontal.noUi-value-large').each(function(){
+    var val = $(this).html();
+    val = recountVal(parseInt(val));
+    $(this).html(val);
+    });
+    
+    function recountVal(val){
+    switch(val){
+    case 1: return 'One adult'; break;
+    case 2: return 'Two adults'; break;
+    case 1000000:return 'Three or more adults';break;
+    default :return '$Three or more adults';break;
+    }
+}
 </script>
 
 
