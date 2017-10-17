@@ -41,10 +41,10 @@
     var stepSlider = document.getElementById('slider-step-numberAdults');
 
 noUiSlider.create(stepSlider, {
-	start: [ 0 ],
+	start: [ 1 ],
 	step: 1,
 	range: {
-		'min': [ 0 ],
+		'min': [ 1 ],
 		'max': [ 3 ]
 	}
     });
