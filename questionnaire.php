@@ -38,6 +38,12 @@
 </body>
 
 <script>
+    var range_all_sliders = {
+	'1': [ 1 ],
+	'2': [ 2 ],
+	'3': [ 3 ]
+};
+    
     var stepSlider = document.getElementById('slider-step-numberAdults');
 
 noUiSlider.create(stepSlider, {
@@ -51,24 +57,10 @@ noUiSlider.create(stepSlider, {
     
     var stepSliderValueElement = document.getElementById('slider-step-value');
 
-    stepSlider.noUiSlider.on('update', function( values, handle ) {
+stepSlider.noUiSlider.on('update', function( values, handle ) {
 	stepSliderValueElement.innerHTML = values[handle];
-    });
-    
-    $('.noUi-value.noUi-value-horizontal.noUi-value-large').each(function(){
-    var val = $(this).html();
-    val = recountVal(parseInt(val));
-    $(this).html(val);
-    });
-    
-    function recountVal(val){
-    switch(val){
-    case 1: return 'One adult'; break;
-    case 2: return 'Two adults'; break;
-    case 1000000:return 'Three or more adults';break;
-    default :return '$Three or more adults';break;
-    }
-}
+});
+
 </script>
 
 
