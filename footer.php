@@ -9,10 +9,12 @@
 </head>
 
 <body>
+<div class="container"
   <div class="panel panel-default">
     <div class="panel-body"></div>
     <div class="panel-footer">Copyright © 2017 Paw Companions. All rights reserved.</div>
   </div>
+</div>  
 </body>
 
 </html>
