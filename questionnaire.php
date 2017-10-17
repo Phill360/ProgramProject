@@ -23,8 +23,10 @@
     </style>
 </head>
 <body>
+  <div class="container">
+    <div class="slackey"><div class="black"><div class="textxxMedium">Welcome admin user</div></div></div>
     <div id="slider-step"></div>
-    <div id="range"></div>
+  </div>
 </body>
 
 <script>
