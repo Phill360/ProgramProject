@@ -9,16 +9,14 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="col-sm-12">
-      <!-- Footer box -->
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p>Footer section</p>
-        </div>
-      </div>
+  <div class="container">
+  <div class="jumbotron">
+    <p>Footer section</p>
+
+        
     </div>
   </div>
+</div>
 </body>
 
 </html>
