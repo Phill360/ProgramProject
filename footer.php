@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <div class="col-sm-12">
       <!-- Footer box -->
       <div class="panel panel-default">
