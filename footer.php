@@ -9,9 +9,12 @@
 </head>
 
 <body>
-<div><footer class="fixed-bottom">
-<p>Copyright © 2017 Paw Companions. All rights reserved.</p>
-</div>
+<div id="footer">
+      <div class="container">
+        <p>Copyright © 2017 Paw Companions. All rights reserved.</p>
+      </div>
+    </div>    
+    
 </body>
 
 </html>
