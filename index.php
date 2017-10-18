@@ -164,7 +164,7 @@
   if ($status == 'signed in' && $usertype == 'normal')
   {
     $userID = getUserID($email);
-    //$profile = checkIfUserHasProfile($userID);
+    $profile = checkIfUserHasProfile($userID);
     
     ?><div><?php include 'search.php' ?></div> 
   <?php }
@@ -201,7 +201,6 @@
             <br>
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
-              <p>By pressing submit, you accept our</p><a href="terms.php">Terms and Conditions</a>
             </div>
             <button name="signInBtn" type="submit" class="btn btn-primary">Sign in</button>
           </form>
