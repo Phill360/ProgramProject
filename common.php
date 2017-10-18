@@ -389,7 +389,7 @@ function getUserID($email)
 	// Test for query error
 	if(!$result)
 	{
-		die("1. Database query failed.");
+		die("1. This Database query failed.");
 	}
 	
 	// Iterate through results
