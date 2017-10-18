@@ -164,24 +164,17 @@
   $profile = checkIfUserHasProfile($userID);
 
   if ($status == 'signed in' && $usertype == 'normal')
-  {
-    if ($profile == 'profile exists')
-    {?>
-      <div><?php include 'search.php' ?></div>
-    <?php }
-    else 
-    {?>
-      <div><?php include 'questionnarie.php' ?></div>
-    }
-  }
+  {?>
+    <div><?php include 'search.php' ?></div>
+  <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
     <div><?php include 'admin/admin.php' ?></div>
-<?php } 
+  <?php } 
   else
   {?>
     <div><?php include 'carousel.php' ?></div>
-<?php } ?>
+  <?php } ?>
 
 <div><?php include 'footer.php' ?></div>
 
