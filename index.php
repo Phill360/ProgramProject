@@ -5,7 +5,8 @@
 	$usertype = checkUserType();
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
-	// echo('Message: '.$message);
+	$message = getMessage();
+	echo('Message: '.$message);
 
   // When the user registers
   if (isset($_POST['registerBtn']))
@@ -161,7 +162,6 @@
 <!-- this should be done in one php block -- JenCam TO DO -->
 <?php
   $userID = getUserID($email);
-  echo $userID;
   $profile = checkIfUserHasProfile($userID);
 
   if ($status == 'signed in' && $usertype == 'normal' && $profile == 'exists')
