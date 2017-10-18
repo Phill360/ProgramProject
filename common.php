@@ -401,7 +401,6 @@ function getUserID($email)
 	    $userID = $row["userID"];
     }
 	}
-	setMessage($userID);
 	return $userID;
 	mysqli_close($connection);
 }
