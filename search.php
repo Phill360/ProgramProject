@@ -1,5 +1,6 @@
 <?php
   //require_once('./_php/connect.php');
+  //
   
   // 2. Perform Query
 	$query = "SELECT * "; //
