@@ -378,10 +378,37 @@ function remBreed($breedID) {
 }
 
 /* This function checks if the registered user has existing profile  */
-function checkIfUserHasProfile(userID)
+function checkIfUserHasProfile($userID)
 {
   // Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
   
+  // Get searchIDs from userID table
+  $query = "SELECT * "; 
+	$query .= "FROM userSearch ";
+	$result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result)
+	{
+		die("1. Database query failed.");
+	}
+	
+	// Iterate through results
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  // Match email to a row
+	  if ($row["userID"] == $userID)
+	  {
+	    $profile = 'profile exists';
+    }
+	  else
+    {
+      $profile = 'no profile exists';
+    }
+	}
+	return $profile;
+	mysqli_close($connection);
 }
   
 /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
