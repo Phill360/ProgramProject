@@ -140,7 +140,7 @@
   any purpose which is unlawful or in any manner which violates any of our rights 
   or which is prohibited by the Terms and Conditions.</p>
   <h2>14. Hyperlinks</h2>
-  <h2>14.1</h2><p>The Website contains hyperlinks and other pointers to internet 
+  <h3>14.1</h3><p>The Website contains hyperlinks and other pointers to internet 
   websites operated by third parties (“Linked Sites”). The Linked Sites are not 
   under our control and we are not responsible for the content of any Linked 
   Site or any hyperlink contained in a Linked Site.</p>
