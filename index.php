@@ -167,7 +167,7 @@
   {?>
     <div><?php include 'search.php' ?></div>
   <?php }
-  else if ($status == 'signed in' && $usertype == 'normal' && $profile == 'none exists')
+  else if ($status == 'signed in' && $usertype == 'normal' && $profile != 'exists')
   {?>
     <div><?php include 'search.php' ?></div>
   <?php }
