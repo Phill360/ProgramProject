@@ -162,11 +162,8 @@
 <!-- this should be done in one php block -- JenCam TO DO -->
 <?php
   if ($status == 'signed in' && $usertype == 'normal')
-  {
-    $userID = getUserID($email);
-    $profile = checkIfUserHasProfile($userID);
-    
-    ?><div><?php include 'search.php' ?></div> 
+  {?>
+    <div><?php include 'normal/search.php' ?></div> 
   <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
