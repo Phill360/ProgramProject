@@ -17,7 +17,7 @@ function is_get_request() {
 }
 
 /* This function checks if the registered user has existing profile  */
-function checkIfUserHasProfile(userID)
+
 
 
 /* This function registers a user */
