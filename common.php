@@ -29,7 +29,7 @@ function registerUser($firstname, $lastname, $email, $password, $visits)
 	// Test for query error
 	if(!$result)
 	{
-		die("1. Database query failed.");
+		die("1. Sign in Database query failed.");
 	}
 	  
 	// Iterate through users
