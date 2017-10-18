@@ -109,7 +109,6 @@ function signInUser($email, $password)
         $validUser = true;
        	$usertype = $row["userType"];
        	debug_to_console("admin: " . $row['userType']);
-       	setMessage("user is a: " . $usertype);
       }
     }
   }
@@ -233,7 +232,6 @@ function checkNumberUsersInFile()
 	}
 
   mysqli_close($connection);
-  setMessage($size);
   return $size;
 }
   
