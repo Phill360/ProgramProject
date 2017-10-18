@@ -164,11 +164,7 @@
   $userID = getUserID($email);
   $profile = checkIfUserHasProfile($userID);
 
-  if ($status == 'signed in' && $usertype == 'normal' && $profile == 'exists')
-  {?>
-    <div><?php include 'search.php' ?></div>
-  <?php }
-  else if ($status == 'signed in' && $usertype == 'normal' && $profile != 'exists')
+  if ($status == 'signed in' && $usertype == 'normal')
   {?>
     <div><?php include 'search.php' ?></div>
   <?php }

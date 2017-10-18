@@ -4,9 +4,9 @@
   // 2. Perform Query
 	$query = "SELECT * "; //
 	$query .= "FROM animals ";
-	$animalresult = mysqli_query($connection, $query);
+	$result = mysqli_query($connection, $query);
 	// Test for query error
-	if(!$animalresult) {
+	if(!$result) {
 		die("Get animals in database query failed.");
 	}
 ?>
@@ -26,7 +26,7 @@
   <div class="pets container"> 
   <div class="slackey"><div class="black"><div class="textxxMedium">Your companions</div></div></div>
   <?php
-    while($row = mysqli_fetch_assoc($animalresult)) {
+    while($row = mysqli_fetch_assoc($result)) {
   ?>
       <div class="col-xs-6 col-sm-4">
         <div class="thumbnail">
