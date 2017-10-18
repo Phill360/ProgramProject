@@ -16,36 +16,6 @@ function is_get_request() {
   return $_SERVER['REQUEST_METHOD'] == 'GET';
 }
 
-/* This function checks if the registered user has existing profile  */
-function checkIfUserHasProfile(userID)
-{
-  // Get searchIDs from userID table
-  $query = "SELECT * "; 
-	$query .= "FROM userSearch ";
-	$result = mysqli_query($connection, $query);
-	  
-	// Test for query error
-	if(!$result)
-	{
-		die("1. Database query failed.");
-	}
-	
-	// Iterate through results
-	while ($row = mysqli_fetch_assoc($result))
-	{
-	  // Match email to a row
-	  if ($row["userID"] == $userID)
-	  {
-	    $profile = 'profile exists';
-    }
-	  else
-    {
-      $profile = 'no profile exists';
-    }
-	}
-	return $profile;
-}
-
 
 /* This function registers a user */
 function registerUser($firstname, $lastname, $email, $password, $visits)
