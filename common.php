@@ -408,6 +408,7 @@ function checkIfUserHasProfile(userID)
     }
 	}
 	return $profile;
+	mysqli_close($connection);
 }
   
 /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
