@@ -377,6 +377,36 @@ function remBreed($breedID) {
   mysqli_close($connection);
 }
 
+/* This function returns the userID  */
+function getUserID($email)
+{
+  // Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+  
+  // Get searchIDs from userID table
+  $query = "SELECT * "; 
+	$query .= "FROM user ";
+	$result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result)
+	{
+		die("1. Database query failed.");
+	}
+	
+	// Iterate through results
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  // Match email to a row
+	  if ($row["email"] == $email)
+	  {
+	    $userID = $row["userID"];
+    }
+	}
+	return $userID;
+	mysqli_close($connection);
+}
+
 /* This function checks if the registered user has existing profile  */
 function checkIfUserHasProfile($userID)
 {

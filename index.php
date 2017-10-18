@@ -10,8 +10,6 @@
   // When the user registers
   if (isset($_POST['registerBtn']))
   {
-		$visits = 0;
-
 		// Get user input
 		$firstname  = isset($_POST['firstname']) ? $_POST['firstname'] : '';
 		$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
@@ -44,7 +42,6 @@
 		}
   }
   
-  
   // User sign in
   if (isset($_POST['signInBtn']))
   {
@@ -75,7 +72,6 @@
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     demoteAdminUser($email);
   }
-  
   
  if (isset($_POST['addPetBtn']))
   {
@@ -111,7 +107,6 @@
     addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
     }
   }
-  
   
   if (isset($_POST['remPetBtn']))
   {
@@ -164,11 +159,21 @@
 
 <!-- control home page shown depending in user account type -->
 <!-- this should be done in one php block -- JenCam TO DO -->
-<?php 
+<?php
+  $userID = getUserID($email);
+  $profile = checkIfUserHasProfile($userID);
+
   if ($status == 'signed in' && $usertype == 'normal')
-  {?>
-    <div><?php include 'search.php' ?></div>
-<?php }
+  {
+    if ($profile == 'profile exists')
+    {?>
+      <div><?php include 'search.php' ?></div>
+    <?php }
+    else 
+    {?>
+      <div><?php include 'questionnarie.php' ?></div>
+    }
+  }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
     <div><?php include 'admin/admin.php' ?></div>
