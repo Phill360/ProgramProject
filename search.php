@@ -7,7 +7,7 @@
 	$result = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result) {
-		die("Database query failed.");
+		die("Get animals in database query failed.");
 	}
 ?>
 
