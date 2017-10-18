@@ -248,7 +248,7 @@
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
-            <p>By registering, you accept our <a href="terms.php">Terms and Conditions</a></p>
+            <p>By registering, you agree to the <a href="terms.php">Terms and Conditions</a></p>
             <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
           </form>
         </div>
