@@ -52,12 +52,12 @@
   use, and you are not entitled to rely on the Information. If you do so, you agree 
   to indemnify us for any loss or damage which we may incur as a consequence.</p>
   <h2>4. Acceptance of Terms and Conditions</h2>
-  <h2>4.1</h2><p>Your access and use of the Website is conditional upon your 
+  <h3>4.1</h3><p>Your access and use of the Website is conditional upon your 
   acceptance and compliance with the terms, conditions, notices and disclaimers 
   contained in this document and elsewhere on the Website (known collectively as 
   the “Terms and Conditions”). Your use of and/or continued access to the Website 
   constitutes your agreement to the Terms and Conditions.</p>
-  <h2>4.2</h2><p>We may amend the Terms and Conditions at any time by posting 
+  <h3>4.2</h3><p>We may amend the Terms and Conditions at any time by posting 
   the amended terms and conditions on the Website. The amended terms and conditions 
   will be effective immediately and you will be bound by the amended terms and 
   conditions from that time. This agreement may not be amended otherwise. You 
@@ -97,17 +97,17 @@
   typographical errors. The use of the Website and the Material is at your own 
   risk. Changes are periodically made to the Website and may be made at any time.</p>
   <h2>9. No Warranties</h2>
-  <h2>9.1</h2><p>The Website and Material are provided on an as is basis without 
+  <h3>9.1</h3><p>The Website and Material are provided on an as is basis without 
   any warranties of any kind. We disclaim all warranties to the fullest extent 
   permitted by law.</p>
-  <h2>9.2</h2><p>The Trade Practices Act 1974 (Cth) and all corresponding state 
+  <h3>9.2</h3><p>The Trade Practices Act 1974 (Cth) and all corresponding state 
   and territory legislation implies terms, conditions and warranties into some 
   contracts for the supply of goods and services and prohibits the exclusion, 
   restriction and modification of such terms (“Prescribed Terms”). Except as
   provided by the Prescribed Terms, all warranties express or implied by law in 
   any way relating to access to, or non access to, the Website or the use of or 
   reliance upon the Website or the Material are excluded.</p>
-  <h2>9.3</h2><p>In addition, we do not warrant that the Website will operate 
+  <h3>9.3</h3><p>In addition, we do not warrant that the Website will operate 
   error free or that this Website and its servers are free of computer viruses 
   and other harmful data, code, components or other material. Nor do we warrant 
   that it will be able to prevent any illegal, harmful or inappropriate use, 
@@ -144,41 +144,68 @@
   websites operated by third parties (“Linked Sites”). The Linked Sites are not 
   under our control and we are not responsible for the content of any Linked 
   Site or any hyperlink contained in a Linked Site.</p>
-
-14.2 The inclusion of any link does not imply our endorsement of the Linked Site. You link to any such Linked Site entirely at your own risk. We exercise no control over the quality, safety or legality of the items advertised or sold and statements made through any Linked Sites.
-
-14.3 The Material on any Linked Site, including product information and prices, are the responsibility of the operator of the Linked Site. Any information contained on a Linked Site is subject to change without notice by the operator of that website. We are not liable for the prices or price changes, including where price changes have not been reflected on the relevant site.
-
-14.4 Any purchases or dealings you have with a Linked Site are done at your own risk. We are not a party to any transaction between you and a Linked Site. Your use of a Linked Site is subject to the terms and conditions of that site in addition to the Terms and Conditions of this Website. If there is any inconsistency, to the extent of the inconsistency, the Terms and Conditions of this Website prevail.
-
-15. Advertisements
-
-15.1 The Website display of the Price List is an advertisement made by the Vendor RSPCAs.
-
-15.2 The Website may contain embedded hyperlinks or referral buttons to websites operated by third parties or their licensees or contractors (Advertisers). Clause 14 also applies to sites operated by Advertisers. Any claims by Advertisers are not recommendations or endorsements by us.
-
-16. Disputes with Linked Sites and Advertisers
-As we do not and cannot be involved in your interaction with Linked Sites and Advertisers, in the event that you have a dispute with one or more Linked Sites or Advertisers, to the extent permitted by law, you agree to release us (and our agents and employees) from liability for any claims, demands and damages (actual and consequential) arising out of or in any way connected with such disputes.
-
-17. Termination
-The Terms and Conditions are effective until terminated by us. We may terminate this agreement and your access to the Website at any time without notice. ln the event of termination, you are no longer authorised to access the Website. All restrictions imposed on you, disclaimers and limitations of liability set out in the Terms and Conditions will survive termination.
-
-18. Security of Information
-Unfortunately, no data transmission over the Internet can be guaranteed as totally secure. Whilst we strive to protect such information, we do not warrant and cannot ensure the security of any information which you transmit to us. Accordingly, any information which you transmit to us is transmitted at your own risk. Nevertheless, once we receive your transmission, we will take reasonable steps to preserve the security of such information.
-
-19.Indemnity Clause
-You indemnify us, regardless of any negligence on our part, against all losses, liabilities, legal costs and other expenses incurred by us arising directly or indirectly as a result of or in connections with the breach by you of any provision of these Terms and Conditions or any wilful, unlawful or negligent act by you in connection with the supply by a Vendor RSPCA to you of, or use by you of, any Product.
-
-20. Miscellaneous
-If any provision of the Terms and Conditions is found to be invalid or unenforceable by a court of law, such invalidity or unenforceability will not affect the remainder of the Terms and Conditions which will continue in full force and effect. All rights not expressly granted are reserved. This agreement sets out the entire understanding and agreement between RSPCA and you with respect to the subject matter.
-
-Use of this website is conditional upon your acceptance and compliance with certain Terms and Conditions.
-  <p>This part is inside a .container class.</p> 
-  <p>The .container class provides a responsive fixed width container.</p>           
+  <h3>14.2</h3><p>The inclusion of any link does not imply our endorsement of 
+  the Linked Site. You link to any such Linked Site entirely at your own risk. 
+  We exercise no control over the quality, safety or legality of the items 
+  advertised or sold and statements made through any Linked Sites.</p>
+  <h3>14.3</h3><p>The Material on any Linked Site, including product information 
+  and prices, are the responsibility of the operator of the Linked Site. Any 
+  information contained on a Linked Site is subject to change without notice by 
+  the operator of that website. We are not liable for the prices or price changes, 
+  including where price changes have not been reflected on the relevant site.</p>
+  <h3>14.4</h3><p>Any purchases or dealings you have with a Linked Site are done 
+  at your own risk. We are not a party to any transaction between you and a Linked 
+  Site. Your use of a Linked Site is subject to the terms and conditions of that 
+  site in addition to the Terms and Conditions of this Website. If there is any 
+  inconsistency, to the extent of the inconsistency, the Terms and Conditions of 
+  this Website prevail.</p>
+  <h2>15. Advertisements</h2>
+  <h3>15.1</h3><p>The Website display of the Price List is an advertisement made 
+  by the Vendor Paw Companions.</p>
+  <h3>15.2</h3><p>The Website may contain embedded hyperlinks or referral 
+  buttons to websites operated by third parties or their licensees or 
+  contractors (Advertisers). Clause 14 also applies to sites operated by 
+  Advertisers. Any claims by Advertisers are not recommendations or endorsements 
+  by us.</p>
+  <h2>16. Disputes with Linked Sites and Advertisers</h2>
+  <p>As we do not and cannot be involved in your interaction with Linked Sites 
+  and Advertisers, in the event that you have a dispute with one or more Linked 
+  Sites or Advertisers, to the extent permitted by law, you agree to release us 
+  (and our agents and employees) from liability for any claims, demands and 
+  damages (actual and consequential) arising out of or in any way connected with 
+  such disputes.</p>
+  <h2>17. Termination</h2>
+  <p>The Terms and Conditions are effective until terminated by us. We may 
+  terminate this agreement and your access to the Website at any time without 
+  notice. ln the event of termination, you are no longer authorised to access 
+  the Website. All restrictions imposed on you, disclaimers and limitations of 
+  liability set out in the Terms and Conditions will survive termination.</p>
+  <h2>18. Security of Information</h2>
+  <p>Unfortunately, no data transmission over the Internet can be guaranteed as 
+  totally secure. Whilst we strive to protect such information, we do not warrant 
+  and cannot ensure the security of any information which you transmit to us. 
+  Accordingly, any information which you transmit to us is transmitted at your 
+  own risk. Nevertheless, once we receive your transmission, we will take 
+  reasonable steps to preserve the security of such information.</p>
+  <h2>19.Indemnity Clause</h2>
+  <p>You indemnify us, regardless of any negligence on our part, against all 
+  losses, liabilities, legal costs and other expenses incurred by us arising 
+  directly or indirectly as a result of or in connections with the breach by 
+  you of any provision of these Terms and Conditions or any wilful, unlawful or 
+  negligent act by you in connection with the supply by a Vendor RSPCA to you 
+  of, or use by you of, any Product.</p>
+  <h2>20. Miscellaneous</h2>
+  <p>If any provision of the Terms and Conditions is found to be invalid or 
+  unenforceable by a court of law, such invalidity or unenforceability will not 
+  affect the remainder of the Terms and Conditions which will continue in full 
+  force and effect. All rights not expressly granted are reserved. This agreement 
+  sets out the entire understanding and agreement between RSPCA and you with 
+  respect to the subject matter.</p>
+  <p>Use of this website is conditional upon your acceptance and compliance with 
+  certain Terms and Conditions.</p> 
 </div>
 
 <div><?php include 'footer.php' ?></div>
-
 
 </body>
 </html>

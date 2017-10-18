@@ -401,6 +401,8 @@ function getUserID($email)
 	    $userID = $row["userID"];
     }
 	}
+	unset($query);
+	unset($result);
 	return $userID;
 	mysqli_close($connection);
 }
