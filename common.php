@@ -410,7 +410,7 @@ function getUserID($email)
 function checkIfUserHasProfile($userID)
 {
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  //require_once('./_php/connect.php');
   
   // Get searchIDs from userID table
   $query = "SELECT * "; 
