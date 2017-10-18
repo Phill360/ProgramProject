@@ -382,15 +382,15 @@ function getUserID($email)
   //require_once('./_php/connect.php');
   
   // Get searchIDs from userID table
-  //$query = "SELECT * "; 
-	//$query .= "FROM user ";
-	//$result = mysqli_query($connection, $query);
+  $query = "SELECT * "; 
+	$query .= "FROM user ";
+	$result = mysqli_query($connection, $query);
 	  
 	// Test for query error
-	//if(!$result)
-	//{
-	//	die("Get user ID database query failed.");
-	//}
+	if(!$result)
+	{
+		die("Get user ID database query failed.");
+	}
 	
 	// Iterate through results
 	//while ($row = mysqli_fetch_assoc($result))
