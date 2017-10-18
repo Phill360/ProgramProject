@@ -201,6 +201,7 @@
             <br>
             <div class="checkbox">
               <label><input type="checkbox" name="remember">Remember me</label>
+              <p>By pressing submit, you accept our</p><a href="terms.php">Terms and Conditions</a>
             </div>
             <button name="signInBtn" type="submit" class="btn btn-primary">Sign in</button>
           </form>
