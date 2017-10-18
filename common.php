@@ -431,11 +431,11 @@ function checkIfUserHasProfile($userID)
 	    // Match email to a row
 	    if ($row["userID"] == $userID)
 	    {
-	      $profile = 'profile exists';
+	      $profile = 'exists';
       }
       else
       {
-        $profile = 'no profile exists';
+        $profile = 'none exists';
       }
 	  }  
 	}

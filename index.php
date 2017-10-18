@@ -163,9 +163,13 @@
   $userID = getUserID($email);
   $profile = checkIfUserHasProfile($userID);
 
-  if ($status == 'signed in' && $usertype == 'normal')
+  if ($status == 'signed in' && $usertype == 'normal' && $profile == 'exists')
   {?>
     <div><?php include 'search.php' ?></div>
+  <?php }
+  else if ($status == 'signed in' && $usertype == 'normal' && $profile == 'none exists')
+  {?>
+    <div><?php include 'questionnaire.php' ?></div>
   <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
