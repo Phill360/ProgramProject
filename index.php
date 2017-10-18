@@ -166,14 +166,8 @@
     $userID = getUserID($email);
     $profile = checkIfUserHasProfile($userID);
     
-    if($profile != 'exists')
-    {?>
-      <div><?php include 'search.php' ?></div>
-    <?php }
-    else 
-    {?>
-      <div><?php include 'search.php' ?></div>
-    <?php }
+    ?><div><?php include 'search.php' ?></div> 
+  <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
     <div><?php include 'admin/admin.php' ?></div>
