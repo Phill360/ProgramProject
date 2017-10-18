@@ -161,7 +161,7 @@
 <!-- control home page shown depending in user account type -->
 <!-- this should be done in one php block -- JenCam TO DO -->
 <?php
-  //$userID = getUserID($email);
+  $userID = getUserID($email);
   //$profile = checkIfUserHasProfile($userID);
 
   if ($status == 'signed in' && $usertype == 'normal')
