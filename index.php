@@ -169,7 +169,7 @@
   <?php }
   else if ($status == 'signed in' && $usertype == 'normal' && $profile == 'none exists')
   {?>
-    <div><?php include 'questionnaire.php' ?></div>
+    <div><?php include 'search.php' ?></div>
   <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
