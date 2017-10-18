@@ -1,12 +1,12 @@
 <?php
-  require_once('_php/connect.php');
+  require_once('./_php/connect.php');
   
   // 2. Perform Query
 	$query = "SELECT * "; //
 	$query .= "FROM animals ";
-	$result = mysqli_query($connection, $query);
+	$animalresult = mysqli_query($connection, $query);
 	// Test for query error
-	if(!$result) {
+	if(!$animalresult) {
 		die("Get animals in database query failed.");
 	}
 ?>
