@@ -161,14 +161,19 @@
 <!-- control home page shown depending in user account type -->
 <!-- this should be done in one php block -- JenCam TO DO -->
 <?php
-  echo $email;
-  //$userID = getUserID($email);
-  //$profile = checkIfUserHasProfile($userID);
-
   if ($status == 'signed in' && $usertype == 'normal')
-  {?>
-    <div><?php include 'search.php' ?></div>
-  <?php }
+  {
+    $userID = getUserID($email);
+    $profile = checkIfUserHasProfile($userID);
+    
+    if($profile != 'exists')
+    {?>
+      <div><?php include 'search.php' ?></div>
+    <?php }
+    else 
+    {?>
+      <div><?php include 'search.php' ?></div>
+    <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
     <div><?php include 'admin/admin.php' ?></div>
