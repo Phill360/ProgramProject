@@ -161,7 +161,7 @@
 <!-- this should be done in one php block -- JenCam TO DO -->
 <?php
   $userID = getUserID($email);
-  //$profile = checkIfUserHasProfile($userID);
+  $profile = checkIfUserHasProfile($userID);
 
   if ($status == 'signed in' && $usertype == 'normal')
   {?>

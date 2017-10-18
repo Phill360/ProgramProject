@@ -421,22 +421,25 @@ function checkIfUserHasProfile($userID)
 	// Test for query error
 	if(!$result)
 	{
-		die("1. Database query failed.");
+		$profile = 'no profile exists';
+	}
+	else
+	{
+	  // Iterate through results
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    // Match email to a row
+	    if ($row["userID"] == $userID)
+	    {
+	      $profile = 'profile exists';
+      }
+      else
+      {
+        $profile = 'no profile exists';
+      }
+	  }  
 	}
 	
-	// Iterate through results
-	while ($row = mysqli_fetch_assoc($result))
-	{
-	  // Match email to a row
-	  if ($row["userID"] == $userID)
-	  {
-	    $profile = 'profile exists';
-    }
-	  else
-    {
-      $profile = 'no profile exists';
-    }
-	}
 	return $profile;
 	mysqli_close($connection);
 }
