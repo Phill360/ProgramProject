@@ -163,8 +163,8 @@
 <?php
   if ($status == 'signed in' && $usertype == 'normal')
   {
-    //$userID = getUserID($email);
-    //$profile = checkIfUserHasProfile($userID);
+    $userID = getUserID($email);
+    $profile = checkIfUserHasProfile($userID);
     
     ?><div><?php include 'search.php' ?></div> 
   <?php }
