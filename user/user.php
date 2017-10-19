@@ -93,20 +93,21 @@
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
     </form>
   </div>
+  <?php echo($userTool);?>
 
   <?php 
     if ($userTool == 'questionnaire')
-    { echo($userTool);?>
+    {?>
       <div><?php include 'questionnaire.php' ?></div>
-    <?php}
+    <?php }
     else if ($userTool == 'matches')
-    { echo($userTool);?>
+    {?>
       <div><?php include 'matches.php' ?></div>
-  <?php } 
+    <?php } 
     else if ($userTool == 'favourites')
     {?>
       <div><?php include 'favourites.php' ?></div>
-  <?php } 
+    <?php } 
     else
     {?>
       <div><?php include 'matches.php' ?></div>
