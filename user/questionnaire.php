@@ -6,6 +6,14 @@
 <head>
     <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
     <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script>
+    
+    <link href="/nouislider/documentation/assets/base.css" rel="stylesheet">
+	<link href="/nouislider/documentation/assets/prism.css" rel="stylesheet">
+	<script src="wNumb.js"></script>
+
+	<link href="/noUiSlider/distribute/nouislider.css?v=1000" rel="stylesheet">
+	<script src="/noUiSlider/distribute/nouislider.js?v=1000"></script>
+    
     <style>
         #showcase {
             margin: 0 20px;
