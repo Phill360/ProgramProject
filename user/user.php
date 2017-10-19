@@ -49,31 +49,31 @@
 	    // Match user ID to a row
 	    if ($row["userID"] == $userID)
 	    {
-	      $userTool = 'matches.php';
+	      $_POST['matchesBtn'];
       }
       else
       {
-        $userTool = 'questionnaire.php';
+        $_POST['questionnaireBtn'];
       }
 	  }  
 	}
 	
 	
 
-  //if(isset($_POST['questionnaireBtn']))
-  //{
-  //  $userTool = 'questionnaire';
-  //}
+  if(isset($_POST['questionnaireBtn']))
+  {
+    $userTool = 'questionnaire';
+  }
 
-  //if(isset($_POST['matchesBtn']))
-  //{
-  //  $userTool = 'matches';
-  //}
+  if(isset($_POST['matchesBtn']))
+  {
+    $userTool = 'matches';
+  }
 
-  //if(isset($_POST['favouritesBtn']))
-  //{
-  //  $userTool = 'favourites';
-  //}
+  if(isset($_POST['favouritesBtn']))
+  {
+    $userTool = 'favourites';
+  }
 ?>
 
 <!DOCTYPE html PUBLIC>
