@@ -26,7 +26,6 @@
 	  if ($row["email"] == $email)
 	  {
 	    $userID = $row["userID"];
-	    echo($userID);
     }
 	}
 	
@@ -50,6 +49,7 @@
 	    // Match user ID to a row
 	    if ($row["userID"] == $userID)
 	    {
+	      echo($row["userID"]);
 	      $_POST['matchesBtn'];
       }
       else
