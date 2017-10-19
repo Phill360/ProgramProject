@@ -85,14 +85,13 @@
 
 <body>
 <div class="container">
-  <div class="slackey"><div class="black"><div class="textxxMedium">Welcome</div></div></div>
-    <div>
-      <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
-        <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
-        <button type="submit" class="btn" name="matchesBtn">Matches</button>
-        <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
-      </form>
-    </div>
+  <div>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
+      <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
+      <button type="submit" class="btn" name="matchesBtn">Matches</button>
+      <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
+    </form>
+  </div>
 
   <?php 
     if ($userTool == 'questionnaire')
