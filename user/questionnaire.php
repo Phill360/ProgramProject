@@ -41,21 +41,21 @@
 
 <script>
   
-// var sliderFormat = document.getElementById('slider-format');
+var sliderFormat = document.getElementById('slider-step-numberAdults');
 
-// noUiSlider.create(sliderFormat, {
-// 	start: [ 20000 ],
-// 	step: 1000,
-// 	range: {
-// 		'min': [ 20000 ],
-// 		'max': [ 80000 ]
-// 	},
-// 	format: wNumb({
-// 		decimals: 3,
-// 		thousand: '.',
-// 		postfix: ' (US $)',
-// 	})
-// });
+noUiSlider.create(sliderFormat, {
+	start: [ 20000 ],
+	step: 1000,
+	range: {
+		'min': [ 20000 ],
+		'max': [ 80000 ]
+	},
+	format: wNumb({
+		decimals: 3,
+		thousand: '.',
+		postfix: ' (US $)',
+	})
+});
 
 // var inputFormat = document.getElementById('input-format');
 
@@ -67,16 +67,16 @@
 // 	sliderFormat.noUiSlider.set(this.value);
 // });
   
-  var stepSlider = document.getElementById('slider-step-numberAdults');
+//   var stepSlider = document.getElementById('slider-step-numberAdults');
 
-  noUiSlider.create(stepSlider, {
-      start: [ 1 ],
-      step: 1,
-      range: {
-        'min': [ 1 ],
-  	  'max': [ 3 ]
-      }
-    });
+//   noUiSlider.create(stepSlider, {
+//       start: [ 1 ],
+//       step: 1,
+//       range: {
+//         'min': [ 1 ],
+//   	  'max': [ 3 ]
+//       }
+//     });
     
   var stepSliderValueElement = document.getElementById('slider-step-value');
 
