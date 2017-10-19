@@ -5,6 +5,7 @@
   require_once('./_php/connect.php');
   
   $email = $_SESSION['email'];
+  setMessage($email);
   
   /* Getting user's userID */
   
@@ -49,11 +50,11 @@
 	    // Match user ID to a row
 	    if ($row["userID"] == $userID)
 	    {
-	      $_POST['submit'] = 'matchesBtn';
+	      $_POST['matchesBtn'];
       }
       else
       {
-        $_POST['submit'] = 'questionnaireBtn';
+        $_POST['questionnaireBtn'];
       }
 	  }  
 	}
