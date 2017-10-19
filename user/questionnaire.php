@@ -32,8 +32,7 @@
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
           
-
-          <div id="input-format"></div>
+          <div id="slider-format"></div>
           <br>
         </div>
     </div>
@@ -42,7 +41,7 @@
 
 <script>
   
-var sliderFormat = document.getElementById('slider-step-numberAdults');
+var sliderFormat = document.getElementById('slider-format');
 
 noUiSlider.create(sliderFormat, {
 	start: [ 20000 ],
