@@ -6,6 +6,7 @@
   
   $email = $_SESSION['email'];
   setMessage('Reaching');
+  getMessage();
   
   /* Getting user's userID */
   
