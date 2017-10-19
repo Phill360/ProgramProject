@@ -1,12 +1,14 @@
 <?php
+  include_once('./common.php');
 
-/* This function returns the userID  */
-function getUserID($email)
-{
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-  // Get searchIDs from userID table
+  $email = $_SESSION['email'];
+  
+  /* Getting user's userID */
+  
+  // Perform quey
   $query = "SELECT * "; 
 	$query .= "FROM user ";
 	$result = mysqli_query($connection, $query);
@@ -17,18 +19,111 @@ function getUserID($email)
 		die("Get user ID database query failed.");
 	}
 	
-	// Iterate through results
-	//while ($row = mysqli_fetch_assoc($result))
-	//{
-	//  // Match email to a row
-	//  if ($row["email"] == $email)
-	//  {
-	//    $userID = $row["userID"];
-  //  }
-	//}
-	$userID = 33;
-	return $userID;
-	//mysqli_close($connection);
-}
+	// Iterate through results to get the user ID 
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  // Match email to a row
+	  if ($row["email"] == $email)
+	  {
+	    $userID = $row["userID"];
+    }
+	}
+	
+	/* With the userID we now check if this user has visited the site previously. */
+  
+  // Perform new search
+  $query = "SELECT * "; 
+	$query .= "FROM userSearch ";
+	$result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result)
+	{
+		$profile = 'no profile exists'; // The userSearch table is empty
+	}
+	else
+	{
+	  // Iterate through results
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    // Match user ID to a row
+	    if ($row["userID"] == $userID)
+	    {
+	      $profile = 'exists';
+      }
+      else
+      {
+        $profile = 'none exists';
+      }
+	  }  
+	}
+  
+  
+  
+  // Perform query
+	$query = "SELECT * "; 
+	$query .= "FROM animals ";
+	$result = mysqli_query($connection, $query);
+	// Test for query error
+	if(!$result) {
+		die("Database query failed.");
+	}
 
+
+
+
+
+
+  if(isset($_POST['questionnaireBtn']))
+  {
+    $userTool = 'questionnaire';
+  }
+
+  if(isset($_POST['matchesBtn']))
+  {
+    $userTool = 'matches';
+  }
+
+  if(isset($_POST['favouritesBtn']))
+  {
+    $userTool = 'favourites';
+  }
 ?>
+
+<!DOCTYPE html PUBLIC>
+<html lang="en">
+<head>
+</head>
+
+<body>
+<div class="container">
+  <div class="slackey"><div class="black"><div class="textxxMedium">Welcome</div></div></div>
+    <div>
+      <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
+        <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
+        <button type="submit" class="btn" name="matchesBtn">Matches</button>
+        <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
+      </form>
+    </div>
+
+  <?php 
+    if ($userTool == 'questionnaire')
+    {?>
+      <div><?php include 'questionnaire.php' ?></div>
+    <?php }
+    else if ($userTool == 'matches')
+    {?>
+      <div><?php include 'matches.php' ?></div>
+  <?php } 
+    else if ($userTool == 'favourites')
+    {?>
+      <div><?php include 'favourites.php' ?></div>
+  <?php } 
+    else
+    {?>
+      <div><?php include 'matches.php' ?></div>
+  <?php } ?>
+</div>
+
+</body>
+</html>
