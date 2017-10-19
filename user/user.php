@@ -36,7 +36,6 @@
 	$query .= "FROM userSearch ";
 	$result = mysqli_query($connection, $query);
 
-echo('reaching');	  
 	// Test for query error
 	if(!$result)
 	{
@@ -45,6 +44,7 @@ echo('reaching');
 	else
 	{
 	  // Iterate through results
+	  echo('reaching');
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
 	    // Match user ID to a row
