@@ -44,17 +44,20 @@
 var sliderFormat = document.getElementById('slider-step-numberAdults');
 
 noUiSlider.create(sliderFormat, {
-	start: [ 20000 ],
-	step: 1000,
+	start: [ 20 ],
+	step: 10,
 	range: {
-		'min': [ 20000 ],
-		'max': [ 80000 ]
+		'min': [ 20 ],
+		'max': [ 80 ]
 	},
-	format: wNumb({
-		decimals: 3,
-		thousand: '.',
-		postfix: ' (US $)',
-	})
+	format: {
+	  to: function ( value ) {
+		return value + ',-';
+	  },
+	  from: function ( value ) {
+		return value.replace(',-', '');
+	  }
+	}
 });
 
 var inputFormat = document.getElementById('input-format');
