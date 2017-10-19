@@ -1,71 +1,7 @@
 <?php
   include_once('./common.php');
 
-  // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
   
-  $email = $_SESSION['email'];
-  
-  /* Getting user's userID */
-  
-  // Perform quey
-  $query = "SELECT * "; 
-	$query .= "FROM user ";
-	$result = mysqli_query($connection, $query);
-	  
-	// Test for query error
-	if(!$result)
-	{
-		die("Get user ID database query failed.");
-	}
-	
-	// Iterate through results to get the user ID 
-	while ($row = mysqli_fetch_assoc($result))
-	{
-	  // Match email to a row
-	  if ($row["email"] == $email)
-	  {
-	    $userID = $row["userID"];
-    }
-	}
-	
-	/* With the userID we now check if this user has visited the site previously. */
-  
-  // Perform new search
-  $query = "SELECT * "; 
-	$query .= "FROM userSearch ";
-	$result = mysqli_query($connection, $query);
-	  
-	// Test for query error
-	if(!$result)
-	{
-		$profile = 'no profile exists'; // The userSearch table is empty
-	}
-	else
-	{
-	  // Iterate through results
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    // Match user ID to a row
-	    if ($row["userID"] == $userID)
-	    {
-	      $profile = 'exists';
-      }
-      else
-      {
-        $profile = 'none exists';
-      }
-	  }  
-	}
-  
-  // Perform query
-	$query = "SELECT * "; 
-	$query .= "FROM animals ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
 
   if(isset($_POST['questionnaireBtn']))
   {
