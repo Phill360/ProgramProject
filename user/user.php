@@ -46,7 +46,7 @@
 	  $count  = mysqli_num_rows($result);
 	  if ($count == 0)
 	  {
-      isset($_POST['questionnaireBtn']); // not working
+      $_POST['submit'] = 'questionnaire.php'; // not working
 	  }
 	  else
 	  {
@@ -55,7 +55,7 @@
 	      // Match user ID to a row
 	      if ($row["userID"] == $userID)
 	      {
-	        isset($_POST['matchesBtn']); // not working
+	        $_POST['submit'] = 'matches.php'; // not working
         }
 	    }	    
 	  }
