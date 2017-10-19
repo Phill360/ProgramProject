@@ -49,22 +49,41 @@
 	sliderFormat.noUiSlider.set(this.value);
   });
   
-  var stepSlider = document.getElementById('slider-step-numberAdults');
+  var sliderFormat = document.getElementById('slider-format');
 
-  noUiSlider.create(stepSlider, {
-    start: [ 1 ],
-    step: 1,
-    range: {
-      'min': [ 1 ],
-	  'max': [ 3 ]
-    }
-  });
+noUiSlider.create(sliderFormat, {
+	start: [ 20 ],
+	step: 10,
+	range: {
+		'min': [ 20 ],
+		'max': [ 80 ]
+	},
+	format: {
+	  to: function ( value ) {
+		return value + ',-';
+	  },
+	  from: function ( value ) {
+		return value.replace(',-', '');
+	  }
+	}
+});
+  
+  //var stepSlider = document.getElementById('slider-step-numberAdults');
+
+  //noUiSlider.create(stepSlider, {
+  //    start: [ 1 ],
+  //    step: 1,
+  //    range: {
+  //      'min': [ 1 ],
+  //	  'max': [ 3 ]
+  //    }
+  //  });
     
-    var stepSliderValueElement = document.getElementById('slider-step-value');
+  //var stepSliderValueElement = document.getElementById('slider-step-value');
 
-    stepSlider.noUiSlider.on('update', function( values, handle ) {
-	  stepSliderValueElement.innerHTML = values[handle];
-    });
+  //    stepSlider.noUiSlider.on('update', function( values, handle ) {
+  //	  stepSliderValueElement.innerHTML = values[handle];
+  //    });
 
 </script>
 
