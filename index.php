@@ -163,7 +163,7 @@
 <?php
   if ($status == 'signed in' && $usertype == 'normal')
   {?>
-    <div><?php include 'test.php' ?></div> 
+    <div><?php include 'normal.php' ?></div> 
   <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
