@@ -98,9 +98,9 @@
     if ($userTool == 'questionnaire')
     { echo($userTool);?>
       <div><?php include 'questionnaire.php' ?></div>
-    <?php }
+    <?php}
     else if ($userTool == 'matches')
-    {?>
+    { echo($userTool);?>
       <div><?php include 'matches.php' ?></div>
   <?php } 
     else if ($userTool == 'favourites')
