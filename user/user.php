@@ -64,7 +64,6 @@
 
   if(isset($_POST['questionnaireBtn']))
   {
-    echo('$_POST['questionnaireBtn']);
     $userTool = 'questionnaire';
   }
 
