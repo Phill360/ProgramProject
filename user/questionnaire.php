@@ -32,7 +32,7 @@
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
           
-          <div id="slider-step-numberAdults"></div>
+
           <div id="input-format"></div>
           <br>
         </div>
