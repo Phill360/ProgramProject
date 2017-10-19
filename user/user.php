@@ -5,7 +5,7 @@
   require_once('./_php/connect.php');
   
   $email = $_SESSION['email'];
-  echo($email);
+  echo($_SESSION['email']);
   
   /* Getting user's userID */
   
