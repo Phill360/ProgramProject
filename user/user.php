@@ -35,12 +35,12 @@
   $query = "SELECT * "; 
 	$query .= "FROM userSearch ";
 	$result = mysqli_query($connection, $query);
-	  
+
+echo('reaching');	  
 	// Test for query error
 	if(!$result)
 	{
 		$userTool = 'questionnaire.php'; // The userSearch table is empty
-		echo('userSearch table is empty');
 	}
 	else
 	{
