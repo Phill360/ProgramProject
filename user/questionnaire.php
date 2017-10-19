@@ -9,7 +9,7 @@
     
     <link href="/nouislider/documentation/assets/base.css" rel="stylesheet">
 	<link href="/nouislider/documentation/assets/prism.css" rel="stylesheet">
-	<script src="wNumb.js"></script>
+	
 
 	<link href="/noUiSlider/distribute/nouislider.css?v=1000" rel="stylesheet">
 	<script src="/noUiSlider/distribute/nouislider.js?v=1000"></script>
@@ -49,6 +49,8 @@
 </body>
 
 <script>
+
+src="wNumb.js"
   
 var sliderFormat = document.getElementById('slider-format');
 
