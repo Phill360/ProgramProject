@@ -58,8 +58,6 @@
 	  }  
 	}
   
-  
-  
   // Perform query
 	$query = "SELECT * "; 
 	$query .= "FROM animals ";
@@ -68,11 +66,6 @@
 	if(!$result) {
 		die("Database query failed.");
 	}
-
-
-
-
-
 
   if(isset($_POST['questionnaireBtn']))
   {
@@ -99,7 +92,7 @@
 <div class="container">
   <div class="slackey"><div class="black"><div class="textxxMedium">Welcome</div></div></div>
     <div>
-      <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
+      <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
         <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
         <button type="submit" class="btn" name="matchesBtn">Matches</button>
         <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
