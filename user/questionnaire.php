@@ -82,11 +82,11 @@ inputFormat.addEventListener('change', function(){
 //       }
 //     });
     
-  var stepSliderValueElement = document.getElementById('slider-step-value');
+//   var stepSliderValueElement = document.getElementById('slider-step-value');
 
-      stepSlider.noUiSlider.on('update', function( values, handle ) {
-  	  stepSliderValueElement.innerHTML = values[handle];
-      });
+//       stepSlider.noUiSlider.on('update', function( values, handle ) {
+//   	  stepSliderValueElement.innerHTML = values[handle];
+//       });
 
 </script>
 
