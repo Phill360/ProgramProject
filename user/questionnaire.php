@@ -32,7 +32,7 @@
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
           
-          <div id="slider-format"></div>
+          <div id="slider-step-numberAdults"></div>
           <br>
         </div>
     </div>
@@ -67,22 +67,22 @@ inputFormat.addEventListener('change', function(){
 	sliderFormat.noUiSlider.set(this.value);
 });
   
-//   var stepSlider = document.getElementById('slider-step-numberAdults');
+  var stepSlider = document.getElementById('slider-step-numberAdults');
 
-//   noUiSlider.create(stepSlider, {
-//       start: [ 1 ],
-//       step: 1,
-//       range: {
-//         'min': [ 1 ],
-//   	  'max': [ 3 ]
-//       }
-//     });
+  noUiSlider.create(stepSlider, {
+      start: [ 1 ],
+      step: 1,
+      range: {
+        'min': [ 1 ],
+  	  'max': [ 3 ]
+      }
+    });
     
-//   var stepSliderValueElement = document.getElementById('slider-step-value');
+  var stepSliderValueElement = document.getElementById('slider-step-value');
 
-//       stepSlider.noUiSlider.on('update', function( values, handle ) {
-//   	  stepSliderValueElement.innerHTML = values[handle];
-//       });
+      stepSlider.noUiSlider.on('update', function( values, handle ) {
+  	  stepSliderValueElement.innerHTML = values[handle];
+      });
 
 </script>
 
