@@ -17,7 +17,7 @@ function is_get_request() {
 }
 
 /* This function registers a user */
-function registerUser($firstname, $lastname, $email, $password, $visits)
+function registerUser($firstname, $lastname, $email, $password)
 {
   require_once('./_php/connect.php');
     
