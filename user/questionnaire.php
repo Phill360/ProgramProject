@@ -57,15 +57,15 @@ noUiSlider.create(sliderFormat, {
 // 	})
 });
 
-// var inputFormat = document.getElementById('input-format');
+var inputFormat = document.getElementById('input-format');
 
-// sliderFormat.noUiSlider.on('update', function( values, handle ) {
-// 	inputFormat.value = values[handle];
-// });
+sliderFormat.noUiSlider.on('update', function( values, handle ) {
+	inputFormat.value = values[handle];
+});
 
-// inputFormat.addEventListener('change', function(){
-// 	sliderFormat.noUiSlider.set(this.value);
-// });
+inputFormat.addEventListener('change', function(){
+	sliderFormat.noUiSlider.set(this.value);
+});
   
 //   var stepSlider = document.getElementById('slider-step-numberAdults');
 
