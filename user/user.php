@@ -43,25 +43,19 @@
 	}
 	else
 	{
-	  // Iterate through results
-	  echo('reaching');
-	  
 	  $count  = mysqli_num_rows($result);
 	  if ($count == 0)
 	  {
-      $_POST['questionnaireBtn'];
-      echo('load questionnaire');	    
+      $_POST['submit'] = questionnaireBtn;
 	  }
 	  else
 	  {
       while ($row = mysqli_fetch_assoc($result))
 	    {
 	      // Match user ID to a row
-	      echo('reaching inside while loop');
 	      if ($row["userID"] == $userID)
 	      {
 	        $_POST['matchesBtn'];
-	        echo('load matches');
         }
 	    }	    
 	  }
