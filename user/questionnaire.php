@@ -33,6 +33,7 @@
           <br>
           
           <div id="slider-format"></div>
+          <div id="input-format"></div>
           <br>
         </div>
     </div>
