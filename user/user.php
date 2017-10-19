@@ -49,11 +49,11 @@
 	    // Match user ID to a row
 	    if ($row["userID"] == $userID)
 	    {
-	      $_POST['matchesBtn'];
+	      $_POST['submit'] = 'matchesBtn';
       }
       else
       {
-        $_POST['questionnaireBtn'];
+        $_POST['submit'] = 'questionnaireBtn';
       }
 	  }  
 	}
