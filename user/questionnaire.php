@@ -1,6 +1,4 @@
 <?php
-  
-    
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +29,7 @@
   <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <div class="slackey"><div class="black"><div class="textxxMedium">Welcome. Please complete the questionnaire.</div></div></div>
-          <br>
-          <div class="opensans"><div class="black"><div class="textRegular">How many adults in the household?</div></div></div>
+          <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
           <div id="slider-step-numberAdults"></div>
           <br>
