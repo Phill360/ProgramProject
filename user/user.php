@@ -61,6 +61,7 @@
 	  }
 	}
 	
+	echo($userTool);
 
   //if(isset($_POST['questionnaireBtn']))
   //{
