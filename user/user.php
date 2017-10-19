@@ -47,6 +47,7 @@
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
 	    // Match user ID to a row
+	    echo('reaching');
 	    if ($row["userID"] == $userID)
 	    {
 	      $_POST['matchesBtn'];
