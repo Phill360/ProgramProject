@@ -44,10 +44,11 @@
 	else
 	{
 	  // Iterate through results
+	  echo('reaching');
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
 	    // Match user ID to a row
-	    echo('reaching');
+	    echo('reaching inside while loop');
 	    if ($row["userID"] == $userID)
 	    {
 	      $_POST['matchesBtn'];
