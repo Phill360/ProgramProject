@@ -40,6 +40,7 @@
 	if(!$result)
 	{
 		$userTool = 'questionnaire.php'; // The userSearch table is empty
+		echo('userSearch table is empty');
 	}
 	else
 	{
@@ -49,7 +50,6 @@
 	    // Match user ID to a row
 	    if ($row["userID"] == $userID)
 	    {
-	      echo($row["userID"]);
 	      $_POST['matchesBtn'];
       }
       else
