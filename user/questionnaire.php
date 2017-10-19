@@ -31,7 +31,8 @@
         <div class="col-sm-6">
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
-          <div id="slider-step-numberAdults"></div>
+          
+          <div id="slider-format"></div>
           <br>
         </div>
     </div>
@@ -39,7 +40,8 @@
 </body>
 
 <script>
-  var sliderFormat = document.getElementById('slider-format');
+  
+var sliderFormat = document.getElementById('slider-format');
 
 noUiSlider.create(sliderFormat, {
 	start: [ 20000 ],
@@ -54,34 +56,33 @@ noUiSlider.create(sliderFormat, {
 		postfix: ' (US $)',
 	})
 });
-  
-  var inputFormat = document.getElementById('input-format');
 
-  sliderFormat.noUiSlider.on('update', function( values, handle ) {
+var inputFormat = document.getElementById('input-format');
+
+sliderFormat.noUiSlider.on('update', function( values, handle ) {
 	inputFormat.value = values[handle];
-  });
+});
 
-  inputFormat.addEventListener('change', function(){
+inputFormat.addEventListener('change', function(){
 	sliderFormat.noUiSlider.set(this.value);
-  });
+});
   
-  
-  //var stepSlider = document.getElementById('slider-step-numberAdults');
+//   var stepSlider = document.getElementById('slider-step-numberAdults');
 
-  //noUiSlider.create(stepSlider, {
-  //    start: [ 1 ],
-  //    step: 1,
-  //    range: {
-  //      'min': [ 1 ],
-  //	  'max': [ 3 ]
-  //    }
-  //  });
+//   noUiSlider.create(stepSlider, {
+//       start: [ 1 ],
+//       step: 1,
+//       range: {
+//         'min': [ 1 ],
+//   	  'max': [ 3 ]
+//       }
+//     });
     
-  //var stepSliderValueElement = document.getElementById('slider-step-value');
+//   var stepSliderValueElement = document.getElementById('slider-step-value');
 
-  //    stepSlider.noUiSlider.on('update', function( values, handle ) {
-  //	  stepSliderValueElement.innerHTML = values[handle];
-  //    });
+//       stepSlider.noUiSlider.on('update', function( values, handle ) {
+//   	  stepSliderValueElement.innerHTML = values[handle];
+//       });
 
 </script>
 
