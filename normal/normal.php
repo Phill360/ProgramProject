@@ -1,22 +1,5 @@
 <?php
-  include_once('./common.php');
 
-  
-
-  if(isset($_POST['questionnaireBtn']))
-  {
-    $userTool = 'questionnaire';
-  }
-
-  if(isset($_POST['matchesBtn']))
-  {
-    $userTool = 'matches';
-  }
-
-  if(isset($_POST['favouritesBtn']))
-  {
-    $userTool = 'favourites';
-  }
 ?>
 
 <!DOCTYPE html PUBLIC>
