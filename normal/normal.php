@@ -106,7 +106,7 @@
     <?php }
     else if ($userTool == 'matches')
     {?>
-      <div><?php include 'questionnaire.php' ?></div>
+      <div><?php include 'matches.php' ?></div>
   <?php } 
     else if ($userTool == 'favourites')
     {?>
