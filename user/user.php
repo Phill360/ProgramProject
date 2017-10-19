@@ -39,7 +39,7 @@
 	// Test for query error
 	if(!$result)
 	{
-		$userTool = 'questionnaire.php'; // The userSearch table is empty
+		die("Database query failed.");
 	}
 	else
 	{
@@ -59,7 +59,8 @@
         $_POST['questionnaireBtn'];
         echo('load questionnaire');
       }
-	  }  
+	  }
+	  echo('reaching2');
 	}
 	
 	
