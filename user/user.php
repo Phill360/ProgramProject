@@ -44,17 +44,18 @@
 	else
 	{
 	  // Iterate through results
-	  echo('reaching');
 	  while ($row = mysqli_fetch_assoc($result))
 	  {
 	    // Match user ID to a row
 	    if ($row["userID"] == $userID)
 	    {
 	      $_POST['matchesBtn'];
+	      echo('load matches');
       }
       else
       {
         $_POST['questionnaireBtn'];
+        echo('load questionnaire');
       }
 	  }  
 	}
