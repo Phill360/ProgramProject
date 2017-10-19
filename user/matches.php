@@ -23,7 +23,7 @@
 <div class="container">
 
 <body>
-  <div class="pets container"> 
+<div class="pets container"> 
   <div class="slackey"><div class="black"><div class="textxxMedium">Your companions</div></div></div>
   <?php
     while($row = mysqli_fetch_assoc($result)) {
@@ -44,9 +44,9 @@
         </div>
       </div>
   <?php
-    }
+  }
   ?>
-  </div>
+</div>
 
   
     <!-- /.container -->

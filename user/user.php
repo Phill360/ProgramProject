@@ -39,7 +39,7 @@
 	// Test for query error
 	if(!$result)
 	{
-		$profile = 'no profile exists'; // The userSearch table is empty
+		$userTool = 'questionnaire.php'; // The userSearch table is empty
 	}
 	else
 	{
@@ -49,14 +49,16 @@
 	    // Match user ID to a row
 	    if ($row["userID"] == $userID)
 	    {
-	      $profile = 'exists';
+	      $userTool = 'matches.php';
       }
       else
       {
-        $profile = 'none exists';
+        $userTool = 'questionnaire.php';
       }
 	  }  
 	}
+	
+	
 
   if(isset($_POST['questionnaireBtn']))
   {
