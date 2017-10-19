@@ -5,7 +5,6 @@
   require_once('./_php/connect.php');
   
   $email = $_SESSION['email'];
-  echo($_SESSION['email']);
   
   /* Getting user's userID */
   
@@ -27,6 +26,7 @@
 	  if ($row["email"] == $email)
 	  {
 	    $userID = $row["userID"];
+	    echo($userID);
     }
 	}
 	
