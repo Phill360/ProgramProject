@@ -26,6 +26,7 @@
 
 <body>
 <div class="container">
+	<h1>This is a test page.</h1>
   <div class="slackey"><div class="black"><div class="textxxMedium">Welcome</div></div></div>
     <div>
       <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
