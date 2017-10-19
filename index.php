@@ -6,7 +6,7 @@
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 	$message = getMessage();
-	echo('Message: '.$message);
+	// echo('Message: '.$message);
 
   // When the user registers
   if (isset($_POST['registerBtn']))
@@ -163,7 +163,7 @@
 <?php
   if ($status == 'signed in' && $usertype == 'normal')
   {?>
-    <div><?php include 'search.php' ?></div> 
+    <div><?php include 'normal.php' ?></div> 
   <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
