@@ -45,22 +45,26 @@
 	{
 	  // Iterate through results
 	  echo('reaching');
-	  while ($row = mysqli_fetch_assoc($result))
+	  
+	  $count  = mysqli_num_rows($result);
+	  if ($count == 0)
 	  {
-	    // Match user ID to a row
-	    echo('reaching inside while loop');
-	    if ($row["userID"] == $userID)
-	    {
-	      $_POST['matchesBtn'];
-	      echo('load matches');
-      }
-      else
-      {
-        $_POST['questionnaireBtn'];
-        echo('load questionnaire');
-      }
+      $_POST['questionnaireBtn'];
+      echo('load questionnaire');	    
 	  }
-	  echo('reaching2');
+	  else
+	  {
+      while ($row = mysqli_fetch_assoc($result))
+	    {
+	      // Match user ID to a row
+	      echo('reaching inside while loop');
+	      if ($row["userID"] == $userID)
+	      {
+	        $_POST['matchesBtn'];
+	        echo('load matches');
+        }
+	    }	    
+	  }
 	}
 	
 	
