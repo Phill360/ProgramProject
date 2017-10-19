@@ -5,8 +5,7 @@
   require_once('./_php/connect.php');
   
   $email = $_SESSION['email'];
-  setMessage('Reaching');
-  getMessage();
+  echo('Reaching');
   
   /* Getting user's userID */
   
