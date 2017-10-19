@@ -91,7 +91,6 @@
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
     </form>
   </div>
-  <?php echo($userTool);?>
 
   <?php 
     if ($userTool == 'questionnaire')
