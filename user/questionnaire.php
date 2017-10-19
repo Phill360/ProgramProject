@@ -50,11 +50,11 @@ noUiSlider.create(sliderFormat, {
 		'min': [ 20000 ],
 		'max': [ 80000 ]
 	},
-// 	format: wNumb({
-// 		decimals: 3,
-// 		thousand: '.',
-// 		postfix: ' (US $)',
-// 	})
+	format: wNumb({
+		decimals: 3,
+		thousand: '.',
+		postfix: ' (US $)',
+	})
 });
 
 var inputFormat = document.getElementById('input-format');
