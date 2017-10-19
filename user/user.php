@@ -61,7 +61,7 @@
 	  }
 	}
 	
-	
+	echo($_POST['submit']);
 
   if(isset($_POST['questionnaireBtn']))
   {
