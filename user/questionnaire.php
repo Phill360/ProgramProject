@@ -8,6 +8,13 @@ $('#ex1').slider({
 		return 'Current value: ' + value;
 	}
 });
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
     </script>
     
     <style>
