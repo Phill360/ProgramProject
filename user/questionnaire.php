@@ -2,19 +2,26 @@
 <html>
 <head>
     <script>
-        $("#ex18a").slider({
-	min: 0,
-	max: 10,
-	value: 5,
-	labelledby: 'ex18-label-1'
+     // With JQuery
+$('#ex1').slider({
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
 });
-$("#ex18b").slider({
-	min: 0,
-	max: 10,
-	value: [3, 6],
-	labelledby: ['ex18-label-2a', 'ex18-label-2b']
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
 });
     </script>
+    
+    <style>
+        #ex1Slider .slider-selection {
+	background: #BABABA;
+}
+    </style>
     
 </head>
 
@@ -24,8 +31,7 @@ $("#ex18b").slider({
         <div class="col-sm-6">
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
-             <span id="ex18-label-1" class="hidden">Example slider label</span>
-<input id="ex18a" type="text"/>
+             <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
           <br>
         </div>
     </div>
