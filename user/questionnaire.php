@@ -28,7 +28,7 @@
           <br>
             <div class="unibox-search unibox-search-regular">
               <div id="slider"></div>    
-              <div><input type="text" class="unibox-price-min" placeholder="1" onfocus="uniboxResetHint('1',false,this);" onblur="uniboxResetHint('1',true,this);" value="1" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"></input></div>
+              <input type="text" class="unibox-price-min" placeholder="1" onfocus="uniboxResetHint('1',false,this);" onblur="uniboxResetHint('1',true,this);" value="1" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"></input>
               </div>
             </div>
           <br>
