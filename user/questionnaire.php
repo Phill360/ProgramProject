@@ -3,8 +3,9 @@
 <head>
     <script scr="bootstrap-slider.js"></script>
     <script src="bootstrap-slider.min.js"></script>
-    <script src="bootstrap-slider.css"></script>
-    <script src="bootstrap-slider.min.css"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap-slider.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-slider.min.css">
     
     <script>
     // With JQuery
