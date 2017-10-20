@@ -21,7 +21,7 @@
     background: #fff;
     padding: 40px;
 }
-article {
+.article {
     margin-bottom: 10px;
 }
 .tab-pane {
