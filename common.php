@@ -284,7 +284,8 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	if($result) {
 	  $new_id = mysqli_insert_id($connection);
 	    
-	  unset($_POST);
+	  $_POST = array();
+	  
 	} else {
 		echo mysqli_error($connection);
 		mysqli_close($connection);
