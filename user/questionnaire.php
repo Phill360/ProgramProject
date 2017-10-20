@@ -50,6 +50,7 @@ mySlider
     data-slider-step="1"
     data-slider-value="3"
     data-slider-tooltip="hide"
+    id="input.slider"
 >
 </body>
 </html>
