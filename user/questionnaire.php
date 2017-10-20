@@ -34,6 +34,8 @@
   </div>
 
 <script>
+var mySlider = $("ex1").slider();
+
        // With JQuery
 $('#ex1').slider({
 	formatter: function(value) {
