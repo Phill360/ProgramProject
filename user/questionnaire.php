@@ -16,9 +16,8 @@
 <div ng-app="rzSliderDemo">
   <div ng-controller="MainCtrl" >
 
+
     <h2>Slider with ticks and values</h2>
-    <input type="number" ng-model="slider_ticks_values.value" />
-    <br>
     <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
 
     <h2>Range slider with ticks and values</h2>
