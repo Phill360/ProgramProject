@@ -9,9 +9,9 @@
   <p>Test</p>
   
  
-  
-  <rzslider rz-slider-model="slider.value"
-          rz-slider-options="slider.options"></rzslider>
+  <div ng-app="">
+  <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options"></rzslider>
+  </div>
 
 
 
