@@ -12,7 +12,6 @@
   <div id="footer">
     <div class="container">
       <p>Copyright © 2017 Paw Companions. All rights reserved.</p>
-      <a href="questionnaire.php">Temporary link to questionnaire form</a>
       <a href="terms.php">Terms and Conditions</a>
     </div>
   </div>    

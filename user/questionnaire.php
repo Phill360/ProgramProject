@@ -33,9 +33,6 @@
             <div id="slider"></div>
 
 </div>
-<!--<div class="unibox-quick-summary-line">-->
-<!--  <span class="unibox-quick-summary"></span><span>&nbsp;</span> -->
-<!--</div>-->
 </div>
 
           <br>
