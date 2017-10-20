@@ -21,29 +21,33 @@
             background: #BABABA;
         }
     </style>
-
-    <script>
-        // Instantiate a slider
-var mySlider = new Slider("input.slider", {
-    // initial options object
-});
- 
-// Call a method on the slider
-var value = mySlider.getValue();
- 
-// For non-getter methods, you can chain together commands
-mySlider
-    .setValue(5)
-    .setValue(7);
-    </script>
     
 </head>
 
 <body>
   <p>Test</p>
+  
+  <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+  
   <div id="slidecontainer">
   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
   </div>
+
+<script>
+       // With JQuery
+$('#ex1').slider({
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
+    </script>
 
 
 <script>
