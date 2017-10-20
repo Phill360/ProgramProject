@@ -28,7 +28,7 @@
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
           
-            <input type="text" class="unibox-price-min" placeholder="Min Price" onfocus="uniboxResetHint('Min Price',false,this);" onblur="uniboxResetHint('Min Price',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
+            <input type="text" class="unibox-price-min" placeholder="1" onfocus="uniboxResetHint('Min Price',false,this);" onblur="uniboxResetHint('Min Price',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
   />
 
             <div id="slider"></div>
@@ -37,11 +37,11 @@
 <div class="unibox-quick-summary-line">
   <span class="unibox-quick-summary"></span><span>&nbsp;</span> 
 </div>
-<input type="hidden" value="recip" class="unibox-search-context" name="recip">
-<input type="hidden" value="1" class="unibox-search-region" name="34">
-<input type="hidden" value="29619" class="unibox-search-account" name="26743">
-<input type="hidden" value="http://firsthomeplan.ca/propertylistings" class="unibox-search-result-page" name="/fairrealty/listings/">
-<input type="hidden" value="AUTO" class="unibox-search-listing-type" name="AUTO">
+<!--<input type="hidden" value="recip" class="unibox-search-context" name="recip">-->
+<!--<input type="hidden" value="1" class="unibox-search-region" name="34">-->
+<!--<input type="hidden" value="29619" class="unibox-search-account" name="26743">-->
+<!--<input type="hidden" value="http://firsthomeplan.ca/propertylistings" class="unibox-search-result-page" name="/fairrealty/listings/">-->
+<!--<input type="hidden" value="AUTO" class="unibox-search-listing-type" name="AUTO">-->
 </div>
 
           <br>
