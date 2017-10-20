@@ -271,7 +271,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	$query .= "WHERE rspcaID=";
 	$query .= "'" . $rspcaID . "'";
 	$result = mysqli_query($connection, $query);
-	if($result==0){
+	if($result==1){
 	  return;
 	}
 

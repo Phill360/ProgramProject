@@ -261,7 +261,7 @@
 </html>
 
 <?php 
-  write_to_console($_POST);
+  debug_to_console($_POST);
   unset($_POST);
-  write_to_console($_POST);
+  debug_to_console($_POST);
 ?>
