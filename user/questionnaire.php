@@ -13,6 +13,8 @@
     <link href="css/bootstrap-slider.css" rel="stylesheet" />
     <link href="css/bootstrap-slider.min.css" rel="stylesheet" />
     <link href="css/highlightjs-github-theme.css" rel="stylesheet" />
+    <link href="css/pcstyle.css" rel="stylesheet" />
+    
 
     <style>
         #ex18-label-1.slider-selection {
@@ -38,19 +40,21 @@ mySlider
 </head>
 
 <body>
-    <p>Test</p>
-    <input
-    type="text"
-    name="somename"
-    data-provide="slider"
-    data-slider-ticks="[1, 2, 3]"
-    data-slider-ticks-labels='["short", "medium", "long"]'
-    data-slider-min="1"
-    data-slider-max="3"
-    data-slider-step="1"
-    data-slider-value="3"
-    data-slider-tooltip="hide"
-    id="input.slider"
->
+  <p>Test</p>
+  <div id="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  </div>
+
+
+<script>
+    var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+</script>
 </body>
 </html>
