@@ -17,25 +17,20 @@
 /*    padding: 0;*/
 /*}*/
 
-.wrapper {
-    background: #fff;
-    padding: 40px;
-}
-.article {
-    margin-bottom: 10px;
-}
-.tab-pane {
-    padding-top: 10px;
-}
-.field-title {
-    width: 100px;
-}
-.vertical-sliders {
-    margin: 0;
-}
-.vertical-sliders {
-    height: 250px;
-}
+/*.wrapper {*/
+/*    background: #fff;*/
+/*    padding: 40px;*/
+/*}*/
+/*.article {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*.tab-pane {*/
+/*    padding-top: 10px;*/
+/*}*/
+/*.field-title {*/
+/*    width: 100px;*/
+/*}*/
+
 </style>
 </head>
 
