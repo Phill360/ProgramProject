@@ -37,15 +37,14 @@
 <body>
 <div ng-app="rzSliderDemo">
   <div ng-controller="MainCtrl" class="wrapper">
-    <article>
       <h2>Slider with ticks and values</h2>
       <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
-    </article>
 
-    <article>
+
+ 
       <h2>Range slider with ticks and values</h2>
       <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
-    </article>
+ 
 
     <script type="text/ng-template" id="sliderModal.html">
     <div class = "modal-body"> 
