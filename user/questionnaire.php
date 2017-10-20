@@ -16,26 +16,7 @@
     margin: 0;
     padding: 0;
 }
-body {
-    font-family:'Open Sans', sans-serif;
-    color: #1f2636;
-    font-size: 14px;
-    padding-bottom: 40px;
-}
-header {
-    background: #0db9f0;
-    color: #fff;
-    margin: -40px;
-    margin-bottom: 40px;
-    text-align: center;
-    padding: 40px 0;
-}
-h1 {
-    font-weight: 300;
-}
-h2 {
-    margin-bottom:10px;
-}
+
 .wrapper {
     background: #fff;
     padding: 40px;
@@ -75,23 +56,17 @@ article {
     <div class = "modal-body"> 
       <div class = "container-fluid"> 
         <div class = "row"> 
-          <div class = "col-md-12 col-lg-12"> 
+          <div class = "col-md-6 col-lg-6"> 
             <label class = "control-label"> Normal slider into modal </label>
             <rzslider rz-slider-model="percentages.normal.low" rz-slider-options="percentages.normal.options"></rzslider> 
           </div>
         </div> 
         <div class = "row"> 
-          <div class = " col-md-12 col-lg-12"> 
+          <div class = " col-md-6 col-lg-6"> 
             <label class = "control-label"> Range slider into modal </label>
             <rzslider rz-slider-model="percentages.range.low" rz-slider-high="percentages.range.high" rz-slider-options="percentages.range.options"></rzslider> 
           </div>
         </div> 
-        <div class = "row"> 
-          <div class = "col-lg-12"> 
-            <button type = "button" ng-click="ok()" class="btn btn-primary"> Save </button>
-            <button type="button" ng-click="cancel()" class="btn btn-default">Cancel</button> </div>
-          </div> 
-        </div>
       </div>
     </script>
   </div>
