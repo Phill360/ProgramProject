@@ -20,28 +20,28 @@
         }
     </style>
 
-    <script type='text/javascript'>
-        $(document).ready(function () {
-            $('ex18-label-1').slider({
-                formatter: function (value) {
-                    return 'Current value: ' + value;
-                }
-            });
-        });
+    <script>
+        $('.slider').slider()
+        
+        // With JQuery
+        $('#ex1').slider({
+	    formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
+
+        // Without JQuery
+        var slider = new Slider('#ex1', {
+	    formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
     </script>
+    
 </head>
 
 <body>
     <p>Test</p>
-    <span id="ex18-label-1" class="hidden">Example slider label</span>
-        <input id="ex19" type="text"
-              data-provide="slider"
-              data-slider-ticks="[1, 2, 3]"
-              data-slider-ticks-labels='["short", "medium", "long"]'
-              data-slider-min="1"
-              data-slider-max="3"
-              data-slider-step="1"
-              data-slider-value="3"
-              data-slider-tooltip="hide" />
+    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
 </body>
 </html>
