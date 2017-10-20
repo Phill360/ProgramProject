@@ -20,16 +20,11 @@
 
 <script type="text/javascript" src="http://idx.myrealpage.com/js/weblets/omnibox_wp.js"></script>
 </head>
+
 <body>
 <div class="unibox-search unibox-search-regular">
 
-  <div class="unibox-label">
-    Enter city, area, postal code or MLS(r) number:
-  </div>
-  <div class="unibox-text-field">
-    <input type="text" onkeydown="uniboxKeyDown(event,this)" onkeyup="uniboxKeyUp(event,this)" placeholder="Enter city, area, postal code or MLS(r) number" class="unibox-field">
-    <button onclick="return uniboxSubmitted(this)" name="unibox-run" class="unibox-submit">Search</button>
-  </div>
+  
   
 
   <input type="text" class="unibox-price-min" placeholder="Min Price" onfocus="uniboxResetHint('Min Price',false,this);" onblur="uniboxResetHint('Min Price',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
