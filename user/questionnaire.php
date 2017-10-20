@@ -21,27 +21,33 @@
     </style>
 
     <script>
-        $('.slider').slider()
-        
-        // With JQuery
-        $('#ex1').slider({
-	    formatter: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
-        // Without JQuery
-        var slider = new Slider('#ex1', {
-	    formatter: function(value) {
-		return 'Current value: ' + value;
-	}
-});
+        // Instantiate a slider
+var mySlider = $("input.slider").bootstrapSlider();
+ 
+// Call a method on the slider
+var value = mySlider.bootstrapSlider('getValue');
+ 
+// For non-getter methods, you can chain together commands
+    mySlider
+        .bootstrapSlider('setValue', 5)
+        .bootstrapSlider('setValue', 7);
     </script>
     
 </head>
 
 <body>
     <p>Test</p>
-    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+    <input
+    type="text"
+    name="somename"
+    data-provide="slider"
+    data-slider-ticks="[1, 2, 3]"
+    data-slider-ticks-labels='["short", "medium", "long"]'
+    data-slider-min="1"
+    data-slider-max="3"
+    data-slider-step="1"
+    data-slider-value="3"
+    data-slider-tooltip="hide"
+>
 </body>
 </html>
