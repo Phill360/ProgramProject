@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css"></script>
     
     <script>
-     // With JQuery
+    // With JQuery
 $('#ex1').slider({
 	formatter: function(value) {
 		return 'Current value: ' + value;
@@ -21,12 +21,6 @@ var slider = new Slider('#ex1', {
 	}
 });
     </script>
-    
-    <style>
-        #ex1Slider .slider-selection {
-	background: #BABABA;
-}
-    </style>
     
 </head>
 
