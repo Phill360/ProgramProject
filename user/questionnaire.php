@@ -4,6 +4,52 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
 <script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family:'Open Sans', sans-serif;
+    color: #1f2636;
+    font-size: 14px;
+    padding-bottom: 40px;
+}
+header {
+    background: #0db9f0;
+    color: #fff;
+    margin: -40px;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 40px 0;
+}
+h1 {
+    font-weight: 300;
+}
+h2 {
+    margin-bottom:10px;
+}
+.wrapper {
+    background: #fff;
+    padding: 40px;
+}
+article {
+    margin-bottom: 10px;
+}
+.tab-pane {
+    padding-top: 10px;
+}
+.field-title {
+    width: 100px;
+}
+.vertical-sliders {
+    margin: 0;
+}
+.vertical-sliders > div {
+    height: 250px;
+}
+</style>
 </head>
 
 <body>
