@@ -6,7 +6,7 @@
     <script scr="js/bootstrap.min.js"></script>
     <script src="js/jqueryslim.min.js"></script>
     
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
     <link href="css/bootstrap-slider.css" rel="stylesheet" />
     <link href="css/bootstrap-slider.min.css" rel="stylesheet" />
 
