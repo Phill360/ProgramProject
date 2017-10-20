@@ -49,14 +49,13 @@
 jQuery(document).ready(function() {
 
   $("#slider").noUiSlider({
-    start: [0, 1000000],
-    step: 10000,
-    connect: true,
-    range: {
-      'min': 0,
-      'max': 1000000
-    }
-  });
+    start: [ 1 ],
+      step: 1,
+      range: {
+        'min': [ 1 ],
+  	  'max': [ 3 ]
+      }
+    });
 
   $("#slider").on('slide', function(event, values) {
     $("input.unibox-price-min").val(values[0]);
