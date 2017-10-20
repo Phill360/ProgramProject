@@ -24,6 +24,8 @@
   </div>
 </div>
 
+<div><br></div>
+
 <script>
 var app = angular.module('rzSliderDemo', ['rzModule', 'ui.bootstrap']);
 
