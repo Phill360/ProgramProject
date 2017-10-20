@@ -2,7 +2,14 @@
 <html>
 <head>
   <link href="css/pcstyle.css" rel="stylesheet" />
+  
+  <link href="css/rzslider.css" rel="stylesheet" />
+  <link href="css/rzslider.min.css" rel="stylesheet" />
+  
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  
+  <script src="rzslider.js"></script>
+  <script src="rzslider.min.js"></script>
 </head>
 
 <body>
