@@ -1,105 +1,72 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
+        <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
     <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script>
-    
-    <link href="/nouislider/documentation/assets/base.css" rel="stylesheet">
-	<link href="/nouislider/documentation/assets/prism.css" rel="stylesheet">
-	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.css">
 
-	<link href="/noUiSlider/distribute/nouislider.css?v=1000" rel="stylesheet">
-	<script src="/noUiSlider/distribute/nouislider.js?v=1000"></script>
-    
-    <style>
-        #showcase {
-            margin: 0 20px;
-            text-align: center;
-        }
-        #range {
-            height: 300px;
-            margin: 0 auto 30px;
-        }
-        #value-span,
-        #value-input {
-            width: 50%;
-            float: left;
-            display: block;
-            text-align: center;
-            margin: 0;
-        }
-    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://raw.githubusercontent.com/leongersen/libLink/master/jquery.liblink.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+
+
+<style>
+    #slider {
+  margin: 20px;
+  width: 70%;
+}
+</style>
+
+
+<script type="text/javascript" src="http://idx.myrealpage.com/js/weblets/omnibox_wp.js"></script>
 </head>
 <body>
-  <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
-          <br>
-          
-          <div id="slider-format"></div>
-          <div id="input-format"></div>
-          <br>
-        </div>
-    </div>
+<div class="unibox-search unibox-search-regular">
+
+  <div class="unibox-label">
+    Enter city, area, postal code or MLS(r) number:
   </div>
+  <div class="unibox-text-field">
+    <input type="text" onkeydown="uniboxKeyDown(event,this)" onkeyup="uniboxKeyUp(event,this)" placeholder="Enter city, area, postal code or MLS(r) number" class="unibox-field">
+    <button onclick="return uniboxSubmitted(this)" name="unibox-run" class="unibox-submit">Search</button>
+  </div>
+  
+
+  <input type="text" class="unibox-price-min" placeholder="Min Price" onfocus="uniboxResetHint('Min Price',false,this);" onblur="uniboxResetHint('Min Price',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
+  />
+  <input type="text" class="unibox-price-max" placeholder="Max Price" onfocus="uniboxResetHint('Max Price',false,this);" onblur="uniboxResetHint('Max Price',true,this);" value="Max Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
+  />
+
+  <div id="slider"></div>
+
+</div>
+<div class="unibox-quick-summary-line">
+  <span class="unibox-quick-summary"></span><span>&nbsp;</span> 
+</div>
+<input type="hidden" value="recip" class="unibox-search-context" name="recip">
+<input type="hidden" value="1" class="unibox-search-region" name="34">
+<input type="hidden" value="29619" class="unibox-search-account" name="26743">
+<input type="hidden" value="http://firsthomeplan.ca/propertylistings" class="unibox-search-result-page" name="/fairrealty/listings/">
+<input type="hidden" value="AUTO" class="unibox-search-listing-type" name="AUTO">
+</div>
 </body>
-
 <script>
+jQuery(document).ready(function() {
 
-src="wNumb.js"
-  
-var sliderFormat = document.getElementById('slider-format');
+  $("#slider").noUiSlider({
+    start: [0, 1000000],
+    step: 10000,
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 1000000
+    }
+  });
 
-noUiSlider.create(sliderFormat, {
-	start: [ 20 ],
-	step: 10,
-	range: {
-		'min': [ 20 ],
-		'max': [ 80 ]
-	},
-	format: {
-	  to: function ( value ) {
-		return value + ',-';
-	  },
-	  from: function ( value ) {
-		return value.replace(',-', '');
-	  }
-	}
+  $("#slider").on('slide', function(event, values) {
+    $("input.unibox-price-min").val(values[0]);
+    $("input.unibox-price-max").val(values[1]);
+  });
 });
-
-var inputFormat = document.getElementById('input-format');
-
-sliderFormat.noUiSlider.on('update', function( values, handle ) {
-	inputFormat.value = values[handle];
-});
-
-inputFormat.addEventListener('change', function(){
-	sliderFormat.noUiSlider.set(this.value);
-});
-  
-//   var stepSlider = document.getElementById('slider-step-numberAdults');
-
-//   noUiSlider.create(stepSlider, {
-//       start: [ 1 ],
-//       step: 1,
-//       range: {
-//         'min': [ 1 ],
-//   	  'max': [ 3 ]
-//       }
-//     });
-    
-//   var stepSliderValueElement = document.getElementById('slider-step-value');
-
-//       stepSlider.noUiSlider.on('update', function( values, handle ) {
-//   	  stepSliderValueElement.innerHTML = values[handle];
-//       });
-
 </script>
-
-
-
 </html>
