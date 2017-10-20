@@ -6,10 +6,13 @@
 </head>
 
 <body>
-  <p>Test</p>
   
  
   <div ng-app="">
+      <p>Input something in the input box:</p>
+<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+<h1>Hello {{name}}</h1>
+      
   <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options"></rzslider>
   </div>
 
