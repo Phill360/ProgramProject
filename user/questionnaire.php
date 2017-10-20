@@ -24,9 +24,9 @@
 /*.article {*/
 /*    margin-bottom: 10px;*/
 /*}*/
-/*.tab-pane {*/
-/*    padding-top: 10px;*/
-/*}*/
+.tab-pane {
+    padding-top: 10px;
+}
 /*.field-title {*/
 /*    width: 100px;*/
 /*}*/
