@@ -22,17 +22,16 @@
 </head>
 
 <body>
-<div class="unibox-search unibox-search-regular">
-
-  
-  
-
-  <input type="text" class="unibox-price-min" placeholder="Min Price" onfocus="uniboxResetHint('Min Price',false,this);" onblur="uniboxResetHint('Min Price',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
+          <br>
+          
+            <input type="text" class="unibox-price-min" placeholder="Min Price" onfocus="uniboxResetHint('Min Price',false,this);" onblur="uniboxResetHint('Min Price',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
   />
-  <input type="text" class="unibox-price-max" placeholder="Max Price" onfocus="uniboxResetHint('Max Price',false,this);" onblur="uniboxResetHint('Max Price',true,this);" value="Max Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
-  />
 
-  <div id="slider"></div>
+            <div id="slider"></div>
 
 </div>
 <div class="unibox-quick-summary-line">
@@ -44,6 +43,17 @@
 <input type="hidden" value="http://firsthomeplan.ca/propertylistings" class="unibox-search-result-page" name="/fairrealty/listings/">
 <input type="hidden" value="AUTO" class="unibox-search-listing-type" name="AUTO">
 </div>
+
+          <br>
+        </div>
+    </div>
+  </div>
+<div class="unibox-search unibox-search-regular">
+
+  
+  
+
+  
 </body>
 <script>
 jQuery(document).ready(function() {
@@ -59,7 +69,6 @@ jQuery(document).ready(function() {
 
   $("#slider").on('slide', function(event, values) {
     $("input.unibox-price-min").val(values[0]);
-    $("input.unibox-price-max").val(values[1]);
   });
 });
 </script>
