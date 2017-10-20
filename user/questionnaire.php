@@ -14,7 +14,7 @@
 
 <body>
 <div ng-app="rzSliderDemo">
-  <div ng-controller="MainCtrl" class="wrapper">
+  <div ng-controller="MainCtrl" >
 
     <h2>Slider with ticks and values</h2>
     <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
@@ -31,10 +31,10 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
 {
   //Slider with ticks and values
   $scope.slider_ticks_values = {
-    value: 5,
+    value: 2,
     options: {
-      ceil: 10,
-      floor: 0,
+      ceil: 3,
+      floor: 1,
       showTicksValues: true
     }
   };
