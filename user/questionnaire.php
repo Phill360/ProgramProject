@@ -27,7 +27,7 @@
 <body>
   <p>Test</p>
   
-  <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+  <div id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"></div>
   
   <div id="slidecontainer">
   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
