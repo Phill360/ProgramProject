@@ -21,12 +21,12 @@
 /*    background: #fff;*/
 /*    padding: 40px;*/
 /*}*/
-/*.article {*/
-/*    margin-bottom: 10px;*/
-/*}*/
-.tab-pane {
-    padding-top: 10px;
+.article {
+    margin-bottom: 10px;
 }
+/*.tab-pane {*/
+/*    padding-top: 10px;*/
+/*}*/
 /*.field-title {*/
 /*    width: 100px;*/
 /*}*/
