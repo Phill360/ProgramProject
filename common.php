@@ -99,16 +99,13 @@ function signInUser($email, $password)
     $result = mysqli_query($connection, $query);
     $count  = mysqli_num_rows($result);
     if($count==0) {
-      debug_to_console("password NO match");
-      debug_to_console("Entered: " . md5($password));
-      debug_to_console("DB : " . $row['password']);
+    // Password is a match
     } else {
       debug_to_console("password is match");
       while ($row = mysqli_fetch_assoc($result))
       {
         $validUser = true;
        	$usertype = $row["userType"];
-       	debug_to_console("admin: " . $row['userType']);
       }
     }
   }
@@ -283,14 +280,15 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	// Test for query error
 	if($result) {
 	  $new_id = mysqli_insert_id($connection);
-	    
-	  $_POST = array();
-	  
 	} else {
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
+	
+	debug_to_console($_POST);
+		  $_POST = array();
+		  	debug_to_console($_POST);
 
 	// Close database connection
 	mysqli_close($connection);
