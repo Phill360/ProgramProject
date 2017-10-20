@@ -5,8 +5,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
 <script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
 
+<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/rzslider.css">
+  
+
 <style>
-    * {
+* {
     margin: 0;
     padding: 0;
 }
