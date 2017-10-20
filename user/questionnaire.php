@@ -27,7 +27,7 @@
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
             <div class="unibox-search unibox-search-regular">
-              <input type="text" class="unibox-price-min" placeholder="1" onfocus="uniboxResetHint('Min Price',false,this);" onblur="uniboxResetHint('Min Price',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
+              <input type="text" class="unibox-price-min" placeholder="1" onfocus="uniboxResetHint('1',false,this);" onblur="uniboxResetHint('1',true,this);" value="Min Price" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"
   />
 
             <div id="slider"></div>
