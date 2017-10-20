@@ -263,6 +263,17 @@ function checkNumberAnimalsInDatabase()
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
+  
+  // Does Pet alread Exist
+  	// 2. Perform Query
+	$query = "SELECT rspcaID  ";
+	$query .= "FROM animals ";
+	$query .= "WHERE rspcaID=";
+	$query .= "'" . $rspcaID . "'";
+	$result = mysqli_query($connection, $query);
+	if($result==0){
+	  return;
+	}
 
 	// 2. Perform Query
 	$query = "INSERT INTO animals ";
@@ -286,9 +297,9 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 		exit;
 	}
 	
-	debug_to_console($_POST);
+
 		  $_POST = array();
-		  	debug_to_console($_POST);
+
 
 	// Close database connection
 	mysqli_close($connection);
