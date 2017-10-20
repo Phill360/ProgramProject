@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
-<script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
-
-
-<style>
-#slider {
-  margin: 20px;
-  width: 70%;
-}
-</style>
-
-
-<script type="text/javascript" src="http://idx.myrealpage.com/js/weblets/omnibox_wp.js"></script>
 </head>
 
 <body>
@@ -25,30 +9,19 @@
         <div class="col-sm-6">
           <div class="opensans"><div class="black"><div class="textRegular">1. How many adults in the household?</div></div></div>
           <br>
-            <div class="unibox-search unibox-search-regular">
-              <input type="text" class="unibox-price-min" placeholder="1" onfocus="uniboxResetHint('1',false,this);" onblur="uniboxResetHint('1',true,this);" value="1" onkeyup="uniboxKeyUp(event,this)" onkeydown="uniboxKeyDown(event,this)"></input>
-              <div id="slider"></div>
-            </div>
+             <span id="ex18-label-1" class="hidden">Example slider label</span>
+             <input id="ex19" type="text"
+              data-provide="slider"
+              data-slider-ticks="[1, 2, 3]"
+              data-slider-ticks-labels='["short", "medium", "long"]'
+              data-slider-min="1"
+              data-slider-max="3"
+              data-slider-step="1"
+              data-slider-value="3"
+              data-slider-tooltip="hide" />
           <br>
         </div>
     </div>
   </div>
 </body>
-<script>
-jQuery(document).ready(function() {
-
-  $("#slider").noUiSlider({
-    start: [ 1 ],
-      step: 1,
-      range: {
-        'min': [ 1 ],
-  	  'max': [ 3 ]
-      }
-    });
-
-  $("#slider").on('slide', function(event, values) {
-    $("input.unibox-price-min").val(values[0]);
-  });
-});
-</script>
 </html>
