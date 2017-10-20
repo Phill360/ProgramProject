@@ -33,7 +33,7 @@
 .vertical-sliders {
     margin: 0;
 }
-.vertical-sliders > div {
+.vertical-sliders {
     height: 250px;
 }
 </style>
