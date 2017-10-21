@@ -23,18 +23,18 @@
     <h2>Slider with ticks and values</h2>
     <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
 
-    <h2>Range slider with ticks and values</h2>
-    <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
     
-    <br>
     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
       <div class="input-group">
         <!--<input id="value" type="text" class="form-control" name="value" required>-->
-        <input id="value" type="hidden" ng-model="slider_ticks_values.value" name="value" required>
+        <input id="value" type="text" ng-model="slider_ticks_values.value" name="value" required>
       </div>
       <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
     </form>
     
+    <h2>Range slider with ticks and values</h2>
+    <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
+
   </div>
 </div>
 
