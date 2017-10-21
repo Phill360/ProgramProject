@@ -30,7 +30,7 @@
     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
       <div class="input-group">
         <!--<input id="value" type="text" class="form-control" name="value" required>-->
-        <input id="value" type="text" ng-model="slider_ticks_values.value" name="value" required>
+        <input type="hidden" id="value" type="text" ng-model="slider_ticks_values.value" name="value" required>
       </div>
       <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
     </form>
