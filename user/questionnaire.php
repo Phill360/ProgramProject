@@ -31,6 +31,7 @@
     <h2>Range slider with ticks and values</h2>
     <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
     
+    <br>
     <button ng-click="sendValues()">Submit</button><br><span id="message"></span>
   </div>
 </div>
@@ -68,7 +69,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
 
     var request = $http({
       method: "post",
-      url: window.location.href + "$_SERVER['PHP_SELF']",
+      url: "$_SERVER['PHP_SELF']",
       data: {
         a1: $scope.slider_ticks_values,
         a2: $scope.range_slider_ticks_values
