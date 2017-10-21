@@ -67,6 +67,8 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   $scope.sendValues = function () {
     document.getElementById("message").textContent = "";
 
+    document.write($scope.slider_ticks_values);
+
     var request = $http({
       method: "post",
       url: "$_SERVER['PHP_SELF']",
