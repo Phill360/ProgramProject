@@ -33,7 +33,10 @@
     <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
     
     <br>
-    <input type="button" value="Submit" onClick="submitValues()"></input>
+    <form method="post" action="$_SERVER['PHP_SELF']">
+       <input type="hidden" name="data" id="data"></input>
+    </form>
+    
   </div>
 </div>
 
@@ -67,10 +70,10 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
 });
 </script>
 <script language='javascript'>
-  function submitValues()
-  {
-    document.write('reaching function');
-  }
+  document.getElementById("data").value = "foo";
+  $.post("$_SERVER['PHP_SELF']", {data:"foo"}, function(results) {
+    alert(results);
+  });
 </script>
 
 </body>
