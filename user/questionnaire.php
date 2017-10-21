@@ -51,7 +51,12 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     options: {
       ceil: 3,
       floor: 1,
-      showTicksValues: true
+      showTicksValues: true,
+      stepsArray: [
+        {value: 1, legend: 'Small'},
+        {value: 2, legend: 'Medium'},
+        {value: 3, legend: 'Large'}
+      ]
     }
   };
 
