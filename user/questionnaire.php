@@ -82,5 +82,9 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   }
 </script>
 
+<script>
+  document.value.style.display='none';
+</script>
+
 </body>
 </html>
