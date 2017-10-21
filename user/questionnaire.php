@@ -74,8 +74,8 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       method: "post",
       url: "$_SERVER['PHP_SELF']",
       data: {
-        a1: $scope.slider_ticks_values[value],
-        a2: $scope.range_slider_ticks_values
+        a1: $scope.slider_ticks_values.value,
+        a2: $scope.range_slider_ticks_values.maxValue
       },
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
