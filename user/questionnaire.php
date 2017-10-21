@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css" href="css/rzslider.css">
+
+<!-- Pet Companions CSS -->
+<link rel="stylesheet" type="text/css" href="css/pcstyle.css">
   
 </head>
 
@@ -72,20 +75,20 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   };
 });
 </script>
-<script language='javascript'>
-  function submitValues()
-  {
-    value = "test";
-    jQuery.ajax({
-      type: "POST",
-      url: "$_SERVER['PHP_SELF']",
-      data: value,
-      success: function(msg) {
-        alert("Data saved: " + msg);
-      }
-    });
-  }
-</script>
+// <script language='javascript'>
+//   function submitValues()
+//   {
+//     value = "test";
+//     jQuery.ajax({
+//       type: "POST",
+//       url: "$_SERVER['PHP_SELF']",
+//       data: value,
+//       success: function(msg) {
+//         alert("Data saved: " + msg);
+//       }
+//     });
+//   }
+// </script>
 
 </body>
 </html>
