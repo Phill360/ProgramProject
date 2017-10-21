@@ -81,6 +81,8 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
     
+    document.write(data);
+    
     request.success(function(data) {
       document.getElementById("message").textContent = "You have successfully sent values "+data;  
     });
