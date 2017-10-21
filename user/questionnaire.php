@@ -5,6 +5,7 @@
   @$a1 = $request->a1;
   @$a2 = $request->a2;
   echo($a1);
+  echo("Testing");
 ?>
 
 <!DOCTYPE html PUBLIC>
