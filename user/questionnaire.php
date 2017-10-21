@@ -1,11 +1,5 @@
 <?php
-  /* Collect data from sliders  */
-  $postdata = file_get_contents("php://input");
-  $request = json_decode($postdata);
-  @$a1 = $request->a1;
-  @$a2 = $request->a2;
-  echo($a1);
-  echo("Testing");
+  
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -33,8 +27,11 @@
     <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
     
     <br>
-    <form method="post" action="$_SERVER['PHP_SELF']">
-       <input type="hidden" name="data" id="data"></input>
+    <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
+      <div class="input-group">
+        <input id="value" type="text" class="form-control" name="value" required>
+      </div>
+      <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
     </form>
     
   </div>
@@ -70,10 +67,18 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
 });
 </script>
 <script language='javascript'>
-  document.getElementById("data").value = "foo";
-  $.post("$_SERVER['PHP_SELF']", {data:"foo"}, function(results) {
-    alert(results);
-  });
+  function submitValues()
+  {
+    value = "test";
+    jQuery.ajax({
+      type: "POST",
+      url: "$_SERVER['PHP_SELF']",
+      data: value,
+      success: function(msg) {
+        alert("Data saved: " + msg);
+      }
+    });
+  }
 </script>
 
 </body>

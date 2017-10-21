@@ -124,6 +124,14 @@
     remBreed($breedID);
   }
   
+  /* Collect data from sliders  */
+  if (isset($_POST['submitQuestionnaireBtn']))
+  {
+		// Get pet input
+    $value = $_POST['value'];
+    echo($value);
+  }
+  
 ?>
 
 <!DOCTYPE html PUBLIC>
