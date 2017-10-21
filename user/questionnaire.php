@@ -68,7 +68,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     document.getElementById("message").textContent = "";
 
     document.write("reaching");
-    document.write("$scope.slider_ticks_values[value]");
+    document.write($scope.slider_ticks_values);
 
     var request = $http({
       method: "post",
