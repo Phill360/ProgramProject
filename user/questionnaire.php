@@ -29,36 +29,7 @@
   <br>
   
   
-  
-  <div class="inset switchdemoBasicUsage" ng-controller="SwitchDemoCtrl" ng-cloak="" ng-app="MyApp">
-  <md-switch ng-model="data.cb1" aria-label="Switch 1">
-    Switch 1: {{ data.cb1 }}
-  </md-switch>
 
-  <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
-    Switch 2 (md-warn): {{ data.cb2 }}
-  </md-switch>
-
-  <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">
-    Switch (Disabled)
-  </md-switch>
-
-  <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="data.cb4">
-    Switch (Disabled, Active)
-  </md-switch>
-
-  <md-switch class="md-primary" md-no-ink="" aria-label="Switch No Ink" ng-model="data.cb5">
-    Switch (md-primary): No Ink
-  </md-switch>
-
-  <md-switch ng-model="data.cb6" aria-label="Switch 6" ng-change="onChange(data.cb6)">
-    Switch 6 message: {{ message }}
-  </md-switch>
-
-  <md-switch md-invert="" aria-label="Switch 7">
-    Switch (Inverted)
-  </md-switch>
-</div>
   
   
   
@@ -78,23 +49,6 @@
 </div>
 
 <div><br></div>
-
-<!-- Angular Material requires Angular.js Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-
-  <!-- Angular Material Library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-  
-  <!-- Your application bootstrap  -->
-  <script type="text/javascript">    
-    /**
-     * You must include the dependency on 'ngMaterial' 
-     */
-    angular.module('BlankApp', ['ngMaterial']);
-  </script>
 
 <script>
 var app = angular.module('rzSliderDemo', ['rzModule', 'ui.bootstrap']);
@@ -125,23 +79,6 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       floor: 0,
       showTicksValues: true
     }
-  };
-});
-
-// Toggle switch
-angular.module('switchDemo1', ['ngMaterial'])
-  .controller('SwitchDemoCtrl', function($scope) 
-  {
-    $scope.data = {
-      cb1: true,
-      cb4: true,
-      cb5: false
-    };
-
-  $scope.message = 'false';
-
-  $scope.onChange = function(cbState) {
-  	$scope.message = cbState;
   };
 });
 
