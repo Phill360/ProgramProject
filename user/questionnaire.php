@@ -79,6 +79,23 @@
 
 <div><br></div>
 
+<!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+
 <script>
 var app = angular.module('rzSliderDemo', ['rzModule', 'ui.bootstrap']);
 
