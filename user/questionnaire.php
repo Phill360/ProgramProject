@@ -35,10 +35,10 @@
   
   
   
-  <div class="slider">
-    <h2>Range slider with ticks and values</h2>
-    <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
-  </div>
+  <br>
+  <h2>Range slider with ticks and values</h2>
+  <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
+  
 
     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
       <div class="input-group">
