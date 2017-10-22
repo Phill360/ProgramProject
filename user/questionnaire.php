@@ -22,13 +22,15 @@
 <body>
 <div ng-app="rzSliderDemo">
   <div ng-controller="MainCtrl" >
-  <div class="slider">
     <div class="textRegular">1. How many adults in your household?</div>
     <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
-  </div>
   <br>
   
-  
+  <div class="textRegular">2. Any children younger than 6 years in the household?</div>
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
 
   
   
