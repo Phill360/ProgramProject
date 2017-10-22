@@ -23,10 +23,18 @@
 <div ng-app="rzSliderDemo">
   <div ng-controller="MainCtrl" >
   <div class="slider">
-    <h2>Slider with ticks and values</h2>
+    <div class="textRegular">1. How many adults in your household?</div>
     <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
   </div>
   <br>
+  <div class="inset" ng-controller="SwitchDemoCtrl" ng-cloak>
+    <md-switch ng-model="data.cb1" aria-label="Switch 1">
+    Switch 1: {{ data.cb1 }}
+    </md-switch>
+  </div>
+  
+  
+  
   <div class="slider">
     <h2>Range slider with ticks and values</h2>
     <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
@@ -75,6 +83,24 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     }
   };
 });
+
+// Toggle switch
+angular.module('switchDemo1', ['ngMaterial'])
+  .controller('SwitchDemoCtrl', function($scope) 
+  {
+    $scope.data = {
+      cb1: true,
+      cb4: true,
+      cb5: false
+    };
+
+  $scope.message = 'false';
+
+  $scope.onChange = function(cbState) {
+  	$scope.message = cbState;
+  };
+});
+
 </script>
 
 </body>
