@@ -88,8 +88,8 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="panel-heading">What size pet would you like?</div>
-          <rzslider rz-slider-model="petSize.value" rz-slider-options="petSize.options"></rzslider>
-          <input id="petSize" type="text" style="display: none;" ng-model="sliderHowOftenHome.value" name="petSize" required>
+          <rzslider rz-slider-model="sliderPetSize.value" rz-slider-options="sliderPetSize.options"></rzslider>
+          <input id="petSize" type="text" style="display: none;" ng-model="sliderPetSize.value" name="petSize" required>
           <p></p><br>
           <p></p>
         </div>
