@@ -100,6 +100,7 @@
           <rzslider rz-slider-model="sliderPetTemperament.value" rz-slider-options="sliderPetTemperament.options"></rzslider>
           <input id="petTemperament" type="text" style="display: none;" ng-model="sliderPetTemperament.value" name="petTemperament" required>
           <p></p><br>
+          <p></p><br>
           <p></p>
         </div>
       </div>
