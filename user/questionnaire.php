@@ -55,6 +55,7 @@
         <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
         <p></p>
         <p></p>
+        <p></p>
       </div>
     </div>
 
@@ -91,7 +92,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     options: {
       ceil: 3,
       floor: 1,
-      showTicksValues: true,
+      showTicksValues: false,
       stepsArray: [
         {value: 1, legend: 'Lazy'},
         {value: 2, legend: 'Average'},
@@ -106,7 +107,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     options: {
       ceil: 3,
       floor: 1,
-      showTicksValues: true,
+      showTicksValues: false,
       stepsArray: [
         {value: 1, legend: 'Rarely'},
         {value: 2, legend: 'Inconsistent'},
