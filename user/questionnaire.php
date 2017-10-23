@@ -53,8 +53,7 @@
       <div class="panel-body">
         <div class="panel-heading">How often are you home?</div>
         <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
-        <p></p>
-        <p></p>
+        <p></p><br>
         <p></p>
       </div>
     </div>
