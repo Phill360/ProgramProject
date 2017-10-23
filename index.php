@@ -128,8 +128,8 @@
   if (isset($_POST['submitQuestionnaireBtn']))
   {
 		// Get pet input
-    $value = $_POST['value'];
-    echo($value);
+    $adultsHome = $_POST['adultsHome'];
+    echo($adultsHome);
   }
   
 ?>

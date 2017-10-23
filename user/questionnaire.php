@@ -23,48 +23,54 @@
   
 <div ng-app="questionnaire">
   <div ng-controller="MainCtrl" >
-    
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="panel-heading">How many adults in your household?</div>
-        <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>
-      </div>
-    </div>
-    
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="panel-heading">Any children younger than 6 years in the household?</div>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
-    
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="panel-heading">How active are you?</div>
-        <rzslider rz-slider-model="sliderHowActive.value" rz-slider-options="sliderHowActive.options"></rzslider>
-        <p></p>
-      </div>
-    </div>
-    
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="panel-heading">How often are you home?</div>
-        <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
-        <p></p><br>
-        <p></p>
-      </div>
-    </div>
-
     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
-      <div class="input-group">
-        <input id="value" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="value" required>
+      
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-heading">How many adults in your household?</div>
+          <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>
+          <input id="adultsHome" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="value" required>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
-    </form>
+    
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-heading">Any children younger than 6 years in the household?</div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-heading">How active are you?</div>
+          <rzslider rz-slider-model="sliderHowActive.value" rz-slider-options="sliderHowActive.options"></rzslider>
+          <input id="value" type="text" style="display: none;" ng-model="sliderHowActive.value" name="value" required>
+          <p></p>
+        </div>
+      </div>
+    
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-heading">How often are you home?</div>
+          <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
+          <input id="value" type="text" style="display: none;" ng-model="sliderHowOftenHome.value" name="value" required>
+          <p></p><br>
+          <p></p>
+        </div>
+      </div>
 
+      <!--<form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">-->
+      <!--  <div class="input-group">-->
+      <!--    <input id="value" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="value" required>-->
+      <!--  </div>-->
+      <!--  <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>-->
+      <!--</form>-->
+      
+      <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
+    </form>  
   </div>
 </div>
 
