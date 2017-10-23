@@ -52,7 +52,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="panel-heading">4. How often are you home?</div>
-        <rzslider rz-slider-model="sliderHowLongLeftAlone.value" rz-slider-options="sliderHowLongLeftAlone.options"></rzslider>
+        <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
         <p></p>
       </div>
     </div>
@@ -100,7 +100,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   };
   
   //Slider with ticks and values
-  $scope.sliderHowLongLeftAlone = {
+  $scope.sliderHowOftenHome = {
     value: 2,
     options: {
       ceil: 3,
@@ -109,7 +109,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       stepsArray: [
         {value: 1, legend: 'Rarely'},
         {value: 2, legend: 'Inconsistent'},
-        {value: 3, legend: 'Often'}
+        {value: 3, legend: 'Almost always'}
       ]
     }
   };
