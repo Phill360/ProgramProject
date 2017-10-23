@@ -48,10 +48,14 @@
         <p></p>
       </div>
     </div>
-
-    <h2>Range slider with ticks and values</h2>
-    <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
-  
+    
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="panel-heading">4. How often are you home?</div>
+        <rzslider rz-slider-model="sliderHowLongLeftAlone.value" rz-slider-options="sliderHowLongLeftAlone.options"></rzslider>
+        <p></p>
+      </div>
+    </div>
 
     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
       <div class="input-group">
@@ -94,11 +98,26 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       ]
     }
   };
-
-
+  
+  //Slider with ticks and values
+  $scope.sliderHowLongLeftAlone = {
+    value: 2,
+    options: {
+      ceil: 3,
+      floor: 1,
+      showTicksValues: true,
+      stepsArray: [
+        {value: 1, legend: 'Rarely'},
+        {value: 2, legend: 'Inconsistent'},
+        {value: 3, legend: 'Often'}
+      ]
+    }
+  };
+  
 });
 
 </script>
 
 </body>
 </html>
+
