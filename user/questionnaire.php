@@ -64,15 +64,26 @@
       
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">Which animal do you prefer?</div>
-          <div class="row text-center">
-            <label for="primary" class="btn btn-primary">Cat <input type="checkbox" id="cat" class="badgebox"><span class="badge">&check;</span></label>
-            <label for="primary" class="btn btn-primary">Dog <input type="checkbox" id="dog" class="badgebox"><span class="badge">&check;</span></label>
-	        </div>
+          <div class="panel-heading">How often are you home?</div>
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <div class="row">
+        	        <div class="col-xs-4">
+        		        <img src="http://placehold.it/160x100" class="img-responsive img-radio">
+        		        <button type="button" class="btn btn-primary btn-radio">Left</button>
+        	          <input type="checkbox" id="left-item" class="hidden">
+        	        </div>
+        	        <div class="col-xs-4">
+        		        <img src="http://placehold.it/160x100" class="img-responsive img-radio">
+        		        <button type="button" class="btn btn-primary btn-radio">Middle</button>
+        	          <input type="checkbox" id="middle-item" class="hidden">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      
+      </div>  
       
       <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
     </form>  
@@ -128,6 +139,16 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   
 });
 
+$(function () {
+    $('.btn-radio').click(function(e) {
+        $('.btn-radio').not(this).removeClass('active')
+    		.siblings('input').prop('checked',false)
+            .siblings('.img-radio').css('opacity','0.5');
+    	$(this).addClass('active')
+            .siblings('input').prop('checked',true)
+    		.siblings('.img-radio').css('opacity','1');
+    });
+});
 </script>
 
 </body>
