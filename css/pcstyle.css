@@ -405,7 +405,7 @@ input:checked + .slider:before
 .badgebox + .badge
 {
     /* Move the check mark away when unchecked */
-    text-indent: -999999px;
+    text-indent: 999999px;
     /* Makes the badge's width stay the same checked and unchecked */
 	width: 27px;
 }
@@ -423,5 +423,5 @@ input:checked + .slider:before
 .badgebox:checked + .badge
 {
     /* Move the check mark back when checked */
-	text-indent: -1;
+	text-indent: 0;
 }
