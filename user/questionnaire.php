@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <!--<form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">-->
+
       <!--  <div class="input-group">-->
       <!--    <input id="value" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="value" required>-->
       <!--  </div>-->
