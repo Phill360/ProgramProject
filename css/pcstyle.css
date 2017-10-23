@@ -399,7 +399,7 @@ input:checked + .slider:before
 /* Hiding the checkbox, but allowing it to be focused */
 .badgebox
 {
-    opacity: 100;
+    opacity: 0;
 }
 
 .badgebox + .badge
