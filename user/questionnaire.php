@@ -20,24 +20,31 @@
 </head>
 
 <body>
+  
+  
+  
 <div ng-app="rzSliderDemo">
   <div ng-controller="MainCtrl" >
-    <div class="textRegular">1. How many adults in your household?</div>
-    <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
-  <br>
-  
-  <div class="textRegular">2. Any children younger than 6 years in the household?</div>
-  <label class="switch">
-    <input type="checkbox">
-    <span class="slider round"></span>
-  </label>
+    
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="textRegular">1. How many adults in your household?</div>
+        <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
+      </div>
+    </div>
+    
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="textRegular">2. Any children younger than 6 years in the household?</div>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
 
-  
-  
-  
-  <br>
-  <h2>Range slider with ticks and values</h2>
-  <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
+    <h2>Range slider with ticks and values</h2>
+    <rzslider rz-slider-model="range_slider_ticks_values.minValue" rz-slider-high="range_slider_ticks_values.maxValue" rz-slider-options="range_slider_ticks_values.options"></rzslider>
   
 
     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
