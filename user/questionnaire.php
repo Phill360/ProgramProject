@@ -27,7 +27,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="panel-heading">1. How many adults in your household?</div>
-        <rzslider rz-slider-model="slider_ticks_values-1.value" rz-slider-options="slider_ticks_values-1.options"></rzslider>
+        <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
         <p></p>
       </div>
     </div>
@@ -72,7 +72,7 @@ var app = angular.module('questionnaire', ['rzModule', 'ui.bootstrap']);
 app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal) 
 {
   //Slider with ticks and values
-  $scope.slider_ticks_values-1 = {
+  $scope.slider_ticks_values = {
     value: 2,
     options: {
       ceil: 3,
@@ -88,7 +88,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
 
 
   //Range slider with ticks and values
-  $scope.range_slider_ticks_values-1 = {
+  $scope.range_slider_ticks_values = {
     minValue: 1,
     maxValue: 8,
     options: {
