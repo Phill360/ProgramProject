@@ -93,7 +93,7 @@
 
 .rzslider .rz-selection {
   z-index: 2;
-  background: #0db9f0;
+  background: #337ab7;
   border-radius: 2px;
 }
 
@@ -133,12 +133,12 @@
 .rzslider .rz-bubble {
   bottom: 16px;
   padding: 1px 3px;
-  color: #337ab7;
+  color: #55637d;
   cursor: default;
 }
 
 .rzslider .rz-bubble.rz-limit {
-  color: #337ab7;
+  color: #55637d;
 }
 
 .rzslider .rz-ticks {
