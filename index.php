@@ -136,7 +136,7 @@
     $dogItem = $_POST['dogItem'];
     $petSize = $_POST['petSize'];
     $petTemperament = $_POST['petTemperament'];
-    echo($adultsHome." ".$childrenAtHome." ".$howActive." ".$howOftenHome." ".$catItem." ".$dogItem." ".$petSize." ".$petTemperament);
+    echo("Cat: ".$catItem." Dog: ".$dogItem);
   }
   
 ?>
