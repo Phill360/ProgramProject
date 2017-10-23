@@ -64,7 +64,8 @@
       
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="row text-center">
+          <div class="panel-heading">Which animal do you prefer?</div>
+          <div class="row text-left">
             <label for="primary" class="btn btn-primary">Cat <input type="checkbox" id="cat" class="badgebox"><span class="badge">&check;</span></label>
             <label for="primary" class="btn btn-primary">Dog <input type="checkbox" id="dog" class="badgebox"><span class="badge">&check;</span></label>
 	        </div>
