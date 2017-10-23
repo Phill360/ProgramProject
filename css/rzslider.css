@@ -103,7 +103,7 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
-  background-color: #0db9f0;
+  background-color: #337ab7;
   border-radius: 16px;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .rzslider .rz-tick.rz-selected {
-  background: #0db9f0;
+  background: #337ab7;
 }
 
 .rzslider .rz-tick-value {
