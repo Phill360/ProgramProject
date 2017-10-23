@@ -47,7 +47,7 @@
         <div class="panel-body">
           <div class="panel-heading">How active are you?</div>
           <rzslider rz-slider-model="sliderHowActive.value" rz-slider-options="sliderHowActive.options"></rzslider>
-          <input id="value" type="text" style="display: none;" ng-model="sliderHowActive.value" name="value" required>
+          <input id="howActive" type="text" style="display: none;" ng-model="sliderHowActive.value" name="howActive" required>
           <p></p>
         </div>
       </div>
@@ -56,18 +56,35 @@
         <div class="panel-body">
           <div class="panel-heading">How often are you home?</div>
           <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
-          <input id="value" type="text" style="display: none;" ng-model="sliderHowOftenHome.value" name="value" required>
+          <input id="oftenHome" type="text" style="display: none;" ng-model="sliderHowOftenHome.value" name="oftenHome" required>
           <p></p><br>
           <p></p>
         </div>
       </div>
-
-
-      <!--  <div class="input-group">-->
-      <!--    <input id="value" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="value" required>-->
-      <!--  </div>-->
-      <!--  <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>-->
-      <!--</form>-->
+      
+      
+      <div layout="row" layout-wrap="">
+        <div flex="100" layout="column">
+          <div>
+            <fieldset class="demo-fieldset">
+            <legend class="demo-legend">Using md-checkbox with the 'indeterminate' attribute </legend>
+            <div layout="row" layout-wrap="" flex="">
+              <div flex-xs="" flex="50">
+                <md-checkbox aria-label="Select All" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
+                  <span ng-if="isChecked()">Un-</span>Select All
+                </md-checkbox>
+              </div>
+              <div class="demo-select-all-checkboxes" flex="100" ng-repeat="item in items">
+                <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+                  {{ item }}
+                </md-checkbox>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      
       
       <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
     </form>  
@@ -77,7 +94,7 @@
 <div><br></div>
 
 <script>
-var app = angular.module('questionnaire', ['rzModule', 'ui.bootstrap']);
+var app = angular.module('questionnaire', ['rzModule', 'ui.bootstrap', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache']);
 
 app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal) 
 {
@@ -118,6 +135,39 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
         {value: 2, legend: 'Inconsistent'},
         {value: 3, legend: 'Almost always'}
       ]
+    }
+  };
+  
+  $scope.items = [1,2,3,4,5];
+  $scope.selected = [1];
+  $scope.toggle = function (item, list) {
+    var idx = list.indexOf(item);
+    if (idx > -1) {
+      list.splice(idx, 1);
+    }
+    else {
+      list.push(item);
+    }
+  };
+
+  $scope.exists = function (item, list) {
+    return list.indexOf(item) > -1;
+  };
+
+  $scope.isIndeterminate = function() {
+    return ($scope.selected.length !== 0 &&
+        $scope.selected.length !== $scope.items.length);
+  };
+
+  $scope.isChecked = function() {
+    return $scope.selected.length === $scope.items.length;
+  };
+
+  $scope.toggleAll = function() {
+    if ($scope.selected.length === $scope.items.length) {
+      $scope.selected = [];
+    } else if ($scope.selected.length === 0 || $scope.selected.length > 0) {
+      $scope.selected = $scope.items.slice(0);
     }
   };
   
