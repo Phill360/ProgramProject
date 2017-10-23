@@ -63,11 +63,8 @@
       </div>
       
       
-      <div layout="row" layout-wrap="">
-        <div flex="100" layout="column">
-          <div>
+
             <fieldset class="demo-fieldset">
-            <legend class="demo-legend">Using md-checkbox with the 'indeterminate' attribute </legend>
             <div layout="row" layout-wrap="" flex="">
               <div flex-xs="" flex="50">
                 <md-checkbox aria-label="Select All" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
@@ -81,9 +78,6 @@
               </div>
             </div>
             </fieldset>
-          </div>
-        </div>
-      </div>
       
       
       <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
