@@ -148,7 +148,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   };
   
   //Slider with ticks and values
-  $scope.sliderHowOftenHome = {
+  $scope.petSize = {
     value: 2,
     options: {
       ceil: 3,
