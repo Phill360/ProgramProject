@@ -129,7 +129,14 @@
   {
 		// Get pet input
     $adultsHome = $_POST['adultsHome'];
-    echo($adultsHome);
+    $childrenAtHome = $_POST['childrenAtHome'];
+    $howActive = $_POST['howActive'];
+    $howOftenHome = $_POST['howOftenHome'];
+    $catItem = $_POST['catItem'];
+    $dogItem = $_POST['dogItem'];
+    $petSize = $_POST['petSize'];
+    $petTemperament = $_POST['petTemperament'];
+    echo($adultsHome." ".$childrenAtHome." ".$howActive." ".$howOftenHome." ".$catItem." ".$dogItem." ".$petSize." ".$petTemperament);
   }
   
 ?>

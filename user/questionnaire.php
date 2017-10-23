@@ -37,7 +37,7 @@
         <div class="panel-body">
           <div class="panel-heading">Any children younger than 6 years in the household?</div>
           <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" id="childrenAtHome" name="childrenAtHome">
             <span class="slider round"></span>
           </label>
         </div>
@@ -56,7 +56,7 @@
         <div class="panel-body">
           <div class="panel-heading">How often are you home?</div>
           <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
-          <input id="oftenHome" type="text" style="display: none;" ng-model="sliderHowOftenHome.value" name="oftenHome" required>
+          <input id="howOftenHome" type="text" style="display: none;" ng-model="sliderHowOftenHome.value" name="howOftenHome" required>
           <p></p><br>
           <p></p>
         </div>
@@ -69,13 +69,13 @@
             <div class="col-md-6 col-md-offset-3">
               <div class="row">
         	       <div class="col-xs-4">
-        		      <img src="media/cat.jpg" class="img-responsive img-radio">
-        		      <button type="button" class="btn btn-primary btn-radio">Cat</button>
+        		       <img src="media/cat.jpg" class="img-responsive img-radio">
+        		       <button type="button" class="btn btn-primary btn-radio">Cat</button>
         	         <input type="checkbox" id="catItem" class="hidden" name="catItem">
         	       </div>
         	       <div class="col-xs-4">
-        		      <img src="media/dog.jpg" class="img-responsive img-radio">
-        		      <button type="button" class="btn btn-primary btn-radio">Dog</button>
+        		       <img src="media/dog.jpg" class="img-responsive img-radio">
+        		       <button type="button" class="btn btn-primary btn-radio">Dog</button>
         	         <input type="checkbox" id="dogItem" class="hidden" name="dogItem">
                 </div>
               </div>
