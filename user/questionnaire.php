@@ -71,19 +71,29 @@
         	        <div class="col-xs-4">
         		        <img src="media/cat.jpg" class="img-responsive img-radio">
         		        <button type="button" class="btn btn-primary btn-radio">Cat</button>
-        	          <input type="checkbox" id="catItem" class="hidden">
+        	          <input type="checkbox" id="catItem" class="hidden" name="catItem">
         	        </div>
         	        <div class="col-xs-4">
         		        <img src="media/dog.jpg" class="img-responsive img-radio">
         		        <button type="button" class="btn btn-primary btn-radio">Dog</button>
-        	          <input type="checkbox" id="dogItem" class="hidden">
+        	          <input type="checkbox" id="dogItem" class="hidden" name="dogItem">
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-heading">What size pet would you like?</div>
+          <rzslider rz-slider-model="petSize.value" rz-slider-options="petSize.options"></rzslider>
+          <input id="petSize" type="text" style="display: none;" ng-model="sliderHowOftenHome.value" name="petSize" required>
+          <p></p><br>
+          <p></p>
+        </div>
+      </div>
       
       <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
     </form>  
@@ -137,6 +147,21 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     }
   };
   
+  //Slider with ticks and values
+  $scope.sliderHowOftenHome = {
+    value: 2,
+    options: {
+      ceil: 3,
+      floor: 1,
+      showTicksValues: true,
+      stepsArray: [
+        {value: 1, legend: 'Mouse'},
+        {value: 2, legend: 'Possum'},
+        {value: 3, legend: 'Horse'}
+      ]
+    }
+  };
+  
 });
 
 $(function () {
@@ -148,6 +173,7 @@ $(function () {
             .siblings('input').prop('checked',true)
     		.siblings('.img-radio').css('opacity','1');
     });
+    
 });
 </script>
 
