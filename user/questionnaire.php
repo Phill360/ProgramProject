@@ -30,7 +30,7 @@
       <div class="panel-body">
         <div class="panel-heading">1. How many adults in your household?</div>
         <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
-        <div class="panel-footer"></div>
+        <p></p>
       </div>
     </div>
     
@@ -41,7 +41,6 @@
           <input type="checkbox">
           <span class="slider round"></span>
         </label>
-        <div class="panel-footer"></div>
       </div>
     </div>
 
