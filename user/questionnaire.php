@@ -92,7 +92,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     options: {
       ceil: 3,
       floor: 1,
-      showTicksValues: false,
+      showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Lazy'},
         {value: 2, legend: 'Average'},
@@ -107,7 +107,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     options: {
       ceil: 3,
       floor: 1,
-      showTicksValues: false,
+      showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Rarely'},
         {value: 2, legend: 'Inconsistent'},
