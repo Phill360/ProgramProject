@@ -423,5 +423,5 @@ input:checked + .slider:before
 .badgebox:checked + .badge
 {
     /* Move the check mark back when checked */
-	text-indent: 0;
+	text-indent: 1;
 }
