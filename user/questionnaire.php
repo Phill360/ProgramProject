@@ -26,14 +26,14 @@
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="panel-heading">1. How many adults in your household?</div>
+        <div class="panel-heading">How many adults in your household?</div>
         <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>
       </div>
     </div>
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="panel-heading">2. Any children younger than 6 years in the household?</div>
+        <div class="panel-heading">Any children younger than 6 years in the household?</div>
         <label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
@@ -43,7 +43,7 @@
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="panel-heading">3. How active are you?</div>
+        <div class="panel-heading">How active are you?</div>
         <rzslider rz-slider-model="sliderHowActive.value" rz-slider-options="sliderHowActive.options"></rzslider>
         <p></p>
       </div>
@@ -51,8 +51,9 @@
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="panel-heading">4. How often are you home?</div>
+        <div class="panel-heading">How often are you home?</div>
         <rzslider rz-slider-model="sliderHowOftenHome.value" rz-slider-options="sliderHowOftenHome.options"></rzslider>
+        <p></p>
         <p></p>
       </div>
     </div>
