@@ -64,6 +64,28 @@
       
       <div class="panel panel-default">
         <div class="panel-body">
+          <div class="panel-heading">What type of animal do you prefer?</div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="row">
+        	       <div class="col-xs-4">
+        		      <img src="media/cat.jpg" class="img-responsive img-radio">
+        		      <button type="button" class="btn btn-primary btn-radio">Cat</button>
+        	         <input type="checkbox" id="catItem" class="hidden" name="catItem">
+        	       </div>
+        	       <div class="col-xs-4">
+        		      <img src="media/dog.jpg" class="img-responsive img-radio">
+        		      <button type="button" class="btn btn-primary btn-radio">Dog</button>
+        	         <input type="checkbox" id="dogItem" class="hidden" name="dogItem">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-body">
           <div class="panel-heading">What size pet would you like?</div>
           <rzslider rz-slider-model="sliderPetSize.value" rz-slider-options="sliderPetSize.options"></rzslider>
           <input id="petSize" type="text" style="display: none;" ng-model="sliderPetSize.value" name="petSize" required>
@@ -74,24 +96,12 @@
       
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">What type of animal do you prefer?</div>
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <div class="row">
-        	        <div class="col-xs-4">
-        		        <img src="media/cat.jpg" class="img-responsive img-radio">
-        		        <button type="button" class="btn btn-primary btn-radio">Cat</button>
-        	          <input type="checkbox" id="catItem" class="hidden" name="catItem">
-        	        </div>
-        	        <div class="col-xs-4">
-        		        <img src="media/dog.jpg" class="img-responsive img-radio">
-        		        <button type="button" class="btn btn-primary btn-radio">Dog</button>
-        	          <input type="checkbox" id="dogItem" class="hidden" name="dogItem">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="panel-heading">Choose the temperament you are looking for in a pet:</div>
+          <rzslider rz-slider-model="sliderPetTemperament.value" rz-slider-options="sliderPetTemperament.options"></rzslider>
+          <input id="petTemperament" type="text" style="display: none;" ng-model="sliderPetTemperament.value" name="petTemperament" required>
+          <p></p><br>
+          <p></p><br>
+          <p></p>
         </div>
       </div>
       
@@ -158,6 +168,21 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
         {value: 1, legend: 'Mouse'},
         {value: 2, legend: 'Possum'},
         {value: 3, legend: 'Horse'}
+      ]
+    }
+  };
+  
+  //Slider with ticks and values
+  $scope.sliderPetTemperament = {
+    value: 2,
+    options: {
+      ceil: 3,
+      floor: 1,
+      showTicksValues: true,
+      stepsArray: [
+        {value: 1, legend: 'Princess (loves attention)'},
+        {value: 2, legend: 'Zen (relaxed)'},
+        {value: 3, legend: 'Usain Bolt (active)'}
       ]
     }
   };
