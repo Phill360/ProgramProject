@@ -369,12 +369,12 @@ body {
 
 input:checked + .slider 
 {
-  background-color: #2196F3;
+  background-color: #337ab7;
 }
 
 input:focus + .slider 
 {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #337ab7;
 }
 
 input:checked + .slider:before 
