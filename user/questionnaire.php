@@ -69,7 +69,7 @@
               <div class="col-md-6 col-md-offset-3">
                 <div class="row">
         	        <div class="col-xs-4">
-        		        <img src="media/cat.jpg" class="img-responsive img-radio">
+        		        <img src="http://placehold.it/160x100" class="img-responsive img-radio">
         		        <button type="button" class="btn btn-primary btn-radio">Cat</button>
         	          <input type="checkbox" id="catItem" class="hidden">
         	        </div>
