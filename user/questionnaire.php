@@ -64,13 +64,10 @@
       
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">What pet do you prefer?</div>
-            <div class="checkbox">
-            <label><input type="checkbox" value="">Cat</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Dog</label>
-          </div>
+          <div class="row text-center">
+            <label for="primary" class="btn btn-primary">Cat <input type="checkbox" id="cat" class="badgebox"><span class="badge">&check;</span></label>
+            <label for="primary" class="btn btn-primary">Dog <input type="checkbox" id="dog" class="badgebox"><span class="badge">&check;</span></label>
+	        </div>
         </div>
       </div>
       
