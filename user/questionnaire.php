@@ -21,9 +21,7 @@
 
 <body>
   
-  
-  
-<div ng-app="rzSliderDemo">
+<div ng-app="questionnaire">
   <div ng-controller="MainCtrl" >
     
     <div class="panel panel-default">
@@ -41,6 +39,14 @@
           <input type="checkbox">
           <span class="slider round"></span>
         </label>
+      </div>
+    </div>
+    
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="panel-heading">3. How active are you?</div>
+        <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
+        <p></p>
       </div>
     </div>
 
@@ -61,7 +67,7 @@
 <div><br></div>
 
 <script>
-var app = angular.module('rzSliderDemo', ['rzModule', 'ui.bootstrap']);
+var app = angular.module('questionnaire', ['rzModule', 'ui.bootstrap']);
 
 app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal) 
 {
@@ -79,6 +85,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       ]
     }
   };
+
 
   //Range slider with ticks and values
   $scope.range_slider_ticks_values = {
