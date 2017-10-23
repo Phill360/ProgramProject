@@ -88,23 +88,14 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       floor: 1,
       showTicksValues: true,
       stepsArray: [
-        {value: 1, legend: 'Lounge lizard'},
-        {value: 2, legend: 'Sit more than I stand'},
-        {value: 3, legend: 'Adventurous'}
+        {value: 1, legend: 'Lazy'},
+        {value: 2, legend: 'Average'},
+        {value: 3, legend: 'Active'}
       ]
     }
   };
 
-  //Range slider with ticks and values
-  $scope.range_slider_ticks_values = {
-    minValue: 1,
-    maxValue: 8,
-    options: {
-      ceil: 10,
-      floor: 0,
-      showTicksValues: true
-    }
-  };
+
 });
 
 </script>
