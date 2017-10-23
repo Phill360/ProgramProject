@@ -129,14 +129,24 @@
   {
 		// Get pet input
     $adultsHome = $_POST['adultsHome'];
-    $childrenAtHome = $_POST['childrenAtHome'];
+    $childrenAtHomeState = $_POST['childrenAtHome'];
     $howActive = $_POST['howActive'];
     $howOftenHome = $_POST['howOftenHome'];
-    $catItem = $_POST['catItem'];
-    $dogItem = $_POST['dogItem'];
+    $catItemState = $_POST['catItem'];
+    $dogItemState = $_POST['dogItem'];
     $petSize = $_POST['petSize'];
     $petTemperament = $_POST['petTemperament'];
-    echo("Cat: ".$catItem." Dog: ".$dogItem);
+    
+    if ($childrenAtHomeState == "on")
+    {
+      $childrenAtHome = 1;
+    }
+    else
+    {
+      $childrenAtHome = 0;
+    }
+    
+    echo($childrenAtHome);
   }
   
 ?>
