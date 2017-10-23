@@ -62,22 +62,18 @@
         </div>
       </div>
       
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-heading">What pet do you prefer?</div>
+            <div class="checkbox">
+            <label><input type="checkbox" value="">Cat</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Dog</label>
+          </div>
+        </div>
+      </div>
       
-
-            <fieldset class="demo-fieldset">
-            <div layout="row" layout-wrap="" flex="">
-              <div flex-xs="" flex="50">
-                <md-checkbox aria-label="Select All" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
-                  <span ng-if="isChecked()">Un-</span>Select All
-                </md-checkbox>
-              </div>
-              <div class="demo-select-all-checkboxes" flex="100" ng-repeat="item in items">
-                <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
-                  {{ item }}
-                </md-checkbox>
-              </div>
-            </div>
-            </fieldset>
       
       
       <button type="submit" class="btn btn-primary" name="submitQuestionnaireBtn">Submit</button>
@@ -88,7 +84,7 @@
 <div><br></div>
 
 <script>
-var app = angular.module('questionnaire', ['rzModule', 'ui.bootstrap', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache']);
+var app = angular.module('questionnaire', ['rzModule', 'ui.bootstrap']);
 
 app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal) 
 {
@@ -129,39 +125,6 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
         {value: 2, legend: 'Inconsistent'},
         {value: 3, legend: 'Almost always'}
       ]
-    }
-  };
-  
-  $scope.items = [1,2,3,4,5];
-  $scope.selected = [1];
-  $scope.toggle = function (item, list) {
-    var idx = list.indexOf(item);
-    if (idx > -1) {
-      list.splice(idx, 1);
-    }
-    else {
-      list.push(item);
-    }
-  };
-
-  $scope.exists = function (item, list) {
-    return list.indexOf(item) > -1;
-  };
-
-  $scope.isIndeterminate = function() {
-    return ($scope.selected.length !== 0 &&
-        $scope.selected.length !== $scope.items.length);
-  };
-
-  $scope.isChecked = function() {
-    return $scope.selected.length === $scope.items.length;
-  };
-
-  $scope.toggleAll = function() {
-    if ($scope.selected.length === $scope.items.length) {
-      $scope.selected = [];
-    } else if ($scope.selected.length === 0 || $scope.selected.length > 0) {
-      $scope.selected = $scope.items.slice(0);
     }
   };
   
