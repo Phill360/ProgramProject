@@ -28,14 +28,15 @@
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="textRegular">1. How many adults in your household?</div>
+        <div class="panel-heading">1. How many adults in your household?</div>
         <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
+        <br>
       </div>
     </div>
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="textRegular">2. Any children younger than 6 years in the household?</div>
+        <div class="panel-heading">2. Any children younger than 6 years in the household?</div>
         <label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
