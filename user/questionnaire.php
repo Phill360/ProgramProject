@@ -28,7 +28,6 @@
       <div class="panel-body">
         <div class="panel-heading">1. How many adults in your household?</div>
         <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>
-        <p></p>
       </div>
     </div>
     
@@ -45,7 +44,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="panel-heading">3. How active are you?</div>
-        <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
+        <rzslider rz-slider-model="sliderHowActive.value" rz-slider-options="sliderHowActive.options"></rzslider>
         <p></p>
       </div>
     </div>
@@ -77,26 +76,21 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
     options: {
       ceil: 3,
       floor: 1,
-      showTicksValues: true,
-      stepsArray: [
-        {value: 1, legend: 'Small'},
-        {value: 2, legend: 'Medium'},
-        {value: 3, legend: 'Large'}
-      ]
+      showTicksValues: true
     }
   };
   
   //Slider with ticks and values
-  $scope.slider_ticks_values = {
+  $scope.sliderHowActive = {
     value: 2,
     options: {
       ceil: 3,
       floor: 1,
       showTicksValues: true,
       stepsArray: [
-        {value: 1, legend: 'Small'},
-        {value: 2, legend: 'Medium'},
-        {value: 3, legend: 'Large'}
+        {value: 1, legend: 'Lounge lizard'},
+        {value: 2, legend: 'Sit more than I stand'},
+        {value: 3, legend: 'Adventurous'}
       ]
     }
   };
