@@ -84,6 +84,17 @@
 
 <body>
 <div class="container">
+  
+  <div>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
+      <ul class="nav nav-tabs">
+      <li class="active"><button type="submit" class="btn" style="display: none;" name="questionnaireBtn">Questionnaire</button></li>
+      <li><button type="submit" class="btn" style="display: none;" name="matchesBtn">Matches</button></li>
+      <li><button type="submit" class="btn" style="display: none;" name="favouritesBtn">Favourites</button></li>
+      </ul>
+    </form>
+  </div>
+  
   <div>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
       <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>

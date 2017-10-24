@@ -12,7 +12,8 @@
     
     // 2. Perform Query
     $query = "SELECT * ";
-    $query .= "FROM animals ";
+    $query .= "FROM animals as a ";
+    $query .= "JOIN breed as b ON a.breedId = b.breedID "
     $query .= "WHERE rspcaID = $petID";
     $result = mysqli_query($connection, $query);
     // Test for query error
@@ -59,57 +60,53 @@
   
   <style type="text/css">
   
-  .pets-container {
-    width: 80%;
-    margin: auto;
-  }
-  
-  .pet-images {
-    margin-top: 2%;
-  }
-  
-  #main-image {
-    width: 60%;
-  }
-  
-  #thumbImg {
-    width: 10%;
-  }
-  
-  .pet-description, .pet-details {
-    background-color: rgba(125, 125, 125, .2);
-    border-radius: 10px;
-    padding: 2%;
-  }
-  
-  .pet-description {
-    float: left;
-    width: 40%;
-    margin: 1%;
-    display: inline-block;
-  }
-  
-  .pet-details {
-    margin: 1% 1% 1% 42%;
-  }
-  
+    .pets-container {
+      width: 80%;
+      margin: auto;
+    }
     
+    .pet-images {
+      margin-top: 2%;
+    }
     
+    #main-image {
+      width: 60%;
+    }
+    
+    #thumbImg {
+      width: 10%;
+    }
+    
+    .pet-description, .pet-details {
+      background-color: rgba(125, 125, 125, .2);
+      border-radius: 10px;
+      padding: 2%;
+    }
+    
+    .pet-description {
+      float: left;
+      width: 40%;
+      margin: 1%;
+      display: inline-block;
+    }
+    
+    .pet-details {
+      margin: 1% 1% 1% 42%;
+    }
   </style>
   
 </head>
 
 <body>
-<div><?php include 'header.php' ?></div>
+  <div><?php include 'header.php' ?></div>
 
-<div>
-<div>
+  <div>
+    <div>
   
-<div class="container">
-  <div class="pets-container">
-  <?php
-    while($row = mysqli_fetch_assoc($result)) {
-  ?>
+      <div class="container">
+        <div class="pets-container">
+          <?php
+            while($row = mysqli_fetch_assoc($result)) { ?>
           <div class="slackey"><div class="black"><div class="textxxMedium"> <?php echo $row["petName"]; ?> </div></div></div>
           <!--<img src="media/ahmed-saffu-208365png" alt "pet">-->
           <div class="pet-images">
@@ -141,6 +138,9 @@
             <p> Heartworm Treated: </p>
             
           </div>
+           <?php
+  }
+  ?>
     </div>
 </div>
 </div>
