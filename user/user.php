@@ -87,16 +87,6 @@
   
   <div>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#1" data-toggle="questionnaireBtn">Questionnaire</li>
-        <li><a href="#2" data-toggle="matchesBtn">Matches</li>
-        <li><a href="#3" data-toggle="favouritesBtn">Favourites</li>
-      </ul>
-    </form>
-  </div>
-  
-  <div>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
       <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
       <button type="submit" class="btn" name="matchesBtn">Matches</button>
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
