@@ -301,15 +301,15 @@
         <div class="modal-body">
           <div class="opensans"><div class="textRegular">Use of this site and the information available on this site is subject to the following terms and conditions:</div></div>
           <br>
-          <div class="opensans"><div class="textRegular">1. Ownership</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">1. Ownership</div></div></div>
           <div class="opensans"><div class="textRegular">This site (“Website”) is owned and operated by Paw Companions.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">2. Terminology</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">2. Terminology</div></div></div>
           <div class="opensans"><div class="textRegular">In these terms and conditions, the expressions “we”, “us”, and “our” are references to Paw Companions.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">3. Use of Website from outside Australia</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">3. Use of Website from outside Australia</div></div></div>
           <div class="opensans"><div class="textRegular">The information on this Website (“the Information”) and the Terms and Conditions have been prepared in accordance with Australian law. If you are 
   residing in or accessing this Website from a country other than Australia (“the User Country”) the Information and the Terms and Conditions may not 
   satisfy the laws of the User Country. Should the Information and the Terms and Conditions satisfy the laws of the User Country, then you are entitled to use 
@@ -317,7 +317,7 @@
   use, and you are not entitled to rely on the Information. If you do so, you agree to indemnify us for any loss or damage which we may incur as a consequence.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">4. Acceptance of Terms and Conditions</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">4. Acceptance of Terms and Conditions</div></div></div>
           <div class="opensans"><div class="textSmall">4.1</div></div><div class="opensans"><div class="textRegular">Your access and use of the Website is conditional upon your acceptance and compliance with the terms, conditions, notices and disclaimers 
   contained in this document and elsewhere on the Website (known collectively as the “Terms and Conditions”). Your use of and/or continued access to the Website 
   constitutes your agreement to the Terms and Conditions.</div></div>
@@ -327,7 +327,7 @@
   automatically terminates.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">5. Restrictions on Use</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">5. Restrictions on Use</div></div></div>
           <div class="opensans"><div class="textRegular">The Website is available only for your personal and non-profit use. We have the right to change or discontinue any feature of the Website including the 
   Material defined in clause 6, hours of availability and equipment required for access. You may make a single hard copy of the Material. You may not otherwise 
   copy, reproduce, republish, frame, post, upload, distribute, transmit or modify in any way all or any part of the material contained on this Website, unless 
@@ -335,26 +335,26 @@
   other material of any kind to this Website which contains a virus or other harmful component.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">6. Trade marks</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">6. Trade marks</div></div></div>
           <div class="opensans"><div class="textRegular">All names, logos and trademarks are either our property or the property of third parties who have contributed to the Website. Nothing on the Website 
   should be interpreted as granting any rights to use or distribute any names, logos or trademarks, without our express written agreement or the relevant 
   contributor. Nothing displayed on the Website should be construed as granting any licence or right to use any name, logo or trademark without our express 
   permission, or the relevant third party contributor.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">7.Copyright</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">7.Copyright</div></div></div>
           <div class="opensans"><div class="textRegular">The content of this Website, including all information such as text, graphics, images and other material (“Material”), is protected by Australian 
   and international copyright law. You may download a single copy of the Material and where necessary for reference purposes keep a temporary copy in your 
   computer’s cache and make a single hard copy of the Material. You may make such other use of the material as is otherwise expressly authorised on the 
   Website. Unauthorised use of the Material may violate these copyright laws.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">8. No Representations</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">8. No Representations</div></div></div>
           <div class="opensans"><div class="textRegular">We make no representations about the accuracy, reliability, completeness or timeliness of the Material. The Material may contain inaccuracies or 
   typographical errors. The use of the Website and the Material is at your own risk. Changes are periodically made to the Website and may be made at any time.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">9. No Warranties</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">9. No Warranties</div></div></div>
           <div class="opensans"><div class="textSmall">9.1</div></div><div class="opensans"><div class="textRegular">The Website and Material are provided on an as is basis without any warranties of any kind. We disclaim all warranties to the fullest extent 
   permitted by law.</div></div>
           <div class="opensans"><div class="textSmall">9.2</div></div><div class="opensans"><div class="textRegular">The Trade Practices Act 1974 (Cth) and all corresponding state and territory legislation implies terms, conditions and warranties into some 
@@ -367,30 +367,30 @@
   in the need for servicing or replacing equipment or data, we are not responsible for those costs.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">10. Limitation of Liability</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">10. Limitation of Liability</div></div></div>
           <div class="opensans"><div class="textRegular">Except as provided by the Prescribed Terms, neither we, our suppliers, or any third parties mentioned on the Website shall be liable for any loss or 
   damage whatsoever (including, without limitation, incidental and consequential damages, lost profits, or damages) resulting from the use or access to or 
   inability to use and access the Website and the Material.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">11. Specific Warnings</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">11. Specific Warnings</div></div></div>
           <div class="opensans"><div class="textRegular">You must ensure that your access to this Website is not illegal or prohibited by laws which apply to you. You must take your own precautions to ensure that 
   the process which you employ for accessing this Website does not expose you to the risk of viruses, malicious computer code or other forms of interference 
   which may damage your own computer system.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">12. Taxes</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">12. Taxes</div></div></div>
           <div class="opensans"><div class="textRegular">Certain taxes and government charges may be payable in relation to the use of our services. We have no responsibility for such taxes and other government 
   charges on transactions on or in anyway connected with the Website. However should any charge be made by us for the supply of goods or services on the 
   Website, such charges are inclusive of any goods and services tax imposed under Australian law (“GST”).</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">13. Internet Service Providers</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">13. Internet Service Providers</div></div></div>
           <div class="opensans"><div class="textRegular">If you are an internet service and/or access provider, which supplies the material to your subscriber, you must not use the Website in any manner or for 
   any purpose which is unlawful or in any manner which violates any of our rights or which is prohibited by the Terms and Conditions.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">14. Hyperlinks</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">14. Hyperlinks</div></div></div>
           <div class="opensans"><div class="textSmall">14.1</div></div><div class="opensans"><div class="textRegular">The Website contains hyperlinks and other pointers to internet websites operated by third parties (“Linked Sites”). The Linked Sites are not 
   under our control and we are not responsible for the content of any Linked Site or any hyperlink contained in a Linked Site.</div></div>
           <div class="opensans"><div class="textSmall">14.2</div></div><div class="opensans"><div class="textRegular">The inclusion of any link does not imply our endorsement of the Linked Site. You link to any such Linked Site entirely at your own risk. 
@@ -404,14 +404,14 @@
   this Website prevail.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">15. Advertisements</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">15. Advertisements</div></div></div>
           <div class="opensans"><div class="textSmall">15.1</div></div><div class="opensans"><div class="textRegular">The Website display of the Price List is an advertisement made by the Vendor Paw Companions.</div></div>
           <div class="opensans"><div class="textSmall">15.2</div></div><div class="opensans"><div class="textRegular">The Website may contain embedded hyperlinks or referral buttons to websites operated by third parties or their licensees or 
   contractors (Advertisers). Clause 14 also applies to sites operated by Advertisers. Any claims by Advertisers are not recommendations or endorsements 
   by us.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">16. Disputes with Linked Sites and Advertisers</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">16. Disputes with Linked Sites and Advertisers</div></div></div>
           <div class="opensans"><div class="textRegular">As we do not and cannot be involved in your interaction with Linked Sites and Advertisers, in the event that you have a dispute with one or more Linked 
   Sites or Advertisers, to the extent permitted by law, you agree to release us 
   (and our agents and employees) from liability for any claims, demands and 
@@ -419,25 +419,25 @@
   such disputes.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">17. Termination</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">17. Termination</div></div></div>
           <div class="opensans"><div class="textRegular">The Terms and Conditions are effective until terminated by us. We may terminate this agreement and your access to the Website at any time without 
   notice. ln the event of termination, you are no longer authorised to access the Website. All restrictions imposed on you, disclaimers and limitations of 
   liability set out in the Terms and Conditions will survive termination.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">18. Security of Information</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">18. Security of Information</div></div></div>
           <div class="opensans"><div class="textRegular">Unfortunately, no data transmission over the Internet can be guaranteed as totally secure. Whilst we strive to protect such information, we do not warrant 
   and cannot ensure the security of any information which you transmit to us. Accordingly, any information which you transmit to us is transmitted at your 
   own risk. Nevertheless, once we receive your transmission, we will take reasonable steps to preserve the security of such information.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">19.Indemnity Clause</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">19.Indemnity Clause</div></div></div>
           <div class="opensans"><div class="textRegular">You indemnify us, regardless of any negligence on our part, against all losses, liabilities, legal costs and other expenses incurred by us arising 
   directly or indirectly as a result of or in connections with the breach by you of any provision of these Terms and Conditions or any wilful, unlawful or 
   negligent act by you in connection with the supply by a Vendor RSPCA to you of, or use by you of, any Product.</div></div>
           <br>
           
-          <div class="opensans"><div class="textRegular">20. Miscellaneous</div></div>
+          <div class="opensans"><div class="textRegular"><div class="bold">20. Miscellaneous</div></div></div>
           <div class="opensans"><div class="textRegular">If any provision of the Terms and Conditions is found to be invalid or unenforceable by a court of law, such invalidity or unenforceability will not 
   affect the remainder of the Terms and Conditions which will continue in full force and effect. All rights not expressly granted are reserved. This agreement 
   sets out the entire understanding and agreement between RSPCA and you with respect to the subject matter.</div></div>
