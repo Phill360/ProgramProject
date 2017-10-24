@@ -128,14 +128,14 @@
           </div>
           <div class='pet-details'>
             <p> RSPCA shelter: </p>
-            <p> RSPCA ID: </p>
+            <p> RSPCA ID: <?php echo "$petID" ?></p>
             <br>
-            <p> Age: </p>
-            <p> Adoption Fee: </p>
-            <p> Desexed: </p>
-            <p> Vaccinated: </p>
-            <p> Wormed: </p>
-            <p> Heartworm Treated: </p>
+            <p> Age: <?php echo $row["age"]; ?></p>
+            <p> Adoption Fee: <?php echo $row["fee"]; ?></p>
+            <p> Desexed: Yes</p>
+            <p> Vaccinated: Yes</p>
+            <p> Wormed: Yes</p>
+            <p> Heartworm Treated: Yes</p>
             
           </div>
            <?php
