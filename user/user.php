@@ -88,9 +88,9 @@
   <div>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="userToolSelectionForm">
       <ul class="nav nav-tabs">
-      <li class="active"><button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button></li>
-      <li><button type="submit" class="btn" name="matchesBtn">Matches</button></li>
-      <li><button type="submit" class="btn" name="favouritesBtn">Favourites</button></li>
+        <li class="active"><a href="#1" data-toggle="questionnaireBtn">Questionnaire</li>
+        <li><a href="#2" data-toggle="matchesBtn">Matches</li>
+        <li><a href="#3" data-toggle="favouritesBtn">Favourites</li>
       </ul>
     </form>
   </div>

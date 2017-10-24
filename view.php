@@ -13,7 +13,7 @@
     // 2. Perform Query
     $query = "SELECT * ";
     $query .= "FROM animals as a ";
-    $query .= "JOIN breed as b ON a.breedId = b.breedID "
+    $query .= "JOIN breed as b ON a.breedId = b.breedID ";
     $query .= "WHERE rspcaID = $petID";
     $result = mysqli_query($connection, $query);
     // Test for query error
@@ -61,7 +61,7 @@
   <style type="text/css">
   
     .pets-container {
-      width: 80%;
+      width: 90%;
       margin: auto;
     }
     
@@ -110,32 +110,21 @@
           <div class="slackey"><div class="black"><div class="textxxMedium"> <?php echo $row["petName"]; ?> </div></div></div>
           <!--<img src="media/ahmed-saffu-208365png" alt "pet">-->
           <div class="pet-images">
-            <table>
-              <tr>
-                <td rowspan='3'> <img src='media/baptist-standaert-346832.jpg' id='main-image'/> </td>
-                <td>  <img src='media/bianka-csenki-260781.jpg' id='thumbImg'/> </td>
-              </tr>
-              <tr>
-                <td> <img src='media/christopher-ayme-157131.jpg' id='thumbImg'/> </td>
-              </tr>
-              <tr>
-                <td>  <img src='media/david-vazquez-364270.jpg' id='thumbImg'/> </td>
-              </tr>
-            </table>
+            
           </div>
           <div class='pet-description'>
             <p> Description: <?php echo $row["description"]; ?></p>
           </div>
           <div class='pet-details'>
-            <p> RSPCA shelter: </p>
-            <p> RSPCA ID: <?php echo "$petID" ?></p>
+            <p><b>RSPCA Shelter: </b></p>
+            <p><b>RSPCA ID: </b><?php echo "$petID" ?></p>
             <br>
-            <p> Age: <?php echo $row["age"]; ?></p>
-            <p> Adoption Fee: <?php echo $row["fee"]; ?></p>
-            <p> Desexed: Yes</p>
-            <p> Vaccinated: Yes</p>
-            <p> Wormed: Yes</p>
-            <p> Heartworm Treated: Yes</p>
+            <p><b>Age:</b> <?php echo $row["age"]; ?></p>
+            <p><b>Adoption Fee:</b> $<?php echo $row["fee"]; ?></p>
+            <p><b>Desexed:</b> Yes</p>
+            <p><b>Vaccinated:</b> Yes</p>
+            <p><b>Wormed:</b> Yes</p>
+            <p><b>Heartworm Treated:</b> Yes</p>
             
           </div>
            <?php
