@@ -58,10 +58,14 @@
   <link rel="stylesheet" type="text/css" href="css/pcstyle.css">
   
   <style type="text/css">
-  .pet-images {
+  
+  .pets-container {
     width: 80%;
     margin: auto;
-    
+  }
+  
+  .pet-images {
+    margin-top: 2%;
   }
   
   #main-image {
@@ -100,8 +104,7 @@
 
 <div>
 <div class="container">
-<body>
-  <div class="pets container">
+  <div class="pets-container">
   <?php
     while($row = mysqli_fetch_assoc($result)) {
   ?>
@@ -136,13 +139,9 @@
             <p> Heartworm Treated: </p>
             
           </div>
-  <?php
-    }
-  ?>
     </div>
+</div>
 </div>
   
 </body>
-
-  
 </html>

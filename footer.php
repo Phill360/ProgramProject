@@ -27,30 +27,19 @@
   
   <!-- Pet Companions CSS -->
   <link rel="stylesheet" type="text/css" href="css/pcstyle.css">
-  <style>
-    .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
-  .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
-  }
-  </style>
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
 
-    <!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-       <p>Copyright © 2017 Paw Companions. All rights reserved.</p>
-      <!--<a href="terms.php">Terms and Conditions</a>-->
-      <a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a>
-      <a href="contact.php">Contact US</a>
-</footer>
+  <!-- Footer -->
+  <footer class="container-fluid bg-4 text-center">
+    <p>Copyright © 2017 Paw Companions. All rights reserved.</p>
+    <!--<a href="terms.php">Terms and Conditions</a>-->
+    <a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a>
+    <!--<a href="contact.php">Contact Us</a>-->
+    <a href="#" data-toggle="modal" data-target="#termsModal">Contact Us</a>
+  </footer>
 </div>
-    
 </body>
-
 </html>
