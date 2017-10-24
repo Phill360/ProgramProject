@@ -1,3 +1,8 @@
+<?php
+include_once('./common.php');
+$status = checkStatus();
+?>
+
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>

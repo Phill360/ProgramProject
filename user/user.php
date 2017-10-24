@@ -75,6 +75,11 @@
   {
     $userTool = 'favourites';
   }
+  
+  if(isset($_POST['viewBtn']))
+  {
+    $userTool = 'view';
+  }
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -105,7 +110,7 @@
     else if ($userTool == 'favourites')
     {?>
       <div><?php include 'favourites.php' ?></div>
-    <?php } 
+    <?php }
     else
     {?>
       <div><?php include 'matches.php' ?></div>
