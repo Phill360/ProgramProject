@@ -16,8 +16,7 @@
 		$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
 		$email = isset($_POST['email']) ? $_POST['email'] : '';
 		$password = isset($_POST['password']) ? $_POST['password'] : '';
-		
-        /* Validate email address */
+		/* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
  
 		if(!preg_match($regexp, $email))
