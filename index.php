@@ -216,7 +216,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="modal-title"><div class="slackey"><div class="textRegular">Sign In</div></div></div>
+          <div class="modal-title"><div class="slackey"><div class="textxxMedium">Sign In</div></div></div>
         </div>
         <div class="modal-body">
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signInForm">
@@ -252,7 +252,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="modal-title"><div class="slackey"><div class="textRegular">Register</div></div></div>
+          <div class="modal-title"><div class="slackey"><div class="textxxMedium">Register</div></div></div>
         </div>
         <div class="modal-body">
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="registerForm">
