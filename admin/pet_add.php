@@ -21,7 +21,7 @@
           <div class="opensans">Add a pet</div>
         </div>
         <div class="panel-body">
-          <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
+          <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
             <!-- Select cat or dog -->
             <div class="form-group">

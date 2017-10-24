@@ -259,6 +259,15 @@ function checkNumberAnimalsInDatabase()
   return $size;
 }
   
+// All the input vaiables are numerical, for example: $childrenAtHome -> 0 = No and 1 = yes
+// $catItem -> 0 means that the user prefers a dog. 1 means that the user prefers a cat.
+// $dogItem -> 0 means that the user prefers a cat. 1 means that the user prefers a dog.
+// So if $catItem = 0, then $dogItem = 1 and vice versa. 
+// $catItem and $dogItem cannot have the same value.
+// For $adultsHome (How many adults in the home?) at this stage is either 1, 2 or 3. But I can modify the questionnaire to give user option to select more adults.
+// $howActive is either 1 (for lazy), 2 (for average) or 3 (for active)
+// $petSize is either 1 (for small), 2 (for medium) or 3 (for large)
+// $petTemperament is either 1 (for princess), 2 (for zen) or 3 (Usain Bolt active)
 function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament)
 {
   // Connect AWS MYSQL Server
@@ -266,6 +275,16 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   
   // Please implement
 }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
   // Connect AWS MYSQL Server
@@ -281,7 +300,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	if($result==1){
 	  return;
 	}
-
+	
 	// 2. Perform Query
 	$query = "INSERT INTO animals ";
 	$query .= "(rspcaID, petName, breedID, gender, imagePath, age, description) ";

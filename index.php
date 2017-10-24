@@ -76,14 +76,39 @@
   
  if (isset($_POST['addPetBtn']))
   {
+    
+    $name = $_FILES["file"]["name"];
+    $type = $_FILES["file"]["type"];
+    $size = $_FILES["file"]["size"];
+    $temp = $_FILES["file"]["tmp_name"];
+    $error = $_FILES["file"]["error"];
+    
+    if ($error > 0 ){
+        die("Error uploading file! Code $error.");
+    } else {
+        
+        if($type=="video/avi"){
+          die "that file is not alow";
+        } 
+        else {
+          move_uploaded_file($temp,"./media/".$name);
+          echo "Upload Complete!";
+        }
+    }
+    
+    
+    
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $imagePath = $_POST['file'];
+    // $imagePath = $_POST['file'];
+    $imagePath = "./media/".$name;
     $description = $_POST['description'];
+    
+    file
   
     if($rspcaID == ''){
       
