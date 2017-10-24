@@ -446,7 +446,7 @@
         </div>
         <div class="modal-body">
 
-          <div class="container">
+          <!--<div class="container">-->
             <!-- First Container -->
             <div class="container-fluid bg-2 text-center">
               <h2 class="margin">About Us</h2>
@@ -481,7 +481,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          <!--</div>-->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
