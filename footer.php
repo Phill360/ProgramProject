@@ -38,7 +38,7 @@
     <!--<a href="terms.php">Terms and Conditions</a>-->
     <a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a>
     <!--<a href="contact.php">Contact Us</a>-->
-    <a href="#" data-toggle="modal" data-target="#termsModal">Contact Us</a>
+    <a href="#" data-toggle="modal" data-target="#contactModal">Contact Us</a>
   </footer>
 </div>
 </body>
