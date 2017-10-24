@@ -259,6 +259,13 @@ function checkNumberAnimalsInDatabase()
   return $size;
 }
   
+function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament)
+{
+  // Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+  
+  // Please implement
+}
   
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
   // Connect AWS MYSQL Server

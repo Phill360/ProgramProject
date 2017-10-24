@@ -47,10 +47,7 @@
   }
   ?>
 </div>
-
-  
     <!-- /.container -->
-    
     <div class="center">
     <nav>
       <ol class="pagination">
@@ -62,8 +59,6 @@
       </ol>
     </nav>
     </div>
-  
 </body>
-
   
 </html>

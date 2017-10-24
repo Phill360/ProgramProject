@@ -1,4 +1,5 @@
 <?php
+  include_once('./common.php');
   require_once('./_php/connect.php');
   
     if (!isset($_GET['PetId'])) {
@@ -54,7 +55,43 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   
   <!-- Pet Companions CSS -->
-  <link rel="stylesheet" type="text/css" href="pcstyle.css">
+  <link rel="stylesheet" type="text/css" href="css/pcstyle.css">
+  
+  <style type="text/css">
+  .pet-images {
+    width: 80%;
+    margin: auto;
+    
+  }
+  
+  #main-image {
+    width: 60%;
+  }
+  
+  #thumbImg {
+    width: 10%;
+  }
+  
+  .pet-description, .pet-details {
+    background-color: rgba(125, 125, 125, .2);
+    border-radius: 10px;
+    padding: 2%;
+  }
+  
+  .pet-description {
+    float: left;
+    width: 40%;
+    margin: 1%;
+    display: inline-block;
+  }
+  
+  .pet-details {
+    margin: 1% 1% 1% 42%;
+  }
+  
+    
+    
+  </style>
   
 </head>
 
@@ -65,16 +102,39 @@
 <div class="container">
 <body>
   <div class="pets container">
-  <div class="slackey"><div class="black"><div class="textxxMedium"> View Pet </div></div></div>
   <?php
     while($row = mysqli_fetch_assoc($result)) {
   ?>
+          <div class="slackey"><div class="black"><div class="textxxMedium"> <?php echo $row["petName"]; ?> </div></div></div>
           <!--<img src="media/ahmed-saffu-208365png" alt "pet">-->
-          <div>
-            <hp> Name: <?php echo $row["petName"]; ?></hp>
-            <p> Gender: <?php echo $row["gender"]; ?></p>
-            <p> Age: <?php echo $row["age"]; ?></p>
+          <div class="pet-images">
+            <table>
+              <tr>
+                <td rowspan='3'> <img src='media/baptist-standaert-346832.jpg' id='main-image'/> </td>
+                <td>  <img src='media/bianka-csenki-260781.jpg' id='thumbImg'/> </td>
+              </tr>
+              <tr>
+                <td> <img src='media/christopher-ayme-157131.jpg' id='thumbImg'/> </td>
+              </tr>
+              <tr>
+                <td>  <img src='media/david-vazquez-364270.jpg' id='thumbImg'/> </td>
+              </tr>
+            </table>
+          </div>
+          <div class='pet-description'>
             <p> Description: <?php echo $row["description"]; ?></p>
+          </div>
+          <div class='pet-details'>
+            <p> RSPCA shelter: </p>
+            <p> RSPCA ID: </p>
+            <br>
+            <p> Age: </p>
+            <p> Adoption Fee: </p>
+            <p> Desexed: </p>
+            <p> Vaccinated: </p>
+            <p> Wormed: </p>
+            <p> Heartworm Treated: </p>
+            
           </div>
   <?php
     }
