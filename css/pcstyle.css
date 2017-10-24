@@ -1,9 +1,4 @@
-/* git add .  */
-/* git commit -am " COMMENT ON CHANGES THAT WERE MADE "  */
-/* git push */
-/* git push heroku master */
-
-body {
+.body {
     background-color: #fff;
 }
 
@@ -308,27 +303,15 @@ body {
  		text-align: right;
  	}
 
-
   .bg-4 { 
       background-color: #2f2f2f; /* Black Gray */
       color: #fff;
   }
-  
  
-	
   .container-fluid {
       padding-top: 70px;
       padding-bottom: 70px;
   }
-  
-
-
-
-
-
-
-
-
 
 /* Control elements CSS */
 .switch 
