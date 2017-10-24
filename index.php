@@ -458,7 +458,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="modal-title"><div class="slackey"><div class="textRegular">Contact Us</div></div></div>
+          <div class="modal-title"><div class="slackey"><div class="textxxMedium">Contact Us</div></div></div>
         </div>
         <div class="modal-body">
 
