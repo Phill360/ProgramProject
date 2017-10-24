@@ -291,13 +291,12 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
   require_once('./_php/connect.php');
   
   // Does Pet alread Exist
-  	// 2. Perform Query
 	$query = "SELECT rspcaID  ";
 	$query .= "FROM animals ";
 	$query .= "WHERE rspcaID=";
 	$query .= "'" . $rspcaID . "'";
 	$result = mysqli_query($connection, $query);
-	if($result==1){
+	if(mysqli_num_rows($result) > 0){
 	  return;
 	}
 	
@@ -314,9 +313,11 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	$query .= "'" . $description . "'";
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
+	
 	// Test for query error
 	if($result) {
 	  $new_id = mysqli_insert_id($connection);
+
 	} else {
 		echo mysqli_error($connection);
 		mysqli_close($connection);
@@ -324,7 +325,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	}
 	
 
-		  $_POST = array();
+		 // $_POST = array();
 
 
 	// Close database connection
@@ -366,6 +367,17 @@ function remPet($rspcaID) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
+    // 2. Perform Query
+  $query = "SELECT * FROM animals ";
+  $query .= "WHERE ";
+  $query .= "rspcaID=";
+  $query .= "'" . $rspcaID . "'";
+  $result = mysqli_query($connection, $query);
+  if($row = mysqli_fetch_assoc($result)){
+    // Delete Image for pet
+    unlink($row["imagePath"]);
+  }
+  
   // 2. Perform Query
   $query = "DELETE FROM animals ";
   $query .= "WHERE ";
@@ -382,6 +394,8 @@ function remPet($rspcaID) {
   	mysqli_close($connection);
   	exit;
   }
+  
+  
 
   // Close database connection
   mysqli_close($connection);

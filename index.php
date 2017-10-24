@@ -74,13 +74,18 @@
     demoteAdminUser($email);
   }
   
- if (isset($_POST['addPetBtn']))
+  // Add new pet
+  if (isset($_POST['addPetBtn']))
   {
     $name = $_FILES["file"]["name"];
     $type = $_FILES["file"]["type"];
     $size = $_FILES["file"]["size"];
     $temp = $_FILES["file"]["tmp_name"];
     $error = $_FILES["file"]["error"];
+    $directory = "media/";
+    $ext = pathinfo($name, PATHINFO_EXTENSION);
+    $fileName = "media/".$_POST['rspcaID'].".".$ext;
+    
     
     if ($error > 0 ){
         die("Error uploading file! Code $error.");
@@ -90,11 +95,11 @@
           die ("that file is not alow");
         } 
         else {
-          move_uploaded_file($temp,"./media/".$name);
+          // Move file to Media folder and rename file to rspcaID
+          move_uploaded_file($temp,$fileName);
           echo "Upload Complete!";
         }
     }
-    
     
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
@@ -102,13 +107,14 @@
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    // $imagePath = $_POST['file'];
-    $imagePath ="./media/".$name;
+    $imagePath = $fileName;
     $description = $_POST['description'];
+    
   
     if($rspcaID == ''){
       
     } else { 
+
       addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
     }
   }
