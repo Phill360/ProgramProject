@@ -29,7 +29,7 @@ $(document).ready(function (e) {
     $('#loading').show();
 
     $.ajax({
-      url: "upload-image.php",
+      url: "./_php/upload-image.php",
       type: "POST",
       data: new FormData(this),
       contentType: false,
