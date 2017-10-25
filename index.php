@@ -102,7 +102,7 @@
     
     // Experimenting with image upload
     $uploadImage = $_FILES["file"]["name"];
-    $folder="https://stark-citadel-72039.herokuapp.com/index.php/media/";
+    $folder="https://stark-citadel-72039.herokuapp.com/media/";
     move_uploaded_file($_FILES["file"]["tmp_name"], "$folder".$_FILES["file"]["name"]);
     
 		// Get pet input
