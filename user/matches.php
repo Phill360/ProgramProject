@@ -27,7 +27,6 @@
 
   <?php
     // While loop fetches pets from the 'animals' table
-    echo $row["imagePath"];
     while($row = mysqli_fetch_assoc($result)) {
   ?>
       <div class="col-xs-6 col-sm-4">
@@ -41,6 +40,7 @@
             </div>
             <h3><?php echo $row["petName"]; ?></h3>
             <p><?php echo $row["description"]; ?></p>
+            <p><?php echo $row["imagePath"]; ?></p>
             <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
           </div>
         </div>
