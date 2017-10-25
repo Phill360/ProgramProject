@@ -100,14 +100,21 @@
         }
     }
     
+    // Experimenting with image upload
+    $uploadImage = $_FILES["file"]["name"];
+    $folder="https://stark-citadel-72039.herokuapp.com/index.php/media/";
+    move_uploaded_file($_FILES["file"]["tmp_name"], "$folder".$_FILES["file"]["name"]);
+    
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $imagePath = $fileName;
+    $imagePath = $folder.$fileName;
     $description = $_POST['description'];
+    
+    echo($imagePath);
     
   
     if($rspcaID == ''){

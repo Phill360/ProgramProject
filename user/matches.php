@@ -24,8 +24,9 @@
 
 <body>
 <div class="pets container"> 
-  <div class="slackey"><div class="black"><div class="textxxMedium">Your companions</div></div></div>
+
   <?php
+    // While loop fetches pets from the 'animals' table
     while($row = mysqli_fetch_assoc($result)) {
   ?>
       <div class="col-xs-6 col-sm-4">
