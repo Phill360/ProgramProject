@@ -19,30 +19,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<!-- Page Content -->
-
 <body>
-<!--<div class="pets container"> -->
 
   <?php
     // While loop fetches pets from the 'animals' table
     while($row = mysqli_fetch_assoc($result)) {
   ?>
       <div class="col-xs-6 col-sm-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <div class="right">
-            <a class="btn btn-default btn-lg" href="#">
-            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-            <br><br>
-            <div class="holder">
-              <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="opensans"><?php echo $row["petName"]; ?></div>
+          </div>
+          <div class="panel-body" style="min-height: 10; max-height: 10;">
+            <div class="thumbnail">
+              <div class="caption">
+                <div class="right">
+                  <a class="btn btn-default btn-lg" href="#">
+                  <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                  <br><br>
+                  <div class="holder">
+                    <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
+                  </div>
+                  </button>
+                </div>
+                <p><?php echo $row["description"]; ?></p>
+                <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
+              </div>
             </div>
-            </button>
-            </div>
-            <h3><?php echo $row["petName"]; ?></h3>
-            <p><?php echo $row["description"]; ?></p>
-            <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
           </div>
         </div>
       </div>
