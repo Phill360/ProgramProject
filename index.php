@@ -233,8 +233,7 @@
   {?>
     <div><?php include 'carousel.php' ?></div>
   <?php } ?>
-  <br>
-  <?php include 'footer.php' ?>
+  
 
 
   <!-- Sign in -->
@@ -533,6 +532,7 @@
     </div>
   </div>
 </div>
+<div><?php include 'footer.php' ?></div>
 </body>
 </html>
 
