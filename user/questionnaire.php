@@ -75,7 +75,8 @@
                   <div data-toggle="buttons" class="btn-group bizmoduleselect">
                     <label class="btn btn-default">
                       <div class="bizcontent">
-                        <input type="checkbox" id="catItem" name="catItem" autocomplete="off" value="">
+                        <input type="checkbox" id="catItem" name="catItem" class="hidden">
+                        <!--<input type="checkbox" id="catItem" name="catItem" autocomplete="off" value="">-->
                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
                         <h5>Cat</h5>
                       </div>
