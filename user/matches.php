@@ -35,12 +35,12 @@
             <div class="right">
             <a class="btn btn-default btn-lg" href="#">
             <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-            <img src="<?php echo $row["imagePath"]; ?>" alt "pet" height="100" width="100">
+            <br>
+            <img src="<?php echo $row["imagePath"]; ?>" alt "pet" height="250" width="250">
             </button>
             </div>
             <h3><?php echo $row["petName"]; ?></h3>
             <p><?php echo $row["description"]; ?></p>
-            <p><?php echo $row["imagePath"]; ?></p>
             <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
           </div>
         </div>
