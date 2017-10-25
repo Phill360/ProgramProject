@@ -158,12 +158,12 @@
     $childrenAtHomeState = $_POST['childrenAtHome'];
     $howActive = $_POST['howActive'];
     $howOftenHome = $_POST['howOftenHome'];
-    $catItemState = $_POST['catItem'];
-    $dogItemState = $_POST['dogItem'];
+    $catItemState = $_POST['catItemState'];
+    $dogItemState = $_POST['dogItemState'];
     $petSize = $_POST['petSize'];
     $petTemperament = $_POST['petTemperament'];
     
-    echo($adultsHome.' '.$childrenAtHomeState.' '.$howActive.' '.$howOftenHome.' '.$catItemState.' '.$dogItemState.' '.$petSize);
+    //echo($adultsHome.' '.$childrenAtHomeState.' '.$howActive.' '.$howOftenHome.' '.$catItemState.' '.$dogItemState.' '.$petSize);
     
     if ($childrenAtHomeState == "on")
     {
@@ -176,11 +176,20 @@
     
     if ($catItemState == "on")
     {
-      $catItem = 1 && $dogItem == 0;
+      $catItem = 1;
     }
     else
     {
-      $catItem = 0 && $dogItem = 1;
+      $catItem = 0;
+    }
+    
+    if ($dogItemState == "on")
+    {
+      $dogItem = 1;
+    }
+    else
+    {
+      $dogItem = 0;
     }
     
     // submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament);
