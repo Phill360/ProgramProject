@@ -421,3 +421,16 @@ input:checked + .slider:before
 {
     opacity: 1;
 }
+
+/* Image size and proportion control */
+.holder 
+{   
+  width: auto;
+  display: inline-block;    
+}
+
+.holder img 
+{
+  width: 300px; /* Will shrink image to 30% of its original width */
+  height: auto;    
+}

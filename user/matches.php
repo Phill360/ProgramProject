@@ -36,7 +36,9 @@
             <a class="btn btn-default btn-lg" href="#">
             <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
             <br><br>
-            <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
+            <div class="holder">
+              <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
+            </div>
             </button>
             </div>
             <h3><?php echo $row["petName"]; ?></h3>
