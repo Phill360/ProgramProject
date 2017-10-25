@@ -100,7 +100,6 @@
         }
     }
     
-    
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
