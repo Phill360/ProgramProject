@@ -100,6 +100,7 @@
         }
     }
     
+    
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
@@ -113,7 +114,7 @@
       
     } else { 
 
-      addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
+      addPet($rspcaID, $petName, $breedID, $age, $gender, $description);
     }
   }
   
