@@ -26,11 +26,11 @@
     while($row = mysqli_fetch_assoc($result)) {
   ?>
       <div class="col-xs-6 col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="opensans"><?php echo $row["petName"]; ?></div>
-          </div>
-          <div class="panel-body">
+        <!--<div class="panel panel-default">-->
+        <!--  <div class="panel-heading">-->
+        <!--    <div class="opensans"><?php echo $row["petName"]; ?></div>-->
+        <!--  </div>-->
+        <!--  <div class="panel-body">-->
             <div class="thumbnail">
               <div class="caption">
                 <div class="right">
@@ -46,8 +46,8 @@
                 <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
               </div>
             </div>
-          </div>
-        </div>
+        <!--  </div>-->
+        <!--</div>-->
       </div>
   <?php
   }
