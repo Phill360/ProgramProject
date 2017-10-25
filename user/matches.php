@@ -43,7 +43,7 @@
                 </div>
                 </button>
               </div>
-              <div class="opensans"><div class="textMini"><?php echo $row["description"]; ?></div></div>
+              <p><?php echo $row["description"]; ?></p>
               <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
             </div>
           </div>
