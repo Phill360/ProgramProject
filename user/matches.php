@@ -31,7 +31,7 @@
         <div class="panel-heading">
           <div class="opensans"><?php echo $row["petName"]; ?></div>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="min-height: 400; max-height: 400;>
           <div class="thumbnail">
             <div class="caption">
               <div class="right">
