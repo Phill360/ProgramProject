@@ -20,12 +20,13 @@
 </head>
 
 <body>
-<!--<div class="row">-->
-  <div class="col-xs-6 col-sm-4">
+<div class="row">
+  
     <?php
       // While loop fetches pets from the 'animals' table
       while($row = mysqli_fetch_assoc($result)) {
     ?>
+        <div class="col-xs-6 col-sm-4">
         <div class="panel panel-default">
         <div class="panel-heading">
           <div class="opensans"><?php echo $row["petName"]; ?></div>
@@ -48,11 +49,12 @@
           </div>
         </div>
       </div>
+      </div>
     <?php
       }
     ?>
-  </div>
-<!--</div>-->
+  
+</div>
     <!-- /.container -->
     <div class="center">
     <nav>
