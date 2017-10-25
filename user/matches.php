@@ -20,10 +20,9 @@
 </head>
 
 <!-- Page Content -->
-<div class="container">
 
 <body>
-<div class="pets container"> 
+<!--<div class="pets container"> -->
 
   <?php
     // While loop fetches pets from the 'animals' table
