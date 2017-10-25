@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<div class="row">
+<!--<div class="row">-->
   <div class="col-xs-6 col-sm-4">
     <?php
       // While loop fetches pets from the 'animals' table
@@ -52,7 +52,7 @@
       }
     ?>
   </div>
-</div>
+<!--</div>-->
     <!-- /.container -->
     <div class="center">
     <nav>
