@@ -34,7 +34,7 @@
         <div class="panel-body" style="min-height: 500; max-height: 500;">
           <div class="thumbnail">
 
-              <div class="right">
+              <!--<div class="right">-->
                 <a class="btn btn-default btn-lg" href="#">
                 <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
                 <br><br>
@@ -42,7 +42,7 @@
                   <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
                 </div>
                 </button>
-              </div>
+              <!--</div>-->
               <div class="opensans"><?php echo $row["description"]; ?></div>
               <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
 
