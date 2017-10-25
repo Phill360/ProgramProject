@@ -75,7 +75,7 @@
                   <div data-toggle="buttons" class="btn-group bizmoduleselect">
                     <label class="btn btn-default">
                       <div class="bizcontent">
-                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                        <input type="checkbox" id="catItem" name="catItem" autocomplete="off" value="">
                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
                         <h5>Cat</h5>
                       </div>
@@ -91,7 +91,7 @@
                   <div data-toggle="buttons" class="btn-group bizmoduleselect">
                     <label class="btn btn-default">
                       <div class="bizcontent">
-                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                        <input type="checkbox" id="dogItem" name="dogItem" autocomplete="off" value="">
                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
                         <h5>Dog</h5>
                       </div>

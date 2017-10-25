@@ -158,8 +158,8 @@
     $childrenAtHomeState = $_POST['childrenAtHome'];
     $howActive = $_POST['howActive'];
     $howOftenHome = $_POST['howOftenHome'];
-    $catItemState = $_POST['var_id[]'];
-    $dogItemState = $_POST['var_id[]'];
+    $catItemState = $_POST['catItem'];
+    $dogItemState = $_POST['dogItem'];
     $petSize = $_POST['petSize'];
     $petTemperament = $_POST['petTemperament'];
     
