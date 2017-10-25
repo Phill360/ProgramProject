@@ -66,42 +66,41 @@
         <div class="panel-body">
           <div class="panel-heading">What type of animal do you prefer?</div>
           <div class="row">
-            <div class="form-group">
-              <div class="searchable-container">
-                <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                  <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                      <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                    </div>
-                    <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                      <label class="btn btn-default">
-                        <div class="bizcontent">
-                          <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                          <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                          <h5>Cat</h5>
-                        </div>
-                      </label>
-                    </div>
+            <div class="searchable-container">
+              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                <div class="info-block block-info clearfix">
+                  <div class="square-box pull-left">
+                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
                   </div>
-                </div>
-                <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                  <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                      <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                    </div>
-                    <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                      <label class="btn btn-default">
-                        <div class="bizcontent">
-                          <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                          <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                          <h5>Dog</h5>
-                        </div>
-                      </label>
-                    </div>
+                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                    <label class="btn btn-default">
+                      <div class="bizcontent">
+                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                        <h5>Cat</h5>
+                      </div>
+                    </label>
                   </div>
                 </div>
               </div>
-	         </div>
+              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                <div class="info-block block-info clearfix">
+                  <div class="square-box pull-left">
+                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
+                  </div>
+                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                    <label class="btn btn-default">
+                      <div class="bizcontent">
+                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                        <h5>Dog</h5>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+	        </div>  
         </div>
       </div>
       
