@@ -297,6 +297,10 @@
 	.center {
 		text-align: center;
 	}
+	
+	.right {
+		text-align: right;
+	}
 
 	.thumbnail{
 		text-align: center;
