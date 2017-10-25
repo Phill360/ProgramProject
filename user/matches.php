@@ -29,7 +29,7 @@
         <div class="col-xs-6 col-sm-4">
         <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="slackey"><div="textRegular"><?php echo $row["petName"]; ?></div></div>
+          <h3><?php echo $row["petName"]; ?></h3>
         </div>
         <div class="panel-body" style="min-height: 500; max-height: 500;">
           <div class="thumbnail">
