@@ -100,22 +100,14 @@
         }
     }
     
-    // Upload image to heroku server
-    $uploadImage = $_FILES["file"]["name"];
-    $folder="https://stark-citadel-72039.herokuapp.com/";
-    move_uploaded_file($_FILES["file"]["tmp_name"], "$folder".$_FILES["file"]["name"]);
-    
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $imagePath = $folder.$fileName;
+    $imagePath = $fileName;
     $description = $_POST['description'];
-    
-    echo($imagePath);
-    
   
     if($rspcaID == ''){
       

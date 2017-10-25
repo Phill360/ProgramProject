@@ -31,11 +31,11 @@
   ?>
       <div class="col-xs-6 col-sm-4">
         <div class="thumbnail">
-          <img src="<?php echo $row["imagePath"]; ?>" alt "apet">
           <div class="caption">
             <div class="right">
             <a class="btn btn-default btn-lg" href="#">
             <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
             </button>
             </div>
             <h3><?php echo $row["petName"]; ?></h3>
