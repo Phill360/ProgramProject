@@ -35,7 +35,7 @@
             <div class="right">
             <a class="btn btn-default btn-lg" href="#">
             <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-            <br>
+            <br><br>
             <img src="<?php echo $row["imagePath"]; ?>" alt "pet" height="250" width="250">
             </button>
             </div>

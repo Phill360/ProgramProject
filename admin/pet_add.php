@@ -85,7 +85,6 @@
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
               <div id="image-preview-div" style="display: none">
-                <br>
                 <img id="preview-img" src="noimage">
               </div>
               <div class="form-group">
