@@ -284,7 +284,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   
   
   
-function addPet($rspcaID, $petName, $breedID, $age, $gender, $description) {
+function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   

@@ -114,7 +114,7 @@
       
     } else { 
 
-      addPet($rspcaID, $petName, $breedID, $age, $gender, $description);
+      addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
     }
   }
   
