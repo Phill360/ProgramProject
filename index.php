@@ -234,7 +234,7 @@
     <div><?php include 'carousel.php' ?></div>
   <?php } ?>
   <br>
-  <?php include 'carousel.php' ?>
+  <?php include 'footer.php' ?>
 
 
   <!-- Sign in -->
