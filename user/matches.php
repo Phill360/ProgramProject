@@ -29,7 +29,7 @@
         <div class="col-xs-6 col-sm-4">
         <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="slackey"><?php echo $row["petName"]; ?></div>
+          <div class="slackey"><?php echo $row["rspcaID"]; ?></div>
         </div>
         <div class="panel-body" style="min-height: 500; max-height: 500;">
           <div class="center">
@@ -39,6 +39,7 @@
               <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
             </div>
             <p></p><br>
+            <div class="slackey"><div class="mediumText"><?php echo $row["petName"]; ?></div></div>
             <div class="opensans"><?php echo $row["description"]; ?></div>
             <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
           </div>

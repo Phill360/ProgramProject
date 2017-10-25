@@ -85,8 +85,6 @@
     $ext = pathinfo($name, PATHINFO_EXTENSION);
     $fileName = "media/".$_POST['rspcaID'].".".$ext;
     
-    echo($size);
-    
     if ($error > 0 ){
         die("Error uploading file! Code $error.");
     } else {
