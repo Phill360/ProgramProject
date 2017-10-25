@@ -39,7 +39,7 @@
               <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
             </div>
             <p></p><br>
-            <div class="slackey"><div class="largeText"><?php echo $row["petName"]; ?></div></div>
+            <div class="slackey"><div class="textLarge"><?php echo $row["petName"]; ?></div></div>
             <div class="opensans"><?php echo $row["description"]; ?></div>
             <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
           </div>
