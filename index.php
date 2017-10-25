@@ -158,10 +158,12 @@
     $childrenAtHomeState = $_POST['childrenAtHome'];
     $howActive = $_POST['howActive'];
     $howOftenHome = $_POST['howOftenHome'];
-    $catItemState = $_POST['catItem'];
-    $dogItemState = $_POST['dogItem'];
+    $catItemState = $_POST['var_id[]'];
+    $dogItemState = $_POST['var_id[]'];
     $petSize = $_POST['petSize'];
     $petTemperament = $_POST['petTemperament'];
+    
+    echo($catItemState);
     
     if ($childrenAtHomeState == "on")
     {
