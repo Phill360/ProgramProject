@@ -183,7 +183,7 @@
       $catItem = 0 && $dogItem = 1;
     }
     
-    submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament);
+    // submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament);
   }
   
 ?>
