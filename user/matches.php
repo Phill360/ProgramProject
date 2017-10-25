@@ -32,8 +32,10 @@
           <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
         </div>
         <div class="panel-body" style="min-height: 500; max-height: 500;">
-          <div class="center">
+          <div class="right">
             <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+          </div>
+          <div class="center">
             <br><br>
             <div class="holder">
               <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
