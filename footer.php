@@ -10,9 +10,8 @@
 </head>
 
 <body>
-  <div class="container">
-
-  <!-- Footer -->
+<!-- Footer -->  
+<div class="container">
   <footer class="container-fluid bg-4 text-center">
     <p>Copyright © 2017 Paw Companions. All rights reserved.</p>
     <a href="#" data-toggle="modal" data-target="#termsModal" style="margin-right:10px">Terms and Conditions</a>
