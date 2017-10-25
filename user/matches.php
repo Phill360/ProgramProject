@@ -32,7 +32,7 @@
           <div class="slackey"><?php echo $row["petName"]; ?></div>
         </div>
         <div class="panel-body" style="min-height: 500; max-height: 500;">
-          <!--<div class="thumbnail">-->
+          <div class="center">
 
               <!--<div class="right">-->
                 <a class="btn btn-default btn-lg" href="#">
@@ -46,7 +46,7 @@
               <div class="opensans"><?php echo $row["description"]; ?></div>
               <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
 
-          <!--</div>-->
+          </div>
         </div>
       </div>
       </div>
