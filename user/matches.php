@@ -27,6 +27,7 @@
 
   <?php
     // While loop fetches pets from the 'animals' table
+    echo $row["imagePath"];
     while($row = mysqli_fetch_assoc($result)) {
   ?>
       <div class="col-xs-6 col-sm-4">
