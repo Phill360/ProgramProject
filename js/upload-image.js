@@ -1,5 +1,5 @@
 /*jslint browser: true, white: true, eqeq: true, plusplus: true, sloppy: true, vars: true*/
-/*global $, console, alert, FormData, FileReader*/
+/*global $, console, alert, FormData, FileReader, document*/
 
 
 function noPreview() {
