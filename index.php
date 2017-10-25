@@ -218,7 +218,7 @@
 <body>
 <div><?php include 'header.php' ?></div>
 
-<!-- control home page shown depending in user account type -->
+<!-- control home page shown depending on user account type -->
 <!-- this should be done in one php block -- JenCam TO DO -->
 <?php
   if ($status == 'signed in' && $usertype == 'normal')
@@ -523,7 +523,7 @@
                 </div>
               </div>
             </div>
-          <!--</div>-->
+
         </div>
       </div>
     </div>

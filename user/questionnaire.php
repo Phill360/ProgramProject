@@ -66,21 +66,42 @@
         <div class="panel-body">
           <div class="panel-heading">What type of animal do you prefer?</div>
           <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-              <div class="row">
-        	       <div class="col-xs-4">
-        		       <img src="media/cat.jpg" class="img-responsive img-radio">
-        		       <button type="button" class="btn btn-primary btn-radio">Cat</button>
-        	         <input type="checkbox" id="catItem" class="hidden" name="catItem">
-        	       </div>
-        	       <div class="col-xs-4">
-        		       <img src="media/dog.jpg" class="img-responsive img-radio">
-        		       <button type="button" class="btn btn-primary btn-radio">Dog</button>
-        	         <input type="checkbox" id="dogItem" class="hidden" name="dogItem">
+            <div class="form-group">
+              <div class="searchable-container">
+                <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                  <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                      <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
+                    </div>
+                    <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                      <label class="btn btn-default">
+                        <div class="bizcontent">
+                          <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                          <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                          <h5>Cat</h5>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                  <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                      <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
+                    </div>
+                    <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                      <label class="btn btn-default">
+                        <div class="bizcontent">
+                          <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                          <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                          <h5>Dog</h5>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+	         </div>
         </div>
       </div>
       
@@ -189,16 +210,14 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   
 });
 
-$(function () {
-    $('.btn-radio').click(function(e) {
-        $('.btn-radio').not(this).removeClass('active')
-    		.siblings('input').prop('checked',false)
-            .siblings('.img-radio').css('opacity','0.5');
-    	$(this).addClass('active')
-            .siblings('input').prop('checked',true)
-    		.siblings('.img-radio').css('opacity','1');
+$(function() {
+    $('#search').on('keyup', function() {
+        var pattern = $(this).val();
+        $('.searchable-container .items').hide();
+        $('.searchable-container .items').filter(function() {
+            return $(this).text().match(new RegExp(pattern, 'i'));
+        }).show();
     });
-    
 });
 </script>
 
