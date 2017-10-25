@@ -41,8 +41,9 @@
                 <div class="holder">
                   <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
                 </div>
-                </button>
+                <!--</button>-->
               <!--</div>-->
+              <br>
               <div class="opensans"><?php echo $row["description"]; ?></div>
               <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
 
