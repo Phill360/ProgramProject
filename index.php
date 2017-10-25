@@ -233,7 +233,8 @@
   {?>
     <div><?php include 'carousel.php' ?></div>
   <?php } ?>
-
+  <br>
+  <?php include 'carousel.php' ?>
 
 
   <!-- Sign in -->
