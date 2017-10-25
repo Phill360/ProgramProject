@@ -431,6 +431,6 @@ input:checked + .slider:before
 
 .holder img 
 {
-  width: 300px; /* Will shrink image to 30% of its original width */
+  width: 200px; /* Will shrink image to 200 pixels width */
   height: auto;    
 }
