@@ -31,7 +31,7 @@
   ?>
       <div class="col-xs-6 col-sm-4">
         <div class="thumbnail">
-          <img src="media/ahmed-saffu-208365.png" alt "pet">
+          <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
           <div class="caption">
             <div class="right">
             <a class="btn btn-default btn-lg" href="#">
