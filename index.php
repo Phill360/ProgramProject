@@ -163,7 +163,8 @@
     $petSize = $_POST['petSize'];
     $petTemperament = $_POST['petTemperament'];
     
-    echo($_POST['catItem']);
+    echo('$_POST['adultsHome']');
+    echo('$_POST['catItem']');
     
     if ($childrenAtHomeState == "on")
     {
