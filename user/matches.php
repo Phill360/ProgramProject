@@ -1,7 +1,7 @@
 <?php
   require_once('./_php/connect.php');
   
-  $query = "SELECT * "; //
+  $query = "SELECT COUNT(*) "; //
 	$query .= "FROM animals ";
 	$result = mysqli_query($connection, $query);
 	// Test for query error
