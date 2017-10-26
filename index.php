@@ -83,7 +83,7 @@
     $error = $_FILES["file"]["error"];
     $directory = "media/";
     $ext = pathinfo($name, PATHINFO_EXTENSION);
-    $fileName = "media/".$_POST['rspcaID'].".".$ext;
+    $fileName = "media/pets/".$_POST['rspcaID'].".".$ext;
     
     if ($error > 0 ){
         die("Error uploading file! Code $error.");
