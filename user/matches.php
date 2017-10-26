@@ -1,11 +1,14 @@
 <?php
   require_once('./_php/connect.php');
   
-// find out how many rows are in the table 
-$sql = "SELECT COUNT(*) FROM animals";
-$result = mysql_query($sql, $connection) or trigger_error("SQL", E_USER_ERROR);
-$r = mysql_fetch_row($result);
-$numrows = $r[0];
+  // 2. Perform Query
+	$query = "SELECT COUNT(*) "; //
+	$query .= "FROM animals ";
+	$result = mysqli_query($connection, $query);
+	// Test for query error
+	if(!$result) {
+		die("Database query failed.");
+	}
 ?>
 
 <DOCTYPE html PUBLIC>
@@ -17,7 +20,7 @@ $numrows = $r[0];
 </head>
 
 <body>
-<?php echo($numrows);?>
+<?php echo($result);?>
 </body>
   
 </html>
