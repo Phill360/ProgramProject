@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<?php echo($result);?>
+<p>The number of rows is: <?php echo($result);?></p>
 </body>
   
 </html>
