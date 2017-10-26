@@ -7,8 +7,8 @@
 	    include_once('./common.php');
 	    
 	    
-	    
-		    displayimage(999);
+	    // replace 'testing' with the rspcaID of the pet you want to display
+		displayimage('testing');
 
 		
 	    ?>
