@@ -16,10 +16,12 @@ header("content-type:image/jpeg");
   
 
   
-  if($row=mysql_fetch_array($result))
+  if($row = mysql_fetch_array($result))
   {
       $image_name=$row["imagePath"];
       $image_content=$row["imageData"];
+  } else {
+      echo "image not found";
   }
   
   echo $image;
