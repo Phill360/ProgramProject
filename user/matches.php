@@ -3,7 +3,7 @@
   
   $result = $mysqli->query("SELECT COUNT(*) AS petCount FROM animals");
   $row = $result->fetch_assoc();
-  echo $row['petCount']." pets.";
+  $number = $row['petCount'];
 
 $result->close();
 	// Test for query error
@@ -21,7 +21,7 @@ $result->close();
 </head>
 
 <body>
-<p>The number of rows is: <?php echo($result);?></p>
+<p>The number of rows is: <?php echo($number);?></p>
 </body>
   
 </html>
