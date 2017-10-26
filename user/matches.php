@@ -1,21 +1,8 @@
 <?php
   require_once('./_php/connect.php');
+  include_once('./common.php');
   
-  $query = "SELECT COUNT(*) "; //
-	$query .= "FROM animals ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
-  $row = $result->fetch_assoc();
-  $number = $row['petCount'];
-
-$result->close();
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
+  $size = checkNumberAnimalsInDatabase();
 ?>
 
 <DOCTYPE html PUBLIC>
@@ -27,7 +14,7 @@ $result->close();
 </head>
 
 <body>
-<p>The number of rows is: <?php echo($number);?></p>
+<p>The number of rows is: <?php echo($size);?></p>
 </body>
   
 </html>
