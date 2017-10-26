@@ -7,11 +7,16 @@ header("content-type:image/jpeg");
   
   $name=$_GET['name'];
   
-  $select_image="SELECT * FROM animals WHERE rspcaID='$name'";
+  // Does Pet alread Exist
+	$query = "SELECT rspcaID  ";
+	$query .= "FROM animals ";
+	$query .= "WHERE rspcaID=";
+	$query .= "'" . $name . "'";
+	$result = mysqli_query($connection, $query);
   
-  $var=mysql_query($select_image);
+
   
-  if($row=mysql_fetch_array($var))
+  if($row=mysql_fetch_array($result))
   {
       $image_name=$row["imagePath"];
       $image_content=$row["imageData"];
