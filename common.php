@@ -260,7 +260,7 @@ function checkNumberAnimalsInDatabase()
 }
   
 // All the input vaiables are numerical, for example: $childrenAtHome -> 0 = No and 1 = yes
-// UPDATE as of Wed 25th Oct: The user can select both cat and dog. So $catItem and $dogItem can both equal 1 at same time.
+// UPDATE as of Wed 25th Oct: The user can select BOTH cat and dog. So $catItem and $dogItem can both equal 1 at same time.
 // The reason for this is that the user may want to view both cats and dogs for potential adoption.
 // For $adultsHome (How many adults in the home?) at this stage is either 1, 2 or 3. But I can modify the questionnaire to give user option to select more adults.
 // $howActive is either 1 (for lazy), 2 (for average) or 3 (for active)
