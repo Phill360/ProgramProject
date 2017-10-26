@@ -5,6 +5,7 @@
 		
 	<form method="post" enctype="multipart/form-data">
 	<br/>
+	<input type="text" name="rspcaID" />
 	<input type="file" name="image" />
 	<br/><br/>
 	<input type="submit" name="sumit" value="upload">
@@ -14,6 +15,9 @@
 	<?php
 	if(isset($_POST['sumit']))
 		{
+		    $rspcaID = $_POST['rspcaID'];
+		     
+		     
 			if(getimagesize($_FILES['image']['tmp_name'])== FALSE)
 
 				{
@@ -21,15 +25,17 @@
 				}
 				else
 				{
+				
 					$imageData = addslashes($_FILES['image']['tmp_name']);
 					$imagePath = addslashes($_FILES['image']['name']);
 					$imageData = file_get_contents($imageData);
 					$imageData = base64_encode($imageData);
-					saveimage(999, 999, 5, $age, 'male', $imagePath, 'test', $imageData);
+					saveimage($rspcaID, 999, 5, $age, 'male', $imagePath, 'test', $imageData);
 				}	
 
 		  }
-		  displayimage(999);
+		  displayimage(444);
+		  
 		  function saveimage($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description, $imageData)
 		  {
 			    // Connect AWS MYSQL Server
@@ -53,7 +59,7 @@
 				
 				
 				
-				// $result=mysql_query($qry,$con);
+
 				if($result)
 					{
 					   echo "<br/> image uploaded";
@@ -65,22 +71,22 @@
 				mysqli_close($connection);
 		  }
 
-		  //*********** Show
-		  function displayimage($rspcaID)
-		  {
-		        // Connect AWS MYSQL Server
-                require_once('./_php/connect.php');
+// 		  //*********** Show
+// 		  function displayimage($rspcaID)
+// 		  {
+// 		        // Connect AWS MYSQL Server
+//                 require_once('./_php/connect.php');
 			
-			echo "$rspcaID";
+// 			echo "$rspcaID";
 			
-				$qry = "select * from animals where rspcaID='".$rspcaID."'";
-				$result=mysqli_query($connection,$qry);
-				while ($row = mysqli_fetch_array($result)) 
-				{
-					echo '<img height="300" width="300" src="data:image;base64, '.$row['imageData']. ' ">';
-				}
-				mysqli_close($connection);
-		  }
+// 				$qry = "select * from animals where rspcaID='".$rspcaID."'";
+// 				$result=mysqli_query($connection,$qry);
+// 				while ($row = mysqli_fetch_array($result)) 
+// 				{
+// 					echo '<img height="300" width="300" src="data:image;base64, '.$row['imageData']. ' ">';
+// 				}
+// 				mysqli_close($connection);
+// 		  }
 	?>
 
 	</body>

@@ -1,28 +1,20 @@
-<?php 
+<?php
 
-header("content-type:image/jpeg");
-
-  // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
-  
-  $name=$_GET['name'];
-  
-  // Does Pet alread Exist
-	$query = "SELECT rspcaID  ";
-	$query .= "FROM animals ";
-	$query .= "WHERE rspcaID=";
-	$query .= "'" . $name . "'";
-	$result = mysqli_query($connection, $query);
-  
-
-  
-  if($row = mysql_fetch_array($result))
-  {
-      $image_name=$row["imagePath"];
-      $image_content=$row["imageData"];
-  } else {
-      echo "image not found";
-  }
-  
-  echo $image;
-  ?>
+//*********** Show
+		  function displayimage($rspcaID)
+		  {
+		        // Connect AWS MYSQL Server
+                require_once('./_php/connect.php');
+			
+			echo "$rspcaID";
+			
+				$qry = "select * from animals where rspcaID='".$rspcaID."'";
+				$result=mysqli_query($connection,$qry);
+				while ($row = mysqli_fetch_array($result)) 
+				{
+					echo '<img height="300" width="300" src="data:image;base64, '.$row['imageData']. ' ">';
+				}
+				mysqli_close($connection);
+		  }
+		  
+?>
