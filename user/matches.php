@@ -1,10 +1,11 @@
 <?php
   require_once('./_php/connect.php');
   
-  // 2. Perform Query
-	$query = "SELECT COUNT(*) "; //
-	$query .= "FROM animals ";
-	$result = mysqli_query($connection, $query);
+  $result = $mysqli->query("SELECT COUNT(*) AS petCount FROM animals");
+  $row = $result->fetch_assoc();
+  echo $row['petCount']." pets.";
+
+$result->close();
 	// Test for query error
 	if(!$result) {
 		die("Database query failed.");
