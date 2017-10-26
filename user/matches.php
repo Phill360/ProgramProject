@@ -1,70 +1,73 @@
 <?php
   require_once('./_php/connect.php');
   
-  // 2. Perform Query
-	$query = "SELECT * "; //
-	$query .= "FROM animals ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
-?>
+try {  
+  // Find out how many items are in the table
+  $total = $dbh->query('SELECT COUNT(*) FROM animals')->fetchColumn();
+    
+  // How many items to list per page
+  $limit = 20;
 
-<DOCTYPE html PUBLIC>
-<html lang="en">
-<head>
-  <title>Paw Companions</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+  // How many pages will there be
+  $pages = ceil($total / $limit);
 
-<body>
-<div class="row">
+  // What page are we currently on?
+  $page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array(
+    'options' => array(
+    'default'   => 1,
+    'min_range' => 1,
+    ),
+  )));
+    
+  // Calculate the offset for the query
+  $offset = ($page - 1)  * $limit;
+
+  // Some information to display to the user
+  $start = $offset + 1;
+  $end = min(($offset + $limit), $total);
   
-    <?php
-      // While loop fetches pets from the 'animals' table
-      while($row = mysqli_fetch_assoc($result)) {
-    ?>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
-        </div>
-        <div class="panel-body" style="min-height: 500; max-height: 500;">
-          <div class="right">
-            <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-          </div>
-          <div class="center">
-            <br>
-            <div class="holder">
-              <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
-            </div>
-            <p></p><br>
-            <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
-            <div class="opensans"><?php echo $row["description"]; ?></div>
-            <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
-          </div>
-        </div>
-      </div>
-      </div>
-    <?php
-      }
-    ?>
+  // The "back" link
+  $prevlink = ($page > 1) ? '<a href="?page=1" title="First page">&laquo;</a> <a href="?page=' . ($page - 1) . '" title="Previous page">&lsaquo;</a>' : '<span class="disabled">&laquo;</span> <span class="disabled">&lsaquo;</span>';
+
+  // The "forward" link
+  $nextlink = ($page < $pages) ? '<a href="?page=' . ($page + 1) . '" title="Next page">&rsaquo;</a> <a href="?page=' . $pages . '" title="Last page">&raquo;</a>' : '<span class="disabled">&rsaquo;</span> <span class="disabled">&raquo;</span>';
+
+  // Display the paging information
+  echo '<div id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div>';
+
+  // Prepare the paged query
+  $stmt = $dbh->prepare('
+        SELECT
+            *
+        FROM
+            animals
+        LIMIT
+            :limit
+        OFFSET
+            :offset
+  ');
   
-</div>
-    <!-- /.container -->
-    <div class="center">
-    <nav>
-      <ol class="pagination">
-        <li><a href="#" aria-label="Previous">&laquo;</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#" aria-label="Next">&raquo;</a></li>
-      </ol>
-    </nav>
-    </div>
-</body>
+  // Bind the query params
+  $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+  $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+  $stmt->execute();
+
+  // Do we have any results?
+  if ($stmt->rowCount() > 0) {
+  // Define how we want to fetch the results
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  $iterator = new IteratorIterator($stmt);
+  // Display the results
+        foreach ($iterator as $row) {
+            echo '<p>', $row['petName'], '</p>';
+        }
+
+    } else {
+        echo '<p>No results could be displayed.</p>';
+    }
+} catch (Exception $e) {
+    echo '<p>', $e->getMessage(), '</p>';
+}  
   
-</html>
+  
+  
