@@ -5,7 +5,7 @@ try {
   // Find out how many items are in the table
   $total = $dbh->query('SELECT COUNT(*) FROM animals')->fetchColumn();
   
-  echo($total);
+  echo('The total is: '.$total);
     
   // How many items to list per page
   $limit = 20;
