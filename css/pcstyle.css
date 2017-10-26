@@ -136,7 +136,7 @@
 
     .holder img 
     {
-      width: 200px; /* Will shrink image to 200 pixels width */
+      width: 150px; /* Will shrink image to 150 pixels width */
       height: auto;    
     }
 
