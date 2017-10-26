@@ -85,19 +85,21 @@
     $ext = pathinfo($name, PATHINFO_EXTENSION);
     $fileName = "media/pets/".$_POST['rspcaID'].".".$ext;
     
-    if ($error > 0 ){
-        die("Error uploading file! Code $error.");
-    } else {
+    // if ($error > 0 ){
+    //     die("Error uploading file! Code $error.");
+    // } else {
         
-        if($type=="video/avi"){
-          die ("that file is not alow");
-        } 
-        else {
-          // Move file to Media folder and rename file to rspcaID
-          move_uploaded_file($temp,$fileName);
-          echo "Upload Complete!";
-        }
-    }
+    //     if($type=="video/avi"){
+    //       die ("that file is not alow");
+    //     } 
+    //     else {
+    //       // Move file to Media folder and rename file to rspcaID
+    //       move_uploaded_file($temp,$fileName);
+    //       echo "Upload Complete!";
+    //     }
+    // }
+    
+    
     
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
@@ -105,14 +107,16 @@
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $imagePath = $fileName;
+    $imagePath = $name;
     $description = $_POST['description'];
+    //Get the content of the image and then add slashes to it 
+    $imageData=addslashes (file_get_contents($_FILES["file"]["tmp_name"]));
   
     if($rspcaID == ''){
       
     } else { 
 
-      addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
+      addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description, $imageData);
     }
   }
   

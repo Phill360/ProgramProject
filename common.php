@@ -284,7 +284,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   
   
   
-function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description) {
+function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description, $imageData) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
@@ -300,7 +300,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	
 	// 2. Perform Query
 	$query = "INSERT INTO animals ";
-	$query .= "(rspcaID, petName, breedID, gender, imagePath, age, description) ";
+	$query .= "(rspcaID, petName, breedID, gender, imagePath, age, description, imageData) ";
 	$query .= "VALUES (";
 	$query .= "'" . $rspcaID . "',";
 	$query .= "'" . $petName . "',";
@@ -308,7 +308,8 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	$query .= "'" . $gender . "',";
 	$query .= "'" . $imagePath . "',";
 	$query .= "'" . $age . "',";
-	$query .= "'" . $description . "'";
+	$query .= "'" . $description . "',";
+	$query .= "'" . $imageData . "'";
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
