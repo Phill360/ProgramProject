@@ -1,7 +1,24 @@
 <?php
-  include_once('./common.php');
-  
-  $size = checkNumberAnimalsInDatabase();
+  require_once('./_php/connect.php');
+    
+  $query = "SELECT * ";
+	$query .= "FROM animals ";
+  $result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result) 
+	{
+	  die("6. Database query failed.");
+	}
+	  
+	$size = 0;
+	  
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  $size += 1;
+	}
+
+  mysqli_close($connection);
 ?>
 
 <DOCTYPE html PUBLIC>
