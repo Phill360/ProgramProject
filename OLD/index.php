@@ -105,14 +105,14 @@
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $imagePath = $fileName;
+    $imageName = $fileName;
     $description = $_POST['description'];
   
     if($rspcaID == ''){
       
     } else { 
 
-      addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description);
+      addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description);
     }
   }
   

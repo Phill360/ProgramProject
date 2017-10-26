@@ -80,7 +80,7 @@
 				<td><?php echo $row["breedID"] ; ?>	</td>
 				<td><?php echo $row["age"] ; ?>	</td>
 				<td><?php echo $row["gender"] ; ?> </td>
-				<td><?php echo $row["imagePath"] ; ?>	</td>
+				<td><?php echo $row["imageName"] ; ?>	</td>
 				<td><?php echo $row["description"] ; ?>	</td>
 			
 			</tr>

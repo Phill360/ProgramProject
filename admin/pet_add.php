@@ -88,7 +88,7 @@
                 <img id="preview-img" src="noimage">
               </div>
               <div class="form-group">
-                <input type="file" name="file" id="file" required>
+                <input type="file" name="image" id="file" required>
               </div>
             
             <!-- Gender selection -->

@@ -284,7 +284,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   
   
   
-function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description, $imageData) {
+function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
@@ -300,13 +300,13 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $descri
 	
 	// 2. Perform Query
 	$query = "INSERT INTO animals ";
-	$query .= "(rspcaID, petName, breedID, gender, imagePath, age, description, imageData) ";
+	$query .= "(rspcaID, petName, breedID, gender, imageName, age, description, imageData) ";
 	$query .= "VALUES (";
 	$query .= "'" . $rspcaID . "',";
 	$query .= "'" . $petName . "',";
 	$query .= "'" . $breedID . "',";
 	$query .= "'" . $gender . "',";
-	$query .= "'" . $imagePath . "',";
+	$query .= "'" . $imageName . "',";
 	$query .= "'" . $age . "',";
 	$query .= "'" . $description . "',";
 	$query .= "'" . $imageData . "'";
@@ -366,16 +366,16 @@ function remPet($rspcaID) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-    // 2. Perform Query
-  $query = "SELECT * FROM animals ";
-  $query .= "WHERE ";
-  $query .= "rspcaID=";
-  $query .= "'" . $rspcaID . "'";
-  $result = mysqli_query($connection, $query);
-  if($row = mysqli_fetch_assoc($result)){
-    // Delete Image for pet
-    unlink($row["imagePath"]);
-  }
+  //   // 2. Perform Query
+  // $query = "SELECT * FROM animals ";
+  // $query .= "WHERE ";
+  // $query .= "rspcaID=";
+  // $query .= "'" . $rspcaID . "'";
+  // $result = mysqli_query($connection, $query);
+  // if($row = mysqli_fetch_assoc($result)){
+  //   // Delete Image for pet
+  //   unlink($row["imagePath"]);
+  // }
   
   // 2. Perform Query
   $query = "DELETE FROM animals ";
@@ -447,4 +447,23 @@ function debug_to_console($data) {
  
   echo $output;
 }
+
+
+
+	// Display Image from database
+  function displayimage($rspcaID)
+  {
+		// Connect AWS MYSQL Server
+    require_once('./_php/connect.php');
+			
+		// echo "$rspcaID";
+			
+		$query = "select * from animals where rspcaID='".$rspcaID."'";
+		$result=mysqli_query($connection,$query);
+		while ($row = mysqli_fetch_array($result)) 
+		{
+			echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
+		}
+		mysqli_close($connection);
+	}
 ?>

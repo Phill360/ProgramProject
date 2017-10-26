@@ -76,14 +76,14 @@
   // Add new pet
   if (isset($_POST['addPetBtn']))
   {
-    $name = $_FILES["file"]["name"];
-    $type = $_FILES["file"]["type"];
-    $size = $_FILES["file"]["size"];
-    $temp = $_FILES["file"]["tmp_name"];
-    $error = $_FILES["file"]["error"];
-    $directory = "media/";
-    $ext = pathinfo($name, PATHINFO_EXTENSION);
-    $fileName = "media/pets/".$_POST['rspcaID'].".".$ext;
+    // $name = $_FILES["file"]["name"];
+    // $type = $_FILES["file"]["type"];
+    // $size = $_FILES["file"]["size"];
+    // $temp = $_FILES["file"]["tmp_name"];
+    // $error = $_FILES["file"]["error"];
+    // $directory = "media/";
+    // $ext = pathinfo($name, PATHINFO_EXTENSION);
+    // $fileName = "media/pets/".$_POST['rspcaID'].".".$ext;
     
     // if ($error > 0 ){
     //     die("Error uploading file! Code $error.");
@@ -100,6 +100,20 @@
     // }
     
     
+    if(getimagesize($_FILES['image']['tmp_name'])== FALSE)
+
+		{
+			echo "please select image.";
+		}
+		else
+		{
+		    $imageData = addslashes($_FILES['image']['tmp_name']);
+		    $imageName = addslashes($_FILES['image']['name']);
+			$imageData = file_get_contents($imageData);
+			$imageData = base64_encode($imageData);
+			
+		
+    
     
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
@@ -107,17 +121,19 @@
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $imagePath = $name;
+    $imageName = $name;
     $description = $_POST['description'];
-    //Get the content of the image and then add slashes to it 
-    $imageData=addslashes (file_get_contents($_FILES["file"]["tmp_name"]));
+    // //Get the content of the image and then add slashes to it 
+    // $imageData=addslashes (file_get_contents($_FILES["file"]["tmp_name"]));
   
     if($rspcaID == ''){
       
     } else { 
 
-      addPet($rspcaID, $petName, $breedID, $age, $gender, $imagePath, $description, $imageData);
+      addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
     }
+    
+		}
   }
   
  if (isset($_POST['addBreedBtn']))
