@@ -70,7 +70,18 @@
 		font-size: 9px;
 		line-height: normal;
 	}
+	
+	.holder 
+    {   
+      width: auto;
+      display: inline-block;    
+    }
 
+    .holder img 
+    {
+      width: 150px; /* Will shrink image to 200 pixels width */
+      height: auto;    
+    }
 }
 
 /* Portrait tablets and medium desktops */
@@ -116,6 +127,18 @@
 		font-size: 9px;
 		line-height: normal;
 	}
+	
+	.holder 
+    {   
+      width: auto;
+      display: inline-block;    
+    }
+
+    .holder img 
+    {
+      width: 150px; /* Will shrink image to 200 pixels width */
+      height: auto;    
+    }
 
 }
 
@@ -162,6 +185,18 @@
 		font-size: 9px;
 		line-height: normal;
 	}
+	
+	.holder 
+    {   
+      width: auto;
+      display: inline-block;    
+    }
+
+    .holder img 
+    {
+      width: 150px; /* Will shrink image to 200 pixels width */
+      height: auto;    
+    }
 
 }
 
@@ -211,8 +246,19 @@
 	.img-responsive {
 		max-width: 50%;
 		min-width: 300px;
-
 	}
+	
+	.holder 
+    {   
+      width: auto;
+      display: inline-block;    
+    }
+
+    .holder img 
+    {
+      width: 150px; /* Will shrink image to 200 pixels width */
+      height: auto;    
+    }
 
 }
 
@@ -259,6 +305,18 @@
 		font-size: 8px;
 		line-height: normal;
 	}
+	
+	.holder 
+    {   
+      width: auto;
+      display: inline-block;    
+    }
+
+    .holder img 
+    {
+      width: 150px; /* Will shrink image to 200 pixels width */
+      height: auto;    
+    }
 
 }
 
@@ -426,15 +484,3 @@ input:checked + .slider:before
     opacity: 1;
 }
 
-/* Image size and proportion control */
-.holder 
-{   
-  width: auto;
-  display: inline-block;    
-}
-
-.holder img 
-{
-  width: 150px; /* Will shrink image to 200 pixels width */
-  height: auto;    
-}
