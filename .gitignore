@@ -1,1 +1,5 @@
+# exclude everything
 media/pets/*.jpg
+
+# exception to the rule
+!media/pets/.gitkeep 
