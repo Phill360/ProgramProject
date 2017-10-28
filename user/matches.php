@@ -25,10 +25,7 @@
     $page1 = ($page*12)-12;
   }
     
-  //$result = fetchAnimalsFromDatabase($page1);
-  require_once('./_php/connect.php');
-  $query2 = "SELECT * FROM animals LIMIT $page1,12"; 
-	$result2 = mysqli_query($connection, $query2);
+  $result = fetchAnimalsFromDatabase($page1);
 	  
 	// Test for query error
 	if(!$result2) 
