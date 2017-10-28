@@ -260,7 +260,7 @@
   <?php } 
   else
   {?>
-    <div><?php include 'description.php' ?></div>
+    <div><?php include 'display_image.php' ?></div>
     <div><?php include 'carousel.php' ?></div>
   <?php } ?>
   
