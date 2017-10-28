@@ -47,6 +47,7 @@
           <div class="center">
             <br>
             <div class="holder">
+              <?php displayimage($row["imagePath"]) ?>
               <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
             </div>
             <p></p><br>
