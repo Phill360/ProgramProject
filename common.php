@@ -502,6 +502,7 @@ function debug_to_console($data) {
 	  }
 	  
 	  mysqli_close($connection);
+	  require_once('./_php/connect.php');
 	
 	  /* With the userID we now check if this user has visited the site previously. */
       
