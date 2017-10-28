@@ -2,8 +2,7 @@
   include_once('./common.php');
   //require_once('./_php/connect.php');
   
-  setupUserSession(); // 5
-  numberAnimalsInDatabase(); // 8
+  setupUserSession(); // Error 5 if cannot connect
 
   if(isset($_POST['questionnaireBtn']))
   {
