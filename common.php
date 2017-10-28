@@ -459,6 +459,7 @@ function debug_to_console($data) {
 		while ($row = mysqli_fetch_array($result)) 
 		{
 			echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
+			echo('working');
 		}
 		mysqli_close($connection);
 	}
