@@ -546,7 +546,7 @@ function debug_to_console($data) {
 	  // Test for query error
 	  if(!$result) 
 	  {
-		  die("7. Database query failed.");
+		  die("7. This Database query failed.");
 	  }
 	  
 	  return $result;
