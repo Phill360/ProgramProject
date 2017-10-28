@@ -500,12 +500,8 @@ function debug_to_console($data) {
 	      $userID = $row["userID"];
       }
 	  }
-	  
-	  mysqli_close($connection);
 	
 	  /* With the userID we now check if this user has visited the site previously. */
-    
-    require_once('./_php/connect.php');
       
     // Perform new search
     $query = "SELECT * "; 
