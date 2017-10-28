@@ -80,9 +80,12 @@
     <nav>
       <ol class="pagination">
         <li><a href="#" aria-label="Previous">&laquo;</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
+        <?php
+        for ($b=1; $b<=$a; $b++)
+        {
+          ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
+        }
+        ?>
         <li><a href="#" aria-label="Next">&raquo;</a></li>
       </ol>
     </nav>
