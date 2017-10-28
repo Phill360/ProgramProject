@@ -540,7 +540,9 @@ function debug_to_console($data) {
 	  // Connect AWS MYSQL Server
     require_once('./_php/connect.php');
 	  
-	  $query = "SELECT * FROM animals LIMIT 0,12"; 
+	  echo($page1);
+	  
+	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
