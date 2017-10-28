@@ -474,7 +474,7 @@ function debug_to_console($data) {
 	function setupUserSession()
 	{
 	  // Connect AWS MYSQL Server
-    require_once('./_php/connect.php');
+    //require_once('./_php/connect.php');
   
     $email = $_SESSION['email'];
   
@@ -539,7 +539,7 @@ function debug_to_console($data) {
 	function fetchAnimalsFromDatabase($page1)
 	{
     // Connect AWS MYSQL Server
-    require_once('./_php/connect.php');
+    //require_once('./_php/connect.php');
     
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
@@ -558,7 +558,7 @@ function debug_to_console($data) {
 	function numberAnimalsInDatabase()
 	{
 	  // Connect AWS MYSQL Server
-    require_once('./_php/connect.php');
+    //require_once('./_php/connect.php');
 	  
 	  // Get number of pets in database
 	  $query = "SELECT * FROM animals";
