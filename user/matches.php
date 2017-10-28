@@ -72,7 +72,7 @@
     <div class="center">
     <nav>
       <ol class="pagination">
-        <?php if ($page > $a) 
+        <?php if ($page > 1) 
         {?>
           <li><a href="index.php?page=<?php echo $page-1; ?>" aria-label="Next">&laquo;</a></li><?php
         }
