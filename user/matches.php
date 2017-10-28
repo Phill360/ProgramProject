@@ -1,14 +1,5 @@
 <?php
   require_once('./_php/connect.php');
-  
-  // 2. Perform Query
-	$query = "SELECT * "; //
-	$query .= "FROM animals ";
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("Database query failed.");
-	}
 ?>
 
 <DOCTYPE html PUBLIC>
@@ -22,12 +13,20 @@
 <body>
 <div class="row">
   
-    <?php
-      // While loop fetches pets from the 'animals' table
-      while($row = mysqli_fetch_assoc($result)) {
-    ?>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="panel panel-default">
+  <?php
+    
+  $query = "SELECT * FROM animals LIMIT 0, 12"; 
+	$result = mysqli_query($connection, $query);
+	// Test for query error
+	if(!$result) {
+		die("Database query failed.");
+	}
+	
+  // Fetch pets from the 'animals' table
+  while($row = mysqli_fetch_assoc($result)) {
+  ?>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
         </div>
@@ -47,10 +46,32 @@
           </div>
         </div>
       </div>
-      </div>
-    <?php
-      }
-    ?>
+    </div>
+  <?php
+  }
+      
+  // Get number of pets in database
+	$query2 = "SELECT * FROM animals";
+	$result2 = mysqli_query($connection, $query);
+	// Test for query error
+	if(!$result2) {
+		die("Database query failed.");
+	}
+	
+	$size = 0;
+	while ($row = mysqli_fetch_assoc($result2))
+	{
+	  $size += 1;
+	}
+	
+	$a = ceil($size/12); // Number of pages
+	echo $a;
+    
+    for ($b=1; $b<=$a; $b++)
+    {
+      ?><a href=""><?php echo $b." "; ?></a><?php
+    }    
+  ?>
   
 </div>
     <!-- /.container -->
