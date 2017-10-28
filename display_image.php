@@ -8,7 +8,7 @@
 	    
 	    
 	    // replace 'testing' with the rspcaID of the pet you want to display
-		displayimage('testing');
+		displayimage('mark4');
 
 		
 	    ?>
