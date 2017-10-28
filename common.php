@@ -72,6 +72,8 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION["response"] = "PET ADDED";
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
+    $_SESSION['firstName'] = $firstname;
+    $_SESSION['lastName'] = $lastname;
     header('Location: index.php');
   }
   mysqli_close($connection);
@@ -115,6 +117,8 @@ function signInUser($email, $password)
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
     $_SESSION['email'] = $email;
+    $_SESSION['firstName'] = $firstname;
+    $_SESSION['lastName'] = $lastname;
     header('Location: index.php');
   } else {
     $_SESSION['validUser'] = false;
@@ -133,6 +137,8 @@ function signOutUser()
   unset($_SESSION['validUser']);
   unset($_SESSION['usertype']);
   unset($_SESSION['email']);
+  unset($_SESSION['firstName']);
+  unset($_SESSION['lastName']);
     
   $validUser = false;
     
