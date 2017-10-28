@@ -1,7 +1,7 @@
 <?php
 
   // Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
+  require_once('./_php/connect.php');
   
   $email = $_SESSION['email'];
   
