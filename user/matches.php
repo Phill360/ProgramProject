@@ -70,7 +70,7 @@
     
     for ($b=1; $b<=$a; $b++)
     {
-      ?><a href=""><?php echo $b." "; ?></a><?php
+      ?><a href="matches.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a><?php
     }    
   ?>
   
