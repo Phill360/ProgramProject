@@ -1,5 +1,5 @@
 <?php
-  require_once('./_php/connect.php');
+  //require_once('./_php/connect.php');
 ?>
 
 <DOCTYPE html PUBLIC>

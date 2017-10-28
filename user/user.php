@@ -43,7 +43,7 @@
     <?php }
     else if ($_SESSION['userTool'] == 'matches')
     {?>
-      <div><?php include 'display_image.php' ?></div> 
+      <div><?php include 'matches.php' ?></div> 
     <?php } 
     else if ($_SESSION['userTool'] == 'favourites')
     {?>
