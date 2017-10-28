@@ -115,7 +115,7 @@ function signInUser($email, $password)
   if ($validUser == true) 
   {
     $query = "SELECT * FROM user ";
-    $query = "WHERE email='" . $email . "'";
+    $query .= "WHERE email='" . $email . "'";
     $result = mysqli_query($connection, $query);
     if ($result) 
     {
