@@ -51,7 +51,7 @@
   }
       
   // Get number of pets in database
-	$query2 = "SELECT * FROM animals";
+	$query2 = "SELECT * FROM animals LIMIT 0,12";
 	$result2 = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result2) {
@@ -65,7 +65,6 @@
 	}
 	
 	$a = ceil($size/12); // Number of pages
-	echo $a;
     
     for ($b=1; $b<=$a; $b++)
     {
