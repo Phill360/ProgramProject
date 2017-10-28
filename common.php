@@ -532,13 +532,14 @@ function debug_to_console($data) {
 	      }	    
 	    }
 	  }
+	  mysqli_close($connection);
 	}
 	
 	// Fetch animals from the database
 	function fetchAnimalsFromDatabase($page1)
 	{
 	  // Connect AWS MYSQL Server
-    //require_once('./_php/connect.php');
+    require_once('./_php/connect.php');
 	  
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
@@ -550,5 +551,21 @@ function debug_to_console($data) {
 	  }
 	  
 	  return $result;
+	  mysqli_close($connection);
+	}
+	
+	// Get number of animals in database
+	function numberAnimalsInDatabase()
+	{
+	  // Get number of pets in database
+	  $query = "SELECT * FROM animals";
+	  $result = mysqli_query($connection, $query);
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("8. Database query failed.");
+	  }
+	  return $result;
+	  mysqli_close($connection);
 	}
 ?>

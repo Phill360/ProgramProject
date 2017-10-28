@@ -56,13 +56,7 @@
   <?php
   }
       
-  // Get number of pets in database
-	$query2 = "SELECT * FROM animals";
-	$result2 = mysqli_query($connection, $query2);
-	// Test for query error
-	if(!$result2) {
-		die("8. Database query failed.");
-	}
+  $result2 = numberAnimalsInDatabase();
 	
 	$size = 0;
 	while ($row = mysqli_fetch_assoc($result2))
