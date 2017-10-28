@@ -3,7 +3,7 @@
 	
 	<body>
 	    <?php
-	    
+	    echo('Is this page loading?');
 	    include_once('./common.php');
 	    
 	    
