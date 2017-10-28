@@ -467,7 +467,7 @@ function debug_to_console($data) {
 		{
 			echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
 		}
-		// mysqli_close($connection);
+		mysqli_close($connection);
 	}
 	
 	// Setup user session
@@ -532,6 +532,7 @@ function debug_to_console($data) {
 	      }	    
 	    }
 	  }
+	  mysqli_close($connection);
 	}
 	
 	// Fetch animals from the database
@@ -550,7 +551,7 @@ function debug_to_console($data) {
 	  }
 	  
 	  return $result;
-	  // mysqli_close($connection);
+	  mysqli_close($connection);
 	}
 	
 	// Get number of animals in database
