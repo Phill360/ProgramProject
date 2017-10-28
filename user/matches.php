@@ -33,6 +33,7 @@
 	}
 	
 	include_once('./common.php');
+	displayimage('mark4');
 	
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
