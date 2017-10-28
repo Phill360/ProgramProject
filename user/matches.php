@@ -15,7 +15,13 @@
   
   <?php
     
-  $query = "SELECT * FROM animals LIMIT 0,12"; 
+  $page = $_GET["page"];
+  if($page == "" || $page == "1")
+  {
+    $page1 = 0;
+  }
+    
+  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	$result = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result) {
