@@ -1,6 +1,5 @@
 <?php
   require_once('./_php/connect.php');
-  include_once('./common.php');
 ?>
 
 <DOCTYPE html PUBLIC>
@@ -32,6 +31,8 @@
 	if(!$result) {
 		die("Database query failed.");
 	}
+	
+	include_once('./common.php');
 	
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
