@@ -474,7 +474,7 @@ function debug_to_console($data) {
 	function setupUserSession()
 	{
 	  // Connect AWS MYSQL Server
-    require_once('./_php/connect.php');
+    // require_once('./_php/connect.php');
   
     $email = $_SESSION['email'];
   
