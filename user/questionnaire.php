@@ -156,7 +156,9 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Lazy'},
+        {value: 2, legend: ''},
         {value: 3, legend: 'Average'},
+        {value: 4, legend: ''},
         {value: 5, legend: 'Active'}
       ]
     }
