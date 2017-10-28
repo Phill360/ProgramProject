@@ -272,6 +272,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   require_once('./_php/connect.php');
   
   // Please implement
+  mysqli_close($connection);
 }
   
   
@@ -390,8 +391,6 @@ function remPet($rspcaID) {
   	exit;
   }
   
-  
-
   // Close database connection
   mysqli_close($connection);
 }
@@ -541,13 +540,13 @@ function debug_to_console($data) {
 	  // Connect AWS MYSQL Server
     require_once('./_php/connect.php');
 	  
-	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
+	  $query = "SELECT * FROM animals LIMIT 0,12"; 
 	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
 	  if(!$result) 
 	  {
-		  die("7. This Database query failed.");
+		  die("7. Database query failed.");
 	  }
 	  
 	  return $result;
