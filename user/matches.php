@@ -72,15 +72,28 @@
     <div class="center">
     <nav>
       <ol class="pagination">
-        <li><a href="index.php?page=<?php echo $b; ?>" aria-label="Previous">&laquo;</a></li>
+        <?php if ($page > $a) 
+        {?>
+          <li><a href="index.php?page=<?php echo $page-1; ?>" aria-label="Next">&laquo;</a></li><?php
+        }
+        else
+        {?>
+          <li><a href="index.php?page=<?php echo $page; ?>" aria-label="Next">&laquo;</a></li><?php
+        }?>
         <?php
         for ($b=1; $b<=$a; $b++)
         {
           ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
         }
         ?>
-        <?php ?>
-        <li><a href="index.php?page=<?php echo $b; ?>" aria-label="Next">&raquo;</a></li>
+        <?php if ($page < $a) 
+        {?>
+          <li><a href="index.php?page=<?php echo $page+1; ?>" aria-label="Next">&raquo;</a></li><?php
+        }
+        else
+        {?>
+          <li><a href="index.php?page=<?php echo $page; ?>" aria-label="Next">&raquo;</a></li><?php
+        }?>
       </ol>
     </nav>
     </div>
