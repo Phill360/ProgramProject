@@ -2,6 +2,7 @@
   include_once('./common.php');
 
   setupUserSession();
+  numberAnimalsInDatabase();
 
   if(isset($_POST['questionnaireBtn']))
   {

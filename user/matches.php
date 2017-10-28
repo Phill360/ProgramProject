@@ -1,5 +1,5 @@
 <?php
-  include_once('./common2.php');
+  include_once('./common.php');
 ?>
 
 <DOCTYPE html PUBLIC>
