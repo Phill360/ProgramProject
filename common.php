@@ -532,7 +532,7 @@ function debug_to_console($data) {
 	      }	    
 	    }
 	  }
-	  mysqli_close($connection);
+	  //mysqli_close($connection);
 	}
 	
 	// Fetch animals from the database
@@ -551,7 +551,7 @@ function debug_to_console($data) {
 	  }
 	  
 	  return $result;
-	  mysqli_close($connection);
+	  //mysqli_close($connection);
 	}
 	
 	// Get number of animals in database
@@ -569,6 +569,6 @@ function debug_to_console($data) {
 		  die("8. Database query failed.");
 	  }
 	  return $result;
-	  mysqli_close($connection);
+	  //mysqli_close($connection);
 	}
 ?>
