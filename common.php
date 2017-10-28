@@ -489,8 +489,6 @@ function debug_to_console($data) {
 	  {
 		  die("5. Database query failed.");
 	  }
-	  
-	  echo('Reaching');
 	
 	  // Iterate through results to get the user ID 
 	  while ($row = mysqli_fetch_assoc($result))
@@ -533,6 +531,7 @@ function debug_to_console($data) {
 	      }	    
 	    }
 	  }
+	  echo($_SESSION['userTool']);
 	  mysqli_close($connection);
 	}
 	
