@@ -504,7 +504,9 @@ function debug_to_console($data) {
 	  mysqli_close($connection);
 	
 	  /* With the userID we now check if this user has visited the site previously. */
-  
+    
+    require_once('./_php/connect.php');
+      
     // Perform new search
     $query = "SELECT * "; 
 	  $query .= "FROM userSearch ";
