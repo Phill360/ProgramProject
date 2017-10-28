@@ -112,12 +112,14 @@ function signInUser($email, $password)
     }
   }
   
+  
+  
   if ($validUser == true) 
   {
     $query = "SELECT * FROM user ";
     $query .= "WHERE email='" . $email . "'";
     $result = mysqli_query($connection, $query);
-    if ($result) 
+    while ($row = mysqli_fetch_assoc($result)) 
     {
       $firstname = $row["firstName"];
       $lastname = $row["lastName"];
