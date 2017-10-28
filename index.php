@@ -252,7 +252,7 @@
 <?php
   if ($status == 'signed in' && $usertype == 'normal')
   {?>
-    <div><?php include 'display_image.php' ?></div> 
+    <div><?php include 'user/user.php' ?></div> 
   <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
   {?>
