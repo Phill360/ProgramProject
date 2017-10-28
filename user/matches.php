@@ -14,6 +14,7 @@
 <div class="row">
   
   <?php
+  require_once('./_php/connect.php');
     
   $page = $_GET["page"];
   if($page == "" || $page == "1")
