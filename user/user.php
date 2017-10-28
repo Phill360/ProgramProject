@@ -8,7 +8,7 @@
   
   /* Getting user's userID */
   
-  // Perform quey
+  // Perform query
   $query = "SELECT * "; 
 	$query .= "FROM user ";
 	$result = mysqli_query($connection, $query);
@@ -46,7 +46,7 @@
 	  $count  = mysqli_num_rows($result);
 	  if ($count == 0)
 	  {
-      $userTool = 'questionnaire'; // not working
+      $_SESSION['userTool'] = 'questionnaire'; // not working
 	  }
 	  else
 	  {
@@ -55,7 +55,7 @@
 	      // Match user ID to a row
 	      if ($row["userID"] == $userID)
 	      {
-	        $userTool = 'matches'; // not working
+	        $_SESSION['userTool'] = 'matches';
         }
 	    }	    
 	  }
@@ -63,23 +63,19 @@
 
   if(isset($_POST['questionnaireBtn']))
   {
-    $userTool = 'questionnaire';
+    $_SESSION['userTool'] = 'questionnaire';
   }
 
   if(isset($_POST['matchesBtn']))
   {
-    $userTool = 'matches';
+    $_SESSION['userTool'] = 'matches';
   }
 
   if(isset($_POST['favouritesBtn']))
   {
-    $userTool = 'favourites';
+    $_SESSION['userTool'] = 'favourites';
   }
   
-  if(isset($_POST['viewBtn']))
-  {
-    $userTool = 'view';
-  }
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -99,15 +95,15 @@
   </div>
 
   <?php 
-    if ($userTool == 'questionnaire')
+    if ($_SESSION['userTool'] == 'questionnaire')
     {?>
       <div><?php include 'questionnaire.php' ?></div>
     <?php }
-    else if ($userTool == 'matches')
+    else if ($_SESSION['userTool'] == 'matches')
     {?>
       <div><?php include 'matches.php' ?></div>
     <?php } 
-    else if ($userTool == 'favourites')
+    else if ($_SESSION['userTool'] == 'favourites')
     {?>
       <div><?php include 'favourites.php' ?></div>
     <?php }
