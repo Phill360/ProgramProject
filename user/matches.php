@@ -25,7 +25,19 @@
     $page1 = ($page*12)-12;
   }
     
-  $result = fetchAnimalsFromDatabase($page1);
+  //$result = fetchAnimalsFromDatabase($page1);
+  $query = "SELECT * FROM animals LIMIT $page1,12"; 
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("7. Database query failed.");
+	  }
+  
+  
+  
+  
 	
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
