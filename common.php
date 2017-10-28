@@ -474,7 +474,7 @@ function debug_to_console($data) {
 	function setupUserSession()
 	{
 	  // Connect AWS MYSQL Server
-    // require_once('./_php/connect.php');
+    require_once('./_php/connect.php');
   
     $email = $_SESSION['email'];
   
@@ -500,6 +500,8 @@ function debug_to_console($data) {
 	      $userID = $row["userID"];
       }
 	  }
+	  
+	  mysqli_close($connection);
 	
 	  /* With the userID we now check if this user has visited the site previously. */
   
