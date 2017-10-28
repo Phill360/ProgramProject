@@ -86,7 +86,11 @@
           ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
         }
         ?>
-        <?php if ($page < $a || $page == "") 
+        <?php if ($page == "") 
+        {?>
+          <li><a href="index.php?page=<?php echo 2; ?>" aria-label="Next">&raquo;</a></li><?php
+        }
+        else if ($page < $a) 
         {?>
           <li><a href="index.php?page=<?php echo $page+1; ?>" aria-label="Next">&raquo;</a></li><?php
         }
