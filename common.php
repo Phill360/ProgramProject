@@ -322,10 +322,6 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 		mysqli_close($connection);
 		exit;
 	}
-	
-
-		 // $_POST = array();
-
 
 	// Close database connection
 	mysqli_close($connection);
