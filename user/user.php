@@ -77,7 +77,6 @@
   }
   
   mysqli_close($connection);
-  
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -86,6 +85,7 @@
 </head>
 
 <body>
+  <div><?php include 'display_image.php' ?></div>
 <div class="container">
   
   <div>
