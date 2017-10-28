@@ -15,7 +15,7 @@
   
   <?php
     
-  $query = "SELECT * FROM animals LIMIT 0, 12"; 
+  $query = "SELECT * FROM animals"; 
 	$result = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result) {
@@ -63,7 +63,6 @@
 	{
 	  $size += 1;
 	}
-	echo $size;
 	
 	$a = ceil($size/12); // Number of pages
 	echo $a;
