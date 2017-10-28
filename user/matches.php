@@ -32,7 +32,6 @@
 		die("Database query failed.");
 	}
 	
-	include_once('./common.php');
 	displayimage('mark4');
 	
   // Fetch pets from the 'animals' table
