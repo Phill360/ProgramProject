@@ -25,7 +25,7 @@
     $page1 = ($page*12)-12;
   }
     
-  $result = fetchAnimalsFromDatabase();
+  $result = fetchAnimalsFromDatabase($page1);
 	
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
