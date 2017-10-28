@@ -13,6 +13,7 @@
 <!-- Description -->  
 <div class="container">
     <div class="textMedium"><div class="opensans">Description of website here..</div></div>
+    <br>
 </div>
 </body>
 </html>
