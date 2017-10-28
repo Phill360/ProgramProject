@@ -458,9 +458,7 @@ function debug_to_console($data) {
     $dbname="pawCompanion";
     $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
-			
-		echo "$rspcaID";
-			
+
 		$query = "select * from animals where rspcaID='".$rspcaID."'";
 		$result=mysqli_query($connection,$query);
 		
