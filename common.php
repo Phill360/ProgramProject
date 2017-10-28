@@ -450,7 +450,7 @@ function debug_to_console($data) {
   function displayimage($rspcaID)
   {
 		// Connect AWS MYSQL Server
-    // require_once('./_php/connect.php');
+    require_once('./_php/connect.php');
 			
 		echo "$rspcaID";
 			
