@@ -33,7 +33,7 @@
 	// Test for query error
 	if(!$result) 
 	{
-		  die("7. Database query failed.");
+		  die("7A. Database query failed.");
 	}
   
   
