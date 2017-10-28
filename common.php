@@ -489,6 +489,8 @@ function debug_to_console($data) {
 	  {
 		  die("5. Database query failed.");
 	  }
+	  
+	  echo('Reaching');
 	
 	  // Iterate through results to get the user ID 
 	  while ($row = mysqli_fetch_assoc($result))
@@ -539,8 +541,6 @@ function debug_to_console($data) {
 	{
 	  // Connect AWS MYSQL Server
     require_once('./_php/connect.php');
-	  
-	  echo($page1);
 	  
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
