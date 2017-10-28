@@ -25,7 +25,6 @@
     $page1 = ($page*12)-12;
   }
     
-  $number = checkNumberUsersInFile();
   $result = fetchAnimalsFromDatabase($page1);
 	
   // Fetch pets from the 'animals' table
