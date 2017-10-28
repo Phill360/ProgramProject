@@ -1,8 +1,8 @@
 <?php
   include_once('./common.php');
 
-  setupUserSession();
   numberAnimalsInDatabase();
+  setupUserSession();
 
   if(isset($_POST['questionnaireBtn']))
   {
