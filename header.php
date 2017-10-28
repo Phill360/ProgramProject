@@ -21,6 +21,7 @@ $status = checkStatus();
       {?>
         <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#signInModal">Sign in</button>
         <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#registerModal">Register</button>
+        <br><div class="opensans"><div class="black"><div class="textSmall"><?php echo("Welcome ".$_SESSION[email]);?></div></div></div>
       <?php
       }
       else
