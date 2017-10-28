@@ -362,7 +362,7 @@ function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $ac
 function remPet($rspcaID) {
     
   // Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
+  require_once('./_php/connect.php');
   
   //   // 2. Perform Query
   // $query = "SELECT * FROM animals ";
@@ -393,7 +393,7 @@ function remPet($rspcaID) {
   }
   
   // Close database connection
-  // mysqli_close($connection);
+  mysqli_close($connection);
 }
   
 function remBreed($breedID) {
