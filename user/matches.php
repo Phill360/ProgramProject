@@ -27,11 +27,11 @@
     
   //$result = fetchAnimalsFromDatabase($page1);
   require_once('./_php/connect.php');
-  $query = "SELECT * FROM animals LIMIT $page1,12"; 
-	$result = mysqli_query($connection, $query);
+  $query2 = "SELECT * FROM animals LIMIT $page1,12"; 
+	$result2 = mysqli_query($connection, $query2);
 	  
 	// Test for query error
-	if(!$result) 
+	if(!$result2) 
 	{
 		  die("7A. Database query failed.");
 	}
