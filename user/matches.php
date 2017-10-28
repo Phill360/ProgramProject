@@ -15,7 +15,7 @@
   
   <?php
     
-  $query = "SELECT * FROM animals"; 
+  $query = "SELECT * FROM animals LIMIT 0,12"; 
 	$result = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result) {
@@ -51,7 +51,7 @@
   }
       
   // Get number of pets in database
-	$query2 = "SELECT * FROM animals LIMIT 0,12";
+	$query2 = "SELECT * FROM animals";
 	$result2 = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result2) {
