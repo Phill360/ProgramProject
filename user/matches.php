@@ -20,6 +20,10 @@
   {
     $page1 = 0;
   }
+  else 
+  {
+    $page1 = ($page*12)-12;
+  }
     
   $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	$result = mysqli_query($connection, $query);
