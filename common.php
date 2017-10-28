@@ -399,7 +399,7 @@ function remPet($rspcaID) {
 function remBreed($breedID) {
     
   // Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
+  require_once('./_php/connect.php');
   
   // 2. Perform Query
   $query = "DELETE FROM breed ";
@@ -418,7 +418,7 @@ function remBreed($breedID) {
   }
 
   // Close database connection
-  // mysqli_close($connection);
+  mysqli_close($connection);
 }
   
 /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
