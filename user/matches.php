@@ -79,6 +79,7 @@
           ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
         }
         ?>
+        <?php ?>
         <li><a href="index.php?page=<?php echo $b; ?>" aria-label="Next">&raquo;</a></li>
       </ol>
     </nav>
