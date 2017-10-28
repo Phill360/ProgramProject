@@ -14,7 +14,6 @@
 <div class="row">
   
   <?php
-  require_once('./_php/connect.php');
     
   $page = $_GET["page"];
   if($page == "" || $page == "1")
@@ -26,12 +25,7 @@
     $page1 = ($page*12)-12;
   }
     
-  $query = "SELECT * FROM animals LIMIT $page1,12"; 
-	$result = mysqli_query($connection, $query);
-	// Test for query error
-	if(!$result) {
-		die("7. Database query failed.");
-	}
+  $result = fetchAnimalsFromDatabase();
 	
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
