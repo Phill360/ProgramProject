@@ -48,7 +48,7 @@
             <br>
             <div class="holder">
               <?php displayimage($row["imagePath"]) ?>
-              <img src="<?php echo $row["imagePath"]; ?>" alt "pet">
+              <!--<img src="<?php echo $row["imagePath"]; ?>" alt "pet">-->
             </div>
             <p></p><br>
             <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
