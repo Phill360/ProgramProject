@@ -32,8 +32,6 @@
 		die("Database query failed.");
 	}
 	
-	displayimage('mark4');
-	
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
   ?>
@@ -50,7 +48,7 @@
             <br>
             <div class="holder">
               <?php displayimage('mark4'); ?>
-              <!--<img src="<?php echo $row["imagePath"]; ?>" alt "pet">-->
+
             </div>
             <p></p><br>
             <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
