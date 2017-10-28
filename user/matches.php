@@ -29,7 +29,7 @@
 	$result = mysqli_query($connection, $query);
 	// Test for query error
 	if(!$result) {
-		die("Database query failed.");
+		die("7. Database query failed.");
 	}
 	
   // Fetch pets from the 'animals' table
@@ -66,7 +66,7 @@
 	$result2 = mysqli_query($connection, $query2);
 	// Test for query error
 	if(!$result2) {
-		die("Database query failed.");
+		die("8. Database query failed.");
 	}
 	
 	$size = 0;

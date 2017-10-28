@@ -219,7 +219,7 @@ function checkNumberUsersInFile()
 	// Test for query error
 	if(!$result) 
 	{
-		die("6. Database query failed.");
+		die("3. Database query failed.");
 	}
 	  
 	$size = 0;
@@ -245,7 +245,7 @@ function checkNumberAnimalsInDatabase()
 	// Test for query error
 	if(!$result) 
 	{
-	  die("6. Database query failed.");
+	  die("4. Database query failed.");
 	}
 	  
 	$size = 0;
@@ -488,7 +488,7 @@ function debug_to_console($data) {
 	  // Test for query error
 	  if(!$result)
 	  {
-		  die("Get user ID database query failed.");
+		  die("5. Database query failed.");
 	  }
 	
 	  // Iterate through results to get the user ID 
@@ -511,7 +511,7 @@ function debug_to_console($data) {
 	  // Test for query error
 	  if(!$result)
 	  {
-		  die("The Database query failed.");
+		  die("6. Database query failed.");
 	  }
 	  else
 	  {
