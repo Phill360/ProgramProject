@@ -27,12 +27,6 @@
   
   //$number = numberAnimalsInDatabase();  
   $result = fetchAnimalsFromDatabase($page1);
-	  
-	// Test for query error
-	if(!$result2) 
-	{
-		  die("7A. Database query failed.");
-	}
   
   
   
