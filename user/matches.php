@@ -25,8 +25,8 @@
     $page1 = ($page*12)-12;
   }
   
-  $number = numberAnimalsInDatabase();  
-  //$result = fetchAnimalsFromDatabase($page1);
+  //$number = numberAnimalsInDatabase();  
+  $result = fetchAnimalsFromDatabase($page1);
 	  
 	// Test for query error
 	if(!$result2) 
