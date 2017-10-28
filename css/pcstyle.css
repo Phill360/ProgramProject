@@ -2,6 +2,10 @@
     background-color: #e6e6ff;
 }
 
+.jumbotron {
+	min-height: 300px;
+}
+
 .slackey {
     font-family: 'Slackey', sans-serif;
 }
