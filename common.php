@@ -535,7 +535,7 @@ function debug_to_console($data) {
 	}
 	
 	// Fetch animals from the database
-	function fetchAnimalsFromDatabase()
+	function fetchAnimalsFromDatabase($page1)
 	{
 	  // Connect AWS MYSQL Server
     require_once('./_php/connect.php');
