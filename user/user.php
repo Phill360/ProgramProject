@@ -1,6 +1,6 @@
 <?php
   include_once('./common.php');
-  require_once('./_php/connect.php');
+  //require_once('./_php/connect.php');
   
   setupUserSession(); // 5
   numberAnimalsInDatabase(); // 8
