@@ -456,6 +456,13 @@ function debug_to_console($data) {
 			
 		$query = "select * from animals where rspcaID='".$rspcaID."'";
 		$result=mysqli_query($connection,$query);
+		
+		// Test for query error
+	  if(!$result)
+	  {
+		  echo('Could not get image');
+	  }
+		
 		while ($row = mysqli_fetch_array($result)) 
 		{
 			echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
