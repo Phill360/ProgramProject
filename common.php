@@ -558,7 +558,7 @@ function debug_to_console($data) {
 	function numberAnimalsInDatabase()
 	{
 	  // Connect AWS MYSQL Server
-    //require_once('./_php/connect.php');
+    require_once('./_php/connect.php');
 	  
 	  // Get number of pets in database
 	  $query = "SELECT * FROM animals";
