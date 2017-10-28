@@ -573,14 +573,7 @@ function debug_to_console($data) {
 	function fetchAnimalsFromDatabase($page1)
 	{
     // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
+    $new_id = mysqli_insert_id($connection); ///////////////////////////
     
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
@@ -611,6 +604,7 @@ function debug_to_console($data) {
 	  // Get number of pets in database
 	  $query = "SELECT * FROM animals";
 	  $result = mysqli_query($connection, $query);
+	  
 	  // Test for query error
 	  if(!$result) 
 	  {
