@@ -173,7 +173,9 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Rarely'},
+        {value: 2, legend: ''},
         {value: 3, legend: 'Inconsistent'},
+        {value: 4, legend: ''},
         {value: 5, legend: 'Almost always'}
       ]
     }
@@ -188,7 +190,9 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Mouse (small)'},
+        {value: 2, legend: ''},
         {value: 3, legend: 'Possum (medium)'},
+        {value: 4, legend: ''},
         {value: 5, legend: 'Horse (large)'}
       ]
     }

@@ -260,12 +260,24 @@ function checkNumberAnimalsInDatabase()
   return $size;
 }
   
+// UPDATED Sunday 29th October
 // All the input vaiables are numerical, for example: $childrenAtHome -> 0 = No and 1 = yes
-// UPDATE as of Wed 25th Oct: The user can select BOTH cat and dog. So $catItem and $dogItem can both equal 1 at same time.
+// The user can select BOTH cat and dog. So $catItem and $dogItem can both equal 1 at same time.
 // The reason for this is that the user may want to view both cats and dogs for potential adoption.
-// For $adultsHome (How many adults in the home?) at this stage is either 1, 2 or 3. But I can modify the questionnaire to give user option to select more adults.
-// $howActive is either 1 (for lazy), 2 (for average) or 3 (for active)
-// $petSize is either 1 (for small), 2 (for medium) or 3 (for large)
+
+// For $adultsHome (How many adults in the home?) at this stage is either 1, 2, 3, 4 or 5. 
+// Why 3, 4 or 5 adults? Could have grown up children 18+ who live at home too.
+
+// $howActive is either 1 (for lazy), 3 (for average) or 5 (for active)
+
+// $petSize is either 1 (for extra small), 2 (for small), 3 (for medium), 4 (for large) or 5 (for giant)
+// Giant dogs >50kg: Great Dane, English Mastiff, Scottish Deerhound.
+// Large dogs 25kg-50kg: Golden Retriever, Labrador.
+// Medium dogs 15kg-25kg: Afghan Hound, American Foxhound, Australian Cattle Dog.
+// Small dogs 5kg-15kg: Australian Terrier, Shiba Inu.
+// Extra small dogs <5kg: Chihuahua, Dachshund, Maltese, Yorkshire Terrier.
+// Cats also match to extra small. According to Google adult cats weigh 3.6 - 4.5kg.
+
 // $petTemperament is either 1 (for princess), 2 (for zen) or 3 (Usain Bolt active)
 function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament)
 {
