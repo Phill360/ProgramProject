@@ -72,7 +72,7 @@
     <div class="center">
     <nav>
       <ol class="pagination">
-        <li><a href="index.php?page=<?php echo $b-1; ?>" aria-label="Previous">&laquo;</a></li>
+        <li><a href="index.php?page=<?php echo $b; ?>" aria-label="Previous">&laquo;</a></li>
         <?php
         for ($b=1; $b<=$a; $b++)
         {
