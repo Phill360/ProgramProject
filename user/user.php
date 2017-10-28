@@ -2,6 +2,7 @@
   include_once('./common.php');
 
   setupUserSession();
+  $number = checkNumberUsersInFile();
 
   if(isset($_POST['questionnaireBtn']))
   {
