@@ -74,7 +74,7 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['usertype'] = $usertype;
     header('Location: index.php');
   }
-  // mysqli_close($connection);
+  mysqli_close($connection);
 }
 
 /* This function signs the user in */
@@ -119,7 +119,7 @@ function signInUser($email, $password)
   } else {
     $_SESSION['validUser'] = false;
   }
-  // mysqli_close($connection);
+  mysqli_close($connection);
 }
 
   
@@ -179,7 +179,7 @@ function checkUserType()
 /* This function switches a user from normal to admin */
 function createNewAdminUser($email)
 {
-  // include_once('_php/connect.php');
+  include_once('_php/connect.php');
     
   $query = "UPDATE user SET userType='admin' WHERE email='" . $email . "'";
 
@@ -189,13 +189,13 @@ function createNewAdminUser($email)
     echo "User not found: " . mysqli_error($connection);
   };
     
-  // mysqli_close($connection);
+  mysqli_close($connection);
 }
   
 /* This function demotes admin user to normal user */
 function demoteAdminUser($email)
 {
-  // include_once('_php/connect.php');
+  include_once('_php/connect.php');
     
   $query = "UPDATE user SET userType='normal' WHERE email='" . $email . "'";
     
@@ -205,13 +205,13 @@ function demoteAdminUser($email)
     echo "User not found: " . mysqli_error($connection);
   };
     
-  // mysqli_close($connection);
+  mysqli_close($connection);
 }
   
 /* This function checks the number of users in the database. */
 function checkNumberUsersInFile()
 {
-  // require_once('_php/connect.php');
+  require_once('_php/connect.php');
     
   $query = "SELECT * ";
 	$query .= "FROM user ";
@@ -230,7 +230,7 @@ function checkNumberUsersInFile()
 	   $size += 1;
 	}
 
-  // mysqli_close($connection);
+  mysqli_close($connection);
   return $size;
 }
   
@@ -288,7 +288,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {
   // Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
+  require_once('./_php/connect.php');
   
   // Does Pet alread Exist
 	$query = "SELECT rspcaID  ";
@@ -326,13 +326,13 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	}
 
 	// Close database connection
-	// mysqli_close($connection);
+	mysqli_close($connection);
 }
   
 function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
     
   // Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
+  require_once('./_php/connect.php');
     
 	// 2. Perform Query
 	$query = "INSERT INTO breed ";
@@ -356,7 +356,7 @@ function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $ac
 	}
 
 	// Close database connection
-	// mysqli_close($connection);
+	mysqli_close($connection);
 }
   
 function remPet($rspcaID) {
