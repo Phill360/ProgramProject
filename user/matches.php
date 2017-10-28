@@ -64,6 +64,8 @@
 	  $size += 1;
 	}
 	
+	echo $size;
+	
 	$a = ceil($size/12); // Number of pages
     
     for ($b=1; $b<=$a; $b++)
