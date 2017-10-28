@@ -110,6 +110,7 @@
           <rzslider rz-slider-model="sliderPetSize.value" rz-slider-options="sliderPetSize.options"></rzslider>
           <input id="petSize" type="text" style="display: none;" ng-model="sliderPetSize.value" name="petSize" required>
           <p></p><br>
+          <p></p><br>
           <p></p>
         </div>
       </div>
@@ -189,11 +190,11 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
       floor: 1,
       showTicksValues: true,
       stepsArray: [
-        {value: 1, legend: 'Mouse (small)'},
+        {value: 1, legend: 'Mouse (extra small)'},
         {value: 2, legend: ''},
         {value: 3, legend: 'Possum (medium)'},
         {value: 4, legend: ''},
-        {value: 5, legend: 'Horse (large)'}
+        {value: 5, legend: 'Horse (giant)'}
       ]
     }
   };
