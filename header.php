@@ -27,7 +27,8 @@ $status = checkStatus();
       {?>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="signOutForm">
           <button type="submit" class="btn btn-primary pull-right" name="signOutBtn">Sign out</button>
-          <div class="opensans"><div class="black"><div class="textRegular"><?php echo("Welcome ".$_SESSION[email]." ".$_SESSION[lastName]);?></div></div></div>
+          <br>
+          <div class="opensans"><div class="black"><div class="textRegular"><?php echo("Welcome ".$_SESSION[firstName]." ".$_SESSION[lastName]);?></div></div></div>
         </form>
       <?php
       }?>

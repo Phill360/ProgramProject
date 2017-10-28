@@ -117,7 +117,7 @@ function signInUser($email, $password)
     $query = "SELECT * FROM user ";
     $query = "WHERE email='" . $email . "'";
     $result = mysqli_query($connection, $query);
-    if ($resut) 
+    if ($result) 
     {
       $firstname = $row["firstName"];
       $lastname = $row["lastName"];
