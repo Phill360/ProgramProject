@@ -42,7 +42,7 @@
           <div class="center">
             <br>
             <div class="holder">
-              <?php displayimage('mark4'); ?>
+              <?php displayimage($row["rspcaID"]); ?>
 
             </div>
             <p></p><br>
