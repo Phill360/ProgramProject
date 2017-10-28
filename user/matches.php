@@ -35,7 +35,7 @@
         <div class="panel-heading">
           <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
         </div>
-        <div class="panel-body" style="min-height: 500; max-height: 500;">
+        <div class="panel-body" style="min-height: 450; max-height: 450;">
           <div class="right">
             <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
           </div>
