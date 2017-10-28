@@ -64,14 +64,7 @@
 	  $size += 1;
 	}
 	
-	echo $size;
-	
 	$a = ceil($size/12); // Number of pages
-    
-    for ($b=1; $b<=$a; $b++)
-    {
-      ?><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a><?php
-    }    
   ?>
   
 </div>
@@ -79,14 +72,14 @@
     <div class="center">
     <nav>
       <ol class="pagination">
-        <li><a href="#" aria-label="Previous">&laquo;</a></li>
+        <li><a href="index.php?page=<?php echo $b-1; ?>" aria-label="Previous">&laquo;</a></li>
         <?php
         for ($b=1; $b<=$a; $b++)
         {
           ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
         }
         ?>
-        <li><a href="#" aria-label="Next">&raquo;</a></li>
+        <li><a href="index.php?page=<?php echo $b+1; ?>" aria-label="Next">&raquo;</a></li>
       </ol>
     </nav>
     </div>
