@@ -1,6 +1,5 @@
 <?php
   include_once('./common.php');
-  //require_once('./_php/connect.php');
   
   setupUserSession(); // Error 5 if cannot connect
 
@@ -43,7 +42,7 @@
     <?php }
     else if ($_SESSION['userTool'] == 'matches')
     {?>
-      <div><?php include 'matches.php' ?></div> 
+      <div><?php include 'display_image.php' ?></div> 
     <?php } 
     else if ($_SESSION['userTool'] == 'favourites')
     {?>

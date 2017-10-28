@@ -14,7 +14,6 @@
 <div class="row">
   
   <?php
-  include(display_image.php);
     
   $page = $_GET["page"];
   if($page == "" || $page == "1")
