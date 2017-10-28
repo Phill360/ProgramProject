@@ -95,8 +95,7 @@
   </div>
 
   <?php
-  
-  echo $_SESSION['userTool'];
+
     if ($_SESSION['userTool'] == 'questionnaire')
     {?>
       <div><?php include 'questionnaire.php' ?></div>
