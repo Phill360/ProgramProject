@@ -452,14 +452,13 @@ function debug_to_console($data) {
 		// Connect AWS MYSQL Server
     require_once('./_php/connect.php');
 			
-		// echo "$rspcaID";
+		echo "$rspcaID";
 			
 		$query = "select * from animals where rspcaID='".$rspcaID."'";
 		$result=mysqli_query($connection,$query);
 		while ($row = mysqli_fetch_array($result)) 
 		{
 			echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
-			echo('working');
 		}
 		mysqli_close($connection);
 	}
