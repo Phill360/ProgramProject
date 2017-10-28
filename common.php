@@ -74,7 +74,7 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['usertype'] = $usertype;
     header('Location: index.php');
   }
-  mysqli_close($connection);
+  // mysqli_close($connection);
 }
 
 /* This function signs the user in */
@@ -119,7 +119,7 @@ function signInUser($email, $password)
   } else {
     $_SESSION['validUser'] = false;
   }
-  mysqli_close($connection);
+  // mysqli_close($connection);
 }
 
   
@@ -144,7 +144,8 @@ function signOutUser()
   {
     $result = 'signed in';
   }
-  header('Location: index.php');	
+  header('Location: index.php');
+  mysqli_close($connection);
 }
 
 /* This function checks whether the user is logged in or not */
@@ -178,7 +179,7 @@ function checkUserType()
 /* This function switches a user from normal to admin */
 function createNewAdminUser($email)
 {
-  include_once('_php/connect.php');
+  // include_once('_php/connect.php');
     
   $query = "UPDATE user SET userType='admin' WHERE email='" . $email . "'";
 
@@ -188,13 +189,13 @@ function createNewAdminUser($email)
     echo "User not found: " . mysqli_error($connection);
   };
     
-  mysqli_close($connection);
+  // mysqli_close($connection);
 }
   
 /* This function demotes admin user to normal user */
 function demoteAdminUser($email)
 {
-  include_once('_php/connect.php');
+  // include_once('_php/connect.php');
     
   $query = "UPDATE user SET userType='normal' WHERE email='" . $email . "'";
     
@@ -204,13 +205,13 @@ function demoteAdminUser($email)
     echo "User not found: " . mysqli_error($connection);
   };
     
-  mysqli_close($connection);
+  // mysqli_close($connection);
 }
   
 /* This function checks the number of users in the database. */
 function checkNumberUsersInFile()
 {
-  require_once('_php/connect.php');
+  // require_once('_php/connect.php');
     
   $query = "SELECT * ";
 	$query .= "FROM user ";
@@ -229,14 +230,14 @@ function checkNumberUsersInFile()
 	   $size += 1;
 	}
 
-  mysqli_close($connection);
+  // mysqli_close($connection);
   return $size;
 }
   
 /* This function checks the number of pets in the database. */
 function checkNumberAnimalsInDatabase()
 {
-  require_once('./_php/connect.php');
+  // require_once('./_php/connect.php');
     
   $query = "SELECT * ";
 	$query .= "FROM animals ";
@@ -255,7 +256,7 @@ function checkNumberAnimalsInDatabase()
 	  $size += 1;
 	}
 
-  mysqli_close($connection);
+  // mysqli_close($connection);
   return $size;
 }
   
@@ -287,7 +288,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  // require_once('./_php/connect.php');
   
   // Does Pet alread Exist
 	$query = "SELECT rspcaID  ";
@@ -325,13 +326,13 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	}
 
 	// Close database connection
-	mysqli_close($connection);
+	// mysqli_close($connection);
 }
   
 function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
     
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  // require_once('./_php/connect.php');
     
 	// 2. Perform Query
 	$query = "INSERT INTO breed ";
@@ -355,13 +356,13 @@ function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $ac
 	}
 
 	// Close database connection
-	mysqli_close($connection);
+	// mysqli_close($connection);
 }
   
 function remPet($rspcaID) {
     
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  // require_once('./_php/connect.php');
   
   //   // 2. Perform Query
   // $query = "SELECT * FROM animals ";
@@ -392,13 +393,13 @@ function remPet($rspcaID) {
   }
   
   // Close database connection
-  mysqli_close($connection);
+  // mysqli_close($connection);
 }
   
 function remBreed($breedID) {
     
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  // require_once('./_php/connect.php');
   
   // 2. Perform Query
   $query = "DELETE FROM breed ";
@@ -417,7 +418,7 @@ function remBreed($breedID) {
   }
 
   // Close database connection
-  mysqli_close($connection);
+  // mysqli_close($connection);
 }
   
 /* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
@@ -449,7 +450,7 @@ function debug_to_console($data) {
   function displayimage($rspcaID)
   {
 		// Connect AWS MYSQL Server
-    require_once('./_php/connect.php');
+    // require_once('./_php/connect.php');
 			
 		echo "$rspcaID";
 			
@@ -466,14 +467,14 @@ function debug_to_console($data) {
 		{
 			echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
 		}
-		mysqli_close($connection);
+		// mysqli_close($connection);
 	}
 	
 	// Setup user session
 	function setupUserSession()
 	{
 	  // Connect AWS MYSQL Server
-    require_once('./_php/connect.php');
+    // require_once('./_php/connect.php');
   
     $email = $_SESSION['email'];
   
@@ -531,14 +532,14 @@ function debug_to_console($data) {
 	      }	    
 	    }
 	  }
-	  mysqli_close($connection);
+	  // mysqli_close($connection);
 	}
 	
 	// Fetch animals from the database
 	function fetchAnimalsFromDatabase($page1)
 	{
     // Connect AWS MYSQL Server
-    require_once('./_php/connect.php');
+    // require_once('./_php/connect.php');
     
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
@@ -550,12 +551,15 @@ function debug_to_console($data) {
 	  }
 	  
 	  return $result;
-	  mysqli_close($connection);
+	  // mysqli_close($connection);
 	}
 	
 	// Get number of animals in database
 	function numberAnimalsInDatabase()
 	{
+	  // Connect AWS MYSQL Server
+    // require_once('./_php/connect.php');
+	  
 	  // Get number of pets in database
 	  $query = "SELECT * FROM animals";
 	  $result = mysqli_query($connection, $query);
@@ -565,6 +569,6 @@ function debug_to_console($data) {
 		  die("8. Database query failed.");
 	  }
 	  return $result;
-	  mysqli_close($connection);
+	  // mysqli_close($connection);
 	}
 ?>
