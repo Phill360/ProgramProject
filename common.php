@@ -532,7 +532,6 @@ function debug_to_console($data) {
 	      }	    
 	    }
 	  }
-	  mysqli_close($connection);
 	}
 	
 	// Fetch animals from the database
