@@ -574,16 +574,7 @@ function debug_to_console($data) {
 	{
     // Connect AWS MYSQL Server
     // Test for query error ////////////////////////////////////////
-    if($result) 
-    {
-      $new_id = mysqli_insert_id($connection);
-    } 
-    else 
-    {
-  	  echo mysqli_error($connection);
-  	  mysqli_close($connection);
-  	  exit;
-    }
+    $new_id = mysqli_insert_id($connection);
     
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
