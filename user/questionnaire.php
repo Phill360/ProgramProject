@@ -139,9 +139,9 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
 {
   //Slider with ticks and values
   $scope.sliderNumberAdults = {
-    value: 2,
+    value: 3,
     options: {
-      ceil: 3,
+      ceil: 5,
       floor: 1,
       showTicksValues: true
     }
@@ -149,45 +149,45 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
   
   //Slider with ticks and values
   $scope.sliderHowActive = {
-    value: 2,
+    value: 3,
     options: {
-      ceil: 3,
+      ceil: 5,
       floor: 1,
       showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Lazy'},
-        {value: 2, legend: 'Average'},
-        {value: 3, legend: 'Active'}
+        {value: 3, legend: 'Average'},
+        {value: 5, legend: 'Active'}
       ]
     }
   };
   
   //Slider with ticks and values
   $scope.sliderHowOftenHome = {
-    value: 2,
+    value: 3,
     options: {
-      ceil: 3,
+      ceil: 5,
       floor: 1,
       showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Rarely'},
-        {value: 2, legend: 'Inconsistent'},
-        {value: 3, legend: 'Almost always'}
+        {value: 3, legend: 'Inconsistent'},
+        {value: 5, legend: 'Almost always'}
       ]
     }
   };
   
   //Slider with ticks and values
   $scope.sliderPetSize = {
-    value: 2,
+    value: 3,
     options: {
-      ceil: 3,
+      ceil: 5,
       floor: 1,
       showTicksValues: true,
       stepsArray: [
         {value: 1, legend: 'Mouse (small)'},
-        {value: 2, legend: 'Possum (medium)'},
-        {value: 3, legend: 'Horse (large)'}
+        {value: 3, legend: 'Possum (medium)'},
+        {value: 5, legend: 'Horse (large)'}
       ]
     }
   };
