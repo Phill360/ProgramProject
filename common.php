@@ -114,6 +114,15 @@ function signInUser($email, $password)
   
   if ($validUser == true) 
   {
+    $query = "SELECT * FROM user ";
+    $query = "WHERE email='" . $email . "'";
+    $result = mysqli_query($connection, $query);
+    if ($resut) 
+    {
+      $firstname = $row["firstName"];
+      $lastname = $row["lastName"];
+    }
+    
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
     $_SESSION['email'] = $email;
