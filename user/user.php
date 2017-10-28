@@ -17,7 +17,6 @@
   {
     $_SESSION['userTool'] = 'favourites';
   }
-  mysqli_close($connection);
 ?>
 
 <!DOCTYPE html PUBLIC>
