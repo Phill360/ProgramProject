@@ -53,7 +53,7 @@ if ( isset($_FILES["file"]["type"]) )
           
           $source_img = $sourcePath;
           $destination_img = $targetPath;
-          $d = compress($source_img, $destination_img, 75);
+          $d = compress($source_img, $destination_img, 50);
           
           $targetPath = $destination_directory . $_FILES["file"]["name"];
           move_uploaded_file($sourcePath, $targetPath);
