@@ -1,5 +1,26 @@
 <?php
 session_start();
+
+function compress($source, $destination, $quality) 
+{
+  $info = getimagesize($source);
+  
+  if ($info['mime'] == 'image/jpeg')
+  {
+    $image = imagecreatefromjpeg($source);
+  }
+  elseif ($info['mime'] == 'image/gif')
+  {
+    $image = imagecreatefromgif($source);
+  }
+  elseif ($info['mime'] == 'image/png')
+  {
+    $image = imagecreatefrompng($source);
+  }  
+  imagejpeg($image, $destination, $quality);
+  return $destination;
+}
+
 if ( isset($_FILES["file"]["type"]) )
 {
   $max_size = 500 * 1024; // ? KB
@@ -29,6 +50,11 @@ if ( isset($_FILES["file"]["type"]) )
         else
         {
           $sourcePath = $_FILES["file"]["tmp_name"];
+          
+          $source_img = $sourcePath;
+          $destination_img = $targetPath;
+          $d = compress($source_img, $destination_img, 75);
+          
           $targetPath = $destination_directory . $_FILES["file"]["name"];
           move_uploaded_file($sourcePath, $targetPath);
           echo "<div class=\"alert alert-success\" role=\"alert\">";
