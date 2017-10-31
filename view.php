@@ -66,11 +66,12 @@
     }
     
     .pet-images {
+      width: 60%;
       margin-top: 2%;
     }
     
     #main-image {
-      width: 60%;
+      width: 50%;
     }
     
     #thumbImg {
@@ -110,7 +111,7 @@
           <div class="slackey"><div class="black"><div class="textxxMedium"> <?php echo $row["petName"]; ?> </div></div></div>
           <!--<img src="media/ahmed-saffu-208365png" alt "pet">-->
           <div class="pet-images">
-            
+            <?php displayimage($row["rspcaID"]); ?>
           </div>
           <div class='pet-description'>
             <p> Description: <?php echo $row["description"]; ?></p>

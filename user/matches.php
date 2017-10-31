@@ -43,7 +43,6 @@
             <br>
             <div class="holder">
               <?php displayimage($row["rspcaID"]); ?>
-
             </div>
             <p></p><br>
             <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
@@ -84,8 +83,7 @@
         for ($b=1; $b<=$a; $b++)
         {
           ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
-        }
-        ?>
+        }?>
         <?php if ($page == "") 
         {?>
           <li><a href="index.php?page=<?php echo 2; ?>" aria-label="Next">&raquo;</a></li><?php

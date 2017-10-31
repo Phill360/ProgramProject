@@ -19,9 +19,11 @@
 		/* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
  
+
+	  
 		if(!preg_match($regexp, $email))
-		{       
-		  echo("Not a valid email address");
+		{
+			echo("Invalid email entered");
 		}
 		else if($password == '')   
 		{
@@ -264,6 +266,7 @@
     <div><?php include 'carousel.php' ?></div>
   <?php } ?>
   
+  
 
 
   <!-- Sign in -->
@@ -345,6 +348,8 @@
       </div>
     </div>
   </div>
+  
+  
   
   <!-- Terms -->
   <div id="termsModal" class="modal fade" role="dialog">

@@ -392,18 +392,7 @@ function remPet($rspcaID) {
     
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
-  
-  //   // 2. Perform Query
-  // $query = "SELECT * FROM animals ";
-  // $query .= "WHERE ";
-  // $query .= "rspcaID=";
-  // $query .= "'" . $rspcaID . "'";
-  // $result = mysqli_query($connection, $query);
-  // if($row = mysqli_fetch_assoc($result)){
-  //   // Delete Image for pet
-  //   unlink($row["imagePath"]);
-  // }
-  
+
   // 2. Perform Query
   $query = "DELETE FROM animals ";
   $query .= "WHERE ";
@@ -426,7 +415,6 @@ function remPet($rspcaID) {
 }
   
 function remBreed($breedID) {
-    
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
