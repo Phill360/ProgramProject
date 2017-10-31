@@ -273,12 +273,12 @@ function checkNumberAnimalsInDatabase()
 	  $size += 1;
 	}
 
-  // mysqli_close($connection);
+  mysqli_close($connection);
   return $size;
 }
   
 // UPDATED Sunday 29th October
-// All the input vaiables are numerical, for example: $childrenAtHome -> 0 = No and 1 = yes
+// All the input variables are numerical, for example: $childrenAtHome -> 0 = No and 1 = yes
 // The user can select BOTH cat and dog. So $catItem and $dogItem can both equal 1 at same time.
 // The reason for this is that the user may want to view both cats and dogs for potential adoption.
 
@@ -540,7 +540,7 @@ function debug_to_console($data) {
 	    $count  = mysqli_num_rows($result);
 	    if ($count == 0)
 	    {
-        $_SESSION['userTool'] = 'matches'; // Temporarily change
+        $_SESSION['userTool'] = 'questionnaire';
 	    }
 	    else
 	    {
@@ -557,8 +557,8 @@ function debug_to_console($data) {
 	  mysqli_close($connection);
 	}
 	
-	// Fetch animals from the database
-	function fetchAnimalsFromDatabase($page1)
+	// Get 12 animals from the database for pagination
+	function getLimitedNumberOfAnimalsFromDatabase($page1)
 	{
     // Connect AWS MYSQL Server
     $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
@@ -583,8 +583,8 @@ function debug_to_console($data) {
 	  //mysqli_close($connection);
 	}
 	
-	// Get number of animals in database
-	function numberAnimalsInDatabase()
+	// Get all animals from the database
+	function getAnimalsFromDatabase()
 	{
 	  // Connect AWS MYSQL Server
     $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
@@ -607,5 +607,63 @@ function debug_to_console($data) {
 	  }
 	  return $result;
 	  //mysqli_close($connection);
+	}
+	
+	// Get user's favourites from database
+	function getFavourites()
+	{
+	  // Connect AWS MYSQL Server
+    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+    $port=3306;
+    $socket="";
+    $user="proProg";
+    $DBpassword="pawprogramming";
+    $dbname="pawCompanion";
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    	or die ('Could not connect to the database server' . mysqli_connect_error());
+    	
+    // Get favourites
+	  $query = "SELECT * FROM favourites";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("9. Database query failed.");
+	  }
+	  
+	  return $result;
+	}
+	
+	// Get the number of favourites for the user (for pagination)
+	function getNumberOfFavouritesForUser()
+	{
+	  // Connect AWS MYSQL Server
+    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+    $port=3306;
+    $socket="";
+    $user="proProg";
+    $DBpassword="pawprogramming";
+    $dbname="pawCompanion";
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    	or die ('Could not connect to the database server' . mysqli_connect_error());
+    
+    $query = "SELECT * FROM favourites ";
+    $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+	    die("10. Database query failed.");
+	  }
+	  
+	  $numberOfFavourites = 0;
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    $numberOfFavourites += 1;
+	  }
+
+    mysqli_close($connection);
+    return $numberOfFavourites;
 	}
 ?>
