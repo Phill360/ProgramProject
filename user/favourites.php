@@ -25,44 +25,51 @@
     $page1 = ($page*12)-12;
   }
   
-  $result = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
+  // Get favourites from database
+  $favourites = getFavourites();
   
+  // Get animals from database
+  $animals = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
   
   // Fetch pets from the 'animals' table
-  while($row = mysqli_fetch_assoc($result)) {
-  ?>
-    
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
+  while($row = mysqli_fetch_assoc($favourites)) 
+  {
+    // Find favourites belonging to current user
+	  if ($row["userID"] == $_SESSION['email'])
+	  {
+	    $rspcaID = $row["rspcaID"]; ?>
+	    
+	    <!-- Now fetch animal from the animals table -->
+	    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
+        </div>
+        <div class="panel-body" style="min-height: 450; max-height: 450;">
+          <div class="right">
+            <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
           </div>
-          <div class="panel-body" style="min-height: 450; max-height: 450;">
-            <div class="right">
-              <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+          <div class="center">
+            <br>
+            <div class="holder">
+              <?php displayimage($row["rspcaID"]); ?>
             </div>
-            <div class="center">
-              <br>
-              <div class="holder">
-                <?php displayimage($row["rspcaID"]); ?>
-              </div>
-              <p></p><br>
-              <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
-              <div class="opensans"><?php echo $row["description"]; ?></div>
-              <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
-            </div>
+            <p></p><br>
+            <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
+            <div class="opensans"><?php echo $row["description"]; ?></div>
+            <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
           </div>
         </div>
       </div>
-
-  <?php
+    </div> <?php 
+	  } 
   }
-      
-  $result2 = getAnimalsFromDatabase();
+  
+  // Get number of favourites for user    
+  $numberOfFavourites = getNumberOfFavouritesForUser();
 	
-	// Count number of animals in database
 	$size = 0;
-	while ($row = mysqli_fetch_assoc($result2))
+	while ($row = mysqli_fetch_assoc($numberOfFavourites))
 	{
 	  $size += 1;
 	}
