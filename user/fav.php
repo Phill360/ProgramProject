@@ -1,5 +1,5 @@
 <?php
-
+  include_once('./common.php');
   session_start();
   
   function is_ajax_request() 
