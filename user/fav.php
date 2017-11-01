@@ -15,8 +15,8 @@
   
   // Extract $id
   $animalID = isset($_POST['id']) ? $_POST['id'] : '';
-  echo $userID;
+  echo ($userID." loves ". $id);
   
-  //addPetToFavourites($userID, $animalID);
+  addPetToFavourites($userID, $animalID);
   
 ?>
