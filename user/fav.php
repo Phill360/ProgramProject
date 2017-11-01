@@ -10,7 +10,7 @@
 
   // extract $id
   $animalID = isset($_POST['id']) ? $_POST['id'] : '';
-  echo $animalID;
+  //echo $animalID;
   
   $userID = $_SESSION[email];
   echo $userID;
