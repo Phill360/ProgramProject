@@ -1,9 +1,5 @@
 <?php
   include_once('./common.php');
-  
-  // session_start();
-
-  // if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
 ?>
 
 <DOCTYPE html PUBLIC>
