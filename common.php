@@ -605,8 +605,9 @@ function debug_to_console($data) {
 	  {
 		  die("8. Database query failed.");
 	  }
+	  
+	  mysqli_close($connection);
 	  return $result;
-	  //mysqli_close($connection);
 	}
 	
 	// Get user's favourites from database
@@ -632,6 +633,7 @@ function debug_to_console($data) {
 		  die("9. Database query failed.");
 	  }
 	  
+	  mysqli_close($connection);
 	  return $result;
 	}
 	
