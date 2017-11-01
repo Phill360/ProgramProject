@@ -683,9 +683,12 @@ function debug_to_console($data) {
     $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     
+    $ID = 28;
+    
     $query = "INSERT INTO favourites ";
-	  $query .= "(userID, animalID) ";
+	  $query .= "(ID, userID, animalID) ";
 	  $query .= "VALUES (";
+	  $query .= "'" . $ID . "',";
 	  $query .= "'" . $userID . "',";
 	  $query .= "'" . $animalID . "'";
 	  $query .= ")";
