@@ -27,12 +27,10 @@
   
   $result = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
   
-  ?> <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post"> <?php
-  
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
   ?>
-    <div id=<?php echo("RSPCA ID: ".$row["rspcaID"]); ?>
+    <!--<div id=<?php echo("RSPCA ID: ".$row["rspcaID"]); ?>-->
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -55,10 +53,9 @@
           </div>
         </div>
       </div>
-    </div>
+    <!--</div>-->
   <?php
   }
-  ?> </form> <?php
       
   $result2 = getAnimalsFromDatabase();
 	
@@ -105,28 +102,6 @@
   </nav>
 </div>
     
-<script>
-function favourite() 
-{
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'favourites.php', true);
-  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-  xhr.onreadystatechange() = function()
-  {
-    if(xhr.readyState == 4 && xhr.status == 200)
-    {
-       var result = xhr.responseText;
-       console.log('Result: ' + result);
-    }
-  };
-  xhr.send();  
-}
-  
-var buttons = document.getElementsByClassName("favourite-button");
-for(i=0; i<buttons.length; i++)
-{
-  buttons.item(i).addEventListener("click", favourite);
-}
-</script>
+
 </body>
 </html>
