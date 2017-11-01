@@ -1,6 +1,7 @@
 <?php
   include_once('./common.php');
   
+  echo("run");
   setupUserSession(); // Error 5 if cannot connect
 
   if(isset($_POST['questionnaireBtn']))
