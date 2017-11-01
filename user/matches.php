@@ -114,6 +114,7 @@ function favourite()
     if(xhr.readyState == 4 && xhr.status == 200)
     {
       var result = xhr.responseText;
+      console.log('Result: ' + result);
     }
   };
   xhr.send("id=" + parent.id);
