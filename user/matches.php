@@ -103,7 +103,7 @@
 <script>
 function favourite() 
 {
-  <?php echo("reaching"); ?>  
+  alert("Hello! I am an alert box!!");  
 }
   
 var buttons = document.getElementsByClassName("btn btn-default btn-lg");
