@@ -32,7 +32,7 @@
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
   ?>
-    
+    <div id=<?php echo("RSPCA ID: ".$row["rspcaID"]); ?>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-
+    </div>
   <?php
   }
   ?> </form> <?php
@@ -73,38 +73,60 @@
   ?>
   
 </div>
-    <!-- /.container -->
-    <div class="center">
-    <nav>
-      <ol class="pagination">
-        <?php if ($page > 1) 
-        {?>
-          <li><a href="index.php?page=<?php echo $page-1; ?>" aria-label="Next">&laquo;</a></li><?php
-        }
-        else
-        {?>
-          <li><a href="index.php?page=<?php echo $page; ?>" aria-label="Next">&laquo;</a></li><?php
-        }?>
-        <?php
-        for ($b=1; $b<=$a; $b++)
-        {
-          ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
-        }?>
-        <?php if ($page == "") 
-        {?>
-          <li><a href="index.php?page=<?php echo 2; ?>" aria-label="Next">&raquo;</a></li><?php
-        }
-        else if ($page < $a) 
-        {?>
-          <li><a href="index.php?page=<?php echo $page+1; ?>" aria-label="Next">&raquo;</a></li><?php
-        }
-        else
-        {?>
-          <li><a href="index.php?page=<?php echo $page; ?>" aria-label="Next">&raquo;</a></li><?php
-        }?>
-      </ol>
-    </nav>
-    </div>
-</body>
+<div class="center">
+  <nav>
+    <ol class="pagination">
+      <?php if ($page > 1) 
+      {?>
+        <li><a href="index.php?page=<?php echo $page-1; ?>" aria-label="Next">&laquo;</a></li><?php
+      }
+      else
+      {?>
+        <li><a href="index.php?page=<?php echo $page; ?>" aria-label="Next">&laquo;</a></li><?php
+      }?>
+      <?php
+      for ($b=1; $b<=$a; $b++)
+      {
+        ?><li><a href="index.php?page=<?php echo $b; ?>"><?php echo $b." "; ?></a></li><?php
+      }?>
+      <?php if ($page == "") 
+      {?>
+        <li><a href="index.php?page=<?php echo 2; ?>" aria-label="Next">&raquo;</a></li><?php
+      }
+      else if ($page < $a) 
+      {?>
+        <li><a href="index.php?page=<?php echo $page+1; ?>" aria-label="Next">&raquo;</a></li><?php
+      }
+      else
+      {?>
+        <li><a href="index.php?page=<?php echo $page; ?>" aria-label="Next">&raquo;</a></li><?php
+      }?>
+    </ol>
+  </nav>
+</div>
+    
+<script>
+function favourite() 
+{
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'favourites.php', true);
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.onreadystatechange() = function()
+  {
+    if(xhr.readyState == 4 && xhr.status == 200)
+    {
+       var result = xhr.responseText;
+       console.log('Result: ' + result);
+    }
+  };
+  xhr.send();  
+}
   
+var buttons = document.getElementsByClassName("favourite-button");
+for(i=0; i<buttons.length; i++)
+{
+  buttons.item(i).addEventListener("click", favourite);
+}
+</script>
+</body>
 </html>
