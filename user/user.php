@@ -1,7 +1,7 @@
 <?php
   include_once('./common.php');
   
-  // setupUserSession(); // Error 5 if cannot connect
+  setupUserSession(); // Error 5 if cannot connect
 
   if(isset($_POST['questionnaireBtn']))
   {
@@ -34,8 +34,6 @@
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
     </form>
   </div>
-  
-  <?php echo($_SESSION['userTool']); ?>
 
   <?php
     if ($_SESSION['userTool'] == 'questionnaire')

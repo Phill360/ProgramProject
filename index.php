@@ -227,8 +227,7 @@
 <!-- this should be done in one php block -- JenCam TO DO -->
 <?php
   if ($status == 'signed in' && $usertype == 'normal')
-  {
-    setupUserSession(); // Error 5 if cannot connect ?>
+  {?>
     <div><?php include 'user/user.php' ?></div> 
   <?php }
   else if ($status == 'signed in' && $usertype == 'admin')
