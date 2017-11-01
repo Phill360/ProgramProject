@@ -9,7 +9,10 @@
   if(!is_ajax_request()) { exit; }
 
   // extract $id
-  $raw_id = isset($_POST['id']) ? $_POST['id'] : '';
-
-  echo $raw_id;
+  $userID = isset($_POST['id']) ? $_POST['id'] : '';
+  echo $userID;
+  
+  $userID = $_SESSION[email];
+  addPetToFavourites($userID, $animalID);
+  
 ?>
