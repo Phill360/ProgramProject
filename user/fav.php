@@ -13,6 +13,7 @@
   echo $animalID;
   
   $userID = $_SESSION[email];
-  addPetToFavourites($userID, $animalID);
+  echo $userID;
+  //addPetToFavourites($userID, $animalID);
   
 ?>
