@@ -19,12 +19,10 @@
   if($page == "" || $page == "1")
   {
     $page1 = 0;
-    echo "reaching 1";
   }
   else 
   {
     $page1 = ($page*12)-12;
-    echo "reaching 2";
   }
   
   $result = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
