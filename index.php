@@ -78,30 +78,6 @@
   // Add new pet
   if (isset($_POST['addPetBtn']))
   {
-    // $name = $_FILES["file"]["name"];
-    // $type = $_FILES["file"]["type"];
-    // $size = $_FILES["file"]["size"];
-    // $temp = $_FILES["file"]["tmp_name"];
-    // $error = $_FILES["file"]["error"];
-    // $directory = "media/";
-    // $ext = pathinfo($name, PATHINFO_EXTENSION);
-    // $fileName = "media/pets/".$_POST['rspcaID'].".".$ext;
-    
-    // if ($error > 0 ){
-    //     die("Error uploading file! Code $error.");
-    // } else {
-        
-    //     if($type=="video/avi"){
-    //       die ("that file is not alow");
-    //     } 
-    //     else {
-    //       // Move file to Media folder and rename file to rspcaID
-    //       move_uploaded_file($temp,$fileName);
-    //       echo "Upload Complete!";
-    //     }
-    // }
-    
-    
     if(getimagesize($_FILES['image']['tmp_name'])== FALSE)
 
 		{
@@ -125,8 +101,6 @@
     $gender = $_POST['gender'];
     $imageName = $name;
     $description = $_POST['description'];
-    // //Get the content of the image and then add slashes to it 
-    // $imageData=addslashes (file_get_contents($_FILES["file"]["tmp_name"]));
   
     if($rspcaID == ''){
       

@@ -34,6 +34,8 @@
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
     </form>
   </div>
+  
+  <?php echo($_SESSION['userTool']); ?>
 
   <?php
     if ($_SESSION['userTool'] == 'questionnaire')
