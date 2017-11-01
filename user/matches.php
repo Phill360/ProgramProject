@@ -30,13 +30,13 @@
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
   ?>
-    <div id="3" class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading">
             <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
           </div>
           <div class="panel-body" style="min-height: 450; max-height: 450;">
-            <div class="right">
+            <div id="3" class="right">
               <button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
             </div>
             <div class="center">
