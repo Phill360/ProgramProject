@@ -1,6 +1,6 @@
 <?php
-  include_once('./common.php');
   session_start();
+  include_once('./common.php');
   
   function is_ajax_request() 
   {
