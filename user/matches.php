@@ -104,7 +104,19 @@
 function favourite() 
 {
   var parent = this.parentElement;
-  alert(parent.id);  
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'fav.php', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('X-Requester-With', 'XMLHttpRequest');
+  xhr.onreadystatechange = function()
+  {
+    if(xhr.readyState == 4 && xhr.status == 200)
+    {
+      var result = xhr.responseText;
+    }
+  };
+  xhr.send("id=" + parent.id);
 }
   
 var buttons = document.getElementsByClassName("btn btn-default btn-lg");
