@@ -103,7 +103,8 @@
 <script>
 function favourite() 
 {
-  alert("Hello! I am an alert box!!");  
+  var parent = this.parentElement;
+  alert(parent.id);  
 }
   
 var buttons = document.getElementsByClassName("btn btn-default btn-lg");
