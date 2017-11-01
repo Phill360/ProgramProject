@@ -37,7 +37,7 @@
           </div>
           <div class="panel-body" style="min-height: 450; max-height: 450;">
             <div class="right">
-              <button type="submit" class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+              <button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
             </div>
             <div class="center">
               <br>
@@ -117,7 +117,7 @@ function favourite()
   xhr.send();  
 }
   
-var buttons = document.getElementsByClassName("favourite-button");
+var buttons = document.getElementsByClassName("btn btn-default btn-lg");
 for(i=0; i<buttons.length; i++)
 {
   buttons.item(i).addEventListener("click", favourite);
