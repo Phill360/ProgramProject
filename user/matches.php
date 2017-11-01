@@ -106,7 +106,7 @@ function favourite()
   var parent = this.parentElement;
   
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'user/fav.php', true);
+  xhr.open('POST', 'fav.php', true);
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.setRequestHeader('X-Requester-With', 'XMLHttpRequest');
   xhr.onreadystatechange = function()
