@@ -105,21 +105,24 @@
 </div>
 </body>
 <script>
-function favourite() {
-        var parent = this.parentElement;
+function favourite() 
+{
+  var parent = this.parentElement;
 
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'user/fav.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = function () {
-          if(xhr.readyState == 4 && xhr.status == 200) {
-            var result = xhr.responseText;
-            console.log('Result: ' + result);
-          }
-        };
-        xhr.send("id=" + parent.id);
-      }
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'user/fav.php', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.onreadystatechange = function () 
+  {
+    if(xhr.readyState == 4 && xhr.status == 200) 
+    {
+      var result = xhr.responseText;
+      console.log('Result: ' + result);
+    }
+  };
+  xhr.send("id=" + parent.id);
+}
   
 var buttons = document.getElementsByClassName("btn btn-default btn-lg");
 for(i=0; i<buttons.length; i++)
