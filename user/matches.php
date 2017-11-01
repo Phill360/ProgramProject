@@ -36,7 +36,7 @@
             <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
           </div>
           <div class="panel-body" style="min-height: 450; max-height: 450;">
-            <div id="3" class="right">
+            <div id=<?php echo($row["rspcaID"]); ?> class="right">
               <button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
             </div>
             <div class="center">
