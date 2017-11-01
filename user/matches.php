@@ -27,7 +27,7 @@
   
   $result = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
   
-  
+  ?> <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post"> <?php
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
   ?>
@@ -57,6 +57,7 @@
 
   <?php
   }
+  ?> </form> <?php
       
   $result2 = getAnimalsFromDatabase();
 	
