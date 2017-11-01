@@ -1,7 +1,7 @@
 <?php
-  session_start();
+//   session_start();
 
-  if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
+//   if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
 
   function is_ajax_request() {
     return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
