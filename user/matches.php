@@ -40,7 +40,7 @@
           </div>
           <div class="panel-body" style="min-height: 450; max-height: 450;">
             <div class="right">
-              <a type="submit" class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+              <button type="submit" class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
             </div>
             <div class="center">
               <br>
