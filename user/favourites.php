@@ -55,8 +55,8 @@
               <?php displayimage($rspcaID); ?>
             </div>
             <p></p><br>
-            <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
-            <div class="opensans"><?php echo $row["description"]; ?></div>
+            <div class="slackey"><div class="textxxMedium"><?php echo(getAnimalName($rspcaID)); ?></div></div>
+            <div class="opensans"><?php echo(getAnimalDescription($rspcaID)); ?></div>
             <?php echo "<a href='view.php?PetId={$rspcaID}'> More </a>"; ?>
           </div>
         </div>

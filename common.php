@@ -614,6 +614,80 @@ function debug_to_console($data) {
 	  return $result;
 	}
 	
+	// Get animal name
+	function getAnimalName($rspcaID)
+	{
+	  // Connect AWS MYSQL Server
+    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+    $port=3306;
+    $socket="";
+    $user="proProg";
+    $DBpassword="pawprogramming";
+    $dbname="pawCompanion";
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    	or die ('Could not connect to the database server' . mysqli_connect_error());
+    	
+    // Get favourites
+	  $query = "SELECT * FROM favourites";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("8.1. Database query failed.");
+	  }
+	  
+	  // Iterate through results to get the user ID 
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    // Match email to a row
+	    if ($row["rspcaID"] == $rspcaID)
+	    {
+	      $petName = $row["petName"];
+      }
+	  }
+	  
+	  mysqli_close($connection);
+	  return $petName;
+	}
+	
+	// Get animal description
+	function getAnimalDescription($rspcaID)
+	{
+	  // Connect AWS MYSQL Server
+    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+    $port=3306;
+    $socket="";
+    $user="proProg";
+    $DBpassword="pawprogramming";
+    $dbname="pawCompanion";
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    	or die ('Could not connect to the database server' . mysqli_connect_error());
+    	
+    // Get favourites
+	  $query = "SELECT * FROM favourites";
+	  $result = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("8.2. Database query failed.");
+	  }
+	  
+	  // Iterate through results to get the user ID 
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    // Match email to a row
+	    if ($row["rspcaID"] == $rspcaID)
+	    {
+	      $description = $row["description"];
+      }
+	  }
+	  
+	  mysqli_close($connection);
+	  return $description;
+	}
+	
 	// Get user's favourites from database
 	function getFavourites()
 	{
