@@ -26,7 +26,7 @@
   }
   
   // Get favourites from database
-  $favourites = getFavourites();
+  $favourites = getFavourites(); // getFavourites returns the whole favourites table
   
   // Get animals from database
   $animals = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
@@ -35,9 +35,9 @@
   while($row = mysqli_fetch_assoc($favourites)) 
   {
     // Find favourites belonging to current user
-	  if ($row["userID"] == $_SESSION['userID'])
+	  if ($row["userID"] == $_SESSION['userID']) // Iterate through table to find rows belonging to the user
 	  {
-	    $rspcaID = $row["rspcaID"]; ?>
+	    $rspcaID = $row["animalID"]; // When found set animalID to the rspcaID ?> 
 	    
 	    <!-- Now fetch animal from the animals table -->
 	    <div class="col-xs-12 col-sm-6 col-md-4">
@@ -52,12 +52,12 @@
           <div class="center">
             <br>
             <div class="holder">
-              <?php displayimage($row["rspcaID"]); ?>
+              <?php displayimage($rspcaID); ?>
             </div>
             <p></p><br>
             <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
             <div class="opensans"><?php echo $row["description"]; ?></div>
-            <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
+            <?php echo "<a href='view.php?PetId={$rspcaID}'> More </a>"; ?>
           </div>
         </div>
       </div>
