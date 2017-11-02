@@ -85,8 +85,8 @@
 		}
 		else
 		{
-		    $imageData = addslashes($_FILES['image']['tmp_name']);
-		    $imageName = addslashes($_FILES['image']['name']);
+		  $imageData = addslashes($_FILES['image']['tmp_name']);
+		  $imageName = addslashes($_FILES['image']['name']);
 			$imageData = file_get_contents($imageData);
 			$imageData = base64_encode($imageData);
 			
@@ -99,7 +99,6 @@
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $imageName = $name;
     $description = $_POST['description'];
   
     if($rspcaID == ''){

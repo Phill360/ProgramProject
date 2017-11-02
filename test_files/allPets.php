@@ -58,7 +58,7 @@
 				<th>breedID</th>
 				<th>age</th>
 				<th>gender</th>
-				<th>imagepath</th>
+				<th>imagename</th>
 				<th>description</th>
 			</tr>
 			<?php
@@ -70,7 +70,6 @@
 			if(!$result) {
 				die("Database query failed.");
 			}
-
 				// 3. returned data
 				while($row = mysqli_fetch_assoc($result)) {
 			?>
