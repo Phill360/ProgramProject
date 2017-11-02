@@ -628,7 +628,7 @@ function debug_to_console($data) {
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     	
     // Get favourites
-	  $query = "SELECT * FROM favourites";
+	  $query = "SELECT * FROM animals";
 	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
@@ -665,7 +665,7 @@ function debug_to_console($data) {
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     	
     // Get favourites
-	  $query = "SELECT * FROM favourites";
+	  $query = "SELECT * FROM animals";
 	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
