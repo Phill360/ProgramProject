@@ -121,6 +121,7 @@ function signInUser($email, $password)
     $result = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($result)) 
     {
+      $userID = $row["userID"];
       $firstname = $row["firstName"];
       $lastname = $row["lastName"];
     }
@@ -128,6 +129,7 @@ function signInUser($email, $password)
     $_SESSION['validUser'] = true;
     $_SESSION['usertype'] = $usertype;
     $_SESSION['email'] = $email;
+    $_SESSION['userID'] = $userID;
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     header('Location: index.php');
@@ -148,6 +150,7 @@ function signOutUser()
   unset($_SESSION['validUser']);
   unset($_SESSION['usertype']);
   unset($_SESSION['email']);
+  unset($_SESSION['userID']);
   unset($_SESSION['firstName']);
   unset($_SESSION['lastName']);
     
