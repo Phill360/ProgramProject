@@ -37,7 +37,9 @@
     // Find favourites belonging to current user
 	  if ($row["userID"] == $_SESSION['userID']) // Iterate through table to find rows belonging to the user
 	  {
-	    $rspcaID = $row["animalID"]; // When found set animalID to the rspcaID ?> 
+	    $rspcaID = $row["animalID"]; // When found set animalID to the rspcaID 
+	    $petName = getAnimalName($rspcaID);
+	    $description = getAnimalDescription($rspcaID); ?>
 	    
 	    <!-- Now fetch animal from the animals table -->
 	    <div class="col-xs-12 col-sm-6 col-md-4">
@@ -55,8 +57,8 @@
               <?php displayimage($rspcaID); ?>
             </div>
             <p></p><br>
-            <div class="slackey"><div class="textxxMedium"><?php echo(getAnimalName($rspcaID)); ?></div></div>
-            <div class="opensans"><?php echo(getAnimalDescription($rspcaID)); ?></div>
+            <div class="slackey"><div class="textxxMedium"><?php echo($petName); ?></div></div>
+            <div class="opensans"><?php echo($description); ?></div>
             <?php echo "<a href='view.php?PetId={$rspcaID}'> More </a>"; ?>
           </div>
         </div>
