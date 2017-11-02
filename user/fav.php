@@ -27,5 +27,14 @@
     $dbname="pawCompanion";
     $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
+    	
+    $query = "INSERT INTO favourites ";
+	  $query .= "(userID, animalID) ";
+	  $query .= "VALUES (";
+	  $query .= "'" . $userID . "',";
+	  $query .= "'" . $animalID . "'";
+	  $query .= ")";
+	  $result = mysqli_query($connection, $query);	
+    
     mysqli_close($connection);
 ?>
