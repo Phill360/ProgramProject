@@ -35,11 +35,12 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">Any children younger than 6 years in the household?</div>
+          <div class="panel-heading">Any children younger than 6 years in the household?
           <label class="switch">
             <input type="checkbox" id="childrenAtHome" name="childrenAtHome">
             <span class="slider round"></span>
           </label>
+          </div>
         </div>
       </div>
     

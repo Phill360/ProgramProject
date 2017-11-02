@@ -47,7 +47,7 @@
 	    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans"><?php echo("RSPCA ID: ".$row["rspcaID"]); ?></div>
+          <div class="opensans"><?php echo("RSPCA ID: ".$rspcaID); ?></div>
         </div>
         <div class="panel-body" style="min-height: 450; max-height: 450;">
           <div class="right">
