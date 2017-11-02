@@ -35,7 +35,7 @@
   while($row = mysqli_fetch_assoc($favourites)) 
   {
     // Find favourites belonging to current user
-	  if ($row["userID"] == $_SESSION['email'])
+	  if ($row["userID"] == $_SESSION['userID'])
 	  {
 	    $rspcaID = $row["rspcaID"]; ?>
 	    

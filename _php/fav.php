@@ -10,7 +10,7 @@
   if(!is_ajax_request()) { exit; }
 
   // Get the current user
-  $userID = $_SESSION[userID];
+  $userID = $_SESSION['userID'];
   
   // Extract $id
   $animalID = isset($_POST['id']) ? $_POST['id'] : '';
