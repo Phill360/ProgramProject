@@ -17,7 +17,6 @@
   $animalID = isset($_POST['id']) ? $_POST['id'] : '';
   echo ($userID." loves ". $animalID);
   
-  //getAnimalsFromDatabase();
   // Connect AWS MYSQL Server
     $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
     $port=3306;
@@ -28,12 +27,8 @@
     $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     	
-    $query = "INSERT INTO favourites ";
-	  $query .= "(userID, animalID) ";
-	  $query .= "VALUES (";
-	  $query .= "'" . $userID . "',";
-	  $query .= "'" . $animalID . "'";
-	  $query .= ")";
+    	
+    $query = "INSERT INTO favourites (userID, animalID) VALUES ($userID, $animalID)";
 	  $result = mysqli_query($connection, $query);	
     
     mysqli_close($connection);
