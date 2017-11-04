@@ -66,58 +66,18 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="panel-heading">What type of animal do you prefer?</div>
-          <div class="row">
-            <div class="searchable-container">
-              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                <div class="info-block block-info clearfix">
-                  <div class="square-box pull-left">
-                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                  </div>
-                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                    <label class="btn btn-default">
-                      <div class="bizcontent">
-                        <input type="radio" id="petSelection" name="petSelection" value=1 class="hidden">
-                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                        <h5>Cat</h5>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                <div class="info-block block-info clearfix">
-                  <div class="square-box pull-left">
-                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                  </div>
-                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                    <label class="btn btn-default">
-                      <div class="bizcontent">
-                        <input type="radio" id="petSelection" name="petSelection" value=2 class="hidden">
-                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                        <h5>Dog</h5>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                <div class="info-block block-info clearfix">
-                  <div class="square-box pull-left">
-                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                  </div>
-                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                    <label class="btn btn-default">
-                      <div class="bizcontent">
-                        <input type="radio" id="petSelection" name="petSelection" value=3 class="hidden">
-                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                        <h5>Don't care</h5>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-lg btn-primary active">
+                <input type="radio" name="petSelection" id="petSelection" value=1 autocomplete="off" checked> Cat
+              </label>
+              <label class="btn btn-lg btn-primary">
+                <input type="radio" name="petSelection" id="petSelection" value=2 autocomplete="off"> Dog
+              </label>
+              <label class="btn btn-lg btn-primary">
+                <input type="radio" name="petSelection" id="petSelection" value=3 autocomplete="off"> Don't care
+              </label>
             </div>
-	        </div>  
+          </div>
         </div>
       </div>
       
@@ -149,13 +109,13 @@
 
             
               <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-md btn-primary active">
+                <label class="btn btn-lg btn-primary active">
                   <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
                 </label>
-                <label class="btn btn-md btn-primary">
+                <label class="btn btn-lg btn-primary">
                   <input type="radio" name="petGender" id="petGender" value=2 autocomplete="off"> Male
                 </label>
-                <label class="btn btn-md btn-primary">
+                <label class="btn btn-lg btn-primary">
                   <input type="radio" name="petGender" id="petGender" value=3 autocomplete="off"> Don't care
                 </label>
               </div>
