@@ -76,7 +76,7 @@
                   <div data-toggle="buttons" class="btn-group bizmoduleselect">
                     <label class="btn btn-default">
                       <div class="bizcontent">
-                        <input type="checkbox" id="catItemState" name="catItemState" class="hidden">
+                        <input type="radio" id="petSelection" name="petSelection" value=1 class="hidden">
                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
                         <h5>Cat</h5>
                       </div>
@@ -92,7 +92,7 @@
                   <div data-toggle="buttons" class="btn-group bizmoduleselect">
                     <label class="btn btn-default">
                       <div class="bizcontent">
-                        <input type="checkbox" id="dogItemState" name="dogItemState" class="hidden">
+                        <input type="radio" id="petSelection" name="petSelection" value=2 class="hidden">
                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
                         <h5>Dog</h5>
                       </div>
@@ -108,7 +108,7 @@
                   <div data-toggle="buttons" class="btn-group bizmoduleselect">
                     <label class="btn btn-default">
                       <div class="bizcontent">
-                        <input type="checkbox" id="eitherItemState" name="eitherItemState" class="hidden">
+                        <input type="radio" id="petSelection" name="petSelection" value=3 class="hidden">
                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
                         <h5>Don't care</h5>
                       </div>
