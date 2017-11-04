@@ -145,7 +145,7 @@
       
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">Gender preference?</div>
+          <div class="panel-heading">Gender preference?
           <div class="row">
             <div class="searchable-container">
               <div class="btn-group" data-toggle="buttons">
@@ -160,6 +160,7 @@
                 </label>
               </div>
             </div>
+	        </div>
 	        </div>  
         </div>
       </div>
