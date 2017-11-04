@@ -148,53 +148,16 @@
           <div class="panel-heading">Gender preference?</div>
           <div class="row">
             <div class="searchable-container">
-              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                <div class="info-block block-info clearfix">
-                  <div class="square-box pull-left">
-                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                  </div>
-                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                    <label class="btn btn-default">
-                      <div class="bizcontent">
-                        <input type="radio" id="petGender" name="petGender" value=1 class="hidden">
-                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                        <h5>Female</h5>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                <div class="info-block block-info clearfix">
-                  <div class="square-box pull-left">
-                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                  </div>
-                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                    <label class="btn btn-default">
-                      <div class="bizcontent">
-                        <input type="radio" id="petgender" name="petGender" value=2 class="hidden">
-                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                        <h5>Male</h5>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-                <div class="info-block block-info clearfix">
-                  <div class="square-box pull-left">
-                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
-                  </div>
-                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                    <label class="btn btn-default">
-                      <div class="bizcontent">
-                        <input type="radio" id="petGender" name="petGender" value=3 class="hidden">
-                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                        <h5>Don't care</h5>
-                      </div>
-                    </label>
-                  </div>
-                </div>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                  <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Radio 1 (preselected)
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="petGender" id="petGender" value=2 autocomplete="off"> Radio 2
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="petGender" id="petGender" value=3 autocomplete="off"> Radio 3
+                </label>
               </div>
             </div>
 	        </div>  
