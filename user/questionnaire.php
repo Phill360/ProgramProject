@@ -147,19 +147,19 @@
         <div class="panel-body">
           <div class="panel-heading">Gender preference?
 
-            <div class="searchable-container">
+
               <div class="btn-group" data-toggle="buttons">
-                <label class="btn active">
+                <label class="btn btn-primary active">
                   <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
                 </label>
-                <label class="btn">
+                <label class="btn btn-primary">
                   <input type="radio" name="petGender" id="petGender" value=2 autocomplete="off"> Male
                 </label>
-                <label class="btn">
+                <label class="btn btn-primary">
                   <input type="radio" name="petGender" id="petGender" value=3 autocomplete="off"> Don't care
                 </label>
               </div>
-            </div>
+
 
 	        </div>  
         </div>
