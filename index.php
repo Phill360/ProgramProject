@@ -144,49 +144,33 @@
   }
   
   /* Collect data from sliders  */
-  if (isset($_POST['submitQuestionnaireBtn']))
-  {
-		// Get pet input
-    $adultsHome = $_POST['adultsHome'];
-    $childrenAtHomeState = $_POST['childrenAtHome'];
-    $howActive = $_POST['howActive'];
-    $howOftenHome = $_POST['howOftenHome'];
-    $catItemState = $_POST['catItemState'];
-    $dogItemState = $_POST['dogItemState'];
-    $petSize = $_POST['petSize'];
-    $petTemperament = $_POST['petTemperament'];
+  // if (isset($_POST['submitQuestionnaireBtn']))
+  // {
+		// // Get pet input
+  //   $adultsHome = $_POST['adultsHome'];
+  //   $childrenAtHome = $_POST['childrenAtHome'];
+  //   $howActive = $_POST['howActive'];
+  //   $howOftenHome = $_POST['howOftenHome'];
+  //   $petSelection = $_POST['petSelection'];
+  //   $gender = $_POST['gender'];
+  //   $petSize = $_POST['petSize'];
+  //   $petTemperament = $_POST['petTemperament'];
     
-    //echo($adultsHome.' '.$childrenAtHomeState.' '.$howActive.' '.$howOftenHome.' '.$catItemState.' '.$dogItemState.' '.$petSize);
+  //   echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$gender.' '.$petSelection.' '.$petSize.' '.$petTemperament);
     
-    if ($childrenAtHomeState == "on")
-    {
-      $childrenAtHome = 1;
-    }
-    else
-    {
-      $childrenAtHome = 0;
-    }
+  //   if ($childrenAtHomeState == "on")
+  //   {
+  //     $childrenAtHome = 1;
+  //   }
+  //   else
+  //   {
+  //     $childrenAtHome = 0;
+  //   }
     
-    if ($catItemState == "on")
-    {
-      $catItem = 1;
-    }
-    else
-    {
-      $catItem = 0;
-    }
-    
-    if ($dogItemState == "on")
-    {
-      $dogItem = 1;
-    }
-    else
-    {
-      $dogItem = 0;
-    }
-    
-    // submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament);
-  }
+  //   submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $gender, $petSelection, $petSize, $petTemperament);
+  
+
+  // }
   
 ?>
 
@@ -541,9 +525,3 @@
 <div><?php include 'footer.php' ?></div>
 </body>
 </html>
-
-<?php 
-  debug_to_console($_POST);
-  unset($_POST);
-  debug_to_console($_POST);
-?>

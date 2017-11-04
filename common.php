@@ -299,10 +299,61 @@ function checkNumberAnimalsInDatabase()
 // Cats also match to extra small. According to Google adult cats weigh 3.6 - 4.5kg.
 
 // $petTemperament is either 1 (for princess), 2 (for zen) or 3 (Usain Bolt active)
-function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $catItem, $dogItem, $petSize, $petTemperament)
+function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $gender, $petSelection, $petSize, $petTemperament)
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
+  
+	// Insert search data
+	$query = "INSERT INTO userSearch ";
+	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, gender, petSelection, petSize, petTemperament) ";
+	$query .= "VALUES (";
+	$query .= "'" . $adultsHome . "',";
+	$query .= "'" . $childrenAtHome . "',";
+	$query .= "'" . $howActive . "',";
+	$query .= "'" . $howOftenHome . "',";
+	$query .= "'" . $gender . "',";
+	$query .= "'" . $petSelection . "',";
+	$query .= "'" . $petSize . "',";
+	$query .= "'" . $petTemperament . "'";
+	$query .= ")";
+	$result = mysqli_query($connection, $query);
+	
+	// Test for query error
+	if($result) {
+	  $new_id = mysqli_insert_id($connection);
+
+	} else {
+		echo mysqli_error($connection);
+		mysqli_close($connection);
+		exit;
+	}
+  
+  
+  
+  // Close Connection
+  mysqli_close($connection);
+}
+  
+  
+function searchResult()
+{
+  // Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+  
+   // Get pet data for comparsion
+  $query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
+	$query .= "FROM breed ";
+	$query .= "INNER JOIN animals ";
+	$query .= "ON animals.breedID=breed.breedID";
+	$result = mysqli_query($connection, $query);
+	
+		while($row = mysqli_fetch_assoc($result)) {
+  
+      echo "<p>" . $row["petName"] . " " . $row["rspcaID"] . "</p>";
+		}
+  
+  
   
   // Please implement
   mysqli_close($connection);
@@ -315,14 +366,11 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   
   
   
-  
-  
-  
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-  // Does Pet alread Exist
+  // Does Pet already Exist
 	$query = "SELECT rspcaID  ";
 	$query .= "FROM animals ";
 	$query .= "WHERE rspcaID=";

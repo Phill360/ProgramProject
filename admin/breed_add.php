@@ -40,11 +40,13 @@
 
             <!-- Enter breed size -->
             <div class="input-group">
-              <span class="input-group-addon">Text</span>
+              <span class="input-group-addon">Size</span>
              <select class="form-control" id="breedSize" name="breedSize" required>
+                <option>Extra small</option>
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
+                <option>Giant</option>
               </select>
             </div>
             <br>
@@ -65,7 +67,9 @@
               <span class="input-group-addon">Active</span>
               <select class="form-control" id="active" name="active" required>
                 <option>Lap dog</option>
+                <option>--</option>
                 <option>Active</option>
+                <option>--</option>
                 <option>Sports star</option>
               </select>
             </div>

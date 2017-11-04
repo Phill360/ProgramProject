@@ -100,6 +100,22 @@
                   </div>
                 </div>
               </div>
+              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                <div class="info-block block-info clearfix">
+                  <div class="square-box pull-left">
+                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
+                  </div>
+                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                    <label class="btn btn-default">
+                      <div class="bizcontent">
+                        <input type="checkbox" id="eitherItemState" name="eitherItemState" class="hidden">
+                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                        <h5>Don't care</h5>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
 	        </div>  
         </div>
@@ -124,6 +140,64 @@
           <p></p><br>
           <p></p><br>
           <p></p>
+        </div>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-heading">Gender preference?</div>
+          <div class="row">
+            <div class="searchable-container">
+              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                <div class="info-block block-info clearfix">
+                  <div class="square-box pull-left">
+                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
+                  </div>
+                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                    <label class="btn btn-default">
+                      <div class="bizcontent">
+                        <input type="radio" id="petGender" name="petGender" value=1 class="hidden">
+                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                        <h5>Female</h5>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                <div class="info-block block-info clearfix">
+                  <div class="square-box pull-left">
+                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
+                  </div>
+                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                    <label class="btn btn-default">
+                      <div class="bizcontent">
+                        <input type="radio" id="petgender" name="petGender" value=2 class="hidden">
+                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                        <h5>Male</h5>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                <div class="info-block block-info clearfix">
+                  <div class="square-box pull-left">
+                    <span class="glyphicon glyphicon-tags glyphicon-lg"></span>
+                  </div>
+                  <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                    <label class="btn btn-default">
+                      <div class="bizcontent">
+                        <input type="radio" id="petGender" name="petGender" value=3 class="hidden">
+                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                        <h5>Don't care</h5>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+	        </div>  
         </div>
       </div>
       
@@ -230,4 +304,3 @@ $(function() {
 
 </body>
 </html>
-
