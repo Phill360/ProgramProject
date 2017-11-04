@@ -144,33 +144,31 @@
   }
   
   /* Collect data from sliders  */
-  // if (isset($_POST['submitQuestionnaireBtn']))
-  // {
-		// // Get pet input
-  //   $adultsHome = $_POST['adultsHome'];
-  //   $childrenAtHome = $_POST['childrenAtHome'];
-  //   $howActive = $_POST['howActive'];
-  //   $howOftenHome = $_POST['howOftenHome'];
-  //   $petSelection = $_POST['petSelection'];
-  //   $gender = $_POST['gender'];
-  //   $petSize = $_POST['petSize'];
-  //   $petTemperament = $_POST['petTemperament'];
+  if (isset($_POST['submitQuestionnaireBtn']))
+  {
+		// Get pet input
+    $adultsHome = $_POST['adultsHome'];
+    $childrenAtHome = $_POST['childrenAtHome'];
+    $howActive = $_POST['howActive'];
+    $howOftenHome = $_POST['howOftenHome'];
+    $petSelection = $_POST['petSelection'];
+    $petSize = $_POST['petSize'];
+    $petTemperament = $_POST['petTemperament'];
+    $petGender = $_POST['petGender'];
     
-  //   echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$gender.' '.$petSelection.' '.$petSize.' '.$petTemperament);
+    //echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petGender.' '.$petSelection.' '.$petSize.' '.$petTemperament);
     
-  //   if ($childrenAtHomeState == "on")
-  //   {
-  //     $childrenAtHome = 1;
-  //   }
-  //   else
-  //   {
-  //     $childrenAtHome = 0;
-  //   }
+    if ($childrenAtHomeState == "on")
+    {
+      $childrenAtHome = 1;
+    }
+    else
+    {
+      $childrenAtHome = 0;
+    }
     
-  //   submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $gender, $petSelection, $petSize, $petTemperament);
-  
-
-  // }
+    // submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $petGender, $petSelection, $petSize, $petTemperament);
+  }
   
 ?>
 
@@ -525,3 +523,9 @@
 <div><?php include 'footer.php' ?></div>
 </body>
 </html>
+
+<?php 
+  debug_to_console($_POST);
+  unset($_POST);
+  debug_to_console($_POST);
+?>
