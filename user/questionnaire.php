@@ -67,13 +67,13 @@
         <div class="panel-body">
           <div class="panel-heading">What type of animal do you prefer?</div>
             <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-lg btn-primary active">
+              <label class="btn btn-md btn-primary active">
                 <input type="radio" name="petSelection" id="petSelection" value=1 autocomplete="off" checked> Cat
               </label>
-              <label class="btn btn-lg btn-primary">
+              <label class="btn btn-md btn-primary">
                 <input type="radio" name="petSelection" id="petSelection" value=2 autocomplete="off"> Dog
               </label>
-              <label class="btn btn-lg btn-primary">
+              <label class="btn btn-md btn-primary">
                 <input type="radio" name="petSelection" id="petSelection" value=3 autocomplete="off"> Don't care
               </label>
             </div>
@@ -109,13 +109,13 @@
 
             
               <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-lg btn-primary active">
+                <label class="btn btn-md btn-primary active">
                   <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
                 </label>
-                <label class="btn btn-lg btn-primary">
+                <label class="btn btn-md btn-primary">
                   <input type="radio" name="petGender" id="petGender" value=2 autocomplete="off"> Male
                 </label>
-                <label class="btn btn-lg btn-primary">
+                <label class="btn btn-md btn-primary">
                   <input type="radio" name="petGender" id="petGender" value=3 autocomplete="off"> Don't care
                 </label>
               </div>
