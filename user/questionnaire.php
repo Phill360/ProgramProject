@@ -149,13 +149,13 @@
 
             <div class="searchable-container">
               <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary active">
+                <label class="btn active">
                   <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
                 </label>
-                <label class="btn btn-primary">
+                <label class="btn">
                   <input type="radio" name="petGender" id="petGender" value=2 autocomplete="off"> Male
                 </label>
-                <label class="btn btn-primary">
+                <label class="btn">
                   <input type="radio" name="petGender" id="petGender" value=3 autocomplete="off"> Don't care
                 </label>
               </div>
