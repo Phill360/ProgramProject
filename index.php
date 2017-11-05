@@ -144,7 +144,7 @@
   {
 		// Get pet input
     $adultsHome = $_POST['adultsHome'];
-    $childrenAtHome = $_POST['childrenAtHome'];
+    $childrenHome = $_POST['childrenHome'];
     $howActive = $_POST['howActive'];
     $howOftenHome = $_POST['howOftenHome'];
     $petSelection = $_POST['petSelection'];
@@ -157,9 +157,9 @@
       $childrenAtHome = 0;
     }
     
-    //echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
+    echo($adultsHome.' '.$childrenHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
     
-    submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
+    submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
   }
   
 ?>

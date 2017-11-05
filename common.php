@@ -280,17 +280,19 @@ function checkNumberAnimalsInDatabase()
   return $size;
 }
   
-// UPDATED Sunday 29th October
-// All the input variables are numerical, for example: $childrenAtHome -> 0 = No and 1 = yes
-// The user can select BOTH cat and dog. So $catItem and $dogItem can both equal 1 at same time.
-// The reason for this is that the user may want to view both cats and dogs for potential adoption.
+// UPDATED Sunday 5th November
 
-// For $adultsHome (How many adults in the home?) at this stage is either 1, 2, 3, 4 or 5. 
-// Why 3, 4 or 5 adults? Could have grown up children 18+ who live at home too.
+// $adultsHome (How many adults in the home?). Values: 1, 2, 3, 4 or 5. 
 
-// $howActive is either 1 (for lazy), 3 (for average) or 5 (for active)
+// $childrenHome (Are there children under 6?). Values: 0 = no, 1 = yes
 
-// $petSize is either 1 (for extra small), 2 (for small), 3 (for medium), 4 (for large) or 5 (for giant)
+// $howActive. Values: 1 = lazy, 3 = average, 5 = very active
+
+// $howOftenHome. Values: 1 = rarely, 3 = inconsistent, 5 = almost always
+
+// $petSelection. Values: 1 = cat, 2 = dog, 3 = cat and dog
+
+// $petSize. Values: 1 = extra small, 2 = small, 3 = medium, 4 = large, 5 = giant
 // Giant dogs >50kg: Great Dane, English Mastiff, Scottish Deerhound.
 // Large dogs 25kg-50kg: Golden Retriever, Labrador.
 // Medium dogs 15kg-25kg: Afghan Hound, American Foxhound, Australian Cattle Dog.
@@ -298,8 +300,11 @@ function checkNumberAnimalsInDatabase()
 // Extra small dogs <5kg: Chihuahua, Dachshund, Maltese, Yorkshire Terrier.
 // Cats also match to extra small. According to Google adult cats weigh 3.6 - 4.5kg.
 
-// $petTemperament is either 1 (for princess), 2 (for zen) or 3 (Usain Bolt active)
-function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $gender, $petSelection, $petSize, $petTemperament)
+// $petTemperament. Values: 1 = princess, 2 = zen, 3 = Usain Bolt active
+
+// $petGender. Values: 0 = female, 2 = male, 3 = no preference
+
+function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender)
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
