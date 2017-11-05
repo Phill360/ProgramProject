@@ -89,11 +89,13 @@ function deregisterUser()
 	$query = "DELETE FROM favourites WHERE userID = $userID";
   $result = mysqli_query($connection, $query);
 	
-	$query = "DELETE FROM userSearch WHERE userID = $userID";
-  $result = mysqli_query($connection, $query);
+	$query2 = "DELETE FROM userSearch WHERE userID = $userID";
+  $result2 = mysqli_query($connection, $query);
 	
-	$query = "DELETE FROM user WHERE userID = $userID";
-  $result = mysqli_query($connection, $query);
+	$query3 = "DELETE FROM user WHERE userID = $userID";
+  $result3 = mysqli_query($connection, $query);
+  
+  signOutUser();
   
   mysqli_close($connection);
 }
@@ -368,13 +370,20 @@ function searchResult()
 	
 		while($row = mysqli_fetch_assoc($result)) {
   
-      echo "<p>" . $row["petName"] . " " . $row["rspcaID"] . "</p>";
+      echo "<p>" . $row["adultsHome"] 
+      . " " . $row["childrenHome"] 
+       . " " . $row["childrenHome"]
+        . " " . $row["childrenHome"]
+         . " " . $row["childrenHome"]
+          . " " . $row["childrenHome"]
+           . " " . $row["childrenHome"]
+      . "</p>";
 		}
   
   
   
-  
-  
+
+  adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament
   
   
   
