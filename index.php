@@ -157,7 +157,7 @@
       $childrenAtHome = 0;
     }
     
-    echo($adultsHome.' '.$childrenHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
+    // echo($adultsHome.' '.$childrenHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
     
     submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
   }

@@ -304,7 +304,7 @@ function checkNumberAnimalsInDatabase()
 
 // $petGender. Values: 0 = female, 2 = male, 3 = no preference
 
-function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender)
+function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender)
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
