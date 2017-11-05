@@ -56,7 +56,7 @@
     <?php }
     else if ($_SESSION['userTool'] == 'deregister')
     {?>
-      <div><?php include 'deregister.php' ?></div>
+      <div><?php include 'matches.php' ?></div>
     <?php }
     else
     {?>
