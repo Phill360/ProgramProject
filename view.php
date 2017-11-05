@@ -68,14 +68,7 @@
     .pet-images {
       width: 20%;
       margin-top: 2%;
-    }
-    
-    #main-image {
-      width: 50%;
-    }
-    
-    #thumbImg {
-      width: 10%;
+      border: 1px solid white;
     }
     
     .pet-description, .pet-details {

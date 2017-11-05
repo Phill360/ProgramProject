@@ -524,7 +524,7 @@ input:checked + .slider:before
     font-size: .8em;
     line-height: 0;
     top: 50%;
-    left: 20%;
+    left: 0%;
 }
 
 .radio .cr .cr-icon {
