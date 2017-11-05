@@ -35,7 +35,7 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="button-center">
+          <div class="button-left">
             <div class="[ form-group ]">
               <input type="checkbox" name="fancy-checkbox-primary" id="fancy-checkbox-primary" autocomplete="off" />
               <div class="[ btn-group ]">

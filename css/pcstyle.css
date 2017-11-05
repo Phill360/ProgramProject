@@ -484,6 +484,11 @@ input:checked + .slider:before
     opacity: 1;
 }
 
+.button-left
+{ 
+	text-align:left; 
+}
+
 .button-center
 { 
 	text-align:center; 
