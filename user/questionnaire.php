@@ -104,19 +104,20 @@
       
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">Gender preference?</div>
-          <div class="button-center">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-md btn-primary active">
-              <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
-            </label>
-            <label class="btn btn-md btn-primary">
-              <input type="radio" name="petGender" id="petGender" value=2 autocomplete="off"> Male
-            </label>
-            <label class="btn btn-md btn-primary">
-              <input type="radio" name="petGender" id="petGender" value=3 autocomplete="off"> Don't care
-            </label>
-          </div>
+          <div class="panel-heading">Gender preference?
+            <div class="button-center">
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-md btn-primary active">
+                  <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
+                </label>
+                <label class="btn btn-md btn-primary">
+                  <input type="radio" name="petGender" id="petGender" value=2 autocomplete="off"> Male
+                </label>
+                <label class="btn btn-md btn-primary">
+                  <input type="radio" name="petGender" id="petGender" value=3 autocomplete="off"> Don't care
+                </label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
