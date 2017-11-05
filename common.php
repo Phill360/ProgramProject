@@ -304,15 +304,15 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-	// Insert search data
+  // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
-	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, gender, petSelection, petSize, petTemperament) ";
+	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament) ";
 	$query .= "VALUES (";
 	$query .= "'" . $adultsHome . "',";
-	$query .= "'" . $childrenAtHome . "',";
+	$query .= "'" . $childrenHome . "',";
 	$query .= "'" . $howActive . "',";
 	$query .= "'" . $howOftenHome . "',";
-	$query .= "'" . $gender . "',";
+	$query .= "'" . $petGender . "',";
 	$query .= "'" . $petSelection . "',";
 	$query .= "'" . $petSize . "',";
 	$query .= "'" . $petTemperament . "'";
@@ -328,8 +328,6 @@ function submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, 
 		mysqli_close($connection);
 		exit;
 	}
-  
-  
   
   // Close Connection
   mysqli_close($connection);
@@ -622,6 +620,7 @@ function debug_to_console($data) {
     $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     
+	  // $query = "SELECT * FROM animals LIMIT $page1,3"; 
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
 	  

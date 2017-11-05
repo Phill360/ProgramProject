@@ -89,26 +89,22 @@
 		  $imageName = addslashes($_FILES['image']['name']);
 			$imageData = file_get_contents($imageData);
 			$imageData = base64_encode($imageData);
-			
 		
+		  // Get pet input
+      $rspcaID = $_POST['rspcaID'];
+      $petName = $_POST['petName'];
+      $breedID = $_POST['breedID'];
+      $age = $_POST['age'];
+      $gender = $_POST['gender'];
+      $description = $_POST['description'];
     
-    
-		// Get pet input
-    $rspcaID = $_POST['rspcaID'];
-    $petName = $_POST['petName'];
-    $breedID = $_POST['breedID'];
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
-    $description = $_POST['description'];
-  
-    if($rspcaID == ''){
+      if($rspcaID == ''){
+        
+      } else { 
+        addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
+      }
       
-    } else { 
-
-      addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
-    }
-    
-		}
+  		}
   }
   
  if (isset($_POST['addBreedBtn']))
@@ -156,7 +152,7 @@
     $petTemperament = $_POST['petTemperament'];
     $petGender = $_POST['petGender'];
     
-    echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
+    // echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
     
     if ($childrenAtHomeState == "on")
     {
@@ -167,7 +163,7 @@
       $childrenAtHome = 0;
     }
     
-    // submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $petGender, $petSelection, $petSize, $petTemperament);
+    submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $petGender, $petSelection, $petSize, $petTemperament);
   }
   
 ?>
