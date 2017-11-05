@@ -474,7 +474,7 @@
         </div>
         <div class="modal-body">
 
-          <div class="container">
+         <!-- <div class="container"> -->
             <!-- First Container -->
             <div class="container-fluid bg-2 text-center">
               <h2 class="margin">About Us</h2>
@@ -515,7 +515,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
 <br>
 <div><?php include 'footer.php' ?></div>
