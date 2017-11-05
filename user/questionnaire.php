@@ -36,7 +36,7 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="col-sm-12">
+          <div class="panel-heading">
             <div class="checkbox">
               <label>
                 <input type="checkbox" value="">
