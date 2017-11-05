@@ -67,7 +67,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="panel-heading">What type of animal do you prefer?</div>
-          <div><p></p><br>
+          <div>
             <div class="button-left">
               <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-md btn-primary active">
