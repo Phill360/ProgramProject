@@ -30,7 +30,7 @@
         <div class="panel-body">
           <div class="panel-heading">How many adults in your household?</div>
           <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>          <input id="adultsHome" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="adultsHome" required>
-          <div class="button-center">
+          <div class="button-left">
             <div class="col-md-4">
               <div class="funkyradio">
                 <div class="funkyradio-primary">
