@@ -486,11 +486,13 @@ input:checked + .slider:before
 
 .button-left
 { 
+	position: relative;
 	text-align:left;
 }
 
 .button-center
 { 
+	position: relative;
 	text-align:center; 
 }
 
