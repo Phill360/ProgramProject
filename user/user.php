@@ -18,10 +18,6 @@
     $_SESSION['userTool'] = 'favourites';
   }
   
-  if(isset($_POST['deregisterBtn']))
-  {
-    //
-  }
 ?>
 
 <!DOCTYPE html PUBLIC>
