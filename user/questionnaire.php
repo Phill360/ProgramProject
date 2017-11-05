@@ -50,6 +50,7 @@
           <div class="panel-heading">How active are you?</div>
           <rzslider rz-slider-model="sliderHowActive.value" rz-slider-options="sliderHowActive.options"></rzslider>
           <input id="howActive" type="text" style="display: none;" ng-model="sliderHowActive.value" name="howActive" required>
+          <p></p><br>
           <p></p>
         </div>
       </div>
@@ -158,7 +159,7 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal)
         {value: 2, legend: ''},
         {value: 3, legend: 'Average'},
         {value: 4, legend: ''},
-        {value: 5, legend: 'Active'}
+        {value: 5, legend: 'Very Active'}
       ]
     }
   };
