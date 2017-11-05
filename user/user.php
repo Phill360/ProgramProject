@@ -37,7 +37,7 @@
       <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
       <button type="submit" class="btn" name="matchesBtn">Matches</button>
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
-      <button type="submit" class="btn" name="deregisterBtn" onclick="deregister()">Deregister</button>
+      <button type="submit" class="btn" name="deregisterBtn" data-toggle="modal" data-target="#deregisterModal>Deregister</button>
     </form>
   </div>
 

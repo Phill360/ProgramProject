@@ -19,8 +19,6 @@
 		/* Validate email address */
 		$regexp = "/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9\-]+([.][a-zA-Z0-9\-]+)*[.][a-zA-Z]{2,3}$/";
  
-
-	  
 		if(!preg_match($regexp, $email))
 		{
 			echo("Invalid email entered");
@@ -79,7 +77,6 @@
   if (isset($_POST['addPetBtn']))
   {
     if(getimagesize($_FILES['image']['tmp_name'])== FALSE)
-
 		{
 			echo "please select image.";
 		}
@@ -98,13 +95,15 @@
       $gender = $_POST['gender'];
       $description = $_POST['description'];
     
-      if($rspcaID == ''){
+      if($rspcaID == '')
+      {
         
-      } else { 
+      } 
+      else 
+      { 
         addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
       }
-      
-  		}
+  	}
   }
   
  if (isset($_POST['addBreedBtn']))
@@ -117,9 +116,12 @@
     $active = isset($_POST['active']) ? $_POST['active'] : '';
     $fee = isset($_POST['fee']) ? $_POST['fee'] : '';
     
-    if($species == ''){
+    if($species == '')
+    {
       // 
-    } else {
+    } 
+    else 
+    {
     addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
     }
   }
@@ -129,7 +131,6 @@
 		// Get delete pet input
     $rspcaID = $_POST['rspcaID'];
     remPet($rspcaID);
-
   }
   
   if (isset($_POST['remBreedBtn']))
@@ -152,16 +153,15 @@
     $petTemperament = $_POST['petTemperament'];
     $petGender = $_POST['petGender'];
     
-    if ($childrenAtHome != 1)
+    if ($childrenHome != 1)
     {
-      $childrenAtHome = 0;
+      $childrenHome = 0;
     }
     
     // echo($adultsHome.' '.$childrenHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
     
     submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
   }
-  
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -213,9 +213,6 @@
     <div><?php include 'carousel.php' ?></div>
   <?php } ?>
   
-  
-
-
   <!-- Sign in -->
   <div id="signInModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -249,7 +246,6 @@
     </div>
   </div>
 
-  
   <!-- Register Modal -->
   <div id="registerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
