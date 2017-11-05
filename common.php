@@ -362,7 +362,7 @@ function searchResult()
    // Get pet data for comparsion
   $query = "SELECT * ";
 	$query .= "FROM breed ";
-	$query .= "WHERE userID=\"".$userID.;
+	$query .= "WHERE userID=\"".$userID."\"";
 	$result = mysqli_query($connection, $query);
 	
 		while($row = mysqli_fetch_assoc($result)) {
