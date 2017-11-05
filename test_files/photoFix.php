@@ -74,7 +74,6 @@ function searchResult()
 	$query = "SELECT * ";
 	$query .= "FROM userSearch ";
 	$query .= "WHERE userID=".$userID;
-	// $query .= "WHERE userID=33";
 	
 		echo $query;
 	
@@ -99,7 +98,49 @@ function searchResult()
       . " " . $row["petSize"]
       . " " . $row["petTemperament"]
       . "</p>";
+      
+      $adultsHome = $row["adultsHome"];
+      $childrenHome = $row["childrenHome"];
+      $howActive = $row["howActive"];
+      $howOftenHome = $row["howOftenHome"];
+      $petGender = $row["petGender"];
+      $petSelection = $row["petSelection"];
+      $petSize = $row["petSize"];
+      $petTemperament = $row["petTemperament"];
+      
+	}
+		
+		
+	echo "The amount of adults at home = " . $adultsHome;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	// Get pet data for comparsion
+	$query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
+	$query .= "FROM breed ";
+	$query .= "INNER JOIN animals ";
+	$query .= "ON animals.breedID=breed.breedID";
+	$result = mysqli_query($connection, $query);
+	
+		while($row = mysqli_fetch_assoc($result)) {
+  
+      echo "<p>" . $row["petName"] . " " . $row["rspcaID"] . "</p>";
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	// Please implement
 	mysqli_close($connection);
 }

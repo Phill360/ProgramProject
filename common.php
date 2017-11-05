@@ -84,7 +84,7 @@ function deregisterUser()
 {
 	require_once('./_php/connect.php');
 	
-	//$userID = $_SESSION['userID'];
+	$userID = $_SESSION['userID'];
 	
 	$query = "DELETE FROM favourites WHERE userID = $userID;";
 	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
