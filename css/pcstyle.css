@@ -487,7 +487,6 @@ input:checked + .slider:before
 .button-left
 { 
 	text-align:left;
-	text-indent: 3.25em;
 }
 
 .button-center
