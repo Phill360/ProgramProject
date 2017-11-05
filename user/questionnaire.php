@@ -36,14 +36,18 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">Your family:</div>
-          <div class="col-md-4">
-            <div class="funkyradio">
-              <div class="funkyradio-primary">
-                <input type="checkbox" name="checkbox" id="checkbox2">
-                <label for="checkbox2">I/we have children under 6 years of age.</label>
+          <div class="panel-heading">Your household:</div>
+            <p>How many adults in your household?</p>
+            <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>
+            <input id="adultsHome" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="adultsHome" required>
+            <div class="col-md-4">
+              <div class="funkyradio">
+                <div class="funkyradio-primary">
+                  <input type="checkbox" name="checkbox" id="checkbox2">
+                  <label for="checkbox2">I/we have children under 6 years of age.</label>
+                </div>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
       </div>
