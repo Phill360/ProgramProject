@@ -152,16 +152,12 @@
     $petTemperament = $_POST['petTemperament'];
     $petGender = $_POST['petGender'];
     
-    echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
-    
-    if ($childrenAtHomeState == "on")
-    {
-      $childrenAtHome = 1;
-    }
-    else
+    if ($childrenAtHome != 1)
     {
       $childrenAtHome = 0;
     }
+    
+    echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
     
     submitQuestionnaireResponses($adultsHome, $childrenAtHome, $howActive, $howOftenHome, $petGender, $petSelection, $petSize, $petTemperament);
   }
