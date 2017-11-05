@@ -80,7 +80,23 @@ function registerUser($firstname, $lastname, $email, $password)
 }
 
 /* This function deregisters a user */
-
+function deregisterUser()
+{
+	require_once('./_php/connect.php');
+	
+	$userID = $_SESSION['userID'];
+	
+	$query = "DELETE FROM favourites WHERE userID = $userID";
+  $result = mysqli_query($connection, $query);
+	
+	$query = "DELETE FROM userSearch WHERE userID = $userID";
+  $result = mysqli_query($connection, $query);
+	
+	$query = "DELETE FROM user WHERE userID = $userID";
+  $result = mysqli_query($connection, $query);
+  
+  mysqli_close($connection);
+}
 
 /* This function signs the user in */
 function signInUser($email, $password)
@@ -314,7 +330,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $h
 	$query .= "'" . $petGender . "',";
 	$query .= "'" . $petSelection . "',";
 	$query .= "'" . $petSize . "',";
-	$query .= "'" . $petTemperament . "'";
+	$query .= "'" . $petTemperament . "'"; 
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
