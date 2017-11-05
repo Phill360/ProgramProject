@@ -79,6 +79,24 @@ function registerUser($firstname, $lastname, $email, $password)
   mysqli_close($connection);
 }
 
+/* This function deregisters a user */
+function deregisterUser($_SESSION['userID'])
+{
+	require_once('./_php/connect.php');
+    
+  $query = "DELETE FROM favourites WHERE userID = $_SESSION['userID']";
+  $result = mysqli_query($connection, $query);
+  
+  $query = "DELETE FROM userSearch WHERE userID = $_SESSION['userID']";
+  $result = mysqli_query($connection, $query);
+  
+  $query = "DELETE FROM user WHERE userID = $_SESSION['userID']";
+  $result = mysqli_query($connection, $query);
+  
+  // Close database connection
+  mysqli_close($connection);
+}
+
 /* This function signs the user in */
 function signInUser($email, $password)
 {
@@ -111,8 +129,6 @@ function signInUser($email, $password)
       }
     }
   }
-  
-  
   
   if ($validUser == true) 
   {
@@ -280,29 +296,22 @@ function checkNumberAnimalsInDatabase()
   return $size;
 }
   
-// UPDATED Sunday 5th November
+/* UPDATED Sunday 5th November
+$adultsHome (How many adults in the home?). Values: 1, 2, 3, 4 or 5. 
+$childrenHome (Are there children under 6?). Values: 0 = no, 1 = yes
+$howActive. Values: 1 = lazy, 3 = average, 5 = very active
+$howOftenHome. Values: 1 = rarely, 3 = inconsistent, 5 = almost always
+$petSelection. Values: 1 = cat, 2 = dog, 3 = cat and dog
+$petSize. Values: 1 = extra small, 2 = small, 3 = medium, 4 = large, 5 = giant
+$petTemperament. Values: 1 = princess, 2 = zen, 3 = Usain Bolt active
+$petGender. Values: 1 = female, 2 = male, 3 = no preference
 
-// $adultsHome (How many adults in the home?). Values: 1, 2, 3, 4 or 5. 
-
-// $childrenHome (Are there children under 6?). Values: 0 = no, 1 = yes
-
-// $howActive. Values: 1 = lazy, 3 = average, 5 = very active
-
-// $howOftenHome. Values: 1 = rarely, 3 = inconsistent, 5 = almost always
-
-// $petSelection. Values: 1 = cat, 2 = dog, 3 = cat and dog
-
-// $petSize. Values: 1 = extra small, 2 = small, 3 = medium, 4 = large, 5 = giant
-// Giant dogs >50kg: Great Dane, English Mastiff, Scottish Deerhound.
-// Large dogs 25kg-50kg: Golden Retriever, Labrador.
-// Medium dogs 15kg-25kg: Afghan Hound, American Foxhound, Australian Cattle Dog.
-// Small dogs 5kg-15kg: Australian Terrier, Shiba Inu.
-// Extra small dogs <5kg: Chihuahua, Dachshund, Maltese, Yorkshire Terrier.
-// Cats also match to extra small. According to Google adult cats weigh 3.6 - 4.5kg.
-
-// $petTemperament. Values: 1 = princess, 2 = zen, 3 = Usain Bolt active
-
-// $petGender. Values: 0 = female, 2 = male, 3 = no preference
+Giant dogs >50kg: Great Dane, English Mastiff, Scottish Deerhound.
+Large dogs 25kg-50kg: Golden Retriever, Labrador.
+Medium dogs 15kg-25kg: Afghan Hound, American Foxhound, Australian Cattle Dog.
+Small dogs 5kg-15kg: Australian Terrier, Shiba Inu.
+Extra small dogs <5kg: Chihuahua, Dachshund, Maltese, Yorkshire Terrier.
+Cats also match to extra small. According to Google adult cats weigh 3.6 - 4.5kg. */
 
 function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender)
 {
@@ -343,6 +352,23 @@ function searchResult()
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
+  // UserID from session
+  $userID =  $_SESSION['userID'];
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
    // Get pet data for comparsion
   $query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
@@ -361,13 +387,6 @@ function searchResult()
   // Please implement
   mysqli_close($connection);
 }
-  
-  
-  
-  
-  
-  
-  
   
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {
   // Connect AWS MYSQL Server
@@ -798,7 +817,5 @@ function debug_to_console($data) {
     mysqli_close($connection);
     return $numberOfFavourites;
 	}
-	
-	// This function adds pets to user's favourites
 	
 ?>

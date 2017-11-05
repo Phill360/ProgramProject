@@ -162,6 +162,12 @@
     
     submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
   }
+  
+  if (isset($_POST['confirmDeregisterBtn']))
+  {
+		// Deregister user
+    deregisterUser($_SESSION['userID']);
+  }
 ?>
 
 <!DOCTYPE html PUBLIC>
