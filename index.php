@@ -496,9 +496,9 @@
               <div class="row">
               <div class="col-sm-5">
                 <div class="opensans"><div class="textRegular">Contact us and we'll get back to you within 24 hours.</div></div>
-                <div class="opensans"><div class="textRegular"><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</div></div>
-                <div class="opensans"><div class="textRegular"><span class="glyphicon glyphicon-phone"></span> +00 1515151515</div></div>
-                <div class="opensans"><div class="textRegular"><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</div></div>
+                <div class="opensans"><div class="textRegular"><span class="glyphicon glyphicon-map-marker"></span> PO Box 457, Woof NSW 2145</div></div>
+                <div class="opensans"><div class="textRegular"><span class="glyphicon glyphicon-phone"></span> 1300 144 542</div></div>
+                <div class="opensans"><div class="textRegular"><span class="glyphicon glyphicon-envelope"></span> contact@pawcompanions.com.au</div></div>
               </div>
               <div class="col-sm-7">
                 <div class="row">
