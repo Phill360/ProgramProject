@@ -547,12 +547,12 @@ input:checked + .slider:before
 .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
   content: '\2714';
   text-indent: .9em;
-  color: #C2C2C2;
+  color: #000000;
 }
 
 .funkyradio input[type="radio"]:checked ~ label,
 .funkyradio input[type="checkbox"]:checked ~ label {
-  color: #777;
+  color: #000000;
 }
 
 .funkyradio input[type="radio"]:checked ~ label:before,
