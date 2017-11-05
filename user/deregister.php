@@ -13,6 +13,8 @@
 <!-- Description -->  
     <div class="textMedium"><div class="opensans">Are you sure you wish to deregister yourself from Pet Companions?</div></div>
     <br>
-    <button type="submit" class="btn btn-primary pull-left" name="confirmDeregisterBtn">Confirm</button>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="deregisterForm">
+      <button type="submit" class="btn btn-primary pull-left" name="confirmDeregisterBtn">Confirm</button>
+    </form>
 </body>
 </html>
