@@ -32,7 +32,7 @@
       <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
       <button type="submit" class="btn" name="matchesBtn">Matches</button>
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
-      <button onclick="deregister()">Dregister</button>
+      <button type="submit" class="btn" name="deregisterBtn" onclick="deregister()">Dregister</button>
     </form>
   </div>
 
