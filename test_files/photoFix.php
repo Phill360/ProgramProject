@@ -110,13 +110,30 @@ function searchResult()
       
 	}
 		
+	echo "The amount of adults at home = " . $adultsHome . "<br>";
 		
-	echo "The amount of adults at home = " . $adultsHome;
+	if($adultsHome == 1 && $petSize > 3){
+		$petSize = 3;
+	}	
+
+	if($childrenHome == 1){
+		if($petSize > 3){
+			$petSize = 3;
+		}
+		if($petTemperament > 2){
+			$petTemperament = 2;
+		}
+	}
 		
-		
-		
-		
-		
+		echo "<p>" . $adultsHome 
+      . " " . $childrenHome
+      . " " . $howActive
+      . " " . $howOftenHome
+      . " " . $petGender
+      . " " . $petSelection
+      . " " . $petSize
+      . " " . $petTemperament
+      . "</p>";
 		
 		
 		
@@ -125,7 +142,13 @@ function searchResult()
 	$query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
-	$query .= "ON animals.breedID=breed.breedID";
+	$query .= "ON animals.breedID=breed.breedID ";
+	//$query .= "WHERE breed.size=".$petSize;
+	$query .= "WHERE breed.size=\"medium\"";
+	
+		echo $query;
+		
+		
 	$result = mysqli_query($connection, $query);
 	
 		while($row = mysqli_fetch_assoc($result)) {
