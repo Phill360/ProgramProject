@@ -35,20 +35,15 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-
-            <div class="[ form-group ]">
-            <input type="checkbox" name="fancy-checkbox-primary" id="fancy-checkbox-primary" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-primary" class="[ btn btn-primary ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-primary" class="[ btn btn-default active ]">
-                    Primary Checkbox
-                </label>
+          <div class="col-sm-12">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="">
+                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                I/we have children under 6 years of age.
+              </label>
             </div>
-        </div>  
-
+          </div>
         </div>
       </div>
     

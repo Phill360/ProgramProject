@@ -66,7 +66,7 @@
     }
     
     .pet-images {
-      width: 60%;
+      width: 40%;
       margin-top: 2%;
     }
     

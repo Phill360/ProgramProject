@@ -474,13 +474,20 @@
         </div>
         <div class="modal-body">
 
-         <!-- <div class="container"> -->
             <!-- First Container -->
             <div class="container-fluid bg-2 text-center">
               <h2 class="margin">About Us</h2>
               
-              <div class="opensans"><div class="textRegular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div></div>
+              <div class="opensans"><div class="textRegular">
+              Paw Companion helps people and pets find each other and live happier 
+              lives together. That's our mission. It's why we exist.</div></div>
+              <div class="opensans"><div class="textRegular">How can we do this online?</div></div> 
+              
+              <div class="opensans"><div class="textRegular">Paw Companions has developed algorithms that identify the most important 
+              factors that determine compatibility between people and pets. 
+              We believe that pets are unique individuals, just like us, and adopters 
+              lack access to the guidance needed to identify pets will be a truly 
+              great fit for their personality, lifestyle and household. </div></div>
               </div>
               
 
