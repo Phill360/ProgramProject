@@ -35,8 +35,8 @@
             <div class="col-md-4">
               <div class="funkyradio">
                 <div class="funkyradio-primary">
-                  <input type="checkbox" name="checkbox" id="checkbox2">
-                  <label for="checkbox2">I/we have children under 6 years.</label>
+                  <input type="checkbox" name="childrenAtHome" id="childrenAtHome" value=1>
+                  <label for="childrenAtHome">I/we have children under 6 years.</label>
                 </div>
               </div>
             </div>  
@@ -67,7 +67,6 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="panel-heading">What type of animal do you prefer?</div>
-          <div>
             <div class="button-left">
               <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-md btn-primary active">
@@ -81,7 +80,6 @@
                 </label>
               </div>
             </div>  
-          </div>
         </div>
       </div>
       

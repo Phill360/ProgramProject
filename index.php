@@ -152,7 +152,7 @@
     $petTemperament = $_POST['petTemperament'];
     $petGender = $_POST['petGender'];
     
-    // echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
+    echo($adultsHome.' '.$childrenAtHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
     
     if ($childrenAtHomeState == "on")
     {
