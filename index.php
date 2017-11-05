@@ -474,18 +474,20 @@
         </div>
         <div class="modal-body">
 
-          <!--<div class="container">-->
+          <div class="container">
             <!-- First Container -->
             <div class="container-fluid bg-2 text-center">
-              <h2 class="margin">About Us</div></div>
+              <h2 class="margin">About Us</h2>
+              
               <div class="opensans"><div class="textRegular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div></div>
-            </div>
+              </div>
+              
 
             <!-- Second Container (Grid) -->
             <div class="container-fluid bg-grey">
-              <h2 class="text-center">Contact Us</div></div>
-            <div class="row">
+              <h2 class="text-center">Contact Us</h2>
+              <div class="row">
               <div class="col-sm-5">
                 <div class="opensans"><div class="textRegular">Contact us and we'll get back to you within 24 hours.</div></div>
                 <div class="opensans"><div class="textRegular"><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</div></div>
@@ -509,7 +511,7 @@
                 </div>
               </div>
             </div>
-
+          </div>
         </div>
       </div>
     </div>

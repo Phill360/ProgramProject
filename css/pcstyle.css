@@ -488,3 +488,40 @@ input:checked + .slider:before
 { 
 	text-align:center; 
 }
+
+/* Bootstrap checkbox css */
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}
+
+/* Description here */
+.bg-2 { 
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+}
+.bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+}
+ .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+}
