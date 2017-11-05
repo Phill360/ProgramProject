@@ -485,4 +485,4 @@ input:checked + .slider:before
 }
 
 .button-center
-{ display: flex; align-items: center; }
+{ text-align:center; }
