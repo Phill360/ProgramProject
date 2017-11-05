@@ -492,7 +492,7 @@ input:checked + .slider:before
 }
 
 .funkyradio label {
-  width: 100%;
+  width: auto;
   border-radius: 3px;
   border: 1px solid #D1D3D4;
   font-weight: normal;
@@ -500,8 +500,7 @@ input:checked + .slider:before
 
 .funkyradio input[type="radio"]:empty,
 .funkyradio input[type="checkbox"]:empty {
-  display: block;
-  margin: auto;
+  display: none;
 }
 
 .funkyradio input[type="radio"]:empty ~ label,
