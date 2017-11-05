@@ -14,10 +14,6 @@
     margin: 0 auto;
 }
 
-.center {
-	margin: auto;
-}
-
 .bold {
 	font-weight: bold;
 }
@@ -373,16 +369,6 @@
  		text-align: right;
  	}
 
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
- 
-  .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
-  }
-
 /* Control elements CSS */
 .switch 
 {
@@ -522,6 +508,7 @@ input:checked + .slider:before
   position: relative;
   line-height: 2.5em;
   text-indent: 3.25em;
+  margin: auto;
   margin-top: 2em;
   cursor: pointer;
   -webkit-user-select: none;
@@ -576,14 +563,20 @@ input:checked + .slider:before
 
 /* Description here */
 .bg-2 { 
-      background-color: #1abc9c; /* Green */
-      color: #ffffff;
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
 }
 .bg-3 { 
-      background-color: #ffffff; /* White */
-      color: #555555;
+    background-color: #ffffff; /* White */
+    color: #555555;
 }
- .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+
+.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+}
+ 
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
 }

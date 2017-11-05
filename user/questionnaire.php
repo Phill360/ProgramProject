@@ -29,9 +29,9 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="panel-heading">How many adults in your household?</div>
-          <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>          <input id="adultsHome" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="adultsHome" required>
-          <div class="center">
-
+          <rzslider rz-slider-model="sliderNumberAdults.value" rz-slider-options="sliderNumberAdults.options"></rzslider>          
+          <input id="adultsHome" type="text" style="display: none;" ng-model="sliderNumberAdults.value" name="adultsHome" required>
+          <div class="button-left">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
               <div class="funkyradio">
                 <div class="funkyradio-primary">
@@ -40,7 +40,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
