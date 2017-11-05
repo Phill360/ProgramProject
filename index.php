@@ -519,7 +519,7 @@
         </div>
     </div>
 <br>
-<div class="footer"><?php include 'footer.php' ?></div>
+<div><?php include 'footer.php' ?></div>
 </body>
 </html>
 
