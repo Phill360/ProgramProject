@@ -37,13 +37,15 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="panel-heading">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="">
-                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                I/we have children under 6 years of age.
-              </label>
-            </div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                Bootstrap Switch Primary
+                <div class="material-switch pull-right">
+                  <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox"/>
+                  <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
