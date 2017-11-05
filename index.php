@@ -106,7 +106,7 @@
   	}
   }
   
- if (isset($_POST['addBreedBtn']))
+  if (isset($_POST['addBreedBtn']))
   {
 		// Get breed input
 		$species = isset($_POST['species']) ? $_POST['species'] : '';
