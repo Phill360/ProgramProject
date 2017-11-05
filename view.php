@@ -65,10 +65,15 @@
       margin: auto;
     }
     
-    .pet-images {
-      width: 20%;
-      margin-top: 2%;
-      border: 1px solid white;
+    .pet-holder 
+    {   
+      width: 50%;  
+    }
+
+    .pet-holder img 
+    {
+      width: 100%;
+      height: auto;    
     }
     
     .pet-description, .pet-details {
@@ -103,7 +108,7 @@
             while($row = mysqli_fetch_assoc($result)) { ?>
           <div class="slackey"><div class="black"><div class="textxxMedium"> <?php echo $row["petName"]; ?> </div></div></div>
           <!--<img src="media/ahmed-saffu-208365png" alt "pet">-->
-          <div class="pet-images">
+          <div class="pet-holder">
             <?php displayimage($row["rspcaID"]); ?>
           </div>
           <div class='pet-description'>
