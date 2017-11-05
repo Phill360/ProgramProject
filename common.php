@@ -366,27 +366,49 @@ function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $h
   mysqli_close($connection);
 }
   
-  
+
+
+// Search for question matches
+// THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE
 function searchResult()
 {
+		echo "<p>**** THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE ****</p>";
+		
+		
+		
+		
+		
+		
+	  // Connect AWS MYSQL Server
+    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+    $port=3306;
+    $socket="";
+    $user="proProg";
+    $DBpassword="pawprogramming";
+    $dbname="pawCompanion";
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    	or die ('Could not connect to the database server' . mysqli_connect_error());
+
+
+	
  	// Connect AWS MYSQL Server
-	require_once('../_php/connect.php');
+	// require_once('./_php/connect.php');
   
 	// UserID from session
-	$userID =  $_SESSION['userID'];
-	// $userID =  33;
+	 $userID =  $_SESSION['userID'];
   
 	 // Get pet data for comparsion
 	$query = "SELECT * ";
 	$query .= "FROM userSearch ";
 	$query .= "WHERE userID=".$userID;
 	
-		// echo $query;
+		 //echo $query;
 	
-	$result = mysqli_query($connection, $query);
+	$search = mysqli_query($connection, $query);
+
 		
 	// Test for query error
-	if($result) {
+	if($search) {
 	  $new_id = mysqli_insert_id($connection);
 	} else {
 		echo mysqli_error($connection);
@@ -394,17 +416,8 @@ function searchResult()
 		exit;
 	}
 	
-	while($row = mysqli_fetch_assoc($result)) {
-      // echo "<p>" . $row["adultsHome"] 
-      // . " " . $row["childrenHome"] 
-      // . " " . $row["howActive"]
-      // . " " . $row["howOftenHome"]
-      // . " " . $row["petGender"]
-      // . " " . $row["petSelection"]
-      // . " " . $row["petSize"]
-      // . " " . $row["petTemperament"]
-      // . "</p>";
-      
+	while($row = mysqli_fetch_assoc($search)) {
+
       $adultsHome = $row["adultsHome"];
       $childrenHome = $row["childrenHome"];
       $howActive = $row["howActive"];
@@ -439,25 +452,11 @@ function searchResult()
 
 		
 	$result = mysqli_query($connection, $query);
-	
-		while($row = mysqli_fetch_assoc($result)) {
-  
-      echo "<p>" . $row["petName"] . " " . $row["rspcaID"] . "</p>";
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	// Please implement
-	mysqli_close($connection);
- 
- 
- 
+	return $result;
+
+
+
+
 }
   
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {

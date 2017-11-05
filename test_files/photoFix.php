@@ -91,14 +91,14 @@ function searchResult()
 	}
 	
 	while($row = mysqli_fetch_assoc($result)) {
-      echo "<p>" . $row["adultsHome"] 
-      . " " . $row["childrenHome"] 
-      . " " . $row["howActive"]
-      . " " . $row["howOftenHome"]
-      . " " . $row["petGender"]
-      . " " . $row["petSelection"]
-      . " " . $row["petSize"]
-      . " " . $row["petTemperament"]
+      echo "<p>" . "Adults Home: " . $row["adultsHome"] 
+      . " " . "Children Home: " . $row["childrenHome"] 
+      . " " . "How Active: " . $row["howActive"]
+      . " " . "How often Home: " . $row["howOftenHome"]
+      . " " . "Gender: " . $row["petGender"]
+      . " " . "pet Selection: " . $row["petSelection"]
+      . " " . "Size: " . $row["petSize"]
+      . " " . "Temp: " . $row["petTemperament"]
       . "</p>";
       
       $adultsHome = $row["adultsHome"];

@@ -25,7 +25,8 @@
     $page1 = ($page*12)-12;
   }
   
-  $result = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
+  // $result = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
+  $result = searchResult();
   
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($result)) {
