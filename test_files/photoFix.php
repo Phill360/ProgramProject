@@ -32,24 +32,14 @@
 		}	
 	}
 	
+	searchResult();
 	
 
 function saveimage($rspcaIDNew, $imageNameNew, $imageDataNew) {
   // Connect AWS MYSQL Server
   require_once('../_php/connect.php');
   
- // // Does Pet already Exist
-	// $query = "SELECT rspcaID  ";
-	// $query .= "FROM animals ";
-	// $query .= "WHERE rspcaID=";
-	// $query .= "'" . $rspcaIDNew . "'";
-	// $result = mysqli_query($connection, $query);
-	// if(mysqli_num_rows($result) > 0){
-	//   return;
-	// }
-	
-	//$row
-	
+
 	// 2. Perform Query
 	$query = "UPDATE animals SET imageName=\"". $imageNameNew ."\", imageData=\"". $imageDataNew ."\" WHERE rspcaID=".$rspcaIDNew;
 	echo $query;
@@ -70,14 +60,55 @@ function saveimage($rspcaIDNew, $imageNameNew, $imageDataNew) {
 }
 
 
+  
+function searchResult()
+{
+  // Connect AWS MYSQL Server
+  require_once('../_php/connect.php');
+  
+  // UserID from session
+  $userID =  $_SESSION['userID'];
+  
+   // Get pet data for comparsion
+  $query = "SELECT * ";
+	$query .= "FROM userSearch ";
+	$query .= "WHERE userID=\"".$userID."\"";
+	
+		echo $query;
+	
+	$result = mysqli_query($connection, $query);
+		
+	// Test for query error
+	if($result) {
+	  $new_id = mysqli_insert_id($connection);
+	} else {
+		echo mysqli_error($connection);
+		mysqli_close($connection);
+		exit;
+	}
+	
+	while($row = mysqli_fetch_assoc($result)) {
+      echo "<p>" . $row["adultsHome"] 
+      . " " . $row["childrenHome"] 
+      . " " . $row["howActive"]
+      . " " . $row["howOftenHome"]
+      . " " . $row["petGender"]
+      . " " . $row["petSelection"]
+      . " " . $row["petSize"]
+      . " " . $row["petTemperament"]
+      . "</p>";
+		}
+
+}
 
 
-
+  // Please implement
+  mysqli_close($connection);
+  
+  
 ?>
 
 
 
 	</body>
 </html>
-
-

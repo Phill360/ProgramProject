@@ -86,14 +86,23 @@ function deregisterUser()
 	
 	$userID = $_SESSION['userID'];
 	
-	$query = "DELETE FROM favourites WHERE userID = $userID";
-  $result = mysqli_query($connection, $query);
+	$query = "DELETE FROM favourites WHERE userID = $userID;";
+	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
+	$query .= "DELETE FROM user WHERE userID = $userID";
 	
-	$query2 = "DELETE FROM userSearch WHERE userID = $userID";
-  $result2 = mysqli_query($connection, $query);
-	
-	$query3 = "DELETE FROM user WHERE userID = $userID";
-  $result3 = mysqli_query($connection, $query);
+	// Execute multi query
+  if (mysqli_multi_query($connection, $query))
+  {
+    do
+    {
+      // Store first result set
+      if ($result=mysqli_store_result($connection)) 
+      {
+        // Free result set
+        mysqli_free_result($result);
+      }
+    }
+  while (mysqli_next_result($connection));
   
   signOutUser();
   
