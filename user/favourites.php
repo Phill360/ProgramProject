@@ -38,9 +38,7 @@
 	  if ($row["userID"] == $_SESSION['userID']) // Iterate through table to find rows belonging to the user
 	  {
 	    $rspcaID = $row["animalID"]; // When found set animalID to the rspcaID 
-	    echo $rspcaID;
 	    $petName = getAnimalName($rspcaID);
-	    echo $petName;
 	    $description = getAnimalDescription($rspcaID); ?>
 	    
 	    <!-- Now fetch animal from the animals table -->

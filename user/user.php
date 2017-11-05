@@ -32,6 +32,7 @@
       <button type="submit" class="btn" name="questionnaireBtn">Questionnaire</button>
       <button type="submit" class="btn" name="matchesBtn">Matches</button>
       <button type="submit" class="btn" name="favouritesBtn">Favourites</button>
+      <button onclick="deregister()">Dregister</button>
     </form>
   </div>
 
@@ -54,5 +55,11 @@
   <?php } ?>
 </div>
 
+<script>
+function deregister() 
+{
+  alert("Are you sure you wish to deregister yourself from this website?");
+}
+</script>
 </body>
 </html>
