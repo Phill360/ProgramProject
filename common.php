@@ -98,6 +98,11 @@ function deregisterUser()
       // Store first result set
       if ($result=mysqli_store_result($connection)) 
       {
+        // Fetch one and one row
+        while ($row=mysqli_fetch_row($result))
+        {
+          printf("%s\n",$row[0]);
+        }
         // Free result set
         mysqli_free_result($result);
       }
@@ -333,7 +338,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $h
   
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
-	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament) ";
+	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament, userID) ";
 	$query .= "VALUES (";
 	$query .= "'" . $adultsHome . "',";
 	$query .= "'" . $childrenHome . "',";
@@ -342,7 +347,8 @@ function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $h
 	$query .= "'" . $petGender . "',";
 	$query .= "'" . $petSelection . "',";
 	$query .= "'" . $petSize . "',";
-	$query .= "'" . $petTemperament . "'"; 
+	$query .= "'" . $petTemperament . "',";
+	$query .= "'" . $_SESSION['userID'] . "'"; 
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	

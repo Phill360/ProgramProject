@@ -63,16 +63,18 @@ function saveimage($rspcaIDNew, $imageNameNew, $imageDataNew) {
   
 function searchResult()
 {
-  // Connect AWS MYSQL Server
-  require_once('../_php/connect.php');
+	// Connect AWS MYSQL Server
+	require_once('../_php/connect.php');
   
-  // UserID from session
-  $userID =  $_SESSION['userID'];
+	// UserID from session
+//	$userID =  $_SESSION['userID'];
+	$userID =  33;
   
-   // Get pet data for comparsion
-  $query = "SELECT * ";
+	 // Get pet data for comparsion
+	$query = "SELECT * ";
 	$query .= "FROM userSearch ";
-	$query .= "WHERE userID=\"".$userID."\"";
+	$query .= "WHERE userID=".$userID;
+	// $query .= "WHERE userID=33";
 	
 		echo $query;
 	
@@ -98,12 +100,12 @@ function searchResult()
       . " " . $row["petTemperament"]
       . "</p>";
 		}
-
+	// Please implement
+	mysqli_close($connection);
 }
 
 
-  // Please implement
-  mysqli_close($connection);
+ 
   
   
 ?>
