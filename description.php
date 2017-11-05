@@ -12,7 +12,9 @@
 <body>
 <!-- Description -->  
 <div class="container">
-    <div class="textMedium"><div class="opensans">Description of website here..</div></div>
+    <div class="textMedium"><div class="opensans">Looking for the perfect pet?  
+    Paw Companion helps you find the perfect pet to match your needs.  Register 
+    now to find your next best friend.</div></div>
     <br>
 </div>
 </body>

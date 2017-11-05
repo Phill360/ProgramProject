@@ -464,7 +464,7 @@
     </div>
   </div>
   
-  <!-- About Us -->
+  <!-- Contact Us -->
   <div id="contactModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
