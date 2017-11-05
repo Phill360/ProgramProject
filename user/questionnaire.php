@@ -35,22 +35,17 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="[ form-group ]">
-            <input type="checkbox" name="fancy-checkbox-primary" id="fancy-checkbox-primary" autocomplete="off" />
-            <div class="[ btn-group ]">
-              <label for="fancy-checkbox-primary" class="[ btn btn-primary ]">
-                <span class="[ glyphicon glyphicon-ok ]"></span>
-                <span> </span>
-              </label>
-              <label for="fancy-checkbox-primary" class="[ btn btn-default active ]">Children under 6 years age</label>
-            </div>
-          </div>
-          <div class="panel-heading">Children under 6?</div>
           <div class="button-center">
-            <label class="switch">
-              <input type="checkbox" id="childrenAtHome" name="childrenAtHome">
-              <span class="slider round"></span>
-            </label>
+            <div class="[ form-group ]">
+              <input type="checkbox" name="fancy-checkbox-primary" id="fancy-checkbox-primary" autocomplete="off" />
+              <div class="[ btn-group ]">
+                <label for="fancy-checkbox-primary" class="[ btn btn-primary ]">
+                  <span class="[ glyphicon glyphicon-ok ]"></span>
+                  <span> </span>
+                </label>
+                <label for="fancy-checkbox-primary" class="[ btn btn-default active ]">Children under 6 years age?</label>
+              </div>
+            </div>  
           </div>
         </div>
       </div>

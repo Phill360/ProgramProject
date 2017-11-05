@@ -509,15 +509,14 @@
                     <button class="btn btn-default pull-right" type="submit">Send</button>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
-
-        </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 <br>
 <div><?php include 'footer.php' ?></div>
 </body>
