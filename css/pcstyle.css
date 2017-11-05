@@ -524,11 +524,11 @@ input:checked + .slider:before
     font-size: .8em;
     line-height: 0;
     top: 50%;
-    left: 0%;
+    left: 20%;
 }
 
 .radio .cr .cr-icon {
-    margin-left: 0.04em;
+    margin-left: 0.00em;
 }
 
 .checkbox label input[type="checkbox"],
