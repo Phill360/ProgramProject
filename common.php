@@ -84,11 +84,11 @@ function deregisterUser($_SESSION['userID'])
 {
 	require_once('./_php/connect.php');
     
-  $query = "DELETE FROM favourites WHERE userID = $_SESSION['userID']";
-  $result = mysqli_query($connection, $query);
+  // $query = "DELETE FROM favourites WHERE userID = $_SESSION['userID']";
+  // $result = mysqli_query($connection, $query);
   
-  $query = "DELETE FROM userSearch WHERE userID = $_SESSION['userID']";
-  $result = mysqli_query($connection, $query);
+  // $query = "DELETE FROM userSearch WHERE userID = $_SESSION['userID']";
+  // $result = mysqli_query($connection, $query);
   
   $query = "DELETE FROM user WHERE userID = $_SESSION['userID']";
   $result = mysqli_query($connection, $query);
@@ -357,6 +357,18 @@ function searchResult()
   
   
   
+  
+   
+   // Get pet data for comparsion
+  $query = "SELECT * ";
+	$query .= "FROM breed ";
+	$query .= "WHERE userID=\"".$userID.;
+	$result = mysqli_query($connection, $query);
+	
+		while($row = mysqli_fetch_assoc($result)) {
+  
+      echo "<p>" . $row["petName"] . " " . $row["rspcaID"] . "</p>";
+		}
   
   
   
