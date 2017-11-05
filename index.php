@@ -209,7 +209,7 @@
   <?php } 
   else
   {?>
-    <div><?php include 'deregister.php' ?></div>
+    <div><?php include 'user/deregister.php' ?></div>
     <div><?php include 'carousel.php' ?></div>
   <?php } ?>
   
