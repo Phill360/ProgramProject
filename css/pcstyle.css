@@ -485,8 +485,4 @@ input:checked + .slider:before
 }
 
 .button-center
-{
-	position:relative;
-    top: 0%; 
-    left: 20%;
-}
+{ display: flex; align-items: center; }
