@@ -480,10 +480,9 @@
               
               <div class="opensans"><div class="textRegular">
               Paw Companion helps people and pets find each other and live happier 
-              lives together. That's our mission. It's why we exist.</div></div>
-              <div class="opensans"><div class="textRegular">How can we do this online?</div></div> 
-              
-              <div class="opensans"><div class="textRegular">Paw Companions has developed algorithms that identify the most important 
+              lives together. That's our mission. It's why we exist.
+              How can we do this online?
+              Paw Companions has developed algorithms that identify the most important 
               factors that determine compatibility between people and pets. 
               We believe that pets are unique individuals, just like us, and adopters 
               lack access to the guidance needed to identify pets will be a truly 
