@@ -36,7 +36,7 @@
               <div class="funkyradio">
                 <div class="funkyradio-primary">
                   <input type="checkbox" name="childrenAtHome" id="childrenAtHome" value=1>
-                  <label for="childrenAtHome">I/we have children under 6 years.</label>
+                  <label for="childrenAtHome">I/we have children under 6 years. &nbsp</label>
                 </div>
               </div>
             </div>

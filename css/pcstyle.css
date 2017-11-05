@@ -509,7 +509,7 @@ input:checked + .slider:before
   line-height: 2.5em;
   text-indent: 3.25em;
   margin-top: 2em;
-  margin-right: 2em;
+
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
