@@ -35,11 +35,12 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">Any children younger than 6 years in the household?
-          <label class="switch">
-            <input type="checkbox" id="childrenAtHome" name="childrenAtHome">
-            <span class="slider round"></span>
-          </label>
+          <div class="panel-heading">Children under 6?</div>
+          <div class="button-center">
+            <label class="switch">
+              <input type="checkbox" id="childrenAtHome" name="childrenAtHome">
+              <span class="slider round"></span>
+            </label>
           </div>
         </div>
       </div>
@@ -106,7 +107,6 @@
         <div class="panel-body">
           <div class="panel-heading">Gender preference?</div>
           <div class="button-center">
-
             <div class="btn-group" data-toggle="buttons">
               <label class="btn btn-md btn-primary active">
                 <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
