@@ -58,7 +58,7 @@
 <script>
 function deregister() 
 {
-  alert("Are you sure you wish to deregister yourself from this website?");
+  alert("Are you sure you wish to deregister yourself from Pet Companions?");
 }
 </script>
 </body>
