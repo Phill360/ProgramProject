@@ -296,8 +296,6 @@
     </div>
   </div>
   
-  
-  
   <!-- Terms -->
   <div id="termsModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
