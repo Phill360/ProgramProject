@@ -500,7 +500,8 @@ input:checked + .slider:before
 
 .funkyradio input[type="radio"]:empty,
 .funkyradio input[type="checkbox"]:empty {
-  display: none;
+  display: block;
+  margin: auto;
 }
 
 .funkyradio input[type="radio"]:empty ~ label,
@@ -508,7 +509,6 @@ input:checked + .slider:before
   position: relative;
   line-height: 2.5em;
   text-indent: 3.25em;
-  margin: auto;
   margin-top: 2em;
   cursor: pointer;
   -webkit-user-select: none;
