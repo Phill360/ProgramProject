@@ -36,13 +36,12 @@
     
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="panel-heading">Do you have children under 6 years?</div>
-            <div class="col-md-6">
-              <div class="funkyradio">
-                <div class="funkyradio-primary">
-                  <input type="checkbox" name="checkbox" id="checkbox2">
-                  <label for="checkbox2">Check for yes</label>
-                </div>
+          <div class="panel-heading">Your family:</div>
+          <div class="col-md-4">
+            <div class="funkyradio">
+              <div class="funkyradio-primary">
+                <input type="checkbox" name="checkbox" id="checkbox2">
+                <label for="checkbox2">I/we have children under 6</label>
               </div>
             </div>
           </div>
