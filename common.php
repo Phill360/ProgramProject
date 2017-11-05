@@ -372,21 +372,16 @@ function searchResult()
   
       echo "<p>" . $row["adultsHome"] 
       . " " . $row["childrenHome"] 
-       . " " . $row["childrenHome"]
-        . " " . $row["childrenHome"]
-         . " " . $row["childrenHome"]
-          . " " . $row["childrenHome"]
-           . " " . $row["childrenHome"]
+       . " " . $row["howActive"]
+        . " " . $row["howOftenHome"]
+         . " " . $row["petGender"]
+          . " " . $row["petSelection"]
+           . " " . $row["petSize"]
+           . " " . $row["petTemperament"]
       . "</p>";
 		}
   
-  
-  
 
-  adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament
-  
-  
-  
   
   
   
