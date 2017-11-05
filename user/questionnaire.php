@@ -105,7 +105,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="panel-heading">Gender preference?</div>
-          <div class="col-lg-12 text-center">
+          <div class="button-center">
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-md btn-primary active">
               <input type="radio" name="petGender" id="petGender" value=1 autocomplete="off" checked> Female
