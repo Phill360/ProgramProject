@@ -14,7 +14,7 @@
 <div class="container">
     <div class="textMedium"><div class="opensans">Are you sure you wish to deregister yourself from Pet Companions?</div></div>
     <br>
-    <button type="submit" class="btn btn-primary pull-right" name="confirmDeregisterBtn">Confirm</button>
+    <button type="submit" class="btn btn-primary pull-left" name="confirmDeregisterBtn">Confirm</button>
 </div>
 </body>
 </html>
