@@ -540,7 +540,7 @@ input:checked + .slider:before
 
 .funkyradio input[type="radio"]:hover:not(:checked) ~ label,
 .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
-  color: #888;
+  color: #000000;
 }
 
 .funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
