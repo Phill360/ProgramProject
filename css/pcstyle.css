@@ -486,7 +486,7 @@ input:checked + .slider:before
 
 .button-left
 { 
-	margin-left: 10px;
+	margin-left: 15px;
 	text-align:left;
 }
 
