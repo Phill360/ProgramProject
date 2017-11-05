@@ -80,10 +80,7 @@ function registerUser($firstname, $lastname, $email, $password)
 }
 
 /* This function deregisters a user */
-function deregisterUser($_SESSION['userID'])
-{
-	//
-}
+
 
 /* This function signs the user in */
 function signInUser($email, $password)
@@ -644,7 +641,6 @@ function debug_to_console($data) {
     $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     
-	  // $query = "SELECT * FROM animals LIMIT $page1,3"; 
 	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
 	  $result = mysqli_query($connection, $query);
 	  
