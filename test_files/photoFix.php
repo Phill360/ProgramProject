@@ -32,9 +32,9 @@
 		}	
 	}
 	
-	// searchResult();
+	searchResult();
 	
-	displayimage(2);
+	// displayimage(2);
 	
 
 function saveimage($rspcaIDNew, $imageNameNew, $imageDataNew) {
@@ -145,8 +145,8 @@ function searchResult()
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	//$query .= "WHERE breed.size=".$petSize;
-	$query .= "WHERE breed.size=\"medium\"";
+	$query .= "WHERE breed.size=".$petSize;
+	// $query .= "WHERE breed.size=\"medium\"";
 	
 		echo $query;
 		

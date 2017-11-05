@@ -369,56 +369,95 @@ function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $h
   
 function searchResult()
 {
-  // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
-  // UserID from session
-  $userID =  $_SESSION['userID'];
+ 	// Connect AWS MYSQL Server
+	require_once('../_php/connect.php');
   
+	// UserID from session
+	$userID =  $_SESSION['userID'];
+	// $userID =  33;
   
-  
-  
-   
-   // Get pet data for comparsion
-  $query = "SELECT * ";
-	$query .= "FROM breed ";
-	$query .= "WHERE userID=\"".$userID."\"";
-	$result = mysqli_query($connection, $query);
+	 // Get pet data for comparsion
+	$query = "SELECT * ";
+	$query .= "FROM userSearch ";
+	$query .= "WHERE userID=".$userID;
 	
-		while($row = mysqli_fetch_assoc($result)) {
-  
-      echo "<p>" . $row["adultsHome"] 
-      . " " . $row["childrenHome"] 
-       . " " . $row["howActive"]
-        . " " . $row["howOftenHome"]
-         . " " . $row["petGender"]
-          . " " . $row["petSelection"]
-           . " " . $row["petSize"]
-           . " " . $row["petTemperament"]
-      . "</p>";
-		}
-  
+		// echo $query;
+	
+	$result = mysqli_query($connection, $query);
+		
+	// Test for query error
+	if($result) {
+	  $new_id = mysqli_insert_id($connection);
+	} else {
+		echo mysqli_error($connection);
+		mysqli_close($connection);
+		exit;
+	}
+	
+	while($row = mysqli_fetch_assoc($result)) {
+      // echo "<p>" . $row["adultsHome"] 
+      // . " " . $row["childrenHome"] 
+      // . " " . $row["howActive"]
+      // . " " . $row["howOftenHome"]
+      // . " " . $row["petGender"]
+      // . " " . $row["petSelection"]
+      // . " " . $row["petSize"]
+      // . " " . $row["petTemperament"]
+      // . "</p>";
+      
+      $adultsHome = $row["adultsHome"];
+      $childrenHome = $row["childrenHome"];
+      $howActive = $row["howActive"];
+      $howOftenHome = $row["howOftenHome"];
+      $petGender = $row["petGender"];
+      $petSelection = $row["petSelection"];
+      $petSize = $row["petSize"];
+      $petTemperament = $row["petTemperament"];
+      
+	}
+		
+	if($adultsHome == 1 && $petSize > 3){
+		$petSize = 3;
+	}	
 
-  
-  
-  
-  
-  
-   // Get pet data for comparsion
-  $query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
+	if($childrenHome == 1){
+		if($petSize > 3){
+			$petSize = 3;
+		}
+		if($petTemperament > 2){
+			$petTemperament = 2;
+		}
+	}
+
+		
+	// Get pet data for comparsion
+	$query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
-	$query .= "ON animals.breedID=breed.breedID";
+	$query .= "ON animals.breedID=breed.breedID ";
+	$query .= "WHERE breed.size=".$petSize;
+
+		
 	$result = mysqli_query($connection, $query);
 	
 		while($row = mysqli_fetch_assoc($result)) {
   
       echo "<p>" . $row["petName"] . " " . $row["rspcaID"] . "</p>";
 		}
-  
-  
-  
-  // Please implement
-  mysqli_close($connection);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	// Please implement
+	mysqli_close($connection);
+ 
+ 
+ 
 }
   
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {
