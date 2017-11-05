@@ -102,7 +102,8 @@ function deregisterUser()
         mysqli_free_result($result);
       }
     }
-  while (mysqli_next_result($connection));
+    while (mysqli_next_result($connection));
+  }
   
   signOutUser();
   
