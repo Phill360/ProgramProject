@@ -30,7 +30,23 @@
             {
               die("Database query failed.");
             }
-	
+	          
+	          ?>
+	          <table class="table">
+	            <thead>
+                <tr>
+                  <th>RSPCA ID</th>
+                  <th>Name</th>
+                  <th>Breed</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Image</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+	          <?php
+	          
             // List animals in database
             while($row = mysqli_fetch_assoc($result)) 
             {
@@ -45,7 +61,12 @@
 				        <td><?php echo $row["description"] ; ?>	</td>
 			        </tr>
               <?php
-            } 
+            }
+            ?>
+            </tbody>
+            </table>
+            <?php
+            
             mysqli_close($connection);
             ?>
 
