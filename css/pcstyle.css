@@ -638,10 +638,11 @@ input:checked + .slider:before
 }
 
 th {
-  text-align: right;
+  text-align: center;
 }
 
 td {
+  text-align: center;
   padding-left: 15%;
 }
 
