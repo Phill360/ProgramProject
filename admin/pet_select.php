@@ -43,7 +43,7 @@
             ?>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
+          <button type="submit" class="btn btn-primary" name="selectPetBtn">Select</button>
           </form>
         </div>
       </div>

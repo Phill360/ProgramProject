@@ -31,6 +31,11 @@ include_once('./common.php');
     $adminTool = 'editPet';
   }
   
+  if(isset($_POST['selectPetBtn']))
+  {
+    $adminTool = 'selectPet';
+  }
+  
   if(isset($_POST['removePetBtn']))
   {
     $adminTool = 'removePet';
@@ -80,7 +85,11 @@ include_once('./common.php');
     else if ($adminTool == 'editPet')
     {?>
       <div><?php include 'pet_select.php' ?></div>
-  <?php } 
+  <?php }
+    else if ($adminTool == 'selectPet')
+    {?>
+      <div><?php include 'pet_update.php' ?></div>
+  <?php }
     else if ($adminTool == 'removePet')
     {?>
       <div><?php include 'pet_remove.php' ?></div>
