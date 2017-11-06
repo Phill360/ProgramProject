@@ -134,7 +134,7 @@
             
             <!-- Gender selection -->
             <?php 
-            if ($gender == "F")
+            if ($gender == 'F')
             {
               $genderText = "Female";
             }
