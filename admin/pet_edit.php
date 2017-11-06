@@ -66,11 +66,7 @@
             <label>Breed:</label>
             <select class="form-control" id="breedID" name="breedID" required>
             <?php
-            
-            
-            
-            
-            
+        
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
@@ -88,7 +84,7 @@
             {
               if ($row["breedID"] == $breedID)
               {
-                echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
+                echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
               }
             } 
             
