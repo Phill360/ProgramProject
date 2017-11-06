@@ -43,8 +43,34 @@
             ?>
             </select>
           </div>
+          
+          <div class="form-group">
+            <label for="age">RSPCA ID:</label>
+            <select class="form-control" id="rspcaID" name="rspcaID" required>
+            <?php
+            // Connect AWS MYSQL Server
+            require('_php/connect.php');
 
-          <button type="submit" class="btn btn-primary" name="editPetBtn">Remove</button>
+	          $query = "SELECT breedID, type, name FROM breed";
+	          $result = mysqli_query($connection, $query);
+            
+            // Test for query error
+            if(!$result) 
+            {
+              die("Database query failed.");
+            }
+	
+            // List animals in database
+            while($row = mysqli_fetch_assoc($result)) 
+            {
+              echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
+            } 
+            mysqli_close($connection);
+            ?>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
           </form>
         </div>
       </div>
