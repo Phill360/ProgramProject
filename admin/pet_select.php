@@ -35,10 +35,10 @@
 	          <table class="table table-bordered">
 	            <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Edit</th>
-                  <th>Remove</th>
+                  <th class="col-sm-2 col-md-2 col-lg-2">ID</th>
+                  <th class="col-sm-2 col-md-6 col-lg-6">Name</th>
+                  <th class="col-sm-2 col-md-2 col-lg-2">Edit</th>
+                  <th class="col-sm-2 col-md-2 col-lg-2">Remove</th>
                 </tr>
               </thead>
               <tbody>
