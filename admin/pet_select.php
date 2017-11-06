@@ -35,7 +35,7 @@
 	          <table class="table table-bordered">
 	            <thead>
                 <tr>
-                  <th>RSPCA ID</th>
+                  <th>ID</th>
                   <th>Name</th>
                   <th>Breed</th>
                   <th>Age</th>
