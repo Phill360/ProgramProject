@@ -117,7 +117,7 @@
           <!-- Enter pet name -->
           <div class="input-group">
             <span class="input-group-addon">Name</span>
-            <input id="petName" type="text" class="form-control" name="petName" placeholder=<?php echo $petName ?>  required>
+            <input id="petName" type="text" class="form-control" name="petName" placeholder="<?php echo $petName ?>" required>
           </div>
           <br>
           
@@ -145,7 +145,7 @@
             ?>
             <div class="form-group">
               <label for="gender">Gender:</label>
-              <select class="form-control" name="gender" id="gender" placeholder=<?php echo $gender ?> required>
+              <select class="form-control" name="gender" id="gender" required>
                 <option value=<?php echo $gender; ?>><?php echo $genderText; ?></option>
                 <option value="F">Female</option>
                 <option value="M">Male</option>
