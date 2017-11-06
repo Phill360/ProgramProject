@@ -35,11 +35,6 @@ include_once('./common.php');
   {
     $adminTool = 'selectPet';
   }
-  
-  if(isset($_POST['removePetBtn']))
-  {
-    $adminTool = 'removePet';
-  }
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -56,8 +51,7 @@ include_once('./common.php');
       <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
       <button type="submit" class="btn" name="removeBreedBtn">Remove a breed</button>
       <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
-      <button type="submit" class="btn" name="editPetBtn">Edit a pet</button>
-      <button type="submit" class="btn" name="removePetBtn">Remove a pet</button>
+      <button type="submit" class="btn" name="editPetBtn">Edit or remove a pet</button>
     </form>
   </div>
 
@@ -90,10 +84,6 @@ include_once('./common.php');
     {?>
       <div><?php include 'pet_edit.php' ?></div>
   <?php }
-    else if ($adminTool == 'removePet')
-    {?>
-      <div><?php include 'pet_remove.php' ?></div>
-  <?php } 
     else
     {?>
       <div><?php include 'pet_add.php' ?></div>
