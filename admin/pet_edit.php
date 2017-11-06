@@ -86,7 +86,7 @@
             //   }
             // }
             
-            echo $breedID;
+            echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
             
             // List breeds in database for dropdown menu
             while($row = mysqli_fetch_assoc($result)) 
