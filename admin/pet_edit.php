@@ -13,14 +13,12 @@
       <!-- Remove a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Edit a pet</div>
+          <div class="opensans"><?php echo("RSPCA ID: ". $_POST['editPetBtn']); ?></div>
         </div>
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
           <div class="form-group">
-            <label for="age">RSPCA ID:</label>
-            
             <?php
             $rspcaID = $_POST['editPetBtn'];
             
