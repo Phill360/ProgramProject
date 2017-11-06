@@ -66,6 +66,11 @@
             <label>Breed:</label>
             <select class="form-control" id="breedID" name="breedID" required>
             <?php
+            
+            
+            
+            
+            
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
@@ -77,10 +82,17 @@
             {
               die("Database query failed.");
             }
-	
-	          echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
-	          
-            // List breeds in database
+            
+            // Get default value for breed name
+            while($row = mysqli_fetch_assoc($result)) 
+            {
+              if ($row["breedID"] == $breedID)
+              {
+                echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
+              }
+            } 
+            
+            // List breeds in database for dropdown menu
             while($row = mysqli_fetch_assoc($result)) 
             {
               echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
