@@ -13,7 +13,7 @@
       <!-- Remove a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Select a pet to edit</div>
+          <div class="opensans">Select pet to edit</div>
         </div>
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
@@ -25,7 +25,7 @@
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
-	          $query = "SELECT rspcaID FROM animals";
+	          $query = "SELECT * FROM animals";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
@@ -37,7 +37,17 @@
             // List animals in database
             while($row = mysqli_fetch_assoc($result)) 
             {
-              echo "<option value=\"" . $row["rspcaID"] . "\">" . $row["rspcaID"] . "</option>" ;
+              ?>
+              <tr>
+				        <td><?php echo $row["rspcaID"] ; ?> </td>
+				        <td><?php echo $row["petName"] ; ?>	</td>
+				        <td><?php echo $row["breedID"] ; ?>	</td>
+				        <td><?php echo $row["age"] ; ?>	</td>
+				        <td><?php echo $row["gender"] ; ?> </td>
+				        <td><?php echo $row["imageName"] ; ?>	</td>
+				        <td><?php echo $row["description"] ; ?>	</td>
+			        </tr>
+              <?php
             } 
             mysqli_close($connection);
             ?>
