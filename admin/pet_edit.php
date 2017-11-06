@@ -46,6 +46,7 @@
               $imageData = $row["imageData"];
             }
             mysqli_close($connection);
+            echo $description;
             ?>
             </select>
           </div>
