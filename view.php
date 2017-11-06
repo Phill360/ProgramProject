@@ -58,42 +58,6 @@
   <!-- Pet Companions CSS -->
   <link rel="stylesheet" type="text/css" href="css/pcstyle.css">
   
-  <style type="text/css">
-  
-    .pets-container {
-      width: 90%;
-      margin: auto;
-    }
-    
-    .pet-holder 
-    {   
-      width: 50%;  
-    }
-
-    .pet-holder img 
-    {
-      width: 100%;
-      height: auto;    
-    }
-    
-    .pet-description, .pet-details {
-      background-color: rgba(125, 125, 125, .2);
-      border-radius: 10px;
-      padding: 2%;
-    }
-    
-    .pet-description {
-      float: left;
-      width: 40%;
-      margin: 1%;
-      display: inline-block;
-    }
-    
-    .pet-details {
-      margin: 1% 1% 1% 42%;
-    }
-  </style>
-  
 </head>
 
 <body>
@@ -107,29 +71,70 @@
           <?php
             while($row = mysqli_fetch_assoc($result)) { ?>
           <div class="slackey"><div class="black"><div class="textxxMedium"> <?php echo $row["petName"]; ?> </div></div></div>
-          <!--<img src="media/ahmed-saffu-208365png" alt "pet">-->
-          <div class="pet-holder">
-            <?php displayimage($row["rspcaID"]); ?>
-          </div>
-          <div class='pet-description'>
-            <p> Description: <?php echo $row["description"]; ?></p>
-          </div>
-          <div class='pet-details'>
-            <p><b>RSPCA Shelter: </b></p>
-            <p><b>RSPCA ID: </b><?php echo "$petID" ?></p>
-            <br>
-            <p><b>Age:</b> <?php echo $row["age"]; ?></p>
-            <p><b>Adoption Fee:</b> $<?php echo $row["fee"]; ?></p>
-            <p><b>Desexed:</b> Yes</p>
-            <p><b>Vaccinated:</b> Yes</p>
-            <p><b>Wormed:</b> Yes</p>
-            <p><b>Heartworm Treated:</b> Yes</p>
+          
+          <div class='pet-description'><p><?php echo $row["description"]; ?></p></div>
+          
+          <div class='pet-row'>
+            <div class="pet-holder">
+              <?php displayimage($row["rspcaID"]); ?>
+            </div>
             
+            <div>
+              <table>
+                <tr>
+                  <th>RSPCA Shelter:</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>RSPCA ID:</th>
+                  <td><?php echo "$petID" ?></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <th>Age:</th>
+                  <td><?php echo $row["age"]; ?></td>
+                </tr>
+                <tr>
+                  <th>Adoption Fee:</th>
+                  <td>$<?php echo $row["fee"]; ?></td>
+                </tr>
+                <tr>
+                  <th>Desexed:</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Vaccinated:</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Wormed:</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Heartworm Treated:</th>
+                  <td>Yes</td>
+                </tr>
+              </table>
+            </div>
+            <div></div> <!-- PUT HEART THING HERE -->
           </div>
+          
+          <div class='clearfix'></div> <!-- clear divs floating left!! -->
+\
+          <div class='pet-row'>
+            <div class='social-media' id='facebook'><p> FACEBOOK </p></div>
+            <div class='social-media' id='twitter'><p> TWITTER </p></div>
+            <div class='social-media' id='email'><p> EMAIL </p></div>
+          </div>
+          
+        </div>
            <?php
   }
   ?>
     </div>
+    
+    <br><br> <!-- add whitespace to bottom of page -->
+    
 </div>
 </div>
   

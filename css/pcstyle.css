@@ -88,6 +88,7 @@
       width: 150px; /* Will shrink image to 150 pixels width */
       height: auto;    
     }
+    
 }
 
 /* Portrait tablets and medium desktops */
@@ -585,4 +586,61 @@ input:checked + .slider:before
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
+}
+
+
+/* Styling for individual pet page - view.php */
+.pets-container {
+  width: 90%;
+  margin: 0 auto 1% auto;
+}
+
+.pets-container p {
+  size: 5em;
+}
+
+.pet-row {
+  display: block;
+  margin: 0 auto 2% auto;
+}
+
+.pet-row div {
+  display: inline-block;
+  float: left;
+  padding: 2%;
+}
+
+.pet-holder 
+{   
+  width: 55%;
+}
+
+.pet-holder img 
+{
+  width: 100%;
+  height: auto;    
+}
+
+.clearfix {
+  clear: both;
+}
+
+.social-media {
+  width: 25%;
+  margin-left: 5%;
+  text-align: center;
+  border: 1px solid black;
+  vertical-align: middle;
+}
+
+th {
+  text-align: right;
+}
+
+td {
+  padding-left: 15%;
+}
+
+tr>th, tr>td {
+  padding-bottom: 15%;
 }

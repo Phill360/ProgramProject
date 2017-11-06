@@ -37,10 +37,6 @@
                 <tr>
                   <th>ID</th>
                   <th>Name</th>
-                  <th>Breed</th>
-                  <th>Age</th>
-                  <th>Gender</th>
-                  <th>Description</th>
                   <th>Edit</th>
                   <th>Remove</th>
                 </tr>
@@ -55,10 +51,6 @@
               <tr>
 				        <td><?php echo $row["rspcaID"] ; ?> </td>
 				        <td><?php echo $row["petName"] ; ?>	</td>
-				        <td><?php echo $row["breedID"] ; ?>	</td>
-				        <td><?php echo $row["age"] ; ?>	</td>
-				        <td><?php echo $row["gender"] ; ?> </td>
-				        <td><?php echo $row["description"] ; ?>	</td>
 				        <td><button type="submit" class="btn btn-success" name="selectPetBtn">Edit</button></td>
 				        <td><button type="submit" class="btn btn-danger" name="selectPetBtn">Remove</button></td>
 			        </tr>

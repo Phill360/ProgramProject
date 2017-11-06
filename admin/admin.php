@@ -49,7 +49,7 @@ include_once('./common.php');
       <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
       <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
       <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
-      <button type="submit" class="btn" name="removeBreedBtn">Remove a breed</button>
+      <button type="submit" class="btn" name="removeBreedBtn">Edit or remove a breed</button>
       <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
       <button type="submit" class="btn" name="editPetBtn">Edit or remove a pet</button>
     </form>
@@ -70,7 +70,7 @@ include_once('./common.php');
   <?php } 
     else if ($adminTool == 'removeBreed')
     {?>
-      <div><?php include 'breed_remove.php' ?></div>
+      <div><?php include 'breed_edit.php' ?></div>
   <?php } 
     else if ($adminTool == 'addPet')
     {?>
