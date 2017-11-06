@@ -26,14 +26,14 @@ include_once('./common.php');
     $adminTool = 'addPet';
   }
   
+  if(isset($_POST['editRemovePetBtn']))
+  {
+    $adminTool = 'editRemovePet';
+  }
+  
   if(isset($_POST['editPetBtn']))
   {
     $adminTool = 'editPet';
-  }
-  
-  if(isset($_POST['selectPetBtn']))
-  {
-    $adminTool = 'selectPet';
   }
 ?>
 
@@ -51,7 +51,7 @@ include_once('./common.php');
       <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
       <button type="submit" class="btn" name="removeBreedBtn">Edit or remove a breed</button>
       <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
-      <button type="submit" class="btn" name="editPetBtn">Edit or remove a pet</button>
+      <button type="submit" class="btn" name="editRemovePetBtn">Edit or remove a pet</button>
     </form>
   </div>
 
@@ -76,11 +76,11 @@ include_once('./common.php');
     {?>
       <div><?php include 'pet_add.php' ?></div>
   <?php } 
-    else if ($adminTool == 'editPet')
+    else if ($adminTool == 'editRemovePet')
     {?>
       <div><?php include 'pet_select.php' ?></div>
   <?php }
-    else if ($adminTool == 'selectPet')
+    else if ($adminTool == 'editPet')
     {?>
       <div><?php include 'pet_edit.php' ?></div>
   <?php }

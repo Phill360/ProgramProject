@@ -51,8 +51,8 @@
               <tr>
 				        <td><?php echo $row["rspcaID"] ; ?> </td>
 				        <td><?php echo $row["petName"] ; ?>	</td>
-				        <td><button type="submit" class="btn btn-success" name="selectPetBtn">Edit</button></td>
-				        <td><button type="submit" class="btn btn-danger" name="selectPetBtn">Remove</button></td>
+				        <td><button type="submit" class="btn btn-success" name="editPetBtn" value={$row['rspcaID']}>Edit</button></td>
+				        <td><button type="submit" class="btn btn-danger" name="removePetBtn" value={$row['rspcaID']}>Remove</button></td>
 			        </tr>
               <?php
             }
