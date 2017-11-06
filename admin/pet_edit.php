@@ -97,10 +97,10 @@
             ?>
             </select>
           </div>
+          <br>
           
           <!-- Enter pet name -->
           <div class="input-group">
-            <label>Name:</label>
             <span class="input-group-addon">Name</span>
             <input id="petName" type="text" class="form-control" name="petName" placeholder=<?php echo $petName ?>  required>
           </div>
