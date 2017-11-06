@@ -16,17 +16,18 @@
           <div class="opensans">Edit a pet</div>
         </div>
         <div class="panel-body">
-          <?php echo $_POST['editPetBtn'];?>
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
           <div class="form-group">
             <label for="age">RSPCA ID:</label>
-            <select class="form-control" id="rspcaID" name="rspcaID" required>
+            
             <?php
+            $rspcaID = $_POST['editPetBtn'];
+            
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
-	          $query = "SELECT rspcaID FROM animals";
+	          $query = "SELECT * FROM animals WHERE rspcaID=$rspcaID";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
@@ -36,10 +37,16 @@
             }
 	
             // List animals in database
-            while($row = mysqli_fetch_assoc($result)) 
+            while ($row = mysqli_fetch_assoc($result)) 
             {
-              echo "<option value=\"" . $row["rspcaID"] . "\">" . $row["rspcaID"] . "</option>" ;
-            } 
+              $petName = $row["petName"];
+              $breedID = $row["breedID"];
+              $gender = $row["gender"];
+              $imageName = $row["imageName"];
+              $age = $row["age"];
+              $description = $row["description"];
+              $imageData = $row["imageData"];
+            }
             mysqli_close($connection);
             ?>
             </select>
@@ -47,7 +54,7 @@
           
           <!-- Select cat or dog -->
           <div class="form-group">
-            <label for="age">Species:</label>
+            <label>Species:</label>
             <select class="form-control" id="species" name="species" required>
             <option>Cat</option>
             <option>Dog</option>
@@ -56,8 +63,8 @@
           
           <!-- Select breed -->
           <div class="form-group">
-            <label for="age">Breed:</label>
-            <select class="form-control" id="rspcaID" name="rspcaID" required>
+            <label>Breed:</label>
+            <select class="form-control" id="breedID" name="breedID" required>
             <?php
             // Connect AWS MYSQL Server
             require('_php/connect.php');
@@ -84,7 +91,7 @@
           <!-- Enter pet name -->
           <div class="input-group">
             <span class="input-group-addon">Name</span>
-            <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name"  required>
+            <input id="petName" type="text" class="form-control" name="petName" placeholder=$petName  required>
           </div>
           <br>
           
@@ -102,7 +109,7 @@
             <!-- Gender selection -->
             <div class="form-group">
               <label for="gender">Gender:</label>
-              <select class="form-control" name="gender" id="age" required>
+              <select class="form-control" name="gender" id="age" placeholder=$gender required>
                 <option>Female</option>
                 <option>Male</option>
               </select>
@@ -111,7 +118,7 @@
               <!-- Age selection -->
             <div class="form-group">
               <label for="age">Age:</label>
-              <select class="form-control" name="age" id="age" required>
+              <select class="form-control" name="age" id="age" placeholder=$age required>
                 <option value="0.25">-3 months</option>
                 <option value="0.5">3-6 months</option>
                 <option value="1">6-12 months</option>
