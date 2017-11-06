@@ -32,7 +32,7 @@
             }
 	          
 	          ?>
-	          <table class="table">
+	          <table class="table table-bordered">
 	            <thead>
                 <tr>
                   <th>RSPCA ID</th>
@@ -40,8 +40,8 @@
                   <th>Breed</th>
                   <th>Age</th>
                   <th>Gender</th>
-                  <th>Image</th>
                   <th>Description</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -57,8 +57,8 @@
 				        <td><?php echo $row["breedID"] ; ?>	</td>
 				        <td><?php echo $row["age"] ; ?>	</td>
 				        <td><?php echo $row["gender"] ; ?> </td>
-				        <td><?php echo $row["imageName"] ; ?>	</td>
 				        <td><?php echo $row["description"] ; ?>	</td>
+				        <td></td>
 			        </tr>
               <?php
             }
