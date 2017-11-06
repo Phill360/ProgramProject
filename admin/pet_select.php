@@ -13,7 +13,7 @@
       <!-- Remove a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Select pet to edit</div>
+          <div class="opensans">Edit or remove a pet</div>
         </div>
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
