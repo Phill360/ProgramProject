@@ -45,7 +45,7 @@
           </div>
           
           <div class="form-group">
-            <label for="age">RSPCA ID:</label>
+            <label for="age">Breed:</label>
             <select class="form-control" id="rspcaID" name="rspcaID" required>
             <?php
             // Connect AWS MYSQL Server
