@@ -78,13 +78,15 @@
             }
             
             // Get default value for breed name
-            while($row = mysqli_fetch_assoc($result)) 
-            {
-              if ($row["breedID"] == $breedID)
-              {
-                echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
-              }
-            } 
+            // while($row = mysqli_fetch_assoc($result)) 
+            // {
+            //   if ($row["breedID"] == $breedID)
+            //   {
+            //     echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
+            //   }
+            // }
+            
+            echo $breedID;
             
             // List breeds in database for dropdown menu
             while($row = mysqli_fetch_assoc($result)) 
