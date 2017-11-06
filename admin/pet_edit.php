@@ -136,6 +136,7 @@
             <div class="form-group">
               <label for="gender">Gender:</label>
               <select class="form-control" name="gender" id="gender" placeholder=<?php echo $gender ?> required>
+                <option><?php echo $gender; ?></option>
                 <option>Female</option>
                 <option>Male</option>
               </select>
@@ -189,7 +190,7 @@
             <!-- Pet description -->
             <div class="form-group">
               <label for="description">Pet Description:</label>
-              <textarea class="form-control" name="description" id="description" rows="5" cols="50" placeholder=<?php echo $description ?> required></textarea>
+              <textarea class="form-control" name="description" id="description" rows="5" cols="50" placeholder=<?php echo $description; ?> required></textarea>
             </div>
 
           <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
