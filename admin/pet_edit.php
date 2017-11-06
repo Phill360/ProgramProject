@@ -46,7 +46,6 @@
               $imageData = $row["imageData"];
             }
             mysqli_close($connection);
-            echo $description;
             ?>
             </select>
           </div>
@@ -201,7 +200,7 @@
             <!-- Pet description -->
             <div class="form-group">
               <label for="description">Pet Description:</label>
-              <textarea class="form-control" name="description" id="description" rows="5" cols="50" placeholder=<?php echo $description; ?> required></textarea>
+              <textarea class="form-control" name="description" id="description" rows="5" cols="50" placeholder=\"<?php echo $description; ?>\" required></textarea>
             </div>
 
           <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
