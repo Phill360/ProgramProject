@@ -91,7 +91,7 @@
           <!-- Enter pet name -->
           <div class="input-group">
             <span class="input-group-addon">Name</span>
-            <input id="petName" type="text" class="form-control" name="petName" placeholder=$petName  required>
+            <input id="petName" type="text" class="form-control" name="petName" placeholder=<?php echo $petName ?>  required>
           </div>
           <br>
           
