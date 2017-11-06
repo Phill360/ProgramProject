@@ -42,6 +42,7 @@
                   <th>Gender</th>
                   <th>Description</th>
                   <th>Edit</th>
+                  <th>Remove</th>
                 </tr>
               </thead>
               <tbody>
@@ -58,7 +59,8 @@
 				        <td><?php echo $row["age"] ; ?>	</td>
 				        <td><?php echo $row["gender"] ; ?> </td>
 				        <td><?php echo $row["description"] ; ?>	</td>
-				        <td><button type="submit" class="btn btn-primary" name="selectPetBtn">Edit</button></td>
+				        <td><button type="submit" class="btn btn-success" name="selectPetBtn">Edit</button></td>
+				        <td><button type="submit" class="btn btn-danger" name="selectPetBtn">Remove</button></td>
 			        </tr>
               <?php
             }
