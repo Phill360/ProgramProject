@@ -92,9 +92,20 @@
               </div>
             
             <!-- Gender selection -->
+            <?php 
+            if ($gender == "F")
+            {
+              $genderText = "Female";
+            }
+            else 
+            {
+              $gender = "Male";
+            }
+            ?>
             <div class="form-group">
               <label for="gender">Gender:</label>
-              <select class="form-control" name="gender" id="age" required>
+              <select class="form-control" name="gender" id="gender" required>
+                <option><?php echo $genderText; ?></option>
                 <option>Female</option>
                 <option>Male</option>
               </select>
