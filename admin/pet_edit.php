@@ -135,7 +135,7 @@
             <!-- Gender selection -->
             <div class="form-group">
               <label for="gender">Gender:</label>
-              <select class="form-control" name="gender" id="age" placeholder=<?php echo $gender ?> required>
+              <select class="form-control" name="gender" id="gender" placeholder=<?php echo $gender ?> required>
                 <option>Female</option>
                 <option>Male</option>
               </select>
@@ -144,7 +144,8 @@
               <!-- Age selection -->
             <div class="form-group">
               <label for="age">Age:</label>
-              <select class="form-control" name="age" id="age" placeholder=<?php echo $age ?> required>
+              <select class="form-control" name="age" id="age" required>
+                <option value="0"><?php echo $age; ?></option> 
                 <option value="0.25">-3 months</option>
                 <option value="0.5">3-6 months</option>
                 <option value="1">6-12 months</option>
