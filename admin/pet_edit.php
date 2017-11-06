@@ -146,9 +146,9 @@
             <div class="form-group">
               <label for="gender">Gender:</label>
               <select class="form-control" name="gender" id="gender" placeholder=<?php echo $gender ?> required>
-                <option><?php echo $genderText; ?></option>
-                <option>Female</option>
-                <option>Male</option>
+                <option value=<?php echo $gender; ?>><?php echo $genderText; ?></option>
+                <option value="F">Female</option>
+                <option value="M">Male</option>
               </select>
             </div>
             
