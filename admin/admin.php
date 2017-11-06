@@ -79,7 +79,7 @@ include_once('./common.php');
   <?php } 
     else if ($adminTool == 'editPet')
     {?>
-      <div><?php include 'pet_edit.php' ?></div>
+      <div><?php include 'pet_select.php' ?></div>
   <?php } 
     else if ($adminTool == 'removePet')
     {?>

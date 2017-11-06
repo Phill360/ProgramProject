@@ -85,6 +85,7 @@
             <span class="input-group-addon">Name</span>
             <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name"  required>
           </div>
+          <br>
           
           <!-- Image selection -->
             <label>Image:</label>
