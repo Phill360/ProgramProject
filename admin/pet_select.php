@@ -41,7 +41,7 @@
                   <th>Age</th>
                   <th>Gender</th>
                   <th>Description</th>
-                  <th></th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
@@ -58,7 +58,7 @@
 				        <td><?php echo $row["age"] ; ?>	</td>
 				        <td><?php echo $row["gender"] ; ?> </td>
 				        <td><?php echo $row["description"] ; ?>	</td>
-				        <td></td>
+				        <td><button type="submit" class="btn btn-primary" name="selectPetBtn">Edit</button></td>
 			        </tr>
               <?php
             }
@@ -70,7 +70,7 @@
             mysqli_close($connection);
             ?>
 
-          <button type="submit" class="btn btn-primary" name="selectPetBtn">Select</button>
+
           </form>
         </div>
       </div>
