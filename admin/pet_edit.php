@@ -81,6 +81,7 @@
                 $breedName = $row["name"];
               }
             }
+            mysqli_close($connection);
             ?>
           
           <div class="form-group">
@@ -89,6 +90,18 @@
             <?php
         
             echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
+            
+            // Connect AWS MYSQL Server
+            require('_php/connect.php');
+
+	          $query = "SELECT breedID, type, name FROM breed";
+	          $result = mysqli_query($connection, $query);
+            
+            // Test for query error
+            if(!$result) 
+            {
+              die("Database query failed.");
+            }
             
             // List breeds in database for dropdown menu
             while($row = mysqli_fetch_assoc($result)) 
