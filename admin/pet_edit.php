@@ -60,7 +60,6 @@
           </div>
           
           <!-- Select breed -->
-          
           <?php
             // Connect AWS MYSQL Server
             require('_php/connect.php');
@@ -89,7 +88,7 @@
             <select class="form-control" id="breedID" name="breedID" required>
             <?php
         
-            echo "<option value=\"" . $breedID . "\">" . $breedName . "</option>" ;
+            echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
             
             // List breeds in database for dropdown menu
             while($row = mysqli_fetch_assoc($result)) 
