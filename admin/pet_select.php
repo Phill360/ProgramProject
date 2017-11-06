@@ -18,9 +18,6 @@
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
-          <div class="form-group">
-            <label for="age">RSPCA ID:</label>
-            <select class="form-control" id="rspcaID" name="rspcaID" required>
             <?php
             // Connect AWS MYSQL Server
             require('_php/connect.php');
@@ -51,8 +48,7 @@
             } 
             mysqli_close($connection);
             ?>
-            </select>
-          </div>
+
           <button type="submit" class="btn btn-primary" name="selectPetBtn">Select</button>
           </form>
         </div>
