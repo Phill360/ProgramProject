@@ -37,7 +37,6 @@
             // List animals in database
             while ($row = mysqli_fetch_assoc($result)) 
             {
-              $petType = $row["type"];
               $petName = $row["petName"];
               $breedID = $row["breedID"];
               $gender = $row["gender"];
@@ -47,17 +46,7 @@
               $imageData = $row["imageData"];
             }
             mysqli_close($connection);
-            echo $petType;
             ?>
-            </select>
-          </div>
-          
-          <!-- Select cat or dog -->
-          <div class="form-group">
-            <label>Species:</label>
-            <select class="form-control" id="species" name="species" required>
-            <option>Cat</option>
-            <option>Dog</option>
             </select>
           </div>
           

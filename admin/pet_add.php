@@ -23,15 +23,6 @@
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
-            <!-- Select cat or dog -->
-            <div class="form-group">
-              <label for="age">Species:</label>
-              <select class="form-control" id="species" name="species" required>
-                <option>Cat</option>
-                <option>Dog</option>
-              </select>
-            </div>
-          
             <!-- Select pet breed -->
             <div class="form-group">
               <label for="age">Breed:</label>
