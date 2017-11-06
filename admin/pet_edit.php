@@ -13,7 +13,7 @@
       <!-- Remove a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans"><?php echo("RSPCA ID: ". $_POST['editPetBtn']); ?></div>
+          <div class="opensans"><?php echo("Edit RSPCA ID: ". $_POST['editPetBtn']); ?></div>
         </div>
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
@@ -61,35 +61,35 @@
           
           <!-- Select breed -->
           <?php
-            // Connect AWS MYSQL Server
-            require('_php/connect.php');
+          // Connect AWS MYSQL Server
+          require('_php/connect.php');
 
-	          $query = "SELECT breedID, type, name FROM breed";
-	          $result = mysqli_query($connection, $query);
+	        $query = "SELECT breedID, type, name FROM breed";
+	        $result = mysqli_query($connection, $query);
             
-            // Test for query error
-            if(!$result) 
-            {
-              die("Database query failed.");
-            } 
+          // Test for query error
+          if(!$result) 
+          {
+            die("Database query failed.");
+          } 
             
-            // Get default value for breed name
-            while($row = mysqli_fetch_assoc($result)) 
+          // Get default value for breed name
+          while($row = mysqli_fetch_assoc($result)) 
+          {
+            if ($row["breedID"] == $breedID)
             {
-              if ($row["breedID"] == $breedID)
-              {
-                $breedName = $row["name"];
-              }
+              $breedName = $row["name"];
             }
-            mysqli_close($connection);
-            ?>
+          }
+          mysqli_close($connection);
+          ?>
           
           <div class="form-group">
             <label>Breed:</label>
             <select class="form-control" id="breedID" name="breedID" required>
             <?php
         
-            echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
+            echo "<option value=\"" . $breedID . "\">" . $breedName . "</option>" ;
             
             // Connect AWS MYSQL Server
             require('_php/connect.php');
