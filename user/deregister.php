@@ -10,11 +10,17 @@
 </head>
 
 <body>
-<!-- Description -->  
+<!-- Deregister -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="opensans">Deregister</div>
+  </div>
+  <div class="panel-body">
     <div class="textMedium"><div class="opensans">Are you sure you wish to deregister yourself from Pet Companions?</div></div>
     <br>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="deregisterForm">
       <button type="submit" class="btn btn-primary pull-left" name="confirmDeregisterBtn">Confirm</button>
     </form>
+  </div>  
 </body>
 </html>
