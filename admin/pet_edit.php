@@ -78,7 +78,9 @@
               die("Database query failed.");
             }
 	
-            // List animals in database
+	          echo "<option value=\"" . $breedID . "\">" . $breedID . "</option>" ;
+	          
+            // List breeds in database
             while($row = mysqli_fetch_assoc($result)) 
             {
               echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
