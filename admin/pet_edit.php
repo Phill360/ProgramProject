@@ -140,7 +140,7 @@
             }
             else 
             {
-              $gender = "Male";
+              $genderText = "Male";
             }
             ?>
             <div class="form-group">
