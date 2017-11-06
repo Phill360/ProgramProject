@@ -141,11 +141,41 @@
               </select>
             </div>
             
-              <!-- Age selection -->
+            <!-- Age selection -->
+            <?php 
+            if ($age == 0.25)
+            {
+              $ageText = "-3 months";
+            }
+            elseif ($age == 0.5) 
+            {
+              $ageText = "3-6 months";
+            }
+            elseif ($age == 1) 
+            {
+              $ageText = "6-12 months";
+            }
+            elseif ($age == 2) 
+            {
+              $ageText = "2 Year";
+            }
+            elseif ($age == 3) 
+            {
+              $ageText = "3 Year";
+            }
+            elseif ($age == 4) 
+            {
+              $ageText = ">4 Year";
+            }
+            else 
+            {
+              $ageText = "5+ Year";
+            }
+            ?>
             <div class="form-group">
               <label for="age">Age:</label>
               <select class="form-control" name="age" id="age" required>
-                <option value="0"><?php echo $age; ?></option> 
+                <option value=$age><?php echo $ageText; ?></option> 
                 <option value="0.25">-3 months</option>
                 <option value="0.5">3-6 months</option>
                 <option value="1">6-12 months</option>
