@@ -114,7 +114,7 @@
               </select>
             </div>
             
-             <!-- Pet description -->
+            <!-- Pet description -->
             <div class="form-group">
               <label for="description">Pet Description:</label>
               <textarea class="form-control" name="description" id="description" rows="5" cols="50" required></textarea>
