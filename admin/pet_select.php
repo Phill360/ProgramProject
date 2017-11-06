@@ -52,7 +52,7 @@
 				        <td><?php echo $row["rspcaID"] ; ?> </td> 
 				        <td><?php echo $row["petName"] ; ?>	</td>
 				        <td><button type="submit" class="btn btn-success" name="editPetBtn" value=<?php echo $row["rspcaID"]?>>Edit</button></td>
-				        <td><button type="submit" class="btn btn-danger" name="removePetBtn" value={$row['rspcaID']}>Remove</button></td>
+				        <td><button type="submit" class="btn btn-danger" name="removePetBtn" value=<?php echo $row["rspcaID"]?>>Remove</button></td>
 			        </tr>
               <?php
             }

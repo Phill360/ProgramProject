@@ -16,6 +16,7 @@
           <div class="opensans">Edit a pet</div>
         </div>
         <div class="panel-body">
+          <?php echo $_POST['editPetBtn'];?>
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
           <div class="form-group">

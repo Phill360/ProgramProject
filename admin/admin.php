@@ -34,7 +34,6 @@ include_once('./common.php');
   if(isset($_POST['editPetBtn']))
   {
     $adminTool = 'editPet';
-    echo("reaching");
     echo $_POST['editPetBtn'];
   }
 ?>
