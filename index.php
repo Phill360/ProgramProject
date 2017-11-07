@@ -124,6 +124,7 @@
       echo "reaching2";
     }
 		
+		echo "reaching3";
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
