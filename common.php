@@ -513,21 +513,19 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
   require('./_php/connect.php');
 	
 	// Add updated pet to the database
-	$query = "INSERT INTO animals ";
-  $query .= "WHERE ";
-  $query .= "rspcaID=";
+	$query = "UPDATE animals ";
+	$query .= "SET ";
+	$query .= "rspcaID ='" . $rspcaID . "',";
+	$query .= "petName ='" . $petName . "',";
+	$query .= "breedID ='" . $breedID . "',";
+	$query .= "gender ='" . $gender . "',";
+	$query .= "imageName ='" . $imageName . "',";
+	$query .= "age ='" . $age . "',";
+	$query .= "description ='" . $description . "'";
+	$query .= "imageData ='" . $imageData . "'";
+	$query .= "WHERE ";
+  $query .= "rspcaID =";
   $query .= "'" . $rspcaID . "'";
-	$query .= "(rspcaID, petName, breedID, gender, imageName, age, description, imageData) ";
-	$query .= "VALUES (";
-	$query .= "'" . $rspcaID . "',";
-	$query .= "'" . $petName . "',";
-	$query .= "'" . $breedID . "',";
-	$query .= "'" . $gender . "',";
-	$query .= "'" . $imageName . "',";
-	$query .= "'" . $age . "',";
-	$query .= "'" . $description . "',";
-	$query .= "'" . $imageData . "'";
-	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
@@ -551,19 +549,17 @@ function updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $des
   require('./_php/connect.php');
 	
 	// Add updated pet to the database
-	$query = "INSERT INTO animals ";
-  $query .= "WHERE ";
-  $query .= "rspcaID=";
+	$query = "UPDATE animals ";
+	$query .= "SET ";
+	$query .= "rspcaID ='" . $rspcaID . "',";
+	$query .= "petName ='" . $petName . "',";
+	$query .= "breedID ='" . $breedID . "',";
+	$query .= "gender ='" . $gender . "',";
+	$query .= "age ='" . $age . "',";
+	$query .= "description ='" . $description . "'";
+	$query .= "WHERE ";
+  $query .= "rspcaID =";
   $query .= "'" . $rspcaID . "'";
-	$query .= "(rspcaID, petName, breedID, gender, age, description) ";
-	$query .= "VALUES (";
-	$query .= "'" . $rspcaID . "',";
-	$query .= "'" . $petName . "',";
-	$query .= "'" . $breedID . "',";
-	$query .= "'" . $gender . "',";
-	$query .= "'" . $age . "',";
-	$query .= "'" . $description . "'";
-	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
