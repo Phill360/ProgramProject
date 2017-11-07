@@ -138,6 +138,13 @@
     }
   }
   
+  if(isset($_POST['removePetBtn']))
+  {
+    $rspcaID = $_POST['rspcaID'];
+    remPet($rspcaID);
+    alert('Pet RSPCA ID:'.$rspcaID.' was removed from the database.');
+  }
+  
   if (isset($_POST['addBreedBtn']))
   {
 		// Get breed input
