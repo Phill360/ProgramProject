@@ -76,9 +76,9 @@
           ?>
           
           <div class="input-group">
-            <span class="input-group-addon">RSPCA ID</span>
-            <input id="petID" type="text" class="hideMe" name="rspcaID" value=$rspcaID required>
-          </div>
+              <span class="input-group-addon">RSPCA ID</span>
+              <input id="petID" type="text" class="form-control" name="rspcaID" value=SrspcaID  required>
+            </div>
           
           <div class="form-group">
             <label>Breed:</label>
