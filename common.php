@@ -990,4 +990,9 @@ function debug_to_console($data) {
     return $numberOfFavourites;
 	}
 	
+	// This function prints a popdown alert message to the screen
+	function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+  }
+	
 ?>
