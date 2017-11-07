@@ -116,11 +116,20 @@
             <label>Image:</label>
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
+              <?php 
+              if ($_SESSION == false) 
+              {?> 
               <div><?php displayImage($rspcaID) ?></div>
-              
+              <?php 
+              }
+              else 
+              {?>
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
               </div>
+              <?php
+              } ?>
+              
               <div class="form-group">
                 <input type="file" name="image" id="file" required>
               </div>

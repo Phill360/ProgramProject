@@ -6,6 +6,7 @@ function noPreview() {
   $('#image-preview-div').css("display", "none");
   $('#preview-img').attr('src', 'noimage');
   $('upload-button').attr('disabled', '');
+  $_SESSION['preview'] = false;
 }
 
 function selectImage(e) {
@@ -13,6 +14,7 @@ function selectImage(e) {
   $('#image-preview-div').css("display", "block");
   $('#preview-img').attr('src', e.target.result);
   $('#preview-img').css('max-width', '450px');
+  $_SESSION['preview'] = true;
 }
 
 $(document).ready(function (e) {
