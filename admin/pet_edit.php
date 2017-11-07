@@ -120,7 +120,7 @@
           </div>
           <p></p><br>
   
-          <label>New image:</label>
+          <label>Replace current image with..</label>
           <br>
           <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
             <div class="holder">
