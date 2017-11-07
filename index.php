@@ -109,6 +109,8 @@
   // Update pet
   if (isset($_POST['updatePetBtn']))
   {
+    $rspcaID = $_POST['editPetBtn'];
+    
     if ($_FILES['image'])
     {
       $imageData = addslashes($_FILES['image']['tmp_name']);
