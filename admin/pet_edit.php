@@ -118,7 +118,7 @@
           <div class="holder">
             <?php displayimage($_POST['editPetBtn']); ?>
           </div>
-          <br>
+          <p></p><br>
           
           <label>New image:</label>
           <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
