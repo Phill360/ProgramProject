@@ -1,5 +1,4 @@
 <?php
-include_once('./common.php');
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -113,14 +112,14 @@ include_once('./common.php');
           </div>
           <br>
           
+          
           <!-- Image selection -->
             <label>Image:</label>
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
-
               
               <div><?php displayimage($row["rspcaID"]); ?></div>
-              
+
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
               </div>
