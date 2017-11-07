@@ -118,7 +118,7 @@
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
               
-              <div><?php displayimage($row["rspcaID"]); ?></div>
+              <div><?php echo($row["rspcaID"]); ?></div>
 
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
