@@ -112,7 +112,6 @@
           </div>
           <br>
           
-          
           <!-- Image selection -->
           <label>Current image:</label>
           <br>

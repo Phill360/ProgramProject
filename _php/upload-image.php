@@ -21,6 +21,53 @@ function compress($source, $destination, $quality)
   return $destination;
 }
 
+function resize($source, $destination)
+{
+  // Create image from file
+  switch(strtolower($_FILES['image']['type']))
+  {
+    case 'image/jpeg': $image = imagecreatefromjpeg($_FILES['image']['tmp_name']);
+    break;
+    case 'image/png': $image = imagecreatefrompng($_FILES['image']['tmp_name']);
+    break;
+    case 'image/gif': $image = imagecreatefromgif($_FILES['image']['tmp_name']);
+    break;
+    default: exit('Unsupported type: '.$_FILES['image']['type']);
+  }
+  
+  // Target dimensions
+  $max_width = 240;
+  $max_height = 180;
+
+  // Get current dimensions
+  $old_width  = imagesx($image);
+  $old_height = imagesy($image);
+
+  // Calculate the scaling we need to do to fit the image inside our frame
+  $scale = min($max_width/$old_width, $max_height/$old_height);
+
+  // Get the new dimensions
+  $new_width  = ceil($scale*$old_width);
+  $new_height = ceil($scale*$old_height);
+  
+  // Create new empty image
+  $new = imagecreatetruecolor($new_width, $new_height);
+
+  // Resize old image into new
+  imagecopyresampled($new, $image, 0, 0, 0, 0, $new_width, $new_height, $old_width, $old_height);
+  
+  // Catch the imagedata
+  ob_start();
+  imagejpeg($new, $destination, 100);
+  $data = ob_get_clean();
+  
+  // Destroy resources
+  imagedestroy($image);
+  imagedestroy($new);
+  
+  return $destination;
+}
+
 if ( isset($_FILES["file"]["type"]) )
 {
   $max_size = 500 * 1024; // ? KB
@@ -52,7 +99,9 @@ if ( isset($_FILES["file"]["type"]) )
           $sourcePath = $_FILES["file"]["tmp_name"];
           $source_img = $sourcePath;
           $destination_img = $targetPath;
-          $d = compress($source_img, $destination_img, 50);
+          $d = compress($source_img, $destination_img, 50); // reduce resolution
+          resize($source_img, $destination_img); // reduce dimensions
+          
           $targetPath = $destination_directory . $_FILES["file"]["name"];
           move_uploaded_file($sourcePath, $targetPath);
           echo "<div class=\"alert alert-success\" role=\"alert\">";
