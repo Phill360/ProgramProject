@@ -77,7 +77,7 @@
           
           <div class="input-group">
               <span class="input-group-addon">RSPCA ID</span>
-              <input id="petID" type="text" class="form-control" name="rspcaID" value=<?php$rspcaID?>  required>
+              <input id="petID" type="text" class="form-control" name="rspcaID" value=<?php echo $rspcaID; ?>  required>
             </div>
           
           <div class="form-group">
