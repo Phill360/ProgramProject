@@ -130,6 +130,7 @@
     $gender = $_POST['gender'];
     $description = $_POST['description'];
     
+    removePet($rspcaID);
     updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
   }
   
