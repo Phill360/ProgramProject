@@ -463,7 +463,7 @@ function searchResult()
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
 {
   // Connect AWS MYSQL Server
-  require('./_php/connect.php');
+  require_once('./_php/connect.php');
   
   // Does Pet already Exist
 	$query = "SELECT rspcaID  ";
@@ -505,11 +505,75 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	mysqli_close($connection);
 }
 
+// This function updates a pet in the database with new image
+function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData)
+{
+	// Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+
+  // Remove old pet record from database
+  $query = "DELETE FROM animals ";
+  $query .= "WHERE ";
+  $query .= "rspcaID=";
+  $query .= "'" . $rspcaID . "'";
+  $result = mysqli_query($connection, $query);
+
+  // Test for query error
+  if($result) {
+    $new_id = mysqli_insert_id($connection);
+
+  } else {
+  	echo mysqli_error($connection);
+  	mysqli_close($connection);
+  	exit;
+  }
+  
+  // Check if pet already exists
+	$query = "SELECT rspcaID  ";
+	$query .= "FROM animals ";
+	$query .= "WHERE rspcaID=";
+	$query .= "'" . $rspcaID . "'";
+	$result = mysqli_query($connection, $query);
+	if(mysqli_num_rows($result) > 0)
+	{
+	  return;
+	}
+	
+	// Insert new pet record into database
+	$query = "INSERT INTO animals ";
+	$query .= "(rspcaID, petName, breedID, gender, imageName, age, description, imageData) ";
+	$query .= "VALUES (";
+	$query .= "'" . $rspcaID . "',";
+	$query .= "'" . $petName . "',";
+	$query .= "'" . $breedID . "',";
+	$query .= "'" . $gender . "',";
+	$query .= "'" . $imageName . "',";
+	$query .= "'" . $age . "',";
+	$query .= "'" . $description . "',";
+	$query .= "'" . $imageData . "'";
+	$query .= ")";
+	$result = mysqli_query($connection, $query);
+	
+	// Test for query error
+	if($result) {
+	  $new_id = mysqli_insert_id($connection);
+
+	} else {
+		echo mysqli_error($connection);
+		mysqli_close($connection);
+		exit;
+	}
+
+	// Close database connection
+	mysqli_close($connection);
+	
+}
+
 // This function updates a pet in the database (without image)  
 function updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $description) 
 {
   // Connect AWS MYSQL Server
-  require('./_php/connect.php');
+  require_once('./_php/connect.php');
 	
 	// Add updated pet to the database
 	$query = "UPDATE animals ";
@@ -574,7 +638,7 @@ function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $ac
 function remPet($rspcaID) {
     
   // Connect AWS MYSQL Server
-  require('./_php/connect.php');
+  require_once('./_php/connect.php');
 
   // 2. Perform Query
   $query = "DELETE FROM animals ";
