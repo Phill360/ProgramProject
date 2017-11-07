@@ -106,18 +106,21 @@
   	}
   }
   
-  // Edit pet
+  // Update pet
   if (isset($_POST['updatePetBtn']))
   {
-    if (!$_FILES['image'])
+    if ($_FILES['image'])
     {
-      echo("No new image");
+      $imageData = addslashes($_FILES['image']['tmp_name']);
+	    $imageName = addslashes($_FILES['image']['name']);
+		  $imageData = file_get_contents($imageData);
+		  $imageData = base64_encode($imageData);
     }
-    
-    $imageData = addslashes($_FILES['image']['tmp_name']);
-	  $imageName = addslashes($_FILES['image']['name']);
-		$imageData = file_get_contents($imageData);
-		$imageData = base64_encode($imageData);
+    else
+    {
+      $imageData = getImageData($rspcaID);
+      $imageName = getImageName($rspcaID);
+    }
 		
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
@@ -127,7 +130,7 @@
     $gender = $_POST['gender'];
     $description = $_POST['description'];
     
-    //editPet($rspcaID, $petName, $breedID, $age, $gender, $description);
+    updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
   }
   
   if (isset($_POST['addBreedBtn']))

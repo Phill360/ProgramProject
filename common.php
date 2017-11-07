@@ -458,8 +458,10 @@ function searchResult()
 
 
 }
-  
-function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) {
+
+// This function adds a pet to the database  
+function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
+{
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
@@ -469,7 +471,8 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	$query .= "WHERE rspcaID=";
 	$query .= "'" . $rspcaID . "'";
 	$result = mysqli_query($connection, $query);
-	if(mysqli_num_rows($result) > 0){
+	if(mysqli_num_rows($result) > 0)
+	{
 	  return;
 	}
 	
@@ -501,7 +504,83 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	// Close database connection
 	mysqli_close($connection);
 }
+
+// This function updates a pet in the database  
+function updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
+{
+  // Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
   
+  // Remove old record from the database
+	$query = "DELETE FROM animals WHERE rspcaID=$rspcaID";
+  $result = mysqli_query($connection, $query);
+
+  // Test for query error
+  if($result) 
+  {
+    $new_id = mysqli_insert_id($connection);
+	}
+	
+	// Add updated pet to the database
+	$query = "INSERT INTO animals ";
+	$query .= "(rspcaID, petName, breedID, gender, image, age, description, imageData) ";
+	$query .= "VALUES (";
+	$query .= "'" . $rspcaID . "',";
+	$query .= "'" . $petName . "',";
+	$query .= "'" . $breedID . "',";
+	$query .= "'" . $gender . "',";
+	$query .= "'" . $imageName . "',";
+	$query .= "'" . $age . "',";
+	$query .= "'" . $description . "',";
+	$query .= "'" . $imageData . "'";
+	$query .= ")";
+	$result = mysqli_query($connection, $query);
+	
+	// Test for query error
+	if($result) {
+	  $new_id = mysqli_insert_id($connection);
+
+	} else {
+		echo mysqli_error($connection);
+		mysqli_close($connection);
+		exit;
+	}
+
+	// Close database connection
+	mysqli_close($connection);
+}
+
+// This function gets imageData for pet
+function getImageData($rspcaID)
+{
+	// Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+  
+  // Get pet record from database
+	$query = "SELECT rspcaID FROM animals WHERE rspcaID=$rspcaID";
+	$result = mysqli_query($connection, $query);
+	if(mysqli_num_rows($result) > 0)
+	{
+	  return $row['imageData'];
+	}
+}
+
+// This function gets imageName for pet
+function getImageName($rspcaID)
+{
+	// Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+  
+  // Get pet record from database
+	$query = "SELECT rspcaID FROM animals WHERE rspcaID=$rspcaID";
+	$result = mysqli_query($connection, $query);
+	if(mysqli_num_rows($result) > 0)
+	{
+	  return $row['imageName'];
+	}
+}
+  
+// This function adds a breed to the database  
 function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
     
   // Connect AWS MYSQL Server
