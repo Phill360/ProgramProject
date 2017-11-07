@@ -505,43 +505,6 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	mysqli_close($connection);
 }
 
-
-// This function updates a pet in the database (with image)  
-function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
-{
-  // Connect AWS MYSQL Server
-  require('./_php/connect.php');
-	
-	// Add updated pet to the database
-	$query = "UPDATE animals ";
-	$query .= "SET ";
-	$query .= "rspcaID ='" . $rspcaID . "',";
-	$query .= "petName ='" . $petName . "',";
-	$query .= "breedID ='" . $breedID . "',";
-	$query .= "gender ='" . $gender . "',";
-	$query .= "imageName ='" . $imageName . "',";
-	$query .= "age ='" . $age . "',";
-	$query .= "description ='" . $description . "'";
-	$query .= "imageData = $imageData ";
-	$query .= "WHERE ";
-  $query .= "rspcaID =";
-  $query .= "'" . $rspcaID . "'";
-	$result = mysqli_query($connection, $query);
-	
-	// Test for query error
-	if($result) {
-	  $new_id = mysqli_insert_id($connection);
-
-	} else {
-		echo mysqli_error($connection);
-		mysqli_close($connection);
-		exit;
-	}
-
-	// Close database connection
-	mysqli_close($connection);
-}
-
 // This function updates a pet in the database (without image)  
 function updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $description) 
 {

@@ -124,7 +124,8 @@
       $gender = $_POST['gender'];
       $description = $_POST['description'];
   
-      updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
+      remPet($rspcaID);
+      addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
     }
     else
     {
