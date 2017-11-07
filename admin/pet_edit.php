@@ -117,7 +117,7 @@
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
               <?php 
-              if ($_SESSION == false) 
+              if ($_SESSION['preview'] == false) 
               {?> 
               <div><?php displayImage($rspcaID) ?></div>
               <?php 
