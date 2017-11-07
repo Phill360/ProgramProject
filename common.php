@@ -463,7 +463,7 @@ function searchResult()
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
 {
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  require('./_php/connect.php');
   
   // Does Pet already Exist
 	$query = "SELECT rspcaID  ";
@@ -574,7 +574,7 @@ function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $ac
 function remPet($rspcaID) {
     
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  require('./_php/connect.php');
 
   // 2. Perform Query
   $query = "DELETE FROM animals ";
