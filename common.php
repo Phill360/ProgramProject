@@ -522,7 +522,7 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
 	$query .= "imageName ='" . $imageName . "',";
 	$query .= "age ='" . $age . "',";
 	$query .= "description ='" . $description . "'";
-	$query .= "imageData ='" . $imageData . "'";
+	$query .= "imageData = $imageData ";
 	$query .= "WHERE ";
   $query .= "rspcaID =";
   $query .= "'" . $rspcaID . "'";
