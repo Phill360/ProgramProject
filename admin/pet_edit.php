@@ -118,7 +118,9 @@
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
               
-              <?php displayimage($_POST['editPetBtn']); ?>
+              <div class="holder">
+                <?php displayimage($_POST['editPetBtn']); ?>
+              </div>
 
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
