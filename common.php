@@ -523,7 +523,7 @@ function updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $des
 	
 	// Add updated pet to the database
 	$query = "INSERT INTO animals ";
-	$query .= "(rspcaID, petName, breedID, gender, image, age, description, imageData) ";
+	$query .= "(rspcaID, petName, breedID, gender, imageName, age, description, imageData) ";
 	$query .= "VALUES (";
 	$query .= "'" . $rspcaID . "',";
 	$query .= "'" . $petName . "',";
