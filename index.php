@@ -115,11 +115,11 @@
 	    $imageName = addslashes($_FILES['image']['name']);
 		  $imageData = file_get_contents($imageData);
 		  $imageData = base64_encode($imageData);
+		  echo "reaching";
     }
     else
     {
       $imageData = getImageData($rspcaID);
-      echo "reaching";
       $imageName = getImageName($rspcaID);
     }
 		
