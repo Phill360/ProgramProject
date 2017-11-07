@@ -120,15 +120,16 @@
               if ($_SESSION['preview'] == false) 
               {?> 
               <div><?php displayImage($rspcaID) ?></div>
+              <div id="image-preview-div" style="display: none">
+                <img id="preview-img" src="noimage">
+              </div>
               <?php 
               }
               else 
               {?>
-              <div id="image-preview-div" style="display: none">
-                <img id="preview-img" src="noimage">
-              </div>
+              
               <?php
-              } ?>
+              }?>
               
               <div class="form-group">
                 <input type="file" name="image" id="file" required>
