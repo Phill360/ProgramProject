@@ -114,10 +114,10 @@
       echo("No new image");
     }
     
-    $imageData = addslashes($_FILES['image']['tmp_name']);
-	  $imageName = addslashes($_FILES['image']['name']);
-		$imageData = file_get_contents($imageData);
-		$imageData = base64_encode($imageData);
+  //   $imageData = addslashes($_FILES['image']['tmp_name']);
+	 // $imageName = addslashes($_FILES['image']['name']);
+		// $imageData = file_get_contents($imageData);
+		// $imageData = base64_encode($imageData);
 		
 		// Get pet input
     $rspcaID = $_POST['rspcaID'];
