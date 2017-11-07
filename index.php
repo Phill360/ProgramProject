@@ -122,8 +122,8 @@
     else
     {
       $imageData = getImageData($rspcaID);
-      $imageName = getImageName($rspcaID);
-      echo "reaching2";
+      //$imageName = getImageName($rspcaID);
+      echo $rspcaID;
     }
 		
 		echo "reaching3";
