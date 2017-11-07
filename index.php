@@ -141,8 +141,8 @@
   if(isset($_POST['removePetBtn']))
   {
     $rspcaID = $_POST['rspcaID'];
+    echo($rspcaID);
     remPet($rspcaID);
-    alert('Pet RSPCA ID:'.$rspcaID.' was removed from the database.');
   }
   
   if (isset($_POST['addBreedBtn']))
