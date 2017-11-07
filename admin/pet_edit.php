@@ -108,7 +108,7 @@
           <!-- Enter pet name -->
           <div class="input-group">
             <span class="input-group-addon">Name</span>
-            <input id="petName" type="text" class="form-control" name="petName" placeholder="<?php echo $petName ?>" required>
+            <input id="petName" type="text" class="form-control" name="petName" value="<?php echo $petName ?>" required>
           </div>
           <br>
           
@@ -203,7 +203,7 @@
           <!-- Pet description -->
           <div class="form-group">
             <label for="description">Pet Description:</label>
-            <textarea class="form-control" name="description" id="description" rows="5" cols="50" placeholder="<?php echo $description; ?>" required></textarea>
+            <textarea class="form-control" name="description" id="description" rows="5" cols="50" value="<?php echo $description; ?>" required></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
