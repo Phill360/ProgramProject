@@ -116,6 +116,8 @@
             <label>Image:</label>
             <br>
             <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
+              <div><?php displayImage($rspcaID) ?></div>
+              
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
               </div>
