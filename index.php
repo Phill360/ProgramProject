@@ -131,7 +131,7 @@
     $description = $_POST['description'];
     
     removePet($rspcaID);
-    updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
+    //updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
   }
   
   if (isset($_POST['addBreedBtn']))
