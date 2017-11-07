@@ -203,10 +203,10 @@
           <!-- Pet description -->
           <div class="form-group">
             <label for="description">Pet Description:</label>
-            <textarea class="form-control" name="description" id="description" rows="5" cols="50"><?php echo $description; ?>"></textarea>
+            <textarea class="form-control" name="description" id="description" rows="5" cols="50"><?php echo $description; ?></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
+          <button type="submit" class="btn btn-primary" name="updatePetBtn">Update</button>
         </form>
       </div>
     </div>
