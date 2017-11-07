@@ -114,100 +114,101 @@
           
           
           <!-- Image selection -->
-            <label>Image:</label>
-            <br>
-            <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
-              
-              <div class="holder">
-                <?php displayimage($_POST['editPetBtn']); ?>
-              </div>
-
+          <label>Current image:</label>
+          <br>
+          <div class="holder">
+            <?php displayimage($_POST['editPetBtn']); ?>
+          </div>
+          <br>
+          
+          <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
+            <div class="holder"></div>
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
               </div>
+            </div>  
 
-              
-              <div class="form-group">
-                <input type="file" name="image" id="file" required>
-              </div>
-            
-            <!-- Gender selection -->
-            <?php 
-            if ($gender == 'F')
-            {
-              $genderText = "Female";
-            }
-            else 
-            {
-              $genderText = "Male";
-            }
-            ?>
             <div class="form-group">
-              <label for="gender">Gender:</label>
-              <select class="form-control" name="gender" id="gender" required>
-                <option value=<?php echo $gender; ?>><?php echo $genderText; ?></option>
-                <option value="F">Female</option>
-                <option value="M">Male</option>
-              </select>
+              <input type="file" name="image" id="file" required>
             </div>
             
-            <!-- Age selection -->
-            <?php 
-            if ($age == 0.25)
-            {
-              $ageText = "-3 months";
-            }
-            elseif ($age == 0.5) 
-            {
-              $ageText = "3-6 months";
-            }
-            elseif ($age == 1) 
-            {
-              $ageText = "6-12 months";
-            }
-            elseif ($age == 2) 
-            {
-              $ageText = "2 Year";
-            }
-            elseif ($age == 3) 
-            {
-              $ageText = "3 Year";
-            }
-            elseif ($age == 4) 
-            {
-              $ageText = ">4 Year";
-            }
-            else 
-            {
-              $ageText = "5+ Year";
-            }
-            ?>
-            <div class="form-group">
-              <label for="age">Age:</label>
-              <select class="form-control" name="age" id="age" required>
-                <option value=$age><?php echo $ageText; ?></option> 
-                <option value="0.25">-3 months</option>
-                <option value="0.5">3-6 months</option>
-                <option value="1">6-12 months</option>
-                <option value="2">2 Year</option>
-                <option value="3">3 Year</option>
-                <option value="4">4 Year</option>
-                <option value="5">5+ Year</option>
-              </select>
-            </div>
+          <!-- Gender selection -->
+          <?php 
+          if ($gender == 'F')
+          {
+            $genderText = "Female";
+          }
+          else 
+          {
+            $genderText = "Male";
+          }
+          ?>
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select class="form-control" name="gender" id="gender" required>
+              <option value=<?php echo $gender; ?>><?php echo $genderText; ?></option>
+              <option value="F">Female</option>
+              <option value="M">Male</option>
+            </select>
+          </div>
             
-            <!-- Pet description -->
-            <div class="form-group">
-              <label for="description">Pet Description:</label>
-              <textarea class="form-control" name="description" id="description" rows="5" cols="50" placeholder="<?php echo $description; ?>" required></textarea>
-            </div>
+          <!-- Age selection -->
+          <?php 
+          if ($age == 0.25)
+          {
+            $ageText = "-3 months";
+          }
+          elseif ($age == 0.5) 
+          {
+            $ageText = "3-6 months";
+          }
+          elseif ($age == 1) 
+          {
+            $ageText = "6-12 months";
+          }
+          elseif ($age == 2) 
+          {
+            $ageText = "2 Year";
+          }
+          elseif ($age == 3) 
+          {
+            $ageText = "3 Year";
+          }
+          elseif ($age == 4) 
+          {
+            $ageText = ">4 Year";
+          }
+          else 
+          {
+            $ageText = "5+ Year";
+          }
+          ?>
+          
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <select class="form-control" name="age" id="age" required>
+             <option value=$age><?php echo $ageText; ?></option> 
+             <option value="0.25">-3 months</option>
+             <option value="0.5">3-6 months</option>
+             <option value="1">6-12 months</option>
+             <option value="2">2 Year</option>
+             <option value="3">3 Year</option>
+             <option value="4">4 Year</option>
+             <option value="5">5+ Year</option>
+            </select>
+          </div>
+            
+          <!-- Pet description -->
+          <div class="form-group">
+            <label for="description">Pet Description:</label>
+            <textarea class="form-control" name="description" id="description" rows="5" cols="50" placeholder="<?php echo $description; ?>" required></textarea>
+          </div>
 
           <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
-          </form>
-        </div>
+        </form>
       </div>
     </div>
   </div>
-
+</div>
 </body>
 </html>

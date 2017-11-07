@@ -35,7 +35,7 @@ if ( isset($_FILES["file"]["type"]) )
         ($_FILES["file"]["type"] == "image/jpeg")
        ) && in_array($file_extension, $validextensions))
   {
-    if ( $_FILES["file"]["size"] < ($max_size) )
+    if ( $_FILES["file"]["size"] < ($max_size) ) // Image must be less than max size
     {
       if ( $_FILES["file"]["error"] > 0 )
       {
@@ -50,11 +50,9 @@ if ( isset($_FILES["file"]["type"]) )
         else
         {
           $sourcePath = $_FILES["file"]["tmp_name"];
-          
           $source_img = $sourcePath;
           $destination_img = $targetPath;
           $d = compress($source_img, $destination_img, 50);
-          
           $targetPath = $destination_directory . $_FILES["file"]["name"];
           move_uploaded_file($sourcePath, $targetPath);
           echo "<div class=\"alert alert-success\" role=\"alert\">";
