@@ -32,7 +32,7 @@
             }
 	          
 	          ?>
-	          <table class="table table-bordered">
+	          <table class="table table-hover">
 	            <thead>
                 <tr>
                   <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">ID</th>
