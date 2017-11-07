@@ -130,7 +130,7 @@
             </div>
 
             <div class="form-group">
-              <input type="file" name="image" id="file" required>
+              <input type="file" name="image" id="file">
             </div>
           
             
