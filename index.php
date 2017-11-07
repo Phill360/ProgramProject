@@ -123,7 +123,7 @@
     }
 		
 		// Get pet input
-    $rspcaID = $_POST['editPetBtn'];
+    $rspcaID = $_POST['rspcaID'];
     $petName = $_POST['petName'];
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
