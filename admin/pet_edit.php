@@ -77,7 +77,7 @@
           
           <div class="input-group">
             <span class="input-group-addon">RSPCA ID</span>
-            <input id="rspcaID" type="text" class="hideMe" name="rspcaID" value=<?php echo $rspcaID; ?>  required>
+            <input id="rspcaID" type="text" class="form-control" name="rspcaID" value=<?php echo $rspcaID; ?> style="display: none;" required>
           </div>
           <br>
           
