@@ -125,7 +125,9 @@
       $description = $_POST['description'];
   
       remPet($rspcaID);
+      echo("reaching a");
       addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
+      echo("reaching b");
     }
     else
     {
