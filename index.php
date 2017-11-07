@@ -109,7 +109,7 @@
   // Update pet
   if (isset($_POST['updatePetBtn']))
   {
-    if ($_FILES['image'])
+    if ($_FILES['image']['name'])
     {
       $imageData = addslashes($_FILES['image']['tmp_name']);
 	    $imageName = addslashes($_FILES['image']['name']);
