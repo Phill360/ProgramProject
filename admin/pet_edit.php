@@ -1,4 +1,5 @@
 <?php
+include_once('./common.php');
 ?>
 
 <!DOCTYPE html PUBLIC>
