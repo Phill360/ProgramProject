@@ -122,7 +122,7 @@
     else
     {
       //$imageData = getImageData($rspcaID);
-      $imageName = getImageName($rspcaID);
+      //$imageName = getImageName($rspcaID);
       echo $rspcaID;
     }
 		
