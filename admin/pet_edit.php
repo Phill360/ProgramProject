@@ -77,7 +77,7 @@
           
           <div class="input-group">
             <span class="input-group-addon">RSPCA ID</span>
-            <input id="petID" type="text" class="hidden" name="rspcaID" value=$rspcaID required>
+            <input id="petID" type="text" class="hideMe" name="rspcaID" value=$rspcaID required>
           </div>
           
           <div class="form-group">

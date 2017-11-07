@@ -8,6 +8,11 @@
   
 }
 
+.hideMe 
+{
+   display: none;
+}
+
 .slackey {
     font-family: 'Slackey', sans-serif;
 }
