@@ -509,7 +509,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 function updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
 {
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  require('./_php/connect.php');
   
   // Remove old record from the database
 	$query = "DELETE FROM animals WHERE rspcaID=$rspcaID";
@@ -520,6 +520,12 @@ function updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $des
   {
     $new_id = mysqli_insert_id($connection);
 	}
+	
+	// Close database connection
+	mysqli_close($connection);
+	
+	// Connect AWS MYSQL Server
+  require('./_php/connect.php');
 	
 	// Add updated pet to the database
 	$query = "INSERT INTO animals ";
