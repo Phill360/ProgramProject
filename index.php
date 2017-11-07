@@ -117,25 +117,25 @@
 	    $imageName = addslashes($_FILES['image']['name']);
 		  $imageData = file_get_contents($imageData);
 		  $imageData = base64_encode($imageData);
-		  echo "reaching";
+		  
+      $petName = $_POST['petName'];
+      $breedID = $_POST['breedID'];
+      $age = $_POST['age'];
+      $gender = $_POST['gender'];
+      $description = $_POST['description'];
+  
+      updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
     }
     else
     {
-      //$imageData = getImageData($rspcaID);
-      //$imageName = getImageName($rspcaID);
-      echo $rspcaID;
+      $petName = $_POST['petName'];
+      $breedID = $_POST['breedID'];
+      $age = $_POST['age'];
+      $gender = $_POST['gender'];
+      $description = $_POST['description'];
+  
+      updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $description);
     }
-		
-		echo "reaching3";
-		// Get pet input
-    $petName = $_POST['petName'];
-    $breedID = $_POST['breedID'];
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
-    $description = $_POST['description'];
-    
-    remPet($rspcaID);
-    updatePet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
   }
   
   if (isset($_POST['addBreedBtn']))
