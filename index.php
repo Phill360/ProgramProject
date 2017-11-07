@@ -109,8 +109,6 @@
   // Update pet
   if (isset($_POST['updatePetBtn']))
   {
-    $rspcaID = $_POST['editPetBtn'];
-    
     if ($_FILES['image'])
     {
       $imageData = addslashes($_FILES['image']['tmp_name']);
@@ -125,7 +123,7 @@
     }
 		
 		// Get pet input
-    $rspcaID = $_POST['rspcaID'];
+    $rspcaID = $_POST['editPetBtn'];
     $petName = $_POST['petName'];
     $breedID = $_POST['breedID'];
     $age = $_POST['age'];
