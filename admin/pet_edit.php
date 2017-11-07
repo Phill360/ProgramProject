@@ -76,12 +76,11 @@
           ?>
           
           <div class=hideMe>
-          <div class="input-group">
-            <span class="input-group-addon">RSPCA ID</span>
-            <input id="rspcaID" type="text" class="form-control" name="rspcaID" value=<?php echo $rspcaID; ?> required>
+            <div class="input-group">
+              <span class="input-group-addon">RSPCA ID</span>
+              <input id="rspcaID" type="text" class="form-control" name="rspcaID" value=<?php echo $rspcaID; ?> required>
+            </div>
           </div>
-          </div>
-          <br>
           
           <div class="form-group">
             <label>Breed:</label>

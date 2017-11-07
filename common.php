@@ -548,7 +548,10 @@ function getImageData($rspcaID)
   require_once('./_php/connect.php');
   
   // Get pet record from database
-	$query = "SELECT rspcaID FROM animals WHERE rspcaID=$rspcaID";
+	$query = "SELECT rspcaID  ";
+	$query .= "FROM animals ";
+	$query .= "WHERE rspcaID=";
+	$query .= "'" . $rspcaID . "'";
 	$result = mysqli_query($connection, $query);
 	if(mysqli_num_rows($result) > 0)
 	{
@@ -563,7 +566,10 @@ function getImageName($rspcaID)
   require_once('./_php/connect.php');
   
   // Get pet record from database
-	$query = "SELECT rspcaID FROM animals WHERE rspcaID=$rspcaID";
+	$query = "SELECT rspcaID  ";
+	$query .= "FROM animals ";
+	$query .= "WHERE rspcaID=";
+	$query .= "'" . $rspcaID . "'";
 	$result = mysqli_query($connection, $query);
 	if(mysqli_num_rows($result) > 0)
 	{
