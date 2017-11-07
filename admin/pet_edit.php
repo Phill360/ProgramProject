@@ -75,6 +75,11 @@
           mysqli_close($connection);
           ?>
           
+          <div class="input-group">
+            <span class="input-group-addon">RSPCA ID</span>
+            <input id="petID" type="text" class="hidden" name="rspcaID" value=$rspcaID required>
+          </div>
+          
           <div class="form-group">
             <label>Breed:</label>
             <select class="form-control" id="breedID" name="breedID" required>
