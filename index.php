@@ -119,6 +119,7 @@
     else
     {
       $imageData = getImageData($rspcaID);
+      echo "reaching";
       $imageName = getImageName($rspcaID);
     }
 		
