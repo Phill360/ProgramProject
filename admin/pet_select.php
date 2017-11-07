@@ -35,8 +35,8 @@
 	          <table class="table table-bordered">
 	            <thead>
                 <tr>
-                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">ID</th>
-                  <th class="col-xs-4 col-sm-4 col-md-6 col-lg-6">Name</th>
+                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">ID</th>
+                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Name</th>
                   <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Edit</th>
                   <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Remove</th>
                 </tr>
