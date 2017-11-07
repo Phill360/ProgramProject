@@ -120,7 +120,7 @@
           </div>
           <br>
           
-          <label>New image:</label>
+          
           <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
             <div class="holder"></div>
               <div id="image-preview-div" style="display: none">
