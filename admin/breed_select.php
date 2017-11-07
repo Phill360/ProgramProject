@@ -36,7 +36,7 @@
 	            <thead>
                 <tr>
                   <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">ID</th>
-                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Bredd</th>
+                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Breed</th>
                   <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Edit</th>
                   <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Remove</th>
                 </tr>
