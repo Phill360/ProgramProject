@@ -99,7 +99,7 @@ if ( isset($_FILES["file"]["type"]) )
           $sourcePath = $_FILES["file"]["tmp_name"];
           $source_img = $sourcePath;
           $destination_img = $targetPath;
-          $d = compress($source_img, $destination_img, 50); // reduce resolution
+          // $d = compress($source_img, $destination_img, 50); // reduce resolution
           resize($source_img, $destination_img); // reduce dimensions
           
           $targetPath = $destination_directory . $_FILES["file"]["name"];
