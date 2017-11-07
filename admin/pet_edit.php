@@ -127,7 +127,7 @@
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
               </div>
-            </div>  
+            </div>
 
             <div class="form-group">
               <input type="file" name="image" id="file" required>

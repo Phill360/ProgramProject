@@ -106,6 +106,30 @@
   	}
   }
   
+  // Edit pet
+  if (isset($_POST['editPetBtn']))
+  {
+    if (!$_FILES['image'])
+    {
+      echo("No new image");
+    }
+    
+    $imageData = addslashes($_FILES['image']['tmp_name']);
+	  $imageName = addslashes($_FILES['image']['name']);
+		$imageData = file_get_contents($imageData);
+		$imageData = base64_encode($imageData);
+		
+		// Get pet input
+    $rspcaID = $_POST['rspcaID'];
+    $petName = $_POST['petName'];
+    $breedID = $_POST['breedID'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $description = $_POST['description'];
+    
+    //editPet($rspcaID, $petName, $breedID, $age, $gender, $description);
+  }
+  
   if (isset($_POST['addBreedBtn']))
   {
 		// Get breed input
