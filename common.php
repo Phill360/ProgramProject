@@ -166,7 +166,6 @@ function signInUser($email, $password)
     $_SESSION['userID'] = $userID;
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
-    $_SESSION['preview'] = false;
     header('Location: index.php');
   } else {
     $_SESSION['validUser'] = false;
