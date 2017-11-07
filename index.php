@@ -121,6 +121,7 @@
     {
       $imageData = getImageData($rspcaID);
       $imageName = getImageName($rspcaID);
+      echo "reaching2";
     }
 		
 		// Get pet input
