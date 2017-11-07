@@ -203,7 +203,7 @@
           <!-- Pet description -->
           <div class="form-group">
             <label for="description">Pet Description:</label>
-            <textarea class="form-control" name="description" id="description" rows="5" cols="50" value="<?php echo $description; ?>" required></textarea>
+            <textarea class="form-control" name="description" id="description" rows="5" cols="50"><?php echo $description; ?></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary" name="editPetBtn">Update</button>
