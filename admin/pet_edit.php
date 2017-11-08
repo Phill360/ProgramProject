@@ -110,7 +110,7 @@
           
             <!-- Enter pet name -->
             <div class="input-group">
-              <span class="input-group-addon">Name</span>
+              <label>Current image:</label>
               <input id="petName" type="text" class="form-control" name="petName" value="<?php echo $petName ?>" required>
             </div>
             <br>
@@ -131,10 +131,12 @@
                 <img id="preview-img" src="noimage">
               </div>
             </div>
+            <br>
 
             <div class="input-group">
               <input type="file" name="image" id="file">
             </div>
+            <br>
           
             <!-- Gender selection -->
             <?php 
@@ -155,6 +157,7 @@
                 <option value="M">Male</option>
               </select>
             </div>
+            <br>
             
             <!-- Age selection -->
             <?php 
@@ -201,12 +204,14 @@
                 <option value="5">5+ Year</option>
               </select>
             </div>
+            <br>
             
             <!-- Pet description -->
-            <div class="input-group">
+            <div class="form-group">
               <label for="description">Pet Description:</label>
               <textarea class="form-control" name="description" id="description" rows="5" cols="50"><?php echo $description; ?></textarea>
             </div>
+            <br>
 
             <button type="submit" class="btn btn-primary" name="updatePetBtn">Update</button>
           </form>
