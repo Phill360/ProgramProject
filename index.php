@@ -159,7 +159,7 @@
     
     // echo($breedSpecies."and". $breedName."and".$breedSize."and".$breedTemperament."and".$breedActive."and".$breedFee);
     
-    if($species == '')
+    if($breedSpecies == '')
     {
       // 
     } 

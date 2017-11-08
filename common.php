@@ -632,9 +632,6 @@ function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $bre
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
-    
-	$msg = $breedSpecies;
-	phpAlert($msg);
 	
 	// Does the breed already exist in the database?
 	$query = "SELECT breedID  ";
@@ -644,6 +641,7 @@ function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $bre
 	$result = mysqli_query($connection, $query);
 	if(mysqli_num_rows($result) > 0)
 	{
+	  phpAlert("The breed already exists in the database.");
 	  return;
 	}
 	
