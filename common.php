@@ -121,8 +121,9 @@ function signInUser($email, $password)
   {
     $validUser = true;
     $usertype = 'admin';
+    $_SESSION['userID'] = 0;
   }
-  else // user from database
+  else // Get user from database
   {
     require_once('./_php/connect.php');
     $userpass = md5($password);
