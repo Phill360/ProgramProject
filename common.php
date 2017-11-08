@@ -631,8 +631,10 @@ function removePet($rspcaID)
 /* This function adds a breed to the database */  
 function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $breedActive, $breedFee) 
 {
+  echo($breedSpecies."and". $breedName."and".$breedSize."and".$breedTemperament."and".$breedActive."and".$breedFee);
+  
   // Connect AWS MYSQL Server
-  require('./_php/connect.php');
+  require_once('./_php/connect.php');
     
 	// Perform Query
 	$query = "INSERT INTO breed ";
