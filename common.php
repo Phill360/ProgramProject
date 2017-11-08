@@ -366,9 +366,7 @@ function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $h
   mysqli_close($connection);
 }
   
-
-
-// Search for question matches
+/* Search for question matches */
 // THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE
 function searchResult()
 {
@@ -459,7 +457,7 @@ function searchResult()
 
 }
 
-// This function adds a pet to the database  
+/* This function adds a pet to the database */  
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
 {
   // Connect AWS MYSQL Server
@@ -505,7 +503,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	mysqli_close($connection);
 }
 
-// This function updates a pet in the database with new image
+/* This function updates a pet in the database with new image */
 function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData)
 {
 	// Connect AWS MYSQL Server
@@ -569,7 +567,7 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
 	
 }
 
-// This function updates a pet in the database (without image)  
+/* This function updates a pet in the database (without image) */ 
 function updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $description) 
 {
   // Connect AWS MYSQL Server
@@ -630,7 +628,7 @@ function remPet($rspcaID)
   mysqli_close($connection);
 }
 
-// This function adds a breed to the database  
+/* This function adds a breed to the database */  
 function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
     
   // Connect AWS MYSQL Server
@@ -662,7 +660,7 @@ function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $ac
 	mysqli_close($connection);
 }
 
-// This function updates a breed in the database
+/* This function updates a breed in the database */
 function updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee)
 {
 	// Connect AWS MYSQL Server
@@ -745,291 +743,289 @@ function debug_to_console($data) {
   echo $output;
 }
 
+/* This function displays an image from the database */
+// THIS FUNCTION REQUIRES WORK - NOT CONNECTING WITH SCRIPT
+function displayimage($rspcaID)
+{
+  // Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    or die ('Could not connect to the database server' . mysqli_connect_error());
 
-
-	// Display Image from database
-  function displayimage($rspcaID)
-  {
-		// Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
-
-		$query = "select * from animals where rspcaID='".$rspcaID."'";
-		$result=mysqli_query($connection,$query);
+  $query = "select * from animals where rspcaID='".$rspcaID."'";
+  $result=mysqli_query($connection,$query);
 		
-		// Test for query error
-	  if(!$result)
-	  {
-		  echo('Could not get image');
-	  }
+	// Test for query error
+	if(!$result)
+	{
+		echo('Could not get image');
+	}
 		
-		while ($row = mysqli_fetch_array($result)) 
-		{
-			echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
-		}
-		mysqli_close($connection);
+	while ($row = mysqli_fetch_array($result)) 
+	{
+		echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
+	}
+	mysqli_close($connection);
+}
+	
+// This function sets up the user session
+function setupUserSession()
+{
+	// Connect AWS MYSQL Server
+  require('./_php/connect.php');
+  
+  $email = $_SESSION['email'];
+  
+  // Getting user's userID
+  $query = "SELECT * "; 
+	$query .= "FROM user ";
+	$result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result)
+	{
+		die("5. Database query failed.");
 	}
 	
-	// Setup user session
-	function setupUserSession()
+	// Iterate through results to get the user ID 
+	while ($row = mysqli_fetch_assoc($result))
 	{
-	  // Connect AWS MYSQL Server
-    require('./_php/connect.php');
-  
-    $email = $_SESSION['email'];
-  
-    /* Getting user's userID */
-  
-    // Perform query
-    $query = "SELECT * "; 
-	  $query .= "FROM user ";
-	  $result = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$result)
+	  // Match email to a row
+	  if ($row["email"] == $email)
 	  {
-		  die("5. Database query failed.");
-	  }
-	
-	  // Iterate through results to get the user ID 
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    // Match email to a row
-	    if ($row["email"] == $email)
-	    {
-	      $userID = $row["userID"];
-      }
-	  }
+	    $userID = $row["userID"];
+    }
+	}
 	  
-	  /* With the userID we now check if this user has visited the site previously. */
-      
-    // Perform new search
-    $query = "SELECT * "; 
-	  $query .= "FROM userSearch ";
-	  $result = mysqli_query($connection, $query);
+	// With the userID we now check if this user has visited the site previously. */
+  $query = "SELECT * "; 
+	$query .= "FROM userSearch ";
+	$result = mysqli_query($connection, $query);
 
-	  // Test for query error
-	  if(!$result)
+	// Test for query error
+	if(!$result)
+	{
+		die("6. Database query failed.");
+	}
+	else
+	{
+	  $count  = mysqli_num_rows($result);
+	  if ($count == 0)
 	  {
-		  die("6. Database query failed.");
+      $_SESSION['userTool'] = 'matches'; // Temporarily change
 	  }
 	  else
 	  {
-	    $count  = mysqli_num_rows($result);
-	    if ($count == 0)
+      while ($row = mysqli_fetch_assoc($result))
 	    {
-        $_SESSION['userTool'] = 'matches'; // Temporarily change
-	    }
-	    else
-	    {
-        while ($row = mysqli_fetch_assoc($result))
+	      // Match user ID to a row
+	      if ($row["userID"] == $userID)
 	      {
-	        // Match user ID to a row
-	        if ($row["userID"] == $userID)
-	        {
-	          $_SESSION['userTool'] = 'matches';
-          }
-	      }	    
-	    }
+	        $_SESSION['userTool'] = 'matches';
+        }
+	    }	    
 	  }
-	  mysqli_close($connection);
 	}
+	mysqli_close($connection);
+}
 	
-	// Get 12 animals from the database for pagination
-	function getLimitedNumberOfAnimalsFromDatabase($page1)
-	{
-    // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+/* This function gets 12 animals from the database for pagination */
+// THIS FUNCTION MAY BE DEPRECATED
+function getLimitedNumberOfAnimalsFromDatabase($page1)
+{
+  // Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     
-	  $query = "SELECT * FROM animals LIMIT $page1,12"; 
-	  $result = mysqli_query($connection, $query);
+	$query = "SELECT * FROM animals LIMIT $page1,12"; 
+	$result = mysqli_query($connection, $query);
 	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("7. Database query failed.");
-	  }
-	  
-	  return $result;
-	  //mysqli_close($connection);
-	}
-	
-	// Get all animals from the database
-	function getAnimalsFromDatabase()
+	// Test for query error
+	if(!$result) 
 	{
-	  // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+		die("7. Database query failed.");
+	}
+	  
+	return $result;
+	mysqli_close($connection);
+}
+	
+/* Get all animals from the database */
+// THIS FUNCTION MAY BE DEPRECATED
+function getAnimalsFromDatabase()
+{
+	// Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
 	  
-	  // Get number of pets in database
-	  $query = "SELECT * FROM animals";
-	  $result = mysqli_query($connection, $query);
+	// Get number of pets in database
+	$query = "SELECT * FROM animals";
+	$result = mysqli_query($connection, $query);
 	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("8. Database query failed.");
-	  }
-	  
-	  mysqli_close($connection);
-	  return $result;
-	}
-	
-	// Get animal name
-	function getAnimalName($rspcaID)
+	// Test for query error
+	if(!$result) 
 	{
-	  // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+		die("8. Database query failed.");
+	}
+	  
+	mysqli_close($connection);
+	return $result;
+}
+	
+/* This function gets the name of the pet from the database */
+function getAnimalName($rspcaID)
+{
+	// Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    or die ('Could not connect to the database server' . mysqli_connect_error());
+    	
+  // Get favourites
+	$query = "SELECT * FROM animals";
+	$result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result) 
+	{
+		die("8.1. Database query failed.");
+	}
+	  
+	// Iterate through results to get the user ID 
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  // Match email to a row
+	  if ($row["rspcaID"] == $rspcaID)
+	  {
+	    $petName = $row["petName"];
+    }
+	}
+	  
+	mysqli_close($connection);
+	return $petName;
+}
+	
+// This function gets the description of the pet from the database */
+function getAnimalDescription($rspcaID)
+{
+	// Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     	
-    // Get favourites
-	  $query = "SELECT * FROM animals";
-	  $result = mysqli_query($connection, $query);
+  // Get animals
+	$query = "SELECT rspcaID, description FROM animals";
+	$result = mysqli_query($connection, $query);
 	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("8.1. Database query failed.");
-	  }
-	  
-	  // Iterate through results to get the user ID 
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    // Match email to a row
-	    if ($row["rspcaID"] == $rspcaID)
-	    {
-	      $petName = $row["petName"];
-      }
-	  }
-	  
-	  mysqli_close($connection);
-	  return $petName;
-	}
-	
-	// Get animal description
-	function getAnimalDescription($rspcaID)
+	// Test for query error
+	if(!$result) 
 	{
-	  // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+	  die("8.2. Database query failed.");
+	}
+	  
+	// Iterate through results to get the user ID 
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  // Match email to a row
+	  if ($row["rspcaID"] == $rspcaID)
+	  {
+	    $description = $row["description"];
+    }
+	}
+	  
+	mysqli_close($connection);
+	return $description;
+}
+	
+/* This function gets the user's favourites from the database */
+function getFavourites()
+{
+	// Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     	
-    // Get favourites
-	  $query = "SELECT * FROM animals";
-	  $result = mysqli_query($connection, $query);
+  // Get favourites
+	$query = "SELECT * FROM favourites";
+	$result = mysqli_query($connection, $query);
 	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("8.2. Database query failed.");
-	  }
-	  
-	  // Iterate through results to get the user ID 
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    // Match email to a row
-	    if ($row["rspcaID"] == $rspcaID)
-	    {
-	      $description = $row["description"];
-      }
-	  }
-	  
-	  mysqli_close($connection);
-	  return $description;
-	}
-	
-	// Get user's favourites from database
-	function getFavourites()
+	// Test for query error
+	if(!$result) 
 	{
-	  // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
-    	
-    // Get favourites
-	  $query = "SELECT * FROM favourites";
-	  $result = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("9. Database query failed.");
-	  }
-	  
-	  mysqli_close($connection);
-	  return $result;
+		die("9. Database query failed.");
 	}
+	  
+	mysqli_close($connection);
+	return $result;
+}
 	
-	// Get the number of favourites for the user (for pagination)
-	function getNumberOfFavouritesForUser()
-	{
-	  // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+/* This function gets the number of favourites for the user (for pagination) */
+function getNumberOfFavouritesForUser()
+{
+	// Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     
-    $query = "SELECT * FROM favourites ";
-    $result = mysqli_query($connection, $query);
+  $query = "SELECT * FROM favourites ";
+  $result = mysqli_query($connection, $query);
 	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-	    die("10. Database query failed.");
-	  }
+  // Test for query error
+	if(!$result) 
+	{
+	  die("10. Database query failed.");
+	}
 	  
-	  $numberOfFavourites = 0;
-	  while ($row = mysqli_fetch_assoc($result))
-	  {
-	    $numberOfFavourites += 1;
-	  }
+	$numberOfFavourites = 0;
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  $numberOfFavourites += 1;
+	}
 
-    mysqli_close($connection);
-    return $numberOfFavourites;
-	}
+  mysqli_close($connection);
+  return $numberOfFavourites;
+}
 	
-	// This function prints a popdown alert message to the screen
-	function phpAlert($msg) {
-    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-  }
+/* This function prints a popdown alert message to the screen */
+function phpAlert($msg) 
+{
+  echo '<script type="text/javascript">alert("'.$msg.'")</script>';
+}
 	
 ?>
