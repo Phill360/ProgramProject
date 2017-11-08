@@ -64,6 +64,7 @@
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     createNewAdminUser($email);
+    phpAlert("The user has been promoted to admin user.");
   }
   
   // When the admin user demotes another user from admin to normal user
@@ -71,6 +72,7 @@
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     demoteAdminUser($email);
+    phpAlert("The user has been demoted to normal user.");
   }
   
   // Add pet
@@ -97,11 +99,12 @@
     
       if($rspcaID == '')
       {
-        
+        phpAlert("Could not add pet to the database.");
       } 
       else 
       { 
         addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
+        phpAlert("The pet was added to the database.");
       }
   	}
   }
@@ -125,6 +128,7 @@
       $description = $_POST['description'];
 
       updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData);
+      phpAlert("The pet was updated in the database.");
     }
     else
     {
@@ -135,6 +139,7 @@
       $description = $_POST['description'];
   
       updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $description);
+      phpAlert("The pet was updated in the database.");
     }
   }
   
@@ -164,6 +169,7 @@
     else 
     {
       addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $breedActive, $breedFee);
+      phpAlert("The breed was added to the database.");
     }
   }
   
@@ -179,6 +185,7 @@
     $breedFee = $_POST['breedFee'];
   
     updateBreed($breedID, $breedType, $breedSize, $breedTemperament, $breedActive, $breedName, $breedFee);
+    phpAlert("The breed was updated in the database.");
   }
   
   // Remove breed
@@ -186,6 +193,7 @@
   {
     $breedID = $_POST['removeBreedBtn'];
     removeBreed($breedID);
+    phpAlert("The breed was removed from the database.");
   }
   
   /* Collect data from sliders  */
@@ -207,12 +215,14 @@
     }
     
     submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
+    phpAlert("Your responses have been submitted thank you.");
   }
   
   if (isset($_POST['confirmDeregisterBtn']))
   {
 		// Deregister user
     deregisterUser();
+    phpAlert("You have successfully deregisted from Paw Companions.");
   }
 ?>
 
