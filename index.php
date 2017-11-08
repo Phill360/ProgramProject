@@ -157,6 +157,8 @@
     $breedActive = isset($_POST['breedActive']) ? $_POST['breedActive'] : '';
     $breedFee = isset($_POST['breedFee']) ? $_POST['breedFee'] : '';
     
+    echo($breedSpecies."and". $breedName."and".$breedSize."and".$breedTemperament."and".$breedActive."and".$breedFee);
+    
     if($species == '')
     {
       // 

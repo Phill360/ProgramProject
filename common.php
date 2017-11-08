@@ -634,7 +634,7 @@ function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $bre
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
     
-	// 2. Perform Query
+	// Perform Query
 	$query = "INSERT INTO breed ";
 	$query .= "(type, name, size, temperament, active, fee) ";
 	$query .= "VALUES (";
