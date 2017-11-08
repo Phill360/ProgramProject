@@ -38,11 +38,11 @@
             <div class="input-group">
               <label for="type">Size:</label>
               <select class="form-control" id="breedSize" name="breedSize" required>
-                <option>Extra small</option>
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
-                <option>Giant</option>
+                <option value="1">Extra small</option>
+                <option value="2">Small</option>
+                <option value="3">Medium</option>
+                <option value="4">Large</option>
+                <option value="5">Giant</option>
               </select>
             </div>
             <br>
