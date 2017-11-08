@@ -46,6 +46,21 @@
               ?>
             </div>
           
+            <!-- Send RSPCA ID (user cannot edit) -->
+            <div class=hideMe>
+              <div class="input-group">
+                <span class="input-group-addon">RSPCA ID</span>
+                <input id="rspcaID" type="text" class="form-control" name="rspcaID" value=<?php echo $rspcaID; ?> required>
+              </div>
+            </div>
+            
+            <!-- Enter pet name -->
+            <div class="input-group">
+              <label>Current image:</label>
+              <input id="petName" type="text" class="form-control" name="petName" value="<?php echo $petName ?>" required>
+            </div>
+            <br>
+            
             <!-- Select breed -->
             <?php
           
@@ -72,13 +87,6 @@
             mysqli_close($connection);
             ?>
           
-            <div class=hideMe>
-              <div class="input-group">
-                <span class="input-group-addon">RSPCA ID</span>
-                <input id="rspcaID" type="text" class="form-control" name="rspcaID" value=<?php echo $rspcaID; ?> required>
-              </div>
-            </div>
-          
             <div class="input-group">
               <label>Breed:</label>
               <select class="form-control" id="breedID" name="breedID" required>
@@ -100,18 +108,11 @@
                 // List breeds in database for dropdown menu
                 while($row = mysqli_fetch_assoc($result)) 
                 {
-                  echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
+                  echo "<option value=\"".$row["breedID"]."\">".$row["name"]."</option>" ;
                 } 
                 mysqli_close($connection);
                 ?>
               </select>
-            </div>
-            <br>
-          
-            <!-- Enter pet name -->
-            <div class="input-group">
-              <label>Current image:</label>
-              <input id="petName" type="text" class="form-control" name="petName" value="<?php echo $petName ?>" required>
             </div>
             <br>
           
