@@ -57,7 +57,8 @@
             <!-- Select cat or dog -->
             <div class="input-group">
               <label for="type">Species:</label>
-              <select class="form-control" id="species" name="species" value="<?php echo $breedType ?>" required>
+              <select class="form-control" id="species" name="species" required>
+                <option><?php echo $breedType ?></option>
                 <option>Cat</option>
                 <option>Dog</option>
               </select>
