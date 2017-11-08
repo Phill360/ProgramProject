@@ -46,10 +46,18 @@
               ?>
             </div>
             
+            <!-- Send breed ID (user cannot edit) -->
+            <div class=hideMe>
+              <div class="input-group">
+                <span class="input-group-addon">RSPCA ID</span>
+                <input id="breedID" type="text" class="form-control" name="breedID" value=<?php echo $breedID; ?> required>
+              </div>
+            </div>
+            
             <!-- Select cat or dog -->
             <div class="input-group">
               <label for="type">Species:</label>
-              <select class="form-control" id="species" name="species" required>
+              <select class="form-control" id="species" name="species" value="<?php echo $type ?>" required>
                 <option>Cat</option>
                 <option>Dog</option>
               </select>
@@ -59,7 +67,7 @@
             <!-- Enter breed name -->
             <div class="input-group">
               <label for="type">Breed name:</label>
-              <input id="breedName" type="text" class="form-control" name="breedName" placeholder="Enter breed name" required>
+              <input id="breedName" type="text" class="form-control" name="breedName" value="<?php echo $name ?>" required>
             </div>
             <br>
 
@@ -67,6 +75,7 @@
             <div class="input-group">
               <label for="type">Size:</label>
               <select class="form-control" id="breedSize" name="breedSize" required>
+                <option value=<?php echo $size; ?>><?php echo $size; ?></option>
                 <option>Extra small</option>
                 <option>Small</option>
                 <option>Medium</option>
@@ -80,6 +89,7 @@
             <div class="input-group">
               <label for="type">Temperament:</label>
               <select class="form-control" id="temperament" name="temperament" required>
+                <option value=<?php echo $temperament; ?>><?php echo $temperament; ?></option>
                 <option>Easy Going</option>
                 <option>Playful</option>
                 <option>Excitable</option>
@@ -91,6 +101,7 @@
             <div class="input-group">
               <label for="type">How active:</label>
               <select class="form-control" id="active" name="active" required>
+                <option value=<?php echo $active; ?>><?php echo $active; ?></option>
                 <option>Lap dog</option>
                 <option>Active</option>
                 <option>Sports star</option>
@@ -101,7 +112,7 @@
             <!-- Enter breed fee -->
             <div class="input-group">
               <label for="type">Adoption fee:</label>
-              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee" required>
+              <input id="breedFee" type="text" class="form-control" name="fee" value="<?php echo $fee ?>" required>
             </div>
             <br>
             
