@@ -56,7 +56,7 @@
             
             <!-- Enter pet name -->
             <div class="input-group">
-              <label>Current image:</label>
+              <label>Name:</label>
               <input id="petName" type="text" class="form-control" name="petName" value="<?php echo $petName ?>" required>
             </div>
             <br>
