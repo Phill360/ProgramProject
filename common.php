@@ -632,7 +632,7 @@ function removePet($rspcaID)
 function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $breedActive, $breedFee) 
 {
   // Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
+  require('./_php/connect.php');
     
 	// Perform Query
 	$query = "INSERT INTO breed ";
@@ -648,9 +648,12 @@ function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $bre
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
-	if($result) {
+	if($result) 
+	{
 	  $new_id = mysqli_insert_id($connection);
-	} else {
+	} 
+	else 
+	{
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
