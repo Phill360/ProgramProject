@@ -715,10 +715,10 @@ function removeBreed($breedID)
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-  // 2. Perform Query
+  // Perform Query
   $query = "DELETE FROM breed ";
   $query .= "WHERE ";
-  $query .= "breedID=";
+  $query .= "breedID =";
   $query .= "'" . $breedID . "'";
   $result = mysqli_query($connection, $query);
 

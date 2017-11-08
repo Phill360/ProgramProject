@@ -157,8 +157,6 @@
     $breedActive = isset($_POST['breedActive']) ? $_POST['breedActive'] : '';
     $breedFee = isset($_POST['breedFee']) ? $_POST['breedFee'] : '';
     
-    // echo($breedSpecies."and". $breedName."and".$breedSize."and".$breedTemperament."and".$breedActive."and".$breedFee);
-    
     if($breedSpecies == '')
     {
       // 
@@ -183,10 +181,10 @@
     updateBreed($breedID, $breedType, $breedSize, $breedTemperament, $breedActive, $breedName, $breedFee);
   }
   
+  // Remove breed
   if (isset($_POST['removeBreedBtn']))
   {
-		// Get delete breed input
-    $breedID = $_POST['breedID'];
+    $breedID = $_POST['removeBreedBtn'];
     removeBreed($breedID);
   }
   
@@ -207,8 +205,6 @@
     {
       $childrenHome = 0;
     }
-    
-    // echo($adultsHome.' '.$childrenHome.' '.$howActive.' '.$howOftenHome.' '.$petSelection.' '.$petSize.' '.$petTemperament.' '.$petGender);
     
     submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
   }
