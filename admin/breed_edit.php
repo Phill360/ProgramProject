@@ -22,7 +22,7 @@
               // Connect AWS MYSQL Server
               require('./_php/connect.php');
   
-  	          $query = "SELECT * FROM breed WHERE breedID=$breedID";
+  	          $query = "SELECT * FROM breed WHERE breedID = $breedID";
   	          $result = mysqli_query($connection, $query);
                 	
               // Test for query error
@@ -31,7 +31,7 @@
                 die("Database query failed.");
               }
   	
-              // List breeds in database
+              // Get values for specific breed in database
               while($row = mysqli_fetch_assoc($result)) 
               {
                 $breedID = $row["breedID"];
@@ -45,8 +45,61 @@
               mysqli_close($connection);
               ?>
             </div>
+            
+            <!-- Select cat or dog -->
+            <div class="form-group">
+              <label for="type">Species:</label>
+              <select class="form-control" id="species" name="species" required>
+                <option>Cat</option>
+                <option>Dog</option>
+              </select>
+            </div>
+            
+            <!-- Enter breed size -->
+            <div class="input-group">
+              <span class="input-group-addon">Size</span>
+              <select class="form-control" id="breedSize" name="breedSize" required>
+                <option>Extra small</option>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>Giant</option>
+              </select>
+            </div>
             <br>
-            <button type="submit" class="btn btn-primary" name="remBreedBtn">Remove</button>
+
+            <!-- Enter breed temperament -->
+            <div class="input-group">
+              <span class="input-group-addon">Temperament</span>
+              <select class="form-control" id="temperament" name="temperament" required>
+                <option>Easy Going</option>
+                <option>Playful</option>
+                <option>Excitable</option>
+              </select>
+            </div>
+            <br>
+            
+            <!-- Enter breed active -->
+            <div class="input-group">
+              <span class="input-group-addon">Active</span>
+              <select class="form-control" id="active" name="active" required>
+                <option>Lap dog</option>
+                <option>--</option>
+                <option>Active</option>
+                <option>--</option>
+                <option>Sports star</option>
+              </select>
+            </div>
+            <br>
+            
+            <!-- Enter breed fee -->
+            <div class="input-group">
+              <span class="input-group-addon">Adoption Fee</span>
+              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee" required>
+            </div>
+            <br>
+            
+            <button type="submit" class="btn btn-primary" name="updateBreedBtn">Remove</button>
           </form>
         </div>
       </div>

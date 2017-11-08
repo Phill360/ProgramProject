@@ -22,7 +22,7 @@
               // Connect AWS MYSQL Server
               require('_php/connect.php');
 
-	            $query = "SELECT * FROM animals WHERE rspcaID=$rspcaID";
+	            $query = "SELECT * FROM animals WHERE rspcaID = $rspcaID";
 	            $result = mysqli_query($connection, $query);
             
               // Test for query error
@@ -31,7 +31,7 @@
                 die("Database query failed.");
               }
 	
-              // Get database
+              // Get values for specific pet database
               while ($row = mysqli_fetch_assoc($result)) 
               {
                 $petName = $row["petName"];
@@ -83,7 +83,7 @@
               <label>Breed:</label>
               <select class="form-control" id="breedID" name="breedID" required>
                 <?php
-                echo "<option value=\"" . $breedID . "\">" . $breedName . "</option>" ;
+                echo "<option value=\"".$breedID."\">".$breedName."</option>";
             
                 // Connect AWS MYSQL Server
                 require('_php/connect.php');

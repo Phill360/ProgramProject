@@ -1,17 +1,12 @@
 <?php
-
-
-
 ?>
 
 <!DOCTYPE html PUBLIC>
 <html lang="en">
 <head>
-
 </head>
 
 <body>
-
   <div class="row">
     <div class="col-sm-12">
       <!-- Add breed -->
@@ -31,7 +26,7 @@
               </select>
             </div>
             
-                    <!-- Enter breed name -->
+            <!-- Enter breed name -->
             <div class="input-group">
               <span class="input-group-addon">Breed</span>
               <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name" required>
@@ -41,7 +36,7 @@
             <!-- Enter breed size -->
             <div class="input-group">
               <span class="input-group-addon">Size</span>
-             <select class="form-control" id="breedSize" name="breedSize" required>
+              <select class="form-control" id="breedSize" name="breedSize" required>
                 <option>Extra small</option>
                 <option>Small</option>
                 <option>Medium</option>
@@ -54,7 +49,7 @@
             <!-- Enter breed temperament -->
             <div class="input-group">
               <span class="input-group-addon">Temperament</span>
-               <select class="form-control" id="temperament" name="temperament" required>
+              <select class="form-control" id="temperament" name="temperament" required>
                 <option>Easy Going</option>
                 <option>Playful</option>
                 <option>Excitable</option>
@@ -75,7 +70,7 @@
             </div>
             <br>
             
-                     <!-- Enter breed fee -->
+            <!-- Enter breed fee -->
             <div class="input-group">
               <span class="input-group-addon">Adoption Fee</span>
               <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee" required>
@@ -88,6 +83,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>
