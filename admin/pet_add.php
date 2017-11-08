@@ -67,7 +67,6 @@
                 ?>
               </select>
             </div>
-            <br>
             
             <!-- Image selection -->
             <label>Image:</label>
@@ -81,7 +80,7 @@
                 <input type="file" name="image" id="file" required>
               </div>
               </div>
-              <br>
+              <br><br>
             
             <!-- Gender selection -->
             <div class="input-group">
