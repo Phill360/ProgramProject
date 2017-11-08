@@ -10,6 +10,11 @@ include_once('./common.php');
   {
     $adminTool = 'demote';
   }
+  
+  if(isset($_POST['removeUserBtn']))
+  {
+    $adminTool = 'removeUser';
+  }
 
   if(isset($_POST['addBreedBtn']))
   {
@@ -53,6 +58,7 @@ include_once('./common.php');
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
       <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
       <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
+      <button type="submit" class="btn" name="removeUserBtn">Remove a user</button>
       <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
       <button type="submit" class="btn" name="editRemoveBreedBtn">Edit or remove a breed</button>
       <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
@@ -68,6 +74,10 @@ include_once('./common.php');
     else if ($adminTool == 'demote')
     {?>
       <div><?php include 'demote_user.php' ?></div>
+  <?php }
+    else if ($adminTool == 'removeUser')
+    {?>
+      <div><?php include 'remove_user.php' ?></div>
   <?php } 
     else if ($adminTool == 'addBreed')
     {?>

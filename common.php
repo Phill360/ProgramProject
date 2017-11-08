@@ -261,6 +261,35 @@ function demoteAdminUser($email)
     
   mysqli_close($connection);
 }
+
+/* This function removes a user from Paw Companions */
+function removeUser($userID)
+{
+	// Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+
+  // 2. Perform Query
+  $query = "DELETE FROM user ";
+  $query .= "WHERE ";
+  $query .= "userID =";
+  $query .= "'" . $userID . "'";
+  $result = mysqli_query($connection, $query);
+
+  // Test for query error
+  if($result) 
+  {
+    $new_id = mysqli_insert_id($connection);
+  } 
+  else 
+  {
+  	echo mysqli_error($connection);
+  	mysqli_close($connection);
+  	exit;
+  }
+  
+  // Close database connection
+  mysqli_close($connection);
+}
   
 /* This function checks the number of users in the database. */
 function checkNumberUsersInFile()

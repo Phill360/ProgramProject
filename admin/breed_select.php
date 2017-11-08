@@ -44,7 +44,7 @@
               <tbody>
 	          <?php
 	          
-            // List animals in database
+            // List breeds in database
             while($row = mysqli_fetch_assoc($result)) 
             {
               ?>
