@@ -677,8 +677,8 @@ function updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee)
 	$query .= "name ='" . $name . "',";
 	$query .= "fee ='" . $fee . "'";
 	$query .= "WHERE ";
-  $query .= "rspcaID =";
-  $query .= "'" . $rspcaID . "'";
+  $query .= "breedID =";
+  $query .= "'" . $breedID . "'";
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
@@ -695,7 +695,7 @@ function updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee)
 	mysqli_close($connection);
 }
 
-// This function removes a breed from the database  
+/* This function removes a breed from the database */ 
 function remBreed($breedID) {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
