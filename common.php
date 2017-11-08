@@ -463,7 +463,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-  // Does Pet already Exist
+  // Does the pet already exist in the database?
 	$query = "SELECT rspcaID  ";
 	$query .= "FROM animals ";
 	$query .= "WHERE rspcaID=";
@@ -474,7 +474,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	  return;
 	}
 	
-	// 2. Perform Query
+	// Perform Query
 	$query = "INSERT INTO animals ";
 	$query .= "(rspcaID, petName, breedID, gender, imageName, age, description, imageData) ";
 	$query .= "VALUES (";
@@ -564,7 +564,6 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
 
 	// Close database connection
 	mysqli_close($connection);
-	
 }
 
 /* This function updates a pet in the database (without image) */ 
@@ -631,11 +630,23 @@ function removePet($rspcaID)
 /* This function adds a breed to the database */  
 function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $breedActive, $breedFee) 
 {
-  echo($breedSpecies."and". $breedName."and".$breedSize."and".$breedTemperament."and".$breedActive."and".$breedFee);
-  
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
     
+	$msg = $breedSpecies;
+	phpAlert($msg);
+	
+	// Does the breed already exist in the database?
+	$query = "SELECT breedID  ";
+	$query .= "FROM breed ";
+	$query .= "WHERE breedID=";
+	$query .= "'" . $breedID . "'";
+	$result = mysqli_query($connection, $query);
+	if(mysqli_num_rows($result) > 0)
+	{
+	  return;
+	}
+	
 	// Perform Query
 	$query = "INSERT INTO breed ";
 	$query .= "(type, name, size, temperament, active, fee) ";
