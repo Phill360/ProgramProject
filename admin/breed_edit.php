@@ -47,7 +47,7 @@
             </div>
             
             <!-- Select cat or dog -->
-            <div class="form-group">
+            <div class="input-group">
               <label for="type">Species:</label>
               <select class="form-control" id="species" name="species" required>
                 <option>Cat</option>
