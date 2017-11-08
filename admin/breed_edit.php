@@ -54,6 +54,7 @@
                 <option>Dog</option>
               </select>
             </div>
+            <br>
             
             <!-- Enter breed name -->
             <div class="input-group">
