@@ -105,7 +105,7 @@
             </div>
             <br>
             
-            <button type="submit" class="btn btn-primary" name="updateBreedBtn">Remove</button>
+            <button type="submit" class="btn btn-primary" name="updateBreedBtn">Update</button>
           </form>
         </div>
       </div>

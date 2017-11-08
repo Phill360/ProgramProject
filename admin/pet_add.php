@@ -59,14 +59,14 @@
 
             <!-- Enter pet ID -->
             <div class="input-group">
-              <span class="input-group-addon">RSPCA ID</span>
+              <label>RSPCA ID:</label>
               <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID"  required>
             </div>
             <br>
 
             <!-- Enter pet name -->
             <div class="input-group">
-              <span class="input-group-addon">Name</span>
+              <label>Name:</label>
               <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name"  required>
             </div>
             <br>
@@ -79,13 +79,14 @@
               <div id="image-preview-div" style="display: none">
                 <img id="preview-img" src="noimage">
               </div>
-              <div class="form-group">
+              <div class="input-group">
                 <input type="file" name="image" id="file" required>
               </div>
               </div>
+              <br>
             
             <!-- Gender selection -->
-            <div class="form-group">
+            <div class="input-group">
               <label for="gender">Gender:</label>
               <select class="form-control" name="gender" id="gender" required>
                 <option value="F">Female</option>
@@ -93,8 +94,8 @@
               </select>
             </div>
             
-              <!-- Age selection -->
-            <div class="form-group">
+            <!-- Age selection -->
+            <div class="input-group">
               <label for="age">Age:</label>
               <select class="form-control" name="age" id="age" required>
                 <option value="0.25">-3 months</option>
