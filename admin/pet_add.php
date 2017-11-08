@@ -60,7 +60,7 @@
                   // Need to make this only show breeds depending on the 
                   // whether Dog or cat is selected
                   // if ($row["type"] == "Dog") {
-                    echo "<option value=\"" . $row["breedID"] . "\">" . $row["name"] . "</option>" ;
+                    echo "<option value=\"".$row["breedID"]."\">".$row["name"]."</option>" ;
                   // }
                 } 
                  mysqli_close($connection);
