@@ -80,11 +80,9 @@ function registerUser($firstname, $lastname, $email, $password)
 }
 
 /* This function deregisters a user */
-function deregisterUser()
+function deregisterUser($userID)
 {
 	require_once('./_php/connect.php');
-	
-	$userID = $_SESSION['userID'];
 	
 	$query = "DELETE FROM favourites WHERE userID = $userID;";
 	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
@@ -173,8 +171,6 @@ function signInUser($email, $password)
   mysqli_close($connection);
 }
 
-  
-  
 /* This function unsets all session variables and logs the user out */
 function signOutUser()
 {

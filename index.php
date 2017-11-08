@@ -6,7 +6,7 @@
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 	$message = getMessage();
-	// echo('Message: '.$message);
+	echo($_SESSION['userID']);
 
   // When the user registers
   if (isset($_POST['registerBtn']))
@@ -82,7 +82,7 @@
     
     if ($userID != $_SESSION['userID'])
     {
-      removeUser($userID);
+      deregisterUser($userID);
       phpAlert("The user has been removed from Paw Companions.");
     }
     else
@@ -237,7 +237,8 @@
   if (isset($_POST['confirmDeregisterBtn']))
   {
 		// Deregister user
-    deregisterUser();
+		$userID = $_SESSION['userID'];
+    deregisterUser($userID);
     phpAlert("You have successfully deregisted from Paw Companions.");
   }
 ?>
