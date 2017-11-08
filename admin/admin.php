@@ -77,7 +77,7 @@ include_once('./common.php');
   <?php }
     else if ($adminTool == 'removeUser')
     {?>
-      <div><?php include 'remove_user.php' ?></div>
+      <div><?php include 'user_remove.php' ?></div>
   <?php } 
     else if ($adminTool == 'addBreed')
     {?>
