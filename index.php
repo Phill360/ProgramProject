@@ -73,7 +73,7 @@
     demoteAdminUser($email);
   }
   
-  // Add new pet
+  // Add pet
   if (isset($_POST['addPetBtn']))
   {
     if(getimagesize($_FILES['image']['tmp_name'])== FALSE)
@@ -138,6 +138,7 @@
     }
   }
   
+  // Remove pet
   if(isset($_POST['removePetBtn']))
   {
     $rspcaID = $_POST['removePetBtn'];
@@ -145,6 +146,7 @@
     phpAlert("The pet was removed from the database.");
   }
   
+  // Add breed
   if (isset($_POST['addBreedBtn']))
   {
 		// Get breed input
@@ -165,11 +167,18 @@
     }
   }
   
-  if (isset($_POST['remPetBtn']))
+  // Update breed
+  if (isset($_POST['updateBreedBtn']))
   {
-		// Get delete pet input
-    $rspcaID = $_POST['rspcaID'];
-    remPet($rspcaID);
+    $breedID = $_POST['breedID'];
+    $type = $_POST['type'];
+    $size = $_POST['size'];
+    $temperament = $_POST['temperament'];
+    $active = $_POST['active'];
+    $name = $_POST['name'];
+    $fee = $_POST['fee'];
+  
+    updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee);
   }
   
   if (isset($_POST['remBreedBtn']))
