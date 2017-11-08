@@ -79,7 +79,7 @@
               </div>
             </div>
           
-            <div class="form-group">
+            <div class="input-group">
               <label>Breed:</label>
               <select class="form-control" id="breedID" name="breedID" required>
                 <?php
@@ -132,7 +132,7 @@
               </div>
             </div>
 
-            <div class="form-group">
+            <div class="input-group">
               <input type="file" name="image" id="file">
             </div>
           
@@ -147,7 +147,7 @@
               $genderText = "Male";
             }
             ?>
-            <div class="form-group">
+            <div class="input-group">
               <label for="gender">Gender:</label>
               <select class="form-control" name="gender" id="gender" required>
                 <option value=<?php echo $gender; ?>><?php echo $genderText; ?></option>
@@ -188,7 +188,7 @@
             }
             ?>
           
-            <div class="form-group">
+            <div class="input-group">
               <label for="age">Age:</label>
               <select class="form-control" name="age" id="age" required>
                 <option value=$age><?php echo $ageText; ?></option> 
@@ -203,7 +203,7 @@
             </div>
             
             <!-- Pet description -->
-            <div class="form-group">
+            <div class="input-group">
               <label for="description">Pet Description:</label>
               <textarea class="form-control" name="description" id="description" rows="5" cols="50"><?php echo $description; ?></textarea>
             </div>
