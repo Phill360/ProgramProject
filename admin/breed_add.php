@@ -28,14 +28,14 @@
             
             <!-- Enter breed name -->
             <div class="input-group">
-              <span class="input-group-addon">Breed</span>
-              <input id="petName" type="text" class="form-control" name="breedName" placeholder="Enter breed name" required>
+              <label for="type">Breed name:</label>
+              <input id="breedName" type="text" class="form-control" name="breedName" placeholder="Enter breed name" required>
             </div>
             <br>
 
             <!-- Enter breed size -->
             <div class="input-group">
-              <span class="input-group-addon">Size</span>
+              <label for="type">Size:</label>
               <select class="form-control" id="breedSize" name="breedSize" required>
                 <option>Extra small</option>
                 <option>Small</option>
@@ -48,7 +48,7 @@
 
             <!-- Enter breed temperament -->
             <div class="input-group">
-              <span class="input-group-addon">Temperament</span>
+              <label for="type">Temperament:</label>
               <select class="form-control" id="temperament" name="temperament" required>
                 <option>Easy Going</option>
                 <option>Playful</option>
@@ -59,12 +59,10 @@
             
             <!-- Enter breed active -->
             <div class="input-group">
-              <span class="input-group-addon">Active</span>
+              <label for="type">How active:</label>
               <select class="form-control" id="active" name="active" required>
                 <option>Lap dog</option>
-                <option>--</option>
                 <option>Active</option>
-                <option>--</option>
                 <option>Sports star</option>
               </select>
             </div>
@@ -72,7 +70,7 @@
             
             <!-- Enter breed fee -->
             <div class="input-group">
-              <span class="input-group-addon">Adoption Fee</span>
+              <label for="type">Adoption fee:</label>
               <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee" required>
             </div>
             <br>
