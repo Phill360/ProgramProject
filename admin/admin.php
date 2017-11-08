@@ -76,7 +76,11 @@ include_once('./common.php');
     else if ($adminTool == 'editRemoveBreed')
     {?>
       <div><?php include 'breed_select.php' ?></div>
-  <?php } 
+  <?php }
+    else if ($adminTool == 'editBreed')
+    {?>
+      <div><?php include 'breed_edit.php' ?></div>
+  <?php }
     else if ($adminTool == 'addPet')
     {?>
       <div><?php include 'pet_add.php' ?></div>
