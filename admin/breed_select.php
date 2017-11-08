@@ -60,7 +60,6 @@
             </tbody>
             </table>
             <?php
-            
             mysqli_close($connection);
             ?>
           </form>
@@ -68,6 +67,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>

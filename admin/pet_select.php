@@ -22,7 +22,7 @@
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
-	          $query = "SELECT * FROM animals";
+	          $query = "SELECT rspcaID, petName FROM animals";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
@@ -43,7 +43,6 @@
               </thead>
               <tbody>
 	          <?php
-	          
             // List animals in database
             while($row = mysqli_fetch_assoc($result)) 
             {
@@ -60,16 +59,12 @@
             </tbody>
             </table>
             <?php
-            
             mysqli_close($connection);
             ?>
-
-
           </form>
         </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
