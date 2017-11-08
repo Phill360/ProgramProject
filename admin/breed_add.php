@@ -20,7 +20,7 @@
             <!-- Select cat or dog -->
             <div class="input-group">
               <label for="type">Species:</label>
-              <select class="form-control" id="species" name="species" required>
+              <select class="form-control" id="breedSpecies" name="breedSpecies" required>
                 <option>Cat</option>
                 <option>Dog</option>
               </select>
@@ -50,7 +50,7 @@
             <!-- Enter breed temperament -->
             <div class="input-group">
               <label for="type">Temperament:</label>
-              <select class="form-control" id="temperament" name="temperament" required>
+              <select class="form-control" id="breedTemperament" name="breedTemperament" required>
                 <option>Easy Going</option>
                 <option>Playful</option>
                 <option>Excitable</option>
@@ -61,7 +61,7 @@
             <!-- Enter breed active -->
             <div class="input-group">
               <label for="type">How active:</label>
-              <select class="form-control" id="active" name="active" required>
+              <select class="form-control" id="breedActive" name="breedActive" required>
                 <option>Lap dog</option>
                 <option>Active</option>
                 <option>Sports star</option>
@@ -72,7 +72,7 @@
             <!-- Enter breed fee -->
             <div class="input-group">
               <label for="type">Adoption fee:</label>
-              <input id="breedFee" type="text" class="form-control" name="fee" placeholder="Enter adoption fee" required>
+              <input id="breedFee" type="text" class="form-control" name="breedFee" placeholder="Enter adoption fee" required>
             </div>
             <br>
             

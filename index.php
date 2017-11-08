@@ -142,7 +142,7 @@
   if(isset($_POST['removePetBtn']))
   {
     $rspcaID = $_POST['removePetBtn'];
-    remPet($rspcaID);
+    removePet($rspcaID);
     phpAlert("The pet was removed from the database.");
   }
   
@@ -150,12 +150,12 @@
   if (isset($_POST['addBreedBtn']))
   {
 		// Get breed input
-		$species = isset($_POST['species']) ? $_POST['species'] : '';
+		$breedSpecies = isset($_POST['breedSpecies']) ? $_POST['breedSpecies'] : '';
     $breedName = isset($_POST['breedName']) ? $_POST['breedName'] : '';
     $breedSize = isset($_POST['breedSize']) ? $_POST['breedSize'] : '';
-    $temperament = isset($_POST['temperament']) ? $_POST['temperament'] : '';
-    $active = isset($_POST['active']) ? $_POST['active'] : '';
-    $fee = isset($_POST['fee']) ? $_POST['fee'] : '';
+    $breedTemperament = isset($_POST['breedTemperament']) ? $_POST['breedTemperament'] : '';
+    $breedActive = isset($_POST['breedActive']) ? $_POST['breedActive'] : '';
+    $breedFee = isset($_POST['breedFee']) ? $_POST['breedFee'] : '';
     
     if($species == '')
     {
@@ -163,7 +163,7 @@
     } 
     else 
     {
-    addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee);
+      addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $breedActive, $breedFee);
     }
   }
   
@@ -171,21 +171,21 @@
   if (isset($_POST['updateBreedBtn']))
   {
     $breedID = $_POST['breedID'];
-    $type = $_POST['type'];
-    $size = $_POST['size'];
-    $temperament = $_POST['temperament'];
-    $active = $_POST['active'];
-    $name = $_POST['name'];
-    $fee = $_POST['fee'];
+    $breedType = $_POST['breedType'];
+    $breedSize = $_POST['breedSize'];
+    $breedTemperament = $_POST['breedTemperament'];
+    $breedActive = $_POST['breedActive'];
+    $breedName = $_POST['breedName'];
+    $breedFee = $_POST['breedFee'];
   
-    updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee);
+    updateBreed($breedID, $breedType, $breedSize, $breedTemperament, $breedActive, $breedName, $breedFee);
   }
   
-  if (isset($_POST['remBreedBtn']))
+  if (isset($_POST['removeBreedBtn']))
   {
 		// Get delete breed input
     $breedID = $_POST['breedID'];
-    remBreed($breedID);
+    removeBreed($breedID);
   }
   
   /* Collect data from sliders  */

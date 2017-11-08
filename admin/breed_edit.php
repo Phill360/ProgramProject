@@ -34,13 +34,13 @@
               // Get values for specific breed in database
               while($row = mysqli_fetch_assoc($result)) 
               {
-                $breedID = $row["breedID"];
-                $type = $row["type"];
-                $size = $row["size"];
-                $temperament = $row["temperament"];
-                $active = $row["active"];
-                $name = $row["name"];
-                $fee = $row["fee"];
+                $breedID = $row['breedID'];
+                $breedType = $row['type'];
+                $breedSize = $row['size'];
+                $breedTemperament = $row['temperament'];
+                $breedActive = $row['active'];
+                $breedName = $row['name'];
+                $breedFee = $row['fee'];
               } 
               mysqli_close($connection);
               ?>
@@ -57,7 +57,7 @@
             <!-- Select cat or dog -->
             <div class="input-group">
               <label for="type">Species:</label>
-              <select class="form-control" id="species" name="species" value="<?php echo $type ?>" required>
+              <select class="form-control" id="species" name="species" value="<?php echo $breedType ?>" required>
                 <option>Cat</option>
                 <option>Dog</option>
               </select>
@@ -67,7 +67,7 @@
             <!-- Enter breed name -->
             <div class="input-group">
               <label for="type">Breed name:</label>
-              <input id="breedName" type="text" class="form-control" name="breedName" value="<?php echo $name ?>" required>
+              <input id="breedName" type="text" class="form-control" name="breedName" value="<?php echo $breedName ?>" required>
             </div>
             <br>
 
@@ -75,7 +75,7 @@
             <div class="input-group">
               <label for="type">Size:</label>
               <select class="form-control" id="breedSize" name="breedSize" required>
-                <option value=<?php echo $size; ?>><?php echo $size; ?></option>
+                <option value=<?php echo $breedSize; ?>><?php echo $breedSize; ?></option>
                 <option>Extra small</option>
                 <option>Small</option>
                 <option>Medium</option>
@@ -89,7 +89,7 @@
             <div class="input-group">
               <label for="type">Temperament:</label>
               <select class="form-control" id="temperament" name="temperament" required>
-                <option value=<?php echo $temperament; ?>><?php echo $temperament; ?></option>
+                <option value=<?php echo $breedTemperament; ?>><?php echo $breedTemperament; ?></option>
                 <option>Easy Going</option>
                 <option>Playful</option>
                 <option>Excitable</option>
@@ -101,7 +101,7 @@
             <div class="input-group">
               <label for="type">How active:</label>
               <select class="form-control" id="active" name="active" required>
-                <option value=<?php echo $active; ?>><?php echo $active; ?></option>
+                <option value=<?php echo $breedActive; ?>><?php echo $breedActive; ?></option>
                 <option>Lap dog</option>
                 <option>Active</option>
                 <option>Sports star</option>
@@ -112,7 +112,7 @@
             <!-- Enter breed fee -->
             <div class="input-group">
               <label for="type">Adoption fee:</label>
-              <input id="breedFee" type="text" class="form-control" name="fee" value="<?php echo $fee ?>" required>
+              <input id="breedFee" type="text" class="form-control" name="fee" value="<?php echo $breedFee ?>" required>
             </div>
             <br>
             

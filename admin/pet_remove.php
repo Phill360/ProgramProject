@@ -26,14 +26,11 @@
             <br>
    
             <br>
-            <button type="submit" class="btn btn-primary" name="remPetBtn">Remove</button>
+            <button type="submit" class="btn btn-primary" name="removePetBtn">Remove</button>
           </form>
-          
         </div>
       </div>
-
     </div>
   </div>
-
 </body>
 </html>

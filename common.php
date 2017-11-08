@@ -602,7 +602,7 @@ function updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $des
 }
 
 /* This function removes a pet from the database */   
-function remPet($rspcaID) 
+function removePet($rspcaID) 
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
@@ -629,8 +629,8 @@ function remPet($rspcaID)
 }
 
 /* This function adds a breed to the database */  
-function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $active, $fee) {
-    
+function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $breedActive, $breedFee) 
+{
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
     
@@ -638,12 +638,12 @@ function addBreed($species, $breedName,$breedSize, $breedSize, $temperament, $ac
 	$query = "INSERT INTO breed ";
 	$query .= "(type, name, size, temperament, active, fee) ";
 	$query .= "VALUES (";
-	$query .= "'" . $species . "',";
+	$query .= "'" . $breedSpecies . "',";
 	$query .= "'" . $breedName . "',";
 	$query .= "'" . $breedSize . "',";
-	$query .= "'" . $temperament . "',";
-	$query .= "'" . $active . "',";
-	$query .= "'" . $fee . "'";
+	$query .= "'" . $breedTemperament . "',";
+	$query .= "'" . $breedActive . "',";
+	$query .= "'" . $breedFee . "'";
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
@@ -696,7 +696,8 @@ function updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee)
 }
 
 /* This function removes a breed from the database */ 
-function remBreed($breedID) {
+function removeBreed($breedID) 
+{
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
@@ -708,41 +709,21 @@ function remBreed($breedID) {
   $result = mysqli_query($connection, $query);
 
   // Test for query error
-  if($result) {
+  if($result) 
+  {
     $new_id = mysqli_insert_id($connection);
-  } else {
+  } 
+  else 
+  {
   	echo mysqli_error($connection);
   	mysqli_close($connection);
   	exit;
   }
-
+  
   // Close database connection
   mysqli_close($connection);
 }
   
-/* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
-function setMessage($message)
-{
-  $_SESSION['message'] = $message; 
-}
-  
-/* This is a diagnostic function, e.g. retrieve values of variables stored in $_SESSION  */
-function getMessage()
-{
-  $message = $_SESSION['message'];
-  return $message;
-}
-  
-// This is a diagnostic feature for writing information to console
-function debug_to_console($data) {
-  if (is_array($data))
-    $output = "<script>console.log( 'Debug Objects: " . implode(',', $data) . "' );</script>";
-  else
-    $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
- 
-  echo $output;
-}
-
 /* This function displays an image from the database */
 // THIS FUNCTION REQUIRES WORK - NOT CONNECTING WITH SCRIPT
 function displayimage($rspcaID)
@@ -1026,6 +1007,29 @@ function getNumberOfFavouritesForUser()
 function phpAlert($msg) 
 {
   echo '<script type="text/javascript">alert("'.$msg.'")</script>';
+}
+
+/* This is a diagnostic function, e.g. store values of variables in $_SESSION  */
+function setMessage($message)
+{
+  $_SESSION['message'] = $message; 
+}
+  
+/* This is a diagnostic function, e.g. retrieve values of variables stored in $_SESSION  */
+function getMessage()
+{
+  $message = $_SESSION['message'];
+  return $message;
+}
+  
+/* This is a diagnostic feature for writing information to console */
+function debug_to_console($data) {
+  if (is_array($data))
+    $output = "<script>console.log( 'Debug Objects: " . implode(',', $data) . "' );</script>";
+  else
+    $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+ 
+  echo $output;
 }
 	
 ?>
