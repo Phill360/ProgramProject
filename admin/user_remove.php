@@ -46,7 +46,7 @@
             {
               ?>
               <tr>
-				        <td><?php echo $row["userID"] ; ?> </td> 
+				        <td><?php echo $row["email"] ; ?> </td> 
 				        <td><button type="submit" class="btn btn-danger" name="confirmRemoveUserBtn" value=<?php echo $row["userID"]?>>Remove</button></td>
 			        </tr>
               <?php
