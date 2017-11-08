@@ -23,6 +23,20 @@
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
+            <!-- Enter pet ID -->
+            <div class="input-group">
+              <label>RSPCA ID:</label>
+              <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID"  required>
+            </div>
+            <br>
+            
+            <!-- Enter pet name -->
+            <div class="input-group">
+              <label>Name:</label>
+              <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name"  required>
+            </div>
+            <br>
+
             <!-- Select pet breed -->
             <div class="form-group">
               <label for="age">Breed:</label>
@@ -41,7 +55,6 @@
               		die("Database query failed.");
               	}
 	
-	
                 // Generate Breed List
                 while($row = mysqli_fetch_assoc($result)) {
                   // Need to make this only show breeds depending on the 
@@ -52,22 +65,7 @@
                 } 
                  mysqli_close($connection);
                 ?>
-                
               </select>
-             
-            </div>
-
-            <!-- Enter pet ID -->
-            <div class="input-group">
-              <label>RSPCA ID:</label>
-              <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID"  required>
-            </div>
-            <br>
-
-            <!-- Enter pet name -->
-            <div class="input-group">
-              <label>Name:</label>
-              <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name"  required>
             </div>
             <br>
             
