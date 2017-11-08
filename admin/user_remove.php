@@ -19,7 +19,7 @@
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
             <?php
-            // Connect AWS MYSQL Server
+            // Connect AWS MYSQL Server a
             require('_php/connect.php');
 
 	          $query = "SELECT userID, email FROM user";
