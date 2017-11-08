@@ -79,7 +79,7 @@
   if(isset($_POST['confirmRemoveUserBtn']))
   {
     $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
-    
+    echo $userID;
     deregisterUser($userID);
     phpAlert("The user has been removed from Paw Companions.");
   }
