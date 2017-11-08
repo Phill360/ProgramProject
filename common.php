@@ -121,7 +121,6 @@ function signInUser($email, $password)
   {
     $validUser = true;
     $usertype = 'admin';
-    $_SESSION['userID'] = 0;
   }
   else // Get user from database
   {

@@ -80,20 +80,8 @@
   {
     $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
     
-    if ($_SESSION['userID'] == 0)
-    {
-      $userID = $_SESSION['userID']; // Assign a userID = 0 for super admin user
-    }
-    
-    if ($userID != $_SESSION['userID'])
-    {
-      deregisterUser($userID);
-      phpAlert("The user has been removed from Paw Companions.");
-    }
-    else
-    {
-      phpAlert("You cannot remove yourself from Paw Companions.");
-    }
+    deregisterUser($userID);
+    phpAlert("The user has been removed from Paw Companions.");
   }
   
   // Add pet
