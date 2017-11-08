@@ -22,7 +22,7 @@
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
-	          $query = "SELECT * FROM breed";
+	          $query = "SELECT breedID, name FROM breed";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
@@ -50,7 +50,7 @@
               ?>
               <tr>
 				        <td><?php echo $row["breedID"] ; ?> </td> 
-				        <td><?php echo $row["breedName"] ; ?>	</td>
+				        <td><?php echo $row["name"] ; ?>	</td>
 				        <td><button type="submit" class="btn btn-success" name="editBreedBtn" value=<?php echo $row["breedID"]?>>Edit</button></td>
 				        <td><button type="submit" class="btn btn-danger" name="removeBreedBtn" value=<?php echo $row["breedID"]?>>Remove</button></td>
 			        </tr>
