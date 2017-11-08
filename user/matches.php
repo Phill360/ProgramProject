@@ -43,7 +43,7 @@
             <div class="center">
               <br>
               <div class="holder">
-                <?php displayimage($row["rspcaID"]); ?>
+                <?php displayImage($row["rspcaID"]); ?>
               </div>
               <p></p><br>
               <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>

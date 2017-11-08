@@ -46,7 +46,7 @@
                 // Connect AWS MYSQL Server
                 require('_php/connect.php');
 
-	              // 2. Perform Query
+	              // Perform Query
 	              $query = "SELECT breedID, type, name ";
 	              $query .= "FROM breed ";
 	              $result = mysqli_query($connection, $query);

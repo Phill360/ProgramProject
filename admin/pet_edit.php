@@ -120,7 +120,7 @@
             <label>Current image:</label>
             <br>
             <div class="holder">
-              <?php displayimage($_POST['editPetBtn']); ?>
+              <?php displayImage($_POST['editPetBtn']); ?>
             </div>
             <p></p><br>
   

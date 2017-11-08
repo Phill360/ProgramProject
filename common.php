@@ -661,7 +661,7 @@ function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $bre
 }
 
 /* This function updates a breed in the database */
-function updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee)
+function updateBreed($breedID, $breedType, $breedSize, $breedTemperament, $breedActive, $breedName, $breedFee)
 {
 	// Connect AWS MYSQL Server
   require_once('./_php/connect.php');
@@ -670,12 +670,12 @@ function updateBreed($breedID, $type, $size, $temperament, $active, $name, $fee)
 	$query = "UPDATE breed ";
 	$query .= "SET ";
 	$query .= "breedID ='" . $breedID . "',";
-	$query .= "type ='" . $type . "',";
-	$query .= "size ='" . $size . "',";
-	$query .= "temperament ='" . $temperament . "',";
-	$query .= "active ='" . $active . "',";
-	$query .= "name ='" . $name . "',";
-	$query .= "fee ='" . $fee . "'";
+	$query .= "type ='" . $breedType . "',";
+	$query .= "size ='" . $breedSize . "',";
+	$query .= "temperament ='" . $breedTemperament . "',";
+	$query .= "active ='" . $breedActive . "',";
+	$query .= "name ='" . $breedName . "',";
+	$query .= "fee ='" . $breedFee . "'";
 	$query .= "WHERE ";
   $query .= "breedID =";
   $query .= "'" . $breedID . "'";
@@ -726,7 +726,7 @@ function removeBreed($breedID)
   
 /* This function displays an image from the database */
 // THIS FUNCTION REQUIRES WORK - NOT CONNECTING WITH SCRIPT
-function displayimage($rspcaID)
+function displayImage($rspcaID)
 {
   // Connect AWS MYSQL Server
   $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
@@ -754,7 +754,7 @@ function displayimage($rspcaID)
 	mysqli_close($connection);
 }
 	
-// This function sets up the user session
+/* This function sets up the user session */
 function setupUserSession()
 {
 	// Connect AWS MYSQL Server
@@ -907,7 +907,7 @@ function getAnimalName($rspcaID)
 	return $petName;
 }
 	
-// This function gets the description of the pet from the database */
+/* This function gets the description of the pet from the database */
 function getAnimalDescription($rspcaID)
 {
 	// Connect AWS MYSQL Server
