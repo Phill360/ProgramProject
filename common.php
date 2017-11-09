@@ -1084,5 +1084,12 @@ function debug_to_console($data) {
  
   echo $output;
 }
+
+/* Get device */
+function getCurrentGridOption()
+  {
+    $answer = ('.device-check:visible').attr('data-device');
+    return $answer;
+  }
 	
 ?>

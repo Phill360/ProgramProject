@@ -12,12 +12,8 @@
 <div class='device-check visible-md' data-device='md'></div>
 <div class='device-check visible-lg' data-device='lg'></div>
 <?php
-  function get_current_grid_option()
-  {
-    $answer = ('.device-check:visible').attr('data-device');
-    return $answer;
-  }
-  phpAlert("The current device is: ".get_current_grid_option());
+  $device = getCurrentGridOption();
+  echo "test";
 ?>
   
   <div class="row">
