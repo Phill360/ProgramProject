@@ -278,7 +278,7 @@ function getUserID($email)
 {
 	include_once('_php/connect.php');
 	
-	$query = "SELECT userType FROM user WHERE userID = '" . $userID . "'";
+	$query = "SELECT userType FROM user WHERE userID = 33";
 	$result = mysqli_query($connection, $query);
 	
 	echo $result;
