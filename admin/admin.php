@@ -50,7 +50,7 @@ include_once('./common.php');
       <button type="submit" class="btn" name="editRemovePetBtn">Edit or remove a pet</button>
       <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
       <button type="submit" class="btn" name="editRemoveBreedBtn">Edit or remove a breed</button>
-      <button type="submit" class="btn" name="editUserBtn">Edit a user</button>
+      <button type="submit" class="btn" name="editUserBtn">Edit or remove a user</button>
     </form>
   </div>
 

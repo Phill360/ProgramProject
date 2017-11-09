@@ -13,7 +13,7 @@
       <!-- Remove table -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Remove a user from Paw Companions</div>
+          <div class="opensans">Edit or remove a user</div>
         </div>
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
