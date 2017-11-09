@@ -71,8 +71,8 @@
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     
     include_once('_php/connect.php');
-	
-	  $query = "SELECT userID FROM user WHERE email = '" . $email . "'";
+	  
+	  $query = "SELECT email FROM user WHERE userID = 33";
 	  $userID = mysqli_query($connection, $query);
 	  
 	  // Test for query error
@@ -85,7 +85,7 @@
     mysqli_close($connection);
     
     echo $userID;
-    promoteUser($userID);
+    // promoteUser($userID);
   }
   
   /* Admin user demotes another user from admin to normal user */
