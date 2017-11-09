@@ -7,13 +7,11 @@
 </head>
 
 <body>
-  <div class='device-check visible-xs' data-device='xs'></div>
-<div class='device-check visible-sm' data-device='sm'></div>
-<div class='device-check visible-md' data-device='md'></div>
-<div class='device-check visible-lg' data-device='lg'></div>
-<?php
-  $device = getCurrentGridOption();
-  echo "test";
+  
+  <?php
+if (stristr($_SERVER['HTTP_USER_AGENT'],'mobi')!==FALSE) {
+    echo 'mobile device detected';
+}
 ?>
   
   <div class="row">
