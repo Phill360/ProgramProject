@@ -84,10 +84,8 @@
   /* Use removes self from Paw Companions */
   if (isset($_POST['confirmDeregisterBtn']))
   {
-		// Deregister user
 		$userID = $_SESSION['userID'];
     deleteUser($userID);
-    signOutUser();
     phpAlert("You have deregisted yourself from Paw Companions.");
   }
   

@@ -342,6 +342,11 @@ function deleteUser($userID)
     while (mysqli_next_result($connection));
   }
   
+  if ($userID == $_SESSION['userID'])
+  {
+  	signOutUser();
+  }
+  
   // Close database connection
   mysqli_close($connection);
 }
