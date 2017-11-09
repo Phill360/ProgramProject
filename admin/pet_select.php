@@ -14,193 +14,88 @@
     <div class="row">
       <div class="col-sm-12">
         
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="opensans"><?php echo("Edit RSPCA ID: ". $_POST['editPetBtn']); ?></div>
-          </div>
-          <div class="panel-body">
-            <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                <?php
-                $rspcaID = $_POST['editPetBtn'];
+        <!-- Add a pet box -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="opensans">Add a pet</div>
+        </div>
+        <div class="panel-body">
+          <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
             
+            <!-- Enter pet ID -->
+            <div class="input-group">
+              <label>RSPCA ID:</label>
+              <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="Enter pet ID"  required>
+            </div>
+            <br>
+            
+            <!-- Enter pet name -->
+            <div class="input-group">
+              <label>Name:</label>
+              <input id="petName" type="text" class="form-control" name="petName" placeholder="Enter pet name"  required>
+            </div>
+            <br>
+
+            <!-- Select pet breed -->
+            <div class="input-group">
+              <label for="age">Breed:</label>
+              <select class="form-control" id="species" name="breedID" required>
+                
+                <?php
                 // Connect AWS MYSQL Server
                 require('_php/connect.php');
 
-	              $query = "SELECT * FROM animals WHERE rspcaID = $rspcaID";
+	              // Perform Query
+	              $query = "SELECT breedID, type, name ";
+	              $query .= "FROM breed ";
 	              $result = mysqli_query($connection, $query);
-            
-                // Test for query error
-                if(!$result) 
-                {
-                  die("Database query failed.");
-                }
+              	// Test for query error
+              	if(!$result) 
+              	{
+              		die("Database query failed.");
+              	}
 	
-                // Get values for specific pet database
-                while ($row = mysqli_fetch_assoc($result)) 
-                {
-                  $petName = $row["petName"];
-                  $breedID = $row["breedID"];
-                  $gender = $row["gender"];
-                  $imageName = $row["imageName"];
-                  $age = $row["age"];
-                  $description = $row["description"];
-                  $imageData = $row["imageData"];
-                }
-                mysqli_close($connection);
-                ?>
-              </div>
-          
-              <!-- Send RSPCA ID (user cannot edit) -->
-              <div class=hideMe>
-                <div class="input-group">
-                  <span class="input-group-addon">RSPCA ID</span>
-                  <input id="rspcaID" type="text" class="form-control" name="rspcaID" value=<?php echo $rspcaID; ?> required>
-                </div>
-              </div>
-            
-              <!-- Enter pet name -->
-              <div class="input-group">
-                <label>Name:</label>
-                <input id="petName" type="text" class="form-control" name="petName" value="<?php echo $petName ?>" required>
-              </div>
-              <br>
-            
-              <!-- Select breed -->
-              <?php
-          
-              // Connect AWS MYSQL Server
-              require('_php/connect.php');
-
-	            $query = "SELECT breedID, type, name FROM breed";
-	            $result = mysqli_query($connection, $query);
-            
-              // Test for query error
-              if(!$result) 
-              {
-                die("Database query failed.");
-              } 
-            
-              // Get default value for breed name
-              while($row = mysqli_fetch_assoc($result)) 
-              {
-                if ($row["breedID"] == $breedID)
-                {
-                  $breedName = $row["name"];
-                }
-              }
-              mysqli_close($connection);
-              ?>
-          
-              <div class="input-group">
-                <label>Breed:</label>
-                <select class="form-control" id="breedID" name="breedID" required>
-                <?php
-                  echo "<option value=\"".$breedID."\">".$breedName."</option>";
-            
-                  // Connect AWS MYSQL Server
-                  require('_php/connect.php');
-
-	                $query = "SELECT breedID, type, name FROM breed";
-	                $result = mysqli_query($connection, $query);
-            
-                  // Test for query error
-                  if(!$result) 
-                  {
-                    die("Database query failed.");
-                  }
-            
-                  // List breeds in database for dropdown menu
-                  while($row = mysqli_fetch_assoc($result)) 
-                  {
+                // Generate Breed List
+                while($row = mysqli_fetch_assoc($result)) {
+                  // Need to make this only show breeds depending on the 
+                  // whether Dog or cat is selected
+                  // if ($row["type"] == "Dog") {
                     echo "<option value=\"".$row["breedID"]."\">".$row["name"]."</option>" ;
-                  } 
-                  mysqli_close($connection);
-                  ?>
-                </select>
-              </div>
-              <br>
-          
-              <!-- Image selection -->
-              <label>Current image:</label>
-              <br>
-              <div class="holder">
-                <?php displayImage($_POST['editPetBtn']); ?>
-              </div>
-              <p></p><br>
-  
-              <label>Replace current image with..</label>
-              <br>
-              <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
-                <div class="holder">
-                  <div id="image-preview-div" style="display: none">
-                    <img id="preview-img" src="noimage">
-                  </div>
-                </div>
-                <br>
-
-                <div class="input-group">
-                  <input type="file" name="image" id="file">
-                </div>
-                <br>
-          
-                <!-- Gender selection -->
-                <?php 
-                if ($gender == 'F')
-                {
-                  $genderText = "Female";
-                }
-                else 
-                {
-                  $genderText = "Male";
-                }
-              ?>
-              <div class="input-group">
-                <label for="gender">Gender:</label>
-                <select class="form-control" name="gender" id="gender" required>
-                  <option value=<?php echo $gender; ?>><?php echo $genderText; ?></option>
-                  <option value="F">Female</option>
-                  <option value="M">Male</option>
-                </select>
-              </div>
-              <br>
+                  // }
+                } 
+                 mysqli_close($connection);
+                ?>
+              </select>
+            </div>
             
-              <!-- Age selection -->
-              <?php 
-              if ($age == 0.25)
-              {
-                $ageText = "-3 months";
-              }
-              elseif ($age == 0.5) 
-              {
-                $ageText = "3-6 months";
-              }
-              elseif ($age == 1) 
-              {
-                $ageText = "6-12 months";
-              }
-              elseif ($age == 2) 
-              {
-                $ageText = "2 Year";
-              }
-              elseif ($age == 3) 
-              {
-                $ageText = "3 Year";
-              }
-              elseif ($age == 4) 
-              {
-                $ageText = ">4 Year";
-              }
-              else 
-              {
-                $ageText = "5+ Year";
-              }
-            ?>
-          
+            <!-- Image selection -->
+            <label>Image:</label>
+            <br>
+            <form id="upload-image-form" action="" method="post" enctype="multipart/form-data"required>
+              <div class="holder">
+              <div id="image-preview-div" style="display: none">
+                <img id="preview-img" src="noimage">
+              </div>
+              <div class="input-group">
+                <input type="file" name="image" id="file" required>
+              </div>
+              </div>
+              <br><br>
+            
+            <!-- Gender selection -->
+            <div class="input-group">
+              <label for="gender">Gender:</label>
+              <select class="form-control" name="gender" id="gender" required>
+                <option value="F">Female</option>
+                <option value="M">Male</option>
+              </select>
+            </div>
+            <br>
+            
+            <!-- Age selection -->
             <div class="input-group">
               <label for="age">Age:</label>
               <select class="form-control" name="age" id="age" required>
-                <option value=$age><?php echo $ageText; ?></option> 
                 <option value="0.25">-3 months</option>
                 <option value="0.5">3-6 months</option>
                 <option value="1">6-12 months</option>
@@ -215,12 +110,14 @@
             <!-- Pet description -->
             <div class="form-group">
               <label for="description">Pet Description:</label>
-              <textarea class="form-control" name="description" id="description" rows="5" cols="50"><?php echo $description; ?></textarea>
+              <textarea class="form-control" name="description" id="description" rows="5" cols="50" required></textarea>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary" name="updatePetBtn">Update</button>
+         
+            <button type="submit" class="btn btn-primary" name="addPetBtn">Submit</button>
           </form>
         </div>
+      </div>
       </div>
       
       <!-- Remove a pet box -->
@@ -241,12 +138,11 @@
         </div>
       </div>
     </div>
-  </div>
-<?php
-}
-else
-{
-?>  
+  <?php
+  }
+    else
+  {
+  ?>  
     <div class="row">
     <div class="col-sm-12">
       <!-- Remove a pet box -->
