@@ -79,8 +79,7 @@
   if(isset($_POST['confirmRemoveUserBtn']))
   {
     $userID = isset($_POST['confirmRemoveUserBtn']) ? $_POST['confirmRemoveUserBtn'] : '';
-    echo($userID);
-    //removeUser($userID);
+    removeUser($userID);
     phpAlert("The user has been removed from Paw Companions.");
   }
   
