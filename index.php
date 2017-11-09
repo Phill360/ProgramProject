@@ -68,7 +68,7 @@
   
   if(isset($_POST['mobilePromoteUserBtn']))
   {
-    $email = isset($_POST['mobilePromoteUserBtn']) ? $_POST['mobilePromoteUserBtn'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
     echo $email;
     $userID = getUserID($email);
     promoteUser($userID);
@@ -83,7 +83,7 @@
   
   if(isset($_POST['mobileDemoteUserBtn']))
   {
-    $email = isset($_POST['mobileDemoteUserBtn']) ? $_POST['mobileDemoteUserBtn'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
     $userID = getUserID($email);
     demoteUser($userID);
   }
@@ -98,7 +98,7 @@
   
   if(isset($_POST['mobileConfirmRemoveUserBtn']))
   {
-    $email = isset($_POST['mobileConfirmRemoveUserBtn']) ? $_POST['mobileConfirmRemoveUserBtn'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
     $userID = getUserID($email);
     deleteUser($userID);
     phpAlert("The user has been removed from Paw Companions.");
