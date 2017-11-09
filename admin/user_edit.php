@@ -9,12 +9,35 @@
 <body>
   
   <?php
-if (stristr($_SERVER['HTTP_USER_AGENT'],'mobi')!==FALSE) {
-    echo 'mobile device detected';
-}
-?>
-  
-  <div class="row">
+  if (stristr($_SERVER['HTTP_USER_AGENT'],'mobi')!==FALSE) 
+  {
+  ?>  
+    <div class="row">
+    <div class="col-sm-12">
+      <!-- Promote user box -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="opensans">Promote normal user to admin user</div>
+        </div>
+        <div class="panel-body">
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="newAdminUserForm">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+          </div>
+          <br>
+            <button type="submit" class="btn btn-primary" name="createNewAdminUserBtn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
+  }
+  else
+  {
+  ?>  
+    <div class="row">
     <div class="col-sm-12">
       <!-- Remove table -->
       <div class="panel panel-default">
@@ -88,5 +111,8 @@ if (stristr($_SERVER['HTTP_USER_AGENT'],'mobi')!==FALSE) {
       </div>
     </div>
   </div>
+  <?php
+  }
+  ?>
 </body>
 </html>
