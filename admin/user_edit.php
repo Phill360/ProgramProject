@@ -22,7 +22,7 @@
             // Connect AWS MYSQL Server a
             require('_php/connect.php');
 
-	          $query = "SELECT userID, email FROM user";
+	          $query = "SELECT userID, email, userType FROM user";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
@@ -50,8 +50,7 @@
               <tr>
 				        <td><?php echo $row["email"]; ?> </td>
 				        <?php 
-				        $userID = $row['userID']; 
-				        if (getUserType($userID) == 'admin')
+				        if (echo $row['userType'] == 'admin')
 				        {
 				          ?>
 				          <td><button type="submit" class="btn" name="promoteUserBtn" value=<?php echo $row["userID"] ?>>Promote</button></td>
