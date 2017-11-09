@@ -49,7 +49,7 @@
       <!-- Remove user box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Demote admin user to normal user</div>
+          <div class="opensans">Remove a user</div>
         </div>
         <div class="panel-body">
           <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="removeUserForm">
