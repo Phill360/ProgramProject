@@ -79,40 +79,6 @@ function registerUser($firstname, $lastname, $email, $password)
   mysqli_close($connection);
 }
 
-/* This function deregisters a user */
-function deregisterUser($userID)
-{
-	require_once('./_php/connect.php');
-	
-	$query = "DELETE FROM favourites WHERE userID = $userID;";
-	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
-	$query .= "DELETE FROM user WHERE userID = $userID";
-	
-	// Execute multi query
-  if (mysqli_multi_query($connection, $query))
-  {
-    do
-    {
-      // Store first result set
-      if ($result=mysqli_store_result($connection)) 
-      {
-        // Fetch one and one row
-        while ($row=mysqli_fetch_row($result))
-        {
-          printf("%s\n",$row[0]);
-        }
-        // Free result set
-        mysqli_free_result($result);
-      }
-    }
-    while (mysqli_next_result($connection));
-  }
-  
-  signOutUser();
-  
-  mysqli_close($connection);
-}
-
 /* This function signs the user in */
 function signInUser($email, $password)
 {
@@ -169,6 +135,67 @@ function signInUser($email, $password)
     $_SESSION['validUser'] = false;
   }
   mysqli_close($connection);
+}
+
+/* This function sets up the user session */
+function setupUserSession()
+{
+	// Connect AWS MYSQL Server
+  require('./_php/connect.php');
+  
+  $email = $_SESSION['email'];
+  
+  // Getting user's userID
+  $query = "SELECT * "; 
+	$query .= "FROM user ";
+	$result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result)
+	{
+		die("5. Database query failed.");
+	}
+	
+	// Iterate through results to get the user ID 
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  // Match email to a row
+	  if ($row["email"] == $email)
+	  {
+	    $userID = $row["userID"];
+    }
+	}
+	  
+	// With the userID we now check if this user has visited the site previously. */
+  $query = "SELECT * "; 
+	$query .= "FROM userSearch ";
+	$result = mysqli_query($connection, $query);
+
+	// Test for query error
+	if(!$result)
+	{
+		die("6. Database query failed.");
+	}
+	else
+	{
+	  $count  = mysqli_num_rows($result);
+	  if ($count == 0)
+	  {
+      $_SESSION['userTool'] = 'matches'; // Temporarily change
+	  }
+	  else
+	  {
+      while ($row = mysqli_fetch_assoc($result))
+	    {
+	      // Match user ID to a row
+	      if ($row["userID"] == $userID)
+	      {
+	        $_SESSION['userTool'] = 'matches';
+        }
+	    }	    
+	  }
+	}
+	mysqli_close($connection);
 }
 
 /* This function unsets all session variables and logs the user out */
@@ -258,8 +285,43 @@ function demoteAdminUser($email)
   mysqli_close($connection);
 }
 
+/* This function deletes a user from Paw Companions */
+function deleteUser($userID)
+{
+	require_once('./_php/connect.php');
+	
+	$query = "DELETE FROM favourites WHERE userID = $userID;";
+	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
+	$query .= "DELETE FROM user WHERE userID = $userID";
+	
+	// Execute multi query
+  if (mysqli_multi_query($connection, $query))
+  {
+    do
+    {
+      // Store first result set
+      if ($result=mysqli_store_result($connection)) 
+      {
+        // Fetch one and one row
+        while ($row=mysqli_fetch_row($result))
+        {
+          printf("%s\n",$row[0]);
+        }
+        // Free result set
+        mysqli_free_result($result);
+      }
+    }
+    while (mysqli_next_result($connection));
+  }
+  
+  signOutUser();
+  
+  // Close database connection
+  mysqli_close($connection);
+}
+
 /* This function removes a user from Paw Companions */
-function removeUser($userID)
+function remove($userID)
 {
 	// Connect AWS MYSQL Server
   require_once('./_php/connect.php');
@@ -515,10 +577,12 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
-	if($result) {
+	if($result) 
+	{
 	  $new_id = mysqli_insert_id($connection);
-
-	} else {
+	} 
+	else 
+	{
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
@@ -542,10 +606,12 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
   $result = mysqli_query($connection, $query);
 
   // Test for query error
-  if($result) {
+  if($result) 
+  {
     $new_id = mysqli_insert_id($connection);
-
-  } else {
+  } 
+  else 
+  {
   	echo mysqli_error($connection);
   	mysqli_close($connection);
   	exit;
@@ -578,10 +644,12 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
-	if($result) {
+	if($result) 
+	{
 	  $new_id = mysqli_insert_id($connection);
-
-	} else {
+	} 
+	else 
+	{
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
@@ -612,10 +680,12 @@ function updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $des
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
-	if($result) {
+	if($result) 
+	{
 	  $new_id = mysqli_insert_id($connection);
-
-	} else {
+	} 
+	else 
+	{
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
@@ -639,10 +709,12 @@ function removePet($rspcaID)
   $result = mysqli_query($connection, $query);
 
   // Test for query error
-  if($result) {
+  if($result) 
+  {
     $new_id = mysqli_insert_id($connection);
-
-  } else {
+  } 
+  else 
+  {
   	echo mysqli_error($connection);
   	mysqli_close($connection);
   	exit;
@@ -721,10 +793,12 @@ function updateBreed($breedID, $breedType, $breedSize, $breedTemperament, $breed
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
-	if($result) {
+	if($result) 
+	{
 	  $new_id = mysqli_insert_id($connection);
-
-	} else {
+	} 
+	else 
+	{
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
@@ -789,67 +863,6 @@ function displayImage($rspcaID)
 	while ($row = mysqli_fetch_array($result)) 
 	{
 		echo '<img src="data:image;base64, '.$row['imageData']. ' ">';
-	}
-	mysqli_close($connection);
-}
-	
-/* This function sets up the user session */
-function setupUserSession()
-{
-	// Connect AWS MYSQL Server
-  require('./_php/connect.php');
-  
-  $email = $_SESSION['email'];
-  
-  // Getting user's userID
-  $query = "SELECT * "; 
-	$query .= "FROM user ";
-	$result = mysqli_query($connection, $query);
-	  
-	// Test for query error
-	if(!$result)
-	{
-		die("5. Database query failed.");
-	}
-	
-	// Iterate through results to get the user ID 
-	while ($row = mysqli_fetch_assoc($result))
-	{
-	  // Match email to a row
-	  if ($row["email"] == $email)
-	  {
-	    $userID = $row["userID"];
-    }
-	}
-	  
-	// With the userID we now check if this user has visited the site previously. */
-  $query = "SELECT * "; 
-	$query .= "FROM userSearch ";
-	$result = mysqli_query($connection, $query);
-
-	// Test for query error
-	if(!$result)
-	{
-		die("6. Database query failed.");
-	}
-	else
-	{
-	  $count  = mysqli_num_rows($result);
-	  if ($count == 0)
-	  {
-      $_SESSION['userTool'] = 'matches'; // Temporarily change
-	  }
-	  else
-	  {
-      while ($row = mysqli_fetch_assoc($result))
-	    {
-	      // Match user ID to a row
-	      if ($row["userID"] == $userID)
-	      {
-	        $_SESSION['userTool'] = 'matches';
-        }
-	    }	    
-	  }
 	}
 	mysqli_close($connection);
 }

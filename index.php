@@ -79,7 +79,7 @@
   if(isset($_POST['confirmRemoveUserBtn']))
   {
     $userID = isset($_POST['confirmRemoveUserBtn']) ? $_POST['confirmRemoveUserBtn'] : '';
-    removeUser($userID);
+    deleteUser($userID);
     phpAlert("The user has been removed from Paw Companions.");
   }
   
@@ -230,8 +230,8 @@
   {
 		// Deregister user
 		$userID = $_SESSION['userID'];
-    deregisterUser($userID);
-    phpAlert("You have successfully deregisted from Paw Companions.");
+    deleteUser($userID);
+    phpAlert("You have deregisted yourself from Paw Companions.");
   }
 ?>
 
