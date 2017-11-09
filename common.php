@@ -278,7 +278,7 @@ function getUserID($email)
 {
 	include_once('_php/connect.php');
 	
-	$query = "SELECT firstName FROM user WHERE email = '" . $email . "'";
+	$query = "SELECT userID, email FROM user WHERE email = '" . $email . "'";
 	echo $query;
 	$result = mysqli_query($connection, $query);
 	
