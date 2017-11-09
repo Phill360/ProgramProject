@@ -62,40 +62,20 @@ include_once('./common.php');
           <div class="opensans">Search</div>
         </div>
         <div class="panel-body">
-          
           <div class="container">
-	        <div class="row">
-		      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          
-          <div class="input-group" id="adv-search">
-            <input type="text" class="form-control" placeholder="Search" />
-            <div class="input-group-btn">
-              <div class="btn-group" role="group">
-                <div class="dropdown dropdown-lg">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                  <div class="dropdown-menu dropdown-menu-right" role="menu">
-                    <form class="form-horizontal" role="form">
-                      <div class="form-group">
-                        <label for="filter">Filter by</label>
-                        <select class="form-control">
-                          <option value="0" selected>Pets</option>
-                          <option value="1">Breeds</option>
-                          <option value="2">Users</option>
-                        </select>
-                      </div>
-                      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                    </form>
-                  </div>
+	          <div class="row">
+              <div id="custom-search-input">
+                <div class="input-group col-md-6">
+                  <input type="text" class="  search-query form-control" placeholder="Search" />
+                    <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button">
+                      <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
                 </div>
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
               </div>
-            </div>
-          </div>  
-          
+	          </div>
           </div>
-          </div>
-          </div>
-          
         </div>
       </div>  
     </div>
