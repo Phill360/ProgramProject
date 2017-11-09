@@ -1,6 +1,5 @@
 <?php
-	include('./common.php');
-	include('./common2.php');
+	include_once('./common.php');
 
 	
 	$status = checkStatus();
