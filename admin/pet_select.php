@@ -18,7 +18,7 @@
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
-	          $query = "SELECT rspcaID, petName FROM animals";
+	          $query = "SELECT rspcaID FROM animals";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
@@ -77,7 +77,7 @@
             // Connect AWS MYSQL Server
             require('_php/connect.php');
 
-	          $query = "SELECT rspcaID FROM animals";
+	          $query = "SELECT rspcaID, petName FROM animals";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
