@@ -76,7 +76,7 @@
 	  $userID = mysqli_query($connection, $query);
 	  
 	  // Test for query error
-	  if(!$result) 
+	  if(!$userID) 
 	  {
 		  die("Database query failed.");
 	  }
@@ -85,7 +85,7 @@
     mysqli_close($connection);
     
     echo $userID;
-    //promoteUser($userID);
+    promoteUser($userID);
   }
   
   /* Admin user demotes another user from admin to normal user */
