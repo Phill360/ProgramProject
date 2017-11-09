@@ -278,12 +278,12 @@ function getUserID($email)
 {
 	include_once('_php/connect.php');
 
-	if (!mysql_ping($connection)) 
-	{
-    echo 'Lost connection, exiting after query #1';
-    exit;
-  }
-  mysql_free_result($result);  
+	/* check if server is alive */
+if ($mysqli->ping()) {
+    printf ("Our connection is ok!\n");
+} else {
+    printf ("Error: %s\n", $mysqli->error);
+}  
 	
 	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
