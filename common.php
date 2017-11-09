@@ -277,14 +277,26 @@ function getUserType($userID)
 function getUserID($email)
 {
 	include_once('_php/connect.php');
-	$mysqli->close();
 
-	/* check if server is alive */
-if ($mysqli->ping()) {
-    echo ("Our connection is ok!");
-} else {
-    echo ("Error: ". $mysqli->error);
-}  
+	/* check connection */
+  if (mysqli_connect_errno()) 
+  {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+  }
+
+  /* check if server is alive */
+  if (mysqli_ping($connection)) 
+  {
+    printf ("Our connection is ok!\n");
+  } 
+  else 
+  {
+    printf ("Error: %s\n", mysqli_error($connection));
+  }
+
+  /* close connection */
+  mysqli_close($connection);
 	
 	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
