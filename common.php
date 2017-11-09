@@ -276,7 +276,7 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
-	include('_php/connect.php');
+	include_once('_php/connect.php');
 	
 	echo("Input email is: ".$email);
 	
