@@ -282,7 +282,7 @@ function getUserID($email)
   // Kill connection
   mysqli_kill($connection,$t_id);
 	
-	// include_once('_php/connect.php');
+	include_once('_php/connect.php');
 
 	/* check connection */
   if (mysqli_connect_errno()) 
