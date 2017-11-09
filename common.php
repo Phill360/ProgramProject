@@ -314,37 +314,6 @@ function deleteUser($userID)
     while (mysqli_next_result($connection));
   }
   
-  signOutUser();
-  
-  // Close database connection
-  mysqli_close($connection);
-}
-
-/* This function removes a user from Paw Companions */
-function remove($userID)
-{
-	// Connect AWS MYSQL Server
-  require_once('./_php/connect.php');
-
-  // 2. Perform Query
-  $query = "DELETE FROM user ";
-  $query .= "WHERE ";
-  $query .= "userID =";
-  $query .= "'" . $userID . "'";
-  $result = mysqli_query($connection, $query);
-
-  // Test for query error
-  if($result) 
-  {
-    $new_id = mysqli_insert_id($connection);
-  } 
-  else 
-  {
-  	echo mysqli_error($connection);
-  	mysqli_close($connection);
-  	exit;
-  }
-  
   // Close database connection
   mysqli_close($connection);
 }
@@ -365,7 +334,6 @@ function checkNumberUsersInFile()
 	}
 	  
 	$size = 0;
-	  
 	while ($row = mysqli_fetch_assoc($result))
 	{
 	   $size += 1;
@@ -418,7 +386,7 @@ Small dogs 5kg-15kg: Australian Terrier, Shiba Inu.
 Extra small dogs <5kg: Chihuahua, Dachshund, Maltese, Yorkshire Terrier.
 Cats also match to extra small. According to Google adult cats weigh 3.6 - 4.5kg. */
 
-function submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender)
+function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender)
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');

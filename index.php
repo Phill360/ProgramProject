@@ -8,7 +8,7 @@
 	$message = getMessage();
 	echo($_SESSION['userID']);
 
-  // When the user registers
+  /* User registers */
   if (isset($_POST['registerBtn']))
   {
 		// Get user input
@@ -42,7 +42,7 @@
 		}
   }
   
-  // User sign in
+  /* User signs in */
   if (isset($_POST['signInBtn']))
   {
 		// Get user input
@@ -53,13 +53,13 @@
 		signInUser($email,$password);
   }
   
-  // When the user signs out
+  /* User signs out */
   if(isset($_POST['signOutBtn']))
   {
     signOutUser();
   }
   
-  // When the admin user promotes another user from normal to admin user
+  /* Admin user promotes another user from normal to admin user */
   if(isset($_POST['createNewAdminUserBtn']))
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
@@ -67,7 +67,7 @@
     phpAlert("The user has been promoted to admin user.");
   }
   
-  // When the admin user demotes another user from admin to normal user
+  /* Admin user demotes another user from admin to normal user */
   if(isset($_POST['demoteAdminUserBtn']))
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
@@ -75,7 +75,7 @@
     phpAlert("The user has been demoted to normal user.");
   }
   
-  // Remove a user from Paw Companions
+  /* Admin user removes another user from Paw Companions */
   if(isset($_POST['confirmRemoveUserBtn']))
   {
     $userID = isset($_POST['confirmRemoveUserBtn']) ? $_POST['confirmRemoveUserBtn'] : '';
@@ -83,7 +83,17 @@
     phpAlert("The user has been removed from Paw Companions.");
   }
   
-  // Add pet
+  /* Use removes self from Paw Companions */
+  if (isset($_POST['confirmDeregisterBtn']))
+  {
+		// Deregister user
+		$userID = $_SESSION['userID'];
+    deleteUser($userID);
+    signOutUser();
+    phpAlert("You have deregisted yourself from Paw Companions.");
+  }
+  
+  /* Add pet */
   if (isset($_POST['addPetBtn']))
   {
     if(getimagesize($_FILES['image']['tmp_name'])== FALSE)
@@ -117,7 +127,7 @@
   	}
   }
   
-  // Update pet
+  /* Update pet */
   if (isset($_POST['updatePetBtn']))
   {
     $rspcaID = $_POST['rspcaID'];
@@ -151,7 +161,7 @@
     }
   }
   
-  // Remove pet
+  /* Remove pet */
   if(isset($_POST['removePetBtn']))
   {
     $rspcaID = $_POST['removePetBtn'];
@@ -159,7 +169,7 @@
     phpAlert("The pet was removed from the database.");
   }
   
-  // Add breed
+  /* Add breed */
   if (isset($_POST['addBreedBtn']))
   {
 		// Get breed input
@@ -181,7 +191,7 @@
     }
   }
   
-  // Update breed
+  /* Update breed */
   if (isset($_POST['updateBreedBtn']))
   {
     $breedID = $_POST['breedID'];
@@ -196,7 +206,7 @@
     phpAlert("The breed was updated in the database.");
   }
   
-  // Remove breed
+  /* Remove breed */
   if (isset($_POST['removeBreedBtn']))
   {
     $breedID = $_POST['removeBreedBtn'];
@@ -204,7 +214,7 @@
     phpAlert("The breed was removed from the database.");
   }
   
-  /* Collect data from sliders  */
+  /* Collect values from sliders in questionnaire  */
   if (isset($_POST['submitQuestionnaireBtn']))
   {
 		// Get pet input
@@ -222,17 +232,10 @@
       $childrenHome = 0;
     }
     
-    submitQuestionnaireResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
+    submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
     phpAlert("Your responses have been submitted thank you.");
   }
   
-  if (isset($_POST['confirmDeregisterBtn']))
-  {
-		// Deregister user
-		$userID = $_SESSION['userID'];
-    deleteUser($userID);
-    phpAlert("You have deregisted yourself from Paw Companions.");
-  }
 ?>
 
 <!DOCTYPE html PUBLIC>
