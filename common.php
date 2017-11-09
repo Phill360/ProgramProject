@@ -283,6 +283,8 @@ function getUserID($email)
 	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
 	
+	echo $resut;
+	
 	// Test for query error
 	if(!$result) 
 	{
