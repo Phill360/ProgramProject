@@ -280,7 +280,7 @@ function getUserID($email)
 	
 	echo("Input email is: ".$email);
 	
-	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
+	$query = "SELECT userID FROM user WHERE email = 'la@gmail.com'";
 	$result = mysqli_query($connection, $query);
 	
 	echo("The result is: ".$result);
