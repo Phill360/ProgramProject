@@ -242,7 +242,7 @@ function checkStatus()
 /* This function checks whether the user is an admin user or a normal user */
 function checkUserType()
 {
-  if ($_SESSION['usertype'] == 'admin') // This value was set to '1'. Changed to 'admin'.
+  if ($_SESSION['usertype'] == 'admin')
   {
     $usertype = 'admin';
   }
@@ -252,6 +252,26 @@ function checkUserType()
   }
   return $usertype;
 }
+
+/* This function checks the type of a user, e.g. normal or admin user */
+function getUserType($userID)
+{
+	include_once('_php/connect.php');
+	
+	$query = "SELECT type FROM user WHERE userID = $userID";
+	$result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result) 
+	{
+		die("Database query failed.");
+	}
+	
+	return $result;
+	
+	// Close database connection
+  mysqli_close($connection);
+}
   
 /* This function switches a user from normal to admin */
 function createNewAdminUser($email)
@@ -260,12 +280,16 @@ function createNewAdminUser($email)
     
   $query = "UPDATE user SET userType='admin' WHERE email='" . $email . "'";
 
-  if (mysqli_query($connection, $query)) {
+  if (mysqli_query($connection, $query)) 
+  {
     echo "User updated successfully";
-  } else {
+  } 
+  else 
+  {
     echo "User not found: " . mysqli_error($connection);
-  };
+  }
     
+  // Close database connection
   mysqli_close($connection);
 }
   
@@ -282,6 +306,7 @@ function demoteAdminUser($email)
     echo "User not found: " . mysqli_error($connection);
   };
     
+  // Close database connection
   mysqli_close($connection);
 }
 

@@ -48,10 +48,25 @@
             {
               ?>
               <tr>
-				        <td><?php echo $row["email"] ; ?> </td>
-				        <td><button type="submit" class="btn btn-success" name="promoteUserBtn" value=<?php echo $row["userID"]?>>Promote</button></td>
-				        <td><button type="submit" class="btn btn-success" name="demoteUserBtn" value=<?php echo $row["userID"]?>>Demote</button></td>
-				        <td><button type="submit" class="btn btn-danger" name="confirmRemoveUserBtn" value=<?php echo $row["userID"]?>>Remove</button></td>
+				        <td><?php echo $row["email"]; ?> </td>
+				        <?php 
+				        $userID = $row["userID"]; 
+				        if (getUserType($userID) == 'admin')
+				        {
+				          ?>
+				          <td><button type="submit" class="btn" name="promoteUserBtn" value=<?php echo $row["userID"] ?>>Promote</button></td>
+				          <td><button type="submit" class="btn btn-success" name="demoteUserBtn" value=<?php echo $row["userID"] ?>>Demote</button></td>
+				          <?php
+				        }
+				        else 
+				        {
+				          ?>
+				          <td><button type="submit" class="btn btn-success" name="promoteUserBtn" value=<?php echo $row["userID"] ?>>Promote</button></td>
+				          <td><button type="submit" class="btn" name="demoteUserBtn" value=<?php echo $row["userID"] ?>>Demote</button></td>
+				          <?php
+				        }
+				        ?>
+				        <td><button type="submit" class="btn btn-danger" name="confirmRemoveUserBtn" value=$userID>Remove</button></td>
 			        </tr>
               <?php
             }

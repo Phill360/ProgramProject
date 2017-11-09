@@ -50,53 +50,43 @@ include_once('./common.php');
       <button type="submit" class="btn" name="editRemovePetBtn">Edit or remove a pet</button>
       <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
       <button type="submit" class="btn" name="editRemoveBreedBtn">Edit or remove a breed</button>
-      <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
-      <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
       <button type="submit" class="btn" name="editUserBtn">Edit a user</button>
     </form>
   </div>
 
   <?php 
-    if ($adminTool == 'promote')
-    {?>
-      <div><?php include 'promote_user.php' ?></div>
-    <?php }
-    else if ($adminTool == 'demote')
-    {?>
-      <div><?php include 'demote_user.php' ?></div>
-  <?php }
-    else if ($adminTool == 'editUser')
+    if ($adminTool == 'editUser')
     {?>
       <div><?php include 'user_edit.php' ?></div>
-  <?php } 
+    <?php } 
     else if ($adminTool == 'addBreed')
     {?>
       <div><?php include 'breed_add.php' ?></div>
-  <?php } 
+    <?php } 
     else if ($adminTool == 'editRemoveBreed')
     {?>
       <div><?php include 'breed_select.php' ?></div>
-  <?php }
+    <?php }
     else if ($adminTool == 'editBreed')
     {?>
       <div><?php include 'breed_edit.php' ?></div>
-  <?php }
+    <?php }
     else if ($adminTool == 'addPet')
     {?>
       <div><?php include 'pet_add.php' ?></div>
-  <?php } 
+    <?php } 
     else if ($adminTool == 'editRemovePet')
     {?>
       <div><?php include 'pet_select.php' ?></div>
-  <?php }
+    <?php }
     else if ($adminTool == 'editPet')
     {?>
       <div><?php include 'pet_edit.php' ?></div>
-  <?php }
+    <?php }
     else
     {?>
       <div><?php include 'pet_add.php' ?></div>
-  <?php } ?>
+    <?php } ?>
   
 </div>
 </body>
