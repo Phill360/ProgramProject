@@ -282,7 +282,7 @@ function getUserID($email)
 	echo $query;
 	$result = mysqli_query($connection, $query);
 	
-	echo("Query completed");
+	echo $result;
 	
 	// Test for query error
 	if(!$result) 
