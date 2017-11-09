@@ -284,7 +284,7 @@ function getUserID($email)
 	
 	//include_once('_php/connect.php');
 	
-	echo("Connect is running");
+	echo("New connect is running");
     $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
     $port=3306;
     $socket="";
