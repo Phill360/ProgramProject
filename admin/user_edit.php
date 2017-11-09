@@ -22,7 +22,7 @@
             // Connect AWS MYSQL Server a
             require('_php/connect.php');
 
-	          $query = "SELECT userID, firstName, lastName, userType FROM user";
+	          $query = "SELECT userID, email, userType FROM user";
 	          $result = mysqli_query($connection, $query);
             
             // Test for query error
@@ -35,10 +35,11 @@
 	          <table class="table table-hover">
 	            <thead>
                 <tr>
-                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">User</th>
-                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Promote</th>
-                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Demote</th>
-                  <th class="col-xs-3 col-sm-3 col-md-2 col-lg-2">Remove</th>
+                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">ID</th>
+                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">User</th>
+                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Promote</th>
+                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Demote</th>
+                  <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Remove</th>
                 </tr>
               </thead>
               <tbody>
@@ -48,7 +49,8 @@
             {
               ?>
               <tr>
-				        <td><?php echo $row['firstName']." ".$row['lastName']; ?> </td>
+				        <td><?php echo $row['userID']; ?> </td>
+				        <td><?php echo $row['email']; ?> </td>
 				        <?php 
 				        if ($row['userType'] == 'admin')
 				        {
