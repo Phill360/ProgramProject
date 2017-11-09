@@ -23,7 +23,7 @@
           <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="promoteUserForm">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            <input id="userID" type="text" class="form-control" name="userID" placeholder="User ID">
           </div>
           <br>
             <button type="submit" class="btn btn-primary" name="mobilePromoteUserBtn">Promote</button>

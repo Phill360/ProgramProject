@@ -68,8 +68,8 @@
   
   if(isset($_POST['mobilePromoteUserBtn']))
   {
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    promoteUser($email);
+    $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
+    promoteUser($userID);
   }
   
   /* Admin user demotes another user from admin to normal user */
