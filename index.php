@@ -81,6 +81,9 @@
 		  die("Database query failed.");
 	  }
     
+    // Close database connection
+    mysqli_close($connection);
+    
     echo $userID;
     //promoteUser($userID);
   }
