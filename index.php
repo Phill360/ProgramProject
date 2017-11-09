@@ -352,6 +352,7 @@
               <label><input type="checkbox" name="remember">Remember me</label>
             </div>
             <div class="opensans"><div class="textRegular">By registering, you agree to the <a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a></div></div>
+            <br>
             <button name="registerBtn" type="submit" class="btn btn-primary">Register</button>
           </form>
         </div>
