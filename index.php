@@ -594,9 +594,9 @@
   function get_current_grid_option()
   {
     $answer = ('.device-check:visible').attr('data-device');
-    echo $answer;
+    return $answer;
   }
-  get_current_grid_option();
+  echo get_current_grid_option();
 ?>
 </body>
 </html>
