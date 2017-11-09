@@ -1,6 +1,5 @@
 <?php
 	include_once('./common.php');
-	include_once('./common2.php');
 	
 	$status = checkStatus();
 	$usertype = checkUserType();
@@ -70,8 +69,7 @@
   if(isset($_POST['mobilePromoteUserBtn']))
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $userID = getUserID($email);
-    promoteUser($userID);
+    promoteUser($email);
   }
   
   /* Admin user demotes another user from admin to normal user */
