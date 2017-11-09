@@ -302,7 +302,7 @@ function getUserID($email)
   }
 	
 	$query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
-	// $query2 = "SELECT * FROM user";
+  echo mysql_errno($GLOBALS['dbh']) . ": " . mysql_error($GLOBALS['dbh']) . "\n";
 	$result = mysqli_query($connection, $query2);
 	
 	echo("The result is: ".$result);
