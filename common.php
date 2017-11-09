@@ -277,6 +277,7 @@ function getUserType($userID)
 function getUserID($email)
 {
 	include_once('_php/connect.php');
+	$mysqli->close();
 
 	/* check if server is alive */
 if ($mysqli->ping()) {
