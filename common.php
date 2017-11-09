@@ -276,11 +276,11 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
-	include_once('_php/connect.php');
+	include('_php/connect.php');
 	
 	echo("Input email is: ".$email);
 	
-	$query = "SELECT userID FROM user WHERE email = 'la@gmail.com'";
+	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
 	
 	echo("The result is: ".$result);
