@@ -68,8 +68,8 @@
   
   if(isset($_POST['mobilePromoteUserBtn']))
   {
-    echo("reaching promote"); //Strange
     $email = isset($_POST['mobilePromoteUserBtn']) ? $_POST['mobilePromoteUserBtn'] : '';
+    echo $email;
     $userID = getUserID($email);
     promoteUser($userID);
   }
