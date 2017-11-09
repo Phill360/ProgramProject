@@ -68,7 +68,7 @@ include_once('./common.php');
                 <div class="input-group col-md-6">
                   <input type="text" class="  search-query form-control" placeholder="Search" />
                     <span class="input-group-btn">
-                    <button class="btn btn-danger" type="button">
+                    <button class="btn btn-primary" type="button">
                       <span class=" glyphicon glyphicon-search"></span>
                     </button>
                   </span>
