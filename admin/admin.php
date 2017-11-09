@@ -56,13 +56,13 @@ include_once('./common.php');
 <div class="container">
   <div>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" id="adminToolSelectionForm">
+      <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
+      <button type="submit" class="btn" name="editRemovePetBtn">Edit or remove a pet</button>
+      <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
+      <button type="submit" class="btn" name="editRemoveBreedBtn">Edit or remove a breed</button>
       <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
       <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
       <button type="submit" class="btn" name="removeUserBtn">Remove a user</button>
-      <button type="submit" class="btn" name="addBreedBtn">Add a breed</button>
-      <button type="submit" class="btn" name="editRemoveBreedBtn">Edit or remove a breed</button>
-      <button type="submit" class="btn" name="addPetBtn">Add a pet</button>
-      <button type="submit" class="btn" name="editRemovePetBtn">Edit or remove a pet</button>
     </form>
   </div>
 

@@ -51,7 +51,8 @@
 	              $query .= "FROM breed ";
 	              $result = mysqli_query($connection, $query);
               	// Test for query error
-              	if(!$result) {
+              	if(!$result) 
+              	{
               		die("Database query failed.");
               	}
 	
