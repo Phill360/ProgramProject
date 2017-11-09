@@ -68,24 +68,8 @@
   
   if(isset($_POST['mobilePromoteUserBtn']))
   {
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    
-    include('_php/connect.php');
-	  
-	  $query = "SELECT email FROM user WHERE userID = 33";
-	  $userID = mysqli_query($connection, $query);
-	  
-	  // Test for query error
-	  if(!$userID) 
-	  {
-		  die("Database query failed.");
-	  }
-    
-    // Close database connection
-    mysqli_close($connection);
-    
-    echo $userID;
-    // promoteUser($userID);
+    $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
+    promoteUser($userID);
   }
   
   /* Admin user demotes another user from admin to normal user */
@@ -97,8 +81,7 @@
   
   if(isset($_POST['mobileDemoteUserBtn']))
   {
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $userID = getUserID($email);
+    $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
     demoteUser($userID);
   }
   
@@ -112,8 +95,7 @@
   
   if(isset($_POST['mobileConfirmRemoveUserBtn']))
   {
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $userID = getUserID($email);
+    $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
     deleteUser($userID);
     phpAlert("The user has been removed from Paw Companions.");
   }
