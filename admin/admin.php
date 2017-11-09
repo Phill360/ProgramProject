@@ -68,7 +68,7 @@ include_once('./common.php');
 		      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           
           <div class="input-group" id="adv-search">
-            <input type="text" class="form-control" placeholder="Search for snippets" />
+            <input type="text" class="form-control" placeholder="Search" />
             <div class="input-group-btn">
               <div class="btn-group" role="group">
                 <div class="dropdown dropdown-lg">
@@ -78,20 +78,10 @@ include_once('./common.php');
                       <div class="form-group">
                         <label for="filter">Filter by</label>
                         <select class="form-control">
-                          <option value="0" selected>All Snippets</option>
-                          <option value="1">Featured</option>
-                          <option value="2">Most popular</option>
-                          <option value="3">Top rated</option>
-                          <option value="4">Most commented</option>
+                          <option value="0" selected>Pets</option>
+                          <option value="1">Breeds</option>
+                          <option value="2">Users</option>
                         </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="contain">Author</label>
-                        <input class="form-control" type="text" />
-                      </div>
-                      <div class="form-group">
-                        <label for="contain">Contains the words</label>
-                        <input class="form-control" type="text" />
                       </div>
                       <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                     </form>
