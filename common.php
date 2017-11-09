@@ -277,15 +277,11 @@ function getUserType($userID)
 function getUserID($email)
 {
 	include_once('_php/connect.php');
-	mysqli_close($connection);
-	if ($connection) 
-	{
-    echo 'conected';
-  } 
-  else 
-  {
-  echo 'not conected';
-  }
+	//mysqli_close($connection);
+	if(mysql_ping($connection)) 
+  echo 'connected'; 
+ else 
+  echo 'disconnected';
 	
 	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
