@@ -277,6 +277,14 @@ function getUserType($userID)
 function getUserID($email)
 {
 	include_once('_php/connect.php');
+	if ($connection) 
+	{
+    echo 'conected';
+  } 
+  else 
+  {
+  echo 'not conected';
+  }
 	
 	echo("Input email is: ".$email);
 	
