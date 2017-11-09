@@ -276,37 +276,19 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
-	// Get thread id
-  $t_id=mysqli_thread_id($connection);
-
-  // Kill connection
-  mysqli_kill($connection,$t_id);
+	include_once('_php/connect.php');
 	
-	//include_once('_php/connect.php');
+	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
+	echo $query;
+	$result = mysqli_query($connection, $query);
 	
-	echo("New connect is running");
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
-	
-	$query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
-	echo $query2;
-	$result = mysqli_query($connection, $query2);
-	
-	echo("The result is: ".$result);
+	echo("Query completed");
 	
 	// Test for query error
 	if(!$result) 
 	{
 		die("Database query failed.");
 	}
-	
-	return $result;
 	
 	// Close database connection
   mysqli_close($connection);
