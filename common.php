@@ -296,7 +296,7 @@ function getUserID($email)
   }
 
   /* close connection */
-  mysqli_close($connection);
+  // mysqli_close($connection);
 	
 	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
