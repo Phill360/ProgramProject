@@ -295,6 +295,7 @@ function getUserID($email)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
 	
 	$query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
+	echo $query2;
 	$result = mysqli_query($connection, $query2);
 	
 	echo("The result is: ".$result);
