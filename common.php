@@ -277,7 +277,7 @@ function getUserType($userID)
 function getUserID($email)
 {
 	include_once('_php/connect.php');
-	mysqli_close($connection);
+	//mysqli_close($connection);
 	if ($connection) 
 	{
     echo 'conected';
