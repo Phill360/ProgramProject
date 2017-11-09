@@ -1,5 +1,6 @@
 <?php
 	include_once('./common.php');
+	include_once('./common2.php');
 	
 	$status = checkStatus();
 	$usertype = checkUserType();
@@ -68,7 +69,8 @@
   
   if(isset($_POST['mobilePromoteUserBtn']))
   {
-    $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $userID = getUserID($email);
     promoteUser($userID);
   }
   
