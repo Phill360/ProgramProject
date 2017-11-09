@@ -285,7 +285,7 @@ function getUserID($email)
 	echo $result;
 	
 	// Test for query error
-	if(!$result) 
+	if($result) 
 	{
 		die("Database query failed.");
 	}
