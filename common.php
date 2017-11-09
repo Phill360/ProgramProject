@@ -258,7 +258,7 @@ function getUserType($userID)
 {
 	include_once('_php/connect.php');
 	
-	$query = "SELECT firstName FROM user WHERE userID = '35'";
+	$query = "SELECT userType FROM user WHERE userID = '" . $userID . "'";
 	$result = mysqli_query($connection, $query);
 	  
 	// Test for query error
@@ -277,6 +277,7 @@ function getUserType($userID)
 function getUserID($email)
 {
 	include_once('_php/connect.php');
+	mysqli_close($connection);
 	if ($connection) 
 	{
     echo 'conected';
@@ -285,8 +286,6 @@ function getUserID($email)
   {
   echo 'not conected';
   }
-	
-	echo("Input email is: ".$email);
 	
 	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
