@@ -256,7 +256,7 @@ function checkUserType()
 /* This function checks the type of a user, e.g. normal or admin user */
 function getUserType($userID)
 {
-	include('_php/connect.php');
+	include_once('_php/connect.php');
 	
 	$query = "SELECT firstName FROM user WHERE userID = '35'";
 	$result = mysqli_query($connection, $query);
