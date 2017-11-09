@@ -75,7 +75,7 @@ include_once('./common.php');
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                   <div class="dropdown-menu dropdown-menu-right" role="menu">
                     <form class="form-horizontal" role="form">
-                      <div class="input-group">
+                      <div class="form-group">
                         <label for="filter">Filter by</label>
                         <select class="form-control">
                           <option value="0" selected>All Snippets</option>
