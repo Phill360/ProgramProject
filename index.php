@@ -1,6 +1,5 @@
 <?php
-	include_once('./common.php');
-
+	include('./common.php');
 	
 	$status = checkStatus();
 	$usertype = checkUserType();
