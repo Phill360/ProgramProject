@@ -596,7 +596,7 @@
     $answer = ('.device-check:visible').attr('data-device');
     return $answer;
   }
-  echo "The current device is: ".get_current_grid_option();
+  phpAlert("The current device is: ".get_current_grid_option());
 ?>
 </body>
 </html>
