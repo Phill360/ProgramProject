@@ -53,8 +53,8 @@ include_once('./common.php');
       <button type="submit" class="btn" name="editUserBtn">Edit or remove a user</button>
     </form>
     
-    <div class="row">
-		<div class="col-md-12">
+    
+		<div class="col-md-6">
             <div class="input-group" id="adv-search">
                 <input type="text" class="form-control" placeholder="Search for snippets" />
                 <div class="input-group-btn">
@@ -93,7 +93,7 @@ include_once('./common.php');
         </div>
 	</div>
     
-  </div>
+
 
   <?php 
     if ($adminTool == 'editUser')
