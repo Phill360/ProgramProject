@@ -69,7 +69,18 @@
   if(isset($_POST['mobilePromoteUserBtn']))
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $userID = getUserID($email);
+    
+    include_once('_php/connect.php');
+	
+	  $query = "SELECT userType FROM user WHERE email = '" . $email . "'";
+	  $userID = mysqli_query($connection, $query);
+	  
+	  // Test for query error
+	  if(!$result) 
+	  {
+		  die("Database query failed.");
+	  }
+    
     echo $userID;
     //promoteUser($userID);
   }
