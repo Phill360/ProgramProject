@@ -20,13 +20,45 @@
           <div class="opensans">Promote normal user to admin user</div>
         </div>
         <div class="panel-body">
-          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="newAdminUserForm">
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="promoteUserForm">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input id="email" type="text" class="form-control" name="email" placeholder="Email">
           </div>
           <br>
-            <button type="submit" class="btn btn-primary" name="createNewAdminUserBtn">Submit</button>
+            <button type="submit" class="btn btn-primary" name="mobilePromoteUserBtn">Promote</button>
+          </form>
+        </div>
+      </div>
+      <!-- Demote admin user box -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="opensans">Demote admin user to normal user</div>
+        </div>
+        <div class="panel-body">
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="demoteUserForm">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" name="mobileDemoteUserBtn">Demote</button>
+          </form>
+        </div>
+      </div>
+      <!-- Remove user box -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="opensans">Demote admin user to normal user</div>
+        </div>
+        <div class="panel-body">
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="removeUserForm">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" name="mobileConfirmRemoveUserBtn">Remove</button>
           </form>
         </div>
       </div>

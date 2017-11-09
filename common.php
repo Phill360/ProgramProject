@@ -272,6 +272,26 @@ function getUserType($userID)
 	// Close database connection
   mysqli_close($connection);
 }
+
+/* This function gets the userID from email address */
+function getUserID($email)
+{
+	include_once('_php/connect.php');
+	
+	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
+	$result = mysqli_query($connection, $query);
+	
+	// Test for query error
+	if(!$result) 
+	{
+		die("Database query failed.");
+	}
+	
+	return $result;
+	
+	// Close database connection
+  mysqli_close($connection);
+}
   
 /* This function switches a user from normal to admin */
 function promoteUser($userID)
@@ -1084,12 +1104,5 @@ function debug_to_console($data) {
  
   echo $output;
 }
-
-/* Get device */
-function getCurrentGridOption()
-  {
-    $answer = ('.device-check:visible').attr('data-device');
-    return $answer;
-  }
 	
 ?>

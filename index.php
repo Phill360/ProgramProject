@@ -66,6 +66,13 @@
     promoteUser($userID);
   }
   
+  if(isset($_POST['mobilePromoteUserBtn']))
+  {
+    $email = isset($_POST['mobilePromoteUserBtn']) ? $_POST['mobilePromoteUserBtn'] : '';
+    $userID = getUserID($email);
+    promoteUser($userID);
+  }
+  
   /* Admin user demotes another user from admin to normal user */
   if(isset($_POST['demoteUserBtn']))
   {
@@ -73,10 +80,25 @@
     demoteUser($userID);
   }
   
+  if(isset($_POST['mobileDemoteUserBtn']))
+  {
+    $email = isset($_POST['mobileDemoteUserBtn']) ? $_POST['mobileDemoteUserBtn'] : '';
+    $userID = getUserID($email);
+    demoteUser($userID);
+  }
+  
   /* Admin user removes another user from Paw Companions */
   if(isset($_POST['confirmRemoveUserBtn']))
   {
     $userID = isset($_POST['confirmRemoveUserBtn']) ? $_POST['confirmRemoveUserBtn'] : '';
+    deleteUser($userID);
+    phpAlert("The user has been removed from Paw Companions.");
+  }
+  
+  if(isset($_POST['mobileConfirmRemoveUserBtn']))
+  {
+    $email = isset($_POST['mobileConfirmRemoveUserBtn']) ? $_POST['mobileConfirmRemoveUserBtn'] : '';
+    $userID = getUserID($email);
     deleteUser($userID);
     phpAlert("The user has been removed from Paw Companions.");
   }
