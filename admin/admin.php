@@ -1,39 +1,14 @@
 <?php
 include_once('./common.php');
 
-  if(isset($_POST['promoteBtn']))
-  {
-    $adminTool = 'promote';
-  }
-
-  if(isset($_POST['demoteBtn']))
-  {
-    $adminTool = 'demote';
-  }
-  
-  if(isset($_POST['removeUserBtn']))
-  {
-    $adminTool = 'removeUser';
-  }
-
-  if(isset($_POST['addBreedBtn']))
-  {
-    $adminTool = 'addBreed';
-  }
-  
-  if(isset($_POST['editRemoveBreedBtn']))
-  {
-    $adminTool = 'editRemoveBreed';
-  }
-  
-  if(isset($_POST['editBreedBtn']))
-  {
-    $adminTool = 'editBreed';
-  }
-  
   if(isset($_POST['addPetBtn']))
   {
     $adminTool = 'addPet';
+  }
+  
+  if(isset($_POST['editPetBtn']))
+  {
+    $adminTool = 'editPet';
   }
   
   if(isset($_POST['editRemovePetBtn']))
@@ -41,9 +16,24 @@ include_once('./common.php');
     $adminTool = 'editRemovePet';
   }
   
-  if(isset($_POST['editPetBtn']))
+  if(isset($_POST['addBreedBtn']))
   {
-    $adminTool = 'editPet';
+    $adminTool = 'addBreed';
+  }
+  
+  if(isset($_POST['editBreedBtn']))
+  {
+    $adminTool = 'editBreed';
+  }
+  
+  if(isset($_POST['editRemoveBreedBtn']))
+  {
+    $adminTool = 'editRemoveBreed';
+  }
+  
+  if(isset($_POST['editUserBtn']))
+  {
+    $adminTool = 'editUser';
   }
 ?>
 
@@ -62,7 +52,7 @@ include_once('./common.php');
       <button type="submit" class="btn" name="editRemoveBreedBtn">Edit or remove a breed</button>
       <button type="submit" class="btn" name="promoteBtn">Promote a user</button>
       <button type="submit" class="btn" name="demoteBtn">Demote a user</button>
-      <button type="submit" class="btn" name="removeUserBtn">Remove a user</button>
+      <button type="submit" class="btn" name="editUserBtn">Edit a user</button>
     </form>
   </div>
 
@@ -75,9 +65,9 @@ include_once('./common.php');
     {?>
       <div><?php include 'demote_user.php' ?></div>
   <?php }
-    else if ($adminTool == 'removeUser')
+    else if ($adminTool == 'editUser')
     {?>
-      <div><?php include 'user_remove.php' ?></div>
+      <div><?php include 'user_edit.php' ?></div>
   <?php } 
     else if ($adminTool == 'addBreed')
     {?>
