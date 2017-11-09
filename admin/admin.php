@@ -53,6 +53,7 @@ include_once('./common.php');
       <button type="submit" class="btn" name="editUserBtn">Edit or remove a user</button>
     </form>
 	</div>
+	<br>
   <div>
     
       <div class="input-group" id="adv-search">
@@ -63,7 +64,7 @@ include_once('./common.php');
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
               <div class="dropdown-menu dropdown-menu-right" role="menu">
                 <form class="form-horizontal" role="form">
-                  <div class="form-group">
+                  <div class="input-group">
                     <label for="filter">Filter by</label>
                     <select class="form-control">
                       <option value="0" selected>All Snippets</option>
