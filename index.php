@@ -72,7 +72,7 @@
     
     include_once('_php/connect.php');
 	
-	  $query = "SELECT userType FROM user WHERE email = '" . $email . "'";
+	  $query = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	  $userID = mysqli_query($connection, $query);
 	  
 	  // Test for query error
