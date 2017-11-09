@@ -298,8 +298,9 @@ function getUserID($email)
   /* close connection */
   // mysqli_close($connection);
 	
-	$query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
-	$result = mysqli_query($connection, $query);
+	// $query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
+	$query2 = "SELECT * FROM user";
+	$result = mysqli_query($connection, $query2);
 	
 	echo("The result is: ".$result);
 	
