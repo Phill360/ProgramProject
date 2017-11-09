@@ -54,7 +54,7 @@ include_once('./common.php');
     </form>
 	</div>
   <div>
-    <div class="col-md-6">
+    
       <div class="input-group" id="adv-search">
         <input type="text" class="form-control" placeholder="Search for snippets" />
         <div class="input-group-btn">
@@ -89,9 +89,9 @@ include_once('./common.php');
           </div>
         </div>
       </div>
-    </div>
+    
   </div>
-  
+    
   <?php 
     if ($adminTool == 'editUser')
     {?>
