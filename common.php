@@ -316,9 +316,7 @@ function demoteUser($userID)
 /* This function deletes a user from Paw Companions */
 function deleteUser($userID)
 {
-	require('./_php/connect.php');
-	
-	echo $userID;
+	require_once('./_php/connect.php');
 	
 	$query = "DELETE FROM favourites WHERE userID = $userID;";
 	$query .= "DELETE FROM userSearch WHERE userID = $userID;";

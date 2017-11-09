@@ -65,7 +65,7 @@
 				          <?php
 				        }
 				        ?>
-				        <td><button type="submit" class="btn btn-danger" name="confirmRemoveUserBtn" value=$userID>Remove</button></td>
+				        <td><button type="submit" class="btn btn-danger" name="confirmRemoveUserBtn" value=<?php echo $row["userID"] ?>>Remove</button></td>
 			        </tr>
               <?php
             }
