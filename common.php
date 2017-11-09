@@ -278,7 +278,7 @@ function getUserID($email)
 {
 	include_once('_php/connect.php');
 
-	if (!mysql_ping($conn)) 
+	if (!mysql_ping($connection)) 
 	{
     echo 'Lost connection, exiting after query #1';
     exit;
