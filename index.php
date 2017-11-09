@@ -70,7 +70,7 @@
   {
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     
-    include_once('_php/connect.php');
+    include('_php/connect.php');
 	  
 	  $query = "SELECT email FROM user WHERE userID = 33";
 	  $userID = mysqli_query($connection, $query);
