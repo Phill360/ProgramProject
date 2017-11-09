@@ -72,7 +72,7 @@
     echo $email;
     $userID = getUserID($email);
     echo $userID;
-    promoteUser($userID);
+    //promoteUser($userID);
   }
   
   /* Admin user demotes another user from admin to normal user */
