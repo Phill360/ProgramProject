@@ -258,7 +258,7 @@ function getUserType($userID)
 {
 	include('_php/connect.php');
 	
-	$query = "SELECT userType FROM user WHERE userID = '" . $userID . "'";
+	$query = "SELECT firstName FROM user WHERE userID = '35'";
 	$result = mysqli_query($connection, $query);
 	  
 	// Test for query error
