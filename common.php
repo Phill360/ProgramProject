@@ -280,9 +280,9 @@ function getUserID($email)
 
 	/* check if server is alive */
 if ($mysqli->ping()) {
-    printf ("Our connection is ok!\n");
+    echo ("Our connection is ok!");
 } else {
-    printf ("Error: %s\n", $mysqli->error);
+    echo ("Error: ". $mysqli->error);
 }  
 	
 	$query = "SELECT userID FROM user WHERE email = '" . $email . "'";
