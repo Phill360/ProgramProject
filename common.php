@@ -318,6 +318,8 @@ function deleteUser($userID)
 {
 	require('./_php/connect.php');
 	
+	echo $userID;
+	
 	$query = "DELETE FROM favourites WHERE userID = $userID;";
 	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
 	$query .= "DELETE FROM user WHERE userID = $userID";
