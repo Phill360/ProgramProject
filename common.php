@@ -278,16 +278,16 @@ function getUserID($email)
 {
 	include_once('_php/connect.php');
 	
-	$query = "SELECT userType FROM user WHERE userID = 33";
+	$query = "SELECT userType FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
-	
-	echo $result;
-	
+	  
 	// Test for query error
-	if($result) 
+	if(!$result) 
 	{
 		die("Database query failed.");
 	}
+	
+	return $result;
 	
 	// Close database connection
   mysqli_close($connection);
