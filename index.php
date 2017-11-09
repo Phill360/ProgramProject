@@ -75,11 +75,12 @@
     phpAlert("The user has been demoted to normal user.");
   }
   
-  // Remove user from Paw Companions
+  // Remove a user from Paw Companions
   if(isset($_POST['confirmRemoveUserBtn']))
   {
-    $userID = isset($_POST['userID']) ? $_POST['userID'] : '';
-    removeUser($userID);
+    $userID = isset($_POST['confirmRemoveUserBtn']) ? $_POST['confirmRemoveUserBtn'] : '';
+    echo($userID);
+    //removeUser($userID);
     phpAlert("The user has been removed from Paw Companions.");
   }
   
