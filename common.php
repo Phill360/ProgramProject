@@ -282,7 +282,7 @@ function getUserID($email)
   // Kill connection
   mysqli_kill($connection,$t_id);
 	
-	include_once('_php/connect.php');
+	// include_once('_php/connect.php');
 
 	/* check connection */
   if (mysqli_connect_errno()) 
@@ -300,9 +300,6 @@ function getUserID($email)
   {
     printf ("Error: %s\n", mysqli_error($connection));
   }
-
-  /* close connection */
-  // mysqli_close($connection);
 	
 	$query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
 	// $query2 = "SELECT * FROM user";
