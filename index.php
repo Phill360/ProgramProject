@@ -64,7 +64,6 @@
   {
     $userID = isset($_POST['promoteUserBtn']) ? $_POST['promoteUserBtn'] : '';
     promoteUser($userID);
-    phpAlert("The user has been promoted to admin user.");
   }
   
   /* Admin user demotes another user from admin to normal user */
@@ -72,7 +71,6 @@
   {
     $userID = isset($_POST['demoteUserBtn']) ? $_POST['demoteUserBtn'] : '';
     demoteUser($userID);
-    phpAlert("The user has been demoted to normal user.");
   }
   
   /* Admin user removes another user from Paw Companions */

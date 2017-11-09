@@ -278,15 +278,15 @@ function promoteUser($userID)
 {
   include_once('_php/connect.php');
     
-  $query = "UPDATE user SET userType='admin' WHERE userID='" . $userID . "'";
+  $query = "UPDATE user SET userType='admin' WHERE userID ='".$userID."'";
 
   if (mysqli_query($connection, $query)) 
   {
-    echo "User updated successfully";
+    phpAlert("The user has been promoted to admin user.");
   } 
   else 
   {
-    echo "User not found: " . mysqli_error($connection);
+    phpAlert("User not found: ".mysqli_error($connection));
   }
     
   // Close database connection
@@ -298,15 +298,15 @@ function demoteUser($userID)
 {
   include_once('_php/connect.php');
     
-  $query = "UPDATE user SET userType='normal' WHERE userID='" . $userID . "'";
+  $query = "UPDATE user SET userType='normal' WHERE userID ='".$userID."'";
     
   if (mysqli_query($connection, $query)) 
   {
-    echo "User updated successfully";
+    phpAlert("The user has been demoted to normal user.");
   } 
   else 
   {
-    echo "User not found: " . mysqli_error($connection);
+    phpAlert("User not found: ".mysqli_error($connection));
   }
     
   // Close database connection

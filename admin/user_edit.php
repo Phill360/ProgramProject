@@ -50,7 +50,7 @@
               <tr>
 				        <td><?php echo $row["email"]; ?> </td>
 				        <?php 
-				        $userID = $row["userID"]; 
+				        $userID = echo $row['userID']; 
 				        if (getUserType($userID) == 'admin')
 				        {
 				          ?>
