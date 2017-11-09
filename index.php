@@ -71,6 +71,7 @@
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     echo $email;
     $userID = getUserID($email);
+    echo $userID;
     promoteUser($userID);
   }
   
