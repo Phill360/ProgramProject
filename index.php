@@ -585,6 +585,19 @@
     </div>
 <br>
 <div><?php include 'footer.php' ?></div>
+
+<div class='device-check visible-xs' data-device='xs'></div>
+<div class='device-check visible-sm' data-device='sm'></div>
+<div class='device-check visible-md' data-device='md'></div>
+<div class='device-check visible-lg' data-device='lg'></div>
+<?php
+  function get_current_grid_option()
+  {
+    $answer = ('.device-check:visible').attr('data-device');
+    return $answer;
+  }
+  echo $answer;
+?>
 </body>
 </html>
 

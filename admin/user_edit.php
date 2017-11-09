@@ -7,11 +7,6 @@
 </head>
 
 <body>
-  <div class='device-check visible-xs' data-device='xs'></div>
-  <div class='device-check visible-sm' data-device='sm'></div>
-  <div class='device-check visible-md' data-device='md'></div>
-  <div class='device-check visible-lg' data-device='lg'></div>
-
   <div class="row">
     <div class="col-sm-12">
       <!-- Remove table -->
@@ -86,14 +81,5 @@
       </div>
     </div>
   </div>
-  <?php
-    function getCurrentGridOption()
-    {
-      return $('.device-check:visible').attr('data-device')
-    }
-    
-    $screen = getCurrentGridOption();
-    echo $screen;
-  ?>
 </body>
 </html>
