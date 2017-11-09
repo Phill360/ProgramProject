@@ -53,7 +53,7 @@
 				        if ($row['userType'] == 'admin')
 				        {
 				          ?>
-				          <td><button type="submit" class="btn" name="promoteUserBtn" value=<?php echo $row["userID"] ?>>Promote</button></td>
+				          <td><button type="submit" class="btn disabled" name="promoteUserBtn" value=<?php echo $row["userID"] ?>>Promote</button></td>
 				          <td><button type="submit" class="btn btn-success" name="demoteUserBtn" value=<?php echo $row["userID"] ?>>Demote</button></td>
 				          <?php
 				        }
@@ -61,7 +61,7 @@
 				        {
 				          ?>
 				          <td><button type="submit" class="btn btn-success" name="promoteUserBtn" value=<?php echo $row["userID"] ?>>Promote</button></td>
-				          <td><button type="submit" class="btn" name="demoteUserBtn" value=<?php echo $row["userID"] ?>>Demote</button></td>
+				          <td><button type="submit" class="btn disabled" name="demoteUserBtn" value=<?php echo $row["userID"] ?>>Demote</button></td>
 				          <?php
 				        }
 				        ?>
