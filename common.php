@@ -282,27 +282,19 @@ function getUserID($email)
   // Kill connection
   mysqli_kill($connection,$t_id);
 	
-	include_once('_php/connect.php');
-
-	/* check connection */
-  if (mysqli_connect_errno()) 
-  {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
-  }
-
-  /* check if server is alive */
-  if (mysqli_ping($connection)) 
-  {
-    printf ("Our connection is ok!\n");
-  } 
-  else 
-  {
-    printf ("Error: %s\n", mysqli_error($connection));
-  }
+	//include_once('_php/connect.php');
+	
+	echo("Connect is running");
+    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+    $port=3306;
+    $socket="";
+    $user="proProg";
+    $DBpassword="pawprogramming";
+    $dbname="pawCompanion";
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+    	or die ('Could not connect to the database server' . mysqli_connect_error());
 	
 	$query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
-  echo mysql_errno($GLOBALS['dbh']) . ": " . mysql_error($GLOBALS['dbh']) . "\n";
 	$result = mysqli_query($connection, $query2);
 	
 	echo("The result is: ".$result);
