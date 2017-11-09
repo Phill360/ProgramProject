@@ -68,6 +68,7 @@
   
   if(isset($_POST['mobilePromoteUserBtn']))
   {
+    echo("reaching promote");
     $email = isset($_POST['mobilePromoteUserBtn']) ? $_POST['mobilePromoteUserBtn'] : '';
     $userID = getUserID($email);
     promoteUser($userID);
