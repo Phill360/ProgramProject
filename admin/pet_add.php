@@ -38,7 +38,7 @@
             <br>
 
             <!-- Select pet breed -->
-            <div class="form-group">
+            <div class="input-group">
               <label for="age">Breed:</label>
               <select class="form-control" id="species" name="breedID" required>
                 
