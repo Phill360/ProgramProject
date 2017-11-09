@@ -60,18 +60,18 @@
   }
   
   /* Admin user promotes another user from normal to admin user */
-  if(isset($_POST['createNewAdminUserBtn']))
+  if(isset($_POST['promoteUserBtn']))
   {
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    createNewAdminUser($email);
+    $userID = isset($_POST['promoteUserBtn']) ? $_POST['promoteUserBtn'] : '';
+    promoteUser($userID);
     phpAlert("The user has been promoted to admin user.");
   }
   
   /* Admin user demotes another user from admin to normal user */
-  if(isset($_POST['demoteAdminUserBtn']))
+  if(isset($_POST['demoteUserBtn']))
   {
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    demoteAdminUser($email);
+    $userID = isset($_POST['demoteUserBtn']) ? $_POST['demoteUserBtn'] : '';
+    demoteUser($userID);
     phpAlert("The user has been demoted to normal user.");
   }
   

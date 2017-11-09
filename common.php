@@ -274,11 +274,11 @@ function getUserType($userID)
 }
   
 /* This function switches a user from normal to admin */
-function createNewAdminUser($email)
+function promoteUser($userID)
 {
   include_once('_php/connect.php');
     
-  $query = "UPDATE user SET userType='admin' WHERE email='" . $email . "'";
+  $query = "UPDATE user SET userType='admin' WHERE userID='" . $userID . "'";
 
   if (mysqli_query($connection, $query)) 
   {
@@ -294,17 +294,20 @@ function createNewAdminUser($email)
 }
   
 /* This function demotes admin user to normal user */
-function demoteAdminUser($email)
+function demoteUser($userID)
 {
   include_once('_php/connect.php');
     
-  $query = "UPDATE user SET userType='normal' WHERE email='" . $email . "'";
+  $query = "UPDATE user SET userType='normal' WHERE userID='" . $userID . "'";
     
-  if (mysqli_query($connection, $query)) {
+  if (mysqli_query($connection, $query)) 
+  {
     echo "User updated successfully";
-  } else {
+  } 
+  else 
+  {
     echo "User not found: " . mysqli_error($connection);
-  };
+  }
     
   // Close database connection
   mysqli_close($connection);
