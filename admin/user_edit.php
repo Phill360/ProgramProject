@@ -50,7 +50,7 @@
               <tr>
 				        <td><?php echo $row["email"]; ?> </td>
 				        <?php 
-				        if (echo $row['userType'] == 'admin')
+				        if ($row['userType'] == 'admin')
 				        {
 				          ?>
 				          <td><button type="submit" class="btn" name="promoteUserBtn" value=<?php echo $row["userID"] ?>>Promote</button></td>
