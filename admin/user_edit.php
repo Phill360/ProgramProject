@@ -13,7 +13,6 @@
   <div class='device-check visible-lg' data-device='lg'></div>
   <?php 
     $screen = getCurrentGridOption();
-    echo $screen;
   ?>  
 
   <div class="row">
