@@ -276,6 +276,12 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
+	// Get thread id
+  $t_id=mysqli_thread_id($connection);
+
+  // Kill connection
+  mysqli_kill($connection,$t_id);
+	
 	include_once('_php/connect.php');
 
 	/* check connection */
@@ -298,8 +304,8 @@ function getUserID($email)
   /* close connection */
   // mysqli_close($connection);
 	
-	// $query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
-	$query2 = "SELECT * FROM user";
+	$query2 = "SELECT userID FROM user WHERE email = '" . $email . "'";
+	// $query2 = "SELECT * FROM user";
 	$result = mysqli_query($connection, $query2);
 	
 	echo("The result is: ".$result);
