@@ -1,4 +1,5 @@
 <?php
+session_start();
 /* This function gets the userID from email address */
 function getUserID($email)
 {
