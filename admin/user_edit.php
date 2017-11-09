@@ -11,7 +11,6 @@
   <div class='device-check visible-sm' data-device='sm'></div>
   <div class='device-check visible-md' data-device='md'></div>
   <div class='device-check visible-lg' data-device='lg'></div>
-  <?php echo(getCurrentGridOption()); ?>
 
   <div class="row">
     <div class="col-sm-12">
