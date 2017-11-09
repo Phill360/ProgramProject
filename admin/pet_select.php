@@ -17,7 +17,7 @@
         <!-- Add a pet box -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="opensans">Add a pet</div>
+          <div class="opensans">Edit a pet</div>
         </div>
         <div class="panel-body">
           <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post" enctype="multipart/form-data">
@@ -117,25 +117,26 @@
             <button type="submit" class="btn btn-primary" name="addPetBtn">Submit</button>
           </form>
         </div>
-      </div>
-      </div>
       
-      <!-- Remove a pet box -->
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="opensans">Remove a pet</div>
+      
+        <!-- Remove a pet box -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="opensans">Remove a pet</div>
+          </div>
+          <div class="panel-body">
+            <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
+              <div class="input-group">
+                <span class="input-group-addon">Pet ID</span>
+                <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="RSPCA ID">
+              </div>
+              <br>
+              <br>
+              <button type="submit" class="btn btn-primary" name="mobileRemovePetBtn">Remove</button>
+            </form>
+          </div>
         </div>
-        <div class="panel-body">
-          <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="post">
-            <div class="input-group">
-              <span class="input-group-addon">Pet ID</span>
-              <input id="petID" type="text" class="form-control" name="rspcaID" placeholder="RSPCA ID">
-            </div>
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary" name="mobileRemovePetBtn">Remove</button>
-          </form>
-        </div>
+      </div>
       </div>
     </div>
   <?php
