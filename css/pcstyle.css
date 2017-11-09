@@ -3,40 +3,85 @@
     background-color: #e6e6ff;
 }
 
-.footer 
-{
-  
-}
-
 .hideMe 
 {
    display: none;
 }
 
-.slackey {
+/* Fonts */
+.slackey 
+{
     font-family: 'Slackey', sans-serif;
 }
 
-.opensans {
+.opensans 
+{
   font-family: 'Open Sans', sans-serif;
 }
 
-.tocenter {
+/* Positioning */
+.tocenter 
+{
     margin: 0 auto;
 }
 
-.bold {
+.bold 
+{
 	font-weight: bold;
 }
 
-.orange {
+/* Colours */
+.orange 
+{
   color: #ec971f;
 }
 
-.black {
+.black 
+{
   color: #000000;
 }
 
+/* Search */
+.dropdown.dropdown-lg .dropdown-menu 
+{
+  margin-top: -1px;
+  padding: 6px 20px; 
+}
+
+.input-group-btn .btn-group 
+{
+  display: flex !important;
+}
+  
+.btn-group .btn 
+{
+  border-radius: 0;
+  margin-left: -1px;
+}
+ 
+.btn-group .btn:last-child 
+{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.btn-group .form-horizontal .btn[type="submit"] 
+{
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+ 
+.form-horizontal .form-group 
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+ 
+.form-group .form-control:last-child 
+{
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
 
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
@@ -83,195 +128,282 @@
 	}
 	
 	.holder 
-    {   
-      width: auto;
-      display: inline-block;    
-    }
+  {   
+    width: auto;
+    display: inline-block;    
+  }
 
-    .holder img 
-    {
-      width: 150px; /* Will shrink image to 150 pixels width */
-      height: auto;    
-    }
-    
+  .holder img 
+  {
+    width: 150px; /* Will shrink image to 150 pixels width */
+    height: auto;    
+  }
 }
 
 /* Portrait tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-	.textHuge {
+@media (min-width: 992px) and (max-width: 1199px) 
+{
+	.textHuge 
+	{
 		font-size: 77px;
 		line-height: normal;
 	}
-	.textxxLarge {
+	
+	.textxxLarge 
+	{
 		font-size: 42px;
 		line-height: normal;
 	}
-	.textxLarge {
+	
+	.textxLarge 
+	{
 		font-size: 28px;
 		line-height: normal;
 	}
-	.textLarge {
+	
+	.textLarge 
+	{
 		font-size: 26px;
 		line-height: normal;
 	}
-	.textxxMedium {
+	
+	.textxxMedium 
+	{
 		font-size: 18px;
 		line-height: normal;
 	}
-	.textxMedium {
+	
+	.textxMedium 
+	{
 		font-size: 16px;
 		line-height: normal;
 	}
-	.textMedium {
+	
+	.textMedium 
+	{
 		font-size: 14px;
 		line-height: normal;
 	}
-	.textRegular {
+	
+	.textRegular 
+	{
 		font-size: 12px;
 		line-height: normal;
 	}
-	.textSmall {
+	
+	.textSmall 
+	{
 		font-size: 11px;
 		line-height: normal;
 	}
-	.textMini {
+	
+	.textMini 
+	{
 		font-size: 9px;
 		line-height: normal;
 	}
 	
 	.holder 
-    {   
-      width: auto;
-      display: inline-block;    
-    }
+  {   
+    width: auto;
+    display: inline-block;    
+  }
 
-    .holder img 
-    {
-      width: 150px; /* Will shrink image to 150 pixels width */
-      height: auto;    
-    }
-
+  .holder img 
+  {
+    width: 150px; /* Will shrink image to 150 pixels width */
+    height: auto;    
+  }
 }
 
 /* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-
-	.textHuge {
+@media (min-width: 768px) and (max-width: 991px) 
+{
+	.textHuge 
+	{
 		font-size: 54px;
 		line-height: normal;
 	}
-	.textxxLarge {
+	
+	.textxxLarge 
+	{
 		font-size: 30px;
 		line-height: normal;
 	}
-	.textxLarge {
+	
+	.textxLarge 
+	{
 		font-size: 22px;
 		line-height: normal;
 	}
-	.textLarge {
+	
+	.textLarge 
+	{
 		font-size: 18px;
 		line-height: normal;
 	}
-	.textxxMedium {
+	
+	.textxxMedium 
+	{
 		font-size: 16px;
 		line-height: normal;
 	}
-	.textxMedium {
+	
+	.textxMedium 
+	{
 		font-size: 14px;
 		line-height: normal;
 	}
-	.textMedium {
+	
+	.textMedium 
+	{
 		font-size: 12px;
 		line-height: normal;
 	}
-	.textRegular {
+	
+	.textRegular 
+	{
 		font-size: 12px;
 		line-height: normal;
 	}
-	.textSmall {
+	
+	.textSmall 
+	{
 		font-size: 11px;
 		line-height: normal;
 	}
-	.textMini {
+	
+	.textMini 
+	{
 		font-size: 9px;
 		line-height: normal;
 	}
 	
 	.holder 
-    {   
-      width: auto;
-      display: inline-block;    
-    }
+  {   
+     width: auto;
+     display: inline-block;    
+  }
 
-    .holder img 
-    {
-      width: 200px; /* Will shrink image to 200 pixels width */
-      height: auto;    
-    }
-
+  .holder img 
+  {
+    width: 200px; /* Will shrink image to 200 pixels width */
+    height: auto;    
+  }
+  
+  #adv-search 
+  {
+    width: 500px;
+    margin: 0 auto;
+  }
+    
+  .dropdown.dropdown-lg
+  {
+    position: static !important;
+  }
+    
+  .dropdown.dropdown-lg .dropdown-menu 
+  {
+    min-width: 500px;
+  }
 }
 
 /* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-	.textHuge {
+@media (max-width: 767px) 
+{
+	.textHuge
+	{
 		font-size: 38px;
 		line-height: normal;
 	}
-	.textxxLarge {
+	
+	.textxxLarge 
+	{
 		font-size: 24px;
 		line-height: normal;
 	}
-	.textxLarge {
+	
+	.textxLarge 
+	{
 		font-size: 22px;
 		line-height: normal;
 	}
-	.textLarge {
+	
+	.textLarge 
+	{
 		font-size: 18px;
 		line-height: normal;
 	}
-	.textxxMedium {
+	
+	.textxxMedium 
+	{
 		font-size: 16px;
 		line-height: normal;
 	}
-	.textxMedium {
+	
+	.textxMedium 
+	{
 		font-size: 14px;
 		line-height: normal;
 	}
-	.textMedium {
+	
+	.textMedium 
+	{
 		font-size: 12px;
 		line-height: normal;
 	}
-	.textRegular {
+	
+	.textRegular 
+	{
 		font-size: 12px;
 		line-height: normal;
 	}
-	.textSmall {
+	
+	.textSmall 
+	{
 		font-size: 11px;
 		line-height: normal;
 	}
-	.textMini {
+	
+	.textMini 
+	{
 		font-size: 9px;
 		line-height: normal;
 	}
-	.img-responsive {
+	
+	.img-responsive 
+	{
 		max-width: 50%;
 		min-width: 300px;
 	}
 	
 	.holder 
-    {   
-      width: auto;
-      display: inline-block;    
-    }
+  {   
+    width: auto;
+    display: inline-block;    
+  }
 
-    .holder img 
-    {
-      width: 200px; /* Will shrink image to 200 pixels width */
-      height: auto;    
-    }
-
+  .holder img 
+  {
+    width: 200px; /* Will shrink image to 200 pixels width */
+    height: auto;    
+  }
+  
+  #adv-search 
+  {
+    width: 500px;
+    margin: 0 auto;
+  }
+    
+  .dropdown.dropdown-lg 
+  {
+    position: static !important;
+  }
+    
+  .dropdown.dropdown-lg .dropdown-menu 
+  {
+    min-width: 500px;
+  }
 }
 
 /* Landscape phones and smaller */
