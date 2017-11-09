@@ -213,7 +213,6 @@
               <textarea class="form-control" name="description" id="description" rows="5" cols="50"><?php echo $description; ?></textarea>
             </div>
             <br>
-
             <button type="submit" class="btn btn-primary" name="updatePetBtn">Update</button>
           </form>
         </div>
