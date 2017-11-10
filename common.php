@@ -929,7 +929,7 @@ function getNumberOfAnimals()
 	// Test for query error
 	if(!$result) 
 	{
-		die("8. Database query failed.");
+		die("Database query failed. getNumberOfAnimals()");
 	}
 	  
 	mysqli_close($connection);
