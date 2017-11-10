@@ -396,32 +396,6 @@ function checkNumberUsersInFile()
   return $size;
 }
   
-/* This function checks the number of pets in the database. */
-function checkNumberAnimalsInDatabase()
-{
-  // require_once('./_php/connect.php');
-    
-  $query = "SELECT * ";
-	$query .= "FROM animals ";
-  $result = mysqli_query($connection, $query);
-	  
-	// Test for query error
-	if(!$result) 
-	{
-	  die("4. Database query failed.");
-	}
-	  
-	$size = 0;
-	  
-	while ($row = mysqli_fetch_assoc($result))
-	{
-	  $size += 1;
-	}
-
-  mysqli_close($connection);
-  return $size;
-}
-  
 /* UPDATED Sunday 5th November
 $adultsHome (How many adults in the home?). Values: 1, 2, 3, 4 or 5. 
 $childrenHome (Are there children under 6?). Values: 0 = no, 1 = yes
@@ -464,7 +438,9 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 	if($result) {
 	  $new_id = mysqli_insert_id($connection);
 
-	} else {
+	} 
+	else 
+	{
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
@@ -561,7 +537,8 @@ function searchResult()
 	return $result;
 
 
-
+  // Close Connection
+  mysqli_close($connection);
 
 }
 
@@ -890,7 +867,7 @@ function displayImage($rspcaID)
 }
 	
 /* This function gets 12 animals from the database for pagination */
-// THIS FUNCTION MAY BE DEPRECATED
+// THIS FUNCTION WILL BE DEPRECATED
 function getLimitedNumberOfAnimalsFromDatabase($page1)
 {
   // Connect AWS MYSQL Server
