@@ -14,22 +14,30 @@
 <div class="row">
   
   <?php
-    
-  $page = $_GET["page"];
-  if($page == "" || $page == "1")
+  
+  // The $page variable stores the page number, i.e. which page the user is viewing, e.g. first, second, third page, etc. 
+  
+  $page = $_GET["page"]; // Get the page number from post. Page number is posted when the user clicks on pagination links bottom of page.
+  
+  // The $beginRecord variable stores the number of the first record it displays.
+  
+  if($page == "" || $page == "1") // If this is the first time or if the user has navigated back to the first page.
   {
-    $page1 = 0;
+    $beginRecord = 0; // The first page will begin with record 0.
   }
   else 
   {
-    $page1 = ($page*12)-12;
+    $beginRecord = ($page*12)-12; // The second page will begin with record 12, third page will begin with record 24, etc.
   }
   
-  // $result = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
-  $result = searchResult();
+  // $result = getLimitedNumberOfAnimalsFromDatabase($page1); // The function returns 12 records.
   
-  // Fetch pets from the 'animals' table
-  while($row = mysqli_fetch_assoc($result)) {
+  $result = searchResult(); // Presently this function returns all records from animals table. Need to limit this to 12.
+  
+  // searchResult() needs to return: rspcaID, petName, and description. 
+  
+  while($row = mysqli_fetch_assoc($result)) // Now iterate through result to display records across and down the screen according to the Bootstrap grid.
+  {
   ?>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="panel panel-default">
@@ -47,7 +55,7 @@
               </div>
               <p></p><br>
               <div class="slackey"><div class="textxxMedium"><?php echo $row["petName"]; ?></div></div>
-              <div class="opensans"><?php echo $row["description"]; ?></div>
+              <div class="opensans"><?php echo $row["description"]; ?></div> 
               <?php echo "<a href='view.php?PetId={$row['rspcaID']}'> More </a>"; ?>
             </div>
           </div>
@@ -56,16 +64,9 @@
   <?php
   }
       
-  $result2 = getAnimalsFromDatabase();
+  $size = getNumberOfAnimals(); // Get the number of animals in the database.
 	
-	// Count number of animals in database
-	$size = 0;
-	while ($row = mysqli_fetch_assoc($result2))
-	{
-	  $size += 1;
-	}
-	
-	$a = ceil($size/12); // Number of pages
+	$a = ceil($size/12); // The number of animals ($size) divided by 12 will tell us how many pages there will be.
   ?>
   
 </div>

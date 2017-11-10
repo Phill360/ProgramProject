@@ -722,7 +722,7 @@ function removePet($rspcaID)
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
 
-  // 2. Perform Query
+  // Perform Query
   $query = "DELETE FROM animals ";
   $query .= "WHERE ";
   $query .= "rspcaID=";
@@ -860,6 +860,7 @@ function removeBreed($breedID)
   
 /* This function displays an image from the database */
 // THIS FUNCTION REQUIRES WORK - NOT CONNECTING WITH SCRIPT
+// This function is called from matches.php
 function displayImage($rspcaID)
 {
   // Connect AWS MYSQL Server
@@ -915,23 +916,15 @@ function getLimitedNumberOfAnimalsFromDatabase($page1)
 	mysqli_close($connection);
 }
 	
-/* Get all animals from the database */
-// THIS FUNCTION MAY BE DEPRECATED
-function getAnimalsFromDatabase()
+/* This function counts the number of animals in the database */
+function getNumberOfAnimals()
 {
 	// Connect AWS MYSQL Server
-  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-  $port=3306;
-  $socket="";
-  $user="proProg";
-  $DBpassword="pawprogramming";
-  $dbname="pawCompanion";
-  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
-	  
-	// Get number of pets in database
-	$query = "SELECT * FROM animals";
-	$result = mysqli_query($connection, $query);
+  require_once('./_php/connect.php');
+  
+  // Perform query
+  $query = "SELECT COUNT(*) FROM animals";
+  $result = mysqli_query($connection, $query);
 	  
 	// Test for query error
 	if(!$result) 
@@ -942,7 +935,7 @@ function getAnimalsFromDatabase()
 	mysqli_close($connection);
 	return $result;
 }
-	
+
 /* This function gets the name of the pet from the database */
 function getAnimalName($rspcaID)
 {
