@@ -841,17 +841,19 @@ function removeBreed($breedID)
 function displayImage($rspcaID)
 {
   // Connect AWS MYSQL Server
-  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-  $port=3306;
-  $socket="";
-  $user="proProg";
-  $DBpassword="pawprogramming";
-  $dbname="pawCompanion";
-  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    or die ('Could not connect to the database server' . mysqli_connect_error());
+  require_once('./_php/connect.php');
+  
+  // $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  // $port=3306;
+  // $socket="";
+  // $user="proProg";
+  // $DBpassword="pawprogramming";
+  // $dbname="pawCompanion";
+  // $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+  //   or die ('Could not connect to the database server' . mysqli_connect_error());
 
-  $query = "select * from animals where rspcaID='".$rspcaID."'";
-  $result=mysqli_query($connection,$query);
+  // $query = "select * from animals where rspcaID='".$rspcaID."'";
+  // $result=mysqli_query($connection,$query);
 		
 	// Test for query error
 	if(!$result)
