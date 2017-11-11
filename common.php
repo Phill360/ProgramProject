@@ -6,13 +6,15 @@ $_SESSION["response"]="";
 // $_SESSION["favanimal"];
 
   
-// Function to determine request type is POST 
-function is_post_request() {
+/* Function to determine request type is POST */
+function is_post_request() 
+{
   return $_SERVER['REQUEST_METHOD'] == 'POST';
 }
 
-// Function to determine request type is GET 
-function is_get_request() {
+/* Function to determine request type is GET */ 
+function is_get_request() 
+{
   return $_SERVER['REQUEST_METHOD'] == 'GET';
 }
 
@@ -76,6 +78,8 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['lastName'] = $lastname;
     header('Location: index.php');
   }
+  
+  // Close database connection
   mysqli_close($connection);
 }
 
@@ -100,9 +104,12 @@ function signInUser($email, $password)
     $query .= "'" . $userpass . "'";
     $result = mysqli_query($connection, $query);
     $count  = mysqli_num_rows($result);
-    if($count==0) {
-    // Password is a match
-    } else {
+    if($count==0) 
+    {
+      // Password is a match
+    } 
+    else 
+    {
       debug_to_console("password is match");
       while ($row = mysqli_fetch_assoc($result))
       {
@@ -134,6 +141,8 @@ function signInUser($email, $password)
   } else {
     $_SESSION['validUser'] = false;
   }
+  
+  // Close database connection
   mysqli_close($connection);
 }
 
@@ -195,6 +204,8 @@ function setupUserSession()
 	    }	    
 	  }
 	}
+	
+	// Close database connection
 	mysqli_close($connection);
 }
 
@@ -222,6 +233,8 @@ function signOutUser()
     $result = 'signed in';
   }
   header('Location: index.php');
+  
+  // Close database connection
   mysqli_close($connection);
 }
 
@@ -461,14 +474,14 @@ function searchResult()
 		
 		
 		
-	  // Connect AWS MYSQL Server
-    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+	// Connect AWS MYSQL Server
+  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  $port=3306;
+  $socket="";
+  $user="proProg";
+  $DBpassword="pawprogramming";
+  $dbname="pawCompanion";
+  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
 
 
@@ -477,49 +490,56 @@ function searchResult()
 	// require_once('./_php/connect.php');
   
 	// UserID from session
-	 $userID =  $_SESSION['userID'];
+	$userID =  $_SESSION['userID'];
   
-	 // Get pet data for comparsion
+	// Get pet data for comparsion
 	$query = "SELECT * ";
 	$query .= "FROM userSearch ";
 	$query .= "WHERE userID=".$userID;
 	
-		 //echo $query;
+	//echo $query;
 	
 	$search = mysqli_query($connection, $query);
 
 		
 	// Test for query error
-	if($search) {
+	if($search) 
+	{
 	  $new_id = mysqli_insert_id($connection);
-	} else {
+	} 
+	else 
+	{
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
 	
-	while($row = mysqli_fetch_assoc($search)) {
-
-      $adultsHome = $row["adultsHome"];
-      $childrenHome = $row["childrenHome"];
-      $howActive = $row["howActive"];
-      $howOftenHome = $row["howOftenHome"];
-      $petGender = $row["petGender"];
-      $petSelection = $row["petSelection"];
-      $petSize = $row["petSize"];
-      $petTemperament = $row["petTemperament"];
-      
+	while ($row = mysqli_fetch_assoc($search)) 
+	{
+    $adultsHome = $row["adultsHome"];
+    $childrenHome = $row["childrenHome"];
+    $howActive = $row["howActive"];
+    $howOftenHome = $row["howOftenHome"];
+    $petGender = $row["petGender"];
+    $petSelection = $row["petSelection"];
+    $petSize = $row["petSize"];
+    $petTemperament = $row["petTemperament"];
 	}
 		
-	if($adultsHome == 1 && $petSize > 3){
+	if($adultsHome == 1 && $petSize > 3)
+	{
 		$petSize = 3;
 	}	
 
-	if($childrenHome == 1){
-		if($petSize > 3){
+	if ($childrenHome == 1)
+	{
+		if ($petSize > 3)
+		{
 			$petSize = 3;
 		}
-		if($petTemperament > 2){
+		
+		if ($petTemperament > 2)
+		{
 			$petTemperament = 2;
 		}
 	}
@@ -531,6 +551,7 @@ function searchResult()
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
 	$query .= "WHERE breed.size=".$petSize;
+	$query .= "LIMIT 12";
 
 		
 	$result = mysqli_query($connection, $query);
@@ -539,7 +560,6 @@ function searchResult()
 
   // Close Connection
   mysqli_close($connection);
-
 }
 
 /* This function adds a pet to the database */  

@@ -19,7 +19,7 @@
   
   $page = $_GET["page"]; // Get the page number from post. Page number is posted when the user clicks on pagination links bottom of page.
   
-  // The $beginRecord variable stores the number of the first record it displays.
+  // The $beginRecord variable stores the record number of the first pet displayed on each page, i.e. record 0, record 12, record 24, etc. 
   
   if($page == "" || $page == "1") // If this is the first time or if the user has navigated back to the first page.
   {
