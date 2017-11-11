@@ -63,19 +63,27 @@ function registerUser($firstname, $lastname, $email, $password)
     $query .= "'" . $email . "',";
     $query .= "'" . $userpass . "'";
     $query .= ")";
+    
     // Add user to db
     $write = mysqli_query($connection, $query); 
 
     // Test for query error
     if(!$write) 
     {
-		  die("2. Database query failed.");
+		  die("Database query failed - registerUser()");
     }
+    
     $_SESSION["response"] = "PET ADDED";
     $_SESSION['validUser'] = true;
+    $_SESSION['email'] = $email;
     $_SESSION['usertype'] = $usertype;
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
+    
+    $query = "SELECT userID FROM user WHERE email = $email";
+    $result = mysqli_query($connection, $query);
+    $_SESSION['userID'] = $result;
+    
     header('Location: index.php');
   }
   
@@ -431,8 +439,6 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-  echo $_SESSION['userID'];
-  
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
 	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament, userID) ";
@@ -450,9 +456,9 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
-	if($result) {
+	if($result) 
+	{
 	  $new_id = mysqli_insert_id($connection);
-
 	} 
 	else 
 	{
