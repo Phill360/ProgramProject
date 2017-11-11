@@ -80,15 +80,14 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-    $query = "SELECT userType FROM user WHERE email = '" . $email . "'";
-	  $result = mysqli_query($connection, $query);
+    $querya = "SELECT userType FROM user WHERE email = '" . $email . "'";
+	  $userID = mysqli_query($connection, $querya);
 	  
 	  // Test for query error
 	  if(!$result) 
 	  {
 		  die("Database query failed - inc-getUserID()");
 	  }
-    $userID = $result;
     $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
