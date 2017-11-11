@@ -14,7 +14,7 @@
 <div class="row">
   
   <?php
-  
+
   // The $page variable stores the page number, i.e. which page the user is viewing, e.g. first, second, third page, etc. 
   
   $page = $_GET["page"]; // Get the page number from post. Page number is posted when the user clicks on pagination links bottom of page.
@@ -27,17 +27,17 @@
   }
   else 
   {
-    $beginRecord = ($page*12)-12; // The second page will begin with record 12, third page will begin with record 24, etc.
+    $beginRecord = ($page*3)-3; // The second page will begin with record 12, third page will begin with record 24, etc.
   }
   
-  // $result = getLimitedNumberOfAnimalsFromDatabase($page1); // The function returns 12 records.
+  // $result = getLimitedNumberOfAnimalsFromDatabase($beginRecord); // The function returns 12 records.
   
-  $result = searchResult(); // Presently this function returns all records from animals table. Need to limit this to 12.
+  $result = searchResult($beginRecord); // Presently this function returns all records from animals table. Need to limit this to 12.
   
   // searchResult() needs to return: rspcaID, petName, and description. 
   
   while($row = mysqli_fetch_assoc($result)) // Now iterate through result to display records across and down the screen according to the Bootstrap grid.
-  {
+  { 
   ?>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="panel panel-default">
@@ -64,9 +64,10 @@
   <?php
   }
       
-  $size = getNumberOfAnimals(); // Get the number of animals in the database.
+  // $size = getNumberOfAnimals(); // Get the number of MATCHED animals in the database.
+  $size = $_SESSION['matchCount'];
 	
-	$a = ceil($size/12); // The number of animals ($size) divided by 12 will tell us how many pages there will be.
+	$a = ceil($size/3); // The number of matched animals ($size) divided by 12 will tell us how many pages there will be.
   ?>
   
 </div>

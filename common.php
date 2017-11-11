@@ -189,13 +189,12 @@ function setupUserSession()
 	  // Match email to a row
 	  if ($row["email"] == $email)
 	  {
-	    $userID = $row["userID"];
+	    $userID = $row['userID'];
     }
 	}
 	  
 	// With the userID we now check if this user has visited the site previously. */
-  $query = "SELECT userID "; 
-	$query .= "FROM userSearch ";
+  $query = "SELECT userID FROM userSearch";
 	$result = mysqli_query($connection, $query);
 
 	// Test for query error
@@ -205,22 +204,22 @@ function setupUserSession()
 	}
 	else
 	{
-	  $count  = mysqli_num_rows($result);
-	  setMessage($count);
+	  $count = 0;
+	  while ($row = mysqli_fetch_assoc($result))
+	  {
+	    if ($row["userID"] == $userID)
+	    {
+	      $count = 1;
+      }
+	  }
+
 	  if ($count == 0)
 	  {
       $_SESSION['userTool'] = 'questionnaire'; // Temporarily change
 	  }
 	  else
 	  {
-      while ($row = mysqli_fetch_assoc($result))
-	    {
-	      // Match user ID to a row
-	      if ($row["userID"] == $userID)
-	      {
-	        $_SESSION['userTool'] = 'matches';
-        }
-	    }	    
+      $_SESSION['userTool'] = 'matches';	    
 	  }
 	}
 	
@@ -418,7 +417,7 @@ function checkNumberUsersInFile()
 	// Test for query error
 	if(!$result) 
 	{
-		die("3. Database query failed.");
+		die("Database query failed - checkNumberUsersInFile()");
 	}
 	  
 	$size = 0;
@@ -476,7 +475,7 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 	} 
 	else 
 	{
-		echo mysqli_error($connection);
+		// echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
@@ -487,7 +486,7 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
   
 /* Search for question matches */
 // THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE
-function searchResult()
+function searchResult($beginRecord)
 {
 		echo "<p>**** THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE ****</p>";
 		
@@ -519,7 +518,7 @@ function searchResult()
 	$query .= "FROM userSearch ";
 	$query .= "WHERE userID=".$userID;
 	
-	//echo $query;
+	// echo $query;
 	
 	$search = mysqli_query($connection, $query);
 
@@ -531,7 +530,7 @@ function searchResult()
 	} 
 	else 
 	{
-		echo mysqli_error($connection);
+		// echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
@@ -565,20 +564,32 @@ function searchResult()
 			$petTemperament = 2;
 		}
 	}
-
-		
-	// Get pet data for comparsion
+	
 	$query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
 	$query .= "WHERE breed.size=".$petSize;
-	// $query .= "LIMIT 12";
-
-		
+	
+	if ($result=mysqli_query($connection,$query))
+  {
+    // Return the number of rows in result set
+    $rowcount=mysqli_num_rows($result);
+    $_SESSION['matchCount'] = $rowcount;
+    // Free result set
+    mysqli_free_result($result);
+  }
+	
+	// Get pet data for comparsion
+	$query = "SELECT animals.rspcaID, animals.petName, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
+	$query .= "FROM breed ";
+	$query .= "INNER JOIN animals ";
+	$query .= "ON animals.breedID=breed.breedID ";
+	$query .= "WHERE breed.size=".$petSize." LIMIT $beginRecord, 3";
+	
 	$result = mysqli_query($connection, $query);
+	
 	return $result;
-
 
   // Close Connection
   mysqli_close($connection);
@@ -623,7 +634,7 @@ function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $descri
 	} 
 	else 
 	{
-		echo mysqli_error($connection);
+		// echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
@@ -652,7 +663,7 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
   } 
   else 
   {
-  	echo mysqli_error($connection);
+  	// echo mysqli_error($connection);
   	mysqli_close($connection);
   	exit;
   }
@@ -690,7 +701,7 @@ function updatePetWithImage($rspcaID, $petName, $breedID, $age, $gender, $imageN
 	} 
 	else 
 	{
-		echo mysqli_error($connection);
+		// echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
@@ -726,7 +737,7 @@ function updatePetWithoutImage($rspcaID, $petName, $breedID, $age, $gender, $des
 	} 
 	else 
 	{
-		echo mysqli_error($connection);
+		// echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
@@ -755,7 +766,7 @@ function removePet($rspcaID)
   } 
   else 
   {
-  	echo mysqli_error($connection);
+  	// echo mysqli_error($connection);
   	mysqli_close($connection);
   	exit;
   }
@@ -802,7 +813,7 @@ function addBreed($breedSpecies, $breedName, $breedSize, $breedTemperament, $bre
 	} 
 	else 
 	{
-		echo mysqli_error($connection);
+		// echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
@@ -839,7 +850,7 @@ function updateBreed($breedID, $breedType, $breedSize, $breedTemperament, $breed
 	} 
 	else 
 	{
-		echo mysqli_error($connection);
+		// echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
@@ -868,7 +879,7 @@ function removeBreed($breedID)
   } 
   else 
   {
-  	echo mysqli_error($connection);
+  	// echo mysqli_error($connection);
   	mysqli_close($connection);
   	exit;
   }
@@ -910,75 +921,20 @@ function displayImage($rspcaID)
 	mysqli_close($connection);
 }
 	
-/* This function gets 12 animals from the database for pagination */
-// THIS FUNCTION WILL BE DEPRECATED
-function getLimitedNumberOfAnimalsFromDatabase($page1)
-{
-  // Connect AWS MYSQL Server
-  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-  $port=3306;
-  $socket="";
-  $user="proProg";
-  $DBpassword="pawprogramming";
-  $dbname="pawCompanion";
-  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
-    
-	$query = "SELECT * FROM animals LIMIT $page1,12"; 
-	$result = mysqli_query($connection, $query);
-	  
-	// Test for query error
-	if(!$result) 
-	{
-		die("Database query failed. getLimitedNumberOfAnimalsFromDatabase()");
-	}
-	  
-	return $result;
-	mysqli_close($connection);
-}
-	
-/* This function counts the number of animals in the database */
-function getNumberOfAnimals()
-{
-	// Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
-  
-  // Connect AWS MYSQL Server
-  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-  $port=3306;
-  $socket="";
-  $user="proProg";
-  $DBpassword="pawprogramming";
-  $dbname="pawCompanion";
-  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
-  
-  // Perform query
-  $query = "SELECT COUNT(*) FROM animals";
-  $result = mysqli_query($connection, $query);
-	  
-	// Test for query error
-	if(!$result) 
-	{
-		die("Database query failed. getNumberOfAnimals()");
-	}
-	  
-	mysqli_close($connection);
-	return $result;
-}
-
 /* This function gets the name of the pet from the database */
 function getAnimalName($rspcaID)
 {
 	// Connect AWS MYSQL Server
-  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-  $port=3306;
-  $socket="";
-  $user="proProg";
-  $DBpassword="pawprogramming";
-  $dbname="pawCompanion";
-  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    or die ('Could not connect to the database server' . mysqli_connect_error());
+	require_once('./_php/connect.php');
+	
+  // $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+  // $port=3306;
+  // $socket="";
+  // $user="proProg";
+  // $DBpassword="pawprogramming";
+  // $dbname="pawCompanion";
+  // $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+  //   or die ('Could not connect to the database server' . mysqli_connect_error());
     	
   // Get favourites
 	$query = "SELECT * FROM animals";

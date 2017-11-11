@@ -5,8 +5,8 @@
 	$usertype = checkUserType();
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
-	$message = getMessage();
-	echo("The message is: ".$message);
+	// $message = getMessage();
+	// echo("The message is: ".$message);
 
 
   /* User registers */

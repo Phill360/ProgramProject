@@ -18,18 +18,18 @@
   $page = $_GET["page"];
   if($page == "" || $page == "1")
   {
-    $page1 = 0;
+    $beginRecord = 0;
   }
   else 
   {
-    $page1 = ($page*12)-12;
+    $beginRecord = ($page*3)-3;
   }
   
   // Get favourites from database
   $favourites = getFavourites(); // getFavourites returns the whole favourites table
   
   // Get animals from database
-  $animals = getLimitedNumberOfAnimalsFromDatabase($page1); // Error 7 if cannot connect to database
+  $animals = getLimitedNumberOfAnimalsFromDatabase($beginRecord); // Error 7 if cannot connect to database
   
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($favourites)) 
@@ -76,7 +76,7 @@
 	  $size += 1;
 	}
 	
-	$a = ceil($size/12); // Number of pages
+	$a = ceil($size/3); // Number of pages
   ?>
   
 </div>
