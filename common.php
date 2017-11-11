@@ -80,7 +80,7 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-    $query = "SELECT userID FROM user";
+    $query = "SELECT userID, email FROM user";
 	  $result = mysqli_query($connection, $query);
 	  
 	  while ($row = mysqli_fetch_assoc($result)) 
