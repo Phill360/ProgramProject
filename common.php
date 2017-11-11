@@ -89,9 +89,11 @@ function registerUser($firstname, $lastname, $email, $password)
 	    if ($row["email"] == $email)
 	    {
 	      $userID = $row["userID"];
+	      echo $userID;
       }
     } 
 	  
+	  echo $userID;
     $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
