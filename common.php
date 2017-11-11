@@ -83,8 +83,8 @@ function registerUser($firstname, $lastname, $email, $password)
     // Close database connection
     mysqli_close($connection);
     
-    // $userID = getUserID($email);
-    // $_SESSION['userID'] = $userID;
+    $userID = getUserID($email);
+    $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
   }
@@ -298,15 +298,7 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
-	// include('connect.php');
-	$host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-    $port=3306;
-    $socket="";
-    $user="proProg";
-    $DBpassword="pawprogramming";
-    $dbname="pawCompanion";
-    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
-    	or die ('Could not connect to the database server' . mysqli_connect_error());
+	include_once('connect.php');
 	
 	$query = "SELECT userType FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
@@ -317,10 +309,10 @@ function getUserID($email)
 		die("Database query failed - getUserID()");
 	}
 	
-	return $result;
-	
 	// Close database connection
   mysqli_close($connection);
+  
+  return $result;
 }
   
 /* This function switches a user from normal to admin */
