@@ -431,7 +431,7 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-  $userID = $_SESSION['userID'];
+  echo $_SESSION['userID'];
   
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
