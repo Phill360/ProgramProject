@@ -68,7 +68,7 @@ function registerUser($firstname, $lastname, $email, $password)
     $write = mysqli_query($connection, $query); 
 
     // Test for query error
-    if(!$write) 
+    if (!$write) 
     {
 		  die("Database query failed - registerUser()");
     }
@@ -80,10 +80,7 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-    $query = "SELECT userID FROM user ";
-    $query .= "WHERE email=";
-    $query .= "'" . $email . "'";
-    $userID = mysqli_query($connection, $query);
+    $userID = getUserID($email);
     $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
