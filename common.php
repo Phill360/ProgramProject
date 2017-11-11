@@ -83,8 +83,8 @@ function registerUser($firstname, $lastname, $email, $password)
     // Close database connection
     mysqli_close($connection);
     
-    $userID = getUserID($email);
-    $_SESSION['userID'] = $userID;
+    // $userID = getUserID($email);
+    // $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
   }
