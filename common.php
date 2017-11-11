@@ -374,7 +374,6 @@ function deleteUser($userID)
 	
 	$query = "DELETE FROM favourites WHERE userID = $userID;";
 	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
-	$query .= "DELETE FROM userSearch WHERE userID = 0;";
 	$query .= "DELETE FROM user WHERE userID = $userID";
 	
 	// Execute multi query
