@@ -298,7 +298,7 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
-	include_once('connect.php');
+	include('connect.php');
 	
 	$query = "SELECT userType FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
