@@ -80,17 +80,20 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-    $query = "SELECT userID, email FROM user";
-	  $result = mysqli_query($connection, $query);
+   // $query = "SELECT userID, email FROM user";
+	  // $result = mysqli_query($connection, $query);
 	  
-	  while ($row = mysqli_fetch_assoc($result)) 
-    {
-      // Match email to a row
-	    if ($row["email"] == $email)
-	    {
-	      $_SESSION['userID'] = $row['userID'];
-      }
-    }
+	  // while ($row = mysqli_fetch_assoc($result)) 
+   // {
+   //   // Match email to a row
+	  //   if ($row["email"] == $email)
+	  //   {
+	  //     $_SESSION['userID'] = $row['userID'];
+   //   }
+   // }
+    
+    $userID = getUserID();
+    $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
   }
@@ -307,21 +310,24 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
-	//include_once('connect.php');
+	include_once('connect.php');
 	
-	$query = "SELECT userType FROM user WHERE email = '" . $email . "'";
+	$query = "SELECT userID, email FROM user";
 	$result = mysqli_query($connection, $query);
 	  
-	// Test for query error
-	if(!$result) 
-	{
-		die("Database query failed - getUserID()");
-	}
-	
-	// Close database connection
-  // mysqli_close($connection);
+	while ($row = mysqli_fetch_assoc($result)) 
+  {
+    // Match email to a row
+	  if ($row["email"] == $email)
+	  {
+	    $result = $row['userID'];
+    }
+  }
   
   return $result;
+	
+	// Close database connection
+  mysqli_close($connection);
 }
   
 /* This function switches a user from normal to admin */
@@ -448,8 +454,6 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
-  
-  echo $userID;
   
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
