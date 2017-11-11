@@ -80,8 +80,9 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-    $querya = "SELECT userType FROM user WHERE email = '" . $email . "'";
-	  $userID = mysqli_query($connection, $querya);
+    $query = "SELECT userType FROM user WHERE email = '" . $email . "'";
+	  $userID = mysqli_query($connection, $query);
+	  mysqli_close($connection);
 	  
 	  // Test for query error
 	  if(!$result) 
