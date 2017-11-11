@@ -80,26 +80,21 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-   // $query = "SELECT userID, email FROM user";
-	  // $result = mysqli_query($connection, $query);
+    $query = "SELECT userID, email FROM user";
+	  $result = mysqli_query($connection, $query);
 	  
-	  // while ($row = mysqli_fetch_assoc($result)) 
-   // {
-   //   // Match email to a row
-	  //   if ($row["email"] == $email)
-	  //   {
-	  //     $_SESSION['userID'] = $row['userID'];
-   //   }
-   // }
-    
-    // Close database connection
-    mysqli_close($connection);
-    
-    $userID = getUserID();
-    $_SESSION['userID'] = $userID;
-    
+	  while ($row = mysqli_fetch_assoc($result)) 
+    {
+      // Match email to a row
+	    if ($row["email"] == $email)
+	    {
+	      $_SESSION['userID'] = $row['userID'];
+      }
+    }
+
     header('Location: index.php');
   }
+  
   // Close database connection
   mysqli_close($connection);
 }
@@ -379,6 +374,7 @@ function deleteUser($userID)
 	
 	$query = "DELETE FROM favourites WHERE userID = $userID;";
 	$query .= "DELETE FROM userSearch WHERE userID = $userID;";
+	$query .= "DELETE FROM userSearch WHERE userID = 0;";
 	$query .= "DELETE FROM user WHERE userID = $userID";
 	
 	// Execute multi query
