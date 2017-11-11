@@ -95,6 +95,11 @@ function registerUser($firstname, $lastname, $email, $password)
   }
   
   // Close database connection
+  /* determine our thread id */
+  $thread_id = $mysqli->thread_id;
+
+  /* Kill connection */
+  $mysqli->kill($thread_id);
   mysqli_close($connection);
 }
 
