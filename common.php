@@ -83,21 +83,21 @@ function registerUser($firstname, $lastname, $email, $password)
     $query = "SELECT userType FROM user";
 	  $result = mysqli_query($connection, $query);
 	  
-	  // Test for query error
-	  if(!$result) 
-	  {
-		  die("Database query failed - inc-getUserID()");
-	  }
-    //$userID = $result;
-    //$_SESSION['userID'] = $userID;
+	  while ($row = mysqli_fetch_assoc($result)) 
+    {
+      // Match email to a row
+	    if ($row["email"] == $email)
+	    {
+	      $userID = $row["userID"];
+      }
+    } 
+	  
+    $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
   }
   
   // Close database connection
-  /* determine our thread id */
-  $thread_id = $mysqli->thread_id;
-  $mysqli->kill($thread_id);
   mysqli_close($connection);
 }
 
