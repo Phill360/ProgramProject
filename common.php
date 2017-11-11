@@ -89,7 +89,6 @@ function registerUser($firstname, $lastname, $email, $password)
 	    if ($row["email"] == $email)
 	    {
 	      $_SESSION['userID'] = $row['userID'];
-	      setMessage($_SESSION['userID']);
       }
     }
     
