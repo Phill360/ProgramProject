@@ -206,6 +206,7 @@ function setupUserSession()
 	else
 	{
 	  $count  = mysqli_num_rows($result);
+	  setMessage($count);
 	  if ($count == 0)
 	  {
       $_SESSION['userTool'] = 'questionnaire'; // Temporarily change

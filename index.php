@@ -6,7 +6,7 @@
 	debug_to_console("user: " . $_SESSION['usertype']);
 	
 	$message = getMessage();
-	// echo($message);
+	echo("The message is: ".$message);
 
 
   /* User registers */
