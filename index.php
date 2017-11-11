@@ -249,7 +249,7 @@
       $childrenHome = 0;
     }
     
-    submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender);
+    submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender, $userID);
     phpAlert("Your responses have been submitted thank you.");
   }
   
