@@ -208,7 +208,7 @@ function setupUserSession()
 	  $count  = mysqli_num_rows($result);
 	  if ($count == 0)
 	  {
-      $_SESSION['userTool'] = 'matches'; // Temporarily change
+      $_SESSION['userTool'] = 'questionnaire'; // Temporarily change
 	  }
 	  else
 	  {
