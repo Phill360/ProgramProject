@@ -80,14 +80,14 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
+    // Close database connection
+    mysqli_close($connection);
+    
     $userID = getUserID($email);
     $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
   }
-  
-  // Close database connection
-  mysqli_close($connection);
 }
 
 /* This function signs the user in */
