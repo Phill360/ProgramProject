@@ -93,7 +93,7 @@ function registerUser($firstname, $lastname, $email, $password)
       }
     } 
 	  
-	  echo $userID;
+	  phpAlert($userID);
     $_SESSION['userID'] = $userID;
     
     header('Location: index.php');
