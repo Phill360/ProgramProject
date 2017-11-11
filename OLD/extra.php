@@ -6,15 +6,13 @@ $_SESSION["response"]="";
 // $_SESSION["favanimal"];
 
   
-/* Function to determine request type is POST */
-function is_post_request() 
-{
+// Function to determine request type is POST 
+function is_post_request() {
   return $_SERVER['REQUEST_METHOD'] == 'POST';
 }
 
-/* Function to determine request type is GET */ 
-function is_get_request() 
-{
+// Function to determine request type is GET 
+function is_get_request() {
   return $_SERVER['REQUEST_METHOD'] == 'GET';
 }
 
@@ -63,31 +61,22 @@ function registerUser($firstname, $lastname, $email, $password)
     $query .= "'" . $email . "',";
     $query .= "'" . $userpass . "'";
     $query .= ")";
-    
     // Add user to db
     $write = mysqli_query($connection, $query); 
 
     // Test for query error
-    if (!$write) 
+    if(!$write) 
     {
-		  die("Database query failed - registerUser()");
+		  die("2. Database query failed.");
     }
-    
     $_SESSION["response"] = "PET ADDED";
     $_SESSION['validUser'] = true;
-    $_SESSION['email'] = $email;
     $_SESSION['usertype'] = $usertype;
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
-    
-    // Close database connection
-    mysqli_close($connection);
-    
-    $userID = getUserID($email);
-    $_SESSION['userID'] = $userID;
-    
     header('Location: index.php');
   }
+  mysqli_close($connection);
 }
 
 /* This function signs the user in */
@@ -102,9 +91,7 @@ function signInUser($email, $password)
   else // Get user from database
   {
     require_once('./_php/connect.php');
-    
     $userpass = md5($password);
-    
     // Query to find a match for login details
     $query = "SELECT * FROM user ";
     $query .= "WHERE email=";
@@ -113,12 +100,9 @@ function signInUser($email, $password)
     $query .= "'" . $userpass . "'";
     $result = mysqli_query($connection, $query);
     $count  = mysqli_num_rows($result);
-    if($count==0) 
-    {
-      // Password is a match
-    } 
-    else 
-    {
+    if($count==0) {
+    // Password is a match
+    } else {
       debug_to_console("password is match");
       while ($row = mysqli_fetch_assoc($result))
       {
@@ -150,8 +134,6 @@ function signInUser($email, $password)
   } else {
     $_SESSION['validUser'] = false;
   }
-  
-  // Close database connection
   mysqli_close($connection);
 }
 
@@ -185,7 +167,7 @@ function setupUserSession()
 	}
 	  
 	// With the userID we now check if this user has visited the site previously. */
-  $query = "SELECT userID "; 
+  $query = "SELECT * "; 
 	$query .= "FROM userSearch ";
 	$result = mysqli_query($connection, $query);
 
@@ -213,8 +195,6 @@ function setupUserSession()
 	    }	    
 	  }
 	}
-	
-	// Close database connection
 	mysqli_close($connection);
 }
 
@@ -242,8 +222,6 @@ function signOutUser()
     $result = 'signed in';
   }
   header('Location: index.php');
-  
-  // Close database connection
   mysqli_close($connection);
 }
 
@@ -298,7 +276,7 @@ function getUserType($userID)
 /* This function gets the userID from email address */
 function getUserID($email)
 {
-	include_once('connect.php');
+	include_once('_php/connect.php');
 	
 	$query = "SELECT userType FROM user WHERE email = '" . $email . "'";
 	$result = mysqli_query($connection, $query);
@@ -306,7 +284,7 @@ function getUserID($email)
 	// Test for query error
 	if(!$result) 
 	{
-		die("Database query failed - getUserID()");
+		die("Database query failed.");
 	}
 	
 	return $result;
@@ -418,6 +396,32 @@ function checkNumberUsersInFile()
   return $size;
 }
   
+/* This function checks the number of pets in the database. */
+function checkNumberAnimalsInDatabase()
+{
+  // require_once('./_php/connect.php');
+    
+  $query = "SELECT * ";
+	$query .= "FROM animals ";
+  $result = mysqli_query($connection, $query);
+	  
+	// Test for query error
+	if(!$result) 
+	{
+	  die("4. Database query failed.");
+	}
+	  
+	$size = 0;
+	  
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  $size += 1;
+	}
+
+  mysqli_close($connection);
+  return $size;
+}
+  
 /* UPDATED Sunday 5th November
 $adultsHome (How many adults in the home?). Values: 1, 2, 3, 4 or 5. 
 $childrenHome (Are there children under 6?). Values: 0 = no, 1 = yes
@@ -457,12 +461,10 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 	$result = mysqli_query($connection, $query);
 	
 	// Test for query error
-	if($result) 
-	{
+	if($result) {
 	  $new_id = mysqli_insert_id($connection);
-	} 
-	else 
-	{
+
+	} else {
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
@@ -483,14 +485,14 @@ function searchResult()
 		
 		
 		
-	// Connect AWS MYSQL Server
-  $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
-  $port=3306;
-  $socket="";
-  $user="proProg";
-  $DBpassword="pawprogramming";
-  $dbname="pawCompanion";
-  $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
+	  // Connect AWS MYSQL Server
+    $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
+    $port=3306;
+    $socket="";
+    $user="proProg";
+    $DBpassword="pawprogramming";
+    $dbname="pawCompanion";
+    $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
 
 
@@ -499,56 +501,49 @@ function searchResult()
 	// require_once('./_php/connect.php');
   
 	// UserID from session
-	$userID =  $_SESSION['userID'];
+	 $userID =  $_SESSION['userID'];
   
-	// Get pet data for comparsion
+	 // Get pet data for comparsion
 	$query = "SELECT * ";
 	$query .= "FROM userSearch ";
 	$query .= "WHERE userID=".$userID;
 	
-	//echo $query;
+		 //echo $query;
 	
 	$search = mysqli_query($connection, $query);
 
 		
 	// Test for query error
-	if($search) 
-	{
+	if($search) {
 	  $new_id = mysqli_insert_id($connection);
-	} 
-	else 
-	{
+	} else {
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 		exit;
 	}
 	
-	while ($row = mysqli_fetch_assoc($search)) 
-	{
-    $adultsHome = $row["adultsHome"];
-    $childrenHome = $row["childrenHome"];
-    $howActive = $row["howActive"];
-    $howOftenHome = $row["howOftenHome"];
-    $petGender = $row["petGender"];
-    $petSelection = $row["petSelection"];
-    $petSize = $row["petSize"];
-    $petTemperament = $row["petTemperament"];
+	while($row = mysqli_fetch_assoc($search)) {
+
+      $adultsHome = $row["adultsHome"];
+      $childrenHome = $row["childrenHome"];
+      $howActive = $row["howActive"];
+      $howOftenHome = $row["howOftenHome"];
+      $petGender = $row["petGender"];
+      $petSelection = $row["petSelection"];
+      $petSize = $row["petSize"];
+      $petTemperament = $row["petTemperament"];
+      
 	}
 		
-	if($adultsHome == 1 && $petSize > 3)
-	{
+	if($adultsHome == 1 && $petSize > 3){
 		$petSize = 3;
 	}	
 
-	if ($childrenHome == 1)
-	{
-		if ($petSize > 3)
-		{
+	if($childrenHome == 1){
+		if($petSize > 3){
 			$petSize = 3;
 		}
-		
-		if ($petTemperament > 2)
-		{
+		if($petTemperament > 2){
 			$petTemperament = 2;
 		}
 	}
@@ -560,15 +555,14 @@ function searchResult()
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
 	$query .= "WHERE breed.size=".$petSize;
-	// $query .= "LIMIT 12";
 
 		
 	$result = mysqli_query($connection, $query);
 	return $result;
 
 
-  // Close Connection
-  mysqli_close($connection);
+
+
 }
 
 /* This function adds a pet to the database */  
@@ -728,7 +722,7 @@ function removePet($rspcaID)
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
 
-  // Perform Query
+  // 2. Perform Query
   $query = "DELETE FROM animals ";
   $query .= "WHERE ";
   $query .= "rspcaID=";
@@ -866,12 +860,9 @@ function removeBreed($breedID)
   
 /* This function displays an image from the database */
 // THIS FUNCTION REQUIRES WORK - NOT CONNECTING WITH SCRIPT
-// This function is called from matches.php
 function displayImage($rspcaID)
 {
   // Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
-  
   $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
   $port=3306;
   $socket="";
@@ -898,7 +889,7 @@ function displayImage($rspcaID)
 }
 	
 /* This function gets 12 animals from the database for pagination */
-// THIS FUNCTION WILL BE DEPRECATED
+// THIS FUNCTION MAY BE DEPRECATED
 function getLimitedNumberOfAnimalsFromDatabase($page1)
 {
   // Connect AWS MYSQL Server
@@ -917,20 +908,18 @@ function getLimitedNumberOfAnimalsFromDatabase($page1)
 	// Test for query error
 	if(!$result) 
 	{
-		die("Database query failed. getLimitedNumberOfAnimalsFromDatabase()");
+		die("7. Database query failed.");
 	}
 	  
 	return $result;
 	mysqli_close($connection);
 }
 	
-/* This function counts the number of animals in the database */
-function getNumberOfAnimals()
+/* Get all animals from the database */
+// THIS FUNCTION MAY BE DEPRECATED
+function getAnimalsFromDatabase()
 {
 	// Connect AWS MYSQL Server
-  // require_once('./_php/connect.php');
-  
-  // Connect AWS MYSQL Server
   $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
   $port=3306;
   $socket="";
@@ -939,21 +928,21 @@ function getNumberOfAnimals()
   $dbname="pawCompanion";
   $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
-  
-  // Perform query
-  $query = "SELECT COUNT(*) FROM animals";
-  $result = mysqli_query($connection, $query);
+	  
+	// Get number of pets in database
+	$query = "SELECT * FROM animals";
+	$result = mysqli_query($connection, $query);
 	  
 	// Test for query error
 	if(!$result) 
 	{
-		die("Database query failed. getNumberOfAnimals()");
+		die("8. Database query failed.");
 	}
 	  
 	mysqli_close($connection);
 	return $result;
 }
-
+	
 /* This function gets the name of the pet from the database */
 function getAnimalName($rspcaID)
 {
