@@ -7,7 +7,7 @@
 	
 	$message = getMessage();
 	// echo($_SESSION['userID']);
-	phpAlert($row["userID"]);
+	phpAlert($_SESSION["userID"]);
 
   /* User registers */
   if (isset($_POST['registerBtn']))
