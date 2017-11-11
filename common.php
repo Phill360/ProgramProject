@@ -551,7 +551,7 @@ function searchResult()
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
 	$query .= "WHERE breed.size=".$petSize;
-	$query .= "LIMIT 12";
+	// $query .= "LIMIT 12";
 
 		
 	$result = mysqli_query($connection, $query);
