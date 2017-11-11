@@ -453,6 +453,8 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
+  setMessage("UserID is still: ".$_SESSION['userID']);
+  
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
 	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament, userID) ";
