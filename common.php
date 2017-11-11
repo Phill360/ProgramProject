@@ -88,8 +88,8 @@ function registerUser($firstname, $lastname, $email, $password)
       // Match email to a row
 	    if ($row["email"] == $email)
 	    {
-	      setMessage($userID);
-	      $userID = $_SESSION["userID"];
+	      setMessage($row['userID']);
+	      $_SESSION['userID'] = $row['userID'];
       }
     } 
 	  
