@@ -80,7 +80,7 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-    $query = "SELECT userType FROM user WHERE email = '" . $email . "'";
+    $query = "SELECT userType FROM user";
 	  $result = mysqli_query($connection, $query);
 	  
 	  // Test for query error
@@ -88,8 +88,8 @@ function registerUser($firstname, $lastname, $email, $password)
 	  {
 		  die("Database query failed - inc-getUserID()");
 	  }
-    $userID = $result;
-    $_SESSION['userID'] = $userID;
+    //$userID = $result;
+    //$_SESSION['userID'] = $userID;
     
     header('Location: index.php');
   }
@@ -97,8 +97,6 @@ function registerUser($firstname, $lastname, $email, $password)
   // Close database connection
   /* determine our thread id */
   $thread_id = $mysqli->thread_id;
-
-  /* Kill connection */
   $mysqli->kill($thread_id);
   mysqli_close($connection);
 }
