@@ -91,10 +91,7 @@ function registerUser($firstname, $lastname, $email, $password)
 	      $_SESSION['userID'] = $row['userID'];
 	      setMessage($_SESSION['userID']);
       }
-    } 
-	  
-	  phpAlert($userID);
-    $_SESSION['userID'] = $userID;
+    }
     
     header('Location: index.php');
   }
@@ -453,7 +450,7 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
-  echo "reaching";
+  echo $userID;
   
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
