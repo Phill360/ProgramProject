@@ -7,6 +7,7 @@
 	
 	$message = getMessage();
 	echo($message);
+	echo $_SESSION['userID'];
 
   /* User registers */
   if (isset($_POST['registerBtn']))
@@ -242,8 +243,6 @@
     $petTemperament = $_POST['petTemperament'];
     $petGender = $_POST['petGender'];
     $userID = $_SESSION['userID'];
-    
-    setMessage("The user is: ".$_SESSION['userID']);
     
     if ($childrenHome != 1)
     {
