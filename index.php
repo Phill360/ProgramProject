@@ -243,7 +243,7 @@
     $petGender = $_POST['petGender'];
     $userID = $_SESSION['userID'];
     
-    setMessage($_SESSION['userID']);
+    setMessage("The user is: ".$_SESSION['userID']);
     
     if ($childrenHome != 1)
     {
