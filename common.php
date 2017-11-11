@@ -89,7 +89,6 @@ function registerUser($firstname, $lastname, $email, $password)
 	    if ($row["email"] == $email)
 	    {
 	      $userID = $row["userID"];
-	      echo $userID;
       }
     } 
 	  
