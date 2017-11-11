@@ -241,6 +241,7 @@
     $petSize = $_POST['petSize'];
     $petTemperament = $_POST['petTemperament'];
     $petGender = $_POST['petGender'];
+    $userID = $_SESSION['userID'];
     
     if ($childrenHome != 1)
     {

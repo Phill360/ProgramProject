@@ -448,13 +448,12 @@ Small dogs 5kg-15kg: Australian Terrier, Shiba Inu.
 Extra small dogs <5kg: Chihuahua, Dachshund, Maltese, Yorkshire Terrier.
 Cats also match to extra small. According to Google adult cats weigh 3.6 - 4.5kg. */
 
-function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender)
+function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, $petSelection, $petSize, $petTemperament, $petGender, $userID)
 {
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
   echo "reaching";
-  setMessage("UserID is still: ".$_SESSION['userID']);
   
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
@@ -468,7 +467,7 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 	$query .= "'" . $petSelection . "',";
 	$query .= "'" . $petSize . "',";
 	$query .= "'" . $petTemperament . "',";
-	$query .= "'" . $_SESSION['userID'] . "'"; 
+	$query .= "'" . $userID . "'"; 
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
