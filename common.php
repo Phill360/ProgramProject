@@ -80,8 +80,8 @@ function registerUser($firstname, $lastname, $email, $password)
     $_SESSION['firstName'] = $firstname;
     $_SESSION['lastName'] = $lastname;
     
-    $query = "SELECT userID FROM user "; 
-    $query .= "WHERE email = ";
+    $query = "SELECT userID FROM user ";
+    $query .= "WHERE email=";
     $query .= "'" . $email . "'";
     $userID = mysqli_query($connection, $query);
     $_SESSION['userID'] = $userID;
@@ -105,7 +105,9 @@ function signInUser($email, $password)
   else // Get user from database
   {
     require_once('./_php/connect.php');
+    
     $userpass = md5($password);
+    
     // Query to find a match for login details
     $query = "SELECT * FROM user ";
     $query .= "WHERE email=";
