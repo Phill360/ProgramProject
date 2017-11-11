@@ -185,7 +185,7 @@ function setupUserSession()
 	}
 	  
 	// With the userID we now check if this user has visited the site previously. */
-  $query = "SELECT * "; 
+  $query = "SELECT userID "; 
 	$query .= "FROM userSearch ";
 	$result = mysqli_query($connection, $query);
 
@@ -306,7 +306,7 @@ function getUserID($email)
 	// Test for query error
 	if(!$result) 
 	{
-		die("Database query failed.");
+		die("Database query failed - getUserID()");
 	}
 	
 	return $result;
