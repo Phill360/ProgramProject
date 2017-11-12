@@ -468,6 +468,8 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
+	// Check if this user already has record in userSearch and if so, write over it with new data
+	
 	// Test for query error
 	if($result) 
 	{
@@ -486,7 +488,7 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
   
 /* Search for question matches */
 // THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE
-function searchResult($beginRecord)
+function searchResult($offset)
 {
 		echo "<p>**** THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE ****</p>";
 		
@@ -585,7 +587,7 @@ function searchResult($beginRecord)
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE breed.size=".$petSize." LIMIT $beginRecord, 3";
+	$query .= "WHERE breed.size=".$petSize." LIMIT $offset, 3";
 	
 	$result = mysqli_query($connection, $query);
 	

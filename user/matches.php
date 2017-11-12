@@ -12,29 +12,21 @@
 
 <body>
 <div class="row">
-  
   <?php
-
   // The $page variable stores the page number, i.e. which page the user is viewing, e.g. first, second, third page, etc. 
-  
   $page = $_GET["page"]; // Get the page number from post. Page number is posted when the user clicks on pagination links bottom of page.
-  
-  // The $beginRecord variable stores the record number of the first pet displayed on each page, i.e. record 0, record 12, record 24, etc. 
   
   if($page == "" || $page == "1") // If this is the first time or if the user has navigated back to the first page.
   {
-    $beginRecord = 0; // The first page will begin with record 0.
+    // The $offset variable stores the record number of the first pet displayed on each page, i.e. record 0, record 6, record 12, etc.
+    $offset = 0; // The first page will begin with record 0.
   }
   else 
   {
-    $beginRecord = ($page*3)-3; // The second page will begin with record 12, third page will begin with record 24, etc.
+    $offset = ($page*6)-6; // The second page will begin with record 6, third page will begin with record 12, etc.
   }
   
-  // $result = getLimitedNumberOfAnimalsFromDatabase($beginRecord); // The function returns 12 records.
-  
-  $result = searchResult($beginRecord); // Presently this function returns all records from animals table. Need to limit this to 12.
-  
-  // searchResult() needs to return: rspcaID, petName, and description. 
+  $result = searchResult($offset); // This function returns 6 records matching user criteria.
   
   while($row = mysqli_fetch_assoc($result)) // Now iterate through result to display records across and down the screen according to the Bootstrap grid.
   { 
@@ -67,7 +59,7 @@
   // $size = getNumberOfAnimals(); // Get the number of MATCHED animals in the database.
   $size = $_SESSION['matchCount'];
 	
-	$a = ceil($size/3); // The number of matched animals ($size) divided by 12 will tell us how many pages there will be.
+	$a = ceil($size/6); // The number of matched animals ($size) divided by 6 will tell us how many pages there will be.
   ?>
   
 </div>
@@ -104,6 +96,7 @@
 </div>
 </body>
 <script>
+// This function sends favourited animals in favourites table.
 function favourite() 
 {
   var parent = this.parentElement;
