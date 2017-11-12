@@ -608,10 +608,8 @@ function searchResult($offset)
     }
   }
 
-
   // 2. Active
   $breedActive = round(($howActive * $howOftenHome)/5); 
-
 
   // 3. Temperament
   if ($petTemperament == 3) // Prefer Usain Bolt pet
@@ -647,7 +645,6 @@ function searchResult($offset)
     $animalsGender >= 1; // Matched with female and male pets
   }
 
-
   // 5. Selection
   if ($petSelection == 0) // Cat preferred
   {
@@ -667,13 +664,12 @@ function searchResult($offset)
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE breed.size=".$petSize; // Get just the animals matching user's preferred pet size.
+	$query .= "WHERE breed.size=".$breedSize; // Get just the animals matching user's preferred pet size.
 	
 	if ($result=mysqli_query($connection,$query))
   {
     // Return the number of rows in result set
-    $rowcount=mysqli_num_rows($result);
-    $_SESSION['matchCount'] = $rowcount;
+    $_SESSION['matchCount'] = mysqli_num_rows($result);
     // Free result set
     mysqli_free_result($result);
   }
@@ -683,7 +679,7 @@ function searchResult($offset)
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE breed.size=".$petSize." LIMIT $offset, 6"; // Get just the animals matching user's preferred pet size, 6 per page.
+	$query .= "WHERE breed.size=".$breedSize." LIMIT $offset, 6"; // Get just the animals matching user's preferred pet size, 6 per page.
 	
 	$result = mysqli_query($connection, $query);
 	
