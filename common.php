@@ -663,7 +663,7 @@ function searchResult($offset)
   }
 
 	
-	$query = "SELECT animals.rspcaID, breed.size";
+	$query = "SELECT animals.rspcaID, animals.petName, animals.description, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
