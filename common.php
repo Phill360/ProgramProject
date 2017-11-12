@@ -659,7 +659,7 @@ function searchResult($offset)
   	$breedType == 3; // Matched with cats and dogs
   }
 
-  setMessage($breedSize);
+  echo $breedSize;
 	
 	$query = "SELECT animals.rspcaID, animals.petName, animals.description, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
 	$query .= "FROM breed ";
