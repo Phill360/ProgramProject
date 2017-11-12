@@ -31,7 +31,7 @@ function registerUser($firstname, $lastname, $email, $password)
 	// Test for query error
 	if(!$result)
 	{
-		die("1. Database query failed.");
+		die("Database query failed - registerUser()");
 	}
 	  
 	// Iterate through users
@@ -452,6 +452,33 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
   // Connect AWS MYSQL Server
   require_once('./_php/connect.php');
   
+  // Check if this user already has record in userSearch and if so, write over it with new data.
+  $query = "SELECT userID FROM userSearch ";
+  $result = mysqli_query($connection, $query);
+  
+  // Test for query error
+	if(!$result)
+	{
+		die("Database query failed - submitResponses() - 1");
+	}
+	  
+	// Iterate through users
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	  if ($row["userID"] == $userID)
+	  {
+	    // User has already submited search criteria. Delete existing record. 
+	    $query = "DELETE FROM userSearch WHERE userID = $userID";
+	    $result = mysqli_query($connection, $query);
+	    
+	    // Test for query error
+	    if(!$result)
+	    {
+		    die("Database query failed - submitResponses() - 2");
+	    }
+    }
+	}
+  
   // Insert search data into userSearch Table
 	$query = "INSERT INTO userSearch ";
 	$query .= "(adultsHome, childrenHome, howActive, howOftenHome, petGender, petSelection, petSize, petTemperament, userID) ";
@@ -468,18 +495,10 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 	$query .= ")";
 	$result = mysqli_query($connection, $query);
 	
-	// Check if this user already has record in userSearch and if so, write over it with new data
-	
 	// Test for query error
 	if($result) 
 	{
 	  $new_id = mysqli_insert_id($connection);
-	} 
-	else 
-	{
-		// echo mysqli_error($connection);
-		mysqli_close($connection);
-		exit;
 	}
   
   // Close Connection
@@ -587,7 +606,7 @@ function searchResult($offset)
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE breed.size=".$petSize." LIMIT $offset, 3";
+	$query .= "WHERE breed.size=".$petSize." LIMIT $offset, 6";
 	
 	$result = mysqli_query($connection, $query);
 	
