@@ -539,11 +539,8 @@ function searchResult($offset)
 	$query .= "FROM userSearch ";
 	$query .= "WHERE userID=".$userID;
 	
-	// echo $query;
-	
 	$search = mysqli_query($connection, $query);
 
-		
 	// Test for query error
 	if($search) 
 	{
@@ -568,29 +565,109 @@ function searchResult($offset)
     $petTemperament = $row["petTemperament"];
 	}
 		
-	if($adultsHome == 1 && $petSize > 3)
-	{
-		$petSize = 3;
-	}	
+	// 1. Size
+  if ($adultsHome >= 2) // Minimum two or more adults
+  {
+    if ($petSize == 5) // Prefer a giant pet
+    {
+      if ($childrenHome == 0) // No children under 6
+      {
+        $breedSize = 5; // Matched with giant pets
+      }
+    }
+  }
+  else if ($adultsHome >= 2) // Minimum two or more adults
+  {
+    if ($petSize == 4) // Prefer a large pet
+    {
+      if ($childrenHome == 0) // No children under 6
+      {
+        $breedSize = 4; // Matched with large pets
+      }
+    }
+  }
+  else if ($adultsHome >= 1) // One or more adults
+  {
+    if ($petSize == 3) // Prefer a medium size pet
+    {
+      $breedSize = 3; // Matched with medium size pets
+    }
+  }
+  else if ($adultsHome >= 1) // One or more adults
+  {
+    if ($petSize == 2) // Prefer a small pet
+    {
+      $breedSize = 2; // Matched with small pets
+    }
+  }
+  else if ($adultsHome >= 1) // One or more adults
+  {
+    if ($petSize == 1) // Prefer an extra small pet
+    {
+      $breedSize = 1; // Matched with extra small pets
+    }
+  }
 
-	if ($childrenHome == 1)
-	{
-		if ($petSize > 3)
-		{
-			$petSize = 3;
-		}
-		
-		if ($petTemperament > 2)
-		{
-			$petTemperament = 2;
-		}
-	}
+
+  // 2. Active
+  $breedActive = round(($howActive * $howOftenHome)/5); 
+
+
+  // 3. Temperament
+  if ($petTemperament == 3) // Prefer Usain Bolt pet
+  {
+    if ($childrenHome == 0) // No children under 6
+    {
+      $breedTemperament == 3; // Matched with Usain Bolt
+    }
+  }
+  else if ($petTemperament == 2) // Prefer zen pet
+  {
+    if ($childrenHome == 0) // No children under 6
+    {
+      $breedTemperament == 2; // Matched with zen
+    }
+  }
+  else if ($petTemperament == 1)
+  {
+    $breedTemperament == 1; // Matched with princess
+  }
+
+  // 4. Gender
+  if ($petGender == 2) // Male animal preferred
+  {
+    $animalsGender = 2; // Matched with male pets
+  }
+  else if ($petGender == 1) // Female animal preferred
+  {
+    $animalsGender = 1; // Matched with female pets
+  }
+  else
+  {
+    $animalsGender >= 1; // Matched with female and male pets
+  }
+
+
+  // 5. Selection
+  if ($petSelection == 0) // Cat preferred
+  {
+    $breedType == 0; // A cat preferred
+  }
+  else if ($petSelection == 1) // Dog preferred
+  {
+    $breedType == 1; // A dog preferred
+  }
+  else
+  {
+  	$breedType == 3; // Matched with cats and dogs
+  }
+
 	
-	$query = "SELECT animals.rspcaID, animals.petName, animals.description, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
+	$query = "SELECT animals.rspcaID, breed.size";
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE breed.size=".$petSize;
+	$query .= "WHERE breed.size=".$petSize; // Get just the animals matching user's preferred pet size.
 	
 	if ($result=mysqli_query($connection,$query))
   {
@@ -606,7 +683,7 @@ function searchResult($offset)
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE breed.size=".$petSize." LIMIT $offset, 6";
+	$query .= "WHERE breed.size=".$petSize." LIMIT $offset, 6"; // Get just the animals matching user's preferred pet size, 6 per page.
 	
 	$result = mysqli_query($connection, $query);
 	
