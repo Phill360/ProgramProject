@@ -13,6 +13,8 @@
 <body>
 <div class="row">
   <?php
+  echo getMessage();
+  
   // The $page variable stores the page number, i.e. which page the user is viewing, e.g. first, second, third page, etc. 
   $page = $_GET["page"]; // Get the page number from post. Page number is posted when the user clicks on pagination links bottom of page.
   
