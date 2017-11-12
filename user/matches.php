@@ -29,6 +29,19 @@
   
   $result = searchResult($offset); // This function returns 6 records matching user criteria.
   
+  if ($_SESSION['matchCount'] == 0)
+  {
+    ?>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="panel panel-default">
+        <div class="opensans">
+          <div class="textMedium">Sorry, no pets matched your search criteria..</div>
+        </div>
+      </div>
+    </div>  
+    <?php
+  }
+  
   while($row = mysqli_fetch_assoc($result)) // Now iterate through result to display records across and down the screen according to the Bootstrap grid.
   { 
   ?>

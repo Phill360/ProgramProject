@@ -506,16 +506,8 @@ function submitResponses($adultsHome, $childrenHome, $howActive, $howOftenHome, 
 }
   
 /* Search for question matches */
-// THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE
 function searchResult($offset)
 {
-		echo "<p>**** THIS IS INCOMPLETE. CURRENTLY ONLY FINDS MATCHES BASED ON SIZE ****</p>";
-		
-		
-		
-		
-		
-		
 	// Connect AWS MYSQL Server
   $host="petdatabase.colkfztcejwd.us-east-2.rds.amazonaws.com";
   $port=3306;
@@ -526,8 +518,6 @@ function searchResult($offset)
   $connection = new mysqli($host, $user, $DBpassword, $dbname, $port, $socket)
     	or die ('Could not connect to the database server' . mysqli_connect_error());
 
-
-	
  	// Connect AWS MYSQL Server
 	// require_once('./_php/connect.php');
   
@@ -678,18 +668,16 @@ function searchResult($offset)
   {
   	$breedType = "Dog"; // Matched with cats and dogs
   }
-  
-  // echo $breedActive;
 	
 	$query = "SELECT animals.rspcaID, animals.petName, animals.description, animals.gender, animals.age, breed.active, breed.type, breed.size, breed.temperament ";
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE animals.gender = F";
-	// $query .= "AND breed.size = $breedSize ";
-	// $query .= "AND breed.type = $breedType ";
-	// $query .= "AND breed.temperament = $breedTemperament ";
-	// $query .= "AND breed.active = $breedActive "; // Get just the animals matching user's preferred pet size.
+	$query .= "WHERE animals.gender = '" . $animalsGender . "'";
+	$query .= "AND breed.size = '".$breedSize."' ";
+	$query .= "AND breed.type = '".$breedType."' ";
+	$query .= "AND breed.temperament = '".$breedTemperament."' ";
+	$query .= "AND breed.active = '".$breedActive."'"; // Get just the animals matching user's preferred pet size.
 	
 	if ($result=mysqli_query($connection,$query))
   {
@@ -704,11 +692,11 @@ function searchResult($offset)
 	$query .= "FROM breed ";
 	$query .= "INNER JOIN animals ";
 	$query .= "ON animals.breedID=breed.breedID ";
-	$query .= "WHERE animals.gender = F";
-	// $query .= "AND breed.size = $breedSize ";
-	// $query .= "AND breed.type = $breedType ";
-	// $query .= "AND breed.temperament = $breedTemperament ";
-	// $query .= "AND breed.active = $breedActive ";
+	$query .= "WHERE animals.gender = '".$animalsGender."' ";
+	$query .= "AND breed.size = '".$breedSize."' ";
+	$query .= "AND breed.type = '".$breedType."' ";
+	$query .= "AND breed.temperament = '".$breedTemperament."' ";
+	$query .= "AND breed.active = '".$breedActive."' ";
 	$query .= "LIMIT $offset, 6"; // Get just the animals matching user's preferred pet size, 6 per page.
 	
 	$result = mysqli_query($connection, $query);
