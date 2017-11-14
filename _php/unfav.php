@@ -31,7 +31,7 @@
   $query = "DELETE FROM favourites ";
   $query .= "WHERE ";
   $query .= "userID=";
-  $query .= "'" . $rspcaID . "'";
+  $query .= "'" . $userID . "'";
   $result = mysqli_query($connection, $query);
     
   mysqli_close($connection);
