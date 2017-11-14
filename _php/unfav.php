@@ -30,7 +30,7 @@
   // Perform Query
   $query = "DELETE FROM favourites ";
   $query .= "WHERE ";
-  $query .= "rspcaID=";
+  $query .= "userID=";
   $query .= "'" . $rspcaID . "'";
   $result = mysqli_query($connection, $query);
     
