@@ -707,6 +707,24 @@ function searchResult($offset)
   mysqli_close($connection);
 }
 
+/* This function gets animals */
+function getAnimals($offset)
+{
+  // Connect AWS MYSQL Server
+  require_once('./_php/connect.php');
+  
+  $query = "SELECT rspcaID, petName, description ";
+  $query .= "FROM animals ";
+  $query .= "LIMIT $offset, 6";
+  
+  $result = mysqli_query($connection, $query);
+  
+  return $result;
+  
+  // Close Connection
+  mysqli_close($connection);
+}
+
 /* This function adds a pet to the database */  
 function addPet($rspcaID, $petName, $breedID, $age, $gender, $imageName, $description, $imageData) 
 {
@@ -1002,6 +1020,7 @@ function removeBreed($breedID)
   
 /* This function displays an image from the database */
 // THIS FUNCTION REQUIRES WORK - NOT CONNECTING WITH SCRIPT
+// @mark What script is it not connnecting with?
 // This function is called from matches.php
 function displayImage($rspcaID)
 {
@@ -1123,7 +1142,7 @@ function getFavourites()
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     	
   // Get favourites
-	$query = "SELECT * FROM favourites";
+	$query = "SELECT rspcaID, animalID FROM favourites";
 	$result = mysqli_query($connection, $query);
 	  
 	// Test for query error

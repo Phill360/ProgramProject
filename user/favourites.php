@@ -15,21 +15,24 @@
   
   <?php
     
-  $page = $_GET["page"];
-  if($page == "" || $page == "1")
+  // The $page variable stores the page number, i.e. which page the user is viewing, e.g. first, second, third page, etc. 
+  $page = $_GET["page"]; // Get the page number from post. Page number is posted when the user clicks on pagination links bottom of page.
+  
+  if($page == "" || $page == "1") // If this is the first time or if the user has navigated back to the first page.
   {
-    $beginRecord = 0;
+    // The $offset variable stores the record number of the first pet displayed on each page, i.e. record 0, record 6, record 12, etc.
+    $offset = 0; // The first page will begin with record 0.
   }
   else 
   {
-    $beginRecord = ($page*3)-3;
+    $offset = ($page*6)-6; // The second page will begin with record 6, third page will begin with record 12, etc.
   }
   
   // Get favourites from database
   $favourites = getFavourites(); // getFavourites returns the whole favourites table
   
   // Get animals from database
-  $animals = getLimitedNumberOfAnimalsFromDatabase($beginRecord); // Error 7 if cannot connect to database
+  $animals = getAnimals($offset); // Error 7 if cannot connect to database
   
   // Fetch pets from the 'animals' table
   while($row = mysqli_fetch_assoc($favourites)) 
@@ -68,15 +71,13 @@
   }
   
   // Get number of favourites for user    
-  $numberOfFavourites = getNumberOfFavouritesForUser();
-	
-	$size = 0;
-	while ($row = mysqli_fetch_assoc($numberOfFavourites))
+
+	while ($row = mysqli_fetch_assoc($favourites))
 	{
 	  $size += 1;
 	}
 	
-	$a = ceil($size/3); // Number of pages
+	$a = ceil($size/6); // Number of pages
   ?>
   
 </div>
