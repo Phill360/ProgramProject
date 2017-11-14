@@ -1089,7 +1089,7 @@ function getAnimalName($rspcaID)
 	// Test for query error
 	if(!$result) 
 	{
-		die("8.1. Database query failed.");
+		die("Database query failed - getAnimalName()");
 	}
 	  
 	// Iterate through results to get the user ID 

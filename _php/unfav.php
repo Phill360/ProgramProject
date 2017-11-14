@@ -27,8 +27,12 @@
     	or die ('Could not connect to the database server' . mysqli_connect_error());
     	
     	
-  $query = "INSERT INTO favourites (userID, animalID) VALUES($userID, $animalID);";
-	$result = mysqli_query($connection, $query);	
+  // Perform Query
+  $query = "DELETE FROM favourites ";
+  $query .= "WHERE ";
+  $query .= "rspcaID=";
+  $query .= "'" . $rspcaID . "'";
+  $result = mysqli_query($connection, $query);
     
   mysqli_close($connection);
 ?>

@@ -52,7 +52,7 @@
         </div>
         <div class="panel-body" style="min-height: 450; max-height: 450;">
           <div class="right">
-            <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+            <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
           </div>
           <div class="center">
             <br>
@@ -114,5 +114,31 @@
     </nav>
     </div>
 </body>
+<script>
+// This function sends favourited animals in favourites table.
+function unfavourite() 
+{
+  var parent = this.parentElement;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '_php/unfav.php', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.onreadystatechange = function () 
+  {
+    if(xhr.readyState == 4 && xhr.status == 200) 
+    {
+      var result = xhr.responseText;
+      console.log('Result: ' + result);
+    }
+  };
+  xhr.send("id=" + parent.id);
+}
   
+var buttons = document.getElementsByClassName("btn btn-default btn-lg");
+for(i=0; i<buttons.length; i++)
+{
+  buttons.item(i).addEventListener("click", unfavourite);
+}
+</script>  
 </html>
