@@ -52,7 +52,7 @@
         </div>
         <div class="panel-body" style="min-height: 450; max-height: 450;">
           <div class="right">
-            <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
+            <a class="btn btn-default btn-lg" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true" style="color:red"></span></a>
           </div>
           <div class="center">
             <br>

@@ -52,7 +52,7 @@
           </div>
           <div class="panel-body" style="min-height: 450; max-height: 450;">
             <div id=<?php echo($row["rspcaID"]); ?> class="right">
-              <button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+              <button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="color:red"></span></button>
             </div>
             <div class="center">
               <br>
