@@ -1034,8 +1034,6 @@ function removeBreed($breedID)
 }
   
 /* This function displays an image from the database */
-// THIS FUNCTION REQUIRES WORK - NOT CONNECTING WITH SCRIPT
-// @mark What script is it not connnecting with?
 // This function is called from matches.php
 function displayImage($rspcaID)
 {
